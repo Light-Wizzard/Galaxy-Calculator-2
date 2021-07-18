@@ -5,6 +5,10 @@ branches:
   only:
     - master
 
+image:
+  - Visual Studio 2019
+  - Ubuntu2004
+  - macos
 
 stack: python 3
 
@@ -56,10 +60,10 @@ after_build:
   - dir
   - mkdir deploy
   - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
-  - windeployqt --%CONFIGURATION% "deploy/%BIN%.exe" --verbose=2
+  - windeployqt "deploy/%BIN%.exe" --verbose=2
   #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
-  - 7z a -tzip "%BIN%-%CONFIGURATION%.zip" deploy -r
-  - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%CONFIGURATION%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%CONFIGURATION%.zip"
+  - 7z a -tzip "%BIN%.zip" deploy -r
+  - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%.zip"
   - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
   - xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
   - C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
