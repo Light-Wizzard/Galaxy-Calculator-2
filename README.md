@@ -26,34 +26,21 @@ This project is in work, so files might break, but source code should run if com
 The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 
 ## Status
-Unix: [![Travis Build Status](https://travis-ci.org/Light-Wizzard/Galaxy-Calculator-2.svg?branch=master)](https://travis-ci.org/Light-Wizzard/Galaxy-Calculator-2)
+Unix: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 Windows: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 
 ## :package: **Downloads:**
  - :penguin: [Linux](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage)
  - :penguin: :inbox_tray: [Linux ZSync](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage.zsync)
  - :penguin: :outbox_tray: [Linux Installer in work](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-Linux-Installer)
- - :office: [Windows zip exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2_release.zip)
- - :office: :outbox_tray: [Windows Installer exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-Windows-Installer.exe)
- - :office: :outbox_tray: [Windows Installer zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-Windows-Installer.zip)
+ - :office: [Windows zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows.zip)
+ - :office: :outbox_tray: [Windows Installer exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2.exe)
  - :apple: [Apple](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2.dmg)
 
 The builds are here:
-* [Travis Builds](https://travis-ci.org/github/Light-Wizzard/Galaxy-Calculator-2) [![Travis Build Status](https://travis-ci.org/Light-Wizzard/Galaxy-Calculator-2.svg?branch=master)](https://travis-ci.org/Light-Wizzard/Galaxy-Calculator-2)
 * [AppVeyor Builds](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2) [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 
 Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, and run the file Galaxy-Calculator-2.exe inside of the deploy folder.
-
-Windows 10 built on my machine, the ones above are created on AppVeyor, but the download is not working.
-* Installer: http://LightWizzard.com/installers/windows/GalaxyCalculatorInstaller.exe
-* Executable Standalone: http://LightWizzard.com/installers/windows/GalaxyCalculator.exe
-
-These are other versions of the program that I made by hand:
-
-Linux: to use zsync you must have it installed. 
-Note, I need to update to version 2 for the Internet, doing that now.
-
-I plan to support as much as I can, once my Book or ePubs start to sell, I will save up for a Mac, and iOS device, so I can make Installers for them.
 
 All my books are free online at http://LightWizzard.com, but it cost money to print them or push ePubs to your device.
 
@@ -134,6 +121,11 @@ This is a work in progress, please report any bugs, and comments.
 [QCalculator](https://github.com/xenotux/qcalc)
 https://github.com/xenotux/qcalc
 
-The DLL for gmp and mpfr https://github.com/CGAL/cgal/releases
+GMP Dll for Windows
+https://osdn.net/projects/mingw/releases/69295
+
+MPFR Dll for Windows
+https://osdn.net/projects/mingw/releases/69297
+
 
 End of README.md
