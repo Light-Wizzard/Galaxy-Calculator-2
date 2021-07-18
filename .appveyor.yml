@@ -5,8 +5,16 @@ branches:
   only:
     - master
 
+configuration: Release
+
+platform:
+  - x86
+
 image:
   - Visual Studio 2019
+  - Ubuntu2004
+
+stack: python 3.8
 
 environment:
   matrix:
@@ -22,40 +30,35 @@ environment:
       MY_OS: Windows
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
       PY_DIR: C:\Python38
-      stack: python 3.8
-
-configuration:
-  - release
-
-init:
-  # Create our AppVeyor version
-  - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
-  - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      RUNTIME_LINKAGE: static
+      COVERITY_BUILD_CANDIDATE: True
+      #https://www.appveyor.com/docs/build-environment/#qt
+      QT5: $HOME/Qt/5.15.2/gcc_64/bin
+      QT_IF_VERSION: '3.1.1'
+      PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+      BIN: GalaxyCalculator2
+      MY_OS: Ubuntu2004
+      QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+      PY_DIR: $HOME/venv3.8
 
 for:
 -
-  #------------------
-  # Windows 10
-  #------------------
   matrix:
     only:
       - image: Visual Studio 2019
-
-  platform:
-    - Win32
-
+  environment:
+    MY_BUILD: Windows
   before_build:
     - set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
     - '%QT5%\bin\qtenv2.bat'
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
-
   build_script:
     - cd %APPVEYOR_BUILD_FOLDER%
     - mkdir build
     - cd build
     - qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
-    
   after_build:
     # Add a link to the build output within the source directory. This is needed because AppVeyor does
     # not support extracting artifacts from out-of-source build directories. See 'artifacts' below.
@@ -77,12 +80,54 @@ for:
     - echo Current Path is %cd%
     - dir
     - echo Completed-Build
+  artifacts:
+    - path: '%BIN%*.zip'
+      name: 'ZipInstaller'
+    - path: '%BIN%*.exe'
+      name: 'ExecutableFile'
 
-artifacts:
-  - path: '%BIN%*.zip'  
-    name: 'ZipInstaller'
-  - path: '%BIN%*.exe'
-    name: 'ExecutableFile'
+-
+  matrix:
+    only:
+      - image: Ubuntu2004
+  environment:
+    MY_BUILD: Ubuntu
+  install:
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    - sudo apt-get update -qq && sudo apt-get install -qq
+    - sudo apt-get -y install build-essential git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev libxmu-dev libxi-dev
+  before_build:
+    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    - set PATH=%QT5%\bin;%PATH%
+    - '%QT5%\bin\qtenv2.bat'
+  build_script:
+    - cd %APPVEYOR_BUILD_FOLDER%
+    - mkdir build
+    - cd build
+    - qmake -v && qmake ..\%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
+  after_build:
+    # Add a link to the build output within the source directory. This is needed because AppVeyor does
+    # not support extracting artifacts from out-of-source build directories. See 'artifacts' below.
+    - echo after_build
+    - dir
+    - mkdir deploy
+    - cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%" "deploy\%BIN%"
+    - linuxdeployqt "deploy/%BIN%" --verbose=2
+    - 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
+    - cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
+    - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
+    - cp *.zip %APPVEYOR_BUILD_FOLDER%
+    - cp *.exe %APPVEYOR_BUILD_FOLDER%
+    - cd %APPVEYOR_BUILD_FOLDER%
+    - echo Current Path is %cd%
+    - dir
+    - echo Completed-Build
+  artifacts:
+    - path: '%BIN%*.zip'
+      name: 'ZipInstaller'
+    - path: '%BIN%*'
+      name: 'ExecutableFile'
 
 deploy:
   - provider: GitHub
