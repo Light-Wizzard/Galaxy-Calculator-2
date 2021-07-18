@@ -19,7 +19,7 @@ environment:
       QT_IF_VERSION: '3.1.1'
       PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
       BIN: GalaxyCalculator2
-      MY_ENV: AppVeyor
+      #MY_ENV: AppVeyor
       MY_OS: Windows
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
       # Windows 7 caps at Python-38
@@ -37,6 +37,7 @@ environment:
     - Win32
 
   before_build:
+    - set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
     - '%QT5%\bin\qtenv2.bat'
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
