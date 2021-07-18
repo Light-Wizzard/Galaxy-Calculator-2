@@ -5,10 +5,10 @@ branches:
   only:
     - master
 
-image:
-  - Visual Studio 2019
-  - Ubuntu2004
-  - macos
+#image:
+#  - Visual Studio 2019
+#  - Ubuntu2004
+#  - macos
 
 stack: python 3
 
@@ -23,7 +23,7 @@ environment:
       QT_IF_VERSION: '3.1.1'
       PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
       BIN: GalaxyCalculator2
-      MY_ENV: AppVeyor
+      MY_OS: Windows
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
       PY_DIR: C:\Python39
 
@@ -62,12 +62,12 @@ after_build:
   - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
   - windeployqt "deploy/%BIN%.exe" --verbose=2
   #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
-  - 7z a -tzip "%BIN%.zip" deploy -r
-  - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%.zip"
+  - 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
+  - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
   - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-  - xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
-  - C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
-  - 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
+  #- xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
+  #- C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
+  #- 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
   - copy *.zip %APPVEYOR_BUILD_FOLDER%
   - copy *.exe %APPVEYOR_BUILD_FOLDER%
   - cd %APPVEYOR_BUILD_FOLDER%
