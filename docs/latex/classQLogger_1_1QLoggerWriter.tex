@@ -1,0 +1,160 @@
+\hypertarget{classQLogger_1_1QLoggerWriter}{}\doxysection{Q\+Logger\+::Q\+Logger\+Writer Class Reference}
+\label{classQLogger_1_1QLoggerWriter}\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+Inheritance diagram for Q\+Logger\+::Q\+Logger\+Writer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQLogger_1_1QLoggerWriter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQLogger_1_1QLoggerWriter_af3a9f916aec53278ff2260c37c1ec787}{Q\+Logger\+Writer}} (const Q\+String \&file\+Destination, \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em Constructor that gets the complete path and filename to create the file. It also configures the level of this file to filter the logs depending on the level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_a8a421ab046eb7eae4a30d2da546e7b58}{get\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current level threshold. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_ac9d37046f08ea19cde3a2537fb49b7c9}{set\+Log\+Level}} (\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em set\+Log\+Level Sets the log level for this destination \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_aa3ddb66621813286ccf063d88b582b2a}{enqueue}} (const Q\+Date\+Time \&date, const Q\+String \&thread\+Id, const Q\+String \&module, \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level, const Q\+String \&file\+Name, int line, const Q\+String \&the\+Function, const Q\+String \&message)
+\begin{DoxyCompactList}\small\item\em enqueue Enqueues a message to be written in the destiantion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_a7e09d55821f48b6e74a8e5d5fcc1c9f6}{stop}} (bool stop)
+\begin{DoxyCompactList}\small\item\em Stops the log writer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_af89e6c3782394ea649d8423fb9c5b4c3}{is\+Stop}} () const
+\begin{DoxyCompactList}\small\item\em Returns if the log writer is stop from writing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_ab0c08ab404ce002fef5c67d394813d0e}{run}} () override
+\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerWriter_a798acd669d1d033ddfb5719b991928a8}{close\+Destination}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classQLogger_1_1QLoggerWriter}{Q\+Logger\+Writer}} Constructor $\ast$ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_af3a9f916aec53278ff2260c37c1ec787}\label{classQLogger_1_1QLoggerWriter_af3a9f916aec53278ff2260c37c1ec787}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!QLoggerWriter@{QLoggerWriter}}
+\index{QLoggerWriter@{QLoggerWriter}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{QLoggerWriter()}{QLoggerWriter()}}
+{\footnotesize\ttfamily Q\+Logger\+::\+Q\+Logger\+Writer\+::\+Q\+Logger\+Writer (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Destination,  }\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor that gets the complete path and filename to create the file. It also configures the level of this file to filter the logs depending on the level. 
+
+Logger Writer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Destination} & The complete path. \\
+\hline
+{\em level} & The maximum level that is allowed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_a798acd669d1d033ddfb5719b991928a8}\label{classQLogger_1_1QLoggerWriter_a798acd669d1d033ddfb5719b991928a8}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!closeDestination@{closeDestination}}
+\index{closeDestination@{closeDestination}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{closeDestination()}{closeDestination()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Writer\+::close\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+close\+Destination $\ast$ F\+I\+X\+ME Hanges on quiting app \mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_aa3ddb66621813286ccf063d88b582b2a}\label{classQLogger_1_1QLoggerWriter_aa3ddb66621813286ccf063d88b582b2a}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Writer\+::enqueue (\begin{DoxyParamCaption}\item[{const Q\+Date\+Time \&}]{date,  }\item[{const Q\+String \&}]{thread\+Id,  }\item[{const Q\+String \&}]{module,  }\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level,  }\item[{const Q\+String \&}]{file\+Name,  }\item[{int}]{line,  }\item[{const Q\+String \&}]{the\+Function,  }\item[{const Q\+String \&}]{message }\end{DoxyParamCaption})}
+
+
+
+enqueue Enqueues a message to be written in the destiantion. 
+
+enqueue $\ast$
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & The date and time of the log message. \\
+\hline
+{\em thread\+Id} & The thread where the message comes from. \\
+\hline
+{\em module} & The module that writes the message. \\
+\hline
+{\em level} & The log level of the message. \\
+\hline
+{\em file\+Name} & The file name that prints the log. \\
+\hline
+{\em line} & The line of the file name that prints the log. \\
+\hline
+{\em the\+Function} & The Function name of the file name that prints the log. \\
+\hline
+{\em message} & The message to log. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_a8a421ab046eb7eae4a30d2da546e7b58}\label{classQLogger_1_1QLoggerWriter_a8a421ab046eb7eae4a30d2da546e7b58}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} Q\+Logger\+::\+Q\+Logger\+Writer\+::get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current level threshold. 
+
+\begin{DoxyReturn}{Returns}
+The level. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_af89e6c3782394ea649d8423fb9c5b4c3}\label{classQLogger_1_1QLoggerWriter_af89e6c3782394ea649d8423fb9c5b4c3}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!isStop@{isStop}}
+\index{isStop@{isStop}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{isStop()}{isStop()}}
+{\footnotesize\ttfamily bool Q\+Logger\+::\+Q\+Logger\+Writer\+::is\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns if the log writer is stop from writing. 
+
+\begin{DoxyReturn}{Returns}
+True if is stop, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_ab0c08ab404ce002fef5c67d394813d0e}\label{classQLogger_1_1QLoggerWriter_ab0c08ab404ce002fef5c67d394813d0e}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!run@{run}}
+\index{run@{run}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Writer\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+run $\ast$ \mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_ac9d37046f08ea19cde3a2537fb49b7c9}\label{classQLogger_1_1QLoggerWriter_ac9d37046f08ea19cde3a2537fb49b7c9}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!setLogLevel@{setLogLevel}}
+\index{setLogLevel@{setLogLevel}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{setLogLevel()}{setLogLevel()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Writer\+::set\+Log\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Log\+Level Sets the log level for this destination 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The new level threshold. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerWriter_a7e09d55821f48b6e74a8e5d5fcc1c9f6}\label{classQLogger_1_1QLoggerWriter_a7e09d55821f48b6e74a8e5d5fcc1c9f6}} 
+\index{QLogger::QLoggerWriter@{QLogger::QLoggerWriter}!stop@{stop}}
+\index{stop@{stop}!QLogger::QLoggerWriter@{QLogger::QLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Writer\+::stop (\begin{DoxyParamCaption}\item[{bool}]{stop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stops the log writer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stop} & True to be stop, otherwise false \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Q\+Logger/Q\+Logger\+Writer.\+h\item 
+src/\+Q\+Logger/Q\+Logger\+Writer.\+cpp\end{DoxyCompactItemize}

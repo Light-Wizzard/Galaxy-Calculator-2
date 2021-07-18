@@ -1,0 +1,293 @@
+\hypertarget{classMainWindow}{}\doxysection{Main\+Window Class Reference}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Tabs}} \{ \newline
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a}{Tab\+Settings}} =0, 
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a26930b20047e5dce0132dfa8bd80b2e2}{Tab\+Connection\+Man}} =1, 
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53adba512a62c082f1962ac79adf166ea39}{Tab\+We\+Book\+Man}} =2, 
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a8704f4eb9015de1dbf924d0838d92fbd}{Tab\+T\+OC}} =3, 
+\newline
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aba956ee7b25fa85dbf0c85894de07afa}{Tab\+Editor}} =4, 
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aea361df91ac6ca4a19e00db6faf89fef}{Tab\+Contacts}} =5, 
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a3629351012b189d96bdf3e4343a9f0d2}{Tab\+File\+Man}} =6, 
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a595d113809fd2be6c4de61b8ce94d4ee}{Tab\+Calendar\+Man}} =7, 
+\newline
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac101096831d7c10ed6e9e8d0e93b15a2}{Tab\+Calculator}} =8
+ \}
+\begin{DoxyCompactList}\small\item\em Tabs must be forced to be int 0 based indexes that match the actual ui for widget\+Tab, this enforces compile-\/time checks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a24d70244ff00cb753f6cb2ad036e28ab}{on\+Status\+Message}} (const Q\+String \&message)
+\begin{DoxyCompactList}\small\item\em handel\+Status\+Message \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a78af36d148141747970ecb28c03e07c5}{on\+Tab\+Changed}} (int tab)
+\begin{DoxyCompactList}\small\item\em ui-\/$>$tab\+Widget \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a6c9755c3e88f8d60458b842654625dcc}{on\+Save\+Application\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em ui-\/$>$push\+Button\+Sg\+Save \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_aa86d6d29209779d33d586d6d69a4fcf5}{on\+Add\+Book}} ()
+\begin{DoxyCompactList}\small\item\em ui-\/$>$push\+Button\+We\+Book\+Man\+Add \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a969f3bd2d4df932569cdd6ddcf3f7f3b}{on\+Delete\+Book}} ()
+\begin{DoxyCompactList}\small\item\em ui-\/$>$push\+Button\+We\+Book\+Man\+Delete \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a60ebbb4794730a2ffe508efb0680401d}{on\+File\+New}} ()
+\begin{DoxyCompactList}\small\item\em on File New \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a05ad0e17c8f643078871f5ce1dae3ada}{on\+Toc\+Update\+Actions}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_a6aa7748afc8a8f13174f383513df634b}\label{classMainWindow_a6aa7748afc8a8f13174f383513df634b}} 
+void \mbox{\hyperlink{classMainWindow_a6aa7748afc8a8f13174f383513df634b}{handel\+Status\+Message}} (const Q\+String \&message)
+\begin{DoxyCompactList}\small\item\em on\+Status\+Message \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_a13098b75739c10c64187c8c43313d5ae}\label{classMainWindow_a13098b75739c10c64187c8c43313d5ae}} 
+void \mbox{\hyperlink{classMainWindow_a13098b75739c10c64187c8c43313d5ae}{handle\+Event\+Action}} (int event\+Value)
+\begin{DoxyCompactList}\small\item\em Events that change Q\+Settings trigger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}} 
+\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em We\+Book is Pronounced Web Book, it is a Web Content Book Manager. {\ttfamily parent}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\item 
+\mbox{\Hypertarget{classMainWindow_ac5b18e8c8fa3c0454f959451f0d91550}\label{classMainWindow_ac5b18e8c8fa3c0454f959451f0d91550}} 
+\mbox{\hyperlink{classMainWindow_ac5b18e8c8fa3c0454f959451f0d91550}{Q\+\_\+\+E\+N\+UM}} (\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Tabs}}) const Q\+String const Current\+Tab
+\begin{DoxyCompactList}\small\item\em Current Tab Number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMainWindow_a5c1e323a4a5c1beff7744b6972b62728}{load}} (const Q\+String \&f)
+\begin{DoxyCompactList}\small\item\em load H\+T\+ML Document \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainWindow_a0c2207e1d99178aa395aa813b5522db9}\label{classMainWindow_a0c2207e1d99178aa395aa813b5522db9}} 
+const Q\+String \mbox{\hyperlink{classMainWindow_a0c2207e1d99178aa395aa813b5522db9}{const\+Current\+We\+Book}} = \char`\"{}Current\+We\+Book\char`\"{}
+\begin{DoxyCompactList}\small\item\em Name of We\+Book Category file for default We\+Book. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_aa4eafac0618c7abd4d1598cca38ddad0}\label{classMainWindow_aa4eafac0618c7abd4d1598cca38ddad0}} 
+const Q\+String \mbox{\hyperlink{classMainWindow_aa4eafac0618c7abd4d1598cca38ddad0}{const\+Current\+We\+Chapter}} = \char`\"{}Current\+We\+Chapter\char`\"{}
+\begin{DoxyCompactList}\small\item\em Name of We\+Book Chapter file for default We\+Book. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_ac7ed96c4328a5159b59e53cdeb8e2dc7}\label{classMainWindow_ac7ed96c4328a5159b59e53cdeb8e2dc7}} 
+const Q\+String \mbox{\hyperlink{classMainWindow_ac7ed96c4328a5159b59e53cdeb8e2dc7}{const\+We\+Book\+Editor\+Ext}} = \char`\"{}html\char`\"{}
+\begin{DoxyCompactList}\small\item\em I do not like to hard code things, hoping for rtf, got odf, so H\+T\+ML works. \end{DoxyCompactList}\item 
+const Q\+String \mbox{\hyperlink{classMainWindow_ad346f2828916968a48483dce73254de7}{const\+Default\+T\+OC}} = \char`\"{}Home\textbackslash{}t\+Home Page\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em {\ttfamily const\+Default\+T\+OC} \end{DoxyCompactList}\item 
+const Q\+String \mbox{\hyperlink{classMainWindow_af0e2b84d5a96569adbdbc306b7e3adc4}{const\+Default\+We\+Book}} = \char`\"{}We\+Book\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em {\ttfamily const\+Default\+We\+Book} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_a9c1b0ae9c5ab108d289a20d79b1d2e4e}\label{classMainWindow_a9c1b0ae9c5ab108d289a20d79b1d2e4e}} 
+int \mbox{\hyperlink{classMainWindow_a9c1b0ae9c5ab108d289a20d79b1d2e4e}{default\+Geometry\+Width}} = 866
+\begin{DoxyCompactList}\small\item\em Set from size of Form. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_a3e9b8d5e5c002201f15ec6af21b370e5}\label{classMainWindow_a3e9b8d5e5c002201f15ec6af21b370e5}} 
+int \mbox{\hyperlink{classMainWindow_a3e9b8d5e5c002201f15ec6af21b370e5}{default\+Geometry\+Height}} = 666
+\begin{DoxyCompactList}\small\item\em Set from size of Form. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_a0e3c0a508959f4e6651eddaa0c22a906}\label{classMainWindow_a0e3c0a508959f4e6651eddaa0c22a906}} 
+int \mbox{\hyperlink{classMainWindow_a0e3c0a508959f4e6651eddaa0c22a906}{default\+Geometry\+PositionX}} = 200
+\begin{DoxyCompactList}\small\item\em Set X Postion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_a87dc87bf3abeaaec0a7677f4b9ab7529}\label{classMainWindow_a87dc87bf3abeaaec0a7677f4b9ab7529}} 
+int \mbox{\hyperlink{classMainWindow_a87dc87bf3abeaaec0a7677f4b9ab7529}{default\+Geometry\+PositionY}} = 200
+\begin{DoxyCompactList}\small\item\em Set Y Postion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a80687075bdf1bd9004a1aa6e712198ad}{close\+Event}} (Q\+Close\+Event $\ast$e) override
+\begin{DoxyCompactList}\small\item\em close Event \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classMainWindow}{Main\+Window}} $\ast$
+
+We\+Book\+: Pronounced Web-\/\+Book, is a Book Content Management System (B\+C\+MS) $\ast$ \mbox{\hyperlink{classMainWindow}{Main\+Window}} Constructor $\ast$ I use Camel\+Case and Qt uses no\+\_\+camel\+\_\+case; even thu these is an option. $\ast$ This means that Automatic Signal to Slot Connects will not be made. $\ast$ The reason I do not want this auto handler of events, is simple, typos. $\ast$ A typo will not get caught at compile time, Camel\+Case enforces this. $\ast$ So all connects are manual. $\ast$
+\begin{DoxyItemize}
+\item 
+\item The Method to my Maddness starts with Text only data and not S\+QL databases $\ast$ S\+QL is more complex doing searches for data stored in Text files pointless $\ast$ The We\+Book Manager is a Single Name with No Spaces, and a new entery $\ast$ Is Name will be the Folder all the data is in, and why no spaces $\ast$
+\item 
+\item 
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}} 
+\index{MainWindow@{MainWindow}!MainTabs@{MainTabs}}
+\index{MainTabs@{MainTabs}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainTabs}{MainTabs}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Window\+::\+Main\+Tabs}}}
+
+
+
+Tabs must be forced to be int 0 based indexes that match the actual ui for widget\+Tab, this enforces compile-\/time checks. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabSettings@{TabSettings}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabSettings@{TabSettings}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a}} 
+Tab\+Settings&{\ttfamily Tab\+Settings} Tab\+Settings . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabConnectionMan@{TabConnectionMan}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabConnectionMan@{TabConnectionMan}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a26930b20047e5dce0132dfa8bd80b2e2}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a26930b20047e5dce0132dfa8bd80b2e2}} 
+Tab\+Connection\+Man&{\ttfamily Tab\+Connection\+Man} Tab\+Connection\+Man . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabWeBookMan@{TabWeBookMan}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabWeBookMan@{TabWeBookMan}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53adba512a62c082f1962ac79adf166ea39}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53adba512a62c082f1962ac79adf166ea39}} 
+Tab\+We\+Book\+Man&{\ttfamily Tab\+We\+Book\+Man} Tab\+We\+Book\+Man . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabTOC@{TabTOC}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabTOC@{TabTOC}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a8704f4eb9015de1dbf924d0838d92fbd}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a8704f4eb9015de1dbf924d0838d92fbd}} 
+Tab\+T\+OC&{\ttfamily Tab\+T\+OC} Tab\+T\+OC . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabEditor@{TabEditor}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabEditor@{TabEditor}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aba956ee7b25fa85dbf0c85894de07afa}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aba956ee7b25fa85dbf0c85894de07afa}} 
+Tab\+Editor&{\ttfamily Tab\+Editor} Tab\+Editor . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabContacts@{TabContacts}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabContacts@{TabContacts}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aea361df91ac6ca4a19e00db6faf89fef}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aea361df91ac6ca4a19e00db6faf89fef}} 
+Tab\+Contacts&{\ttfamily Tab\+Contacts} Tab\+Contacts . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabFileMan@{TabFileMan}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabFileMan@{TabFileMan}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a3629351012b189d96bdf3e4343a9f0d2}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a3629351012b189d96bdf3e4343a9f0d2}} 
+Tab\+File\+Man&{\ttfamily Tab\+File\+Man} Tab\+File\+Man . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabCalendarMan@{TabCalendarMan}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabCalendarMan@{TabCalendarMan}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a595d113809fd2be6c4de61b8ce94d4ee}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a595d113809fd2be6c4de61b8ce94d4ee}} 
+Tab\+Calendar\+Man&{\ttfamily Tab\+Calendar\+Man} Tab\+Calendar\+Man . \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabCalculator@{TabCalculator}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabCalculator@{TabCalculator}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac101096831d7c10ed6e9e8d0e93b15a2}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac101096831d7c10ed6e9e8d0e93b15a2}} 
+Tab\+Calculator&{\ttfamily Tab\+Calculator} Tab\+Calculator . \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+$\sim$\+Main\+Window Deconstructor $\ast$ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainWindow_a80687075bdf1bd9004a1aa6e712198ad}\label{classMainWindow_a80687075bdf1bd9004a1aa6e712198ad}} 
+\index{MainWindow@{MainWindow}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::close\+Event (\begin{DoxyParamCaption}\item[{Q\+Close\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+close Event 
+
+close\+Event $\ast$ \mbox{\Hypertarget{classMainWindow_a5c1e323a4a5c1beff7744b6972b62728}\label{classMainWindow_a5c1e323a4a5c1beff7744b6972b62728}} 
+\index{MainWindow@{MainWindow}!load@{load}}
+\index{load@{load}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Main\+Window\+::load (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{f }\end{DoxyParamCaption})}
+
+
+
+load H\+T\+ML Document 
+
+load $\ast$ \mbox{\Hypertarget{classMainWindow_aa86d6d29209779d33d586d6d69a4fcf5}\label{classMainWindow_aa86d6d29209779d33d586d6d69a4fcf5}} 
+\index{MainWindow@{MainWindow}!onAddBook@{onAddBook}}
+\index{onAddBook@{onAddBook}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onAddBook}{onAddBook}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Add\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+ui-\/$>$push\+Button\+We\+Book\+Man\+Add 
+
+on\+Add\+Book for ui-\/$>$push\+Button\+We\+Book\+Man\+Add $\ast$ \mbox{\Hypertarget{classMainWindow_a969f3bd2d4df932569cdd6ddcf3f7f3b}\label{classMainWindow_a969f3bd2d4df932569cdd6ddcf3f7f3b}} 
+\index{MainWindow@{MainWindow}!onDeleteBook@{onDeleteBook}}
+\index{onDeleteBook@{onDeleteBook}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onDeleteBook}{onDeleteBook}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Delete\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+ui-\/$>$push\+Button\+We\+Book\+Man\+Delete 
+
+on\+Delete\+Book for ui-\/$>$push\+Button\+We\+Book\+Man\+Delete $\ast$ \mbox{\Hypertarget{classMainWindow_a60ebbb4794730a2ffe508efb0680401d}\label{classMainWindow_a60ebbb4794730a2ffe508efb0680401d}} 
+\index{MainWindow@{MainWindow}!onFileNew@{onFileNew}}
+\index{onFileNew@{onFileNew}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onFileNew}{onFileNew}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+File\+New (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on File New 
+
+on\+File\+New $\ast$ \mbox{\Hypertarget{classMainWindow_a6c9755c3e88f8d60458b842654625dcc}\label{classMainWindow_a6c9755c3e88f8d60458b842654625dcc}} 
+\index{MainWindow@{MainWindow}!onSaveApplicationSettings@{onSaveApplicationSettings}}
+\index{onSaveApplicationSettings@{onSaveApplicationSettings}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onSaveApplicationSettings}{onSaveApplicationSettings}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Save\+Application\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+ui-\/$>$push\+Button\+Sg\+Save 
+
+on\+Save\+Application\+Settings $\ast$ \mbox{\Hypertarget{classMainWindow_a24d70244ff00cb753f6cb2ad036e28ab}\label{classMainWindow_a24d70244ff00cb753f6cb2ad036e28ab}} 
+\index{MainWindow@{MainWindow}!onStatusMessage@{onStatusMessage}}
+\index{onStatusMessage@{onStatusMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onStatusMessage}{onStatusMessage}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Status\+Message (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+handel\+Status\+Message 
+
+on\+Status\+Message for handel\+Status\+Message $\ast$ \mbox{\Hypertarget{classMainWindow_a78af36d148141747970ecb28c03e07c5}\label{classMainWindow_a78af36d148141747970ecb28c03e07c5}} 
+\index{MainWindow@{MainWindow}!onTabChanged@{onTabChanged}}
+\index{onTabChanged@{onTabChanged}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onTabChanged}{onTabChanged}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Tab\+Changed (\begin{DoxyParamCaption}\item[{int}]{tab }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+ui-\/$>$tab\+Widget 
+
+on\+Tab\+Changed for ui-\/$>$tab\+Widget $\ast$ Define all actions for specific tabs here $\ast$
+\begin{DoxyItemize}
+\item 0 tab\+Settings $\ast$ 1 tab\+Connection\+Man $\ast$ 2 tab\+We\+Book\+Man $\ast$ 3 tab\+T\+OC $\ast$ 4 tab\+Editor $\ast$ 5 tab\+Contacts $\ast$ 6 tab\+File\+Man $\ast$ 7 tab\+Calendar\+Man $\ast$ 8 tab\+Calculator $\ast$ 
+\end{DoxyItemize}\mbox{\Hypertarget{classMainWindow_a05ad0e17c8f643078871f5ce1dae3ada}\label{classMainWindow_a05ad0e17c8f643078871f5ce1dae3ada}} 
+\index{MainWindow@{MainWindow}!onTocUpdateActions@{onTocUpdateActions}}
+\index{onTocUpdateActions@{onTocUpdateActions}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onTocUpdateActions}{onTocUpdateActions}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Toc\+Update\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+on\+Toc\+Update\+Actions $\ast$ If the Book changes so does the T\+OC $\ast$ If the Index changes, so does the Document $\ast$ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMainWindow_ad346f2828916968a48483dce73254de7}\label{classMainWindow_ad346f2828916968a48483dce73254de7}} 
+\index{MainWindow@{MainWindow}!constDefaultTOC@{constDefaultTOC}}
+\index{constDefaultTOC@{constDefaultTOC}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{constDefaultTOC}{constDefaultTOC}}
+{\footnotesize\ttfamily const Q\+String Main\+Window\+::const\+Default\+T\+OC = \char`\"{}Home\textbackslash{}t\+Home Page\textbackslash{}n\char`\"{}}
+
+
+
+{\ttfamily const\+Default\+T\+OC} 
+
+Default T\+OC Content \mbox{\Hypertarget{classMainWindow_af0e2b84d5a96569adbdbc306b7e3adc4}\label{classMainWindow_af0e2b84d5a96569adbdbc306b7e3adc4}} 
+\index{MainWindow@{MainWindow}!constDefaultWeBook@{constDefaultWeBook}}
+\index{constDefaultWeBook@{constDefaultWeBook}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{constDefaultWeBook}{constDefaultWeBook}}
+{\footnotesize\ttfamily const Q\+String Main\+Window\+::const\+Default\+We\+Book = \char`\"{}We\+Book\textbackslash{}n\char`\"{}}
+
+
+
+{\ttfamily const\+Default\+We\+Book} 
+
+Default We\+Book Content 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Main\+Window.\+h\item 
+src/Main\+Window.\+cpp\end{DoxyCompactItemize}

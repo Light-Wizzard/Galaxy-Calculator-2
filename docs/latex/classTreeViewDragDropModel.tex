@@ -1,0 +1,81 @@
+\hypertarget{classTreeViewDragDropModel}{}\doxysection{Tree\+View\+Drag\+Drop\+Model Class Reference}
+\label{classTreeViewDragDropModel}\index{TreeViewDragDropModel@{TreeViewDragDropModel}}
+
+
+{\ttfamily \#include $<$Tree\+View\+Drag\+Drop\+Model.\+h$>$}
+
+Inheritance diagram for Tree\+View\+Drag\+Drop\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTreeViewDragDropModel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTreeViewDragDropModel_a8ec14c270a3544eeee3b87989b44265d}\label{classTreeViewDragDropModel_a8ec14c270a3544eeee3b87989b44265d}} 
+\mbox{\hyperlink{classTreeViewDragDropModel_a8ec14c270a3544eeee3b87989b44265d}{Tree\+View\+Drag\+Drop\+Model}} (const Q\+String \&strings, Q\+Object $\ast$\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Drag \& Drop Tree View Model. {\ttfamily strings} are like database enteries, {\ttfamily parent} of object. \end{DoxyCompactList}\item 
+Qt\+::\+Item\+Flags \mbox{\hyperlink{classTreeViewDragDropModel_a8efb7307d04acc14c37608e7eed736d7}{flags}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}{index}}) const
+\item 
+bool \mbox{\hyperlink{classTreeViewDragDropModel_ad516c8dd2e2b5144ed94a3d055529708}{drop\+Mime\+Data}} (const Q\+Mime\+Data $\ast$\mbox{\hyperlink{classTreeModel_a986b92267ac9cdc90519c10404192bbd}{data}}, Qt\+::\+Drop\+Action action, int row, int column, const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}})
+\item 
+Q\+Mime\+Data $\ast$ \mbox{\hyperlink{classTreeViewDragDropModel_af04a25a458886de41cb6a3d653c7ac47}{mime\+Data}} (const Q\+Model\+Index\+List \&indexes) const
+\item 
+Q\+String\+List \mbox{\hyperlink{classTreeViewDragDropModel_aa18903e2f93c67cb6aeea06b10c8a0a5}{mime\+Types}} () const
+\item 
+Qt\+::\+Drop\+Actions \mbox{\hyperlink{classTreeViewDragDropModel_ad0a00a05d26c037fbaeaad8176e780d8}{supported\+Drop\+Actions}} () const
+\item 
+Q\+String \mbox{\hyperlink{classTreeViewDragDropModel_a085c912256d75cc15bd0dfc7a57f5876}{get\+Error\+Message}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+class \mbox{\hyperlink{classTreeViewDragDropModel}{Tree\+View\+Drag\+Drop\+Model}} $\ast$
+
+We\+Book\+: Pronounced Web-\/\+Book, is a Book Content Management System (B\+C\+MS) $\ast$ Drag \& Drop Model $\ast$ \mbox{\hyperlink{classTreeViewDragDropModel}{Tree\+View\+Drag\+Drop\+Model}} Constructor $\ast$ Passes strings to \mbox{\hyperlink{classTreeModel}{Tree\+Model}} $\ast$ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTreeViewDragDropModel_ad516c8dd2e2b5144ed94a3d055529708}\label{classTreeViewDragDropModel_ad516c8dd2e2b5144ed94a3d055529708}} 
+\index{TreeViewDragDropModel@{TreeViewDragDropModel}!dropMimeData@{dropMimeData}}
+\index{dropMimeData@{dropMimeData}!TreeViewDragDropModel@{TreeViewDragDropModel}}
+\doxysubsubsection{\texorpdfstring{dropMimeData()}{dropMimeData()}}
+{\footnotesize\ttfamily bool Tree\+View\+Drag\+Drop\+Model\+::drop\+Mime\+Data (\begin{DoxyParamCaption}\item[{const Q\+Mime\+Data $\ast$}]{data,  }\item[{Qt\+::\+Drop\+Action}]{action,  }\item[{int}]{row,  }\item[{int}]{column,  }\item[{const Q\+Model\+Index \&}]{parent }\end{DoxyParamCaption})}
+
+drop\+Mime\+Data $\ast$ \mbox{\Hypertarget{classTreeViewDragDropModel_a8efb7307d04acc14c37608e7eed736d7}\label{classTreeViewDragDropModel_a8efb7307d04acc14c37608e7eed736d7}} 
+\index{TreeViewDragDropModel@{TreeViewDragDropModel}!flags@{flags}}
+\index{flags@{flags}!TreeViewDragDropModel@{TreeViewDragDropModel}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags Tree\+View\+Drag\+Drop\+Model\+::flags (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const}
+
+flags $\ast$ \mbox{\Hypertarget{classTreeViewDragDropModel_a085c912256d75cc15bd0dfc7a57f5876}\label{classTreeViewDragDropModel_a085c912256d75cc15bd0dfc7a57f5876}} 
+\index{TreeViewDragDropModel@{TreeViewDragDropModel}!getErrorMessage@{getErrorMessage}}
+\index{getErrorMessage@{getErrorMessage}!TreeViewDragDropModel@{TreeViewDragDropModel}}
+\doxysubsubsection{\texorpdfstring{getErrorMessage()}{getErrorMessage()}}
+{\footnotesize\ttfamily Q\+String Tree\+View\+Drag\+Drop\+Model\+::get\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get\+Error\+Message $\ast$ \mbox{\Hypertarget{classTreeViewDragDropModel_af04a25a458886de41cb6a3d653c7ac47}\label{classTreeViewDragDropModel_af04a25a458886de41cb6a3d653c7ac47}} 
+\index{TreeViewDragDropModel@{TreeViewDragDropModel}!mimeData@{mimeData}}
+\index{mimeData@{mimeData}!TreeViewDragDropModel@{TreeViewDragDropModel}}
+\doxysubsubsection{\texorpdfstring{mimeData()}{mimeData()}}
+{\footnotesize\ttfamily Q\+Mime\+Data $\ast$ Tree\+View\+Drag\+Drop\+Model\+::mime\+Data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index\+List \&}]{indexes }\end{DoxyParamCaption}) const}
+
+mime\+Data $\ast$ \mbox{\Hypertarget{classTreeViewDragDropModel_aa18903e2f93c67cb6aeea06b10c8a0a5}\label{classTreeViewDragDropModel_aa18903e2f93c67cb6aeea06b10c8a0a5}} 
+\index{TreeViewDragDropModel@{TreeViewDragDropModel}!mimeTypes@{mimeTypes}}
+\index{mimeTypes@{mimeTypes}!TreeViewDragDropModel@{TreeViewDragDropModel}}
+\doxysubsubsection{\texorpdfstring{mimeTypes()}{mimeTypes()}}
+{\footnotesize\ttfamily Q\+String\+List Tree\+View\+Drag\+Drop\+Model\+::mime\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+mime\+Types $\ast$ \mbox{\Hypertarget{classTreeViewDragDropModel_ad0a00a05d26c037fbaeaad8176e780d8}\label{classTreeViewDragDropModel_ad0a00a05d26c037fbaeaad8176e780d8}} 
+\index{TreeViewDragDropModel@{TreeViewDragDropModel}!supportedDropActions@{supportedDropActions}}
+\index{supportedDropActions@{supportedDropActions}!TreeViewDragDropModel@{TreeViewDragDropModel}}
+\doxysubsubsection{\texorpdfstring{supportedDropActions()}{supportedDropActions()}}
+{\footnotesize\ttfamily Qt\+::\+Drop\+Actions Tree\+View\+Drag\+Drop\+Model\+::supported\+Drop\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+supported\+Drop\+Actions Move\+Action only $\ast$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Tree\+View\+Drag\+Drop\+Model.\+h\item 
+src/Tree\+View\+Drag\+Drop\+Model.\+cpp\end{DoxyCompactItemize}

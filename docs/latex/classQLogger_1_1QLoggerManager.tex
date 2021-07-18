@@ -1,0 +1,164 @@
+\hypertarget{classQLogger_1_1QLoggerManager}{}\doxysection{Q\+Logger\+::Q\+Logger\+Manager Class Reference}
+\label{classQLogger_1_1QLoggerManager}\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+
+
+The \mbox{\hyperlink{classQLogger_1_1QLoggerManager}{Q\+Logger\+Manager}} class manages the different destination files that we would like to have.  
+
+
+
+
+{\ttfamily \#include $<$Q\+Logger\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classQLogger_1_1QLoggerManager_a7aaf7f359b73e95c54f70b56f3aaa867}{add\+Destination}} (const Q\+String \&file\+Dest, const Q\+String \&module, \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em This method creates a Q\+Looger\+Writer that stores the name of the file, and the log level assigned to it. Here is added to the map the different modules assigned to each log file. The method returns {\itshape false} if a module is configured to be stored in more than one file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQLogger_1_1QLoggerManager_a9e8b780bdcd3a07c4f05011d6c3f865b}{add\+Destination}} (const Q\+String \&file\+Dest, const Q\+String\+List \&modules, \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em This method creates a Q\+Looger\+Writer that stores the name of the file and the log level assigned to it. Here its added to map the different modules assigned to each log file. The method returns {\itshape false} if a module is configured to be stored in more than one file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerManager_acf5ca8ae7f8449816560d73c4b87520c}{enqueue\+Message}} (const Q\+String \&module, \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level, const Q\+String \&message, Q\+String file, int line, const Q\+String \&the\+Function)
+\begin{DoxyCompactList}\small\item\em enqueue\+Message Enqueues a message in the corresponding Q\+Logger\+Writter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerManager_aee16e573ce8be0603b3ad083985d33a7}{pause}} ()
+\begin{DoxyCompactList}\small\item\em pause Pauses all Q\+Logger\+Writers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerManager_ab0b734fc7a8617031b013681693ea829}{resume}} ()
+\begin{DoxyCompactList}\small\item\em resume Resumes all Q\+Logger\+Writers that where paused. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQLogger_1_1QLoggerManager_a6ccab1093b3a052604808895210a403d}{overwrite\+Log\+Level}} (\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em overwrite\+Log\+Level Overwrites the log level in all the destinations \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classQLogger_1_1QLoggerManager}{Q\+Logger\+Manager}} $\ast$ \mbox{\hyperlink{classQLogger_1_1QLoggerManager_a5d6305b64fa8cee64386576b0be74030}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets an instance to the \mbox{\hyperlink{classQLogger_1_1QLoggerManager}{Q\+Logger\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classQLogger_1_1QLoggerManager}{Q\+Logger\+Manager}} class manages the different destination files that we would like to have. 
+
+Logger Manager. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerManager_a7aaf7f359b73e95c54f70b56f3aaa867}\label{classQLogger_1_1QLoggerManager_a7aaf7f359b73e95c54f70b56f3aaa867}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!addDestination@{addDestination}}
+\index{addDestination@{addDestination}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{addDestination()}{addDestination()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Q\+Logger\+::\+Q\+Logger\+Manager\+::add\+Destination (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Dest,  }\item[{const Q\+String \&}]{module,  }\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level }\end{DoxyParamCaption})}
+
+
+
+This method creates a Q\+Looger\+Writer that stores the name of the file, and the log level assigned to it. Here is added to the map the different modules assigned to each log file. The method returns {\itshape false} if a module is configured to be stored in more than one file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Dest} & The file name and path to print logs. \\
+\hline
+{\em module} & The module that will be stored in the file. \\
+\hline
+{\em level} & The maximum level allowed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if any error have been done.
+\end{DoxyReturn}
+add\+Destination $\ast$ F\+I\+X\+ME Translate \mbox{\Hypertarget{classQLogger_1_1QLoggerManager_a9e8b780bdcd3a07c4f05011d6c3f865b}\label{classQLogger_1_1QLoggerManager_a9e8b780bdcd3a07c4f05011d6c3f865b}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!addDestination@{addDestination}}
+\index{addDestination@{addDestination}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{addDestination()}{addDestination()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Q\+Logger\+::\+Q\+Logger\+Manager\+::add\+Destination (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Dest,  }\item[{const Q\+String\+List \&}]{modules,  }\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level }\end{DoxyParamCaption})}
+
+
+
+This method creates a Q\+Looger\+Writer that stores the name of the file and the log level assigned to it. Here its added to map the different modules assigned to each log file. The method returns {\itshape false} if a module is configured to be stored in more than one file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Dest} & The file name and path to print logs. \\
+\hline
+{\em modules} & The modules that will be stored in the file. \\
+\hline
+{\em level} & The maximum level allowed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if any error have been done.
+\end{DoxyReturn}
+add\+Destination $\ast$ \mbox{\Hypertarget{classQLogger_1_1QLoggerManager_acf5ca8ae7f8449816560d73c4b87520c}\label{classQLogger_1_1QLoggerManager_acf5ca8ae7f8449816560d73c4b87520c}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!enqueueMessage@{enqueueMessage}}
+\index{enqueueMessage@{enqueueMessage}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{enqueueMessage()}{enqueueMessage()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Manager\+::enqueue\+Message (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{module,  }\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level,  }\item[{const Q\+String \&}]{message,  }\item[{Q\+String}]{file,  }\item[{int}]{line,  }\item[{const Q\+String \&}]{the\+Function }\end{DoxyParamCaption})}
+
+
+
+enqueue\+Message Enqueues a message in the corresponding Q\+Logger\+Writter. 
+
+enqueue\+Message $\ast$
+
+
+\begin{DoxyParams}{Parameters}
+{\em module} & The module that writes the message. \\
+\hline
+{\em level} & The level of the message. \\
+\hline
+{\em message} & The message to log. \\
+\hline
+{\em file} & The file that logs. \\
+\hline
+{\em line} & The line in the file where the log comes from. \\
+\hline
+{\em the\+Function} & The Function Name where the call in the file where the log comes from. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classQLogger_1_1QLoggerManager_a5d6305b64fa8cee64386576b0be74030}\label{classQLogger_1_1QLoggerManager_a5d6305b64fa8cee64386576b0be74030}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQLogger_1_1QLoggerManager}{Q\+Logger\+Manager}} $\ast$ Q\+Logger\+::\+Q\+Logger\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets an instance to the \mbox{\hyperlink{classQLogger_1_1QLoggerManager}{Q\+Logger\+Manager}}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the instance.
+\end{DoxyReturn}
+get\+Instance $\ast$ \mbox{\Hypertarget{classQLogger_1_1QLoggerManager_a6ccab1093b3a052604808895210a403d}\label{classQLogger_1_1QLoggerManager_a6ccab1093b3a052604808895210a403d}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!overwriteLogLevel@{overwriteLogLevel}}
+\index{overwriteLogLevel@{overwriteLogLevel}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{overwriteLogLevel()}{overwriteLogLevel()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Manager\+::overwrite\+Log\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}]{level }\end{DoxyParamCaption})}
+
+
+
+overwrite\+Log\+Level Overwrites the log level in all the destinations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The new log level\\
+\hline
+\end{DoxyParams}
+overwrite\+Log\+Level $\ast$ \mbox{\Hypertarget{classQLogger_1_1QLoggerManager_aee16e573ce8be0603b3ad083985d33a7}\label{classQLogger_1_1QLoggerManager_aee16e573ce8be0603b3ad083985d33a7}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!pause@{pause}}
+\index{pause@{pause}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Manager\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+pause Pauses all Q\+Logger\+Writers. 
+
+pause $\ast$ \mbox{\Hypertarget{classQLogger_1_1QLoggerManager_ab0b734fc7a8617031b013681693ea829}\label{classQLogger_1_1QLoggerManager_ab0b734fc7a8617031b013681693ea829}} 
+\index{QLogger::QLoggerManager@{QLogger::QLoggerManager}!resume@{resume}}
+\index{resume@{resume}!QLogger::QLoggerManager@{QLogger::QLoggerManager}}
+\doxysubsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily void Q\+Logger\+::\+Q\+Logger\+Manager\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+resume Resumes all Q\+Logger\+Writers that where paused. 
+
+resume $\ast$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Q\+Logger/Q\+Logger\+Manager.\+h\item 
+src/\+Q\+Logger/Q\+Logger\+Manager.\+cpp\end{DoxyCompactItemize}

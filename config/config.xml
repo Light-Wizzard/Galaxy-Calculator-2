@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Galaxy Calculator 2</Name>
+    <Version>1.0.0</Version>
+    <Title>Galaxy Calculator 2 by Light Wizzard</Title>
+    <Publisher>Light-Wizzard</Publisher>
+    <!-- Directory name is used in component.xml -->
+    <StartMenuDir>Galaxy-Calculator-2</StartMenuDir>
+    <TargetDir>@HomeDir@/Galaxy-Calculator-2</TargetDir>
+</Installer>

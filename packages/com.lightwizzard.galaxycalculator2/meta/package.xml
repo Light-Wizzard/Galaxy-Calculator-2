@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Galaxy Calculator 2</DisplayName>
+    <Description>Galaxy Calculator 2 by Light Wizzard</Description>
+    <Version>1.0.0</Version>
+    <ReleaseDate>2021-07-11</ReleaseDate>
+    <Default>true</Default>
+    <Script>installscript.qs</Script>
+</Package>

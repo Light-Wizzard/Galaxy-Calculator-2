@@ -1,0 +1,123 @@
+Small and portable A\+ES encryption class for Qt. Supports all key sizes -\/ 128/192/256 bits -\/ E\+CB, C\+BC, C\+FB and O\+FB modes
+
+\href{https://github.com/bricke/Qt-AES}{\texttt{ https\+://github.\+com/bricke/\+Qt-\/\+A\+ES}}\hypertarget{md_src_QtAES_Readme_autotoc_md32}{}\doxysection{Usage}\label{md_src_QtAES_Readme_autotoc_md32}
+\hypertarget{md_src_QtAES_Readme_autotoc_md33}{}\doxysubsection{Available Methods}\label{md_src_QtAES_Readme_autotoc_md33}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{// Encode of rawText with key}
+\DoxyCodeLine{// iv is used in CBC mode}
+\DoxyCodeLine{// return the encrypted byte array}
+\DoxyCodeLine{QByteArray encode(const QByteArray rawText, const QByteArray key, const QByteArray iv = NULL);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Decode of rawText with key}
+\DoxyCodeLine{// iv is used in CBC mode}
+\DoxyCodeLine{// return the decrypted byte array}
+\DoxyCodeLine{QByteArray decode(const QByteArray rawText, const QByteArray key, const QByteArray iv = NULL);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Key expansion in Rijndael schedule}
+\DoxyCodeLine{// return the new expanded key as byte array}
+\DoxyCodeLine{QByteArray expandKey(const QByteArray key);}
+\end{DoxyCode}
+
+
+The same methods are available as static calls 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QAESEncryption::Crypt => encode(...)}
+\DoxyCodeLine{QAESEncryption::Decrypt => decode(...)}
+\DoxyCodeLine{QAESEncryption::ExpandKey => expandKey(...)}
+\end{DoxyCode}
+\hypertarget{md_src_QtAES_Readme_autotoc_md34}{}\doxysubsubsection{A\+E\+S Levels}\label{md_src_QtAES_Readme_autotoc_md34}
+The class supports all A\+ES key lenghts
+
+
+\begin{DoxyItemize}
+\item A\+E\+S\+\_\+128
+\item A\+E\+S\+\_\+192
+\item A\+E\+S\+\_\+256
+\end{DoxyItemize}\hypertarget{md_src_QtAES_Readme_autotoc_md35}{}\doxysubsubsection{Modes}\label{md_src_QtAES_Readme_autotoc_md35}
+The class supports the following operating modes
+
+
+\begin{DoxyItemize}
+\item E\+CB
+\item C\+BC
+\item C\+FB
+\item O\+FB
+\end{DoxyItemize}\hypertarget{md_src_QtAES_Readme_autotoc_md36}{}\doxysubsubsection{Padding}\label{md_src_QtAES_Readme_autotoc_md36}
+By default the padding method is {\ttfamily I\+SO}, however, the class supports\+:
+
+
+\begin{DoxyItemize}
+\item Z\+E\+RO
+\item P\+K\+C\+S7
+\item I\+SO
+\end{DoxyItemize}\hypertarget{md_src_QtAES_Readme_autotoc_md37}{}\doxysubsection{Example}\label{md_src_QtAES_Readme_autotoc_md37}
+Sample code using a 128bit key in E\+CB mode 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include "qaesencryption.h"}
+\DoxyCodeLine{}
+\DoxyCodeLine{QAESEncryption encryption(QAESEncryption::AES\_128, QAESEncryption::ECB);}
+\DoxyCodeLine{QByteArray encodedText = encryption.encode(plainText, key);}
+\DoxyCodeLine{}
+\DoxyCodeLine{QByteArray decodedText = encryption.decode(encodedText, key);}
+\end{DoxyCode}
+
+
+Example for 256bit C\+BC using Q\+String 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include <QCryptographicHash>}
+\DoxyCodeLine{\#include "qaesencryption.h"}
+\DoxyCodeLine{}
+\DoxyCodeLine{QAESEncryption encryption(QAESEncryption::AES\_256, QAESEncryption::CBC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{QString inputStr("The Advanced Encryption Standard (AES), also known by its original name Rijndael "}
+\DoxyCodeLine{                 "is a specification for the encryption of electronic data established by the U.S. "}
+\DoxyCodeLine{                "National Institute of Standards and Technology (NIST) in 2001");}
+\DoxyCodeLine{QString key("your-\/string-\/key");}
+\DoxyCodeLine{QString iv("your-\/IV-\/vector");}
+\DoxyCodeLine{}
+\DoxyCodeLine{QByteArray hashKey = QCryptographicHash::hash(key.toLocal8Bit(), QCryptographicHash::Sha256);}
+\DoxyCodeLine{QByteArray hashIV = QCryptographicHash::hash(iv.toLocal8Bit(), QCryptographicHash::Md5);}
+\DoxyCodeLine{}
+\DoxyCodeLine{QByteArray encodeText = encryption.encode(inputStr.toLocal8Bit(), hashKey, hashIV);}
+\DoxyCodeLine{QByteArray decodeText = encryption.decode(encodeText, hashKey, hashIV);}
+\DoxyCodeLine{}
+\DoxyCodeLine{QString decodedString = QString(encryption.removePadding(decodeText));}
+\DoxyCodeLine{}
+\DoxyCodeLine{//decodedString == inputStr !!}
+\end{DoxyCode}
+\hypertarget{md_src_QtAES_Readme_autotoc_md38}{}\doxysubsection{Example via static invocation}\label{md_src_QtAES_Readme_autotoc_md38}
+Static invocation without creating instances, 256 bit key, E\+CB mode, starting from {\itshape Q\+String} text/key 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include <QCryptographicHash>}
+\DoxyCodeLine{\#include "qaesencryption.h"}
+\DoxyCodeLine{}
+\DoxyCodeLine{QString inputStr("The Advanced Encryption Standard (AES), also known by its original name Rijndael "}
+\DoxyCodeLine{                 "is a specification for the encryption of electronic data established by the U.S. "}
+\DoxyCodeLine{                "National Institute of Standards and Technology (NIST) in 2001");}
+\DoxyCodeLine{QString key("your-\/string-\/key");}
+\DoxyCodeLine{QString iv("your-\/IV-\/vector");}
+\DoxyCodeLine{}
+\DoxyCodeLine{QByteArray hashKey = QCryptographicHash::hash(key.toLocal8Bit(), QCryptographicHash::Sha256);}
+\DoxyCodeLine{QByteArray hashIV = QCryptographicHash::hash(iv.toLocal8Bit(), QCryptographicHash::Md5);}
+\DoxyCodeLine{}
+\DoxyCodeLine{//Static invocation}
+\DoxyCodeLine{QByteArray encrypted = QAESEncryption::Crypt(QAESEncryption::AES\_256, QAESEncryption::CBC, }
+\DoxyCodeLine{                        inputStr.toLocal8Bit(), hashKey, hashIV);}
+\DoxyCodeLine{//...}
+\DoxyCodeLine{// Removal of Padding via Static function}
+\DoxyCodeLine{QString decodedString = QString(QAESEncryption::RemovePadding(decodeText));}
+\end{DoxyCode}
+\hypertarget{md_src_QtAES_Readme_autotoc_md39}{}\doxysection{Unit Testing}\label{md_src_QtAES_Readme_autotoc_md39}
+The unit testing vectors used are included in \href{http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38a.pdf}{\texttt{ N\+I\+S\+T-\/\+Recommendation for Block Cipher Modes of Operation}}
+
+Please note that this code is not audited or A\+E\+S-\/certified by any competent authority, use it at your own risk.\hypertarget{md_src_QtAES_Readme_autotoc_md40}{}\doxysection{Dependencies}\label{md_src_QtAES_Readme_autotoc_md40}
+
+\begin{DoxyItemize}
+\item qtcore
+\end{DoxyItemize}
+
+No Open\+S\+SL required.\hypertarget{md_src_QtAES_Readme_autotoc_md41}{}\doxysection{Contact}\label{md_src_QtAES_Readme_autotoc_md41}
+Question or suggestions are welcome! Please use the Git\+Hub issue tracking to report suggestions or issues.\hypertarget{md_src_QtAES_Readme_autotoc_md42}{}\doxysection{License}\label{md_src_QtAES_Readme_autotoc_md42}
+This software is provided under the \href{http://unlicense.org/}{\texttt{ U\+N\+L\+I\+C\+E\+N\+SE}}\hypertarget{md_src_QtAES_Readme_autotoc_md43}{}\doxysection{Known Issues}\label{md_src_QtAES_Readme_autotoc_md43}
+Please take a look at the list of currently open issues 

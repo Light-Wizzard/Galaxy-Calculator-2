@@ -1,0 +1,134 @@
+\hypertarget{classQAESEncryption}{}\doxysection{Q\+A\+E\+S\+Encryption Class Reference}
+\label{classQAESEncryption}\index{QAESEncryption@{QAESEncryption}}
+
+
+Q-\/\+A\+ES Encryption.  
+
+
+
+
+{\ttfamily \#include $<$Q\+A\+E\+S\+Encryption.\+h$>$}
+
+Inheritance diagram for Q\+A\+E\+S\+Encryption\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQAESEncryption}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}\label{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}} 
+enum \mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Aes}} \{ {\bfseries A\+E\+S\+\_\+128}, 
+{\bfseries A\+E\+S\+\_\+192}, 
+{\bfseries A\+E\+S\+\_\+256}
+ \}
+\begin{DoxyCompactList}\small\item\em The Aes enum. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}\label{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}} 
+enum \mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Mode}} \{ {\bfseries E\+CB}, 
+{\bfseries C\+BC}, 
+{\bfseries C\+FB}, 
+{\bfseries O\+FB}
+ \}
+\begin{DoxyCompactList}\small\item\em The Mode enum. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}\label{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}} 
+enum \mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Padding}} \{ {\bfseries Z\+E\+RO}, 
+{\bfseries P\+K\+C\+S7}, 
+{\bfseries I\+SO}
+ \}
+\begin{DoxyCompactList}\small\item\em The Padding enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQAESEncryption_aeac0ee8532e69e5d30b023fe38c30b3b}{Q\+A\+E\+S\+Encryption}} (\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}} level, \mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}} mode, \mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}} padding=Q\+A\+E\+S\+Encryption\+::\+I\+SO)
+\item 
+Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_a0c56eddd6f03e93b1f7faad464044d65}{encode}} (const Q\+Byte\+Array \&raw\+Text, const Q\+Byte\+Array \&key, const Q\+Byte\+Array \&iv=N\+U\+LL)
+\item 
+Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_a58f972f2b66c2454edd5112495463bba}{decode}} (const Q\+Byte\+Array \&raw\+Text, const Q\+Byte\+Array \&key, const Q\+Byte\+Array \&iv=N\+U\+LL)
+\item 
+Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_a4dc7e77485e5a3e63eebc99b9386c17b}{remove\+Padding}} (const Q\+Byte\+Array \&raw\+Text)
+\item 
+Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_a5bfbb972f84a8376fceed648553c0912}{expand\+Key}} (const Q\+Byte\+Array \&key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_a43819eeb6a7cb29fbd3cb6ad640dcbdf}{Crypt}} (\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}} level, \mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}} mode, const Q\+Byte\+Array \&raw\+Text, const Q\+Byte\+Array \&key, const Q\+Byte\+Array \&iv=N\+U\+LL, \mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}} padding=Q\+A\+E\+S\+Encryption\+::\+I\+SO)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_af9baa154a06683049d941bd06ac698fd}{Decrypt}} (\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}} level, \mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}} mode, const Q\+Byte\+Array \&raw\+Text, const Q\+Byte\+Array \&key, const Q\+Byte\+Array \&iv=N\+U\+LL, \mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}} padding=Q\+A\+E\+S\+Encryption\+::\+I\+SO)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_a2112456e057e6dd886694348fbf202cd}{Expand\+Key}} (\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}} level, \mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}} mode, const Q\+Byte\+Array \&key)
+\item 
+static Q\+Byte\+Array \mbox{\hyperlink{classQAESEncryption_abb2887bf5623a74053dd19627f3d3055}{Remove\+Padding}} (const Q\+Byte\+Array \&raw\+Text, \mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}} padding)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Q-\/\+A\+ES Encryption. 
+
+We\+Book\+: Pronounced Web Book, is a Book Content Management System (B\+C\+MS) $\ast$ class \mbox{\hyperlink{classQAESEncryption}{Q\+A\+E\+S\+Encryption}} $\ast$ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQAESEncryption_aeac0ee8532e69e5d30b023fe38c30b3b}\label{classQAESEncryption_aeac0ee8532e69e5d30b023fe38c30b3b}} 
+\index{QAESEncryption@{QAESEncryption}!QAESEncryption@{QAESEncryption}}
+\index{QAESEncryption@{QAESEncryption}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{QAESEncryption()}{QAESEncryption()}}
+{\footnotesize\ttfamily Q\+A\+E\+S\+Encryption\+::\+Q\+A\+E\+S\+Encryption (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}}}]{level,  }\item[{\mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}}}]{mode,  }\item[{\mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}}}]{padding = {\ttfamily QAESEncryption\+:\+:ISO} }\end{DoxyParamCaption})}
+
+End Inline functions $\ast$ \mbox{\hyperlink{classQAESEncryption}{Q\+A\+E\+S\+Encryption}} $\ast$ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQAESEncryption_a43819eeb6a7cb29fbd3cb6ad640dcbdf}\label{classQAESEncryption_a43819eeb6a7cb29fbd3cb6ad640dcbdf}} 
+\index{QAESEncryption@{QAESEncryption}!Crypt@{Crypt}}
+\index{Crypt@{Crypt}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{Crypt()}{Crypt()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::\+Crypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}}}]{level,  }\item[{\mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}}}]{mode,  }\item[{const Q\+Byte\+Array \&}]{raw\+Text,  }\item[{const Q\+Byte\+Array \&}]{key,  }\item[{const Q\+Byte\+Array \&}]{iv = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}}}]{padding = {\ttfamily QAESEncryption\+:\+:ISO} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+We\+Book\+: Pronounced Web Book, is a Book Content Management System (B\+C\+MS) $\ast$ Static Functions $\ast$ \mbox{\hyperlink{classQAESEncryption}{Q\+A\+E\+S\+Encryption}} $\ast$ \mbox{\Hypertarget{classQAESEncryption_a58f972f2b66c2454edd5112495463bba}\label{classQAESEncryption_a58f972f2b66c2454edd5112495463bba}} 
+\index{QAESEncryption@{QAESEncryption}!decode@{decode}}
+\index{decode@{decode}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::decode (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{raw\+Text,  }\item[{const Q\+Byte\+Array \&}]{key,  }\item[{const Q\+Byte\+Array \&}]{iv = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classQAESEncryption_a58f972f2b66c2454edd5112495463bba}{decode(const Q\+Byte\+Array \&raw\+Text, const Q\+Byte\+Array \&key, const Q\+Byte\+Array \&iv)}} $\ast$ \mbox{\Hypertarget{classQAESEncryption_af9baa154a06683049d941bd06ac698fd}\label{classQAESEncryption_af9baa154a06683049d941bd06ac698fd}} 
+\index{QAESEncryption@{QAESEncryption}!Decrypt@{Decrypt}}
+\index{Decrypt@{Decrypt}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{Decrypt()}{Decrypt()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::\+Decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}}}]{level,  }\item[{\mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}}}]{mode,  }\item[{const Q\+Byte\+Array \&}]{raw\+Text,  }\item[{const Q\+Byte\+Array \&}]{key,  }\item[{const Q\+Byte\+Array \&}]{iv = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}}}]{padding = {\ttfamily QAESEncryption\+:\+:ISO} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Decrypt $\ast$ \mbox{\Hypertarget{classQAESEncryption_a0c56eddd6f03e93b1f7faad464044d65}\label{classQAESEncryption_a0c56eddd6f03e93b1f7faad464044d65}} 
+\index{QAESEncryption@{QAESEncryption}!encode@{encode}}
+\index{encode@{encode}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::encode (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{raw\+Text,  }\item[{const Q\+Byte\+Array \&}]{key,  }\item[{const Q\+Byte\+Array \&}]{iv = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classQAESEncryption_a0c56eddd6f03e93b1f7faad464044d65}{encode(const Q\+Byte\+Array \&raw\+Text, const Q\+Byte\+Array \&key, const Q\+Byte\+Array \&iv)}} $\ast$ \mbox{\Hypertarget{classQAESEncryption_a5bfbb972f84a8376fceed648553c0912}\label{classQAESEncryption_a5bfbb972f84a8376fceed648553c0912}} 
+\index{QAESEncryption@{QAESEncryption}!expandKey@{expandKey}}
+\index{expandKey@{expandKey}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{expandKey()}{expandKey()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::expand\+Key (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{key }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classQAESEncryption_a5bfbb972f84a8376fceed648553c0912}{expand\+Key(const Q\+Byte\+Array \&key)}} $\ast$ \mbox{\Hypertarget{classQAESEncryption_a2112456e057e6dd886694348fbf202cd}\label{classQAESEncryption_a2112456e057e6dd886694348fbf202cd}} 
+\index{QAESEncryption@{QAESEncryption}!ExpandKey@{ExpandKey}}
+\index{ExpandKey@{ExpandKey}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{ExpandKey()}{ExpandKey()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::\+Expand\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQAESEncryption_abe48208f4f6c7d68e6a10b49b9d0b7bd}{Q\+A\+E\+S\+Encryption\+::\+Aes}}}]{level,  }\item[{\mbox{\hyperlink{classQAESEncryption_ad3e031c49a3d56566379d75b40b7b255}{Q\+A\+E\+S\+Encryption\+::\+Mode}}}]{mode,  }\item[{const Q\+Byte\+Array \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\hyperlink{classQAESEncryption_a2112456e057e6dd886694348fbf202cd}{Expand\+Key(\+Q\+A\+E\+S\+Encryption\+::\+Aes level, Q\+A\+E\+S\+Encryption\+::\+Mode mode, const Q\+Byte\+Array \&key)}} $\ast$ \mbox{\Hypertarget{classQAESEncryption_a4dc7e77485e5a3e63eebc99b9386c17b}\label{classQAESEncryption_a4dc7e77485e5a3e63eebc99b9386c17b}} 
+\index{QAESEncryption@{QAESEncryption}!removePadding@{removePadding}}
+\index{removePadding@{removePadding}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{removePadding()}{removePadding()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::remove\+Padding (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{raw\+Text }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classQAESEncryption_a4dc7e77485e5a3e63eebc99b9386c17b}{remove\+Padding(const Q\+Byte\+Array \&raw\+Text)}} $\ast$ \mbox{\Hypertarget{classQAESEncryption_abb2887bf5623a74053dd19627f3d3055}\label{classQAESEncryption_abb2887bf5623a74053dd19627f3d3055}} 
+\index{QAESEncryption@{QAESEncryption}!RemovePadding@{RemovePadding}}
+\index{RemovePadding@{RemovePadding}!QAESEncryption@{QAESEncryption}}
+\doxysubsubsection{\texorpdfstring{RemovePadding()}{RemovePadding()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Q\+A\+E\+S\+Encryption\+::\+Remove\+Padding (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{raw\+Text,  }\item[{\mbox{\hyperlink{classQAESEncryption_ab0a65cdea4eac21ef32530010d1b0247}{Q\+A\+E\+S\+Encryption\+::\+Padding}}}]{padding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\hyperlink{classQAESEncryption_abb2887bf5623a74053dd19627f3d3055}{Remove\+Padding(const Q\+Byte\+Array \&raw\+Text, Q\+A\+E\+S\+Encryption\+::\+Padding padding)}} $\ast$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Qt\+A\+E\+S/Q\+A\+E\+S\+Encryption.\+h\item 
+src/\+Qt\+A\+E\+S/Q\+A\+E\+S\+Encryption.\+cpp\end{DoxyCompactItemize}

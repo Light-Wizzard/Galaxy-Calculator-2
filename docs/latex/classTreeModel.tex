@@ -1,0 +1,210 @@
+\hypertarget{classTreeModel}{}\doxysection{Tree\+Model Class Reference}
+\label{classTreeModel}\index{TreeModel@{TreeModel}}
+
+
+{\ttfamily \#include $<$Tree\+Model.\+h$>$}
+
+Inheritance diagram for Tree\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTreeModel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTreeModel_a954051a79b9b2db45ed3aab576f6eb80}\label{classTreeModel_a954051a79b9b2db45ed3aab576f6eb80}} 
+\mbox{\hyperlink{classTreeModel_a954051a79b9b2db45ed3aab576f6eb80}{Tree\+Model}} (const Q\+String \&strings, Q\+Object $\ast$\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=0)
+\begin{DoxyCompactList}\small\item\em Show data using a Tree Model. {\ttfamily strings} is database enteries. {\ttfamily parent} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTreeModel_af0998d55a63c2b18be1f03e4e8567926}{$\sim$\+Tree\+Model}} ()
+\item 
+Qt\+::\+Item\+Flags \mbox{\hyperlink{classTreeModel_a2f793c5b11ec3c46571e4598ee2398e7}{flags}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}{index}}) const
+\item 
+Q\+Variant \mbox{\hyperlink{classTreeModel_a986b92267ac9cdc90519c10404192bbd}{data}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}{index}}, int role) const
+\item 
+Q\+Variant \mbox{\hyperlink{classTreeModel_a59b8e296fb38595cd5459aa75dd507ba}{header\+Data}} (int section, Qt\+::\+Orientation orientation, int role=Qt\+::\+Display\+Role) const
+\item 
+Q\+Model\+Index \mbox{\hyperlink{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}{index}} (int row, int column, const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=Q\+Model\+Index()) const
+\item 
+Q\+Model\+Index \mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}{index}}) const
+\item 
+int \mbox{\hyperlink{classTreeModel_aa741dd31a085f8a2495fc1d7feb50226}{row\+Count}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=Q\+Model\+Index()) const
+\item 
+int \mbox{\hyperlink{classTreeModel_a7c23a1d2d39fb76e3d28aa9a0a6f365a}{column\+Count}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=Q\+Model\+Index()) const
+\item 
+bool \mbox{\hyperlink{classTreeModel_a56f31919a9eb68ae229afea2257bfc35}{insert\+Rows}} (int position, int rows, const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=Q\+Model\+Index())
+\item 
+bool \mbox{\hyperlink{classTreeModel_a592fe71d4120128c096980be4094e87d}{remove\+Rows}} (int position, int rows, const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}=Q\+Model\+Index())
+\item 
+bool \mbox{\hyperlink{classTreeModel_acd3341eaa58b720ea4e6d6a415145dbd}{set\+Data}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}{index}}, const Q\+Variant \&value, int role=Qt\+::\+Edit\+Role)
+\item 
+Q\+String \mbox{\hyperlink{classTreeModel_a770ea398e33d065361102c7ef2b44d69}{get\+Data}} ()
+\item 
+void \mbox{\hyperlink{classTreeModel_a02ae4eac80bcca22ad0bf3392c2004b9}{for\+Each\+Save}} (const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}}, bool is\+Child)
+\item 
+Q\+String \mbox{\hyperlink{classTreeModel_aea569ddcee8ce8a3ad55b6899047512f}{get\+Space}} (int level)
+\item 
+int \mbox{\hyperlink{classTreeModel_a4f719928d55a04bfb56a131aa8ffd45c}{for\+Each\+Child\+Level}} (const Q\+String \&this\+Col\+Id, const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}})
+\item 
+Q\+Model\+Index \mbox{\hyperlink{classTreeModel_af7c88f45f0549188ea0fb2feacfdb250}{set\+Active}} (const Q\+String \&this\+Col\+Id, const Q\+Model\+Index \&\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTreeItem}{Tree\+Item}} $\ast$ \mbox{\hyperlink{classTreeModel_a55f7ef387aec827578b5a37381cc9aea}{root\+Tree\+Item}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily root\+Tree\+Item} \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classTreeModel_a772c97f3f9af3774028ed84b772798df}{tree\+List\+Items\+Returned}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily tree\+List\+Items\+Returned} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTreeModel_a29ef8c31bf8c8f0ce6e67122ed4d3373}{setup\+Model\+Data}} (const Q\+String\+List \&lines, \mbox{\hyperlink{classTreeItem}{Tree\+Item}} $\ast$\mbox{\hyperlink{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}{parent}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \mbox{\hyperlink{classTreeModel}{Tree\+Model}} $\ast$
+
+We\+Book\+: Pronounced Web-\/\+Book, is a Book Content Management System (B\+C\+MS) $\ast$ Drag \& Drop Model $\ast$ \mbox{\hyperlink{classTreeModel}{Tree\+Model}} Constructor $\ast$ The Q\+Model\+Index class is used to locate data in a data model. $\ast$ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTreeModel_af0998d55a63c2b18be1f03e4e8567926}\label{classTreeModel_af0998d55a63c2b18be1f03e4e8567926}} 
+\index{TreeModel@{TreeModel}!````~TreeModel@{$\sim$TreeModel}}
+\index{````~TreeModel@{$\sim$TreeModel}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$TreeModel()}{~TreeModel()}}
+{\footnotesize\ttfamily Tree\+Model\+::$\sim$\+Tree\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classTreeModel}{Tree\+Model}} Deconstructor $\ast$ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTreeModel_a7c23a1d2d39fb76e3d28aa9a0a6f365a}\label{classTreeModel_a7c23a1d2d39fb76e3d28aa9a0a6f365a}} 
+\index{TreeModel@{TreeModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{columnCount()}{columnCount()}}
+{\footnotesize\ttfamily int Tree\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+column\+Count(const Q\+Model\+Index \&parent) $\ast$ \mbox{\Hypertarget{classTreeModel_a986b92267ac9cdc90519c10404192bbd}\label{classTreeModel_a986b92267ac9cdc90519c10404192bbd}} 
+\index{TreeModel@{TreeModel}!data@{data}}
+\index{data@{data}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Tree\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const}
+
+data(const Q\+Model\+Index \&index, int role) $\ast$ \mbox{\Hypertarget{classTreeModel_a2f793c5b11ec3c46571e4598ee2398e7}\label{classTreeModel_a2f793c5b11ec3c46571e4598ee2398e7}} 
+\index{TreeModel@{TreeModel}!flags@{flags}}
+\index{flags@{flags}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags Tree\+Model\+::flags (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const}
+
+flags(const Q\+Model\+Index \&index) $\ast$ \mbox{\Hypertarget{classTreeModel_a4f719928d55a04bfb56a131aa8ffd45c}\label{classTreeModel_a4f719928d55a04bfb56a131aa8ffd45c}} 
+\index{TreeModel@{TreeModel}!forEachChildLevel@{forEachChildLevel}}
+\index{forEachChildLevel@{forEachChildLevel}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{forEachChildLevel()}{forEachChildLevel()}}
+{\footnotesize\ttfamily int Tree\+Model\+::for\+Each\+Child\+Level (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{this\+Col\+Id,  }\item[{const Q\+Model\+Index \&}]{parent }\end{DoxyParamCaption})}
+
+for\+Each\+Child\+Level $\ast$ for\+Each\+Child\+Level(\char`\"{}\+Column\+I\+D\char`\"{}, Q\+Model\+Index()); $\ast$ \mbox{\Hypertarget{classTreeModel_a02ae4eac80bcca22ad0bf3392c2004b9}\label{classTreeModel_a02ae4eac80bcca22ad0bf3392c2004b9}} 
+\index{TreeModel@{TreeModel}!forEachSave@{forEachSave}}
+\index{forEachSave@{forEachSave}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{forEachSave()}{forEachSave()}}
+{\footnotesize\ttfamily void Tree\+Model\+::for\+Each\+Save (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent,  }\item[{bool}]{is\+Child }\end{DoxyParamCaption})}
+
+for\+Each $\ast$
+\begin{DoxyEnumerate}
+\item Clear Q\+String\+List\+: tree\+List\+Items\+Returned.\+clear(); $\ast$
+\item Call on root\+: for\+Each(\+Q\+Model\+Index(), false); $\ast$
+\item for\+Each is initally set to false, and set to true in has\+Chilren iterator $\ast$
+\item Depending on is\+Child, format the values $\ast$ 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classTreeModel_a770ea398e33d065361102c7ef2b44d69}\label{classTreeModel_a770ea398e33d065361102c7ef2b44d69}} 
+\index{TreeModel@{TreeModel}!getData@{getData}}
+\index{getData@{getData}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily Q\+String Tree\+Model\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get\+Data returns tree\+List\+Items\+Returned $\ast$ \mbox{\Hypertarget{classTreeModel_aea569ddcee8ce8a3ad55b6899047512f}\label{classTreeModel_aea569ddcee8ce8a3ad55b6899047512f}} 
+\index{TreeModel@{TreeModel}!getSpace@{getSpace}}
+\index{getSpace@{getSpace}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{getSpace()}{getSpace()}}
+{\footnotesize\ttfamily Q\+String Tree\+Model\+::get\+Space (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classTreeModel_aea569ddcee8ce8a3ad55b6899047512f}{get\+Space(int level)}} $\ast$ \mbox{\Hypertarget{classTreeModel_a59b8e296fb38595cd5459aa75dd507ba}\label{classTreeModel_a59b8e296fb38595cd5459aa75dd507ba}} 
+\index{TreeModel@{TreeModel}!headerData@{headerData}}
+\index{headerData@{headerData}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{headerData()}{headerData()}}
+{\footnotesize\ttfamily Q\+Variant Tree\+Model\+::header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const}
+
+header\+Data(int section, Qt\+::\+Orientation orientation, int role) $\ast$ \mbox{\Hypertarget{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}\label{classTreeModel_a0e6e6bbdb55d08be64cab7bafba2ce21}} 
+\index{TreeModel@{TreeModel}!index@{index}}
+\index{index@{index}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily Q\+Model\+Index Tree\+Model\+::index (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+index(int row, int column, const Q\+Model\+Index \&parent) $\ast$ \mbox{\Hypertarget{classTreeModel_a56f31919a9eb68ae229afea2257bfc35}\label{classTreeModel_a56f31919a9eb68ae229afea2257bfc35}} 
+\index{TreeModel@{TreeModel}!insertRows@{insertRows}}
+\index{insertRows@{insertRows}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{insertRows()}{insertRows()}}
+{\footnotesize\ttfamily bool Tree\+Model\+::insert\+Rows (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{rows,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classTreeModel_a56f31919a9eb68ae229afea2257bfc35}{insert\+Rows(int position, int rows, const Q\+Model\+Index \&parent)}} $\ast$ \mbox{\Hypertarget{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}\label{classTreeModel_ad29cef85c6bb0db25fb3d5b844c22e94}} 
+\index{TreeModel@{TreeModel}!parent@{parent}}
+\index{parent@{parent}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily Q\+Model\+Index Tree\+Model\+::parent (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const}
+
+parent(const Q\+Model\+Index \&index) $\ast$ \mbox{\Hypertarget{classTreeModel_a592fe71d4120128c096980be4094e87d}\label{classTreeModel_a592fe71d4120128c096980be4094e87d}} 
+\index{TreeModel@{TreeModel}!removeRows@{removeRows}}
+\index{removeRows@{removeRows}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{removeRows()}{removeRows()}}
+{\footnotesize\ttfamily bool Tree\+Model\+::remove\+Rows (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{int}]{rows,  }\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classTreeModel_a592fe71d4120128c096980be4094e87d}{remove\+Rows(int position, int rows, const Q\+Model\+Index \&parent)}} $\ast$ \mbox{\Hypertarget{classTreeModel_aa741dd31a085f8a2495fc1d7feb50226}\label{classTreeModel_aa741dd31a085f8a2495fc1d7feb50226}} 
+\index{TreeModel@{TreeModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Tree\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+row\+Count(const Q\+Model\+Index \&parent) $\ast$ \mbox{\Hypertarget{classTreeModel_af7c88f45f0549188ea0fb2feacfdb250}\label{classTreeModel_af7c88f45f0549188ea0fb2feacfdb250}} 
+\index{TreeModel@{TreeModel}!setActive@{setActive}}
+\index{setActive@{setActive}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
+{\footnotesize\ttfamily Q\+Model\+Index Tree\+Model\+::set\+Active (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{this\+Col\+Id,  }\item[{const Q\+Model\+Index \&}]{parent }\end{DoxyParamCaption})}
+
+set\+Active $\ast$ set\+Active(\char`\"{}\+Column\+I\+D\char`\"{}, Q\+Model\+Index()); $\ast$ \mbox{\Hypertarget{classTreeModel_acd3341eaa58b720ea4e6d6a415145dbd}\label{classTreeModel_acd3341eaa58b720ea4e6d6a415145dbd}} 
+\index{TreeModel@{TreeModel}!setData@{setData}}
+\index{setData@{setData}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily bool Tree\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{const Q\+Variant \&}]{value,  }\item[{int}]{role = {\ttfamily Qt\+:\+:EditRole} }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classTreeModel_acd3341eaa58b720ea4e6d6a415145dbd}{set\+Data(const Q\+Model\+Index \&index, const Q\+Variant \&value, int role)}} $\ast$ \mbox{\Hypertarget{classTreeModel_a29ef8c31bf8c8f0ce6e67122ed4d3373}\label{classTreeModel_a29ef8c31bf8c8f0ce6e67122ed4d3373}} 
+\index{TreeModel@{TreeModel}!setupModelData@{setupModelData}}
+\index{setupModelData@{setupModelData}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{setupModelData()}{setupModelData()}}
+{\footnotesize\ttfamily void Tree\+Model\+::setup\+Model\+Data (\begin{DoxyParamCaption}\item[{const Q\+String\+List \&}]{lines,  }\item[{\mbox{\hyperlink{classTreeItem}{Tree\+Item}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\hyperlink{classTreeModel_a29ef8c31bf8c8f0ce6e67122ed4d3373}{setup\+Model\+Data(const Q\+String\+List \&lines, Tree\+Item $\ast$parent)}} $\ast$ lines is from book\+List\+Items in mainwindow constructor $\ast$ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTreeModel_a55f7ef387aec827578b5a37381cc9aea}\label{classTreeModel_a55f7ef387aec827578b5a37381cc9aea}} 
+\index{TreeModel@{TreeModel}!rootTreeItem@{rootTreeItem}}
+\index{rootTreeItem@{rootTreeItem}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{rootTreeItem}{rootTreeItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTreeItem}{Tree\+Item}}$\ast$ Tree\+Model\+::root\+Tree\+Item}
+
+
+
+{\ttfamily root\+Tree\+Item} 
+
+Root Tree Item. \mbox{\Hypertarget{classTreeModel_a772c97f3f9af3774028ed84b772798df}\label{classTreeModel_a772c97f3f9af3774028ed84b772798df}} 
+\index{TreeModel@{TreeModel}!treeListItemsReturned@{treeListItemsReturned}}
+\index{treeListItemsReturned@{treeListItemsReturned}!TreeModel@{TreeModel}}
+\doxysubsubsection{\texorpdfstring{treeListItemsReturned}{treeListItemsReturned}}
+{\footnotesize\ttfamily Q\+String Tree\+Model\+::tree\+List\+Items\+Returned}
+
+
+
+{\ttfamily tree\+List\+Items\+Returned} 
+
+Tree List Items Returned. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Tree\+Model.\+h\item 
+src/Tree\+Model.\+cpp\end{DoxyCompactItemize}

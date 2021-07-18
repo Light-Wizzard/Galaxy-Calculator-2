@@ -1,0 +1,115 @@
+\hypertarget{classQLoggerLevel}{}\doxysection{Q\+Logger\+Level Class Reference}
+\label{classQLoggerLevel}\index{QLoggerLevel@{QLoggerLevel}}
+
+
+\mbox{\hyperlink{namespaceQLogger}{Q\+Logger}} is a library to register and print logs into a file.  
+
+
+
+
+{\ttfamily \#include $<$Q\+Logger\+Level.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a5b2c7e29266d318177c4c68c49487be6}{Trace}} = 0, 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453aba507888361612c789d86a7e30d4c79c}{Debug}}, 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a9333e0446223e8f734c0144bde1027e9}{Info}}, 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453af3c9c7a0e6f4d043bc62a8f93c150501}{Event}}, 
+\newline
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453ac39f1e7a18877cfc5b028f01a59a83b2}{Warning}}, 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a9a2751a67db3eaea90f1df8efe990d01}{Error}}, 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a6c9c71a12efb97464c04c6079732da3c}{Critical}}, 
+\mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a23ea6024e8c3423c158997b2e0cb4a39}{Fatal}}
+ \}
+\begin{DoxyCompactList}\small\item\em The Log\+Level class enum Log\+Level defines the level of the log message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \mbox{\hyperlink{classQLoggerLevel_a999d2faba8b34bbc6e601a488de76432}{level\+To\+Text}} (const \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} \&value)
+\begin{DoxyCompactList}\small\item\em Level Number to Text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespaceQLogger}{Q\+Logger}} is a library to register and print logs into a file. 
+
+\begin{DoxySeeAlso}{See also}
+Linked\+In\+: www.\+linkedin.\+com/in/cescmm/ 
+
+Web\+: www.\+francescmm.\+com 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}} 
+\index{QLoggerLevel@{QLoggerLevel}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!QLoggerLevel@{QLoggerLevel}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}}
+
+
+
+The Log\+Level class enum Log\+Level defines the level of the log message. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{QLoggerLevel::LogLevel::Debug }
+\end{DoxyCode}
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Trace@{Trace}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Trace@{Trace}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a5b2c7e29266d318177c4c68c49487be6}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a5b2c7e29266d318177c4c68c49487be6}} 
+Trace&{\ttfamily Trace} Trace level is used for internal code tracing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Debug@{Debug}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Debug@{Debug}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453aba507888361612c789d86a7e30d4c79c}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453aba507888361612c789d86a7e30d4c79c}} 
+Debug&{\ttfamily Debug} Debug level is used for writing custom debug output. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Info@{Info}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Info@{Info}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a9333e0446223e8f734c0144bde1027e9}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a9333e0446223e8f734c0144bde1027e9}} 
+Info&{\ttfamily Info} Info level is used for informational messages. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Event@{Event}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Event@{Event}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453af3c9c7a0e6f4d043bc62a8f93c150501}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453af3c9c7a0e6f4d043bc62a8f93c150501}} 
+Event&{\ttfamily Event} Event level is used for logging events, like\+: login, http requests. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Warning@{Warning}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453ac39f1e7a18877cfc5b028f01a59a83b2}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453ac39f1e7a18877cfc5b028f01a59a83b2}} 
+Warning&{\ttfamily Warning} Warning level is used to report warnings and recoverable errors in your application. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Error@{Error}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a9a2751a67db3eaea90f1df8efe990d01}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a9a2751a67db3eaea90f1df8efe990d01}} 
+Error&{\ttfamily Error} Error level is used for writing critical error messages and reporting system errors. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Critical@{Critical}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Critical@{Critical}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a6c9c71a12efb97464c04c6079732da3c}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a6c9c71a12efb97464c04c6079732da3c}} 
+Critical&{\ttfamily Critical} Critical level is used for writing critical error messages and reporting system errors more sever than Error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fatal@{Fatal}!QLoggerLevel@{QLoggerLevel}}\index{QLoggerLevel@{QLoggerLevel}!Fatal@{Fatal}}}\mbox{\Hypertarget{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a23ea6024e8c3423c158997b2e0cb4a39}\label{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453a23ea6024e8c3423c158997b2e0cb4a39}} 
+Fatal&{\ttfamily Fatal} Fatal level is used for writing fatal error messages shortly before exiting. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQLoggerLevel_a999d2faba8b34bbc6e601a488de76432}\label{classQLoggerLevel_a999d2faba8b34bbc6e601a488de76432}} 
+\index{QLoggerLevel@{QLoggerLevel}!levelToText@{levelToText}}
+\index{levelToText@{levelToText}!QLoggerLevel@{QLoggerLevel}}
+\doxysubsubsection{\texorpdfstring{levelToText()}{levelToText()}}
+{\footnotesize\ttfamily static Q\+String Q\+Logger\+Level\+::level\+To\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Level Number to Text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & {\ttfamily \mbox{\hyperlink{classQLoggerLevel_ae012ab7232f030027cb92b24f3928453}{Q\+Logger\+Level\+::\+Log\+Level}}} is name of the enum. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Q\+Logger/Q\+Logger\+Level.\+h\end{DoxyCompactItemize}
