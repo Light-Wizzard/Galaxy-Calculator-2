@@ -49,7 +49,7 @@ build_script:
   - mkdir build
   - cd build
   #- ps: if ($isLinux)   { qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && make }
-  - ps: if ($isWindows) { qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make }
+  - qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
     
 after_build:
   # Add a link to the build output within the source directory. This is needed because AppVeyor does
