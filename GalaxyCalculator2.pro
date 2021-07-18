@@ -6,7 +6,6 @@ TEMPLATE     = "app"
 # Do not use Spaces in Target Name
 # This pro(ject) file is based on a pattern
 TARGET           = "GalaxyCalculator2"
-#DEFINES         *= QT_PRINTSUPPORT_LIB
 qtHaveModule(printsupport): QT *= printsupport
 #unix:QT *= printsupport
 QT              *= printsupport
@@ -34,15 +33,12 @@ QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
 #win32:LIBS     *= -static
 # Causes issues in Python
 #win32:QMAKE_LFLAGS   += -static
-win32:CONFIG   *= windeployqt
-win32:CONFIG   *= windows
+#win32:CONFIG   *= windeployqt
+#win32:CONFIG   *= windows
 # Version Numver Controls
 win32:VERSION   = 0.1.0.0 # major.minor.patch.build
 else:VERSION    = 0.1.0   # major.minor.patch
 DEFINES         = APP_VERSION=\\\"$${VERSION}\\\"
-#
-#win32:QMAKE_CXXFLAGS  *= -platform win32-g++
-#win32:CONFIG          += -platform win32-g++
 #
 # Headers files
 HEADERS     *= AboutDialog.h \
