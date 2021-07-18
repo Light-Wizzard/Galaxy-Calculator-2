@@ -5,6 +5,10 @@ branches:
   only:
     - master
 
+init:
+  - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
+  - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
+
 stack: python 3
 
 environment:
@@ -21,10 +25,6 @@ environment:
       MY_OS: Windows
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
       PY_DIR: C:\Python38
-
-  init:
-    - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
-    - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
 
   configuration:
     - release
