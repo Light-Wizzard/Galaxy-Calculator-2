@@ -8,7 +8,7 @@ TEMPLATE     = "app"
 TARGET           = "GalaxyCalculator2"
 qtHaveModule(printsupport): QT *= printsupport
 #unix:QT *= printsupport
-QT              *= printsupport
+#QT              *= printsupport
 QT              += gui core widgets sql
 unix:QT         += webenginewidgets
 #win32:QT        += webkit
@@ -21,7 +21,7 @@ CONFIG          *= qt
 CONFIG          *= "c++latest"
 TRANSLATIONS    += GalaxyCalculator2_en_US.ts
 CONFIG          *= warn_on utf8_source executable
-
+CONFIG          += release
 win32 {
     contains(QT_ARCH, x86_64) {
         QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
@@ -31,8 +31,8 @@ win32 {
 }
 
 #
-#win32:CONFIG   *= windeployqt
-#win32:CONFIG   *= windows
+win32:CONFIG   *= windeployqt
+win32:CONFIG   *= windows
 # Version Numver Controls
 win32:VERSION   = 0.1.0.0 # major.minor.patch.build
 else:VERSION    = 0.1.0   # major.minor.patch
