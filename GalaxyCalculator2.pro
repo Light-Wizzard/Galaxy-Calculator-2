@@ -50,6 +50,9 @@ HEADERS     *= AboutDialog.h \
     3rdparty/extern/exprtk_mpfr_adaptor.hpp \
     3rdparty/extern/json.hpp \
     3rdparty/extern/mpreal.h \
+    3rdparty/gmp/include/gmp.h \
+    3rdparty/gmp/include/mpf2mpfr.h \
+    3rdparty/gmp/include/mpfr.h \
     3rdparty/io/serializer.hpp \
     3rdparty/math/arithmetictype.hpp \
     3rdparty/math/expressionparser.hpp \
@@ -70,13 +73,8 @@ HEADERS     *= AboutDialog.h \
     GalaxySettings.h \
     HelpDialog.h \
     MainWindow.h \
-    TrinaryMath.h \
-    lib/gmp/linux/include/gmp.h \
-    lib/gmp/linux/include/mpf2mpfr.h \
-    lib/gmp/linux/include/mpfr.h \
-    lib/gmp/windows/include/gmp.h \
-    lib/gmp/windows/include/mpf2mpfr.h \
-    lib/gmp/windows/include/mpfr.h
+    TrinaryMath.h 
+    
 # Source files
 SOURCES     *= AboutDialog.cpp \
     3rdparty/cpython/modules/exprtkmodule.cpp \
@@ -98,55 +96,54 @@ SOURCES     *= AboutDialog.cpp \
 #    
 DISTFILES += \
     .appveyor.yml \
+    3rdparty/gmp/README \
+    3rdparty/gmp/gmp.COPYING \
+    3rdparty/gmp/gmp.COPYING.LIB \
+    3rdparty/gmp/gmp.README \
+    3rdparty/gmp/lib/libgmp-10.dll \
+    3rdparty/gmp/lib/libgmp.a \
+    3rdparty/gmp/lib/libgmp.lai \
+    3rdparty/gmp/lib/libgmp.so \
+    3rdparty/gmp/lib/libmpfr-4.dll \
+    3rdparty/gmp/lib/libmpfr.a \
+    3rdparty/gmp/lib/libmpfr.lai \
+    3rdparty/gmp/lib/libmpfr.so \
+    3rdparty/gmp/mpfr.COPYING \
+    3rdparty/gmp/mpfr.COPYING.LESSER \
+    3rdparty/gmp/mpfr.README \
     CODE_OF_CONDUCT.md \
     GalaxyCalculator_en_US.ts \
     Help-en.html \
-    README.md     \
-    lib/gmp/README \
-    lib/gmp/gmp.COPYING \
-    lib/gmp/gmp.COPYING.LIB \
-    lib/gmp/gmp.README \
-    lib/gmp/linux/lib/libgmp.a \
-    lib/gmp/linux/lib/libgmp.lai \
-    lib/gmp/linux/lib/libgmp.so \
-    lib/gmp/linux/lib/libmpfr.a \
-    lib/gmp/linux/lib/libmpfr.lai \
-    lib/gmp/linux/lib/libmpfr.so \
-    lib/gmp/mpfr.COPYING \
-    lib/gmp/mpfr.COPYING.LESSER \
-    lib/gmp/mpfr.README \
-    lib/gmp/windows/lib/libgmp-10.dll \
-    lib/gmp/windows/lib/libgmp-10.lib \
-    lib/gmp/windows/lib/libmpfr-4.dll \
-    lib/gmp/windows/lib/libmpfr-4.lib
+    README.md     
 # Ui Form(s)
 FORMS       += MainWindow.ui HelpDialog.ui AboutDialog.ui
 # Resources
 RESOURCES   += GalaxyCalculator2.qrc
 #
 # gmp Unix
-unix:LIBS           += -L$$PWD/lib/gmp/linux/lib/ -lgmp
-unix:INCLUDEPATH    += $$PWD/lib/gmp/linux/include
-unix:DEPENDPATH     += $$PWD/lib/gmp/linux/include
-unix:PRE_TARGETDEPS += $$PWD/lib/gmp/linux/lib/libgmp.a
+unix:LIBS           += -L$$PWD/3rdparty/gmp/lib/ -lgmp
+unix:INCLUDEPATH    += $$PWD/3rdparty/gmp/include
+unix:DEPENDPATH     += $$PWD/3rdparty/gmp/include
+unix:PRE_TARGETDEPS += $$PWD/3rdparty/gmp/lib/libgmp.a
 # mpfr Unix
-unix: LIBS          += -L$$PWD/lib/gmp/linux/lib/ -lmpfr
-unix:INCLUDEPATH    += $$PWD/lib/gmp/linux/include
-unix:DEPENDPATH     += $$PWD/lib/gmp/linux/include
-unix:PRE_TARGETDEPS += $$PWD/lib/gmp/linux/lib/libmpfr.a
+unix: LIBS          += -L$$PWD/3rdparty/gmp/lib/ -lmpfr
+unix:INCLUDEPATH    += $$PWD/3rdparty/gmp/include
+unix:DEPENDPATH     += $$PWD/3rdparty/gmp/include
+unix:PRE_TARGETDEPS += $$PWD/3rdparty/gmp/lib/libmpfr.a
 # gmp Windows
-win32:INCLUDEPATH += $$PWD/lib/gmp/windows/lib
-win32:INCLUDEPATH += $$PWD/lib/gmp/windows/include
-win32:DEPENDPATH  += $$PWD/lib/gmp/windows/include
-#win32:LIBS        += $$PWD/lib/gmp/windows/lib/libgmp-10.lib
-win32:LIBS        += $$PWD/lib/gmp/windows/lib/libgmp-10.dll
-#win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibgmp-10
+win32:INCLUDEPATH += $$PWD/3rdparty/gmp/lib
+win32:INCLUDEPATH += $$PWD/3rdparty/gmp/include
+win32:DEPENDPATH  += $$PWD/3rdparty/gmp/include
+#win32:LIBS        += $$PWD/3rdparty/gmp/lib/libgmp-10.lib
+# C:/projects/galaxy-calculator-2/3rdparty/gmp/lib/libgmp-10.dll
+win32:LIBS        += $$PWD/3rdparty/gmp/lib/libgmp-10.dll
+#win32:LIBS        += -L$$PWD/3rdparty/gmp/lib/ -llibgmp-10
 # mpfr Windows
-win32:INCLUDEPATH += $$PWD/lib/gmp/windows/include
-win32:DEPENDPATH  += $$PWD/lib/gmp/windows/include
-#win32:LIBS        += $$PWD/lib/gmp/windows/lib/libmpfr-4.lib
-win32:LIBS        += $$PWD/lib/gmp/windows/lib/libmpfr-4.dll
-#win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibmpfr-4
+win32:INCLUDEPATH += $$PWD/3rdparty/gmp/include
+win32:DEPENDPATH  += $$PWD/3rdparty/gmp/include
+#win32:LIBS        += $$PWD/3rdparty/gmp/lib/libmpfr-4.lib
+win32:LIBS        += $$PWD/3rdparty/gmp/lib/libmpfr-4.dll
+#win32:LIBS        += -L$$PWD/3rdparty/gmp/lib/ -llibmpfr-4
 #
 # Python Unix
 PYTHON_VERSION_LINUX="3.9"
