@@ -48,10 +48,8 @@ build_script:
   - cd %APPVEYOR_BUILD_FOLDER%
   - mkdir build
   - cd build
-  - qmake -v &&
-    qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% &&
-    mingw32-make &&
-    mingw32-make
+  - ps: if ($isLinux)   { qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && make }
+  - ps: if ($isWindows) { qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make }
     
 after_build:
   # Add a link to the build output within the source directory. This is needed because AppVeyor does
@@ -89,13 +87,13 @@ deploy:
     draft: false
     prerelease: true
     auth_token:
-      secure: $env:APP_ENV_SECURE
+      secure: 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
   - provider: GitHub
     release: continuous
     artifact: 'ExecutableFile'
     draft: false
     prerelease: true
     auth_token:
-      secure: $env:APP_ENV_SECURE
+      secure: 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
 ############################################## End of File ####################
 
