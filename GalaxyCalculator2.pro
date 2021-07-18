@@ -22,17 +22,15 @@ CONFIG          *= "c++latest"
 TRANSLATIONS    += GalaxyCalculator2_en_US.ts
 CONFIG          *= warn_on utf8_source executable
 
-win32 
-{
-    QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
+win32 {
+    contains(QT_ARCH, x86_64) {
+        QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
+    } else {
+        QMAKE_CXXFLAGS  += -flto -Wl,-allow-multiple-definition -fuse-linker-plugin
+    }
 }
 
-QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
-
 #
-#win32:LIBS     *= -static
-# Causes issues in Python
-#win32:QMAKE_LFLAGS   += -static
 #win32:CONFIG   *= windeployqt
 #win32:CONFIG   *= windows
 # Version Numver Controls
