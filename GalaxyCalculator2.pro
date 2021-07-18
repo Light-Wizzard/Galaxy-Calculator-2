@@ -114,7 +114,8 @@ DISTFILES += \
     CODE_OF_CONDUCT.md \
     GalaxyCalculator_en_US.ts \
     Help-en.html \
-    README.md     
+    README.md      \
+    config/config.xml
 # Ui Form(s)
 FORMS       += MainWindow.ui HelpDialog.ui AboutDialog.ui
 # Resources

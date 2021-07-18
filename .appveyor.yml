@@ -55,19 +55,19 @@ after_build:
   - echo after_build
   - dir
   - mkdir deploy
-  - copy "%APPVEYOR_BUILD_FOLDER%-build\%CONFIGURATION%\%BIN%.exe" "deploy\%BIN%.exe"
-  - windeployqt --qmldir "%APPVEYOR_BUILD_FOLDER%/qml" --%CONFIGURATION% "deploy/%BIN%.exe" --verbose=2
-  - for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
+  - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
+  - windeployqt --%CONFIGURATION% "deploy/%BIN%.exe" --verbose=2
+  #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
   - 7z a -tzip "%BIN%-%CONFIGURATION%.zip" deploy -r
-  - copy "%APPVEYOR_BUILD_FOLDER%-build\%BIN%-%CONFIGURATION%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%CONFIGURATION%.zip"
+  - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%CONFIGURATION%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%CONFIGURATION%.zip"
   - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-  - xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%-build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
-  - C:\Qt\QtIFW-3.0.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
+  - xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
+  - C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
   - 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
   - copy *.zip %APPVEYOR_BUILD_FOLDER%
   - copy *.exe %APPVEYOR_BUILD_FOLDER%
   - cd %APPVEYOR_BUILD_FOLDER%
-  - del %APPVEYOR_BUILD_FOLDER%\%BIN%.pro
+  #- del %APPVEYOR_BUILD_FOLDER%\%BIN%.pro
   - echo Current Path is %cd%
   - dir
   - echo Completed-Build
