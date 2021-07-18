@@ -37,7 +37,6 @@ environment:
     - Win32
 
   before_build:
-    - set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
     - '%QT5%\bin\qtenv2.bat'
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
