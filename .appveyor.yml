@@ -24,6 +24,7 @@ environment:
       PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
       BIN: GalaxyCalculator2
       MY_OS: Windows
+      MY_ENV: AppVeyor
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
       PY_DIR: C:\Python39
 
@@ -73,7 +74,7 @@ after_build:
   - echo Current Path is %cd%
   - dir
   - echo Completed-Build
-  
+
 artifacts:
   - path: '%BIN%*.zip'  
     name: 'ZipInstaller'
@@ -87,13 +88,13 @@ deploy:
     draft: false
     prerelease: true
     auth_token:
-      secure: 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
+      secure: AppVeyor
   - provider: GitHub
     release: continuous
     artifact: 'ExecutableFile'
     draft: false
     prerelease: true
     auth_token:
-      secure: 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
+      secure: AppVeyor
 ############################################## End of File ####################
 
