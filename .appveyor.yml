@@ -13,20 +13,16 @@ environment:
       RUNTIME_LINKAGE: static
       COVERITY_BUILD_CANDIDATE: True
       QT_VERSION: 5.15
-      #https://www.appveyor.com/docs/build-environment/#qt
       QT5: C:\Qt\5.15.2\mingw81_32
       MINGW: C:\Qt\Tools\mingw810_32
       QT_IF_VERSION: '3.1.1'
       PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
       BIN: GalaxyCalculator2
-      #MY_ENV: AppVeyor
       MY_OS: Windows
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-      # Windows 7 caps at Python-38
       PY_DIR: C:\Python38
 
   init:
-    # Create our AppVeyor version
     - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
     - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
 
