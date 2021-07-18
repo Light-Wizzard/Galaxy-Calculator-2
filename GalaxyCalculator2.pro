@@ -98,14 +98,15 @@ DISTFILES += \
     README.md    
 # Ui Form(s)
 FORMS       += MainWindow.ui HelpDialog.ui AboutDialog.ui
+# Resources
 RESOURCES   += GalaxyCalculator2.qrc
-# Unix
-# gmp
+#
+# gmp Unix
 unix:LIBS           += -L$$PWD/lib/gmp/linux/lib/ -lgmp
 unix:INCLUDEPATH    += $$PWD/lib/gmp/linux/include
 unix:DEPENDPATH     += $$PWD/lib/gmp/linux/include
 unix:PRE_TARGETDEPS += $$PWD/lib/gmp/linux/lib/libgmp.a
-# mpfr
+# mpfr Unix
 unix: LIBS          += -L$$PWD/lib/gmp/linux/lib/ -lmpfr
 unix:INCLUDEPATH    += $$PWD/lib/gmp/linux/include
 unix:DEPENDPATH     += $$PWD/lib/gmp/linux/include
@@ -114,13 +115,13 @@ unix:PRE_TARGETDEPS += $$PWD/lib/gmp/linux/lib/libmpfr.a
 win32:INCLUDEPATH += $$PWD/lib/gmp/windows/lib
 win32:INCLUDEPATH += $$PWD/lib/gmp/windows/include
 win32:DEPENDPATH  += $$PWD/lib/gmp/windows/include
-win32:LIBS        += $$PWD/lib/gmp/windows/lib/libgmp-10.lib
-#win32:LIBS       += -L$$PWD/lib/gmp/windows/lib/ -llibgmp-10
+#win32:LIBS        += $$PWD/lib/gmp/windows/lib/libgmp-10.lib
+win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibgmp-10
 # mpfr Windows
 win32:INCLUDEPATH += $$PWD/lib/gmp/windows/include
 win32:DEPENDPATH  += $$PWD/lib/gmp/windows/include
-win32:LIBS        += $$PWD/lib/gmp/windows/lib/libmpfr-4.lib
-#win32:LIBS       += -L$$PWD/lib/gmp/windows/lib/ -llibmpfr-4
+#win32:LIBS        += $$PWD/lib/gmp/windows/lib/libmpfr-4.lib
+win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibmpfr-4
 #
 # Python Unix
 PYTHON_VERSION_LINUX="3.9"
