@@ -26,7 +26,9 @@ environment:
       PY_DIR: C:\Python38
 
   init:
-    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    # Create our AppVeyor version
+    - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
+    - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
 
   configuration:
     - release
@@ -35,6 +37,7 @@ environment:
     - Win32
 
   before_build:
+    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
     - '%QT5%\bin\qtenv2.bat'
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
