@@ -87,13 +87,13 @@ deploy:
     draft: false
     prerelease: true
     auth_token:
-      secure: $(AppVeyorEnvVar)
+      secure: $($env:AppVeyorEnvVar)
   - provider: GitHub
     release: continuous
     artifact: 'ExecutableFile'
     draft: false
     prerelease: true
     auth_token:
-      secure: $(AppVeyorEnvVar)
+      secure: $($env:AppVeyorEnvVar)
 ############################################## End of File ####################
 
