@@ -5,12 +5,6 @@ branches:
   only:
     - master
 
-init:
-  # Create our AppVeyor version
-  - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
-  - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
-  - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
-
 #image:
 #  - Visual Studio 2019
 #  - Ubuntu2004
@@ -36,6 +30,11 @@ environment:
       # Windows 7 caps at Python-38
       PY_DIR: C:\Python38
 
+  init:
+    # Create our AppVeyor version
+    - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
+    - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
+    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
 
   configuration:
     - release
@@ -45,7 +44,7 @@ environment:
 
   before_build:
     - set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
-    - '%QT5%\bin\qtenv2.bat'
+    - "%QT5%\bin\qtenv2.bat"
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
 
   build_script:
@@ -72,7 +71,6 @@ environment:
     - copy *.zip %APPVEYOR_BUILD_FOLDER%
     - copy *.exe %APPVEYOR_BUILD_FOLDER%
     - cd %APPVEYOR_BUILD_FOLDER%
-    #- del %APPVEYOR_BUILD_FOLDER%\%BIN%.pro
     - echo Current Path is %cd%
     - dir
     - echo Completed-Build
