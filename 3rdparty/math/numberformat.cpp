@@ -132,7 +132,7 @@ std::string NumberFormat::toBinary(const ArithmeticType &v, int decimalSpaces, m
     }
     else
     {
-        std::string ret;
+        //std::string ret;
         std::string bitstring = std::bitset<sizeof(long long) * CHAR_BIT>(v.toLLong()).to_string();
         for (size_t i = 0; i < bitstring.size(); i++)
         {

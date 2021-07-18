@@ -70,7 +70,13 @@ HEADERS     *= AboutDialog.h \
     GalaxySettings.h \
     HelpDialog.h \
     MainWindow.h \
-    TrinaryMath.h
+    TrinaryMath.h \
+    lib/gmp/linux/include/gmp.h \
+    lib/gmp/linux/include/mpf2mpfr.h \
+    lib/gmp/linux/include/mpfr.h \
+    lib/gmp/windows/include/gmp.h \
+    lib/gmp/windows/include/mpf2mpfr.h \
+    lib/gmp/windows/include/mpfr.h
 # Source files
 SOURCES     *= AboutDialog.cpp \
     3rdparty/cpython/modules/exprtkmodule.cpp \
@@ -95,7 +101,24 @@ DISTFILES += \
     CODE_OF_CONDUCT.md \
     GalaxyCalculator_en_US.ts \
     Help-en.html \
-    README.md    
+    README.md     \
+    lib/gmp/README \
+    lib/gmp/gmp.COPYING \
+    lib/gmp/gmp.COPYING.LIB \
+    lib/gmp/gmp.README \
+    lib/gmp/linux/lib/libgmp.a \
+    lib/gmp/linux/lib/libgmp.lai \
+    lib/gmp/linux/lib/libgmp.so \
+    lib/gmp/linux/lib/libmpfr.a \
+    lib/gmp/linux/lib/libmpfr.lai \
+    lib/gmp/linux/lib/libmpfr.so \
+    lib/gmp/mpfr.COPYING \
+    lib/gmp/mpfr.COPYING.LESSER \
+    lib/gmp/mpfr.README \
+    lib/gmp/windows/lib/libgmp-10.dll \
+    lib/gmp/windows/lib/libgmp-10.lib \
+    lib/gmp/windows/lib/libmpfr-4.dll \
+    lib/gmp/windows/lib/libmpfr-4.lib
 # Ui Form(s)
 FORMS       += MainWindow.ui HelpDialog.ui AboutDialog.ui
 # Resources
@@ -116,12 +139,14 @@ win32:INCLUDEPATH += $$PWD/lib/gmp/windows/lib
 win32:INCLUDEPATH += $$PWD/lib/gmp/windows/include
 win32:DEPENDPATH  += $$PWD/lib/gmp/windows/include
 #win32:LIBS        += $$PWD/lib/gmp/windows/lib/libgmp-10.lib
-win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibgmp-10
+win32:LIBS        += $$PWD/lib/gmp/windows/lib/libgmp-10.dll
+#win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibgmp-10
 # mpfr Windows
 win32:INCLUDEPATH += $$PWD/lib/gmp/windows/include
 win32:DEPENDPATH  += $$PWD/lib/gmp/windows/include
 #win32:LIBS        += $$PWD/lib/gmp/windows/lib/libmpfr-4.lib
-win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibmpfr-4
+win32:LIBS        += $$PWD/lib/gmp/windows/lib/libmpfr-4.dll
+#win32:LIBS        += -L$$PWD/lib/gmp/windows/lib/ -llibmpfr-4
 #
 # Python Unix
 PYTHON_VERSION_LINUX="3.9"
