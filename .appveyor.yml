@@ -22,9 +22,6 @@ environment:
       QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
       PY_DIR: C:\Python38
 
-  init:
-    - ps: Update-AppveyorBuild -Version "0.0.$env:appveyor_build_number-$($env:appveyor_repo_commit.substring(0,7))"
-
   configuration:
     - release
 
