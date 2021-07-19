@@ -1,5 +1,7 @@
 # Galaxy Calculator 2 appveyor configuration files
 # https://ci.appveyor.com/tools/validate-yaml
+#https://www.appveyor.com/docs/build-environment/#qt
+#
 version: '{branch}-{build}'
 
 branches:
@@ -25,7 +27,6 @@ for:
   environment:
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
-    #https://www.appveyor.com/docs/build-environment/#qt
     QT5: $HOME/Qt/5.15.2/gcc_64/bin
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
@@ -42,6 +43,7 @@ for:
     - sh: sudo apt-get -qqy install build-essential cmake
   build_script:
     - sh: echo build_script Ubuntu
+    - sh: ls $HOME/Qt/5.15.2/
     - set PATH=$HOME/venv3.8;$HOME/Qt/5.15.2/gcc_64/bin;$PATH
     - sh: ls
     - sh: mkdir build
