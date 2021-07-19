@@ -45,15 +45,15 @@ for:
     - sh: ls
     - sh: mkdir build
     - cd build
-    - sh: $HOME/Qt/5.15.2/gcc_64/bin/qmake -v && $HOME/Qt/5.15.2/gcc_64/bin/qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
+    - sh: $HOME/Qt/5.15.2/gcc_64/bin/qmake -v && $HOME/Qt/5.15.2/gcc_64/bin/qmake ../GalaxyCalculator2.pro CONFIG+=release DESTDIR=. && make
   after_build:
     - sh: echo after_build Ubuntu
     - sh: ls
     - sh: mkdir deploy
-    - cp "%BIN%" "deploy/%BIN%"
-    - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
-    - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - sh: cp "%BIN%-%MY_OS%.zip" "../%BIN%-%MY_OS%.zip"
+    - cp GalaxyCalculator2 deploy/GalaxyCalculator2
+    - sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
+    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004.zip deploy -r
+    - sh: cp GalaxyCalculator2-Ubuntu2004.zip ../GalaxyCalculator2-Ubuntu2004.zip
     - sh: cp *.zip ../
     - sh: cp *.exe ../
     - sh: cd ../
@@ -61,9 +61,9 @@ for:
     - sh: ls
     - sh: echo Completed-Build Ubuntu
   artifacts:
-    - path: '%BIN%*.zip'
+    - path: 'GalaxyCalculator2*.zip'
       name: 'ZipInstaller'
-    - path: '%BIN%*'
+    - path: 'GalaxyCalculator2'
       name: 'ExecutableFile'
 -
   matrix:
