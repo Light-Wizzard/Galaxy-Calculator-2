@@ -12,70 +12,12 @@ platform:
   - x86
 
 image:
-  - Visual Studio 2019
   - Ubuntu2004
+  - Visual Studio 2019
 
 stack: python 3.8
 
 for:
--
-  matrix:
-    only:
-      - image: Visual Studio 2019
-  environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
-    QT_VERSION: 5.15
-    QT5: C:\Qt\5.15.2\mingw81_32
-    MINGW: C:\Qt\Tools\mingw810_32
-    QT_IF_VERSION: '3.1.1'
-    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
-    MY_OS: Windows
-    QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-    PY_DIR: C:\Python38
-  install:
-    - ps: write-host "install Windows"
-    # Create our AppVeyor version
-    - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
-    - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
-  before_build:
-    - ps: write-host "before_build Windows"
-    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
-    - cmd: set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
-    - call "%QT5%\bin\qtenv2.bat"
-    - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
-  build_script:
-    - ps: write-host "build_script Windows"
-    - cd %APPVEYOR_BUILD_FOLDER%
-    - mkdir build
-    - cd build
-    - qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
-  after_build:
-    - ps: write-host "after_build Windows"
-    - dir
-    - mkdir deploy
-    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
-    - windeployqt "deploy/%BIN%.exe" --verbose=2
-    #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
-    - 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
-    - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-    #- xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
-    #- C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
-    #- 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
-    - copy *.zip %APPVEYOR_BUILD_FOLDER%
-    - copy *.exe %APPVEYOR_BUILD_FOLDER%
-    - cd %APPVEYOR_BUILD_FOLDER%
-    - echo Current Path is %cd%
-    - dir
-    - ps: write-host "Completed-Build Windows"
-  artifacts:
-    - path: '%BIN%*.zip'
-      name: 'ZipInstaller'
-    - path: '%BIN%*.exe'
-      name: 'ExecutableFile'
-
 -
   matrix:
     only:
@@ -133,6 +75,63 @@ for:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'
     - path: '%BIN%*'
+      name: 'ExecutableFile'
+-
+  matrix:
+    only:
+      - image: Visual Studio 2019
+  environment:
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
+    QT_VERSION: 5.15
+    QT5: C:\Qt\5.15.2\mingw81_32
+    MINGW: C:\Qt\Tools\mingw810_32
+    QT_IF_VERSION: '3.1.1'
+    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    BIN: GalaxyCalculator2
+    MY_OS: Windows
+    QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+    PY_DIR: C:\Python38
+  install:
+    - ps: write-host "install Windows"
+    # Create our AppVeyor version
+    - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
+    - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
+  before_build:
+    - ps: write-host "before_build Windows"
+    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    - cmd: set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
+    - call "%QT5%\bin\qtenv2.bat"
+    - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
+  build_script:
+    - ps: write-host "build_script Windows"
+    - cd %APPVEYOR_BUILD_FOLDER%
+    - mkdir build
+    - cd build
+    - qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
+  after_build:
+    - ps: write-host "after_build Windows"
+    - dir
+    - mkdir deploy
+    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
+    - windeployqt "deploy/%BIN%.exe" --verbose=2
+    #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
+    - 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
+    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
+    - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
+    #- xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
+    #- C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
+    #- 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
+    - copy *.zip %APPVEYOR_BUILD_FOLDER%
+    - copy *.exe %APPVEYOR_BUILD_FOLDER%
+    - cd %APPVEYOR_BUILD_FOLDER%
+    - echo Current Path is %cd%
+    - dir
+    - ps: write-host "Completed-Build Windows"
+  artifacts:
+    - path: '%BIN%*.zip'
+      name: 'ZipInstaller'
+    - path: '%BIN%*.exe'
       name: 'ExecutableFile'
 
 deploy:
