@@ -38,9 +38,9 @@ for:
     - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    - sh: sudo apt-get update -qq && sudo apt-get install -qq
+    #- sh: sudo apt-get update -qq && sudo apt-get install -qq
     #- sh: sudo apt-get upgrade -qqy
-    - sh: sudo apt-get -qqy install build-essential cmake
+    #- sh: sudo apt-get -qqy install build-essential cmake
   build_script:
     - sh: echo build_script Ubuntu
     - sh: ls $HOME/Qt/5.15.2/gcc_64/
