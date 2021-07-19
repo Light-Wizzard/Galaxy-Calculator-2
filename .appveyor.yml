@@ -41,9 +41,7 @@ for:
     #- sh: sudo apt-get upgrade -qqy
     - sh: sudo apt-get -qqy install build-essential cmake
   build_script:
-    - sh: echo build_script Ubuntu %APPVEYOR_BUILD_FOLDER%
-    - sh: ls
-    - cd %APPVEYOR_BUILD_FOLDER%
+    - sh: echo build_script Ubuntu
     - sh: mkdir build
     - cd build
     - sh: qmake -v && qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
@@ -51,7 +49,7 @@ for:
     - sh: echo after_build Ubuntu
     - sh: ls
     - sh: mkdir deploy
-    - cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%" "deploy/%BIN%"
+    - cp "%BIN%" "deploy/%BIN%"
     - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
     - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
     - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%/%BIN%-%MY_OS%.zip"
