@@ -104,7 +104,8 @@ for:
     - sh: set PATH=%QT5%\bin;%PATH%
     - sh: echo 2 $PATH
     - sh: echo qtenv2.bat
-    #- sh: '%QT5%\bin\qtenv2.bat'
+    #- sh: $HOME/Qt/5.15.2/gcc_64/bin/bin/qtenv2.bat
+    - sh: '%QT5%/bin/qtenv2.bat'
   build_script:
     - sh: echo build_script Ubuntu
     - sh: cd %APPVEYOR_BUILD_FOLDER%
