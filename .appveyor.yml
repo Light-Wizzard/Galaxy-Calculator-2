@@ -44,7 +44,7 @@ for:
     - sh: echo build_script Ubuntu
     - sh: mkdir build
     - cd build
-    - sh: qmake -v && qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
+    - sh: %QT5%/qmake -v && %QT5%/qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
     - sh: echo after_build Ubuntu
     - sh: ls
@@ -52,11 +52,10 @@ for:
     - cp "%BIN%" "deploy/%BIN%"
     - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
     - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%/%BIN%-%MY_OS%.zip"
-    - sh: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-    - sh: cp *.zip %APPVEYOR_BUILD_FOLDER%
-    - sh: cp *.exe %APPVEYOR_BUILD_FOLDER%
-    - sh: cd %APPVEYOR_BUILD_FOLDER%
+    - sh: cp "%BIN%-%MY_OS%.zip" "%BIN%-%MY_OS%.zip"
+    - sh: cp *.zip ../
+    - sh: cp *.exe ../
+    - sh: cd ../
     - sh: echo Current Path is %cd%
     - sh: ls
     - sh: echo Completed-Build Ubuntu
@@ -66,8 +65,7 @@ for:
     - path: '%BIN%*'
       name: 'ExecutableFile'
 -
-  matrix:
-    only:
+  matrix:    only:
       - image: Visual Studio 2019
   environment:
     RUNTIME_LINKAGE: static
