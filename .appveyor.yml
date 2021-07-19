@@ -42,15 +42,15 @@ for:
     - sh: sudo apt-get -qqy install build-essential cmake
   build_script:
     - sh: echo build_script Ubuntu
-    - sh: cd %APPVEYOR_BUILD_FOLDER%
+    - cd %APPVEYOR_BUILD_FOLDER%
     - sh: mkdir build
-    - sh: cd build
+    - cd build
     - sh: qmake -v && qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
     - sh: echo after_build Ubuntu
     - sh: ls
     - sh: mkdir deploy
-    - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%" "deploy/%BIN%"
+    - cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%" "deploy/%BIN%"
     - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
     - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
     - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%/%BIN%-%MY_OS%.zip"
