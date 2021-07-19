@@ -43,6 +43,8 @@ for:
     #- sh: sudo apt-get -qqy install build-essential cmake
   build_script:
     - sh: echo build_script Ubuntu
+    - ls $HOME/venv3.8/
+    - ls $HOME/venv3.8.10/
     - export PATH=$HOME/venv3.8.10/include:$HOME/Qt/5.15.2/gcc_64/bin:$PATH
     - sh: mkdir build
     - cd build
