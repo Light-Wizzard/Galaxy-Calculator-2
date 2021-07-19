@@ -1,4 +1,5 @@
 # Galaxy Calculator 2 appveyor configuration files
+# https://ci.appveyor.com/tools/validate-yaml
 version: '{branch}-{build}'
 
 branches:
@@ -50,9 +51,9 @@ for:
   environment:
     MY_BUILD: Windows
   before_build:
-    - set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
-    - set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
-    - '%QT5%\bin\qtenv2.bat'
+    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    - cmd: set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
+    - call "%QT5%\bin\qtenv2.bat"
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
   build_script:
     - cd %APPVEYOR_BUILD_FOLDER%
@@ -93,23 +94,26 @@ for:
   environment:
     MY_BUILD: Ubuntu
   install:
+    - echo install
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - sudo apt-get update -qq && sudo apt-get install -qq
     - sudo apt-get -y install build-essential git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev libxmu-dev libxi-dev
   before_build:
+    - echo before_build
     - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
-    - set PATH=%QT5%\bin;%PATH%
-    - '%QT5%\bin\qtenv2.bat'
+    - cmd: set PATH=%QT5%\bin;%PATH%
+    - call "%QT5%\bin\qtenv2.bat"
   build_script:
+    - echo build_script
     - cd %APPVEYOR_BUILD_FOLDER%
     - mkdir build
     - cd build
     - qmake -v && qmake ..\%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
+    - echo after_build
     # Add a link to the build output within the source directory. This is needed because AppVeyor does
     # not support extracting artifacts from out-of-source build directories. See 'artifacts' below.
-    - echo after_build
     - dir
     - mkdir deploy
     - cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%" "deploy\%BIN%"
