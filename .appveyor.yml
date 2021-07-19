@@ -44,6 +44,7 @@ for:
     - sh: echo before_build Ubuntu
     - set PATH=%PY_DIR%;%PY_DIR%/Scripts;%PATH%
     - set PATH=%QT5%/bin;%PATH%
+    - set -m
     - sh: echo qtenv2.bat
     - sh: $HOME/Qt/5.15.2/gcc_64/bin/bin/qtenv2.bat
     #- sh: '%QT5%/bin/qtenv2.bat'
