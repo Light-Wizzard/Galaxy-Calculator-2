@@ -45,7 +45,7 @@ for:
     - sh: echo build_script Ubuntu
     - sh: ls $HOME/Qt/5.15.2/gcc_64/bin/
     # bin  doc  include  lib	libexec  mkspecs  phrasebooks  plugins	qml  resources	translations
-    - export PATH=$HOME/venv3.8;$HOME/Qt/5.15.2/gcc_64/bin;$PATH
+    - export PATH=$HOME/venv3.8:$HOME/Qt/5.15.2/gcc_64/bin:$PATH
     - sh: ls
     - sh: mkdir build
     - cd build
