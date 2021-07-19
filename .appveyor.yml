@@ -44,10 +44,7 @@ for:
   build_script:
     - sh: echo build_script Ubuntu
     - source $HOME/venv3.8/bin/activate
-    - ls /usr/bin
-    - ls /usr/include
-    - ls /usr/local/lib
-    - ls /usr/local/include
+    - ls /usr/bin/python3.8
     - export PATH=$HOME/venv3.8:$HOME/venv3.8/bin:$HOME/venv3.8/lib:$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
     - sh: echo $PATH
     - sh: mkdir build
