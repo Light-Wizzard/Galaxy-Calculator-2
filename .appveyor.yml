@@ -41,7 +41,8 @@ for:
     #- sh: sudo apt-get upgrade -qqy
     - sh: sudo apt-get -qqy install build-essential cmake
   build_script:
-    - sh: echo build_script Ubuntu
+    - sh: echo build_script Ubuntu %APPVEYOR_BUILD_FOLDER%
+    - sh: ls
     - cd %APPVEYOR_BUILD_FOLDER%
     - sh: mkdir build
     - cd build
