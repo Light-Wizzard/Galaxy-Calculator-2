@@ -44,10 +44,9 @@ for:
   build_script:
     - sh: echo build_script Ubuntu
     - source $HOME/venv3.8/bin/activate
-    - ls $HOME/venv3.8/bin/
-    - ls $HOME/venv3.8/lib/python3.8/site-packages/setuptools
     - sh: echo $PATH
-    - export PATH=$PYTHON:$HOME/venv3.8/bin:$HOME/venv3.8/lib:$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
+    - export PATH=$PYTHON::$HOME/venv3.8:$HOME/venv3.8/bin:$HOME/venv3.8/lib:$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
+    - sh: echo $PATH
     - sh: mkdir build
     - cd build
     - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release DESTDIR=. && make
