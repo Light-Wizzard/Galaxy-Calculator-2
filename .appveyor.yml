@@ -38,12 +38,13 @@ for:
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - sh: sudo apt-get update -qq && sudo apt-get install -qq
+    - sh: sudo apt-get upgrade -qy
     - sh: sudo apt-get -y install build-essential git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev libxmu-dev libxi-dev
   before_build:
     - sh: echo before_build Ubuntu
-    - sh: set PATH=%PY_DIR%;%PY_DIR%/Scripts;%PATH%
+    - set PATH=%PY_DIR%;%PY_DIR%/Scripts;%PATH%
     - sh: echo 1 $PATH
-    - sh: set PATH=%QT5%/bin;%PATH%
+    - set PATH=%QT5%/bin;%PATH%
     - sh: echo 2 $PATH
     - sh: echo qtenv2.bat
     #- sh: $HOME/Qt/5.15.2/gcc_64/bin/bin/qtenv2.bat
