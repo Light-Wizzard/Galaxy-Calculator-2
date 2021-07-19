@@ -101,6 +101,8 @@ for:
     - sh: echo before_build Ubuntu
     - sh: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - sh: set PATH=%QT5%\bin;%PATH%
+    - sh: echo $PATH
+    - sh: echo qtenv2.bat
     - sh: '%QT5%\bin\qtenv2.bat'
   build_script:
     - sh: echo build_script Ubuntu
