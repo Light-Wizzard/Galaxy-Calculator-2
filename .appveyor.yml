@@ -39,11 +39,7 @@ for:
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - sh: sudo apt-get update -qq && sudo apt-get install -qq
     #- sh: sudo apt-get upgrade -qqy
-    - sh: sudo apt-get -y install build-essential cmake
-  before_build:
-    - sh: echo before_build Ubuntu
-    - set PATH=%PY_DIR%;%PY_DIR%/Scripts;%PATH%
-    - set PATH=%QT5%/bin;%PATH%
+    - sh: sudo apt-get -qqy install build-essential cmake
   build_script:
     - sh: echo build_script Ubuntu
     - sh: cd %APPVEYOR_BUILD_FOLDER%
@@ -52,8 +48,6 @@ for:
     - sh: qmake -v && qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
     - sh: echo after_build Ubuntu
-    # Add a link to the build output within the source directory. This is needed because AppVeyor does
-    # not support extracting artifacts from out-of-source build directories. See 'artifacts' below.
     - sh: ls
     - sh: mkdir deploy
     - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%" "deploy/%BIN%"
