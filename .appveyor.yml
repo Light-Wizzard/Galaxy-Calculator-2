@@ -89,7 +89,7 @@ for:
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN: GalaxyCalculator2
     MY_OS: Ubuntu2004
-    QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+    QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
     PY_DIR: $HOME/venv3.8
   install:
     - sh: echo install Ubuntu
@@ -99,9 +99,9 @@ for:
     - sh: sudo apt-get -y install build-essential git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev libxmu-dev libxi-dev
   before_build:
     - sh: echo before_build Ubuntu
-    - sh: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    - sh: set PATH=%PY_DIR%;%PY_DIR%/Scripts;%PATH%
     - sh: echo 1 $PATH
-    - sh: set PATH=%QT5%\bin;%PATH%
+    - sh: set PATH=%QT5%/bin;%PATH%
     - sh: echo 2 $PATH
     - sh: echo qtenv2.bat
     #- sh: $HOME/Qt/5.15.2/gcc_64/bin/bin/qtenv2.bat
@@ -111,17 +111,17 @@ for:
     - sh: cd %APPVEYOR_BUILD_FOLDER%
     - sh: mkdir build
     - sh: cd build
-    - sh: qmake -v && qmake ..\%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
+    - sh: qmake -v && qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
     - sh: echo after_build Ubuntu
     # Add a link to the build output within the source directory. This is needed because AppVeyor does
     # not support extracting artifacts from out-of-source build directories. See 'artifacts' below.
     - sh: ls
     - sh: mkdir deploy
-    - sh: cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%" "deploy\%BIN%"
+    - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%" "deploy/%BIN%"
     - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
     - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - sh: cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
+    - sh: cp "%APPVEYOR_BUILD_FOLDER%/build/%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%/%BIN%-%MY_OS%.zip"
     - sh: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
     - sh: cp *.zip %APPVEYOR_BUILD_FOLDER%
     - sh: cp *.exe %APPVEYOR_BUILD_FOLDER%
