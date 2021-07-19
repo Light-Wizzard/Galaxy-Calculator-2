@@ -42,9 +42,10 @@ for:
     - sh: sudo apt-get -qqy install build-essential cmake
   build_script:
     - sh: echo build_script Ubuntu
+    - sh: ls
     - sh: mkdir build
     - cd build
-    - sh: %QT5%/qmake -v && %QT5%/qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
+    - sh: $HOME/Qt/5.15.2/gcc_64/bin/qmake -v && $HOME/Qt/5.15.2/gcc_64/bin/qmake ../%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
     - sh: echo after_build Ubuntu
     - sh: ls
@@ -52,7 +53,7 @@ for:
     - cp "%BIN%" "deploy/%BIN%"
     - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
     - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - sh: cp "%BIN%-%MY_OS%.zip" "%BIN%-%MY_OS%.zip"
+    - sh: cp "%BIN%-%MY_OS%.zip" "../%BIN%-%MY_OS%.zip"
     - sh: cp *.zip ../
     - sh: cp *.exe ../
     - sh: cd ../
@@ -65,7 +66,8 @@ for:
     - path: '%BIN%*'
       name: 'ExecutableFile'
 -
-  matrix:    only:
+  matrix:
+    only:
       - image: Visual Studio 2019
   environment:
     RUNTIME_LINKAGE: static
