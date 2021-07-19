@@ -100,10 +100,11 @@ for:
   before_build:
     - sh: echo before_build Ubuntu
     - sh: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    - sh: echo 1 $PATH
     - sh: set PATH=%QT5%\bin;%PATH%
-    - sh: echo $PATH
+    - sh: echo 2 $PATH
     - sh: echo qtenv2.bat
-    - sh: '%QT5%\bin\qtenv2.bat'
+    #- sh: '%QT5%\bin\qtenv2.bat'
   build_script:
     - sh: echo build_script Ubuntu
     - sh: cd %APPVEYOR_BUILD_FOLDER%
