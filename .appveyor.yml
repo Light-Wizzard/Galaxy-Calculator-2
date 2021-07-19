@@ -53,13 +53,13 @@ for:
     - sh: echo after_build Ubuntu
     - sh: ls
     - sh: mkdir deploy
-    - cp GalaxyCalculator2 deploy/GalaxyCalculator2
+    - sh: cp GalaxyCalculator2 deploy/GalaxyCalculator2
     - sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
     - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004.zip deploy -r
     - sh: cp GalaxyCalculator2-Ubuntu2004.zip ../GalaxyCalculator2-Ubuntu2004.zip
     - sh: cp *.zip ../
     - sh: cp *.exe ../
-    - sh: cd ../
+    - cd ../
     - sh: echo Current Path is %cd%
     - sh: ls
     - sh: echo Completed-Build Ubuntu
