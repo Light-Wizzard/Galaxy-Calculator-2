@@ -35,24 +35,24 @@ for:
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
     PY_DIR: C:\Python38
   install:
-    - echo install Windows
+    - ps: write-host "install Windows"
     # Create our AppVeyor version
     - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
     - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
   before_build:
-    - echo before_build Windows
+    - ps: write-host "before_build Windows"
     - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - cmd: set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
     - call "%QT5%\bin\qtenv2.bat"
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
   build_script:
-    - echo build_script Windows
+    - ps: write-host "build_script Windows"
     - cd %APPVEYOR_BUILD_FOLDER%
     - mkdir build
     - cd build
     - qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
   after_build:
-    - echo after_build Windows
+    - ps: write-host "after_build Windows"
     - dir
     - mkdir deploy
     - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
@@ -69,7 +69,7 @@ for:
     - cd %APPVEYOR_BUILD_FOLDER%
     - echo Current Path is %cd%
     - dir
-    - echo Completed-Build Windows
+    - ps: write-host "Completed-Build Windows"
   artifacts:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'
@@ -92,39 +92,39 @@ for:
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
     PY_DIR: $HOME/venv3.8
   install:
-    - echo install Ubuntu
+    - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    - sudo apt-get update -qq && sudo apt-get install -qq
-    - sudo apt-get -y install build-essential git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev libxmu-dev libxi-dev
+    - sh: sudo apt-get update -qq && sudo apt-get install -qq
+    - sh: sudo apt-get -y install build-essential git cmake libpng-dev libjpeg-dev libtiff-dev libglu1-mesa-dev libxmu-dev libxi-dev
   before_build:
-    - echo before_build Ubuntu
-    - set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
-    - set PATH=%QT5%\bin;%PATH%
-    - '%QT5%\bin\qtenv2.bat'
+    - sh: echo before_build Ubuntu
+    - sh: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
+    - sh: set PATH=%QT5%\bin;%PATH%
+    - sh: '%QT5%\bin\qtenv2.bat'
   build_script:
-    - echo build_script Ubuntu
-    - cd %APPVEYOR_BUILD_FOLDER%
-    - mkdir build
-    - cd build
-    - qmake -v && qmake ..\%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
+    - sh: echo build_script Ubuntu
+    - sh: cd %APPVEYOR_BUILD_FOLDER%
+    - sh: mkdir build
+    - sh: cd build
+    - sh: qmake -v && qmake ..\%BIN%.pro CONFIG+=release DESTDIR=%cd% && make
   after_build:
-    - echo after_build Ubuntu
+    - sh: echo after_build Ubuntu
     # Add a link to the build output within the source directory. This is needed because AppVeyor does
     # not support extracting artifacts from out-of-source build directories. See 'artifacts' below.
-    - dir
-    - mkdir deploy
-    - cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%" "deploy\%BIN%"
-    - linuxdeployqt "deploy/%BIN%" --verbose=2
-    - 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
-    - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-    - cp *.zip %APPVEYOR_BUILD_FOLDER%
-    - cp *.exe %APPVEYOR_BUILD_FOLDER%
-    - cd %APPVEYOR_BUILD_FOLDER%
-    - echo Current Path is %cd%
-    - dir
-    - echo Completed-Build Ubuntu
+    - sh: ls
+    - sh: mkdir deploy
+    - sh: cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%" "deploy\%BIN%"
+    - sh: linuxdeployqt "deploy/%BIN%" --verbose=2
+    - sh: 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
+    - sh: cp "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
+    - sh: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
+    - sh: cp *.zip %APPVEYOR_BUILD_FOLDER%
+    - sh: cp *.exe %APPVEYOR_BUILD_FOLDER%
+    - sh: cd %APPVEYOR_BUILD_FOLDER%
+    - sh: echo Current Path is %cd%
+    - sh: ls
+    - sh: echo Completed-Build Ubuntu
   artifacts:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'
