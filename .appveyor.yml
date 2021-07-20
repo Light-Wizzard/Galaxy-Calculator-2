@@ -54,8 +54,9 @@ for:
     #- source $HOME/venv3.9/bin/activate
     #- export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
     - ls $HOME/Qt/5.15.2/
-    - if "$PLATFORM"=="x86" { export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH }
-    - if "$PLATFORM"=="x64" { export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH }
+    #- if "$PLATFORM"=="x86"  export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH;
+    #- if "$PLATFORM"=="x64" export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH;
+    - export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
     - export PATH=/usr/lib/python3.9:/usr/include/python3.9
     - sh: echo $PATH
     - sh: mkdir -p build
@@ -82,6 +83,7 @@ for:
     - cd ../
     - sh: echo Current Path is %cd%
     - sh: ls
+    - if "$PLATFORM"=="x64" export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH;
     - sh: echo Completed-Build Ubuntu
   artifacts:
     - path: 'GalaxyCalculator2*.zip'
@@ -99,7 +101,7 @@ for:
     QT5_32:   C:\Qt\5.15.2\mingw81_32
     MINGW_32: C:\Qt\Tools\mingw810_32
     QT5_64:   C:\Qt\5.15.2\mingw81_64
-    MINGW_64: C:\Qt\Tools\mingw810_32
+    MINGW_64: C:\Qt\Tools\mingw810_64
     PY_DIR_32: C:\Python38
     PY_DIR_64: C:\Python38-x64
     QT_IF_VERSION: '3.1.1'
@@ -118,10 +120,10 @@ for:
     - if %platform%==x86 set PATH=%MINGW_32%\bin;%QT5_32%\bin;%PATH%
     - if %platform%==x64 set PATH=%PY_DIR_64%;%PY_DIR_64%\Scripts;%PATH%
     - if %platform%==x64 set PATH=%MINGW_64%\bin;%QT5_64%\bin;%PATH%
-    - call "%QT5_32%\bin\qtenv2.bat"
+    - if %platform%==x86 call "%QT5_32%\bin\qtenv2.bat"
+    - if %platform%==x64 call "%QT5_64%\bin\qtenv2.bat"
     - if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
     - if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
-    - dir C:\Qt\Tools\
   build_script:
     - ps: write-host "build_script Windows"
     - cd %APPVEYOR_BUILD_FOLDER%
@@ -142,6 +144,7 @@ for:
     #- xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
     #- C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
     #- 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
+    - C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
     - copy *.zip %APPVEYOR_BUILD_FOLDER%
     - copy *.exe %APPVEYOR_BUILD_FOLDER%
     - cd %APPVEYOR_BUILD_FOLDER%
