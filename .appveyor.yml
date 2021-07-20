@@ -39,6 +39,7 @@ for:
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
   install:
     - sh: echo install Ubuntu
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     # Python
@@ -74,18 +75,18 @@ for:
     - sh: chmod +x linuxdeploy*.AppImage
     # LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu
     - sh: ./linuxdeploy-x86_64.AppImage --appdir=AppDir  -i ../desktop/GalaxyCalculator2.svg -d ../desktop/GalaxyCalculator2.desktop --plugin qt --output appimage
-    - sh: 7z a -tzip -r GalaxyCalculator2-$IMAGE-$CONFIGURATION-$PLATFORM.zip AppDir
+    - sh: 7z a -tzip -r GalaxyCalculator2-$MY_OS-$CONFIGURATION-$PLATFORM.zip AppDir
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
+    #- $QT5_64/Tools/QtInstallerFramework/binarycreator.exe --offline-only -c "$APPVEYOR_BUILD_FOLDER/config/config.xml" -p "$APPVEYOR_BUILD_FOLDER\packages" "$BIN-Windows-Installer.exe"
     - cd ../
     - sh: echo Current Path is %cd%
     - sh: ls
     - sh: echo Completed-Build Ubuntu
   artifacts:
-    - path: 'GalaxyCalculator2*.zip'
+    - path: '*.zip'
       name: 'ZipInstaller'
-    - path: 'GalaxyCalculator2Exe'
-      name: 'ExecutableFile'
+    #- path: 'GalaxyCalculator2' name: 'ExecutableFile'
 -
   matrix:
     only:
@@ -98,8 +99,8 @@ for:
     MINGW_32: C:\Qt\Tools\mingw810_32
     QT5_64:   C:\Qt\5.15.2\mingw81_64
     MINGW_64: C:\Qt\Tools\mingw810_64
-    PY_DIR_32: C:\Python39
-    PY_DIR_64: C:\Python39-x64
+    PY_DIR_32: C:\Python38
+    PY_DIR_64: C:\Python38-x64
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN: GalaxyCalculator2
@@ -107,6 +108,7 @@ for:
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
   install:
     - ps: write-host "install Windows"
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     # Create our AppVeyor version
     - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
     - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
@@ -150,8 +152,7 @@ for:
   artifacts:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'
-    - path: '%BIN%*.exe'
-      name: 'ExecutableFile'
+    #- path: '%BIN%*.exe' name: 'ExecutableFile'
 
 deploy:
   - provider: GitHub
