@@ -63,9 +63,9 @@ for:
     - sh: mkdir deploy
     - sh: cp GalaxyCalculator2 deploy/GalaxyCalculator2
     #- sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
-    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$(CONFIGURATION)-$(platform).zip deploy -r
+    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$platform.zip deploy -r
     # Rename it
-    - sh: cp GalaxyCalculator2-Ubuntu2004-$(CONFIGURATION)-$(platform).zip ../
+    - sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$platform.zip ../
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
     - cd ../
@@ -103,18 +103,20 @@ for:
     - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
     - cmd: set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
     - call "%QT5%\bin\qtenv2.bat"
-    - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
+    - if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
+    - if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   build_script:
     - ps: write-host "build_script Windows"
     - cd %APPVEYOR_BUILD_FOLDER%
     - mkdir build
     - cd build
-    - qmake -v && qmake ..\%BIN%.pro CONFIG+=release CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
+    - if %platform%==x86 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
+    - if %platform%==x64 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw64-make
   after_build:
     - ps: write-host "after_build Windows"
     - dir
     - mkdir deploy
-    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
+    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
     - windeployqt "deploy/%BIN%.exe" --verbose=2
     #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
     - 7z a -tzip "%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.zip" deploy -r
