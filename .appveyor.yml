@@ -45,7 +45,7 @@ for:
     - sh: mkdir -p build
     - cd build
     - sh: mkdir -p AppDir
-    - sh: rsync -a ../usr/ AppDir
+    - sh: rsync -a ../usr AppDir
     - sh: ls $PWD/AppDir/usr/
     - sh: ls $PWD/AppDir/usr/share/
     - sh: ls $PWD/AppDir/usr/share/applications/
