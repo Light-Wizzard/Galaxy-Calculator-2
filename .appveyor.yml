@@ -98,8 +98,8 @@ for:
     MINGW_32: C:\Qt\Tools\mingw810_32
     QT5_64:   C:\Qt\5.15.2\mingw81_64
     MINGW_64: C:\Qt\Tools\mingw810_64
-    PY_DIR_32: C:\Python38
-    PY_DIR_64: C:\Python38-x64
+    PY_DIR_32: C:\Python39
+    PY_DIR_64: C:\Python39-x64
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN: GalaxyCalculator2
@@ -125,12 +125,12 @@ for:
     - cd %APPVEYOR_BUILD_FOLDER%
     - mkdir build
     - cd build
-    - if %platform%==x86 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
-    - if %platform%==x64 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
+    - mkdir deploy
+    - if %platform%==x86 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
+    - if %platform%==x64 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
   after_build:
     - ps: write-host "after_build Windows"
     - dir
-    - mkdir deploy
     - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
     - windeployqt "deploy/%BIN%.exe" --verbose=2
     #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
