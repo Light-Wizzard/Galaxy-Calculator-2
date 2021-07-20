@@ -69,7 +69,7 @@ for:
     - chmod a+x linuxdeployqt*.AppImage
     - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
     #- ./linuxdeployqt*.AppImage deploy -bundle-non-qt-libs
-    - ./linuxdeployqt*.AppImage deploy -appimage
+    - ./linuxdeployqt*.AppImage deploy/GalaxyCalculator2 -appimage
 
     - sh: 7z a -tzip GalaxyCalculator2-Ubuntu1604-$CONFIGURATION-$platform.zip deploy -r
     # Rename it
