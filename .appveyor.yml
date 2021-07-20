@@ -65,7 +65,7 @@ for:
     #- sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
     - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$(CONFIGURATION)-$(platform).zip deploy -r
     # Rename it
-    - sh: cp GalaxyCalculator2-Ubuntu2004-%CONFIGURATION%-%platform%.zip ../
+    - sh: cp GalaxyCalculator2-Ubuntu2004-$(CONFIGURATION)-$(platform).zip ../
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
     - cd ../
