@@ -10,6 +10,10 @@ branches:
 
 configuration: Release
 
+platform:
+  - x64
+  - x86
+
 image:
   - Ubuntu2004
   - Visual Studio 2019
@@ -22,16 +26,15 @@ for:
     only:
       - image: Ubuntu2004
   environment:
-    - RUNTIME_LINKAGE: static
-    - COVERITY_BUILD_CANDIDATE: True
-    - QT5: $HOME/Qt/5.15.2/gcc_64/bin
-    - QT_IF_VERSION: '3.1.1'
-    - PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    - BIN: GalaxyCalculator2
-    - MY_OS: Ubuntu2004
-    - QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    - PY_DIR: $HOME/venv3.9
-    - platform: - x64
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
+    QT5: $HOME/Qt/5.15.2/gcc_64/bin
+    QT_IF_VERSION: '3.1.1'
+    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    BIN: GalaxyCalculator2
+    MY_OS: Ubuntu2004
+    QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+    PY_DIR: $HOME/venv3.9
   install:
     - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
@@ -52,8 +55,7 @@ for:
     - sh: echo $PATH
     - sh: mkdir build
     - cd build
-    #  CONFIG+=debug
-    - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release DESTDIR=. && make
+    - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release CONFIG+=debug DESTDIR=. && make
   after_build:
     - sh: echo after_build Ubuntu
     - sh: ls
@@ -78,18 +80,17 @@ for:
     only:
       - image: Visual Studio 2019
   environment:
-    - RUNTIME_LINKAGE: static
-    - COVERITY_BUILD_CANDIDATE: True
-    - QT_VERSION: 5.15
-    - QT5: C:\Qt\5.15.2\mingw81_32
-    - MINGW: C:\Qt\Tools\mingw810_32
-    - QT_IF_VERSION: '3.1.1'
-    - PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    - BIN: GalaxyCalculator2
-    - MY_OS: Windows
-    - QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-    - PY_DIR: C:\Python38
-    - platform: - x86
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
+    QT_VERSION: 5.15
+    QT5: C:\Qt\5.15.2\mingw81_32
+    MINGW: C:\Qt\Tools\mingw810_32
+    QT_IF_VERSION: '3.1.1'
+    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    BIN: GalaxyCalculator2
+    MY_OS: Windows
+    QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+    PY_DIR: C:\Python38
   install:
     - ps: write-host "install Windows"
     # Create our AppVeyor version
