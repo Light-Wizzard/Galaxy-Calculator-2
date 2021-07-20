@@ -50,6 +50,7 @@ for:
     - sh: echo build_script Ubuntu
     - source $HOME/venv3.8/bin/activate
     - export PATH=$HOME/venv3.8:$HOME/venv3.8/bin:$HOME/venv3.8/lib:$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
+    - export PATH=/usr/lib/python3.8:/usr/include/python3.8
     - sh: echo $PATH
     - sh: mkdir build
     - cd build
