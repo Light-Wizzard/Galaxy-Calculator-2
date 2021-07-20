@@ -34,7 +34,7 @@ for:
     PY_DIR_64: $HOME/venv3.9
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
+    BIN: Galaxy-Calculator-2
     MY_OS: Ubuntu2004
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
   install:
@@ -65,7 +65,7 @@ for:
     # if "$PLATFORM"=="x86"
     # if "$PLATFORM"=="x64"
     - sh: mkdir -p AppDir
-    - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release CONFIG+=debug DESTDIR=. && make -j$(nproc)
+    - sh: qmake -v && qmake ../Galaxy-Calculator-2.pro CONFIG+=release CONFIG+=debug DESTDIR=. && make -j$(nproc)
     - sh: make install INSTALL_ROOT=AppDir
   after_build:
     - sh: echo after_build Ubuntu
@@ -75,9 +75,10 @@ for:
     - sh: chmod +x linuxdeploy*.AppImage
     # Copy Icon and .desktop to AppImage folder
     - sh: cp -r ../usr AppDir
+    - sh: ls AppDir
     - sh: LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu ./linuxdeploy-x86_64.AppImage --appdir=AppDir --plugin qt --output appimage
-    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip $PWD/deploy -r
-    - sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip ../
+    - sh: 7z a -tzip Galaxy-Calculator-2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip $PWD/deploy -r
+    - sh: cp Galaxy-Calculator-2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip ../
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
     - cd ../
@@ -86,9 +87,9 @@ for:
     - if "$PLATFORM"=="x64" export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH;
     - sh: echo Completed-Build Ubuntu
   artifacts:
-    - path: 'GalaxyCalculator2*.zip'
+    - path: 'Galaxy-Calculator-2*.zip'
       name: 'ZipInstaller'
-    - path: 'GalaxyCalculator2'
+    - path: 'Galaxy-Calculator-2'
       name: 'ExecutableFile'
 -
   matrix:
@@ -106,7 +107,7 @@ for:
     PY_DIR_64: C:\Python38-x64
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
+    BIN: Galaxy-Calculator-2
     MY_OS: Windows
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
   install:

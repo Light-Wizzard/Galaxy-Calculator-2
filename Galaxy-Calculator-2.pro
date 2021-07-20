@@ -1,4 +1,4 @@
-# GalaxyCalculator2.pro
+# Galaxy-Calculator-2.pro
 # https://github.com/python/cpython
 # Specifies the name of the template to use when generating the project.
 # The allowed values are: app, lib, subdirs, aux, vcapp or vclib
@@ -6,7 +6,7 @@ TEMPLATE     = "app"
 # Specifies the name of the target file. Contains the base name of the project file by default.
 # Do not use Spaces in Target Name
 # This pro(ject) file is based on a pattern
-TARGET           = "GalaxyCalculator2"
+TARGET           = "Galaxy-Calculator-2"
 qtHaveModule(printsupport): QT *= printsupport
 #unix:QT *= printsupport
 #QT              *= printsupport
