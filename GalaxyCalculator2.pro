@@ -118,7 +118,17 @@ DISTFILES += \
     GalaxyCalculator_en_US.ts \
     Help-en.html \
     README.md      \
-    config/config.xml
+    config/config.xml \
+    usr/bin/README.md \
+    usr/share/applications/Galaxy-Calculator-2.desktop \
+    usr/share/icons/Papirus-Dark/16x16/apps/Galaxy-Calculator-2.svg \
+    usr/share/icons/Papirus-Dark/22x22/apps/Galaxy-Calculator-2.svg \
+    usr/share/icons/Papirus-Dark/24x24/apps/Galaxy-Calculator-2.svg \
+    usr/share/icons/Papirus-Dark/32x32/categories/Galaxy-Calculator-2.svg \
+    usr/share/icons/Papirus-Dark/48x48/categories/Galaxy-Calculator-2.svg \
+    usr/share/icons/Papirus-Dark/64x64/categories/Galaxy-Calculator-2.svg \
+    usr/share/icons/hicolor/48x48/apps/Galaxy-Calculator-2.png \
+    usr/share/icons/hicolor/scalable/apps/Galaxy-Calculator-2.svg
 # Ui Form(s)
 FORMS       += MainWindow.ui HelpDialog.ui AboutDialog.ui
 # Resources
