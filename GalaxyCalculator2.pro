@@ -24,7 +24,7 @@ win32:CONFIG -= x86_64
 win32:CONFIG += x86
 TRANSLATIONS    += GalaxyCalculator2_en_US.ts
 CONFIG          *= warn_on utf8_source executable
-CONFIG          += release
+CONFIG          += release debug
 win32 {
     contains(QT_ARCH, x86_64) {
         QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
@@ -150,7 +150,7 @@ win32:LIBS        += $$PWD/3rdparty/gmp/lib/libmpfr-4.dll
 #win32:LIBS        += -L$$PWD/3rdparty/gmp/lib/ -llibmpfr-4
 #
 # Python Unix
-PYTHON_VERSION_LINUX="3.8"
+PYTHON_VERSION_LINUX="3.9"
 unix:INCLUDEPATH  += /usr/include/python$${PYTHON_VERSION_LINUX}
 unix:DEPENDPATH   += /usr/include/python$${PYTHON_VERSION_LINUX}
 unix:LIBS         += -L /usr/local/lib/python$${PYTHON_VERSION_LINUX} -lpython$${PYTHON_VERSION_LINUX}

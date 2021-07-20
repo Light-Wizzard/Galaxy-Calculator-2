@@ -10,14 +10,11 @@ branches:
 
 configuration: Release
 
-platform:
-  - x86
-
 image:
   - Ubuntu2004
   - Visual Studio 2019
 
-stack: python 3.8
+stack: python 3.9, python 3.8
 
 for:
 -
@@ -25,15 +22,16 @@ for:
     only:
       - image: Ubuntu2004
   environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
-    QT5: $HOME/Qt/5.15.2/gcc_64/bin
-    QT_IF_VERSION: '3.1.1'
-    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
-    MY_OS: Ubuntu2004
-    QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    PY_DIR: $HOME/venv3.8
+    - RUNTIME_LINKAGE: static
+    - COVERITY_BUILD_CANDIDATE: True
+    - QT5: $HOME/Qt/5.15.2/gcc_64/bin
+    - QT_IF_VERSION: '3.1.1'
+    - PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    - BIN: GalaxyCalculator2
+    - MY_OS: Ubuntu2004
+    - QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+    - PY_DIR: $HOME/venv3.9
+    - platform: - x64
   install:
     - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
@@ -43,17 +41,18 @@ for:
     - sh: sudo apt-get update -qq && sudo apt-get install -qq
     - sh: sudo apt-get upgrade -qqy
     - sh: sudo apt install -qqy build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
-    - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev mesa-common-dev
-    - sh: sudo apt-get install -qqy cmake software-properties-common python3.8-dev python3-venv checkinstall libglu1-mesa-dev freeglut3-dev
+    - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev mesa-common-dev flex bison
+    - sh: sudo apt-get install -qqy cmake software-properties-common python3.9-dev python3-venv checkinstall libglu1-mesa-dev freeglut3-dev
   build_script:
     - sh: echo build_script Ubuntu
-    #- source $HOME/venv3.8/bin/activate
-    #- export PATH=$HOME/venv3.8:$HOME/venv3.8/bin:$HOME/venv3.8/lib:$PATH
+    #- source $HOME/venv3.9/bin/activate
+    #- export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
     - export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
-    - export PATH=/usr/lib/python3.8:/usr/include/python3.8
+    - export PATH=/usr/lib/python3.9:/usr/include/python3.9
     - sh: echo $PATH
     - sh: mkdir build
     - cd build
+    #  CONFIG+=debug
     - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release DESTDIR=. && make
   after_build:
     - sh: echo after_build Ubuntu
@@ -79,17 +78,18 @@ for:
     only:
       - image: Visual Studio 2019
   environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
-    QT_VERSION: 5.15
-    QT5: C:\Qt\5.15.2\mingw81_32
-    MINGW: C:\Qt\Tools\mingw810_32
-    QT_IF_VERSION: '3.1.1'
-    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
-    MY_OS: Windows
-    QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-    PY_DIR: C:\Python38
+    - RUNTIME_LINKAGE: static
+    - COVERITY_BUILD_CANDIDATE: True
+    - QT_VERSION: 5.15
+    - QT5: C:\Qt\5.15.2\mingw81_32
+    - MINGW: C:\Qt\Tools\mingw810_32
+    - QT_IF_VERSION: '3.1.1'
+    - PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    - BIN: GalaxyCalculator2
+    - MY_OS: Windows
+    - QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+    - PY_DIR: C:\Python38
+    - platform: - x86
   install:
     - ps: write-host "install Windows"
     # Create our AppVeyor version
