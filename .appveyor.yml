@@ -28,13 +28,15 @@ for:
   environment:
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
-    QT5: $HOME/Qt/5.15.2/gcc_64/bin
+    QT5_32: $HOME/Qt/5.15.2/gcc_32/bin
+    QT5_64: $HOME/Qt/5.15.2/gcc_64/bin
+    PY_DIR_32: $HOME/venv3.9
+    PY_DIR_64: $HOME/venv3.9
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN: GalaxyCalculator2
     MY_OS: Ubuntu2004
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    PY_DIR: $HOME/venv3.9
   install:
     - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
@@ -89,14 +91,17 @@ for:
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
     QT_VERSION: 5.15
-    QT5: C:\Qt\5.15.2\mingw81_32
-    MINGW: C:\Qt\Tools\mingw810_32
+    QT5_32:   C:\Qt\5.15.2\mingw81_32
+    MINGW_32: C:\Qt\Tools\mingw810_32
+    QT5_64:   C:\Qt\5.15.2\mingw81_64
+    MINGW_64: C:\Qt\Tools\mingw810_32
+    PY_DIR_32: C:\Python38
+    PY_DIR_64: C:\Python38-x64
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN: GalaxyCalculator2
     MY_OS: Windows
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-    PY_DIR: C:\Python38
   install:
     - ps: write-host "install Windows"
     # Create our AppVeyor version
@@ -104,9 +109,11 @@ for:
     - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
   before_build:
     - ps: write-host "before_build Windows"
-    - cmd: set PATH=%PY_DIR%;%PY_DIR%\Scripts;%PATH%
-    - cmd: set PATH=%MINGW%\bin;%QT5%\bin;%PATH%
-    - call "%QT5%\bin\qtenv2.bat"
+    - if %platform%==x86 set PATH=%PY_DIR_32%;%PY_DIR_32%\Scripts;%PATH%
+    - if %platform%==x86 set PATH=%MINGW_32%\bin;%QT5_32%\bin;%PATH%
+    - if %platform%==x64 set PATH=%PY_DIR_64%;%PY_DIR_64%\Scripts;%PATH%
+    - if %platform%==x64 set PATH=%MINGW_64%\bin;%QT5_64%\bin;%PATH%
+    - call "%QT5_32%\bin\qtenv2.bat"
     - if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
     - if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   build_script:
