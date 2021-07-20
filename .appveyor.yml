@@ -46,6 +46,7 @@ for:
     - sh: sudo apt install -qqy build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
     - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev mesa-common-dev flex bison
     - sh: sudo apt-get install -qqy cmake software-properties-common python3.9-dev python3-venv checkinstall libglu1-mesa-dev freeglut3-dev
+    - sh: sudo apt-get install -qqy libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libgtk2.0-dev
   build_script:
     - sh: echo build_script Ubuntu
     #- source $HOME/venv3.9/bin/activate
@@ -63,6 +64,13 @@ for:
     - sh: mkdir deploy
     - sh: cp GalaxyCalculator2 deploy/GalaxyCalculator2
     #- sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
+
+    - sh: wget https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
+    - chmod a+x linuxdeployqt*.AppImage
+    - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
+    #- ./linuxdeployqt*.AppImage deploy -bundle-non-qt-libs
+    - ./linuxdeployqt*.AppImage deploy -appimage
+
     - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$platform.zip deploy -r
     # Rename it
     - sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$platform.zip ../
