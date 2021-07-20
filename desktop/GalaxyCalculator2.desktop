@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=GalaxyCalculator2
+GenericName=GalaxyCalculator2
+Comment=Galaxy Calculator 2 by the Light Wizzard
+Icon=GalaxyCalculator2
+Exec=GalaxyCalculator2
+Terminal=false
+Categories=Education;
+Keywords=calculator;
+Name[en_US]=GalaxyCalculator2.desktop

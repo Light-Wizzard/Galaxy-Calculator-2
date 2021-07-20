@@ -119,6 +119,11 @@ DISTFILES += \
     Help-en.html \
     README.md      \
     config/config.xml \
+    desktop/CMakeLists.txt \
+    desktop/GalaxyCalculator2.desktop \
+    desktop/GalaxyCalculator2.ico \
+    desktop/GalaxyCalculator2.png \
+    desktop/GalaxyCalculator2.svg \
     usr/bin/README.md \
     usr/share/applications/GalaxyCalculator2.desktop \
     usr/share/icons/Papirus-Dark/16x16/apps/GalaxyCalculator2.svg \

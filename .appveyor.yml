@@ -53,7 +53,6 @@ for:
     - sh: echo build_script Ubuntu
     #- source $HOME/venv3.9/bin/activate
     #- export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
-    - ls $HOME/Qt/5.15.2/
     #- if "$PLATFORM"=="x86" (export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH)
     #- sh: if [ "$PLATFORM"=="x64" ]; then { export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH }
     - export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
@@ -65,7 +64,7 @@ for:
     - sh: mkdir -p build
     - cd build
     - sh: mkdir -p AppDir
-    - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release CONFIG+=debug DESTDIR=. && make -j$(nproc)
+    - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=$CONFIGURATION DESTDIR=. && make -j$(nproc)
     - sh: make install INSTALL_ROOT=$PWD/AppDir
     - sh: rsync -a ../usr AppDir
   after_build:
@@ -74,9 +73,8 @@ for:
     - sh: wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
     - sh: wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
     - sh: chmod +x linuxdeploy*.AppImage
-    - sh: LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu ./linuxdeploy-x86_64.AppImage --appdir=AppDir -d AppDir/usr/share/applications/GalaxyCalculator2.desktop --plugin qt --output appimage
-    - sh: 7z a -tzip -r GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip AppDir
-    #- sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip ../
+    - sh: LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu ./linuxdeploy-x86_64.AppImage --appdir=AppDir  -i ../desktop/GalaxyCalculator2.png -d ../desktop/GalaxyCalculator2.desktop --plugin qt --output appimage
+    - sh: 7z a -tzip -r GalaxyCalculator2-$IMAGE-$CONFIGURATION-$PLATFORM.zip AppDir
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
     - cd ../
