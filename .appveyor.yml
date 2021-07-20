@@ -74,7 +74,7 @@ for:
     - sh: wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
     - sh: chmod +x linuxdeploy*.AppImage
     # Copy Icon and .desktop to AppImage folder
-    - sh: cp ../usr AppDir
+    - sh: cp -r ../usr AppDir
     - sh: LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu ./linuxdeploy-x86_64.AppImage --appdir=AppDir --plugin qt --output appimage
     - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip $PWD/deploy -r
     - sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip ../
