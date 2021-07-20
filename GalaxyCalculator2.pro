@@ -1,4 +1,5 @@
 # GalaxyCalculator2.pro
+# https://github.com/python/cpython
 # Specifies the name of the template to use when generating the project.
 # The allowed values are: app, lib, subdirs, aux, vcapp or vclib
 TEMPLATE     = "app"
@@ -19,6 +20,8 @@ CONFIG         *= "c++11"
 #CONFIG          *= "c++17"
 #CONFIG         *= "c++2a"
 #CONFIG          *= "c++latest"
+win32:CONFIG -= x86_64
+win32:CONFIG += x86
 TRANSLATIONS    += GalaxyCalculator2_en_US.ts
 CONFIG          *= warn_on utf8_source executable
 CONFIG          += release
@@ -152,9 +155,15 @@ unix:INCLUDEPATH  += /usr/include/python$${PYTHON_VERSION_LINUX}
 unix:DEPENDPATH   += /usr/include/python$${PYTHON_VERSION_LINUX}
 unix:LIBS         += -L /usr/local/lib/python$${PYTHON_VERSION_LINUX} -lpython$${PYTHON_VERSION_LINUX}
 # Python Windows
-win32:INCLUDEPATH += C:/Python39/include
-win32:DEPENDPATH  += C:/Python39/include
-win32:LIBS        += -LC:/Python39/libs/ -lpython39
+# https://python.org/downloads/windows/
+#win32:INCLUDEPATH += C:/Python38/include
+#win32:DEPENDPATH  += C:/Python38/include
+#win32:LIBS        += -LC:/Python38/libs/ -lpython38
+win32:INCLUDEPATH += $$PWD/python/windows/include
+win32:INCLUDEPATH += $$PWD/python/windows/libs
+win32:DEPENDPATH  += $$PWD/python/windows/include
+win32:LIBS        += $$PWD/python/windows/libs/python38.lib
+#win32:LIBS        += -L$$PWD/python/windows/libs/ -lpython38
 ###############################################################################
 #
 # The following define makes your compiler emit warnings if you use

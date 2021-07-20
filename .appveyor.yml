@@ -38,9 +38,14 @@ for:
     - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    # Python
+    - sh: sudo add-apt-repository ppa:deadsnakes/ppa -y
     - sh: sudo apt-get update -qq && sudo apt-get install -qq
     #- sh: sudo apt-get upgrade -qqy
-    - sh: sudo apt-get -qqy install build-essential cmake
+    - sh: sudo apt install build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
+    - sh: sudo apt install libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev
+    - sh: sudo apt-get -qqy install cmake software-properties-common python3.8 python3-venv checkinstall
+    - sh: whereis python3.8
   build_script:
     - sh: echo build_script Ubuntu
     - source $HOME/venv3.8/bin/activate
