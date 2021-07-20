@@ -55,6 +55,7 @@ for:
     - sh: echo $PATH
     - sh: mkdir build
     - cd build
+    # if "%platform%"=="x86"
     - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release CONFIG+=debug DESTDIR=. && make
   after_build:
     - sh: echo after_build Ubuntu
@@ -62,8 +63,9 @@ for:
     - sh: mkdir deploy
     - sh: cp GalaxyCalculator2 deploy/GalaxyCalculator2
     #- sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
-    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004.zip deploy -r
-    - sh: cp GalaxyCalculator2-Ubuntu2004.zip ../GalaxyCalculator2-Ubuntu2004.zip
+    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$(CONFIGURATION)-$(platform).zip deploy -r
+    # Rename it
+    - sh: cp GalaxyCalculator2-Ubuntu2004-%CONFIGURATION%-%platform%.zip ../
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
     - cd ../
@@ -115,8 +117,8 @@ for:
     - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%.exe"
     - windeployqt "deploy/%BIN%.exe" --verbose=2
     #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
-    - 7z a -tzip "%BIN%-%MY_OS%.zip" deploy -r
-    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%.zip" "%APPVEYOR_BUILD_FOLDER%\%BIN%-%MY_OS%.zip"
+    - 7z a -tzip "%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.zip" deploy -r
+    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.zip" "%APPVEYOR_BUILD_FOLDER%\
     - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
     #- xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
     #- C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
