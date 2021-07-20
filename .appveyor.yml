@@ -46,6 +46,8 @@ for:
     - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev
     - sh: sudo apt-get install -qqy cmake software-properties-common python3.8-dev python3-venv checkinstall
     - sh: whereis python3.8
+    - ls /usr/lib/python3*
+    - ls /usr/include/python3*
   build_script:
     - sh: echo build_script Ubuntu
     - source $HOME/venv3.8/bin/activate
