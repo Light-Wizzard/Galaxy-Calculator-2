@@ -41,6 +41,14 @@ for:
     - sh: echo install Ubuntu
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    # Copy Icon and .desktop to AppImage folder
+    - sh: mkdir -p build
+    - cd build
+    - sh: mkdir -p AppDir
+    - sh: rsync -a ../usr/ AppDir
+    - sh: ls $PWD/AppDir/usr/
+    - sh: ls $PWD/AppDir/usr/share/
+    - sh: ls $PWD/AppDir/usr/share/applications/
     # Python
     - sh: sudo add-apt-repository ppa:deadsnakes/ppa -y
     - sh: sudo apt-get update -qq && sudo apt-get install -qq
@@ -59,27 +67,18 @@ for:
     - export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
     - export PATH=/usr/lib/python3.9:/usr/include/python3.9
     - sh: echo $PATH
-    - sh: mkdir -p build
-    - sh: mkdir -p $PWD/deploy
-    - cd build
     # if "$PLATFORM"=="x86"
     # if "$PLATFORM"=="x64"
-    - sh: mkdir -p AppDir
     - sh: qmake -v && qmake ../GalaxyCalculator2.pro CONFIG+=release CONFIG+=debug DESTDIR=. && make -j$(nproc)
-    - sh: make install INSTALL_ROOT=AppDir
+    - sh: make install INSTALL_ROOT=$PWD/AppDir
   after_build:
     - sh: echo after_build Ubuntu
     - sh: ls
     - sh: wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
     - sh: wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
     - sh: chmod +x linuxdeploy*.AppImage
-    # Copy Icon and .desktop to AppImage folder
-    - sh: rsync -a ../usr/ AppDir
-    - sh: ls AppDir/usr/
-    - sh: ls AppDir/usr/share/
-    - sh: ls AppDir/usr/share/applications/
     - sh: LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu ./linuxdeploy-x86_64.AppImage --appdir=AppDir -d "$REPO_ROOT"/usr/share/applications/GalaxyCalculator2.desktop --plugin qt --output appimage
-    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip $PWD/deploy -r
+    - sh: 7z a -tzip -r GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip AppDir
     - sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip ../
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
