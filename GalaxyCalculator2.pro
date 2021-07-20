@@ -1,4 +1,4 @@
-# Galaxy-Calculator-2.pro
+# GalaxyCalculator2.pro
 # https://github.com/python/cpython
 # Specifies the name of the template to use when generating the project.
 # The allowed values are: app, lib, subdirs, aux, vcapp or vclib
@@ -6,7 +6,7 @@ TEMPLATE     = "app"
 # Specifies the name of the target file. Contains the base name of the project file by default.
 # Do not use Spaces in Target Name
 # This pro(ject) file is based on a pattern
-TARGET           = "Galaxy-Calculator-2"
+TARGET           = "GalaxyCalculator2"
 qtHaveModule(printsupport): QT *= printsupport
 #unix:QT *= printsupport
 #QT              *= printsupport
@@ -120,15 +120,15 @@ DISTFILES += \
     README.md      \
     config/config.xml \
     usr/bin/README.md \
-    usr/share/applications/Galaxy-Calculator-2.desktop \
-    usr/share/icons/Papirus-Dark/16x16/apps/Galaxy-Calculator-2.svg \
-    usr/share/icons/Papirus-Dark/22x22/apps/Galaxy-Calculator-2.svg \
-    usr/share/icons/Papirus-Dark/24x24/apps/Galaxy-Calculator-2.svg \
-    usr/share/icons/Papirus-Dark/32x32/categories/Galaxy-Calculator-2.svg \
-    usr/share/icons/Papirus-Dark/48x48/categories/Galaxy-Calculator-2.svg \
-    usr/share/icons/Papirus-Dark/64x64/categories/Galaxy-Calculator-2.svg \
-    usr/share/icons/hicolor/48x48/apps/Galaxy-Calculator-2.png \
-    usr/share/icons/hicolor/scalable/apps/Galaxy-Calculator-2.svg
+    usr/share/applications/GalaxyCalculator2.desktop \
+    usr/share/icons/Papirus-Dark/16x16/apps/GalaxyCalculator2.svg \
+    usr/share/icons/Papirus-Dark/22x22/apps/GalaxyCalculator2.svg \
+    usr/share/icons/Papirus-Dark/24x24/apps/GalaxyCalculator2.svg \
+    usr/share/icons/Papirus-Dark/32x32/categories/GalaxyCalculator2.svg \
+    usr/share/icons/Papirus-Dark/48x48/categories/GalaxyCalculator2.svg \
+    usr/share/icons/Papirus-Dark/64x64/categories/GalaxyCalculator2.svg \
+    usr/share/icons/hicolor/48x48/apps/GalaxyCalculator2.png \
+    usr/share/icons/hicolor/scalable/apps/GalaxyCalculator2.svg
 # Ui Form(s)
 FORMS       += MainWindow.ui HelpDialog.ui AboutDialog.ui
 # Resources
@@ -149,7 +149,7 @@ win32:INCLUDEPATH += $$PWD/3rdparty/gmp/lib
 win32:INCLUDEPATH += $$PWD/3rdparty/gmp/include
 win32:DEPENDPATH  += $$PWD/3rdparty/gmp/include
 #win32:LIBS        += $$PWD/3rdparty/gmp/lib/libgmp-10.lib
-# C:/projects/galaxy-calculator-2/3rdparty/gmp/lib/libgmp-10.dll
+# C:/projects/GalaxyCalculator2/3rdparty/gmp/lib/libgmp-10.dll
 win32:LIBS        += $$PWD/3rdparty/gmp/lib/libgmp-10.dll
 #win32:LIBS        += -L$$PWD/3rdparty/gmp/lib/ -llibgmp-10
 # mpfr Windows
