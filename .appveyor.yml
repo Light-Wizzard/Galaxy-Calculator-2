@@ -55,7 +55,7 @@ for:
     #- export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
     - ls $HOME/Qt/5.15.2/
     #- if "$PLATFORM"=="x86" (export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH)
-    - sh: if [ "$PLATFORM"=="x64" ]; then { export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH }
+    #- sh: if [ "$PLATFORM"=="x64" ]; then { export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH }
     - export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
     - export PATH=/usr/lib/python3.9:/usr/include/python3.9
     - sh: echo $PATH
