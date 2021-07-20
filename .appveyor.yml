@@ -15,7 +15,7 @@ platform:
   - x86
 
 image:
-  - Ubuntu1604
+  - Ubuntu2004
   - Visual Studio 2019
 
 stack: python 3.9, python 3.8
@@ -24,7 +24,7 @@ for:
 -
   matrix:
     only:
-      - image: Ubuntu1604
+      - image: Ubuntu2004
   environment:
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
@@ -32,7 +32,7 @@ for:
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN: GalaxyCalculator2
-    MY_OS: Ubuntu1604
+    MY_OS: Ubuntu2004
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
     PY_DIR: $HOME/venv3.9
   install:
@@ -71,8 +71,8 @@ for:
     - sh: chmod +x linuxdeploy*.AppImage
     - sh: LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu ./linuxdeploy-x86_64.AppImage --appdir=$PWD/deploy --plugin qt --output appimage
 
-    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu1604-$CONFIGURATION-$platform.zip $PWD/deploy -r
-    - sh: cp GalaxyCalculator2-Ubuntu1604-$CONFIGURATION-$platform.zip ../
+    - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip $PWD/deploy -r
+    - sh: cp GalaxyCalculator2-Ubuntu2004-$CONFIGURATION-$PLATFORM.zip ../
     - sh: cp *.zip ../
     - sh: find . -perm /a+x -exec cp {} ../ \;
     - cd ../
