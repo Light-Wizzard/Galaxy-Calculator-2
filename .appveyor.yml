@@ -131,7 +131,7 @@ for:
     - mkdir build
     - cd build
     - if %platform%==x86 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
-    - if %platform%==x64 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw64-make
+    - if %platform%==x64 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make
   after_build:
     - ps: write-host "after_build Windows"
     - dir
