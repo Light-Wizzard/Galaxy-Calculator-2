@@ -42,7 +42,7 @@ for:
     # Python
     - sh: sudo add-apt-repository ppa:deadsnakes/ppa -y
     - sh: sudo apt-get update -qq && sudo apt-get install -qq
-    - sh: sudo apt-get upgrade -qqy
+    #- sh: sudo apt-get upgrade -qqy
     - sh: sudo apt install -qqy build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
     - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev mesa-common-dev flex bison
     - sh: sudo apt-get install -qqy cmake software-properties-common python3.9-dev python3-venv checkinstall libglu1-mesa-dev freeglut3-dev
@@ -61,7 +61,7 @@ for:
     - sh: ls
     - sh: mkdir deploy
     - sh: cp GalaxyCalculator2 deploy/GalaxyCalculator2
-    - sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
+    #- sh: linuxdeployqt deploy/GalaxyCalculator2 --verbose=2
     - sh: 7z a -tzip GalaxyCalculator2-Ubuntu2004.zip deploy -r
     - sh: cp GalaxyCalculator2-Ubuntu2004.zip ../GalaxyCalculator2-Ubuntu2004.zip
     - sh: cp *.zip ../
