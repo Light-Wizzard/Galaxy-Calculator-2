@@ -75,6 +75,10 @@ OLD_CWD="$(readlink -f .)";
 # 
 # switch to build dir
 pushd "$BUILD_DIR";
+# make sure Qt plugin finds QML sources so it can deploy the imported files
+if [ -d "${REPO_ROOT}/qml" ]; then
+    export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
+fi
 # source ${HOME}/venv${PYTHON_VER}/bin/activate
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]] && [[ "$PLATFORM" = "x86" ]]; then
     export PATH="${HOME}/Qt/${QT5_VERSION}/gcc_32/bin:${HOME}/Qt/${QT5_VERSION}/gcc_32/lib:${HOME}/Qt/${QT5_VERSION}/gcc_32/include:$PATH";
@@ -109,20 +113,16 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
     # build project and install files into AppDir
     make -j"$(nproc)";
     make install INSTALL_ROOT="AppDir";
-fi
-#
-#
-# make sure Qt plugin finds QML sources so it can deploy the imported files
-if [ -d "${REPO_ROOT}/qml" ]; then
-    export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
-fi
-# now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
-# download linuxdeploy and its Qt plugin
-if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]]; then
+    #
+    # now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
+    # download linuxdeploy and its Qt plugin
     wget -c -nv  https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage; 
     wget -c -nv  https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage; 
     # make them executable
     chmod +x linuxdeploy*.AppImage; 
+    export LD_LIBRARY_PATH=AppDir/usr/lib/;
+    # ${BIN_PRO_RES_NAME}-$PLATFORM.AppImage
+    export TARGET_APPIMAGE="${BIN_PRO_RES_NAME}-$PLATFORM.AppImage";
     # QtQuickApp does support "make install", but we don't use it because we want to show the manual packaging approach in this example
     # initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command
     ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
