@@ -12,6 +12,8 @@ branches:
 
 stack: python 3.9, python 3.8
 
+build: off
+
 configuration: Release
 
 platform:
