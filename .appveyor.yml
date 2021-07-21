@@ -67,16 +67,6 @@ install:
   - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
   - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
   #
-  - ps: >-
-     If ($env:PLATFORM -Match "x86") {
-       iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-       Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
-       ConfigureQtVersion 'C:\Qt' '5.15.2')
-     } Else {
-       iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-       Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
-       ConfigureQtVersion 'C:\Qt' '5.15.2')
-     }
   - sh: scripts/install.sh
 build_script:
    - sh: echo build_script Unix
