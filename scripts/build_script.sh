@@ -129,8 +129,9 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
     # initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command
     # env TARGET_APPIMAGE="${BIN_PRO_RES_NAME}-$PLATFORM.AppImage" APPIMAGE_EXTRACT_AND_RUN=1
     ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
+    chmod +x "${BIN_PRO_RES_NAME}"*.AppImage*;
     7z a -tzip -r "${BIN_PRO_RES_NAME}-$MY_OS-$CONFIGURATION-$PLATFORM.zip" AppDir;
-    cp ./*.zip ../;
+    cp "${BIN_PRO_RES_NAME}-$MY_OS-$CONFIGURATION-$PLATFORM.zip" "${OLD_CWD}";
     # $QT5_64/Tools/QtInstallerFramework/binarycreator.exe --offline-only -c "$APPVEYOR_BUILD_FOLDER/config/config.xml" -p "$APPVEYOR_BUILD_FOLDER\packages" "$BIN_PRO_RES_NAME-Windows-Installer.exe"
 fi
 # 
@@ -138,7 +139,6 @@ fi
 # AppImage update informatoin
 # 
 # 
-chmod +x "${BIN_PRO_RES_NAME}"*.AppImage*;
 mv "${BIN_PRO_RES_NAME}"*.AppImage* "$OLD_CWD";
 # Pop Directory for Qt Installer Framework
 #
