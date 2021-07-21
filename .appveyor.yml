@@ -51,16 +51,16 @@ for:
     - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev mesa-common-dev flex bison
     - sh: sudo apt-get install -qqy cmake software-properties-common python3.9-dev python3-venv checkinstall libglu1-mesa-dev freeglut3-dev
     - sh: sudo apt-get install -qqy libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libgtk2.0-dev
-    - ps: if ($PLATFORM==x86) {
-        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-        Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
-        ConfigureQtVersion 'C:\Qt' '5.15.2'
-        }
-    - ps: if ($PLATFORM==x64) {
-        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-        Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
-        ConfigureQtVersion 'C:\Qt' '5.15.2'
-        }
+#    - ps: if ($PLATFORM==x86) {
+#        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
+#        Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
+#        ConfigureQtVersion 'C:\Qt' '5.15.2'
+#        }
+#    - ps: if ($PLATFORM==x64) {
+#        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
+#        Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
+#        ConfigureQtVersion 'C:\Qt' '5.15.2'
+#        }
   build_script:
     - sh: echo build_script Ubuntu
     #- source $HOME/venv3.9/bin/activate
@@ -123,16 +123,16 @@ for:
     # Create our AppVeyor version
     - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
     - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
-    - ps: if ($PLATFORM==x86) {
+    - ps: if [%PLATFORM%]==[x86] (
         iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
         Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
         ConfigureQtVersion 'C:\Qt' '5.15.2'
-        }
-    - ps: if ($PLATFORM==x64) {
+        )
+    - ps: if [%PLATFORM%]==[x64] (
         iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
         Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
         ConfigureQtVersion 'C:\Qt' '5.15.2'
-        }
+        )
   before_build:
     - ps: write-host "before_build Windows"
     - if %platform%==x86 set PATH=%PY_DIR_32%;%PY_DIR_32%\Scripts;%PATH%
