@@ -78,12 +78,12 @@ pushd "$BUILD_DIR";
 # export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]] && [[ $PLATFORM = x86 ]]; then 
     export PATH=$HOME/Qt/5.15.2/gcc_32/bin:$HOME/Qt/5.15.2/gcc_32/lib:$HOME/Qt/5.15.2/gcc_32/include:$PATH; 
-    export PATH=/usr/lib/python3.9:/usr/include/python3.9; 
+    export PATH=/usr/lib/python3.9:/usr/include/python3.9:$PATH;
 fi
 #
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]] && [[ $PLATFORM = x64 ]]; then 
     export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH; 
-    export PATH=/usr/lib/python3.9:/usr/include/python3.9; 
+    export PATH=/usr/lib/python3.9:/usr/include/python3.9:$PATH;
 fi
 #
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]]; then 
