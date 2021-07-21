@@ -113,9 +113,8 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
     # build project and install files into AppDir
     make -j"$(nproc)";
     make install INSTALL_ROOT="AppDir";
-    ls AppDir
-    ls AppDir/usr
-    ls AppDir/usr/lib
+    # bin ls AppDir/usr
+    # does not exist ls AppDir/usr/lib
     #
     # now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
     # download linuxdeploy and its Qt plugin
@@ -123,12 +122,12 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
     wget -c -nv  https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage; 
     # make them executable
     chmod +x linuxdeploy*.AppImage; 
-    export LD_LIBRARY_PATH=AppDir/usr/lib/;
+    #export LD_LIBRARY_PATH=AppDir/usr/lib/;
     # ${BIN_PRO_RES_NAME}-$PLATFORM.AppImage
     #export TARGET_APPIMAGE="${BIN_PRO_RES_NAME}-$PLATFORM.AppImage";
     # QtQuickApp does support "make install", but we don't use it because we want to show the manual packaging approach in this example
     # initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command
-    ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
+    env TARGET_APPIMAGE="${BIN_PRO_RES_NAME}-$PLATFORM.AppImage" APPIMAGE_EXTRACT_AND_RUN=1  ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
     7z a -tzip -r "${BIN_PRO_RES_NAME}-$MY_OS-$CONFIGURATION-$PLATFORM.zip" AppDir;
     cp ./*.zip ../;
     # $QT5_64/Tools/QtInstallerFramework/binarycreator.exe --offline-only -c "$APPVEYOR_BUILD_FOLDER/config/config.xml" -p "$APPVEYOR_BUILD_FOLDER\packages" "$BIN_PRO_RES_NAME-Windows-Installer.exe"
