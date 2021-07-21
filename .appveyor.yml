@@ -50,10 +50,9 @@ stack: python %PY_VER%
 
 
 install:
-  - ps: write-host "install Windows"
+  - cmd: write-host "install Windows"
   - sh: echo install Unix
-  - ps: write-host "before_build Windows"
-
+  #
   - cmd: if %platform%==x86 set PATH=%PY_DIR_32%;%PY_DIR_32%\Scripts;%PATH%
   - cmd: if %platform%==x86 set PATH=%MINGW_32%\bin;%QT5_32%\bin;%PATH%
   - cmd: if %platform%==x64 set PATH=%PY_DIR_64%;%PY_DIR_64%\Scripts;%PATH%
@@ -62,16 +61,11 @@ install:
   - cmd: if %platform%==x64 call "%QT5_64%\bin\qtenv2.bat"
   - cmd: if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
   - cmd: if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
-
   #- sh: ls $HOME/Qt/5.15.2/Tools/
+  # Create our AppVeyor version
   - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
   - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
   - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-
-  - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-  # Create our AppVeyor version
-  - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
-  - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
   #
   - ps: >-
      If ($env:PLATFORM -Match "x86") {
@@ -86,7 +80,7 @@ install:
   - sh: scripts/install.sh
 build_script:
    - sh: echo build_script Unix
-   - ps: write-host "build_script Windows"
+   - cmd: write-host "build_script Windows"
    #
    - cmd: cd %APPVEYOR_BUILD_FOLDER%
    - cmd: mkdir build
@@ -97,7 +91,7 @@ build_script:
    - sh: scripts/build-script.sh
 after_build:
   - sh: echo after_build Ubuntu
-  - ps: write-host "after_build Windows"
+  - cmd: write-host "after_build Windows"
   - cmd: dir
   - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%.exe" "deploy\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
   - cmd: windeployqt "deploy/%BIN_PRO_RES_NAME%.exe" --verbose=2
@@ -114,7 +108,7 @@ after_build:
   - cmd: cd %APPVEYOR_BUILD_FOLDER%
   - cmd: echo Current Path is %cd%
   - cmd: dir
-  - ps: write-host "Completed-Build Windows"
+  - cmd: write-host "Completed-Build Windows"
   - sh: echo Completed-Build Ubuntu
 
 artifacts:
