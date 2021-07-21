@@ -10,6 +10,8 @@ branches:
   only:
     - master
 
+stack: python 3.9, python 3.8
+
 configuration: Release
 
 platform:
@@ -19,6 +21,13 @@ platform:
 image:
   - Ubuntu2004
   - Visual Studio 2019
+
+init:
+  # Create our AppVeyor version
+  - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+  - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+  - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+
 
 for:
 -
@@ -43,10 +52,8 @@ for:
     BIN_PRO_RES_NAME: GalaxyCalculator2
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
   install:
-    - sh: echo install Unix
     - sh: bash -c "scripts/install.sh"
   build_script:
-    - sh: echo build_script Unix
     - sh: bash -c "scripts/build-script.sh"
   artifacts:
     - path: '*.zip'
@@ -73,53 +80,12 @@ for:
     BIN_PRO_RES_NAME: GalaxyCalculator2
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
   install:
-    - cmd: write-host "install Windows"
-    #
-    - cmd: if %platform%==x86 set PATH=%PY_DIR_32%;%PY_DIR_32%\Scripts;%PATH%
-    - cmd: if %platform%==x86 set PATH=%MINGW_32%\bin;%QT5_32%\bin;%PATH%
-    - cmd: if %platform%==x64 set PATH=%PY_DIR_64%;%PY_DIR_64%\Scripts;%PATH%
-    - cmd: if %platform%==x64 set PATH=%MINGW_64%\bin;%QT5_64%\bin;%PATH%
-    - cmd: if %platform%==x86 call "%QT5_32%\bin\qtenv2.bat"
-    - cmd: if %platform%==x64 call "%QT5_64%\bin\qtenv2.bat"
-    - cmd: if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
-    - cmd: if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
-    # Create our AppVeyor version
-    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
-    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    - cmd: scripts/install.cmd
   build_script:
-    - cmd: write-host "build_script Windows"
-    #
-    - cmd: cd %APPVEYOR_BUILD_FOLDER%
-    - cmd: mkdir build
-    - cmd: cd build
-    - cmd: mkdir AppDir
-    - cmd: if %platform%==x86 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=AppDir
-    - cmd: if %platform%==x64 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=AppDir
-  after_build:
-    - cmd: write-host "after_build Windows"
-    - cmd: dir
-    - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%.exe" "AppDir\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
-    - cmd: windeployqt "AppDir/%BIN_PRO_RES_NAME%.exe" --verbose=2
-    #- cmd: for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I AppDir\
-    - cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" AppDir -r
-    - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" "%APPVEYOR_BUILD_FOLDER%\
-    - cmd: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-    #- cmd: xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\AppDir" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
-    #- cmd: C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
-    #- cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-Windows-Installer.zip" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
-    - cmd: C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
-    - cmd: copy *.zip %APPVEYOR_BUILD_FOLDER%
-    - cmd: copy *.exe %APPVEYOR_BUILD_FOLDER%
-    - cmd: cd %APPVEYOR_BUILD_FOLDER%
-    - cmd: echo Current Path is %cd%
-    - cmd: dir
-    - cmd: write-host "Completed-Build Windows"
+    - cmd: scripts/build-script.cmd
   artifacts:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'
-
-stack: python %PY_VER%
 
 deploy:
   - provider: GitHub

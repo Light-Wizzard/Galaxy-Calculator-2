@@ -4,7 +4,9 @@
 # Last Update: 20 July 2021
 #
 # shell?check -x scripts/install.sh
-
+#
+echo install Unix
+#
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
     # Python
     sudo add-apt-repository ppa:deadsnakes/ppa -y;

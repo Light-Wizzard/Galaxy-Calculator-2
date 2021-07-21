@@ -22,6 +22,8 @@
 #
 # I will not minimize this code, but if I did, you would understand why I put ";" to terminate all lines requiring them.
 # 
+echo build_script Unix
+#
 # Debug Information, not always a good idea when not debugging, and thanks to the TheAssassin, this is now working.
 # These are the setting you might want to change
 declare -ix DEBUGGING;         DEBUGGING=0;          # Set 1=True and 0=False
