@@ -48,7 +48,7 @@ fi
 # Set our Artifacts for later
 #
 export ARTIFACT_APPIMAGE="${BIN_PRO_RES_NAME}-x86_64.AppImage";
-export ARTIFACT_ZSYNC="${BIN_PRO_RES_NAME}-x86_64.AppImage.zsync";
+#export ARTIFACT_ZSYNC="${BIN_PRO_RES_NAME}-x86_64.AppImage.zsync";
 export ARTIFACT_QIF="${BIN_PRO_RES_NAME}-Linux-Installer";
 # 
 # use RAM disk if possible (as in: not building on CI system like Appveyor, and RAM disk is available)
@@ -122,7 +122,7 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
     wget -c -nv  https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage; 
     # make them executable
     chmod +x linuxdeploy*.AppImage; 
-    #export LD_LIBRARY_PATH=AppDir/usr/lib/;
+    export LD_LIBRARY_PATH="${REPO_ROOT}/build/AppDir/usr/lib/";
     # ${BIN_PRO_RES_NAME}-$PLATFORM.AppImage
     #export TARGET_APPIMAGE="${BIN_PRO_RES_NAME}-$PLATFORM.AppImage";
     # QtQuickApp does support "make install", but we don't use it because we want to show the manual packaging approach in this example
@@ -158,18 +158,19 @@ echo "Preparing for Qt Installer Framework";
 ls "${APPVEYOR_BUILD_FOLDER}";
 #
 # Copy both AppImages to where Qt Installer Framework needs them
+# QIF_PACKAGE_URI='packages/com.lightwizzard.galaxycalculator2/data'
 if [ -f "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" ]; then
-    cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" "${QIF_PACKAGE_URI}/data";
-    cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_ZSYNC}" "${QIF_PACKAGE_URI}/data";
+    cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/data";
+    #cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_ZSYNC}" "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/data";
 else
     echo -e "Missing ${BUILD_DIR}/${ARTIFACT_APPIMAGE} ";
 fi
 # The packages/${QIF_PACKAGE_URI}/meta/installscript.qs creates this: cp -v "desktop/${BIN_PRO_RES_NAME}.desktop" "${QIF_PACKAGE_URI}";
-cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${BIN_PRO_RES_NAME}.png" "${QIF_PACKAGE_URI}/data";
-cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${BIN_PRO_RES_NAME}.svg" "${QIF_PACKAGE_URI}/data";
-cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${BIN_PRO_RES_NAME}.ico" "${QIF_PACKAGE_URI}/data";
-rsync -Ravr "${APPVEYOR_BUILD_FOLDER}/usr/share/icons" "${QIF_PACKAGE_URI}/icons";
-ls "${QIF_PACKAGE_URI}/data";
+cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${BIN_PRO_RES_NAME}.png" "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/data";
+cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${BIN_PRO_RES_NAME}.svg" "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/data";
+cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${BIN_PRO_RES_NAME}.ico" "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/data";
+rsync -Ravr "${APPVEYOR_BUILD_FOLDER}/usr/share/icons" "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/icons";
+ls "${APPVEYOR_BUILD_FOLDER}/${QIF_PACKAGE_URI}/data";
 # 
 echo "Running Qt Installer Framework";
 #./qtinstallerframework/binarycreator -c "${APPVEYOR_BUILD_FOLDER}/config/config.xml" -p "${APPVEYOR_BUILD_FOLDER}/packages" "${ARTIFACT_QIF}";

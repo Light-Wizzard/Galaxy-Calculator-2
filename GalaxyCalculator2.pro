@@ -124,6 +124,9 @@ DISTFILES += \
     desktop/GalaxyCalculator2.ico \
     desktop/GalaxyCalculator2.png \
     desktop/GalaxyCalculator2.svg \
+    packages/com.lightwizzard.galaxycalculator2/data/README.md \
+    packages/com.lightwizzard.galaxycalculator2/meta/installscript.qs \
+    packages/com.lightwizzard.galaxycalculator2/meta/package.xml \
     scripts/build_script.cmd \
     scripts/build_script.sh \
     scripts/install.cmd \
