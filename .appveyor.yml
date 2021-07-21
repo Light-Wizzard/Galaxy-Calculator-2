@@ -36,6 +36,7 @@ for:
     QT5_VERSION: 5.15.2
     PYTHON_VER: 3.9
     QT_IF_VERSION: '3.1.1'
+    UPGRADE_UBUNTU: false # apt-get upgrade: true or false only
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN_PRO_RES_NAME: GalaxyCalculator2
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
