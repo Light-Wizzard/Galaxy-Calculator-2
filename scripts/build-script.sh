@@ -74,19 +74,20 @@ OLD_CWD="$(readlink -f .)";
 # switch to build dir
 pushd "$BUILD_DIR";
 
-# source $HOME/venv3.9/bin/activate
-# export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
-if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]] && [[ $PLATFORM = x86 ]]; then 
-    export PATH=$HOME/Qt/5.15.2/gcc_32/bin:$HOME/Qt/5.15.2/gcc_32/lib:$HOME/Qt/5.15.2/gcc_32/include:$PATH; 
-    export PATH=/usr/lib/python3.9:/usr/include/python3.9:$PATH;
+# source ${HOME}/venv${PY_VER}/bin/activate
+if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]] && [[ "$PLATFORM" = "x86" ]]; then
+    export PATH="${QT5_32}:${QT5_LIB_32}:${QT5_INCLUDE_32}:$PATH";
+    export PATH="/usr/lib/python${PY_VER}:/usr/include/python${PY_VER}:$PATH";
+    # export PATH=${HOME}/venv${PY_VER}:${HOME}/venv${PY_VER}/bin:${HOME}/venv${PY_VER}/lib:$PATH
 fi
 #
-if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]] && [[ $PLATFORM = x64 ]]; then 
-    export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH; 
-    export PATH=/usr/lib/python3.9:/usr/include/python3.9:$PATH;
+if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]] && [[ "$PLATFORM" = "x64" ]]; then
+    export PATH="${QT5_64}:${QT5_LIB_64}:${QT5_INCLUDE_64}:$PATH";
+    export PATH="/usr/lib/python${PY_VER}:/usr/include/python${PY_VER}:$PATH";
+    # export PATH=${HOME}/venv${PY_VER}:${HOME}/venv${PY_VER}/bin:${HOME}/venv${PY_VER}/lib:$PATH
 fi
 #
-if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]]; then 
+if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
     echo "PATH=$PATH";
     # 
     # configure build files with qmake
@@ -104,7 +105,7 @@ if [ -d "${REPO_ROOT}/qml" ]; then
 fi
 # now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
 # download linuxdeploy and its Qt plugin
-if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]]; then 
+if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]]; then
     wget -c -nv  https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage; 
     wget -c -nv  https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage; 
     # make them executable
