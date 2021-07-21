@@ -39,7 +39,7 @@ for:
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
   install:
     - sh: echo install Ubuntu
-    - sh: ls $QT5_64/Tools/
+    - sh: ls $HOME/Qt/5.15.2/Tools/
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
