@@ -124,6 +124,9 @@ DISTFILES += \
     desktop/GalaxyCalculator2.ico \
     desktop/GalaxyCalculator2.png \
     desktop/GalaxyCalculator2.svg \
+    scripts/build-script.sh \
+    scripts/install.sh \
+    scripts/upload.sh \
     usr/bin/README.md \
     usr/share/applications/GalaxyCalculator2.desktop \
     usr/share/icons/Papirus-Dark/16x16/apps/GalaxyCalculator2.svg \

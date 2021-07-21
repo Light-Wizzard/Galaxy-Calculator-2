@@ -14,166 +14,112 @@ platform:
   - x64
   - x86
 
-image:
-  - Ubuntu2004
-  - Visual Studio 2019
-
-stack: python 3.9, python 3.8
-
-for:
--
+environment:
   matrix:
-    only:
-      - image: Ubuntu2004
-  environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
-    QT5_32: $HOME/Qt/5.15.2/gcc_32/bin
-    QT5_64: $HOME/Qt/5.15.2/gcc_64/bin
-    PY_DIR_32: $HOME/venv3.9
-    PY_DIR_64: $HOME/venv3.9
-    QT_IF_VERSION: '3.1.1'
-    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
-    MY_OS: Ubuntu2004
-    QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-  install:
-    - sh: echo install Ubuntu
-    #- sh: ls $HOME/Qt/5.15.2/Tools/
-    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
-    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    # Python
-    - sh: sudo add-apt-repository ppa:deadsnakes/ppa -y
-    - sh: sudo apt-get update -qq && sudo apt-get install -qq
-    #- sh: sudo apt-get upgrade -qqy
-    - sh: sudo apt install -qqy build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev
-    - sh: sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev libffi-dev mesa-common-dev flex bison
-    - sh: sudo apt-get install -qqy cmake software-properties-common python3.9-dev python3-venv checkinstall libglu1-mesa-dev freeglut3-dev
-    - sh: sudo apt-get install -qqy libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libgtk2.0-dev
-#    - ps: if ($PLATFORM==x86) {
-#        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-#        Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
-#        ConfigureQtVersion 'C:\Qt' '5.15.2'
-#        }
-#    - ps: if ($PLATFORM==x64) {
-#        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-#        Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
-#        ConfigureQtVersion 'C:\Qt' '5.15.2'
-#        }
-  build_script:
-    - sh: echo build_script Ubuntu
-    #- source $HOME/venv3.9/bin/activate
-    #- export PATH=$HOME/venv3.9:$HOME/venv3.9/bin:$HOME/venv3.9/lib:$PATH
-    #- if "$PLATFORM"=="x86" (export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH)
-    #- sh: if [ "$PLATFORM"=="x64" ]; then { export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH }
-    - export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH
-    - export PATH=/usr/lib/python3.9:/usr/include/python3.9
-    - sh: echo $PATH
-    # if "$PLATFORM"=="x86"
-    # if "$PLATFORM"=="x64"
-    # Copy Icon and .desktop to AppImage folder
-    - sh: mkdir -p build
-    - cd build
-    - sh: mkdir -p AppDir
-    - sh: qmake ../GalaxyCalculator2.pro CONFIG+=$CONFIGURATION DESTDIR=. && make -j$(nproc) && make install INSTALL_ROOT=$PWD/AppDir
-    #- sh: rsync -a ../usr AppDir
-  after_build:
-    - sh: echo after_build Ubuntu
-    - sh: ls
-    - sh: wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-    - sh: wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
-    - sh: chmod +x linuxdeploy*.AppImage
-    # LD_LIBRARY_PATH=$PWD/AppDir/usr/lib/x86_64-linux-gnu
-    - sh: ./linuxdeploy-x86_64.AppImage --appdir=AppDir  -i ../desktop/GalaxyCalculator2.svg -d ../desktop/GalaxyCalculator2.desktop --plugin qt --output appimage
-    - sh: 7z a -tzip -r GalaxyCalculator2-$MY_OS-$CONFIGURATION-$PLATFORM.zip AppDir
-    - sh: cp *.zip ../
-    - sh: find . -perm /a+x -exec cp {} ../ \;
-    #- $QT5_64/Tools/QtInstallerFramework/binarycreator.exe --offline-only -c "$APPVEYOR_BUILD_FOLDER/config/config.xml" -p "$APPVEYOR_BUILD_FOLDER\packages" "$BIN-Windows-Installer.exe"
-    - cd ../
-    - sh: echo Current Path is %cd%
-    - sh: ls
-    - sh: echo Completed-Build Ubuntu
-  artifacts:
-    - path: '*.zip'
-      name: 'ZipInstaller'
-    #- path: 'GalaxyCalculator2' name: 'ExecutableFile'
--
-  matrix:
-    only:
-      - image: Visual Studio 2019
-  environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
-    QT_VERSION: 5.15
-    QT5_32:   C:\Qt\5.15.2\mingw81_32
-    MINGW_32: C:\Qt\Tools\mingw810_32
-    QT5_64:   C:\Qt\5.15.2\mingw81_64
-    MINGW_64: C:\Qt\Tools\mingw810_64
-    PY_DIR_32: C:\Python38
-    PY_DIR_64: C:\Python38-x64
-    QT_IF_VERSION: '3.1.1'
-    PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    BIN: GalaxyCalculator2
-    MY_OS: Windows
-    QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-  install:
-    - ps: write-host "install Windows"
-    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-    # Create our AppVeyor version
-    - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
-    - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
-    - ps: if [%PLATFORM%]==[x86] (
-        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-        Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
-        ConfigureQtVersion 'C:\Qt' '5.15.2'
-        )
-    - ps: if [%PLATFORM%]==[x64] (
-        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
-        Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
-        ConfigureQtVersion 'C:\Qt' '5.15.2'
-        )
-  before_build:
-    - ps: write-host "before_build Windows"
-    - if %platform%==x86 set PATH=%PY_DIR_32%;%PY_DIR_32%\Scripts;%PATH%
-    - if %platform%==x86 set PATH=%MINGW_32%\bin;%QT5_32%\bin;%PATH%
-    - if %platform%==x64 set PATH=%PY_DIR_64%;%PY_DIR_64%\Scripts;%PATH%
-    - if %platform%==x64 set PATH=%MINGW_64%\bin;%QT5_64%\bin;%PATH%
-    - if %platform%==x86 call "%QT5_32%\bin\qtenv2.bat"
-    - if %platform%==x64 call "%QT5_64%\bin\qtenv2.bat"
-    - if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
-    - if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
-  build_script:
-    - ps: write-host "build_script Windows"
-    - cd %APPVEYOR_BUILD_FOLDER%
-    - mkdir build
-    - cd build
-    - mkdir deploy
-    - if %platform%==x86 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
-    - if %platform%==x64 qmake -v && qmake ..\%BIN%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
-  after_build:
-    - ps: write-host "after_build Windows"
-    - dir
-    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%.exe" "deploy\%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
-    - windeployqt "deploy/%BIN%.exe" --verbose=2
-    #- for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
-    - 7z a -tzip "%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.zip" deploy -r
-    - copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN%-%MY_OS%-%CONFIGURATION%-%platform%.zip" "%APPVEYOR_BUILD_FOLDER%\
-    - echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-    #- xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
-    #- C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
-    #- 7z a -tzip "%BIN%-Windows-Installer.zip" "%BIN%-Windows-Installer.exe"
-    - C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN%-Windows-Installer.exe"
-    - copy *.zip %APPVEYOR_BUILD_FOLDER%
-    - copy *.exe %APPVEYOR_BUILD_FOLDER%
-    - cd %APPVEYOR_BUILD_FOLDER%
-    - echo Current Path is %cd%
-    - dir
-    - ps: write-host "Completed-Build Windows"
-  artifacts:
-    - path: '%BIN%*.zip'
-      name: 'ZipInstaller'
-    #- path: '%BIN%*.exe' name: 'ExecutableFile'
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      RUNTIME_LINKAGE: static
+      COVERITY_BUILD_CANDIDATE: True
+      QT5_32: $HOME/Qt/5.15.2/gcc_32/bin
+      QT5_64: $HOME/Qt/5.15.2/gcc_64/bin
+      PY_DIR_32: $HOME/venv3.9
+      PY_DIR_64: $HOME/venv3.9
+      PY_VER: 3.9
+      QT_IF_VERSION: '3.1.1'
+      PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+      BIN_PRO_RES_NAME: GalaxyCalculator2
+      MY_OS: Ubuntu2004
+      QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      RUNTIME_LINKAGE: static
+      COVERITY_BUILD_CANDIDATE: True
+      QT_VERSION: 5.15
+      QT5_32:   C:\Qt\5.15.2\mingw81_32
+      MINGW_32: C:\Qt\Tools\mingw810_32
+      QT5_64:   C:\Qt\5.15.2\mingw81_64
+      MINGW_64: C:\Qt\Tools\mingw810_64
+      PY_DIR_32: C:\Python38
+      PY_DIR_64: C:\Python38-x64
+      PY_VER: 3.8
+      QT_IF_VERSION: '3.1.1'
+      PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+      BIN_PRO_RES_NAME: GalaxyCalculator2
+      MY_OS: Windows
+      QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+
+stack: python %PY_VER%
+
+
+install:
+  - ps: write-host "install Windows"
+  - sh: echo install Unix
+  - ps: write-host "before_build Windows"
+
+  - cmd: if %platform%==x86 set PATH=%PY_DIR_32%;%PY_DIR_32%\Scripts;%PATH%
+  - cmd: if %platform%==x86 set PATH=%MINGW_32%\bin;%QT5_32%\bin;%PATH%
+  - cmd: if %platform%==x64 set PATH=%PY_DIR_64%;%PY_DIR_64%\Scripts;%PATH%
+  - cmd: if %platform%==x64 set PATH=%MINGW_64%\bin;%QT5_64%\bin;%PATH%
+  - cmd: if %platform%==x86 call "%QT5_32%\bin\qtenv2.bat"
+  - cmd: if %platform%==x64 call "%QT5_64%\bin\qtenv2.bat"
+  - cmd: if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
+  - cmd: if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+  #- sh: ls $HOME/Qt/5.15.2/Tools/
+  - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+  - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+  - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+
+  - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+  # Create our AppVeyor version
+  - ps: $env:commit = $env:appveyor_repo_commit.SubString(0,7)
+  - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch,$env:appveyor_build_number,$env:commit )
+  #
+  - ps: >-
+     If ($env:PLATFORM -Match "x86") {
+       iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
+       Install-QtComponent -Version '5.15.2' -Name 'win32_msvc2019' -ExcludeDocs -ExcludeExamples
+       ConfigureQtVersion 'C:\Qt' '5.15.2')
+     } Else {
+       iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/build-images/master/scripts/Windows/install_qt_module.ps1'))
+       Install-QtComponent -Version '5.15.2' -Name 'win64_msvc2019_64' -ExcludeDocs -ExcludeExamples
+       ConfigureQtVersion 'C:\Qt' '5.15.2')
+     }
+  - sh: scripts/install.sh
+build_script:
+   - sh: echo build_script Unix
+   - ps: write-host "build_script Windows"
+   #
+   - cmd: cd %APPVEYOR_BUILD_FOLDER%
+   - cmd: mkdir build
+   - cmd: cd build
+   - cmd: mkdir deploy
+   - cmd: if %platform%==x86 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
+   - cmd: if %platform%==x64 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
+   - sh: scripts/build-script.sh
+after_build:
+  - sh: echo after_build Ubuntu
+  - ps: write-host "after_build Windows"
+  - cmd: dir
+  - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%.exe" "deploy\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
+  - cmd: windeployqt "deploy/%BIN_PRO_RES_NAME%.exe" --verbose=2
+  #- cmd: for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
+  - cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" deploy -r
+  - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" "%APPVEYOR_BUILD_FOLDER%\
+  - cmd: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
+  #- cmd: xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
+  #- cmd: C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
+  #- cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-Windows-Installer.zip" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
+  - cmd: C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
+  - cmd: copy *.zip %APPVEYOR_BUILD_FOLDER%
+  - cmd: copy *.exe %APPVEYOR_BUILD_FOLDER%
+  - cmd: cd %APPVEYOR_BUILD_FOLDER%
+  - cmd: echo Current Path is %cd%
+  - cmd: dir
+  - ps: write-host "Completed-Build Windows"
+  - sh: echo Completed-Build Ubuntu
+
+artifacts:
+  - path: '*.zip'
+    name: 'ZipInstaller'
 
 deploy:
   - provider: GitHub
@@ -183,12 +129,5 @@ deploy:
     prerelease: true
     auth_token:
       secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
-#  - provider: GitHub
-#    release: continuous
-#    artifact: 'ExecutableFile'
-#    draft: false
-#    prerelease: true
-#    auth_token:
-#      secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
 ############################################## End of File ####################
 
