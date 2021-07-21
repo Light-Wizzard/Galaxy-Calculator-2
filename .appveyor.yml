@@ -53,7 +53,7 @@ for:
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - sh: bash -c "scripts/install.sh"
   build_script:
-    - sh: bash -c "scripts/build-script.sh"
+    - sh: bash -c "scripts/build_script.sh"
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
@@ -85,7 +85,7 @@ for:
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - cmd: scripts\install.cmd
   build_script:
-    - cmd: scripts\build-script.cmd
+    - cmd: scripts\build_script.cmd
   artifacts:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'

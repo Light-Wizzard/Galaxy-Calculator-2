@@ -124,8 +124,8 @@ DISTFILES += \
     desktop/GalaxyCalculator2.ico \
     desktop/GalaxyCalculator2.png \
     desktop/GalaxyCalculator2.svg \
-    scripts/build-script.cmd \
-    scripts/build-script.sh \
+    scripts/build_script.cmd \
+    scripts/build_script.sh \
     scripts/install.cmd \
     scripts/install.sh \
     scripts/upload.sh \
