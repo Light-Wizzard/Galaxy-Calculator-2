@@ -67,7 +67,7 @@ install:
   - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
   - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
   #
-  - sh: scripts/install.sh
+  - sh: bash -c "scripts/install.sh"
 build_script:
    - sh: echo build_script Unix
    - cmd: write-host "build_script Windows"
@@ -78,7 +78,7 @@ build_script:
    - cmd: mkdir deploy
    - cmd: if %platform%==x86 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
    - cmd: if %platform%==x64 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
-   - sh: scripts/build-script.sh
+   - sh: bash -c "scripts/build-script.sh"
 after_build:
   - sh: echo after_build Ubuntu
   - cmd: write-host "after_build Windows"
