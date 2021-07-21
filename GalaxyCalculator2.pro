@@ -171,13 +171,14 @@ unix:DEPENDPATH   += /usr/include/python$${PYTHON_VERSION_LINUX}
 unix:LIBS         += -L /usr/local/lib/python$${PYTHON_VERSION_LINUX} -lpython$${PYTHON_VERSION_LINUX}
 # Python Windows
 # https://python.org/downloads/windows/
-#win32:INCLUDEPATH += C:/Python38/include
-#win32:DEPENDPATH  += C:/Python38/include
+win32:INCLUDEPATH += C:/Python38/include
+win32:DEPENDPATH  += C:/Python38/include
 #win32:LIBS        += -LC:/Python38/libs/ -lpython38
-win32:INCLUDEPATH += $$PWD/python/windows/include
-win32:INCLUDEPATH += $$PWD/python/windows/libs
-win32:DEPENDPATH  += $$PWD/python/windows/include
-win32:LIBS        += $$PWD/python/windows/libs/python38.lib
+win32:LIBS        += C:/Python38/libs/python38.lib
+#win32:INCLUDEPATH += $$PWD/python/windows/include
+#win32:INCLUDEPATH += $$PWD/python/windows/libs
+#win32:DEPENDPATH  += $$PWD/python/windows/include
+#win32:LIBS        += $$PWD/python/windows/libs/python38.lib
 #win32:LIBS        += -L$$PWD/python/windows/libs/ -lpython38
 ###############################################################################
 #
