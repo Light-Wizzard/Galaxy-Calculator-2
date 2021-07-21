@@ -75,21 +75,21 @@ build_script:
    - cmd: cd %APPVEYOR_BUILD_FOLDER%
    - cmd: mkdir build
    - cmd: cd build
-   - cmd: mkdir deploy
-   - cmd: if %platform%==x86 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
-   - cmd: if %platform%==x64 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=deploy
+   - cmd: mkdir AppDir
+   - cmd: if %platform%==x86 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=AppDir
+   - cmd: if %platform%==x64 qmake -v && qmake ..\%BIN_PRO_RES_NAME%.pro CONFIG+=%configuration% CONFIG+=c++11 DESTDIR=%cd% && mingw32-make && mingw32-make install INSTALL_ROOT=AppDir
    - sh: bash -c "scripts/build-script.sh"
 after_build:
   - sh: echo after_build Ubuntu
   - cmd: write-host "after_build Windows"
   - cmd: dir
-  - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%.exe" "deploy\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
-  - cmd: windeployqt "deploy/%BIN_PRO_RES_NAME%.exe" --verbose=2
-  #- cmd: for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I deploy\
-  - cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" deploy -r
+  - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%.exe" "AppDir\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.exe"
+  - cmd: windeployqt "AppDir/%BIN_PRO_RES_NAME%.exe" --verbose=2
+  #- cmd: for %%I in (%PRJLIBS%) do copy %PRJLIBDIR%\%%I AppDir\
+  - cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" AppDir -r
   - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%platform%.zip" "%APPVEYOR_BUILD_FOLDER%\
   - cmd: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
-  #- cmd: xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\deploy" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
+  #- cmd: xcopy /s /e /f "%APPVEYOR_BUILD_FOLDER%\build\AppDir" "%APPVEYOR_BUILD_FOLDER%\%QIF_PACKAGE_URI%"
   #- cmd: C:\Qt\QtIFW-3.1.1\bin\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
   #- cmd: 7z a -tzip "%BIN_PRO_RES_NAME%-Windows-Installer.zip" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"
   - cmd: C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%BIN_PRO_RES_NAME%-Windows-Installer.exe"

@@ -87,6 +87,7 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]] && [[ $PLATFORM = x64 ]]; the
 fi
 #
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]]; then 
+    echo "PATH=$PATH";
     # 
     # configure build files with qmake
     qmake "${REPO_ROOT}";
