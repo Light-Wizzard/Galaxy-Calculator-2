@@ -81,9 +81,9 @@ for:
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    - cmd: scripts/install.cmd
+    - cmd: scripts\install.cmd
   build_script:
-    - cmd: scripts/build-script.cmd
+    - cmd: scripts\build-script.cmd
   artifacts:
     - path: '%BIN%*.zip'
       name: 'ZipInstaller'
