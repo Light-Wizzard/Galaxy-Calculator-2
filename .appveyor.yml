@@ -22,13 +22,6 @@ image:
   - Ubuntu2004
   - Visual Studio 2019
 
-init:
-  # Create our AppVeyor version
-  - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-  - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
-  - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-
-
 for:
 -
   matrix:
@@ -52,6 +45,10 @@ for:
     BIN_PRO_RES_NAME: GalaxyCalculator2
     QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
   install:
+    # Create our AppVeyor version
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - sh: bash -c "scripts/install.sh"
   build_script:
     - sh: bash -c "scripts/build-script.sh"
@@ -80,6 +77,10 @@ for:
     BIN_PRO_RES_NAME: GalaxyCalculator2
     QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
   install:
+    # Create our AppVeyor version
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - cmd: scripts/install.cmd
   build_script:
     - cmd: scripts/build-script.cmd
