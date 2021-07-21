@@ -33,15 +33,8 @@ for:
     MY_OS: Ubuntu # Ensure it is the same as Image
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
-    QT5_32:         $HOME/Qt/5.15.2/gcc_32/bin
-    QT5_LIB_32:     ${HOME}/Qt/5.15.2/gcc_32/lib
-    QT5_INCLUDE_32: ${HOME}/Qt/5.15.2/gcc_32/include
-    QT5_64:         $HOME/Qt/5.15.2/gcc_64/bin
-    QT5_LIB_64:     ${HOME}/Qt/5.15.2/gcc_64/lib
-    QT5_INCLUDE_64: ${HOME}/Qt/5.15.2/gcc_64/include
-    PY_DIR_32:      $HOME/venv3.9
-    PY_DIR_64:      $HOME/venv3.9
-    PY_VER: 3.9
+    QT5_VERSION: 5.15.2
+    PYTHON_VER: 3.9
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN_PRO_RES_NAME: GalaxyCalculator2
@@ -66,14 +59,12 @@ for:
     MY_OS: Windows # No Spaces
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
-    QT_VERSION: 5.15
-    QT5_32:    C:\Qt\5.15.2\mingw81_32
-    MINGW_32:  C:\Qt\Tools\mingw810_32
-    QT5_64:    C:\Qt\5.15.2\mingw81_64
-    MINGW_64:  C:\Qt\Tools\mingw810_64
-    PY_DIR_32: C:\Python38
-    PY_DIR_64: C:\Python38-x64
-    PY_VER: 3.8
+    QT5_VERSION: 5.15.2
+    QT5_MINGW32: mingw81_32
+    QT5_MINGW64: mingw81_64
+    QT5_TOOLS_MINGW32: mingw810_32
+    QT5_TOOLS_MINGW64: mingw810_64
+    PYTHON_VER: 3.8 # Last version Windows 7 can run
     QT_IF_VERSION: '3.1.1'
     PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     BIN_PRO_RES_NAME: GalaxyCalculator2

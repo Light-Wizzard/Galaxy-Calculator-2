@@ -75,18 +75,17 @@ OLD_CWD="$(readlink -f .)";
 # 
 # switch to build dir
 pushd "$BUILD_DIR";
-
-# source ${HOME}/venv${PY_VER}/bin/activate
+# source ${HOME}/venv${PYTHON_VER}/bin/activate
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]] && [[ "$PLATFORM" = "x86" ]]; then
-    export PATH="${QT5_32}:${QT5_LIB_32}:${QT5_INCLUDE_32}:$PATH";
-    export PATH="/usr/lib/python${PY_VER}:/usr/include/python${PY_VER}:$PATH";
-    # export PATH=${HOME}/venv${PY_VER}:${HOME}/venv${PY_VER}/bin:${HOME}/venv${PY_VER}/lib:$PATH
+    export PATH="${HOME}/Qt/${QT5_VERSION}/gcc_32/bin:${HOME}/Qt/${QT5_VERSION}/gcc_32/lib:${HOME}/Qt/${QT5_VERSION}/gcc_32/include:$PATH";
+    export PATH="/usr/lib/python${PYTHON_VER}:/usr/include/python${PYTHON_VER}:$PATH";
+    # export PATH=${HOME}/venv${PYTHON_VER}:${HOME}/venv${PYTHON_VER}/bin:${HOME}/venv${PYTHON_VER}/lib:$PATH
 fi
 #
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "${MY_OS}" ]] && [[ "$PLATFORM" = "x64" ]]; then
-    export PATH="${QT5_64}:${QT5_LIB_64}:${QT5_INCLUDE_64}:$PATH";
-    export PATH="/usr/lib/python${PY_VER}:/usr/include/python${PY_VER}:$PATH";
-    # export PATH=${HOME}/venv${PY_VER}:${HOME}/venv${PY_VER}/bin:${HOME}/venv${PY_VER}/lib:$PATH
+    export PATH="${HOME}/Qt/${QT5_VERSION}/gcc_64/bin:${HOME}/Qt/${QT5_VERSION}/gcc_64/lib:${HOME}/Qt/${QT5_VERSION}/gcc_64/include:$PATH";
+    export PATH="/usr/lib/python${PYTHON_VER}:/usr/include/python${PYTHON_VER}:$PATH";
+    # export PATH=${HOME}/venv${PYTHON_VER}:${HOME}/venv${PYTHON_VER}/bin:${HOME}/venv${PYTHON_VER}/lib:$PATH
 fi
 #
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = "${MY_OS}" ]]; then
