@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # Galaxy Calculator 2
 # 
 # Last Update: 20 July 2021
@@ -84,12 +84,6 @@ fi
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]] && [[ $PLATFORM = x64 ]]; then 
     export PATH=$HOME/Qt/5.15.2/gcc_64/bin:$HOME/Qt/5.15.2/gcc_64/lib:$HOME/Qt/5.15.2/gcc_64/include:$PATH; 
     export PATH=/usr/lib/python3.9:/usr/include/python3.9; 
-fi
-# Copy Icon and .desktop to AppImage folder
-if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]]; then 
-    mkdir -p build; 
-    cd build; 
-    mkdir -p AppDir; 
 fi
 #
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE = Ubuntu2004 ]]; then 

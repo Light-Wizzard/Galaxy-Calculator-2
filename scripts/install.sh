@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 # Galaxy Calculator 2
 #
 # Last Update: 20 July 2021
