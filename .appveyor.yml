@@ -20,6 +20,10 @@ platform:
   - x64
   - x86
 
+image:
+  - Ubuntu
+  - Visual Studio 2019
+
 for:
 -
   matrix:
