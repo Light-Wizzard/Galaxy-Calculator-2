@@ -162,12 +162,12 @@ deploy:
     prerelease: true
     auth_token:
       secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
-  - provider: GitHub
-    release: continuous
-    artifact: 'ExecutableFile'
-    draft: false
-    prerelease: true
-    auth_token:
-      secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
+#  - provider: GitHub
+#    release: continuous
+#    artifact: 'ExecutableFile'
+#    draft: false
+#    prerelease: true
+#    auth_token:
+#      secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
 ############################################## End of File ####################
 
