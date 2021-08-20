@@ -8,23 +8,29 @@ Galaxy Calculator 2 has 4 Calculators built into it:
 4. :computer: Calculator
 
 I used the project files from my first Galaxy Calculator that is written using Qt QML and JavaScript, 
-this one uses Qt C++, and Widgets, so the documentaion may be wacky till I have a chance to fix all the links and convert them to this new Project,
+this one uses Qt C++, and Widgets, 
+so the documentaion may be wacky till I have a chance to fix all the links and convert them to this new Project,
 I will have to make Travis and AppYeyer prorjects, so this is a work in progress.
 
-The Galaxy, Madness and Planet Calculators are based on Sir Isaac Newtons Calculations, and was updated to include the Math Nikola Tesla, 
+The Galaxy, Madness and Planet Calculators are based on Sir Isaac Newtons Calculations, 
+and was updated to include the Math Nikola Tesla, 
 thus inventing a new type of Math I call Trinary Mathematics, that is used to Calculate the Galaxy.
 
-This Project is Open Source, with No License required, this is a Qt C++ App, that will run on Desktop and other devices, the bash script I used to port to this app is included.
+This Project is Open Source, with No License required, this is a Qt C++ App, 
+that will run on Desktop and other devices, the bash script I used to port to this app is included.
 
-This App can be compiled for any OS that Qt supports: Linux, Windows, MAC, Android and iOS, as well as every OS that Qt supports, so this should run on most if not all popular OS's.
+This App can be compiled for any OS that Qt supports: Linux, Windows, MAC, Android and iOS, 
+as well as every OS that Qt supports, so this should run on most if not all popular OS's.
 
 I will try to make installers and executable for all supported Qt OS's, currently I have:
 
-If the badges are Green, you should be able to download the apps, if they are not, it might be that I am working on it, but it only takes a few minutes to update.
+If the badges are Green, you should be able to download the apps, if they are not, 
+it might be that I am working on it, but it only takes a few minutes to update.
 
 This project is in work, so files might break, but source code should run if compiled on any machine.
 
-The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
+The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, 
+in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 
 ## Table of Content
 
