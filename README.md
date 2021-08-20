@@ -32,9 +32,9 @@ The Qt Installer Framework is working for Linux and maybe Windows but the Instal
 2. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
 3. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
 4. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
-5. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
-6. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
-
+5. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
+6. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+7. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
 
 # Status
 
