@@ -26,9 +26,17 @@ This project is in work, so files might break, but source code should run if com
 
 The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 
-[Doxygen Documention](https://light-wizzard.github.io/QtAppVeyor)
+## Table of Content
 
-## Status
+1. [Status](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
+2. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
+3. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
+4. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
+5. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+6. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
+
+
+# Status
 
 Unix: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 Windows: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
@@ -66,7 +74,7 @@ You can also get it at any major book store, but I would recommend reading it, i
 
 If you do not see your OS, just download, extract to a folder, and open with Qt Creator, which must be installed, and compile or run it.
 
-## Development Progress
+# Development Progress
 
 You would have to understand Trinary Science and the Trinary Universe to understand the Galaxy Calculator, 
 but basically Trinary has the same meaning as Trinity did to Sir Isaac Newton, it describes and Alternating Current or AC, 
@@ -79,7 +87,7 @@ and the Radius of of the Galaxy in Miles in Diameter, and how many Tracks you wa
 
 I removed the Local Storage Feature due to permissions on some devices.
 
-## Background
+# Background
 
 The Galaxy Calculator is a one button click to calculate, it records the Track Number, how many Trinary Engines it takes to be on that track, 
 its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, the Suns Orbital Distance in Miles, and the Tracks Frequency, 
@@ -107,7 +115,7 @@ For more information see: [Wiki](https://github.com/Light-Wizzard/Galaxy-Calcula
 
 This is a work in progress, please report any bugs, and comments.
 
-## Screen Shots
+# Screen Shots
 
 ![Galaxy Configuration](/doc/images/screenshot-config.png?raw=true "Galaxy Configuration")
 
@@ -122,7 +130,7 @@ This is a work in progress, please report any bugs, and comments.
 ![Calculator](/doc/images/screenshot-calc.png?raw=true "Calculator")
 
 
-## 3rd Party Code
+# 3rd Party Code
 
 [QCalculator](https://github.com/xenotux/qcalc)
 https://github.com/xenotux/qcalc
