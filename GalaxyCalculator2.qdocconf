@@ -62,7 +62,7 @@ sourcedirs  += . src src/QLogger src/QtAES
 
 # The imagedirs variable specifies the
 # directories containing the images used in the documentation.
-imagedirs   += . images images/win
+imagedirs   += . images images
 
 indexes += docs/GalaxyCalculator.index
 

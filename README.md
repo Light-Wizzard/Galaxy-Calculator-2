@@ -1,6 +1,7 @@
 # Galaxy Calculator 2
 
 Galaxy Calculator 2 has 4 Calculators built into it:
+
 1. :milky_way: Galatic Calculator
 2. :confounded: Madness Calculator
 3. :earth_americas: Planet Calculator
@@ -26,10 +27,12 @@ This project is in work, so files might break, but source code should run if com
 The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 
 ## Status
+
 Unix: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 Windows: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 
 ## :package: **Downloads:**
+
  - :penguin: [Linux](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage)
  - :penguin: :inbox_tray: [Linux ZSync](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage.zsync)
  - :penguin: :outbox_tray: [Linux Installer in work](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-Linux-Installer)
@@ -75,6 +78,7 @@ and the Radius of of the Galaxy in Miles in Diameter, and how many Tracks you wa
 I removed the Local Storage Feature due to permissions on some devices.
 
 ## Background
+
 The Galaxy Calculator is a one button click to calculate, it records the Track Number, how many Trinary Engines it takes to be on that track, 
 its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, the Suns Orbital Distance in Miles, and the Tracks Frequency, 
 which Sir Isaac Newton used to determine when the End of Civilization will happen, and according to his and my calculation, 
