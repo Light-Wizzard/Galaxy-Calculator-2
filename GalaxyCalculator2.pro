@@ -104,7 +104,7 @@ CONFIG += lrelease
 CONFIG += embed_translations
 LRELEASE_DIR=./translations
 QM_FILES_RESOURCE_PREFIX=./translations
-# ar,de,en,es,fr,it,ja,no,ru,sv,zh-CN
+# ar,de,en,es,fr,it,ja,no,ru,sv,zh_CN
 TRANSLATIONS += translations/GalaxyCalculator2_ar.ts \
                 translations/GalaxyCalculator2_de.ts \
                 translations/GalaxyCalculator2_en.ts \
@@ -115,7 +115,7 @@ TRANSLATIONS += translations/GalaxyCalculator2_ar.ts \
                 translations/GalaxyCalculator2_no.ts \
                 translations/GalaxyCalculator2_ru.ts \
                 translations/GalaxyCalculator2_sv.ts \
-                translations/GalaxyCalculator2_zh-CN.ts
+                translations/GalaxyCalculator2_zh_CN.ts
 #
 DISTFILES += \
     .appveyor.yml \
