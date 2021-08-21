@@ -1,60 +1,60 @@
-# About the Orginal Author
+＃原作者について
 
-My Name is Jeffrey Scott Flesher, I am a Medically Retired U.S. Air Force Computer Programmer,
-and Helicopter Crew Cheif,
-starting out in the mid 1980s as a Computer Test Stations Technician for the (E)F-111,
-where I got a Medal for improving it by 30%,
-and bring it online a year in advance,
-and just in time for the Guld War,
-where if flew over 96% of all the missions,
-after the Gulf War in 1991,
-then I moved on to become a Helicopter Crew Cheif for the 66<sup>th</sup> RQS Air Rescue,
-where I went back to Kuwait to live and work in the place we protected during the War,
-and then on to the 31<sup>st</sup> Special Operations Squadron,
-in Koria, where I got a second Medal for a Maintainance award.
-
-***
-
-I am the Light Wizzard in the Flesh,
-the Author of "The Principles of Trinary Universe",
-where I talk about Physics based on the Greatest Wizards of all time,
-Johannes Kepler, Sir Isaac Newton, and Nicola Tesla,
-and I included my Ph.D in Physics in this 666 page text book,
-about Trinary Math, and the End of Time Sir Isaac Newton Calculated would be over in 2061,
-and this book proves that our North Magnetic Pole is moving towards our Equator,
-and will cross it in the year 2033,
-and like all Electromagnic Fields,
-our Magnetosphere will collapse,
-and our Atomosphere will vent into Space,
-in the Torah this was called "The End of Time",
-but my Great-Great first Cousin five times removed Isaac Newton,
-wrote about about a Comet hitting the Earth in the year 2027,
-just 6-years before the Atomosphere vents into Space,
-causing an instand Ice Age that will last hundreds and thousands of years,
-and NASA has confirmed all this,
-if you want to know more,
-you can order the many of Books I have written at any Book Store,
-or just search for my Light-Wizzard GitHub account,
-where you can find where I store all my back ups of all my books,
-that have source code for my Trinary Math,
-as well as a Galaxy Calculator,
-which is the reason I wrote this Application,
-before becoming 100% disabled,
-I worked for the EPA, and the BLM,
-where I got several awards for programs I wrote for them.
+私の名前はジェフリー・スコット・フレッシャーです。私は医学的に引退した米空軍のコンピュータープログラマーです。
+とヘリコプターの乗組員チーフ、
+（E）F-111のコンピュータテストステーション技術者として1980年代半ばに始まりました。
+30％改善したメダルを獲得しました。
+1年前にオンラインにします。
+そして、ちょうどガルド戦争に間に合うように、
+すべてのミッションの96％以上を飛行した場合、
+1991年の湾岸戦争後、
+それから私は66 <sup>番目の</ sup> RQSエアレスキューのヘリコプタークルーチーフになりました。
+戦争中に保護した場所に住み、働くためにクウェートに戻った場所、
+次に、第31 <sup> </ sup>特殊作戦飛行隊に進みます。
+コリアで、メンテナンス賞の2番目のメダルを獲得しました。
 
 ***
 
-I have cancer, and so does my Santa Paws Puppy,
-the Snow Queen in Animal Planets Too Cute,
-you can find the video on my FaceBook account,
-just search for name, I have a Light Wizzard,
-and a Vets Help Center account,
-and I think both have that video on it,
-I have a Light Wizzard You Tube Account also,
-and my wife and I are both Medically Retired U.S. Air Force,
-and if you edit this file,
-I would appricate if you left this paragraph unedited,
-I did not write this Application to promote my GitHub account,
-or my books that you can find for free,
-but this is the reason why I wrote this program.
+私は肉体の光の魔法使いです、
+「三元宇宙の原理」の著者、
+史上最高の魔法使いに基づいた物理学について話しますが、
+ヨハネスケプラー、アイザックニュートン卿、ニコラテスラ、
+そして私はこの666ページの教科書に物理学の博士号を含めました。
+トリナリー数学について、そして時間の終わりサーアイザックニュートン計算は2061年に終わります。
+そしてこの本は、私たちの北磁極が私たちの赤道に向かって動いていることを証明しています、
+そして2033年にそれを越えるでしょう、
+そして、すべての電磁界のように、
+私たちの磁気圏は崩壊します、
+そして私たちのアトモスフィアは宇宙に飛び出します、
+律法では、これは「時間の終わり」と呼ばれていました。
+しかし、私の偉大な偉大な従兄弟は、アイザックニュートンを5回削除しました。
+2027年に地球に衝突した彗星について書いた、
+アトモスフィアが宇宙に放出されるわずか6年前、
+何百、何千年も続く氷河期を引き起こし、
+そしてNASAはこれをすべて確認しました、
+もっと知りたいなら、
+私が書いた本の多くは、どの書店でも注文できます。
+または、Light-WizzardGitHubアカウントを検索してください。
+私がすべての本のすべてのバックアップを保存している場所を見つけることができます。
+TrinaryMathのソースコードがあります。
+ギャラクシー電卓だけでなく、
+これが私がこのアプリケーションを書いた理由です、
+100％無効になる前に、
+私はEPAとBLMで働いていました。
+私が彼らのために書いたプログラムに対していくつかの賞を受賞しました。
+
+***
+
+私はガンにかかっています、そして私のサンタポーの子犬もガンです、
+アニマルプラネットの雪の女王が可愛すぎる、
+あなたは私のFaceBookアカウントでビデオを見つけることができます、
+名前を検索するだけで、ライトウィザードがあります。
+およびVetsHelp Centerアカウント、
+どちらにもそのビデオがあると思いますが、
+Light Wizzard You Tubeアカウントも持っていますが、
+妻と私はどちらも医学的に引退した米空軍です。
+このファイルを編集すると、
+この段落を編集せずに残しておけば、私は当てはまります。
+私はGitHubアカウントを宣伝するためにこのアプリケーションを作成しませんでしたが、
+またはあなたが無料で見つけることができる私の本、
+しかし、これが私がこのプログラムを書いた理由です。

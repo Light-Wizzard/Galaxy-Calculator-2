@@ -1,52 +1,52 @@
-# Galaxy Calculator 2
+# 银河计算器 2
 
-Galaxy Calculator 2 has 4 Calculators built into it:
+Galaxy Calculator 2 内置了 4 个计算器：
 
-1. :milky_way: Galatic Calculator
-2. :confounded: Madness Calculator
-3. :earth_americas: Planet Calculator
-4. :computer: Calculator
+1. :milky_way: 银河计算器
+2. :confounded: 疯狂计算器
+3. :earth_americas: 行星计算器
+4. :computer: 计算器
 
-I used the project files from my first Galaxy Calculator that is written using Qt QML and JavaScript, 
-this one uses Qt C++, and Widgets, 
-so the documentaion may be wacky till I have a chance to fix all the links and convert them to this new Project,
-I will have to make Travis and AppYeyer prorjects, so this is a work in progress.
+我使用了我的第一个 Galaxy Calculator 中的项目文件，它是使用 Qt QML 和 JavaScript 编写的，
+这个使用 Qt C++ 和 Widgets，
+所以文档可能很古怪，直到我有机会修复所有链接并将它们转换为这个新项目，
+我将不得不制作 Travis 和 AppYyer 项目，所以这是一项正在进行的工作。
 
-The Galaxy, Madness and Planet Calculators are based on Sir Isaac Newtons Calculations, 
-and was updated to include the Math Nikola Tesla, 
-thus inventing a new type of Math I call Trinary Mathematics, that is used to Calculate the Galaxy.
+银河、疯狂和行星计算器基于艾萨克·牛顿爵士的计算，
+并更新为包括数学尼古拉特斯拉，
+因此发明了一种新的数学类型，我称之为三元数学，用于计算星系。
 
-This Project is Open Source, with No License required, this is a Qt C++ App, 
-that will run on Desktop and other devices, the bash script I used to port to this app is included.
+这个项目是开源的，不需要许可证，这是一个 Qt C++ 应用程序，
+将在桌面和其他设备上运行，包括我用来移植到这个应用程序的 bash 脚本。
 
-This App can be compiled for any OS that Qt supports: Linux, Windows, MAC, Android and iOS, 
-as well as every OS that Qt supports, so this should run on most if not all popular OS's.
+此应用程序可以针对 Qt 支持的任何操作系统编译：Linux、Windows、MAC、Android 和 iOS，
+以及 Qt 支持的每个操作系统，所以它应该可以在大多数流行的操作系统上运行。
 
-I will try to make installers and executable for all supported Qt OS's, currently I have:
+我将尝试为所有支持的 Qt 操作系统制作安装程序和可执行文件，目前我有：
 
-If the badges are Green, you should be able to download the apps, if they are not, 
-it might be that I am working on it, but it only takes a few minutes to update.
+如果徽章是绿色的，您应该可以下载应用程序，如果不是，
+可能是我正在处理它，但更新只需要几分钟。
 
-This project is in work, so files might break, but source code should run if compiled on any machine.
+这个项目正在运行，所以文件可能会损坏，但如果在任何机器上编译源代码应该运行。
 
-The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, 
-in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
+Qt 安装程序框架适用于 Linux 和 Windows，但安装程序无法下载，
+在工作中，我在下面有一个适用于 Windows 10 的安装程序，不确定是 8，但不是 7。
 
-## Table of Content
+## 目录
 
-1. [Status](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
-2. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
-3. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
-4. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
-5. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
-6. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
-7. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
+1. [状态](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
+2. [开发-进度](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
+3. [背景](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
+4. [屏幕截图](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
+5. [屏幕截图](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
+6. [维基](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+7. [Doxygen 文档](https://light-wizzard.github.io/Galaxy-Calculator-2)
 
-# Status
+# 状态
 
-[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
+[![Appveyor 构建状态](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-计算器-2)
 
-## :package: **Downloads:**
+## :package: **下载:**
 
  - :penguin: [Linux](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage)
  - :penguin: :inbox_tray: [Linux ZSync](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage.zsync)
@@ -55,93 +55,93 @@ in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
  - :office: :outbox_tray: [Windows Installer exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2.exe)
  - :apple: [Apple](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2.dmg)
 
-Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, and run the file Galaxy-Calculator-2.exe inside of the deploy folder.
+Windows（在 7 和 10 上测试让我知道 8 是否有效）：下载 zip 并解压缩，然后运行部署文件夹中的 Galaxy-Calculator-2.exe 文件。
 
-All my books are free online at http://LightWizzard.com, but it cost money to print them or push ePubs to your device.
+我所有的书都可以在 http://LightWizzard.com 上免费在线，但打印它们或将 ePub 推送到您的设备需要花钱。
 
-I am not publicizing my books here, you can read them for free on my 
-[Github account Light-Wizzard/The-Principles-Of-The-Trinary-Universe](https://github.com/Light-Wizzard/The-Principles-Of-The-Trinary-Universe),
-but you have to pay for printed books, or the easy of having an ePub delivered through your devices ePub Reader, without having to download it.
+我不在这里宣传我的书，你可以在我的网站上免费阅读
+[Github 账号 Light-Wizzard/The-Principles-Of-The-Trinary-Universe](https://github.com/Light-Wizzard/The-Principles-Of-The-Trinary-Universe)，
+但是您必须为印刷书籍付费，或者通过您的设备 ePub 阅读器轻松交付 ePub，而无需下载它。
 
-Printed Book and ePub Available at:
+印刷书籍和 ePub 可在以下位置获得：
 
-Lulu
+露露
 * :book: :computer: http://www.lulu.com/spotlight/LightWizzard
 
-Amazon
-* :book: Book https://www.amazon.com/Principles-Trinary-Universe-according-Johannes/dp/1795429186/
+亚马逊
+* :book: 书 https://www.amazon.com/Principles-Trinary-Universe-according-Johannes/dp/1795429186/
 * :computer: ePub https://www.amazon.com/Principles-Trinary-Universe-according-Johannes-ebook/dp/B086D24HX9
 
-You can also get it at any major book store, but I would recommend reading it, if you want to know all the details about the Math, you will not find them in the code as much.
+你也可以在任何一家主要的书店买到它，但我建议你阅读它，如果你想知道关于数学的所有细节，你不会在代码中找到那么多。
 
-If you do not see your OS, just download, extract to a folder, and open with Qt Creator, which must be installed, and compile or run it.
+如果你没有看到你的操作系统，只需下载，解压到一个文件夹，用必须安装的 Qt Creator 打开，然后编译或运行它。
 
-# Development Progress
+# 开发进度
 
-You would have to understand Trinary Science and the Trinary Universe to understand the Galaxy Calculator, 
-but basically Trinary has the same meaning as Trinity did to Sir Isaac Newton, it describes and Alternating Current or AC, 
-the Father is the +1, the Son is the -1, and the Holy Ghost or Spirit of Mother Nature is 0, so it is Trinary Logic with: +1, -1 and 0 as Logic Levels, 
-I use the name Trinary because Newton hated the Teaching of Christ.
+你必须了解三元科学和三元宇宙才能理解银河计算器，
+但基本上 Trinary 与 Trinity 对 Isaac Newton 爵士的含义相同，它描述了交流电或交流电，
+父亲是+1，儿子是-1，圣灵或大自然母亲的精神是0，所以它是三元逻辑：+1、-1和0作为逻辑级别，
+我使用三位一体这个名字是因为牛顿讨厌基督的教导。
 
-There is a configuration screen is where you configure the Galaxy, you can Name the Galaxy, set its Sun Size in Miles in Diameter, 
-set its Living Planets Size in Miles in Diameter, set the number of Trinary Engines, see Help for more details, 
-and the Radius of of the Galaxy in Miles in Diameter, and how many Tracks you want to print.
+有一个配置屏幕是您配置银河的地方，您可以命名银河，设置它的太阳大小（以英里为单位），
+设置它的生命行星大小（以英里为单位），设置三元引擎的数量，请参阅帮助以获取更多详细信息，
+和以英里为单位的银河半径，以及您要打印的轨道数。
 
-I removed the Local Storage Feature due to permissions on some devices.
+由于某些设备的权限，我删除了本地存储功能。
 
-# Background
+＃ 背景
 
-The Galaxy Calculator is a one button click to calculate, it records the Track Number, how many Trinary Engines it takes to be on that track, 
-its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, the Suns Orbital Distance in Miles, and the Tracks Frequency, 
-which Sir Isaac Newton used to determine when the End of Civilization will happen, and according to his and my calculation, 
-that will happen in the year 2060 under the Julian Calendar still used by the Military, or 2061 under the Gregorian Calendar in use today, 
-this was the same calculation given to the Public, but few know how he calculated it, I wrote a new formula, because I could not find his original equation.
+Galaxy Calculator 是一个一键式计算器，它记录轨道编号，在该轨道上需要多少个三元引擎，
+其以每小时英里为单位的太阳最小和最大速度、宜居行星频率、以英里为单位的太阳轨道距离和轨道频率，
+艾萨克·牛顿爵士用它来确定文明的终结何时发生，根据他和我的计算，
+这将发生在军队仍在使用的儒略历下的 2060 年，或者今天使用的格里高利历下的 2061 年，
+这是给公众的相同计算，但很少有人知道他是如何计算的，我写了一个新公式，因为我找不到他的原始方程。
 
-Sir Isaac Newton burned his copy of his 2060 Calculation, he wrote that it weights heavy on his SOUL, so he had to let it go, 
-and wrote that anyone that wants to know, can figure it out, all the formulas are in the Bible, 36 years later I did find them all.
+艾萨克牛顿爵士烧毁了他的 2060 计算副本，他写道，这对他的灵魂来说很重，所以他不得不放手，
+并写道任何想知道的人都可以弄清楚，所有公式都在圣经中，36年后我确实找到了它们。
 
-This Galaxy Calculator was written for use, after I thought about the bash script that created this page:
+这个 Galaxy Calculator 是为了使用而编写的，在我考虑了创建这个页面的 bash 脚本之后：
 
 http://LightWizzard.com/books/trinary.universe/appendix.a.html
 
-The bash script not only crated the page, but calculated the table values.
+bash 脚本不仅创建了页面，还计算了表值。
 
-I hope this helps everyone visualize what the Application needs to do, which is only to graph and plot the path of Stars around the Galaxy.
+我希望这可以帮助每个人想象应用程序需要做什么，这只是绘制和绘制星系周围星星的路径。
 
-This is not a Galaxy Simulator, only a Graph and Plot, and that is very important to understand, 
-I would like to write a Galaxy Simulator built using only the Laws and Rules or Electronics, 
-and that project will be called a Galaxy Simulator, and why this Project is only called a Galaxy Calculator,
-but I am looking into using Qt 3D Studio to simulate a simulator.
+这不是 Galaxy Simulator，只是一个 Graph 和 Plot，理解这一点非常重要，
+我想编写一个仅使用法律和规则或电子设备构建的银河模拟器，
+那个项目将被称为银河模拟器，以及为什么这个项目只被称为一个 银河计算器，
+但我正在考虑使用 Qt 3D Studio 来模拟模拟器。
 
-For more information see: [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+更多信息请参见：[Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
 
-This is a work in progress, please report any bugs, and comments.
+这是一项正在进行的工作，请报告任何错误和评论。
 
-# Screen Shots
+# 屏幕截图
 
-![Galaxy Configuration](/doc/images/screenshot-config.png?raw=true "Galaxy Configuration")
+![银河配置](/doc/images/screenshot-config.png?raw=true "银河配置")
 
-![Galaxy Calculator](/doc/images/screenshot-galaxy.png?raw=true "Galaxy Calculator")
+![银河计算器](/doc/images/screenshot-galaxy.png?raw=true "银河计算器")
 
-![Energy Calculator](/doc/images/screenshot-energy.png?raw=true "Energy Calculator")
+![能量计算器](/doc/images/screenshot-energy.png?raw=true "能量计算器")
 
-![Madness Calculator](/doc/images/screenshot-madness.png?raw=true "Madness Calculator")
+![疯狂计算器](/doc/images/screenshot-madness.png?raw=true "疯狂计算器")
 
-![World Calculator](/doc/images/screenshot-world.png?raw=true "Planet Calculator")
+![世界计算器](/doc/images/screenshot-world.png?raw=true "行星计算器")
 
-![Calculator](/doc/images/screenshot-calc.png?raw=true "Calculator")
+![计算器](/doc/images/screenshot-calc.png?raw=true "计算器")
 
 
-# 3rd Party Code
+# 第三方代码
 
 [QCalculator](https://github.com/xenotux/qcalc)
 https://github.com/xenotux/qcalc
 
-GMP Dll for Windows
+适用于 Windows 的 GMP Dll
 https://osdn.net/projects/mingw/releases/69295
 
-MPFR Dll for Windows
+适用于 Windows 的 MPFR Dll
 https://osdn.net/projects/mingw/releases/69297
 
 
-End of README.md
+README.md 结束

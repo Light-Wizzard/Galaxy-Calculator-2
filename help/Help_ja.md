@@ -1,70 +1,70 @@
-# Calculator Help
+＃電卓ヘルプ
 
-I use QCalculator for the Math Engine, it can be found at
-[https://github.com/xenotux/qcalc](https://github.com/xenotux/qcalc)
-documentaion can be found at [https://www.state-machine.com/qtools/qcalc.html](https://www.state-machine.com/qtools/qcalc.html),
-I like this project, 
-so I forked it at [https://github.com/Light-Wizzard/qcalc](https://github.com/Light-Wizzard/qcalc),
-and I have used some of their documentaion here, and hope to write a better Help Section for this project.
-
-***
-
-The most important feature of QCalc is that it accepts expressions in the <b>C-syntax</b> - with the same operands and precedence rules as in the C or C++ source code. Among others,
-the expressions can contain all bit-wise operators (`<<`, `>>`, `|`, `&`, `^`, `~`) as well as mixed decimal,
-<b>hexadecimal</b> and even binary constants.
-
-QCalc is also a powerful floating-point scientific calculator and supports all mathematical functions
-(`sin()`, `cos()`, `tan()`, `exp()`, `ln()`, ...).
-
-Some examples of acceptable expressions are:
-`((0xBEEF << 16) | 1280) & ~0xFF` - binary operators, mixed hex and decimal numbers
-
-`($1011 << 24) | (1280 >> 8) ^ 0xFFF0` - mixed binary, dec and hex numbers
-
-`(1234 % 55) + 4321//33` - remainder, integer division (note the `//` integer division operator
-
-`pi/6` - pi-constant
-
-`pow(sin(ans),2) + pow(cos(ans),2)` - scientific floating-point calculations,
-[ans-variable](https://www.state-machine.com/qtools/qcalc.html#qcalc_ans)
+私は数学エンジンにQCalculatorを使用しています。
+[https://github.com/xenotux/qcalc]（https://github.com/xenotux/qcalc）
+documentaionは、[https://www.state-machine.com/qtools/qcalc.html]（https://www.state-machine.com/qtools/qcalc.html）にあります。
+私はこのプロジェクトが好きです、
+だから私は[https://github.com/Light-Wizzard/qcalc]（https://github.com/Light-Wizzard/qcalc）でそれをフォークしました、
+そして私はここで彼らの文書のいくつかを使用しました、そしてこのプロジェクトのためのより良いヘルプセクションを書くことを望んでいます。
 
 ***
 
-Note: QCalc internally uses the Python command <b>eval</b> to evaluate the expressions.
-Please refer to the documentation of the [Python math expressions](https://en.wikibooks.org/wiki/Python_Programming/Basic_Math)
-for more details of supported syntax and features.
+QCalcの最も重要な機能は、CまたはC ++ソースコードと同じオペランドと優先順位規則を使用して<b> C構文</ b>の式を受け入れることです。とりわけ、
+式には、すべてのビット演算子（ `<<`、 `>>`、 `|`、 `＆`、 `^`、 `〜`）と、混合10進数を含めることができます。
+<b> 16進数</ b>、さらには2進定数。
 
-# Automatic Conversion to Hexadecimal and Binary
+QCalcは強力な浮動小数点関数電卓でもあり、すべての数学関数をサポートします
+（ `sin（）`、 `cos（）`、 `tan（）`、 `exp（）`、 `ln（）`、...）。
 
-If the result of expression evaluation is integer (as opposed to floating point), 
-QCalc automatically displays the result in hexadecimal and binary formats (see QCalc screenshot).
-For better readability the hex display shows an apostrophe between the two 16-bit half-words (e.g., `0xDEAD'BEEF`).
-Similarly, the binary output shows an apostrophe between the four 8-bit bytes (e.g., `0b11011110'10101101'10111110'11101111`).
+受け入れ可能な表現のいくつかの例は次のとおりです。
+`（（0xBEEF << 16）| 1280）＆〜0xFF`-二項演算子、16進数と10進数の混合
 
-# Hexadecimal and Binary Numbers
+`（$ 1011 << 24）| （1280 >> 8）^ 0xFFF0`-2進数、12進数、16進数の混合
 
-As the extension to the C-syntax, QCalc supports both <b>hexadecimal numbers</b> and <b>binary numbers</b>.
-These numbers are represented as `0x...` and `0b...`, respectively, 
-and can be mixed into expressions. Here are a few examples of such expressions:
+`（1234％55）+ 4321 // 33`-余り、整数除算（` // `整数除算演算子に注意してください
 
-`(0b0110011 << 14) & 0xDEADBEEF (0b0010 | 0b10000) * 123`
+`pi / 6`-pi-constant
+
+`pow（sin（ans）、2）+ pow（cos（ans）、2）`-科学的な浮動小数点計算、
+[ans-variable]（https://www.state-machine.com/qtools/qcalc.html#qcalc_ans）
+
+***
+
+注：QCalcは、Pythonコマンド<b> eval </ b>を内部的に使用して式を評価します。
+[Pythonの数式]（https://en.wikibooks.org/wiki/Python_Programming/Basic_Math）のドキュメントを参照してください。
+サポートされている構文と機能の詳細については。
+
+＃16進数および2進数への自動変換
+
+式の評価結果が（浮動小数点ではなく）整数の場合、
+QCalcは、結果を16進形式と2進形式で自動的に表示します（QCalcのスクリーンショットを参照）。
+読みやすくするために、16進表示では2つの16ビットハーフワードの間にアポストロフィが表示されます（例： `0xDEAD'BEEF`）。
+同様に、バイナリ出力は、4つの8ビットバイト間のアポストロフィを示します（例： `0b11011110'10101101'10111110'11101111`）。
+
+＃16進数と2進数
+
+C構文の拡張として、QCalcは<b> 16進数</ b>と<b> 2進数</ b>の両方をサポートします。
+これらの番号は、それぞれ「0x ...」および「0b ...」として表されます。
+式に混在させることができます。このような式の例をいくつか示します。
+
+`（0b0110011 << 14）＆0xDEADBEEF（0b0010 | 0b10000）* 123`
 
 
-# The ans Variable
+＃ans変数
 
-QCalc stores the result of the last computation in the `ans` variable. 
-Here are some examples of expressions with the `ans` variable:
+QCalcは、最後の計算結果を `ans`変数に格納します。
+`ans`変数を使用した式の例を次に示します。
 
-`1/ans` - find the inverse of the last computation
+`1 / ans`-最後の計算の逆を見つけます
 
-`log(ans)/log(2)` - find log-base-2 of the last computation
+`log（ans）/ log（2）`-最後の計算のlog-base-2を検索します
 
-# 64-bit Range
+＃64ビット範囲
 
-QCalc supports the 64-bit range and switches to 64-bit arithmetic automatically when an <b>integer</b> result of a computation exceeds the 32-bit range. 
-Here are some examples of the 64-bit output:
+QCalcは64ビット範囲をサポートし、計算の<b>整数</ b>結果が32ビット範囲を超えると、自動的に64ビット演算に切り替わります。
+64ビット出力の例を次に示します。
 
-```
+`` `
 > 0xDEADBEEF << 27
 = 501427843159293952 | 0x06F5'6DF7'7800'0000
 = 0b00000110'11110101'01101101'11110111'01111000'00000000'00000000'00000000
@@ -72,25 +72,24 @@ Here are some examples of the 64-bit output:
 = 62678480394911744 | 0x00DE'ADBE'EF00'0000
 = 0b00000000'11011110'10101101'10111110'11101111'00000000'00000000'00000000
 > 0xDEADBEEF << 34
-! out of range
->
-```
+！範囲外
+>>
+`` `
 
-# Error handling
+＃ エラー処理
 
-Expressions that you enter into QCalc might have all kinds of errors: syntax errors, 
-computation errors (e.g., division by zero), etc.
-In all these cases, QCalc responds with the `Error` message and the explanation of the error:
+QCalcに入力する式には、構文エラー、構文エラーなど、あらゆる種類のエラーが含まれる可能性があります。
+計算エラー（ゼロ除算など）など。
+これらすべての場合において、QCalcは「エラー」メッセージとエラーの説明で応答します。
 
-```
-> (2*4) + )
-Traceback (most recent call last):
-  File "\ProgramPath\qcalc.py", line 54, in _main
-result = eval(expr)
-  File "<string>", line 1
-(2*4) + )
+`` `
+>（2 * 4）+）
+トレースバック（最後の最後の呼び出し）：
+  _mainのファイル "\ ProgramPath \ qcalc.py"、54行目
+結果= eval（expr）
+  ファイル "<string>"、1行目
+（2 * 4）+）
 ^
-SyntaxError: unmatched ')'
->
-```
-
+SyntaxError：unmatched '）'
+>>
+`` `

@@ -1,147 +1,147 @@
-# Galaxy Calculator 2
+# Calculatrice Galaxie 2
 
-Galaxy Calculator 2 has 4 Calculators built into it:
+Galaxy Calculator 2 intègre 4 calculatrices :
 
-1. :milky_way: Galatic Calculator
-2. :confounded: Madness Calculator
-3. :earth_americas: Planet Calculator
-4. :computer: Calculator
+1. :milky_way : Calculatrice Galatique
+2. :confused: Calculatrice de folie
+3. :earth_americas: Calculatrice de planètes
+4. :ordinateur: Calculatrice
 
-I used the project files from my first Galaxy Calculator that is written using Qt QML and JavaScript, 
-this one uses Qt C++, and Widgets, 
-so the documentaion may be wacky till I have a chance to fix all the links and convert them to this new Project,
-I will have to make Travis and AppYeyer prorjects, so this is a work in progress.
+J'ai utilisé les fichiers de projet de ma première calculatrice Galaxy qui est écrite en utilisant Qt QML et JavaScript,
+celui-ci utilise Qt C++, et Widgets,
+donc la documentation peut être farfelue jusqu'à ce que j'aie une chance de réparer tous les liens et de les convertir en ce nouveau projet,
+Je vais devoir faire des projets Travis et AppYeyer, c'est donc un travail en cours.
 
-The Galaxy, Madness and Planet Calculators are based on Sir Isaac Newtons Calculations, 
-and was updated to include the Math Nikola Tesla, 
-thus inventing a new type of Math I call Trinary Mathematics, that is used to Calculate the Galaxy.
+Les calculateurs Galaxy, Madness et Planet sont basés sur les calculs de Sir Isaac Newtons,
+et a été mis à jour pour inclure le Math Nikola Tesla,
+inventant ainsi un nouveau type de mathématiques que j'appelle les mathématiques trinaires, qui sont utilisées pour calculer la galaxie.
 
-This Project is Open Source, with No License required, this is a Qt C++ App, 
-that will run on Desktop and other devices, the bash script I used to port to this app is included.
+Ce projet est Open Source, sans licence requise, il s'agit d'une application Qt C++,
+qui s'exécutera sur le bureau et d'autres appareils, le script bash que j'ai utilisé pour le portage vers cette application est inclus.
 
-This App can be compiled for any OS that Qt supports: Linux, Windows, MAC, Android and iOS, 
-as well as every OS that Qt supports, so this should run on most if not all popular OS's.
+Cette application peut être compilée pour n'importe quel système d'exploitation pris en charge par Qt : Linux, Windows, MAC, Android et iOS,
+ainsi que tous les systèmes d'exploitation pris en charge par Qt, cela devrait donc fonctionner sur la plupart, sinon tous les systèmes d'exploitation populaires.
 
-I will try to make installers and executable for all supported Qt OS's, currently I have:
+Je vais essayer de créer des programmes d'installation et des exécutables pour tous les systèmes d'exploitation Qt pris en charge, actuellement j'ai :
 
-If the badges are Green, you should be able to download the apps, if they are not, 
-it might be that I am working on it, but it only takes a few minutes to update.
+Si les badges sont verts, vous devriez pouvoir télécharger les applications, si ce n'est pas le cas,
+il se peut que je travaille dessus, mais la mise à jour ne prend que quelques minutes.
 
-This project is in work, so files might break, but source code should run if compiled on any machine.
+Ce projet est en cours, donc les fichiers peuvent se casser, mais le code source devrait s'exécuter s'il est compilé sur n'importe quelle machine.
 
-The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, 
-in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
+Le Qt Installer Framework fonctionne pour Linux et peut-être Windows mais le programme d'installation ne se téléchargera pas,
+au travail, j'ai un installateur pour Windows 10 ci-dessous, pas sûr de 8, mais pas 7.
 
-## Table of Content
+## Table des matières
 
-1. [Status](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
-2. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
-3. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
-4. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
-5. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
+1. [Statut](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
+2. [Développement-Progrès](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
+3. [Contexte] (https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
+4. [Captures d'écran] (https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
+5. [Captures d'écran] (https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
 6. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
-7. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
+7. [Documentation Doxygen](https://light-wizzard.github.io/Galaxy-Calculator-2)
 
-# Status
+# Statut
 
-[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
+[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy- Calculatrice-2)
 
-## :package: **Downloads:**
+## :package : **Téléchargements :**
 
- - :penguin: [Linux](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage)
+ - :pingouin: [Linux](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage)
  - :penguin: :inbox_tray: [Linux ZSync](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage.zsync)
  - :penguin: :outbox_tray: [Linux Installer in work](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-Linux-Installer)
- - :office: [Windows zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows.zip)
+ - :office : [Windows zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows.zip)
  - :office: :outbox_tray: [Windows Installer exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2.exe)
- - :apple: [Apple](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2.dmg)
+ - :apple : [Apple](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2.dmg)
 
-Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, and run the file Galaxy-Calculator-2.exe inside of the deploy folder.
+Windows (Testé sur 7 et 10, dites-moi si 8 fonctionne) : Téléchargez zip et extrayez-le, puis exécutez le fichier Galaxy-Calculator-2.exe à l'intérieur du dossier de déploiement.
 
-All my books are free online at http://LightWizzard.com, but it cost money to print them or push ePubs to your device.
+Tous mes livres sont gratuits en ligne sur http://LightWizzard.com, mais les imprimer ou envoyer des ePubs sur votre appareil coûte de l'argent.
 
-I am not publicizing my books here, you can read them for free on my 
-[Github account Light-Wizzard/The-Principles-Of-The-Trinary-Universe](https://github.com/Light-Wizzard/The-Principles-Of-The-Trinary-Universe),
-but you have to pay for printed books, or the easy of having an ePub delivered through your devices ePub Reader, without having to download it.
+Je ne publie pas mes livres ici, vous pouvez les lire gratuitement sur mon
+[Compte Github Light-Wizzard/The-Principles-Of-The-Trinary-Universe](https://github.com/Light-Wizzard/The-Principles-Of-The-Trinary-Universe),
+mais vous devez payer pour des livres imprimés, ou la facilité d'avoir un ePub livré via vos appareils ePub Reader, sans avoir à le télécharger.
 
-Printed Book and ePub Available at:
+Livre imprimé et ePub disponible sur :
 
-Lulu
-* :book: :computer: http://www.lulu.com/spotlight/LightWizzard
+Loulou
+* :livre: :ordinateur: http://www.lulu.com/spotlight/LightWizzard
 
-Amazon
+Amazone
 * :book: Book https://www.amazon.com/Principles-Trinary-Universe-according-Johannes/dp/1795429186/
-* :computer: ePub https://www.amazon.com/Principles-Trinary-Universe-according-Johannes-ebook/dp/B086D24HX9
+* :ordinateur : ePub https://www.amazon.com/Principles-Trinary-Universe-according-Johannes-ebook/dp/B086D24HX9
 
-You can also get it at any major book store, but I would recommend reading it, if you want to know all the details about the Math, you will not find them in the code as much.
+Vous pouvez également l'obtenir dans n'importe quelle grande librairie, mais je vous recommande de le lire, si vous voulez connaître tous les détails sur les mathématiques, vous ne les trouverez pas autant dans le code.
 
-If you do not see your OS, just download, extract to a folder, and open with Qt Creator, which must be installed, and compile or run it.
+Si vous ne voyez pas votre système d'exploitation, téléchargez-le, extrayez-le dans un dossier et ouvrez-le avec Qt Creator, qui doit être installé, et compilez ou exécutez-le.
 
-# Development Progress
+# Avancement du développement
 
-You would have to understand Trinary Science and the Trinary Universe to understand the Galaxy Calculator, 
-but basically Trinary has the same meaning as Trinity did to Sir Isaac Newton, it describes and Alternating Current or AC, 
-the Father is the +1, the Son is the -1, and the Holy Ghost or Spirit of Mother Nature is 0, so it is Trinary Logic with: +1, -1 and 0 as Logic Levels, 
-I use the name Trinary because Newton hated the Teaching of Christ.
+Vous devez comprendre la science trinaire et l'univers trinaire pour comprendre le calculateur galactique,
+mais fondamentalement Trinary a la même signification que Trinity a fait à Sir Isaac Newton, il décrit et courant alternatif ou AC,
+le Père est le +1, le Fils est le -1, et le Saint-Esprit ou Esprit de Mère Nature est 0, donc c'est la Logique Trinaire avec : +1, -1 et 0 comme Niveaux Logiques,
+J'utilise le nom Trinaire parce que Newton détestait l'Enseignement du Christ.
 
-There is a configuration screen is where you configure the Galaxy, you can Name the Galaxy, set its Sun Size in Miles in Diameter, 
-set its Living Planets Size in Miles in Diameter, set the number of Trinary Engines, see Help for more details, 
-and the Radius of of the Galaxy in Miles in Diameter, and how many Tracks you want to print.
+Il y a un écran de configuration où vous configurez le Galaxy, vous pouvez nommer le Galaxy, définir sa taille de soleil en miles de diamètre,
+définir sa taille de planètes vivantes en miles de diamètre, définir le nombre de moteurs trinaires, voir l'aide pour plus de détails,
+et le rayon de la galaxie en miles de diamètre et le nombre de pistes que vous souhaitez imprimer.
 
-I removed the Local Storage Feature due to permissions on some devices.
+J'ai supprimé la fonctionnalité de stockage local en raison des autorisations sur certains appareils.
 
-# Background
+# Fond
 
-The Galaxy Calculator is a one button click to calculate, it records the Track Number, how many Trinary Engines it takes to be on that track, 
-its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, the Suns Orbital Distance in Miles, and the Tracks Frequency, 
-which Sir Isaac Newton used to determine when the End of Civilization will happen, and according to his and my calculation, 
-that will happen in the year 2060 under the Julian Calendar still used by the Military, or 2061 under the Gregorian Calendar in use today, 
-this was the same calculation given to the Public, but few know how he calculated it, I wrote a new formula, because I could not find his original equation.
+Le calculateur Galaxy est un simple clic pour calculer, il enregistre le numéro de piste, combien de moteurs trinaires il faut pour être sur cette piste,
+sa vitesse minimale et maximale du soleil en milles par heure, la fréquence des planètes habitables, la distance orbitale du soleil en milles et la fréquence des pistes,
+que Sir Isaac Newton a utilisé pour déterminer quand la fin de la civilisation se produira, et selon son et mon calcul,
+cela se produira en 2060 sous le calendrier julien encore utilisé par les militaires, ou en 2061 sous le calendrier grégorien en usage aujourd'hui,
+c'était le même calcul donné au Public, mais peu savent comment il l'a calculé, j'ai écrit une nouvelle formule, car je n'ai pas pu trouver son équation d'origine.
 
-Sir Isaac Newton burned his copy of his 2060 Calculation, he wrote that it weights heavy on his SOUL, so he had to let it go, 
-and wrote that anyone that wants to know, can figure it out, all the formulas are in the Bible, 36 years later I did find them all.
+Sir Isaac Newton a brûlé sa copie de son calcul de 2060, il a écrit que cela pèse lourd sur son ÂME, il a donc dû laisser tomber,
+et a écrit que quiconque veut savoir, peut le comprendre, toutes les formules sont dans la Bible, 36 ans plus tard, je les ai toutes trouvées.
 
-This Galaxy Calculator was written for use, after I thought about the bash script that created this page:
+Cette calculatrice Galaxy a été écrite pour être utilisée, après avoir pensé au script bash qui a créé cette page :
 
 http://LightWizzard.com/books/trinary.universe/appendix.a.html
 
-The bash script not only crated the page, but calculated the table values.
+Le script bash a non seulement créé la page, mais a également calculé les valeurs de la table.
 
-I hope this helps everyone visualize what the Application needs to do, which is only to graph and plot the path of Stars around the Galaxy.
+J'espère que cela aidera tout le monde à visualiser ce que l'application doit faire, c'est-à-dire uniquement tracer et tracer le chemin des étoiles autour de la galaxie.
 
-This is not a Galaxy Simulator, only a Graph and Plot, and that is very important to understand, 
-I would like to write a Galaxy Simulator built using only the Laws and Rules or Electronics, 
-and that project will be called a Galaxy Simulator, and why this Project is only called a Galaxy Calculator,
-but I am looking into using Qt 3D Studio to simulate a simulator.
+Ce n'est pas un simulateur Galaxy, seulement un graphique et un tracé, et c'est très important à comprendre,
+Je voudrais écrire un Galaxy Simulator construit en utilisant uniquement les lois et règles ou l'électronique,
+et ce projet s'appellera un simulateur Galaxy, et pourquoi ce projet ne s'appelle qu'un Calculatrice Galaxie,
+mais je cherche à utiliser Qt 3D Studio pour simuler un simulateur.
 
-For more information see: [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+Pour plus d'informations, consultez : [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
 
-This is a work in progress, please report any bugs, and comments.
+Il s'agit d'un travail en cours, veuillez signaler tout bug et faire des commentaires.
 
-# Screen Shots
+# Captures d'écran
 
-![Galaxy Configuration](/doc/images/screenshot-config.png?raw=true "Galaxy Configuration")
+![Configuration Galaxy](/doc/images/screenshot-config.png?raw=true "Configuration Galaxy")
 
 ![Galaxy Calculator](/doc/images/screenshot-galaxy.png?raw=true "Galaxy Calculator")
 
-![Energy Calculator](/doc/images/screenshot-energy.png?raw=true "Energy Calculator")
+![Calculateur d'énergie](/doc/images/screenshot-energy.png?raw=true "Calculateur d'énergie")
 
-![Madness Calculator](/doc/images/screenshot-madness.png?raw=true "Madness Calculator")
+![Calculateur de folie](/doc/images/screenshot-madness.png?raw=true "Calculateur de folie")
 
-![World Calculator](/doc/images/screenshot-world.png?raw=true "Planet Calculator")
+![Calculatrice mondiale](/doc/images/screenshot-world.png?raw=true "Calculatrice planétaire")
 
-![Calculator](/doc/images/screenshot-calc.png?raw=true "Calculator")
+![Calculatrice](/doc/images/screenshot-calc.png?raw=true "Calculatrice")
 
 
-# 3rd Party Code
+# Code tiers
 
 [QCalculator](https://github.com/xenotux/qcalc)
 https://github.com/xenotux/qcalc
 
-GMP Dll for Windows
+DLL GMP pour Windows
 https://osdn.net/projects/mingw/releases/69295
 
-MPFR Dll for Windows
+MPFR Dll pour Windows
 https://osdn.net/projects/mingw/releases/69297
 
 
-End of README.md
+Fin du fichier README.md

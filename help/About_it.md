@@ -1,34 +1,34 @@
-# GalaxyCalculator2 About
+# GalaxyCalculator2 Informazioni
 
-The Galaxy Calculator is a one button click to calculate, it records the Track Number, 
-how many Trinary Engines it takes to be on that track, 
-its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, 
-the Suns Orbital Distance in Miles, and the Tracks Frequency, 
-which Sir Isaac Newton used to determine when the End of Civilization will happen, 
-and according to his and my calculation, 
-that will happen in the year 2060 under the Julian Calendar still used by the Military, 
-or 2061 under the Gregorian Calendar in use today, 
-this was the same calculation given to the Public, but few know how he calculated it, 
-I wrote a new formula, because I could not find his original equation.
+Il Galaxy Calculator è un clic con un pulsante per calcolare, registra il numero di traccia,
+quanti Trinary Engines servono per essere su quella pista,
+i suoi soli velocità minima e massima in miglia orarie, la frequenza dei pianeti vivibili,
+la distanza orbitale del sole in miglia e la frequenza delle tracce,
+che Sir Isaac Newton usava per determinare quando sarebbe avvenuta la Fine della Civiltà,
+e secondo il suo e mio calcolo,
+che accadrà nell'anno 2060 sotto il calendario giuliano ancora in uso dai militari,
+o 2061 sotto il calendario gregoriano in uso oggi,
+questo era lo stesso calcolo dato al Pubblico, ma pochi sanno come lo ha calcolato,
+Ho scritto una nuova formula, perché non riuscivo a trovare la sua equazione originale.
 
-Sir Isaac Newton burned his copy of his 2060 Calculation, he wrote that it weights heavy on his SOUL, 
-so he had to let it go, 
-and wrote that anyone that wants to know, can figure it out, all the formulas are in the Bible, 
-36 years later I did find them all.
+Sir Isaac Newton ha bruciato la sua copia del suo Calcolo del 2060, ha scritto che pesa molto sulla sua ANIMA,
+quindi ha dovuto lasciarlo andare,
+e ha scritto che chiunque voglia sapere, può capirlo, tutte le formule sono nella Bibbia,
+36 anni dopo li ho trovati tutti.
 
-This Galaxy Calculator was written for use, after I thought about the bash script that created this page:
+Questo Galaxy Calculator è stato scritto per l'uso, dopo aver pensato allo script bash che ha creato questa pagina:
 
-http://LightWizzard.com/books/trinary.universe/appendix.a.html
+http://LightWizzard.com/books/trinary.universe/apppendix.a.html
 
-The bash script not only crated the page, but calculated the table values.
+Lo script bash non solo ha creato la pagina, ma ha calcolato i valori della tabella.
 
-I hope this helps everyone visualize what the Application needs to do, 
-which is only to graph and plot the path of Stars around the Galaxy.
+Spero che questo aiuti tutti a visualizzare ciò che l'applicazione deve fare,
+che è solo per tracciare e tracciare il percorso delle Stelle intorno alla Galassia.
 
-This is not a Galaxy Simulator, only a Graph and Plot, and that is very important to understand, 
-I would like to write a Galaxy Simulator built using only the Laws and Rules or Electronics, 
-and that project will be called a Galaxy Simulator, and why this Project is only called a Galaxy Calculator,
-but I am looking into using Qt 3D Studio to simulate a simulator.
+Questo non è un Galaxy Simulator, solo un grafico e un diagramma, e questo è molto importante da capire,
+Vorrei scrivere un simulatore Galaxy costruito utilizzando solo le leggi e le regole o l'elettronica,
+e quel progetto si chiamerà Galaxy Simulator, e perché questo progetto è chiamato solo Galaxy Calculator,
+ma sto cercando di usare Qt 3D Studio per simulare un simulatore.
 
 
-Writen by Jeffrey Scott Flesher
+Scritto da Jeffrey Scott Flesher

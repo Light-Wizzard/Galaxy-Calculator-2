@@ -1,34 +1,34 @@
-# GalaxyCalculator2 About
+＃GalaxyCalculator2について
 
-The Galaxy Calculator is a one button click to calculate, it records the Track Number, 
-how many Trinary Engines it takes to be on that track, 
-its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, 
-the Suns Orbital Distance in Miles, and the Tracks Frequency, 
-which Sir Isaac Newton used to determine when the End of Civilization will happen, 
-and according to his and my calculation, 
-that will happen in the year 2060 under the Julian Calendar still used by the Military, 
-or 2061 under the Gregorian Calendar in use today, 
-this was the same calculation given to the Public, but few know how he calculated it, 
-I wrote a new formula, because I could not find his original equation.
+Galaxy Calculatorは、ボタンを1回クリックするだけで計算でき、トラック番号を記録します。
+その軌道に乗るのに必要なトリナリーエンジンの数、
+その太陽の最小および最大速度（マイル/時）、住みやすい惑星の頻度、
+マイル単位の太陽軌道距離、およびトラック周波数、
+アイザックニュートン卿が文明の終焉がいつ起こるかを決定するために使用したもの、
+そして彼と私の計算によると、
+それはまだ軍によって使用されているユリウス暦の下で2060年に起こります、
+または今日使用されているグレゴリオ暦の下の2061、
+これは一般に与えられたのと同じ計算でしたが、彼がそれをどのように計算したかを知っている人はほとんどいません。
+彼の元の方程式が見つからなかったので、私は新しい公式を書きました。
 
-Sir Isaac Newton burned his copy of his 2060 Calculation, he wrote that it weights heavy on his SOUL, 
-so he had to let it go, 
-and wrote that anyone that wants to know, can figure it out, all the formulas are in the Bible, 
-36 years later I did find them all.
+アイザックニュートン卿は彼の2060計算のコピーを燃やしました、彼はそれが彼の魂に重くのしかかると書きました、
+それで彼はそれを手放さなければなりませんでした
+そして、知りたい人は誰でもそれを理解することができ、すべての公式は聖書にあると書いています、
+36年後、私はそれらすべてを見つけました。
 
-This Galaxy Calculator was written for use, after I thought about the bash script that created this page:
+このGalaxyCalculatorは、このページを作成したbashスクリプトについて考えた後、使用するために作成されました。
 
 http://LightWizzard.com/books/trinary.universe/appendix.a.html
 
-The bash script not only crated the page, but calculated the table values.
+bashスクリプトは、ページを作成するだけでなく、テーブルの値を計算しました。
 
-I hope this helps everyone visualize what the Application needs to do, 
-which is only to graph and plot the path of Stars around the Galaxy.
+これが、アプリケーションが何をする必要があるかを誰もが視覚化するのに役立つことを願っています。
+これは、銀河の周りの星の経路をグラフ化してプロットするためだけのものです。
 
-This is not a Galaxy Simulator, only a Graph and Plot, and that is very important to understand, 
-I would like to write a Galaxy Simulator built using only the Laws and Rules or Electronics, 
-and that project will be called a Galaxy Simulator, and why this Project is only called a Galaxy Calculator,
-but I am looking into using Qt 3D Studio to simulate a simulator.
+これはGalaxySimulatorではなく、グラフとプロットのみであり、理解することが非常に重要です。
+法と規則または電子機器のみを使用して構築されたGalaxySimulatorを作成したいと思います。
+そのプロジェクトはGalaxySimulatorと呼ばれ、このプロジェクトがGalaxyCalculatorとだけ呼ばれるのはなぜですか。
+しかし、私はQt 3DStudioを使用してシミュレータをシミュレートすることを検討しています。
 
 
-Writen by Jeffrey Scott Flesher
+ジェフリースコットフレッシャー脚本の作品
