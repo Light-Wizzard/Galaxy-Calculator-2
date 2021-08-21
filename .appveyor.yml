@@ -149,7 +149,7 @@ for:
   build_script:
     #- cmd: scripts\build_script.cmd
     #- ps: scripts\build_script.ps1
-    # -ps: Invoke-Expression -Command "scripts\build_script.ps1"
+    # - ps: Invoke-Expression -Command "scripts\build_script.ps1"
     #- cmd: echo "build_script Windows"
     #- cmd: cd %APPVEYOR_BUILD_FOLDER%
     #- cmd: mkdir build
@@ -218,35 +218,35 @@ for:
     #- cmd: bash -lc "if %PLATFORM%==x64 && %MY_COMPILER%==Vs; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir && mmake && mmake install fi"
     #
     - cmd: dir
-    -ps: |
-        $currentDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
+    - ps: |
+       $currentDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
         if ($currentDirectory -eq $PSHOME.TrimEnd('\'))
         {
             $currentDirectory = $PSScriptRoot
         }
         Write-Host "After Windows build $env:currentDirectory" -ForegroundColor DarkGreen
     #- cmd: dir AppDir
-    -ps: Get-ChildItem -Path AppDir
+    - ps: Get-ChildItem -Path AppDir
     #- cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%MY_BIN_PRO_RES_NAME%.exe" AppDir
-    -ps: Copy-Item "C:\Qt\Tools\QtCreator\bin\plugins\platforms\*" -Destination "AppDir" -Recurse
+    - ps: Copy-Item "C:\Qt\Tools\QtCreator\bin\plugins\platforms\*" -Destination "AppDir" -Recurse
     #- cmd: copy C:\Qt\Tools\QtCreator\bin\plugins\platforms\* AppDir
     #- cmd: windeployqt "AppDir\%MY_BIN_PRO_RES_NAME%.exe" --verbose=2
-    -ps: Invoke-Expression "windeployqt AppDir\$env:MY_BIN_PRO_RES_NAME.exe --verbose=2"
+    - ps: Invoke-Expression "windeployqt AppDir\$env:MY_BIN_PRO_RES_NAME.exe --verbose=2"
     #- cmd: set ARTIFACT_APPIMAGE="%MY_BIN_PRO_RES_NAME%-%PLATFORM%.exe"
     #- cmd: set ARTIFACT_QIF="%MY_BIN_PRO_RES_NAME%-Linux-Installer";
     #- cmd: 7z a -tzip "%MY_BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%PLATFORM%.zip" AppDir -r
-    -ps: Invoke-Expression "7z a -tzip $env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip AppDir -r"
+    - ps: Invoke-Expression "7z a -tzip $env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip AppDir -r"
     #- cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%MY_BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%PLATFORM%.zip" "%APPVEYOR_BUILD_FOLDER%\
-    -ps: Copy-Item "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
+    - ps: Copy-Item "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
     #- cmd: echo "Running Qt Installer Framework";
     #- cmd: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
     #- cmd: echo C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%MY_BIN_PRO_RES_NAME%-Windows-Installer.exe"
     #- cmd: echo ..\QtInstallerFramework-windows-x86-%MY_QT_IF_VERSION%.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%MY_BIN_PRO_RES_NAME%-Windows-Installer.exe"
     #- cmd: echo 7z a -tzip "%MY_BIN_PRO_RES_NAME%-Windows-Installer.zip" "%MY_BIN_PRO_RES_NAME%-Windows-Installer.exe"
     #- cmd: copy *.zip %APPVEYOR_BUILD_FOLDER%
-    -ps: Copy-Item "*.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
+    - ps: Copy-Item "*.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
     #- cmd: cd %APPVEYOR_BUILD_FOLDER%
-    -ps: Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
+    - ps: Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     - cmd: echo Current Path is %cd%
     - cmd: dir
     - cmd: echo -e "Completed-Build Windows"
