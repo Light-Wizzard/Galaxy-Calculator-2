@@ -146,7 +146,7 @@ for:
     # C:\mingw-w64\ missing from 2019 matrix
     #- cmd: scripts\install.cmd
     #- ps: scripts\install.ps1
-build_script:
+  build_script:
     #- cmd: scripts\build_script.cmd
     #- ps: scripts\build_script.ps1
     - cmd: echo "build_script Windows"
