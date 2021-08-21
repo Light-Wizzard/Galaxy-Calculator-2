@@ -18,10 +18,10 @@ configuration: Release
 
 platform:
   - x64
-  - x86
+  #- x86
 
 image:
-  - Ubuntu
+  #- Ubuntu
   - Visual Studio 2019
 
 for:
