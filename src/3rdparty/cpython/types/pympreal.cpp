@@ -27,7 +27,8 @@
 typedef struct
 {
         PyObject_HEAD
-        mpfr::mpreal *mpreal; //Store a pointer to our c++ object because cpython does not like c++ constructors / destructors.
+         // Store a pointer to our c++ object because cpython does not like c++ constructors / destructors.
+        mpfr::mpreal *mpreal;
 } PyMpRealObject;
 
 PyObject *mpreal_richcompare(PyObject *v, PyObject *w, int op);
@@ -89,15 +90,15 @@ PyObject *mpreal_to_string(PyMpRealObject *self, PyObject *args);
  ***********************************************/
 static PyMethodDef mpreal_methods[] =
 {
-    {"set_precision",         (PyCFunction) mpreal_setprecision,          METH_VARARGS},
-    {"get_precision",         (PyCFunction) mpreal_getprecision,          METH_NOARGS},
-    {"set_default_precision", (PyCFunction) mpreal_set_default_precision, METH_VARARGS | METH_STATIC},
-    {"get_default_precision", (PyCFunction) mpreal_get_default_precision, METH_NOARGS  | METH_STATIC},
-    {"set_default_rounding",  (PyCFunction) mpreal_set_default_rounding,  METH_VARARGS | METH_STATIC},
-    {"get_default_rounding",  (PyCFunction) mpreal_get_default_rounding,  METH_NOARGS  | METH_STATIC},
-    {"is_integer",            (PyCFunction) mpreal_is_integer,            METH_NOARGS},
-    {"to_string",             (PyCFunction) mpreal_to_string,             METH_VARARGS},
-    {PyNull, PyNull}           /* sentinel */
+    {"set_precision",         (PyCFunction) mpreal_setprecision,          METH_VARARGS, PyNull},
+    {"get_precision",         (PyCFunction) mpreal_getprecision,          METH_NOARGS,  PyNull},
+    {"set_default_precision", (PyCFunction) mpreal_set_default_precision, METH_VARARGS | METH_STATIC, PyNull},
+    {"get_default_precision", (PyCFunction) mpreal_get_default_precision, METH_NOARGS  | METH_STATIC, PyNull},
+    {"set_default_rounding",  (PyCFunction) mpreal_set_default_rounding,  METH_VARARGS | METH_STATIC, PyNull},
+    {"get_default_rounding",  (PyCFunction) mpreal_get_default_rounding,  METH_NOARGS  | METH_STATIC, PyNull},
+    {"is_integer",            (PyCFunction) mpreal_is_integer,            METH_NOARGS,  PyNull},
+    {"to_string",             (PyCFunction) mpreal_to_string,             METH_VARARGS, PyNull},
+    {PyNull,                  PyNull,                                     METH_NOARGS,  PyNull}  /* sentinel */
 };
 /************************************************
  * @brief MpReal Number Methods.
@@ -115,29 +116,32 @@ static PyNumberMethods MpRealNumberMethods =
     mpreal_float,               /* nb_positive */
     (unaryfunc) mpreal_abs,     /* nb_absolute */
     (inquiry) mpreal_bool,      /* nb_bool */
-    PyNull,                 /* nb_invert */
-    PyNull,                  /* nb_lshift */
-    PyNull,                  /* nb_rshift */
-    PyNull,                   /* nb_and */
-    PyNull,                   /* nb_xor */
-    PyNull,                  /* nb_or */
-    mpreal_int,                  /* nb_int */
-    PyNull,                  /* nb_reserved */
-    mpreal_float,        /* nb_float */
-    PyNull,                  /* nb_inplace_add */
-    PyNull,                  /* nb_inplace_subtract */
-    PyNull,                  /* nb_inplace_multiply */
-    PyNull,                  /* nb_inplace_remainder */
-    PyNull,                  /* nb_inplace_power */
-    PyNull,                  /* nb_inplace_lshift */
-    PyNull,                  /* nb_inplace_rshift */
-    PyNull,                  /* nb_inplace_and */
-    PyNull,                  /* nb_inplace_xor */
-    PyNull,                  /* nb_inplace_or */
-    mpreal_floor_div,    /* nb_floor_divide */
-    mpreal_div,          /* nb_true_divide */
-    PyNull,                  /* nb_inplace_floor_divide */
-    PyNull,                  /* nb_inplace_true_divide */
+    PyNull,                     /* nb_invert */
+    PyNull,                     /* nb_lshift */
+    PyNull,                     /* nb_rshift */
+    PyNull,                     /* nb_and */
+    PyNull,                     /* nb_xor */
+    PyNull,                     /* nb_or */
+    mpreal_int,                 /* nb_int */
+    PyNull,                     /* nb_reserved */
+    mpreal_float,               /* nb_float */
+    PyNull,                     /* nb_inplace_add */
+    PyNull,                     /* nb_inplace_subtract */
+    PyNull,                     /* nb_inplace_multiply */
+    PyNull,                     /* nb_inplace_remainder */
+    PyNull,                     /* nb_inplace_power */
+    PyNull,                     /* nb_inplace_lshift */
+    PyNull,                     /* nb_inplace_rshift */
+    PyNull,                     /* nb_inplace_and */
+    PyNull,                     /* nb_inplace_xor */
+    PyNull,                     /* nb_inplace_or */
+    mpreal_floor_div,           /* nb_floor_divide */
+    mpreal_div,                 /* nb_true_divide */
+    PyNull,                     /* nb_inplace_floor_divide */
+    PyNull,                     /* nb_inplace_true_divide */
+    PyNull,                     /* nb_index */
+    PyNull,                     /* nb_matrix_multiply */
+    PyNull,                     /* nb_inplace_matrix_multiply */
 };
 /************************************************
  * @brief PyMpReal Type.
@@ -149,40 +153,51 @@ PyTypeObject PyMpReal_Type =
     "mpreal",
     sizeof(PyMpRealObject),
     0,
-    (destructor) mpreal_dealloc,                  /* tp_dealloc */
-    0,                                          /* tp_vectorcall_offset */
-    PyNull,                                          /* tp_getattr */
-    PyNull,                                          /* tp_setattr */
-    PyNull,                                          /* tp_as_async */
-    PyNull,                                          /* tp_repr */
-    &MpRealNumberMethods,                         /* tp_as_number */
-    PyNull,                                          /* tp_as_sequence */
-    PyNull,                                          /* tp_as_mapping */
-    PyNull,                      /* tp_hash */
-    PyNull,                                          /* tp_call */
-    mpreal_str,                                          /* tp_str */
-    PyObject_GenericGetAttr,                    /* tp_getattro */
-    PyNull,                                          /* tp_setattro */
-    PyNull,                                          /* tp_as_buffer */
-    Py_TPFLAGS_DEFAULT,
-    PyNull,                                          /* tp_doc */
-    PyNull,                                          /* tp_traverse */
-    PyNull,                                          /* tp_clear */
-    mpreal_richcompare,                          /* tp_richcompare */
-    0,                                          /* tp_weaklistoffset */
-    PyNull,                                          /* tp_iter */
-    PyNull,                                          /* tp_iternext */
-    mpreal_methods,                             /* tp_methods */
-    PyNull,                                          /* tp_members */
-    PyNull,                              /* tp_getset */
-    PyNull,                                          /* tp_base */
-    PyNull,                                          /* tp_dict */
-    PyNull,                                          /* tp_descr_get */
-    PyNull,                                          /* tp_descr_set */
-    0,                                          /* tp_dictoffset */
-    mpreal_init,                                          /* tp_init */
-    PyNull,                                          /* tp_alloc */
-    mpreal_new,                                  /* tp_new */
+    (destructor) mpreal_dealloc,    /* tp_dealloc */
+    0,                              /* tp_vectorcall_offset */
+    PyNull,                         /* tp_getattr */
+    PyNull,                         /* tp_setattr */
+    PyNull,                         /* tp_as_async */
+    PyNull,                         /* tp_repr */
+    &MpRealNumberMethods,           /* tp_as_number */
+    PyNull,                         /* tp_as_sequence */
+    PyNull,                         /* tp_as_mapping */
+    PyNull,                         /* tp_hash */
+    PyNull,                         /* tp_call */
+    mpreal_str,                     /* tp_str */
+    PyObject_GenericGetAttr,        /* tp_getattro */
+    PyNull,                         /* tp_setattro */
+    PyNull,                         /* tp_as_buffer */
+    Py_TPFLAGS_DEFAULT,             /* */
+    PyNull,                         /* tp_doc */
+    PyNull,                         /* tp_traverse */
+    PyNull,                         /* tp_clear */
+    mpreal_richcompare,             /* tp_richcompare */
+    0,                              /* tp_weaklistoffset */
+    PyNull,                         /* tp_iter */
+    PyNull,                         /* tp_iternext */
+    mpreal_methods,                 /* tp_methods */
+    PyNull,                         /* tp_members */
+    PyNull,                         /* tp_getset */
+    PyNull,                         /* tp_base */
+    PyNull,                         /* tp_dict */
+    PyNull,                         /* tp_descr_get */
+    PyNull,                         /* tp_descr_set */
+    0,                              /* tp_dictoffset */
+    mpreal_init,                    /* tp_init */
+    PyNull,                         /* tp_alloc */
+    mpreal_new,                     /* tp_new */
+    PyNull,                         /* tp_free Low-level free-memory routine */
+    PyNull,                         /* tp_is_gc For PyObject_IS_GC */
+    PyNull,                         /* tp_bases */
+    PyNull,                         /* tp_mro method resolution order */
+    PyNull,                         /* tp_cache */
+    PyNull,                         /* tp_subclasses */
+    PyNull,                         /* tp_weaklist*/
+    PyNull,                         /* tp_del Type attribute cache version tag. Added in version 2.6 */
+    0,                              /* tp_version_tag */
+    PyNull,                         /* tp_finalize */
+    PyNull,                         /* tp_vectorcall */
 };
 /************************************************
  * @brief PyMpReal From Mp Real.
@@ -533,9 +548,8 @@ int mpreal_init(PyObject *self, PyObject *args, PyObject *kwds)
             {
                 long tmp = PyLong_AsLong(arg1);
                 if (PyErr_Occurred())
-                    return -1;
-                if (tmp > std::numeric_limits<int>::max()
-                        || tmp < std::numeric_limits<int>::min())
+                    { return -1; }
+                if (tmp > std::numeric_limits<int>::max() || tmp < std::numeric_limits<int>::min())
                 {
                     PyErr_SetString(PyExc_OverflowError, "cannot init mpreal: base argument overflow.");
                     return -1;
@@ -689,11 +703,7 @@ PyObject *mpreal_is_integer(PyMpRealObject *self, PyObject *args)
 PyObject *mpreal_to_string(PyMpRealObject *self, PyObject *args)
 {
     PyObject *formatString = PyNull;
-    if (!PyArg_ParseTuple(args, "|O:", &formatString))
-    {
-        return PyNull;
-    }
-
+    if (!PyArg_ParseTuple(args, "|O:", &formatString)) { return PyNull; }
     if (formatString == PyNull)
     {
         return PyUnicode_FromString(self->mpreal->toString().c_str());
