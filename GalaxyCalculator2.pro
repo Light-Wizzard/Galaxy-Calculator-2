@@ -122,6 +122,8 @@ DISTFILES += \
     help/About-Author_en.md \
     help/About_en.md \
     help/Help_en.md \
+    scripts/build_script.ps1 \
+    scripts/install.ps1 \
     src/3rdparty/gmp/README \
     src/3rdparty/gmp/gmp.COPYING \
     src/3rdparty/gmp/gmp.COPYING.LIB \
@@ -137,7 +139,6 @@ DISTFILES += \
     packages/com.lightwizzard.galaxycalculator2/data/README.md \
     packages/com.lightwizzard.galaxycalculator2/meta/installscript.qs \
     packages/com.lightwizzard.galaxycalculator2/meta/package.xml \
-    scripts/build_script.cmd \
     scripts/build_script.sh \
     scripts/install.sh \
     scripts/upload.sh \
