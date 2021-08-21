@@ -212,7 +212,7 @@ for:
     - cmd: echo -e "Completed-Build Windows"
   artifacts:
     - path: '*.zip'
-        name: 'ZipInstaller'
+      name: 'ZipInstaller'
 
 deploy:
 - provider: GitHub
