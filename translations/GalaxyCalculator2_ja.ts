@@ -742,7 +742,7 @@ Click Cancel to exit.</source>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">このレコードをdatabasenに追加できません。キャンセルして終了します。</translation>
+            <translation>このレコードデータベースになります。</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

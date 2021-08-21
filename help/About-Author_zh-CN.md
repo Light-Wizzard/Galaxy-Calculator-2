@@ -1,60 +1,60 @@
-# About the Orginal Author
+# 关于原作者
 
-My Name is Jeffrey Scott Flesher, I am a Medically Retired U.S. Air Force Computer Programmer,
-and Helicopter Crew Cheif,
-starting out in the mid 1980s as a Computer Test Stations Technician for the (E)F-111,
-where I got a Medal for improving it by 30%,
-and bring it online a year in advance,
-and just in time for the Guld War,
-where if flew over 96% of all the missions,
-after the Gulf War in 1991,
-then I moved on to become a Helicopter Crew Cheif for the 66<sup>th</sup> RQS Air Rescue,
-where I went back to Kuwait to live and work in the place we protected during the War,
-and then on to the 31<sup>st</sup> Special Operations Squadron,
-in Koria, where I got a second Medal for a Maintainance award.
-
-***
-
-I am the Light Wizzard in the Flesh,
-the Author of "The Principles of Trinary Universe",
-where I talk about Physics based on the Greatest Wizards of all time,
-Johannes Kepler, Sir Isaac Newton, and Nicola Tesla,
-and I included my Ph.D in Physics in this 666 page text book,
-about Trinary Math, and the End of Time Sir Isaac Newton Calculated would be over in 2061,
-and this book proves that our North Magnetic Pole is moving towards our Equator,
-and will cross it in the year 2033,
-and like all Electromagnic Fields,
-our Magnetosphere will collapse,
-and our Atomosphere will vent into Space,
-in the Torah this was called "The End of Time",
-but my Great-Great first Cousin five times removed Isaac Newton,
-wrote about about a Comet hitting the Earth in the year 2027,
-just 6-years before the Atomosphere vents into Space,
-causing an instand Ice Age that will last hundreds and thousands of years,
-and NASA has confirmed all this,
-if you want to know more,
-you can order the many of Books I have written at any Book Store,
-or just search for my Light-Wizzard GitHub account,
-where you can find where I store all my back ups of all my books,
-that have source code for my Trinary Math,
-as well as a Galaxy Calculator,
-which is the reason I wrote this Application,
-before becoming 100% disabled,
-I worked for the EPA, and the BLM,
-where I got several awards for programs I wrote for them.
+我的名字是 Jeffrey Scott Flesher，我是一名医疗退休的美国空军计算机程序员，
+和直升机乘务长，
+1980 年代中期开始担任 (E)F-111 的计算机测试站技术员，
+在那里我获得了改进 30% 的奖章，
+并提前一年上线，
+正好赶上古德战争，
+如果飞行超过所有任务的 96%，
+1991年海湾战争后，
+然后我继续成为第 66<sup>th</sup> RQS 空中救援队的直升机乘务长，
+我回到科威特在战争期间我们保护的地方生活和工作，
+然后前往第 31<sup>st</sup> 特种作战中队，
+在 Koria，我在那里获得了维护奖的第二枚奖章。
 
 ***
 
-I have cancer, and so does my Santa Paws Puppy,
-the Snow Queen in Animal Planets Too Cute,
-you can find the video on my FaceBook account,
-just search for name, I have a Light Wizzard,
-and a Vets Help Center account,
-and I think both have that video on it,
-I have a Light Wizzard You Tube Account also,
-and my wife and I are both Medically Retired U.S. Air Force,
-and if you edit this file,
-I would appricate if you left this paragraph unedited,
-I did not write this Application to promote my GitHub account,
-or my books that you can find for free,
-but this is the reason why I wrote this program.
+我是肉身中的光明巫师，
+《三元宇宙原理》作者，
+在那里我谈论基于有史以来最伟大的巫师的物理学，
+约翰内斯·开普勒、艾萨克·牛顿爵士和尼古拉·特斯拉，
+我在这本 666 页的教科书中包含了我的物理学博士学位，
+关于三元数学，艾萨克·牛顿爵士计算的时间终结将在 2061 年结束，
+这本书证明我们的北极正在向赤道移动，
+并将在 2033 年跨越它，
+和所有电磁场一样，
+我们的磁层会崩溃，
+我们的大气层将进入太空，
+在托拉这被称为“时间的终结”，
+但是我的大表哥五次把艾萨克·牛顿赶走了，
+写了一篇关于彗星在 2027 年撞击地球的文章，
+就在大气层进入太空之前的 6 年，
+导致一个将持续数百年和数千年的冰河时代，
+而 NASA 已经证实了这一切，
+如果你想了解更多，
+你可以在任何一家书店订购我写的许多书，
+或者直接搜索我的 Light-Wizzard GitHub 帐户，
+在那里你可以找到我存放我所有书籍的所有备份的地方，
+有我的三元数学的源代码，
+以及银河计算器，
+这就是我写这个应用程序的原因，
+在成为 100% 残疾之前，
+我为 EPA 和 BLM 工作过，
+我为他们编写的程序获得了多个奖项。
+
+***
+
+我得了癌症，我的圣诞老人爪子小狗也是，
+《动物星球》中的冰雪女王太可爱了，
+你可以在我的 Facebook 帐户上找到视频，
+只要搜索名字，我有一个Light Wizzard，
+和一个 Vets 帮助中心帐户，
+我认为两者都有那个视频，
+我也有一个 Light Wizzard You Tube 帐户，
+我和我的妻子都是医疗退休的美国空军，
+如果你编辑这个文件，
+如果你不编辑这一段，我会appricate，
+我写这个应用程序不是为了宣传我的 GitHub 帐户，
+或者你可以免费找到我的书，
+但这就是我写这个程序的原因。

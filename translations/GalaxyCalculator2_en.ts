@@ -743,7 +743,7 @@ Click Cancel to exit.</translation>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">Unable to add this record to databasen. Cancel to exit.</translation>
+            <translation>Unable to add this record to databasen. Cancel to exit.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

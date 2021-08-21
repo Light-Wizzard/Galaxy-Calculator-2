@@ -743,7 +743,7 @@ Click Cancel to exit.</source>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">无法将此记录添加到数据库中。取消退出。</translation>
+            <translation>无法调用记录添加到数据库中。</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

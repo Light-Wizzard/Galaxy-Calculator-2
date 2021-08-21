@@ -1,68 +1,68 @@
-# Calculator Help
+# Aide de la calculatrice
 
-I use QCalculator for the Math Engine, it can be found at
+J'utilise QCalculator pour le moteur mathématique, il peut être trouvé à
 [https://github.com/xenotux/qcalc](https://github.com/xenotux/qcalc)
-documentaion can be found at [https://www.state-machine.com/qtools/qcalc.html](https://www.state-machine.com/qtools/qcalc.html),
-I like this project, 
-so I forked it at [https://github.com/Light-Wizzard/qcalc](https://github.com/Light-Wizzard/qcalc),
-and I have used some of their documentaion here, and hope to write a better Help Section for this project.
+la documentation peut être trouvée sur [https://www.state-machine.com/qtools/qcalc.html](https://www.state-machine.com/qtools/qcalc.html),
+J'aime ce projet,
+je l'ai donc forké sur [https://github.com/Light-Wizzard/qcalc](https://github.com/Light-Wizzard/qcalc),
+et j'ai utilisé une partie de leur documentation ici, et j'espère écrire une meilleure section d'aide pour ce projet.
 
 ***
 
-The most important feature of QCalc is that it accepts expressions in the <b>C-syntax</b> - with the same operands and precedence rules as in the C or C++ source code. Among others,
-the expressions can contain all bit-wise operators (`<<`, `>>`, `|`, `&`, `^`, `~`) as well as mixed decimal,
-<b>hexadecimal</b> and even binary constants.
+La caractéristique la plus importante de QCalc est qu'il accepte les expressions dans la <b>syntaxe C</b> - avec les mêmes opérandes et règles de priorité que dans le code source C ou C++. Entre autres,
+les expressions peuvent contenir tous les opérateurs au niveau du bit (`<<`, `>>`, `|`, `&`, `^`, `~`) ainsi que des décimales mixtes,
+<b>hexadécimales</b> et même des constantes binaires.
 
-QCalc is also a powerful floating-point scientific calculator and supports all mathematical functions
+QCalc est également une puissante calculatrice scientifique à virgule flottante et prend en charge toutes les fonctions mathématiques
 (`sin()`, `cos()`, `tan()`, `exp()`, `ln()`, ...).
 
-Some examples of acceptable expressions are:
-`((0xBEEF << 16) | 1280) & ~0xFF` - binary operators, mixed hex and decimal numbers
+Voici quelques exemples d'expressions acceptables :
+`((0xBEEF << 16) | 1280) & ~0xFF` - opérateurs binaires, nombres hexadécimaux et décimaux mixtes
 
-`($1011 << 24) | (1280 >> 8) ^ 0xFFF0` - mixed binary, dec and hex numbers
+`($1011 << 24) | (1280 >> 8) ^ 0xFFF0` - nombres binaires, déc et hexadécimaux mixtes
 
-`(1234 % 55) + 4321//33` - remainder, integer division (note the `//` integer division operator
+`(1234 % 55) + 4321//33` - reste, division entière (notez l'opérateur de division entière `//`
 
-`pi/6` - pi-constant
+`pi/6` - pi-constante
 
-`pow(sin(ans),2) + pow(cos(ans),2)` - scientific floating-point calculations,
+`pow(sin(ans),2) + pow(cos(ans),2)` - calculs scientifiques en virgule flottante,
 [ans-variable](https://www.state-machine.com/qtools/qcalc.html#qcalc_ans)
 
 ***
 
-Note: QCalc internally uses the Python command <b>eval</b> to evaluate the expressions.
-Please refer to the documentation of the [Python math expressions](https://en.wikibooks.org/wiki/Python_Programming/Basic_Math)
-for more details of supported syntax and features.
+Remarque : QCalc utilise en interne la commande Python <b>eval</b> pour évaluer les expressions.
+Veuillez vous référer à la documentation des [expressions mathématiques Python](https://en.wikibooks.org/wiki/Python_Programming/Basic_Math)
+pour plus de détails sur la syntaxe et les fonctionnalités prises en charge.
 
-# Automatic Conversion to Hexadecimal and Binary
+# Conversion automatique en hexadécimal et binaire
 
-If the result of expression evaluation is integer (as opposed to floating point), 
-QCalc automatically displays the result in hexadecimal and binary formats (see QCalc screenshot).
-For better readability the hex display shows an apostrophe between the two 16-bit half-words (e.g., `0xDEAD'BEEF`).
-Similarly, the binary output shows an apostrophe between the four 8-bit bytes (e.g., `0b11011110'10101101'10111110'11101111`).
+Si le résultat de l'évaluation de l'expression est un entier (par opposition à une virgule flottante),
+QCalc affiche automatiquement le résultat aux formats hexadécimal et binaire (voir capture d'écran QCalc).
+Pour une meilleure lisibilité, l'affichage hexadécimal montre une apostrophe entre les deux demi-mots de 16 bits (par exemple, "0xDEAD'BEEF").
+De même, la sortie binaire affiche une apostrophe entre les quatre octets de 8 bits (par exemple, "0b11011110'10101101'10111110'11101111").
 
-# Hexadecimal and Binary Numbers
+# Nombres hexadécimaux et binaires
 
-As the extension to the C-syntax, QCalc supports both <b>hexadecimal numbers</b> and <b>binary numbers</b>.
-These numbers are represented as `0x...` and `0b...`, respectively, 
-and can be mixed into expressions. Here are a few examples of such expressions:
+En tant qu'extension de la syntaxe C, QCalc prend en charge à la fois les <b>nombres hexadécimaux</b> et les <b>nombres binaires</b>.
+Ces nombres sont représentés par « 0x... » et « 0b... », respectivement,
+et peut être mélangé dans des expressions. Voici quelques exemples de telles expressions :
 
 `(0b0110011 << 14) & 0xDEADBEEF (0b0010 | 0b10000) * 123`
 
 
-# The ans Variable
+# La variable ans
 
-QCalc stores the result of the last computation in the `ans` variable. 
-Here are some examples of expressions with the `ans` variable:
+QCalc stocke le résultat du dernier calcul dans la variable "ans".
+Voici quelques exemples d'expressions avec la variable `ans` :
 
-`1/ans` - find the inverse of the last computation
+`1/ans` - trouver l'inverse du dernier calcul
 
-`log(ans)/log(2)` - find log-base-2 of the last computation
+`log(ans)/log(2)` - trouve log-base-2 du dernier calcul
 
-# 64-bit Range
+# Plage de 64 bits
 
-QCalc supports the 64-bit range and switches to 64-bit arithmetic automatically when an <b>integer</b> result of a computation exceeds the 32-bit range. 
-Here are some examples of the 64-bit output:
+QCalc prend en charge la plage 64 bits et passe automatiquement à l'arithmétique 64 bits lorsqu'un résultat <b>entier</b> d'un calcul dépasse la plage 32 bits.
+Voici quelques exemples de sortie 64 bits :
 
 ```
 > 0xDEADBEEF << 27
@@ -72,25 +72,24 @@ Here are some examples of the 64-bit output:
 = 62678480394911744 | 0x00DE'ADBE'EF00'0000
 = 0b00000000'11011110'10101101'10111110'11101111'00000000'00000000'00000000
 > 0xDEADBEEF << 34
-! out of range
+! hors de portée
 >
 ```
 
-# Error handling
+# La gestion des erreurs
 
-Expressions that you enter into QCalc might have all kinds of errors: syntax errors, 
-computation errors (e.g., division by zero), etc.
-In all these cases, QCalc responds with the `Error` message and the explanation of the error:
+Les expressions que vous saisissez dans QCalc peuvent contenir toutes sortes d'erreurs : erreurs de syntaxe,
+erreurs de calcul (par exemple, division par zéro), etc.
+Dans tous ces cas, QCalc répond avec le message « Erreur » et l'explication de l'erreur :
 
 ```
 > (2*4) + )
-Traceback (most recent call last):
-  File "\ProgramPath\qcalc.py", line 54, in _main
-result = eval(expr)
-  File "<string>", line 1
+Traceback (appel le plus récent en dernier) :
+  Fichier "\ProgramPath\qcalc.py", ligne 54, dans _main
+résultat = eval(expr)
+  Fichier "<string>", ligne 1
 (2*4) + )
 ^
-SyntaxError: unmatched ')'
+Erreur de syntaxe : sans correspondance ')'
 >
 ```
-

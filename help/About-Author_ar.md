@@ -1,60 +1,60 @@
-# About the Orginal Author
+# حول المؤلف الأصلي
 
-My Name is Jeffrey Scott Flesher, I am a Medically Retired U.S. Air Force Computer Programmer,
-and Helicopter Crew Cheif,
-starting out in the mid 1980s as a Computer Test Stations Technician for the (E)F-111,
-where I got a Medal for improving it by 30%,
-and bring it online a year in advance,
-and just in time for the Guld War,
-where if flew over 96% of all the missions,
-after the Gulf War in 1991,
-then I moved on to become a Helicopter Crew Cheif for the 66<sup>th</sup> RQS Air Rescue,
-where I went back to Kuwait to live and work in the place we protected during the War,
-and then on to the 31<sup>st</sup> Special Operations Squadron,
-in Koria, where I got a second Medal for a Maintainance award.
-
-***
-
-I am the Light Wizzard in the Flesh,
-the Author of "The Principles of Trinary Universe",
-where I talk about Physics based on the Greatest Wizards of all time,
-Johannes Kepler, Sir Isaac Newton, and Nicola Tesla,
-and I included my Ph.D in Physics in this 666 page text book,
-about Trinary Math, and the End of Time Sir Isaac Newton Calculated would be over in 2061,
-and this book proves that our North Magnetic Pole is moving towards our Equator,
-and will cross it in the year 2033,
-and like all Electromagnic Fields,
-our Magnetosphere will collapse,
-and our Atomosphere will vent into Space,
-in the Torah this was called "The End of Time",
-but my Great-Great first Cousin five times removed Isaac Newton,
-wrote about about a Comet hitting the Earth in the year 2027,
-just 6-years before the Atomosphere vents into Space,
-causing an instand Ice Age that will last hundreds and thousands of years,
-and NASA has confirmed all this,
-if you want to know more,
-you can order the many of Books I have written at any Book Store,
-or just search for my Light-Wizzard GitHub account,
-where you can find where I store all my back ups of all my books,
-that have source code for my Trinary Math,
-as well as a Galaxy Calculator,
-which is the reason I wrote this Application,
-before becoming 100% disabled,
-I worked for the EPA, and the BLM,
-where I got several awards for programs I wrote for them.
+اسمي جيفري سكوت فليشر ، أنا مبرمج كمبيوتر متقاعد طبيًا في سلاح الجو الأمريكي ،
+ورئيس طاقم الهليكوبتر ،
+بدأت في منتصف الثمانينيات كفني في محطات اختبار الكمبيوتر لـ (E) F-111 ،
+حيث حصلت على وسام تحسينه بنسبة 30٪ ،
+وعرضه على الإنترنت قبل عام ،
+وفي الوقت المناسب تمامًا لحرب غولد ،
+حيث إذا طار أكثر من 96٪ من جميع المهمات ،
+بعد حرب الخليج عام 1991 ،
+ثم انتقلت لأصبح رئيس طاقم هليكوبتر لـ 66 <sup> th </sup> RQS Air Rescue ،
+حيث عدت إلى الكويت للعيش والعمل في المكان الذي قمنا بحمايته أثناء الحرب ،
+ثم إلى سرب العمليات الخاصة 31 <sup> st </sup> ،
+في كوريا ، حيث حصلت على ميدالية ثانية لجائزة الصيانة.
 
 ***
 
-I have cancer, and so does my Santa Paws Puppy,
-the Snow Queen in Animal Planets Too Cute,
-you can find the video on my FaceBook account,
-just search for name, I have a Light Wizzard,
-and a Vets Help Center account,
-and I think both have that video on it,
-I have a Light Wizzard You Tube Account also,
-and my wife and I are both Medically Retired U.S. Air Force,
-and if you edit this file,
-I would appricate if you left this paragraph unedited,
-I did not write this Application to promote my GitHub account,
-or my books that you can find for free,
-but this is the reason why I wrote this program.
+أنا الخبير الخفيف في الجسد ،
+مؤلف كتاب "مبادئ الكون الثلاثي" ،
+حيث أتحدث عن الفيزياء بناءً على أعظم المعالجات في كل العصور ،
+يوهانس كيبلر ، السير إسحاق نيوتن ، ونيكولا تيسلا ،
+وقمت بتضمين درجة الدكتوراه في الفيزياء في هذا الكتاب النصي المكون من 666 صفحة ،
+حول الرياضيات الثلاثية ، ونهاية الوقت ، سينتهي حساب السير إسحاق نيوتن في عام 2061 ،
+وهذا الكتاب يثبت أن القطب المغناطيسي الشمالي يتجه نحو خط الاستواء ،
+وسيعبرها في عام 2033 ،
+ومثل جميع المجالات الكهرومغناطيسية ،
+سينهار غلافنا المغناطيسي ،
+وسوف ينطلق الغلاف الجوي الخاص بنا إلى الفضاء ،
+في التوراة كان هذا يسمى "نهاية الزمان" ،
+لكن ابن عمي العظيم الأول أزاح إسحاق نيوتن خمس مرات ،
+كتب عن مذنب ضرب الأرض في عام 2027 ،
+قبل 6 سنوات فقط من تنفيس أتوموسفير في الفضاء ،
+تسبب في عصر جليدي سيستمر مئات وآلاف السنين ،
+وقد أكدت وكالة ناسا كل هذا ،
+إذا كنت تريد أن تعرف أكثر،
+يمكنك طلب العديد من الكتب التي كتبتها في أي متجر كتب ،
+أو ابحث فقط عن حسابي على Light-Wizzard GitHub ،
+حيث يمكنك العثور على المكان الذي أخزن فيه جميع النسخ الاحتياطية لجميع كتبي ،
+التي تحتوي على شفرة المصدر للرياضيات الثلاثية الخاصة بي ،
+بالإضافة إلى آلة حاسبة غالاكسي ،
+وهذا هو سبب كتابة هذا التطبيق ،
+قبل أن تصبح معاقًا بنسبة 100٪ ،
+عملت لدى وكالة حماية البيئة (EPA) و (BLM) ،
+حيث حصلت على العديد من الجوائز عن البرامج التي كتبتها لهم.
+
+***
+
+أنا مصابة بالسرطان ، وكذلك جرو سانتا باوز ،
+ملكة الثلج في الكواكب الحيوانية لطيفة جدًا ،
+يمكنك العثور على الفيديو على حساب FaceBook الخاص بي ،
+فقط ابحث عن الاسم ، لدي ويزارد خفيف ،
+وحساب Vets Help Center ،
+وأعتقد أن كلاهما لديه هذا الفيديو ،
+لدي حساب Light Wizzard You Tube أيضًا ،
+وأنا وزوجتي كلاهما متقاعد طبيًا من القوات الجوية الأمريكية ،
+وإذا قمت بتحرير هذا الملف ،
+سأفعل إذا تركت هذه الفقرة دون تحرير ،
+لم أكتب هذا التطبيق للترويج لحساب GitHub الخاص بي ،
+أو كتبي التي يمكنك العثور عليها مجانًا ،
+لكن هذا هو سبب كتابة هذا البرنامج.

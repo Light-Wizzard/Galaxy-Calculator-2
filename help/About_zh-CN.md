@@ -1,34 +1,34 @@
-# GalaxyCalculator2 About
+# GalaxyCalculator2 关于
 
-The Galaxy Calculator is a one button click to calculate, it records the Track Number, 
-how many Trinary Engines it takes to be on that track, 
-its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, 
-the Suns Orbital Distance in Miles, and the Tracks Frequency, 
-which Sir Isaac Newton used to determine when the End of Civilization will happen, 
-and according to his and my calculation, 
-that will happen in the year 2060 under the Julian Calendar still used by the Military, 
-or 2061 under the Gregorian Calendar in use today, 
-this was the same calculation given to the Public, but few know how he calculated it, 
-I wrote a new formula, because I could not find his original equation.
+Galaxy Calculator 是一个一键式计算器，它记录轨道编号，
+在这条轨道上需要多少个三元引擎，
+以每小时英里为单位的太阳最小和最大速度，宜居行星频率，
+以英里为单位的太阳轨道距离和轨道频率，
+艾萨克牛顿爵士用它来确定文明的终结何时发生，
+根据他和我的计算，
+根据军方仍在使用的儒略历，这将在 2060 年发生，
+或今天使用的公历下的 2061，
+这是给公众的相同计算，但很少有人知道他是如何计算的，
+我写了一个新公式，因为我找不到他的原始方程。
 
-Sir Isaac Newton burned his copy of his 2060 Calculation, he wrote that it weights heavy on his SOUL, 
-so he had to let it go, 
-and wrote that anyone that wants to know, can figure it out, all the formulas are in the Bible, 
-36 years later I did find them all.
+艾萨克牛顿爵士烧毁了他的 2060 计算副本，他写道，这对他的灵魂来说很重，
+所以他不得不放手
+并写道，任何想知道的人都可以弄清楚，所有公式都在圣经中，
+36 年后，我确实找到了它们。
 
-This Galaxy Calculator was written for use, after I thought about the bash script that created this page:
+这个 Galaxy Calculator 是为了使用而编写的，在我考虑了创建这个页面的 bash 脚本之后：
 
 http://LightWizzard.com/books/trinary.universe/appendix.a.html
 
-The bash script not only crated the page, but calculated the table values.
+bash 脚本不仅创建了页面，还计算了表值。
 
-I hope this helps everyone visualize what the Application needs to do, 
-which is only to graph and plot the path of Stars around the Galaxy.
+我希望这可以帮助每个人想象应用程序需要做什么，
+这只是为了绘制和绘制星系周围恒星的路径。
 
-This is not a Galaxy Simulator, only a Graph and Plot, and that is very important to understand, 
-I would like to write a Galaxy Simulator built using only the Laws and Rules or Electronics, 
-and that project will be called a Galaxy Simulator, and why this Project is only called a Galaxy Calculator,
-but I am looking into using Qt 3D Studio to simulate a simulator.
+这不是 Galaxy Simulator，只是一个 Graph 和 Plot，理解这一点非常重要，
+我想编写一个仅使用法律和规则或电子设备构建的银河模拟器，
+那个项目将被称为银河模拟器，以及为什么这个项目只被称为银河计算器，
+但我正在考虑使用 Qt 3D Studio 来模拟模拟器。
 
 
-Writen by Jeffrey Scott Flesher
+杰弗里·斯科特·弗莱舍 编剧

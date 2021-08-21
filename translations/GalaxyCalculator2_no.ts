@@ -742,7 +742,7 @@ Click Cancel to exit.</source>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">Kan ikke legge denne posten til databasen. Avbryt for å gå ut.</translation>
+            <translation>Kan ikke legge denne posten til databasen. Avbryt for å gå ut.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

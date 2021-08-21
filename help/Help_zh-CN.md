@@ -1,70 +1,70 @@
-# Calculator Help
+# 计算器帮助
 
-I use QCalculator for the Math Engine, it can be found at
+我使用 QCalculator 作为数学引擎，它可以在
 [https://github.com/xenotux/qcalc](https://github.com/xenotux/qcalc)
-documentaion can be found at [https://www.state-machine.com/qtools/qcalc.html](https://www.state-machine.com/qtools/qcalc.html),
-I like this project, 
-so I forked it at [https://github.com/Light-Wizzard/qcalc](https://github.com/Light-Wizzard/qcalc),
-and I have used some of their documentaion here, and hope to write a better Help Section for this project.
+文档可以在 [https://www.state-machine.com/qtools/qcalc.html](https://www.state-machine.com/qtools/qcalc.html) 中找到，
+我喜欢这个项目，
+所以我在 [https://github.com/Light-Wizzard/qcalc](https://github.com/Light-Wizzard/qcalc) 分叉了它，
+我在这里使用了他们的一些文档，希望为这个项目编写一个更好的帮助部分。
 
 ***
 
-The most important feature of QCalc is that it accepts expressions in the <b>C-syntax</b> - with the same operands and precedence rules as in the C or C++ source code. Among others,
-the expressions can contain all bit-wise operators (`<<`, `>>`, `|`, `&`, `^`, `~`) as well as mixed decimal,
-<b>hexadecimal</b> and even binary constants.
+QCalc 最重要的特性是它接受 <b>C 语法</b> 中的表达式 - 具有与 C 或 C++ 源代码中相同的操作数和优先级规则。其中，
+表达式可以包含所有按位运算符（`<<`、`>>`、`|`、`&`、`^`、`~`）以及混合十进制，
+<b>十六进制</b> 甚至二进制常量。
 
-QCalc is also a powerful floating-point scientific calculator and supports all mathematical functions
-(`sin()`, `cos()`, `tan()`, `exp()`, `ln()`, ...).
+QCalc 也是一个强大的浮点科学计算器，支持所有数学函数
+（`sin()`、`cos()`、`tan()`、`exp()`、`ln​​()`、...）。
 
-Some examples of acceptable expressions are:
-`((0xBEEF << 16) | 1280) & ~0xFF` - binary operators, mixed hex and decimal numbers
+可接受的表达式的一些示例是：
+`((0xBEEF << 16) | 1280) & ~0xFF` - 二元运算符，混合十六进制和十进制数
 
-`($1011 << 24) | (1280 >> 8) ^ 0xFFF0` - mixed binary, dec and hex numbers
+`($1011 << 24) | (1280 >> 8) ^ 0xFFF0` - 混合二进制、十进制和十六进制数
 
-`(1234 % 55) + 4321//33` - remainder, integer division (note the `//` integer division operator
+`(1234 % 55) + 4321//33` - 余数，整数除法（注意 `//` 整数除法运算符
 
-`pi/6` - pi-constant
+`pi/6` - 圆周率常数
 
-`pow(sin(ans),2) + pow(cos(ans),2)` - scientific floating-point calculations,
+`pow(sin(ans),2) + pow(cos(ans),2)` - 科学浮点计算，
 [ans-variable](https://www.state-machine.com/qtools/qcalc.html#qcalc_ans)
 
 ***
 
-Note: QCalc internally uses the Python command <b>eval</b> to evaluate the expressions.
-Please refer to the documentation of the [Python math expressions](https://en.wikibooks.org/wiki/Python_Programming/Basic_Math)
-for more details of supported syntax and features.
+注意：QCalc 内部使用 Python 命令 <b>eval</b> 来计算表达式。
+请参考[Python数学表达式](https://en.wikibooks.org/wiki/Python_Programming/Basic_Math)的文档
+有关支持的语法和功能的更多详细信息。
 
-# Automatic Conversion to Hexadecimal and Binary
+# 自动转换为十六进制和二进制
 
-If the result of expression evaluation is integer (as opposed to floating point), 
-QCalc automatically displays the result in hexadecimal and binary formats (see QCalc screenshot).
-For better readability the hex display shows an apostrophe between the two 16-bit half-words (e.g., `0xDEAD'BEEF`).
-Similarly, the binary output shows an apostrophe between the four 8-bit bytes (e.g., `0b11011110'10101101'10111110'11101111`).
+如果表达式求值的结果是整数（而不是浮点数），
+QCalc 自动以十六进制和二进制格式显示结果（参见 QCalc 屏幕截图）。
+为了更好的可读性，十六进制显示在两个 16 位半字之间显示一个撇号（例如，'0xDEAD'BEEF'）。
+类似地，二进制输出显示四个 8 位字节之间的撇号（例如，'0b11011110'10101101'10111110'11101111'）。
 
-# Hexadecimal and Binary Numbers
+# 十六进制和二进制数
 
-As the extension to the C-syntax, QCalc supports both <b>hexadecimal numbers</b> and <b>binary numbers</b>.
-These numbers are represented as `0x...` and `0b...`, respectively, 
-and can be mixed into expressions. Here are a few examples of such expressions:
+作为 C 语法的扩展，QCalc 支持<b>十六进制数</b>和<b>二进制数</b>。
+这些数字分别表示为“0x...”和“0b...”，
+并且可以混合成表达式。以下是此类表达式的一些示例：
 
 `(0b0110011 << 14) & 0xDEADBEEF (0b0010 | 0b10000) * 123`
 
 
-# The ans Variable
+# ans 变量
 
-QCalc stores the result of the last computation in the `ans` variable. 
-Here are some examples of expressions with the `ans` variable:
+QCalc 将上次计算的结果存储在 `ans` 变量中。
+以下是一些带有 `ans` 变量的表达式示例：
 
-`1/ans` - find the inverse of the last computation
+`1/ans` - 找到上次计算的逆
 
-`log(ans)/log(2)` - find log-base-2 of the last computation
+`log(ans)/log(2)` - 找到最后一次计算的 log-base-2
 
-# 64-bit Range
+# 64 位范围
 
-QCalc supports the 64-bit range and switches to 64-bit arithmetic automatically when an <b>integer</b> result of a computation exceeds the 32-bit range. 
-Here are some examples of the 64-bit output:
+QCalc 支持 64 位范围并在计算的 <b>整数</b> 结果超过 32 位范围时自动切换到 64 位算术。
+以下是 64 位输出的一些示例：
 
-```
+``
 > 0xDEADBEEF << 27
 = 501427843159293952 | 0x06F5'6DF7'7800'0000
 = 0b00000110'11110101'01101101'11110111'01111000'00000000'00000000'00000000
@@ -72,25 +72,24 @@ Here are some examples of the 64-bit output:
 = 62678480394911744 | 0x00DE'ADBE'EF00'0000
 = 0b00000000'11011110'10101101'10111110'11101111'00000000'00000000'00000000
 > 0xDEADBEEF << 34
-! out of range
+！超出范围
 >
-```
+``
 
-# Error handling
+# 错误处理
 
-Expressions that you enter into QCalc might have all kinds of errors: syntax errors, 
-computation errors (e.g., division by zero), etc.
-In all these cases, QCalc responds with the `Error` message and the explanation of the error:
+您输入 QCalc 的表达式可能有各种错误：语法错误、
+计算错误（例如，除以零）等。
+在所有这些情况下，QCalc 都会以 `Error` 消息和错误解释进行响应：
 
-```
+``
 > (2*4) + )
-Traceback (most recent call last):
-  File "\ProgramPath\qcalc.py", line 54, in _main
-result = eval(expr)
-  File "<string>", line 1
+回溯（最近一次调用最后一次）：
+  文件“\ProgramPath\qcalc.py”，第 54 行，在 _main
+结果 = eval(expr)
+  文件“<字符串>”，第 1 行
 (2*4) + )
 ^
-SyntaxError: unmatched ')'
+语法错误：不匹配的 ')'
 >
-```
-
+``

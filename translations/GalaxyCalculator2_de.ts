@@ -743,7 +743,7 @@ Klicken Sie zum Beenden auf Abbrechen.</translation>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">Dieser Datensatz kann nicht zur Datenbank hinzugefügt werden. Zum Beenden abbrechen.</translation>
+            <translation>Dieser Datensatz kann nicht zur Datenbank hinzugefügt werden. Zum Beenden abbrechen.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

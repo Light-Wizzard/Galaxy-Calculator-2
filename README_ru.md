@@ -8,28 +8,43 @@ Galaxy Calculator 2 has 4 Calculators built into it:
 4. :computer: Calculator
 
 I used the project files from my first Galaxy Calculator that is written using Qt QML and JavaScript, 
-this one uses Qt C++, and Widgets, so the documentaion may be wacky till I have a chance to fix all the links and convert them to this new Project,
+this one uses Qt C++, and Widgets, 
+so the documentaion may be wacky till I have a chance to fix all the links and convert them to this new Project,
 I will have to make Travis and AppYeyer prorjects, so this is a work in progress.
 
-The Galaxy, Madness and Planet Calculators are based on Sir Isaac Newtons Calculations, and was updated to include the Math Nikola Tesla, 
+The Galaxy, Madness and Planet Calculators are based on Sir Isaac Newtons Calculations, 
+and was updated to include the Math Nikola Tesla, 
 thus inventing a new type of Math I call Trinary Mathematics, that is used to Calculate the Galaxy.
 
-This Project is Open Source, with No License required, this is a Qt C++ App, that will run on Desktop and other devices, the bash script I used to port to this app is included.
+This Project is Open Source, with No License required, this is a Qt C++ App, 
+that will run on Desktop and other devices, the bash script I used to port to this app is included.
 
-This App can be compiled for any OS that Qt supports: Linux, Windows, MAC, Android and iOS, as well as every OS that Qt supports, so this should run on most if not all popular OS's.
+This App can be compiled for any OS that Qt supports: Linux, Windows, MAC, Android and iOS, 
+as well as every OS that Qt supports, so this should run on most if not all popular OS's.
 
 I will try to make installers and executable for all supported Qt OS's, currently I have:
 
-If the badges are Green, you should be able to download the apps, if they are not, it might be that I am working on it, but it only takes a few minutes to update.
+If the badges are Green, you should be able to download the apps, if they are not, 
+it might be that I am working on it, but it only takes a few minutes to update.
 
 This project is in work, so files might break, but source code should run if compiled on any machine.
 
-The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
+The Qt Installer Framework is working for Linux and maybe Windows but the Installer will not download, 
+in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 
-## Status
+## Table of Content
 
-Unix: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
-Windows: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
+1. [Status](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
+2. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
+3. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
+4. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
+5. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
+6. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+7. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
+
+# Status
+
+[![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 
 ## :package: **Downloads:**
 
@@ -39,9 +54,6 @@ Windows: [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j
  - :office: [Windows zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows.zip)
  - :office: :outbox_tray: [Windows Installer exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2.exe)
  - :apple: [Apple](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2.dmg)
-
-The builds are here:
-* [AppVeyor Builds](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2) [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/Galaxy-Calculator-2)
 
 Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, and run the file Galaxy-Calculator-2.exe inside of the deploy folder.
 
@@ -64,7 +76,7 @@ You can also get it at any major book store, but I would recommend reading it, i
 
 If you do not see your OS, just download, extract to a folder, and open with Qt Creator, which must be installed, and compile or run it.
 
-## Development Progress
+# Development Progress
 
 You would have to understand Trinary Science and the Trinary Universe to understand the Galaxy Calculator, 
 but basically Trinary has the same meaning as Trinity did to Sir Isaac Newton, it describes and Alternating Current or AC, 
@@ -77,7 +89,7 @@ and the Radius of of the Galaxy in Miles in Diameter, and how many Tracks you wa
 
 I removed the Local Storage Feature due to permissions on some devices.
 
-## Background
+# Background
 
 The Galaxy Calculator is a one button click to calculate, it records the Track Number, how many Trinary Engines it takes to be on that track, 
 its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, the Suns Orbital Distance in Miles, and the Tracks Frequency, 
@@ -105,7 +117,7 @@ For more information see: [Wiki](https://github.com/Light-Wizzard/Galaxy-Calcula
 
 This is a work in progress, please report any bugs, and comments.
 
-## Screen Shots
+# Screen Shots
 
 ![Galaxy Configuration](/doc/images/screenshot-config.png?raw=true "Galaxy Configuration")
 
@@ -120,7 +132,7 @@ This is a work in progress, please report any bugs, and comments.
 ![Calculator](/doc/images/screenshot-calc.png?raw=true "Calculator")
 
 
-## 3rd Party Code
+# 3rd Party Code
 
 [QCalculator](https://github.com/xenotux/qcalc)
 https://github.com/xenotux/qcalc

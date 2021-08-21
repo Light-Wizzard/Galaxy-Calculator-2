@@ -1,34 +1,34 @@
-# GalaxyCalculator2 About
+# GalaxyCalculator2 حول
 
-The Galaxy Calculator is a one button click to calculate, it records the Track Number, 
-how many Trinary Engines it takes to be on that track, 
-its Suns minimum and maximum Speed in Miles an Hour, the Livable Planets Frequency, 
-the Suns Orbital Distance in Miles, and the Tracks Frequency, 
-which Sir Isaac Newton used to determine when the End of Civilization will happen, 
-and according to his and my calculation, 
-that will happen in the year 2060 under the Julian Calendar still used by the Military, 
-or 2061 under the Gregorian Calendar in use today, 
-this was the same calculation given to the Public, but few know how he calculated it, 
-I wrote a new formula, because I could not find his original equation.
+آلة حاسبة غالاكسي هي نقرة زر واحدة للحساب ، فهي تسجل رقم المسار ،
+كم عدد المحركات الثلاثية اللازمة لتكون على هذا المسار ،
+الحد الأدنى والأقصى لسرعة شموسها بالأميال في الساعة ، وتواتر الكواكب الصالحة للعيش ،
+المسافة المدارية للشمس بالأميال ، وتكرار المسارات ،
+التي استخدمها السير إسحاق نيوتن لتحديد موعد نهاية الحضارة ،
+ووفقًا لحساباته وحساباتي ،
+الذي سيحدث في عام 2060 وفقًا للتقويم اليولياني الذي لا يزال يستخدمه الجيش ،
+أو 2061 تحت التقويم الغريغوري المستخدم اليوم ،
+كانت هذه نفس العملية الحسابية التي أعطيت للجمهور ، لكن القليل منهم يعرف كيف حسبها ،
+لقد كتبت معادلة جديدة ، لأنني لم أجد معادلته الأصلية.
 
-Sir Isaac Newton burned his copy of his 2060 Calculation, he wrote that it weights heavy on his SOUL, 
-so he had to let it go, 
-and wrote that anyone that wants to know, can figure it out, all the formulas are in the Bible, 
-36 years later I did find them all.
+أحرق السير إسحاق نيوتن نسخته من حساباته لعام 2060 ، وكتب أنها ثقيلة الوزن على روحه ،
+لذلك كان عليه أن يتركها ،
+وكتب أن أي شخص يريد أن يعرف ، يمكنه معرفة ذلك ، كل الصيغ موجودة في الكتاب المقدس ،
+بعد 36 عامًا ، عثرت عليهم جميعًا.
 
-This Galaxy Calculator was written for use, after I thought about the bash script that created this page:
+تمت كتابة Galaxy Calculator للاستخدام ، بعد أن فكرت في نص bash الذي أنشأ هذه الصفحة:
 
 http://LightWizzard.com/books/trinary.universe/appendix.a.html
 
-The bash script not only crated the page, but calculated the table values.
+لم يقم البرنامج النصي bash بتخزين الصفحة فحسب ، بل قام بحساب قيم الجدول.
 
-I hope this helps everyone visualize what the Application needs to do, 
-which is only to graph and plot the path of Stars around the Galaxy.
+آمل أن يساعد هذا الجميع في تصور ما يحتاج التطبيق إلى القيام به ،
+الذي هو فقط لرسم بياني ورسم مسار النجوم حول المجرة.
 
-This is not a Galaxy Simulator, only a Graph and Plot, and that is very important to understand, 
-I would like to write a Galaxy Simulator built using only the Laws and Rules or Electronics, 
-and that project will be called a Galaxy Simulator, and why this Project is only called a Galaxy Calculator,
-but I am looking into using Qt 3D Studio to simulate a simulator.
+هذه ليست Galaxy Simulator ، فقط رسم بياني ومؤامرة ، وهذا أمر مهم جدًا لفهمه ،
+أرغب في كتابة Galaxy Simulator الذي تم تصميمه باستخدام القوانين والقواعد أو الإلكترونيات فقط ،
+وسيُطلق على هذا المشروع اسم Galaxy Simulator ، ولماذا يُطلق على هذا المشروع اسم Galaxy Calculator فقط ،
+لكني أبحث في استخدام Qt 3D Studio لمحاكاة جهاز محاكاة.
 
 
-Writen by Jeffrey Scott Flesher
+كتبه جيفري سكوت فليشر

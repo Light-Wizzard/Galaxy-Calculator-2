@@ -743,7 +743,7 @@ Fare clic su Annulla per uscire.</translation>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">Impossibile aggiungere questo record al databasen. Annulla per uscire.</translation>
+            <translation>Impossibile aggiungere questo record al databasen. Annulla per uscire.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

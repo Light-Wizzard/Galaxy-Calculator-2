@@ -743,7 +743,7 @@ Cliquez sur Annuler pour quitter.</translation>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">Impossible d'ajouter cet enregistrement à la base de données. Annuler pour quitter.</translation>
+            <translation>Impossible d'ajouter cet enregistrement à la base de données. Annuler pour quitter.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

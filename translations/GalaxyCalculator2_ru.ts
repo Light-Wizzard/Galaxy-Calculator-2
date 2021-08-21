@@ -742,7 +742,7 @@ Click Cancel to exit.</source>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">Невозможно добавить эту запись в базу данных. Отмена для выхода.</translation>
+            <translation>Невозможно добавить эту запись в базу данных. Отмена для выхода.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>

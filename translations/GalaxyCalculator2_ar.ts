@@ -201,7 +201,7 @@
             <location filename="../src/MainWindow.ui" line="2059"></location>
             <location filename="../src/MainWindow.ui" line="2210"></location>
             <source>Help</source>
-            <translation type="unfinished">يساعد</translation>
+            <translation>يساعد</translation>
         </message>
         <message><source>7</source>
             <translation type="obsolete">%</translation>
@@ -284,7 +284,7 @@
         <message><location filename="../src/MainWindow.ui" line="1203">
         </location>
             <source>Decimals</source>
-            <translation type="unfinished">الكسور العشرية</translation>
+            <translation>الكسور العشرية</translation>
         </message>
         <message><source>PI</source>
             <translation type="obsolete">بي</translation>
@@ -307,17 +307,17 @@
         <message><location filename="../src/MainWindow.ui" line="1307">
         </location>
             <source>Energy</source>
-            <translation type="unfinished">طاقة</translation>
+            <translation>طاقة</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1320">
         </location>
             <source>Energy Level</source>
-            <translation type="unfinished">مستوى الطاقة</translation>
+            <translation>مستوى الطاقة</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1332">
         </location>
             <source>Enter Fire Resonant in Frequency, Wavelength or Percentage</source>
-            <translation type="unfinished">أدخل رنين النار في التردد أو الطول الموجي أو النسبة المئوية</translation>
+            <translation>أدخل رنين النار في التردد أو الطول الموجي أو النسبة المئوية</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1344">
         </location>
@@ -339,7 +339,7 @@
         <message><location filename="../src/MainWindow.ui" line="1409">
         </location>
             <source>Enter X for the current value</source>
-            <translation type="unfinished">أدخل X للقيمة الحالية</translation>
+            <translation>أدخل X للقيمة الحالية</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1476">
         </location>
@@ -390,7 +390,7 @@
         <message><location filename="../src/MainWindow.ui" line="1715">
         </location>
             <source>CBARS = ( Diameter * PI ) / ( Rotation * 24 ) -  Average Orbital Speed in Miles Per Hour</source>
-            <translation type="unfinished">CBARS = (القطر * PI) / (الدوران * 24) - متوسط ​​سرعة المدارية بالأميال في الساعة</translation>
+            <translation>CBARS = (القطر * PI) / (الدوران * 24) - متوسط ​​سرعة المدارية بالأميال في الساعة</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1727">
         </location>
@@ -742,7 +742,7 @@ Click Cancel to exit.</source>
         </location>
             <location filename="../src/MainWindow.cpp" line="1320"></location>
             <source>Unable to add this record to databasen. Cancel to exit.</source>
-            <translation type="unfinished">غير قادر على إضافة هذا السجل إلى قاعدة البيانات. إلغاء للخروج.</translation>
+            <translation>غير قادر على إضافة هذا السجل إلى قاعدة البيانات. إلغاء للخروج.</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2097">
         </location>
