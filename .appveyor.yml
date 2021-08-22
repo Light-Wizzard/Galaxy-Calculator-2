@@ -1,16 +1,16 @@
 #
 # Galaxy Calculator 2 appveyor configuration files
 # https://ci.appveyor.com/tools/validate-yaml
-#https://www.appveyor.com/docs/build-environment/#qt
+# https://www.appveyor.com/docs/build-environment/#qt
 # https://download.qt.io/snapshots/ifw/installer-framework/30/
 #
 version: '{branch}-{build}'
-
+# Should this be main?
 branches:
   only:
     - master
 
-stack: python 3.9, python 3.8
+stack: python 3.8, python 3.9
 
 build: off
 
@@ -30,10 +30,8 @@ for:
     only:
       - image: Visual Studio 2019
   environment:
-    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
     MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+    MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
     MY_OS: Windows # No Spaces
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2
@@ -43,10 +41,12 @@ for:
     MY_QT_TOOLS_MINGW32: mingw810_32
     MY_QT_TOOLS_MINGW64: mingw810_32 # mingw810_64?
     MY_QT_IF_VERSION: '4.1.1'
-    MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true
     MY_RUN_DOXYFILE: false
+    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
   install:
     - ps: Write-Host "install_script yaml"
     # Create our AppVeyor version
@@ -67,20 +67,20 @@ for:
     only:
       - image: Ubuntu
   environment:
-    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
     MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
     MY_OS: Ubuntu
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2
     MY_VS_VERSION: 2019
     MY_QT_IF_VERSION: '4.1.1'
-    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
     MY_PYTHON_VER: 3.9
     MY_PYTHON_REQUIRED: true
     MY_UPGRADE_OS: false
     MY_RUN_DOXYFILE: false
+    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
