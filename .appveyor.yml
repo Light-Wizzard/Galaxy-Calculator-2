@@ -77,8 +77,6 @@ for:
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true
     MY_RUN_DOXYFILE: false
-    MY_PS_INSTALL_SCRIPT: '.\scripts\install.ps1'
-    MY_PS_BUILD_SCRIPT: '.\scripts\build_script.ps1'
   install:
     - cmd: echo Here at install
     - ps: Write-Host "install"
@@ -90,7 +88,6 @@ for:
     - ps: Write-Host $env:MY_INSTALLER
     #- ps: .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     #- .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
-    #- ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
     - ps: |
         If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
            Write-Host "install Windows QT x64" -ForegroundColor DarkGreen
