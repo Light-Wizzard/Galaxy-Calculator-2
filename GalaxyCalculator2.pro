@@ -247,7 +247,6 @@ unix {
     INSTALLS           += target
 }
 ###############################################################################
-message("*******************************************************************************")
 message(Qt version: $$[QT_VERSION])
 message(Qt is installed in $$[QT_INSTALL_PREFIX])
 message(Qt resources can be found in the following locations:)
@@ -272,5 +271,4 @@ message(INSTALLS: $${INSTALLS})
 message(RC_FILE: $${RC_FILE})
 message(DEFINES: $${DEFINES})
 message(QMAKE_CXXFLAGS: $${QMAKE_CXXFLAGS})
-message("*******************************************************************************")
 ################################ End of File ##################################
