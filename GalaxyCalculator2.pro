@@ -7,22 +7,20 @@ TEMPLATE     = "app"
 # Do not use Spaces in Target Name
 # This pro(ject) file is based on a pattern
 TARGET           = "GalaxyCalculator2"
-qtHaveModule(printsupport): QT *= printsupport
-#unix:QT *= printsupport
-#QT              *= printsupport
-QT              += core gui widgets sql network
+#
+QT              += core gui widgets sql network printsupport
 #
 CONFIG          *= qt
-CONFIG          *= "c++11"
+#
+#CONFIG          *= "c++11"
 #CONFIG          *= "c++14"
 #CONFIG         *= "c++1z"
 #CONFIG          *= "c++17"
 #CONFIG         *= "c++2a"
 #CONFIG          *= "c++latest"
-win32:CONFIG -= x86_64
-win32:CONFIG += x86
+#
 CONFIG          *= warn_on utf8_source executable
-CONFIG          += release debug
+#
 win32 {
     contains(QT_ARCH, x86_64) {
         QMAKE_CXXFLAGS  += -Wa,-mbig-obj -O2
@@ -35,8 +33,7 @@ win32 {
 #DEFINES+= STATIC
 #QMAKE_LFLAGS += -static
 #
-win32:CONFIG   *= windeployqt
-win32:CONFIG   *= windows
+win32:CONFIG   *= windeployqt windows
 #
 # Headers files
 HEADERS     *= \
