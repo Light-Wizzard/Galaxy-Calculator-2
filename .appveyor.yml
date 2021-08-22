@@ -44,11 +44,9 @@ for:
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true
     MY_RUN_DOXYFILE: false
-    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
   install:
-    - ps: Write-Host "install_script yaml"
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
