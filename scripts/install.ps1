@@ -7,7 +7,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
    $env:Path += ";C:\MINGW\bin\"
    $env:MY_QT_BAT = "C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat"
    $env:MY_VS_BAT = "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
-   Invoke-Expression $env:MY_QT_BAT
+   #Invoke-Expression $env:MY_QT_BAT
    #Invoke-Expression $env:MY_VS_BAT
    #iex $env:MY_VS_BAT
    #Invoke-Expression "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
