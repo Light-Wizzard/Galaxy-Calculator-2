@@ -17,7 +17,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     #iex "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
     cmd /c call "C:\Program Files (x86)\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars64.bat"
 }
-Else {
+ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
     Write-Host "install Windows QT x86" -ForegroundColor Magenta
     $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
     $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"
@@ -30,7 +30,7 @@ Else {
     #Invoke-Expression $MY_VS_BAT
     cmd /c call "C:\Program Files (x86)\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars32.bat"
 }
-If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
+ElseIf ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
     Write-Host "install Windows VS x64" -ForegroundColor Yellow
     $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
     $env:Path += ";C:\Qt\$env:MY_QT_VERSION\msvc$env:MY_VS_VERSION_64\bin"
@@ -39,7 +39,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
     Invoke-Expression "C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat"
     Invoke-Expression "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
 }
-Else {
+ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
     Write-Host "install Windows VS x86" -ForegroundColor Magenta
     $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
     $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"

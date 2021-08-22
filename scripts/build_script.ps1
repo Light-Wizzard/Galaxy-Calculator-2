@@ -11,7 +11,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     Write-Host "build_script Windows QT x64 mingw32-make install INSTALL_ROOT=AppDir"
     Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
 }
-Else {
+ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
     Write-Host "build_script Windows QT x86" -ForegroundColor DarkGreen
     Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     New-Item -Path 'build' -ItemType Directory
@@ -22,8 +22,7 @@ Else {
     Invoke-Expression "mingw32-make -j 2"
     Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
 }
-
-If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
+ElseIf ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
     Write-Host "build_script Windows VS x64" -ForegroundColor DarkGreen
     Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     New-Item -Path 'build' -ItemType Directory
@@ -37,7 +36,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
     $env:MY_QT_MAKE="mmake install INSTALL_ROOT=AppDir"
     Invoke-Expression $env:MY_QT_MAKE
 }
-Else {
+ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
     Write-Host "build_script Windows VS x86" -ForegroundColor DarkGreen
     Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     New-Item -Path 'build' -ItemType Directory
