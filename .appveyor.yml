@@ -86,10 +86,10 @@ for:
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     #- ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
-    - ps: .\scripts\install.ps1
+    - ps: iex .\scripts\install.ps1
   build_script:
     #- ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
-    - ps: .\scripts\build_script.ps1
+    - ps: iex .\scripts\build_script.ps1
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
