@@ -86,6 +86,7 @@ for:
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     #- ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
+    - ps: Write-Host "$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1" -ForegroundColor DarkGreen
     - ps: . $env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
   build_script:
     #- ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
