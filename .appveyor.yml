@@ -85,7 +85,7 @@ for:
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    - ps: Write-Host "****Folder: $env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1" -ForegroundColor DarkGreen
+    - ps: Write-Host "Folder: $env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1" -ForegroundColor DarkGreen
     - ps: . $env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     - ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
   build_script:
