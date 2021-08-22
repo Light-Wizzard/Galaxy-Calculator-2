@@ -5,11 +5,14 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     Set-Location -Path 'build'
     $env:INSTALL_ROOT = 'AppDir'
     $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
-    Invoke-Expression "qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-    Write-Host "build_script Windows QT x64 mingw32-make -j 2"
-    Invoke-Expression "mingw32-make -j 2"
-    Write-Host "build_script Windows QT x64 mingw32-make install INSTALL_ROOT=AppDir"
-    Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
+    #Invoke-Expression "qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
+    cmd /c call "qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
+    If ($?) {
+        Write-Host "build_script Windows QT x64 mingw32-make -j 2"
+        Invoke-Expression "mingw32-make -j 2"
+        Write-Host "build_script Windows QT x64 mingw32-make install INSTALL_ROOT=AppDir"
+        Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
+    }
 }
 ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
     Write-Host "build_script Windows QT x86" -ForegroundColor Magenta
