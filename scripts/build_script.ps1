@@ -1,10 +1,10 @@
 If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
-    Write-Host "build_script Windows QT x64" -ForegroundColor DarkGreen
-    Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
+    Write-Host "build_script Windows QT x64" -ForegroundColor Yellow
+    Set-Location -Path "$env:APPVEYOR_BUILD_FOLDER"
     New-Item -Path 'build' -ItemType Directory
-    Set-Location -Path build
-    $env:INSTALL_ROOT=AppDir
-    $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
+    Set-Location -Path 'build'
+    $env:INSTALL_ROOT = 'AppDir'
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     Invoke-Expression "qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
     Write-Host "build_script Windows QT x64 mingw32-make -j 2"
     Invoke-Expression "mingw32-make -j 2"
@@ -12,23 +12,23 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
 }
 ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
-    Write-Host "build_script Windows QT x86" -ForegroundColor DarkGreen
+    Write-Host "build_script Windows QT x86" -ForegroundColor Magenta
     Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     New-Item -Path 'build' -ItemType Directory
     Set-Location -Path build
     $env:INSTALL_ROOT=AppDir
-    $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     Invoke-Expression "qmake -r -Wall -Wlogic -Wparser -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
     Invoke-Expression "mingw32-make -j 2"
     Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
 }
 ElseIf ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
-    Write-Host "build_script Windows VS x64" -ForegroundColor DarkGreen
+    Write-Host "build_script Windows VS x64" -ForegroundColor DarkYellow
     Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     New-Item -Path 'build' -ItemType Directory
     Set-Location -Path build
     $env:INSTALL_ROOT=AppDir
-    $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     $env:MY_QT_MAKE="qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER%\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
     Invoke-Expression $env:MY_QT_MAKE
     $env:MY_QT_MAKE="mmake"
@@ -37,12 +37,12 @@ ElseIf ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
     Invoke-Expression $env:MY_QT_MAKE
 }
 ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
-    Write-Host "build_script Windows VS x86" -ForegroundColor DarkGreen
+    Write-Host "build_script Windows VS x86" -ForegroundColor DarkMagenta
     Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
     New-Item -Path 'build' -ItemType Directory
     Set-Location -Path build
     $env:INSTALL_ROOT=AppDir
-    $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     $env:MY_QT_MAKE="qmake -r -Wall -Wlogic -Wparser -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
     Invoke-Expression $env:MY_QT_MAKE
     $env:MY_QT_MAKE="mmake"
