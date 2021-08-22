@@ -1,11 +1,9 @@
 #
-# Galaxy Calculator 2 appveyor configuration files
 # https://ci.appveyor.com/tools/validate-yaml
 # https://www.appveyor.com/docs/build-environment/#qt
 # https://download.qt.io/snapshots/ifw/installer-framework/30/
 #
 version: '{branch}-{build}'
-# Should this be main?
 branches:
   only:
     - master
@@ -54,7 +52,6 @@ for:
     - ps: $env:MY_COMPILER="Qt"
     - ps: Invoke-Expression -Command scripts\install.ps1
   build_script:
-    - ps: Write-Host "build_script yaml"
     - ps: Invoke-Expression -Command scripts\build_script.ps1
   artifacts:
     - path: '*.zip'
@@ -76,7 +73,6 @@ for:
     MY_PYTHON_REQUIRED: true
     MY_UPGRADE_OS: false
     MY_RUN_DOXYFILE: false
-    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
   install:
@@ -100,4 +96,3 @@ deploy:
   auth_token:
     secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
 ############################################## End of File ####################
-
