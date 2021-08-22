@@ -21,40 +21,10 @@ platform:
   #- x86
 
 image:
-  #- Ubuntu
   - Visual Studio 2019
+  - Ubuntu
 
 for:
--
-  matrix:
-    only:
-      - image: Ubuntu
-  environment:
-    #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
-    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
-    MY_OS: Ubuntu
-    MY_COMPILER: "Qt"
-    MY_QT_VERSION: 5.15.2
-    MY_VS_VERSION: 2019
-    MY_QT_IF_VERSION: '4.1.1'
-    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    MY_PYTHON_VER: 3.9
-    MY_PYTHON_REQUIRED: true
-    MY_UPGRADE_OS: false
-    MY_RUN_DOXYFILE: false
-  install:
-    # Create our AppVeyor version
-    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
-    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    - sh: bash -c "scripts/install.sh"
-  build_script:
-    - sh: bash -c "scripts/build_script.sh"
-  artifacts:
-    - path: '*.zip'
-      name: 'ZipInstaller'
 -
   matrix:
     only:
@@ -78,120 +48,53 @@ for:
     MY_PYTHON_REQUIRED: true
     MY_RUN_DOXYFILE: false
   install:
-    - cmd: echo Here at install
-    - ps: Write-Host "install"
+    - ps: Write-Host "install_script"
     # Create our AppVeyor version
-    #- ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-    #- ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
-    #- ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - ps: $env:MY_INSTALLER=$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     - ps: Write-Host $env:MY_INSTALLER
+    - ps: Invoke-Expression -Command scripts\install.ps1
     #- ps: .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     #- .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
-    - ps: |
-        If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
-           Write-Host "install Windows QT x64" -ForegroundColor DarkGreen
-           $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64"
-           $env:Path += ";C:\Python$env:MY_PYTHON_VER-x64"
-           $env:Path += ";C:\MINGW\bin\"
-           $env:MY_QT_BAT = "C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat"
-           $env:MY_VS_BAT = "C:\Program Files (x86)\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars64.bat"
-           Invoke-Expression $env:MY_QT_BAT
-           Invoke-Expression $env:MY_VS_BAT
-        }
-        Else {
-           Write-Host "install Windows QT x86" -ForegroundColor DarkGreen
-           $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32"
-           $env:Path += ";C:\Python$env:MY_PYTHON_VER"
-           $env:Path += ";C:\MINGW\bin\"
-           $env:MY_QT_BAT = "C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat"
-           $env:MY_VS_BAT = "C:\Program Files (x86)\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars32.bat"
-           Invoke-Expression $env:MY_QT_BAT
-           Invoke-Expression $MY_VS_BAT
-        }
-    - ps: |
-        If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
-           $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\msvc$env:MY_VS_VERSION_64\bin"
-           $env:Path += ";C:\Python$env:MY_PYTHON_VER-x64"
-           $env:Path += ";C:\MINGW\bin\"
-           Invoke-Expression "C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat"
-           Invoke-Expression "C:\Program Files (x86)\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars64.bat"
-        }
-        Else {
-           $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"
-           $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32"
-           $env:Path += ";C:\Python$env:MY_PYTHON_VER"
-           $env:Path += ";C:\MINGW\bin\"
-           Invoke-Expression "C:\Qt\$env:MY_QT_VERSION\msvc$env:MY_VS_VERSION\bin\qtenv2.bat"
-           Invoke-Expression "C:\Program Files (x86)\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars32.bat"
-        }
   build_script:
-    - cmd: echo Here at build_script
-    #- ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
+    - ps: Write-Host "build_script"
+    - ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
     #- ps: iex .\$env:APPVEYOR_BUILD_FOLDER\scripts\build_script.ps1
-    - ps: |
-        If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
-            Write-Host "build_script Windows QT x64" -ForegroundColor DarkGreen
-            Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
-            New-Item -Path 'build' -ItemType Directory
-            Set-Location -Path build
-            $env:INSTALL_ROOT=AppDir
-            $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
-            Invoke-Expression "qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-            Write-Host "build_script Windows QT x64 mingw32-make -j 2"
-            Invoke-Expression "mingw32-make -j 2"
-            Write-Host "build_script Windows QT x64 mingw32-make install INSTALL_ROOT=AppDir"
-            Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
-        }
-        Else {
-            Write-Host "build_script Windows QT x86" -ForegroundColor DarkGreen
-            Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
-            New-Item -Path 'build' -ItemType Directory
-            Set-Location -Path build
-            $env:INSTALL_ROOT=AppDir
-            $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
-            Invoke-Expression "qmake -r -Wall -Wlogic -Wparser -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-            Invoke-Expression "mingw32-make -j 2"
-            Invoke-Expression "mingw32-make install INSTALL_ROOT=AppDir"
-        }
-    - ps: |
-        If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
-            Write-Host "build_script Windows VS x64" -ForegroundColor DarkGreen
-            Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
-            New-Item -Path 'build' -ItemType Directory
-            Set-Location -Path build
-            $env:INSTALL_ROOT=AppDir
-            $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
-            $env:MY_QT_MAKE="qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER%\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-            Invoke-Expression $env:MY_QT_MAKE
-            $env:MY_QT_MAKE="mmake"
-            Invoke-Expression $env:MY_QT_MAKE
-            $env:MY_QT_MAKE="mmake install INSTALL_ROOT=AppDir"
-            Invoke-Expression $env:MY_QT_MAKE
-        }
-        Else {
-            Write-Host "build_script Windows VS x86" -ForegroundColor DarkGreen
-            Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
-            New-Item -Path 'build' -ItemType Directory
-            Set-Location -Path build
-            $env:INSTALL_ROOT=AppDir
-            $env:BUILD_ROOT=$env:APPVEYOR_BUILD_FOLDER\build
-            $env:MY_QT_MAKE="qmake -r -Wall -Wlogic -Wparser -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-            Invoke-Expression $env:MY_QT_MAKE
-            $env:MY_QT_MAKE="mmake"
-            Invoke-Expression $env:MY_QT_MAKE
-            $env:MY_QT_MAKE="mmake install INSTALL_ROOT=AppDir"
-            Invoke-Expression $env:MY_QT_MAKE
-        }
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
+      -
+        matrix:
+          only:
+            - image: Ubuntu
+        environment:
+          #PRJLIBS: VCRUNTIME140.dll MSVCP140.dll
+          RUNTIME_LINKAGE: static
+          COVERITY_BUILD_CANDIDATE: True
+          MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+          MY_OS: Ubuntu
+          MY_COMPILER: "Qt"
+          MY_QT_VERSION: 5.15.2
+          MY_VS_VERSION: 2019
+          MY_QT_IF_VERSION: '4.1.1'
+          MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+          MY_PYTHON_VER: 3.9
+          MY_PYTHON_REQUIRED: true
+          MY_UPGRADE_OS: false
+          MY_RUN_DOXYFILE: false
+        install:
+          # Create our AppVeyor version
+          - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+          - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+          - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+          - sh: bash -c "scripts/install.sh"
+        build_script:
+          - sh: bash -c "scripts/build_script.sh"
+        artifacts:
+          - path: '*.zip'
+            name: 'ZipInstaller'
 
 deploy:
 - provider: GitHub
