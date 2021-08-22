@@ -7,7 +7,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     $env:INSTALL_ROOT = 'AppDir'
     $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     #$env:MY_QMAKE = "qmake.exe -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-    $env:MY_QMAKE = "qmake.exe -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
+    $env:MY_QMAKE = "qmake.exe $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
     Write-Host "qmake dbug: $env:MY_QMAKE"
     # qmake -r -Wall -Wlogic -Wparser C:\projects\galaxy-calculator-2\GalaxyCalculator2.pro -o AppDir CONFIG+=Release CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir C:\projects\galaxy-calculator-2\build
     #Invoke-Expression $env:MY_QMAKE
