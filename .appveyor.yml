@@ -78,14 +78,16 @@ for:
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true
     MY_RUN_DOXYFILE: false;
+    MY_PS_INSTALL_SCRIPT: 'scripts\install.ps1'
+    MY_PS_BUILD_SCRIPT: 'scripts\build_script.ps1'
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-    - ps: Invoke-Expression -Command "scripts\install.ps1"
+    - ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
   build_script:
-    - ps: Invoke-Expression -Command "scripts\build_script.ps1"
+    - ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
