@@ -16,7 +16,7 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     #Invoke-Expression ($env:MY_QMAKE)
     If ($?) {
         Write-Host "build_script Windows QT x64 mingw32-make -j 2"
-        Invoke-Expression "mingw32-make.exe -j 2"
+        Invoke-Expression "mingw32-make.exe"
         If ($?) {
             Write-Host "build_script Windows QT x64 mingw32-make install"
             Invoke-Expression "mingw32-make.exe install"
