@@ -55,12 +55,9 @@ for:
     - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
     - ps: $env:MY_COMPILER="Qt"
     - ps: Invoke-Expression -Command scripts\install.ps1
-    #- ps: .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
-    #- .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
   build_script:
     - ps: Write-Host "build_script yaml"
     - ps: Invoke-Expression -Command scripts\build_script.ps1
-    #- ps: iex .\$env:APPVEYOR_BUILD_FOLDER\scripts\build_script.ps1
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
