@@ -65,6 +65,7 @@ for:
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
+
 -
   matrix:
     only:
