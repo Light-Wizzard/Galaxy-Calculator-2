@@ -42,8 +42,8 @@ for:
     MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
     MY_PYTHON_VER: 3.9
     MY_PYTHON_REQUIRED: true
-    MY_UPGRADE_OS: false # apt-get upgrade: true or false only
-    MY_RUN_DOXYFILE: false;
+    MY_UPGRADE_OS: false
+    MY_RUN_DOXYFILE: false
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
@@ -55,7 +55,6 @@ for:
   artifacts:
     - path: '*.zip'
       name: 'ZipInstaller'
-
 -
   matrix:
     only:
@@ -77,12 +76,13 @@ for:
     MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true
-    MY_RUN_DOXYFILE: false;
+    MY_RUN_DOXYFILE: false
     MY_PS_INSTALL_SCRIPT: '.\scripts\install.ps1'
     MY_PS_BUILD_SCRIPT: '.\scripts\build_script.ps1'
   install:
-    # Create our AppVeyor version
+    - cmd: echo Here at install
     - ps: Write-Host "install"
+    # Create our AppVeyor version
     #- ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
     #- ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
     #- ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
@@ -91,8 +91,8 @@ for:
     #- ps: .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     - .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     #- ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
-    - cmd: echo Here
   build_script:
+    - cmd: echo Here at build_script
     - ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
     - ps: iex .\$env:APPVEYOR_BUILD_FOLDER\scripts\build_script.ps1
   artifacts:
