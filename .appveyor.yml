@@ -91,6 +91,7 @@ for:
     #- ps: .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     - .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
     #- ps: Invoke-Expression -Command $env:MY_PS_INSTALL_SCRIPT
+    - cmd: echo Here
   build_script:
     - ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
     - ps: iex .\$env:APPVEYOR_BUILD_FOLDER\scripts\build_script.ps1
