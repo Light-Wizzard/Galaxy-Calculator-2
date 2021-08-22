@@ -58,7 +58,7 @@ for:
     #- .\$env:APPVEYOR_BUILD_FOLDER\scripts\install.ps1
   build_script:
     - ps: Write-Host "build_script"
-    - ps: Invoke-Expression -Command $env:MY_PS_BUILD_SCRIPT
+    - ps: Invoke-Expression -Command scripts\build_script.ps1
     #- ps: iex .\$env:APPVEYOR_BUILD_FOLDER\scripts\build_script.ps1
   artifacts:
     - path: '*.zip'
