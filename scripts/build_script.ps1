@@ -7,8 +7,9 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
     $env:INSTALL_ROOT = 'AppDir'
     $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     $env:MY_QMAKE = "qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build"
-    Invoke-Expression $env:MY_QMAKE
-    #cmd /c $env:MY_QMAKE
+    Write-Host "qmake dbug: $env:MY_QMAKE"
+    #Invoke-Expression $env:MY_QMAKE
+    cmd /c $env:MY_QMAKE
     If ($?) {
         Write-Host "build_script Windows QT x64 mingw32-make -j 2"
         Invoke-Expression "mingw32-make -j 2"
@@ -61,7 +62,7 @@ ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
     Invoke-Expression $env:MY_QT_MAKE
 }
 
-If ($env:MY_BUILD_GOOD == "true") {
+If ($env:MY_BUILD_GOOD -eq "true") {
     $currentDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
     If ($currentDirectory -eq $PSHOME.TrimEnd('\')) {
         $currentDirectory = $PSScriptRoot
