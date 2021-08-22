@@ -9,10 +9,11 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
    $env:MY_VS_BAT = "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
    Invoke-Expression $env:MY_QT_BAT
    #Invoke-Expression $env:MY_VS_BAT
-   iex $env:MY_VS_BAT
+   #iex $env:MY_VS_BAT
    #Invoke-Expression "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
    #iex "C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
    #"C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\AUXILI~1\Build\vcvars64.bat"
+   Invoke-BatchFile "${env:ProgramFiles(x86)}\Microsoft Visual Studio\$env:MY_VS_VERSION\Community\VC\Auxiliary\Build\vcvars64.bat"
 }
 Else {
    Write-Host "install Windows QT x86" -ForegroundColor DarkGreen
