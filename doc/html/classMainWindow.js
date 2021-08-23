@@ -5,6 +5,12 @@ var classMainWindow =
       [ "ExportHtml", "classMainWindow.html#aa81fd91da07e20200843d12865b27a33ac2e0afaed349769b324f358dd4b9c38f", null ],
       [ "PrintTable", "classMainWindow.html#aa81fd91da07e20200843d12865b27a33a6a1dacde4bdac3cff1808578d2c10e23", null ]
     ] ],
+    [ "MyMessageTypes", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3f", [
+      [ "Information", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3fa215c89d34475e8b7c37ecb7f644df6c9", null ],
+      [ "Warning", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3fa039ddb5d60f5c11fdf7752a698af171f", null ],
+      [ "Critical", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3facd8307f72a26babe2b00140582084880", null ],
+      [ "Debug", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3fa7de28d53b76495b83fee8bba71173ca1", null ]
+    ] ],
     [ "MainWindow", "classMainWindow.html#a996c5a2b6f77944776856f08ec30858d", null ],
     [ "~MainWindow", "classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7", null ],
     [ "calcPlanet", "classMainWindow.html#a284c5065b7f10e3efc368f05967098ef", null ],
@@ -48,6 +54,7 @@ var classMainWindow =
     [ "setCalcConstantCombo", "classMainWindow.html#a87c75a1072f38b3b280d38cafd2e7159", null ],
     [ "setDebugMessage", "classMainWindow.html#a2840366f8c8c4231f80fb6da0714f7d5", null ],
     [ "setGalaxyTableViewSize", "classMainWindow.html#a87de68e92d50471465b0a6ebe069fb7a", null ],
+    [ "setMessage", "classMainWindow.html#aeec603ae3eb953cb71ddfd213e59a93d", null ],
     [ "setMessagingStates", "classMainWindow.html#acaf4f4d06b8b4263e5628b4d0b035df9", null ],
     [ "setPlanetCombo", "classMainWindow.html#aa97a7e26ed5227a81092a2defaa9e575", null ],
     [ "setSettingsCombo", "classMainWindow.html#af0da54582d5923a89b230c2f59bc5fe8", null ],

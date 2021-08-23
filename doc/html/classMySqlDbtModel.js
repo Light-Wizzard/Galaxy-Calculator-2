@@ -32,6 +32,7 @@ var classMySqlDbtModel =
     [ "setComboBoxSqlValue", "classMySqlDbtModel.html#a99cd676009ffae6df2cd72f3b939d9fe", null ],
     [ "setConnectionName", "classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc", null ],
     [ "setDebugMessage", "classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b", null ],
+    [ "setMessage", "classMySqlDbtModel.html#a7aaec090d894b484ebd14ad9ff8f67ce", null ],
     [ "setProjectID", "classMySqlDbtModel.html#a3b937e4817d2064c4f2ed7f10616ccda", null ],
     [ "setProjectName", "classMySqlDbtModel.html#a969df5ef889c26bcb221ca66c97c8b02", null ],
     [ "setSqlDatabase", "classMySqlDbtModel.html#acec6b58ac1314081129b6a0628a8a6cd", null ],

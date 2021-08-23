@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['base_5fopr_5fcase_8073',['base_opr_case',['../exprtk_8hpp.html#a1a8119ecddcd4d511aaf1a67dc362ee4',1,'exprtk.hpp']]],
-  ['basic_5fopr_5fswitch_5fstatements_8074',['basic_opr_switch_statements',['../exprtk_8hpp.html#a0a462291371d9f7abf9bdfa62564e3aa',1,'exprtk.hpp']]],
-  ['batch_5feqineq_5flogic_5fcase_8075',['batch_eqineq_logic_case',['../exprtk_8hpp.html#afc883d103b8cd335ff42cc5ae3fcc4e2',1,'exprtk.hpp']]]
+  ['base_5fopr_5fcase_8079',['base_opr_case',['../exprtk_8hpp.html#a1a8119ecddcd4d511aaf1a67dc362ee4',1,'exprtk.hpp']]],
+  ['basic_5fopr_5fswitch_5fstatements_8080',['basic_opr_switch_statements',['../exprtk_8hpp.html#a0a462291371d9f7abf9bdfa62564e3aa',1,'exprtk.hpp']]],
+  ['batch_5feqineq_5flogic_5fcase_8081',['batch_eqineq_logic_case',['../exprtk_8hpp.html#afc883d103b8cd335ff42cc5ae3fcc4e2',1,'exprtk.hpp']]]
 ];
