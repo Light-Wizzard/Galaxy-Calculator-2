@@ -39,7 +39,7 @@ bool MySqlDbtModel::getDebugMessage()
 int MySqlDbtModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (isDebugMessage) qDebug() << "rowCount";
+    setMessage("rowCount");
     return myGalaxy.length();
 }
 /************************************************
@@ -49,7 +49,7 @@ int MySqlDbtModel::rowCount(const QModelIndex &parent) const
 int MySqlDbtModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    if (isDebugMessage) qDebug() << "columnCount";
+    setMessage("columnCount");
     return 7;
 }
 /************************************************
@@ -58,7 +58,7 @@ int MySqlDbtModel::columnCount(const QModelIndex &parent) const
  ***********************************************/
 QVariant MySqlDbtModel::data(const QModelIndex &index, int role) const
 {
-    if (isDebugMessage) qDebug() << "data";
+    setMessage("data");
     if (role != Qt::DisplayRole && role != Qt::EditRole && role != Qt::TextAlignmentRole) return {};
     //
     const auto & galaxy = myGalaxy[index.row()];
@@ -96,7 +96,7 @@ QVariant MySqlDbtModel::data(const QModelIndex &index, int role) const
  ***********************************************/
 QVariant MySqlDbtModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (isDebugMessage) qDebug() << "headerData";
+    setMessage("headerData");
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal)
     {
         if (section == 0)      { return QString("Track");  }
@@ -115,7 +115,7 @@ QVariant MySqlDbtModel::headerData(int section, Qt::Orientation orientation, int
  ***********************************************/
 void MySqlDbtModel::clearRecords()
 {
-    if (isDebugMessage) qDebug() << "clearRecords";
+    setMessage("clearRecords");
     for( int i = 0; i < myGalaxy.count(); ++i )
     {
         myGalaxy.removeAt(i);
@@ -128,7 +128,7 @@ void MySqlDbtModel::clearRecords()
  ***********************************************/
 bool MySqlDbtModel::isDbTable(const QString &thisTable, QSqlDatabase *db)
 {
-    if (isDebugMessage) qDebug() << "isDatabase";
+    setMessage("isDatabase");
     QStringList tables = db->tables();
     if (tables.contains(thisTable, Qt::CaseInsensitive))  { return true; }
     else                                                  { return false; }
@@ -139,7 +139,7 @@ bool MySqlDbtModel::isDbTable(const QString &thisTable, QSqlDatabase *db)
  ***********************************************/
 void MySqlDbtModel::setSqlDatabase(const QSqlDatabase &thisDatabase)
 {
-    if (isDebugMessage) qDebug() << "setSqlDatabase";
+    setMessage("setSqlDatabase");
     myDb = thisDatabase;
 }
 /************************************************
@@ -148,7 +148,7 @@ void MySqlDbtModel::setSqlDatabase(const QSqlDatabase &thisDatabase)
  ***********************************************/
 QSqlDatabase MySqlDbtModel::getSqlDatabase()
 {
-    if (isDebugMessage) qDebug() << "getSqlDatabase";
+    setMessage("getSqlDatabase");
     return myDb;
 }
 /************************************************
@@ -157,7 +157,7 @@ QSqlDatabase MySqlDbtModel::getSqlDatabase()
  ***********************************************/
 void MySqlDbtModel::setConnectionName(const QString &thisConnectionName)
 {
-    if (isDebugMessage) qDebug() << "setConnectionName";
+    setMessage("setConnectionName");
     myConnectionName = thisConnectionName;
 }
 /************************************************
@@ -166,7 +166,7 @@ void MySqlDbtModel::setConnectionName(const QString &thisConnectionName)
  ***********************************************/
 QString MySqlDbtModel::getConnectionName()
 {
-    if (isDebugMessage) qDebug() << "getConnectionName";
+    setMessage("getConnectionName");
     return myConnectionName;
 }
 /************************************************
@@ -175,7 +175,7 @@ QString MySqlDbtModel::getConnectionName()
  ***********************************************/
 QString MySqlDbtModel::getSqlDriver()
 {
-    if (isDebugMessage) qDebug() << "getSqlDriver";
+    setMessage("getSqlDriver");
     return mySqlDriver;
 }
 /************************************************
@@ -184,7 +184,7 @@ QString MySqlDbtModel::getSqlDriver()
  ***********************************************/
 void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
 {
-    if (isDebugMessage) qDebug() << "setSqlTableName";
+    setMessage("setSqlTableName");
     myTableName = thisTableName;
 }
 /************************************************
@@ -193,7 +193,7 @@ void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
  ***********************************************/
 QString MySqlDbtModel::getSqlTableName()
 {
-    if (isDebugMessage) qDebug() << "getSqlTableName";
+    setMessage("getSqlTableName");
     return myTableName;
 }
 /************************************************
@@ -202,7 +202,7 @@ QString MySqlDbtModel::getSqlTableName()
  ***********************************************/
 void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
 {
-    if (isDebugMessage) qDebug() << "setSqlHostName";
+    setMessage("setSqlHostName");
     myHostName = thisHostName;
 }
 /************************************************
@@ -211,7 +211,7 @@ void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
  ***********************************************/
 QString MySqlDbtModel::getSqlHostName()
 {
-    if (isDebugMessage) qDebug() << "getSqlHostName";
+    setMessage("getSqlHostName");
     return myHostName;
 }
 /************************************************
@@ -220,7 +220,7 @@ QString MySqlDbtModel::getSqlHostName()
  ***********************************************/
 void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
 {
-    if (isDebugMessage) qDebug() << "setSqlUserName";
+    setMessage("setSqlUserName");
     myUserName = thisUserName;
 }
 /************************************************
@@ -229,7 +229,7 @@ void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
  ***********************************************/
 QString MySqlDbtModel::getSqlUserName()
 {
-    if (isDebugMessage) qDebug() << "getSqlUserName";
+    setMessage("getSqlUserName");
     return myUserName;
 }
 /************************************************
@@ -238,7 +238,7 @@ QString MySqlDbtModel::getSqlUserName()
  ***********************************************/
 void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
 {
-    if (isDebugMessage) qDebug() << "setSqlDatabaseName";
+    setMessage("setSqlDatabaseName");
     myDatabaseName = thisPassword;
 }
 /************************************************
@@ -247,7 +247,7 @@ void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
  ***********************************************/
 QString MySqlDbtModel::getSqlDatabaseName()
 {
-    if (isDebugMessage) qDebug() << "getSqlDatabaseName";
+    setMessage("getSqlDatabaseName");
     return myDatabaseName;
 }
 /************************************************
@@ -256,7 +256,7 @@ QString MySqlDbtModel::getSqlDatabaseName()
  ***********************************************/
 void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
 {
-    if (isDebugMessage) qDebug() << "setSqlPassword";
+    setMessage("setSqlPassword");
     myPassword = thisPassword;
 }
 /************************************************
@@ -265,7 +265,7 @@ void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
  ***********************************************/
 QString MySqlDbtModel::getSqlPassword()
 {
-    if (isDebugMessage) qDebug() << "getSqlPassword";
+    setMessage("getSqlPassword");
     return myPassword;
 }
 /************************************************
@@ -290,7 +290,7 @@ QString MySqlDbtModel::getComboBoxSqlValue()
  ***********************************************/
 void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 {
-    if (isDebugMessage) { qDebug() << "setSqlDriver"; }
+    setMessage("setSqlDriver");
     QString theDriver = thisDriver;
     if (theDriver.length() == 0)  { theDriver = mySetting->myConstants->MY_SQL_DEFAULT; }
     // Check for Database memory setting
@@ -347,7 +347,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
  ***********************************************/
 bool MySqlDbtModel::createDataBaseConnection()
 {
-    if (isDebugMessage) { qDebug() << "createDataBaseConnection"; }
+    setMessage("createDataBaseConnection");
     // Make sure Drive is set
     if (mySqlDriver == "NOTSET") { setSqlDriver(mySetting->myConstants->MY_SQL_DEFAULT); }
     QString theDb = getSqlDatabaseName();
@@ -460,7 +460,7 @@ bool MySqlDbtModel::createDataBaseConnection()
  ***********************************************/
 bool MySqlDbtModel::checkDatabase()
 {
-    if (isDebugMessage) { qDebug() << "checkDatabase"; }
+    setMessage("checkDatabase");
     // Database
     setSqlDriver(myComboBoxSqlValue);
     if (createDataBaseConnection())
@@ -478,13 +478,13 @@ bool MySqlDbtModel::checkDatabase()
         //
         if (!runQuery(QLatin1String(R"(CREATE TABLE galaxy(id integer PRIMARY KEY autoincrement, GalaxyName varchar, SunSize varchar, PlanetSize varchar, TrinaryEngines varchar, GalaxyRadius varchar, Nthtrack varchar))")))
         {
-            qDebug() << getSqlDriver() <<  "  CREATE TABLE galaxy error:";
+            setMessage(getSqlDriver() +  "  CREATE TABLE galaxy error:");
         }
         //
         const auto DEFAULT_GALAXY_SQL = QLatin1String(R"(INSERT INTO galaxy (GalaxyName, SunSize, PlanetSize, TrinaryEngines, GalaxyRadius, Nthtrack) values('Milky Way', '864575.9', '7926.2109', '333', '241828072282107.5071453596951', '66'))");
         if (!runQuery(DEFAULT_GALAXY_SQL))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT galaxy error:";
+            setMessage(getSqlDriver() +  "  INSERT galaxy error:");
         }
     }
     // Planet
@@ -494,48 +494,48 @@ bool MySqlDbtModel::checkDatabase()
         //
         if (!runQuery(QLatin1String(R"(CREATE TABLE planets(id integer PRIMARY KEY autoincrement, PlanetName varchar, Diameter varchar, Sidereal varchar, OrbitalDistance varchar, OrbitalPeriod varchar))")))
         {
-            qDebug() << getSqlDriver() <<  "  CREATE TABLE galaxy error:";
+            setMessage(getSqlDriver() +  "  CREATE TABLE galaxy error:");
         }
         //
         if (!insertPlanet("Sun", "864575.9", "25.379995", "1011954093357316200", "242000000"))
         {
-            qDebug() << "Error INSERT Sun planets:";
+            setMessage("Error INSERT Sun planets:");
         }
         if (!insertPlanet("Mercury", "3031.9186", "58.646225", "223700000", "87.97"))
         {
-            qDebug() << "Error INSERT Mercury planets:";
+            setMessage("Error INSERT Mercury planets:");
         }
         if (!insertPlanet("Venus", "7521.0769", "243.0187", "422500000", "224.7"))
         {
-            qDebug() << "Error INSERT Venus planets:";
+            setMessage("Error INSERT Venus planets:");
         }
         if (!insertPlanet("Earth", "7926.2109", "0.99726968", "584000000", "365"))
         {
-            qDebug() << "Error INSERT Earth planets:";
+            setMessage("Error INSERT Earth planets:");
         }
         if (!insertPlanet("Moon", "2159", "27.321661", "1499070", "27.323"))
         {
-            qDebug() << "Error INSERT Moon planets:";
+            setMessage("Error INSERT Moon planets:");
         }
         if (!insertPlanet("Mars", "4217.246", "1.02595675", "888000000", "686.98"))
         {
-            qDebug() << "Error INSERT Mars planets:";
+            setMessage("Error INSERT Mars planets:");
         }
         if (!insertPlanet("Jupiter", "88731.8063", "0.41007", "3037000000", "4330.6"))
         {
-            qDebug() << "Error INSERT Jupiter planets:";
+            setMessage("Error INSERT Jupiter planets:");
         }
         if (!insertPlanet("Saturn", "74974.6481", "0.426", "5565900000", "10755.7"))
         {
-            qDebug() << "Error INSERT Saturn planets:";
+            setMessage("Error INSERT Saturn planets:");
         }
         if (!insertPlanet("Uranus", "31763.253", "0.71833", "11201300000", "30685"))
         {
-            qDebug() << "Error INSERT Uranus planets:";
+            setMessage("Error INSERT Uranus planets:");
         }
         if (!insertPlanet("Neptune", "30775.272", "0.67125", "17562300000", "60190"))
         {
-            qDebug() << "Error INSERT Neptune planets:";
+            setMessage("Error INSERT Neptune planets:");
         }
     }
     // Math Constant Table
@@ -544,212 +544,212 @@ bool MySqlDbtModel::checkDatabase()
         //
         if (!runQuery(QLatin1String(R"(CREATE TABLE math(id integer PRIMARY KEY autoincrement, Name varchar, Constant varchar))")))
         {
-            qDebug() << getSqlDriver() <<  "  CREATE TABLE math error:";
+            setMessage(getSqlDriver() +  "  CREATE TABLE math error:");
         }
         // Constants
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Constants', ''))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // e, Napier's constant, or Euler's number
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('e', '2.71828182845904523536028747135266249'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Pythagoras' constant, square root of 2 √2
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Pythagoras', '1.41421356237309504880168872420969807'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Theodorus' constant, square root of 3 √3
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Theodorus', '1.73205080756887729352744634150587236'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // square root of 5 √2
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('SqrRoot5', '2.23606797749978969640917366873127623'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Euler–Mascheroni constant \gamma
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Euler–Mascheroni', '0.57721566490153286060651209008240243')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Golden ratio \varphi
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Golden-Ratio', '1.61803398874989484820458683436563811'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Meissel–Mertens constant M1
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Meissel–Mertens', '0.26149721284764278375542683860869585')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Bernstein's constant \beta
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Bernstein', '0.28016949902386913303'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Gauss–Kuzmin–Wirsing constant \lambda
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Gauss–Kuzmin–Wirsing', '0.30366300289873265859744812190155623')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Hafner–Sarnak–McCurley constant \sigma
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Hafner–Sarnak–McCurley', '0.35323637185499598454351655043268201')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Landau's constant L
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Landau', '0.5'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Omega constant Ω
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Omega', '0.56714329040978387299996866221035554'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Golomb–Dickman constant \lambda , μ {\displaystyle \mu } \mu
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Golomb–Dickman', '0.62432998854355087099293638310083724')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Cahen's constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Cahen', '0.66016181584686957392781211001455577'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Twin prime constant C2
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Twin-Prime', '0.66016181584686957392781211001455577'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Laplace limit
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Laplace', '0.66274341934918158097474209710925290'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Embree–Trefethen constant
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Embree–Trefethen', '0.70258')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Landau–Ramanujan constant K
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Landau–Ramanujan', '0.76422365358922066299069873125009232')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Brun's constant for prime quadruplets B4
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Brun-Prime-Quadruplets', '0.87058838'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Catalan's constant K
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Catalan', '0.91596559417721901505460351493238411'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Viswanath's constant K
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Viswanath', '1.13198824'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Apéry's constant \zeta (3)
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Apery', '1.20205690315959428539973816151144999'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Conway's constant \lambda
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Conway', '1.30357726903429639125709911215255189'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Mills' constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Mills', '1.30637788386308069046861449260260571'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Plastic constant p
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Plastic', '1.32471795724474602596090885447809734'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Ramanujan–Soldner constant \mu
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Ramanujan-Soldner', '1.45136923488338105028396848589202744'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Backhouse's constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Backhouse', '1.45607494858268967139959535111654356'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Porter's constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Porter', '1.4670780794'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Lieb's square ice constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Lieb-Square-Ice', '1.5396007178'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Erdős–Borwein constant EB
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Erdos–Borwein', '1.60669515241529176378330152319092458')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Niven's constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Niven', '1.70521114010536776428855145343450816'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Brun's constant for twin primes B2
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Brun-Twin-Primes', '1.902160583104'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Universal parabolic constant P2
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Universal-Parabolic', '2.29558714939263807403429804918949039'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Feigenbaum constant \alpha
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Feigenbaum', '2.50290787509589282228390287321821578'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Sierpiński's constant K
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Sierpinski', '2.58498175957925321706589358738317116'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Khinchin's constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Khinchin', '2.68545200106530644530971483548179569'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Fransén–Robinson constant F
         if (!runQuery(QString("INSERT INTO math (Name, Constant) values('Fransen–Robinson', '2.80777024202851936522150118655777293')")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Lévy's constant
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Levy', '3.27582291872181115978768188245384386'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Reciprocal Fibonacci constant \psi
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Reciprocal-Fibonacci', '3.35988566624317755317201130291892717'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Feigenbaum constant \delta
         if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Feigenbaum', '4.66920160910299067185320382046620161'))")))
         {
-            qDebug() << getSqlDriver() <<  "  INSERT math error:";
+            setMessage(getSqlDriver() +  "  INSERT math error:");
         }
     } // end if (!myGalaxyModel->isDbTable("math", &myDb))
     //
@@ -761,11 +761,11 @@ bool MySqlDbtModel::checkDatabase()
  ***********************************************/
 bool MySqlDbtModel::runQuery(const QString &thisQuery)
 {
-    if (isDebugMessage) { qDebug() << "runQuery"; }
+    setMessage("runQuery");
     QSqlQuery query; //!< SQL Query
     if (!query.exec(thisQuery))
     {
-        qDebug() << "Error running Query: " << thisQuery << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("Error running Query: " + thisQuery + query.lastError().text() + ", SqLite error code:" + query.lastError().text());
         return false;
     }
     return true;
@@ -776,14 +776,14 @@ bool MySqlDbtModel::runQuery(const QString &thisQuery)
  ***********************************************/
 bool MySqlDbtModel::insertPlanet(const QString &thisPlanetName, const QString &thisDiameter, const QString &thisSidereal, const QString &thisOrbitalDistance, const QString &thisOrbitalPeriod)
 {
-    if (isDebugMessage) { qDebug() << "insertPlanet"; }
+    setMessage("insertPlanet");
     QString myQuery = QString("INSERT INTO planets (PlanetName, Diameter, Sidereal, OrbitalDistance, OrbitalPeriod) values('%1', '%2', '%3', '%4', '%5')").arg(thisPlanetName, thisDiameter, thisSidereal, thisOrbitalDistance, thisOrbitalPeriod);
-    if (isDebugMessage) { qDebug() << "insertPlanet: " << myQuery; }
+    setMessage("insertPlanet: " + myQuery);
 
 //    if (!runQuery(QLatin1String(R"(INSERT INTO planets (PlanetName, Diameter, Sidereal, OrbitalDistance, OrbitalPeriod) values('%1', '%2', '%3', '%4', '%5'))").arg(thisPlanetName, thisDiameter, thisSidereal, thisOrbitalDistance, thisOrbitalPeriod)))
     if (!runQuery(myQuery))
     {
-        qDebug() << "INSERT planets error: " << myQuery;
+        setMessage("INSERT planets error: " + myQuery);
         return false;
     }
     return true;
@@ -801,7 +801,7 @@ bool MySqlDbtModel::insertPlanet(const QString &thisPlanetName, const QString &t
  ***********************************************/
 void MySqlDbtModel::onInsertGalaxyRecord(const QString &thisCurrentTrackNumber,const QString &thistrackEngines,const QString &thisMaxSpeed,const QString &thisMinSpeed,const QString &thisLpFrequency,const QString &thisOrbitDist,const QString &thisTrackFreq)
 {
-    if (isDebugMessage) qDebug() << "insertRecord c++ msgx: " << thisCurrentTrackNumber << thistrackEngines << thisMaxSpeed << thisMinSpeed << thisLpFrequency<< thisOrbitDist << thisTrackFreq;
+    setMessage("insertRecord c++ msgx: " + thisCurrentTrackNumber + thistrackEngines + thisMaxSpeed + thisMinSpeed + thisLpFrequency + thisOrbitDist + thisTrackFreq);
     beginInsertRows({}, myGalaxy.count(), myGalaxy.count());
     GalaxyClass theGalaxy(thisCurrentTrackNumber, thistrackEngines, thisMaxSpeed, thisMinSpeed, thisLpFrequency, thisOrbitDist, thisTrackFreq);
     myGalaxy.append(theGalaxy);
@@ -814,7 +814,7 @@ void MySqlDbtModel::onInsertGalaxyRecord(const QString &thisCurrentTrackNumber,c
  ***********************************************/
 bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSourcePath, const QString &thisDestinationFolder)
 {
-    if (isDebugMessage) { qDebug() << "moveDb"; }
+    setMessage("moveDb");
 
     QFile file(QString("%1%2%3").arg(thisSourcePath, QDir::separator(), thisSourceFile));
     //
@@ -878,7 +878,7 @@ int MySqlDbtModel::getRunReturnCode()
  ***********************************************/
 void MySqlDbtModel::setProjectID(const QString &thisProjectID)
 {
-    if (isDebugMessage) { qDebug() << "setProjectID"; }
+    setMessage("setProjectID");
     myProjectID = thisProjectID;
 }
 /************************************************
@@ -887,7 +887,7 @@ void MySqlDbtModel::setProjectID(const QString &thisProjectID)
  ***********************************************/
 QString MySqlDbtModel::getProjectID()
 {
-    if (isDebugMessage) { qDebug() << "getProjectID"; }
+    setMessage("getProjectID");
     return myProjectID;
 }
 /************************************************
@@ -896,7 +896,7 @@ QString MySqlDbtModel::getProjectID()
  ***********************************************/
 void MySqlDbtModel::setProjectName(const QString &thisProjectName)
 {
-    if (isDebugMessage) { qDebug() << "setProjectID"; }
+    setMessage("setProjectID");
     myProjectName = thisProjectName;
 }
 /************************************************
@@ -905,7 +905,19 @@ void MySqlDbtModel::setProjectName(const QString &thisProjectName)
  ***********************************************/
 QString MySqlDbtModel::getProjectName()
 {
-    if (isDebugMessage) { qDebug() << "getProjectName"; }
+    setMessage("getProjectName");
     return myProjectName;
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MySqlDbtModel::setMessage(const QString &thisMessage) const
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
 }
 /*** ************************* End of File ***********************************/

@@ -116,7 +116,7 @@ MainWindow::~MainWindow()
  ***********************************************/
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    if (isDebugMessage) qDebug() << "closeEvent";
+    setMessage("closeEvent", Debug);
     if (isSaveSettings) on_pushButtonSettingsSave_clicked();
     mySqlModel->mySetting->setGeometry(pos(), size(), isMaximized(), isMinimized());
     writeAllSettings();
@@ -129,7 +129,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
  ***********************************************/
 void MainWindow::changeEvent(QEvent *event)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "changeEvent"; }
+    setMessage("changeEvent", Debug);
     if (event ->type() == QEvent::LanguageChange && isMainLoaded)
     {
         // retranslate designer form (single inheritance approach)
@@ -146,7 +146,7 @@ void MainWindow::changeEvent(QEvent *event)
  ***********************************************/
 void MainWindow::retranslate()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "retranslate"; }
+    setMessage("retranslate", Debug);
     // FIXME
     loadLanguageComboBox();
 }
@@ -156,7 +156,7 @@ void MainWindow::retranslate()
  ***********************************************/
 void MainWindow::loadLanguageComboBox()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguageComboBox"; }
+    setMessage("loadLanguageComboBox", Debug);
     bool lastIsMainLoaded = isMainLoaded;
     myLocalization->setMainLoaded(false);
     isMainLoaded = false;
@@ -198,7 +198,7 @@ void MainWindow::loadLanguageComboBox()
 void MainWindow::on_checkBoxSettignsMessaging_stateChanged(int thisCheckState)
 {
     if (!isMainLoaded) { return; }
-    if (isDebugMessage) { qDebug() << "on_checkBoxSettignsMessaging_stateChanged"; }
+    setMessage("on_checkBoxSettignsMessaging_stateChanged", Debug);
     if (thisCheckState == Qt::Checked)
         { setMessagingStates(true); }
     else
@@ -253,7 +253,7 @@ void MainWindow::onRunOnStartup()
     loadLanguageComboBox();
     ui->comboBoxSettingsLanguage->setCurrentIndex(ui->comboBoxSettingsLanguage->findText(theLastLanguage));
     //
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onRunFirstOnStartup"; }
+    setMessage("onRunFirstOnStartup", Debug);
     //
     if (!mySqlModel->checkDatabase()) close();
     setSettingsCombo();
@@ -289,7 +289,7 @@ void MainWindow::readSettingsFirst()
  ***********************************************/
 void MainWindow::readAllSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readAllSettings"; }
+    setMessage("readAllSettings", Debug);
     //resize(myMySettings->getGeometrySize());
     //move(myMySettings->getGeometryPos());
     //
@@ -306,7 +306,7 @@ void MainWindow::readAllSettings()
  ***********************************************/
 void MainWindow::writeAllSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeAllSettings"; }
+    setMessage("writeAllSettings", Debug);
     mySqlModel->mySetting->writeSettings(mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage ? "true" : "false");
     //
     writeStateChanges();
@@ -318,7 +318,7 @@ void MainWindow::writeAllSettings()
  ***********************************************/
 void MainWindow::readStatesChanges()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readStatesChanges"; }
+    setMessage("readStatesChanges", Debug);
     // SQL Memory option Chech
     // default set to myProjectID="-1"
     QString theProjectID = mySqlModel->mySetting->readSettings(mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, mySqlModel->getProjectID());
@@ -337,7 +337,7 @@ void MainWindow::readStatesChanges()
  ***********************************************/
 void MainWindow::writeStateChanges()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeStateChanges"; }
+    setMessage("writeStateChanges", Debug);
     // Project ID
     mySqlModel->mySetting->writeSettings(mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdSettings->text());
     mySqlModel->mySetting->writeSettings(mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxSettingsGalaxy->currentText());
@@ -355,7 +355,7 @@ void MainWindow::writeStateChanges()
  ***********************************************/
 void MainWindow::writeSqlDatabaseInfo()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeSqlDatabaseInfo"; }
+    setMessage("writeSqlDatabaseInfo", Debug);
     // SQL Database Type Index
     mySqlModel->mySetting->writeSettings(mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, QString::number(ui->comboBoxSqlDatabaseType->currentIndex()));
     // SQL Database Type Value
@@ -376,7 +376,7 @@ void MainWindow::writeSqlDatabaseInfo()
  ***********************************************/
 void MainWindow::readSqlDatabaseInfo()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readSqlDatabaseInfo"; }
+    setMessage("readSqlDatabaseInfo", Debug);
     QString theDb = QString("%1%2%3.db").arg(mySqlModel->mySetting->getAppDataLocation(), QDir::separator(), mySqlModel->getSqlDatabaseName());
     // SQL Database Name
     ui->lineEditSqlDatabaseName->setText(mySqlModel->mySetting->readSettings(mySqlModel->mySetting->myConstants->MY_SQL_DB_NAME, theDb));
@@ -417,7 +417,7 @@ bool MainWindow::getDebugMessage()
  ***********************************************/
 void MainWindow::onProgress()
 {
-    if (isDebugMessage) qDebug() << "onProgress";
+    setMessage("onProgress", Debug);
     ui->progressBarGalaxy->setValue(++myCurrentProgress);
     if (!isGalaxyTableViewSize)
     {
@@ -432,7 +432,7 @@ void MainWindow::onProgress()
  ***********************************************/
 const SymbolTable &MainWindow::getSymbolTable()
 {
-    if (isDebugMessage) qDebug() << "getSymbolTable";
+    setMessage("getSymbolTable", Debug);
     return mySymbolTable;
 }
 /************************************************
@@ -450,7 +450,7 @@ void MainWindow::onSymbolTableChanged(const SymbolTable &symbolTableArg)
  ***********************************************/
 void MainWindow::doGalaxyTableViewPrint(int docTypeHandler)
 {
-    if (isDebugMessage) { qDebug() << "doGalaxyTableViewPrint"; }
+    setMessage("doGalaxyTableViewPrint", Debug);
     if (!isTableLoaded) { onCalculateGalaxy(); }
     QString thisTitle = tr("Galaxy Calcultor");
     const int rowCount = mySqlModel->rowCount();
@@ -562,7 +562,7 @@ void MainWindow::doGalaxyTableViewPrint(int docTypeHandler)
  ***********************************************/
 void MainWindow::onExportPdf()
 {
-    if (isDebugMessage) qDebug() << "onExportPdf";
+    setMessage("onExportPdf", Debug);
     doGalaxyTableViewPrint(ExportPdf);
 }
 /************************************************
@@ -571,7 +571,7 @@ void MainWindow::onExportPdf()
  ***********************************************/
 void MainWindow::onExportHtml()
 {
-    if (isDebugMessage) qDebug() << "onExportHtml";
+    setMessage("onExportHtml", Debug);
     doGalaxyTableViewPrint(ExportHtml);
 }
 /************************************************
@@ -580,7 +580,7 @@ void MainWindow::onExportHtml()
  ***********************************************/
 void MainWindow::onPrintGalaxyTableView()
 {
-    if (isDebugMessage) qDebug() << "onPrintGalaxyTableView";
+    setMessage("onPrintGalaxyTableView", Debug);
     doGalaxyTableViewPrint(PrintTable);
 }
 /************************************************
@@ -590,7 +590,7 @@ void MainWindow::onPrintGalaxyTableView()
 void MainWindow::on_lineEditSettingsGalaxyName_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1)
-    if (isDebugMessage) qDebug() << "on_lineEditSettingsGalaxyName_textChanged";
+    setMessage("on_lineEditSettingsGalaxyName_textChanged", Debug);
     enableSaveButton();
 }
 /************************************************
@@ -600,7 +600,7 @@ void MainWindow::on_lineEditSettingsGalaxyName_textChanged(const QString &arg1)
 void MainWindow::on_lineEditSettingsSunSize_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1)
-    if (isDebugMessage) qDebug() << "on_lineEditSettingsSunSize_textChanged";
+    setMessage("on_lineEditSettingsSunSize_textChanged", Debug);
     enableSaveButton();
 }
 /************************************************
@@ -610,7 +610,7 @@ void MainWindow::on_lineEditSettingsSunSize_textChanged(const QString &arg1)
 void MainWindow::on_lineEditSettingsPlanetSize_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1)
-    if (isDebugMessage) qDebug() << "on_lineEditSettingsPlanetSize_textChanged";
+    setMessage("on_lineEditSettingsPlanetSize_textChanged", Debug);
     enableSaveButton();
 }
 /************************************************
@@ -620,7 +620,7 @@ void MainWindow::on_lineEditSettingsPlanetSize_textChanged(const QString &arg1)
 void MainWindow::on_lineEditSettingsTrinaryEngines_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1)
-    if (isDebugMessage) qDebug() << "on_lineEditSettingsTrinaryEngines_textChanged";
+    setMessage("on_lineEditSettingsTrinaryEngines_textChanged", Debug);
     enableSaveButton();
 }
 /************************************************
@@ -630,7 +630,7 @@ void MainWindow::on_lineEditSettingsTrinaryEngines_textChanged(const QString &ar
 void MainWindow::on_lineEditSettingsGalaxyRadius_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1)
-    if (isDebugMessage) qDebug() << "on_lineEditSettingsGalaxyRadius_textChanged";
+    setMessage("on_lineEditSettingsGalaxyRadius_textChanged", Debug);
     enableSaveButton();
 }
 /************************************************
@@ -640,7 +640,7 @@ void MainWindow::on_lineEditSettingsGalaxyRadius_textChanged(const QString &arg1
 void MainWindow::on_lineEditSettingsNthTrack_textChanged(const QString &arg1)
 {
     Q_UNUSED(arg1)
-    if (isDebugMessage) qDebug() << "on_lineEditSettingsNthTrack_textChanged";
+    setMessage("on_lineEditSettingsNthTrack_textChanged", Debug);
     enableSaveButton();
 }
 /************************************************
@@ -649,7 +649,7 @@ void MainWindow::on_lineEditSettingsNthTrack_textChanged(const QString &arg1)
  ***********************************************/
 void MainWindow::enableSaveButton()
 {
-    if (isDebugMessage) qDebug() << "enableSaveButton";
+    setMessage("enableSaveButton", Debug);
     // FIXME base on combobox
     isSaveSettings = true;
     ui->pushButtonSettingsSave->setEnabled(true);
@@ -660,7 +660,7 @@ void MainWindow::enableSaveButton()
  ***********************************************/
 void MainWindow::setGalaxyTableViewSize()
 {
-    if (isDebugMessage) qDebug() << "setTableViewSize";
+    setMessage("setTableViewSize", Debug);
     // 0             1              2          3          4            5           6
     // Track Number, Track Engines, Max Speed, Min Speed, LpFrequency, Orbit Dist, Track Freq;
     ui->tableViewGalaxy->setColumnWidth(0, 80);  //!< Track
@@ -678,7 +678,7 @@ void MainWindow::setGalaxyTableViewSize()
  ***********************************************/
 void MainWindow::settingsButtons(bool thisEnabled)
 {
-    if (isDebugMessage) qDebug() << "settingsButtons";
+    setMessage("settingsButtons", Debug);
     ui->pushButtonSettingsAdd->setEnabled(thisEnabled);
     ui->pushButtonSettingsClear->setEnabled(thisEnabled);
     ui->pushButtonSettingsSave->setEnabled(thisEnabled);
@@ -691,7 +691,7 @@ void MainWindow::settingsButtons(bool thisEnabled)
  ***********************************************/
 bool MainWindow::writeSettingsCalcDecimal()
 {
-    if (isDebugMessage) qDebug() << "writeSettingsCalcDecimal";
+    setMessage("writeSettingsCalcDecimal", Debug);
     mySqlModel->mySetting->writeSettings(MY_CALC_DECIMALS, ui->spinBoxCalcDecimals->text()); // Number of Decimal Places in Calculator
     return true;
 }
@@ -710,7 +710,7 @@ void MainWindow::on_spinBoxCalcDecimals_textChanged(const QString &arg1)
  ***********************************************/
 void MainWindow::onCalculateGalaxy()
 {
-    if (isDebugMessage) qDebug() << "onCalculateGalaxy";
+    setMessage("onCalculateGalaxy", Debug);
     myCurrentProgress = 0;
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabGalaxy")));
     // Read in configuration
@@ -950,7 +950,7 @@ void MainWindow::onCalculateGalaxy()
         thisMinErrorRate++;
         QCoreApplication::processEvents();
     } // end for currentTrackNumber < totalTracks
-    qDebug() << "Finished";
+    setMessage("Finished", Debug);
     isTableLoaded = true;
     ui->progressBarGalaxy->hide();
     setGalaxyTableViewSize();
@@ -969,7 +969,7 @@ QString MainWindow::getLivePlanetRingFreq()
  ***********************************************/
 void MainWindow::on_pushButtonCalcEnter_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonCalcEnter_clicked";
+    setMessage("on_pushButtonCalcEnter_clicked", Debug);
     ui->lineEditCalcValue->setText(doMath(ui->lineEditCalcValue->text(), ui->spinBoxCalcDecimals->value()));
 }
 /************************************************
@@ -985,7 +985,7 @@ void MainWindow::setCalcConstantCombo()
     theModalGalaxy->setQuery(SELECTED_PLANET_SQL);
     if (theModalGalaxy->lastError().isValid())
     {
-        qDebug() << theModalGalaxy->lastError();
+        setMessage(theModalGalaxy->lastError().text(), Critical);
     }
     theModalGalaxy->setHeaderData(0,Qt::Horizontal, tr("ID"));
     theModalGalaxy->setHeaderData(1, Qt::Horizontal, tr("Name"));
@@ -1023,7 +1023,7 @@ void MainWindow::setPlanetCombo()
     theModalGalaxy->setQuery(SELECTED_PLANET_SQL);
     if (theModalGalaxy->lastError().isValid())
     {
-        qDebug() << theModalGalaxy->lastError();
+        setMessage(theModalGalaxy->lastError().text(), Critical);
     }
     theModalGalaxy->setHeaderData(0,Qt::Horizontal, tr("ID"));
     theModalGalaxy->setHeaderData(1, Qt::Horizontal, tr("Name"));
@@ -1058,7 +1058,7 @@ void MainWindow::setSettingsCombo()
     theModalGalaxy->setQuery(SELECTED_GALAXY_SQL);
     if (theModalGalaxy->lastError().isValid())
     {
-        qDebug() << theModalGalaxy->lastError();
+        setMessage(theModalGalaxy->lastError().text(), Critical);
     }
     theModalGalaxy->setHeaderData(0, Qt::Horizontal, tr("ID"));
     theModalGalaxy->setHeaderData(1, Qt::Horizontal, tr("Name"));
@@ -1086,7 +1086,7 @@ void MainWindow::setSettingsCombo()
  ***********************************************/
 QString MainWindow::getGalaxyIdSelectQuery(const QString &thisWhereId)
 {
-    if (isDebugMessage) qDebug() << "getGalaxyIdSelectQuery";
+    setMessage("getGalaxyIdSelectQuery", Debug);
     return QString("SELECT GalaxyName, SunSize, PlanetSize, TrinaryEngines, GalaxyRadius, Nthtrack FROM galaxy WHERE id = ").append(thisWhereId);
 }
 /************************************************
@@ -1095,7 +1095,7 @@ QString MainWindow::getGalaxyIdSelectQuery(const QString &thisWhereId)
  ***********************************************/
 QString MainWindow::getGalaxyNameSelectQuery(const QString &thisWhereName)
 {
-    if (isDebugMessage) qDebug() << "getGalaxyNameSelectQuery";
+    setMessage("getGalaxyNameSelectQuery", Debug);
     return QString("SELECT GalaxyName, SunSize, PlanetSize, TrinaryEngines, GalaxyRadius, Nthtrack FROM galaxy WHERE GalaxyName = '").append(thisWhereName).append("'");
 }
 /************************************************
@@ -1104,7 +1104,7 @@ QString MainWindow::getGalaxyNameSelectQuery(const QString &thisWhereName)
  ***********************************************/
 QString MainWindow::getPlanetSelectQuery(const QString &thisWhereId)
 {
-    if (isDebugMessage) qDebug() << "getPlanetSelectQuery";
+    setMessage("getPlanetSelectQuery", Debug);
     return QString("SELECT id, PlanetName, Diameter, Sidereal, OrbitalDistance, OrbitalPeriod FROM planets WHERE id = ").append(thisWhereId);
 }
 /************************************************
@@ -1113,7 +1113,7 @@ QString MainWindow::getPlanetSelectQuery(const QString &thisWhereId)
  ***********************************************/
 QString MainWindow::getPlanetNameSelectQuery(const QString &thisWhereName)
 {
-    if (isDebugMessage) qDebug() << "getPlanetNameSelectQuery";
+    setMessage("getPlanetNameSelectQuery", Debug);
     return QString("SELECT id, PlanetName, Diameter, Sidereal, OrbitalDistance, OrbitalPeriod FROM planets WHERE PlanetName = '").append(thisWhereName).append("'");;
 }
 /************************************************
@@ -1122,7 +1122,7 @@ QString MainWindow::getPlanetNameSelectQuery(const QString &thisWhereName)
  ***********************************************/
 void MainWindow::on_comboBoxPlanet_currentIndexChanged(int index)
 {
-    if (isDebugMessage) qDebug() << "on_comboBoxPlanet_currentIndexChanged";
+    setMessage("on_comboBoxPlanet_currentIndexChanged", Debug);
     if (isMainLoaded) { calcPlanet(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(index, 0)).toString()); }
 }
 /************************************************
@@ -1131,7 +1131,7 @@ void MainWindow::on_comboBoxPlanet_currentIndexChanged(int index)
  ***********************************************/
 void MainWindow::on_pushButtonPlanetCalculate_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonPlanetCalculate_clicked";
+    setMessage("on_pushButtonPlanetCalculate_clicked", Debug);
     calcPlanet(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(ui->comboBoxPlanet->currentIndex(), 0)).toString());
 }
 /************************************************
@@ -1140,7 +1140,7 @@ void MainWindow::on_pushButtonPlanetCalculate_clicked()
  ***********************************************/
 void MainWindow::onGalaxyChange()
 {
-    if (isDebugMessage) qDebug() << "onGalaxyChange";
+    setMessage("onGalaxyChange", Debug);
     QSqlQuery query; //!< SQL Query
     QString myGalaxySelectQuery = getGalaxyIdSelectQuery(ui->comboBoxSettingsGalaxy->model()->data(ui->comboBoxSettingsGalaxy->model()->index(ui->comboBoxSettingsGalaxy->currentIndex(), 0)).toString());
     if (query.exec(myGalaxySelectQuery))
@@ -1156,12 +1156,12 @@ void MainWindow::onGalaxyChange()
         }
         else
         {
-            qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+            setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
         }
     }
     else
     {
-        qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     isSaveSettings = false;
 }
@@ -1171,13 +1171,13 @@ void MainWindow::onGalaxyChange()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsSave_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsSave_clicked";
+    setMessage("on_pushButtonSettingsSave_clicked", Debug);
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("UPDATE galaxy set GalaxyName = '").append(ui->lineEditSettingsGalaxyName->text()).append("', SunSize = '").append(ui->lineEditSettingsSunSize->text()).append("', PlanetSize = '").append(ui->lineEditSettingsPlanetSize->text()).append("', TrinaryEngines = '").append(ui->lineEditSettingsTrinaryEngines->text()).append("', GalaxyRadius = '").append(ui->lineEditSettingsGalaxyRadius->text()).append("', Nthtrack = '").append(ui->lineEditSettingsNthTrack->text()).append("' WHERE id = ").append(ui->comboBoxSettingsGalaxy->model()->data(ui->comboBoxSettingsGalaxy->model()->index(ui->comboBoxSettingsGalaxy->currentIndex(), 0)).toString());
-    if (isDebugMessage) qDebug() << "thisQuery: " << thisQuery;
+    setMessage("thisQuery: " + thisQuery, Debug);
     if (!query.exec(thisQuery))
     {
-        qDebug() << "SqLite error on_pushButtonSettingsSave_clicked:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error on_pushButtonSettingsSave_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     ui->pushButtonSettingsSave->setEnabled(false);
     isSaveSettings = false;
@@ -1189,13 +1189,13 @@ void MainWindow::on_pushButtonSettingsSave_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsDelete_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsDelete_clicked";
+    setMessage("on_pushButtonSettingsDelete_clicked", Debug);
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("DELETE FROM galaxy WHERE id = ").append(ui->comboBoxSettingsGalaxy->model()->data(ui->comboBoxSettingsGalaxy->model()->index(ui->comboBoxSettingsGalaxy->currentIndex(), 0)).toString());
-    qDebug() << "thisQuery: " << thisQuery;
+    setMessage("thisQuery: " + thisQuery, Debug);
     if (!query.exec(thisQuery))
     {
-        qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setSettingsCombo();
 }
@@ -1205,11 +1205,11 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsAdd_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsAdd_clicked";
+    setMessage("on_pushButtonSettingsAdd_clicked", Debug);
     QString newName = ui->lineEditSettingsGalaxyName->text();
     QSqlQuery query; //!< SQL Query
     QString myGalaxySelectQuery = getGalaxyNameSelectQuery(newName);
-    if (isDebugMessage) qDebug() << "myGalaxySelectQuery: " << myGalaxySelectQuery;
+    setMessage("myGalaxySelectQuery: " + myGalaxySelectQuery, Debug);
     if (query.exec(myGalaxySelectQuery))
     {
         if (!query.first())
@@ -1218,7 +1218,7 @@ void MainWindow::on_pushButtonSettingsAdd_clicked()
             QString thisQuery = QString("INSERT INTO galaxy (GalaxyName, SunSize, PlanetSize, TrinaryEngines, GalaxyRadius, Nthtrack) VALUES('").append(ui->lineEditSettingsGalaxyName->text()).append("', '").append(ui->lineEditSettingsSunSize->text()).append("', '").append(ui->lineEditSettingsPlanetSize->text()).append("', '").append(ui->lineEditSettingsTrinaryEngines->text()).append("', '").append(ui->lineEditSettingsGalaxyRadius->text()).append("', '").append(ui->lineEditSettingsNthTrack->text().append("')"));
             if (!query.exec(thisQuery))
             {
-                qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError() << thisQuery;
+                setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text() + thisQuery, Critical);
             }
             else
             {
@@ -1235,7 +1235,7 @@ void MainWindow::on_pushButtonSettingsAdd_clicked()
     }
     else
     {
-        qDebug() << "SqLite error on_pushButtonSettingsAdd_clicked:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error on_pushButtonSettingsAdd_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setSettingsCombo();
 }
@@ -1245,7 +1245,7 @@ void MainWindow::on_pushButtonSettingsAdd_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsClear_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsClear_clicked";
+    setMessage("on_pushButtonSettingsClear_clicked", Debug);
     //
     ui->lineEditSettingsGalaxyName->setText("");     // "Milky Way"
     ui->lineEditSettingsSunSize->setText("");        // "864575.9"
@@ -1260,7 +1260,7 @@ void MainWindow::on_pushButtonSettingsClear_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsDefalut_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsDefalut_clicked";
+    setMessage("on_pushButtonSettingsDefalut_clicked", Debug);
     //
     ui->lineEditSettingsGalaxyName->setText("Milky Way");                       // "Milky Way"
     ui->lineEditSettingsSunSize->setText("864575.9");                           // "864575.9"
@@ -1275,7 +1275,7 @@ void MainWindow::on_pushButtonSettingsDefalut_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonPlanetClear_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsClear_clicked";
+    setMessage("on_pushButtonSettingsClear_clicked", Debug);
     //
     ui->lineEditPlanetPlanetName->setText("");      // Planet Name
     ui->lineEditPlanetSize->setText("");            // Planet Size
@@ -1291,21 +1291,21 @@ void MainWindow::on_pushButtonPlanetClear_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonPlanetAdd_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonPlanetAdd_clicked";
+    setMessage("on_pushButtonPlanetAdd_clicked", Debug);
     QString newName = ui->lineEditPlanetPlanetName->text();
     QSqlQuery query; //!< SQL Query
     QString myPlanetSelectQuery = getPlanetNameSelectQuery(newName);
-    if (isDebugMessage) qDebug() << "myPlanetSelectQuery: " << myPlanetSelectQuery;
+    setMessage("myPlanetSelectQuery: " + myPlanetSelectQuery, Debug);
     if (query.exec(myPlanetSelectQuery))
     {
         if (!query.first())
         {
             query.clear();
             QString thisQuery = QString("INSERT INTO planets (PlanetName, Diameter, Sidereal, OrbitalDistance, OrbitalPeriod) VALUES('").append(ui->lineEditPlanetPlanetName->text()).append("', '").append(ui->lineEditPlanetSize->text()).append("', '").append(ui->lineEditPlanetSidereal->text()).append("', '").append(ui->lineEditPlanetOrbitalDistance->text()).append("', '").append(ui->lineEditPlanetOrbitalPeriod->text()).append("')");
-            qDebug() << "SthisQuery:" << thisQuery;
+            setMessage("thisQuery:" + thisQuery, Debug);
             if (!query.exec(thisQuery))
             {
-                qDebug() << "SqLite error on_pushButtonPlanetAdd_clicked:" << query.lastError().text() << ", SqLite error code:" << query.lastError() << thisQuery;
+                setMessage("SqLite error on_pushButtonPlanetAdd_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text() + thisQuery, Critical);
             }
             else
             {
@@ -1322,7 +1322,7 @@ void MainWindow::on_pushButtonPlanetAdd_clicked()
     }
     else
     {
-        qDebug() << "SqLite error on_pushButtonPlanetAdd_clicked:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error on_pushButtonPlanetAdd_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setPlanetCombo();
 }
@@ -1332,13 +1332,13 @@ void MainWindow::on_pushButtonPlanetAdd_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonPlanetSave_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsSave_clicked";
+    setMessage("on_pushButtonSettingsSave_clicked", Debug);
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("UPDATE planets set PlanetName = '").append(ui->lineEditPlanetPlanetName->text()).append("', Diameter = '").append(ui->lineEditPlanetSize->text()).append("', Sidereal = '").append(ui->lineEditPlanetSidereal->text()).append("', OrbitalDistance = '").append(ui->lineEditPlanetOrbitalDistance->text()).append("', OrbitalPeriod = '").append(ui->lineEditPlanetOrbitalPeriod->text()).append("' WHERE id = ").append(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(ui->comboBoxPlanet->currentIndex(), 0)).toString());
-    if (isDebugMessage) qDebug() << "thisQuery: " << thisQuery;
+    setMessage("thisQuery: " + thisQuery, Debug);
     if (!query.exec(thisQuery))
     {
-        qDebug() << "SqLite error on_pushButtonSettingsSave_clicked:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error on_pushButtonSettingsSave_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     ui->pushButtonSettingsSave->setEnabled(false);
     isSaveSettings = false;
@@ -1350,13 +1350,13 @@ void MainWindow::on_pushButtonPlanetSave_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonPlanetDelete_clicked()
 {
-    if (isDebugMessage) qDebug() << "on_pushButtonSettingsDelete_clicked";
+    setMessage("on_pushButtonSettingsDelete_clicked", Debug);
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("DELETE FROM planets WHERE id = ").append(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(ui->comboBoxPlanet->currentIndex(), 0)).toString());
-    qDebug() << "thisQuery: " << thisQuery;
+    setMessage("thisQuery: " + thisQuery, Debug);
     if (!query.exec(thisQuery))
     {
-        qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setPlanetCombo();
 }
@@ -1797,7 +1797,7 @@ void MainWindow::on_pushButtonCalcMinus_clicked()
  ***********************************************/
 void MainWindow::on_comboBoxCalcConstants_currentIndexChanged(int index)
 {
-    if (isDebugMessage) qDebug() << "on_comboBoxCalcConstants_currentIndexChanged";
+    setMessage("on_comboBoxCalcConstants_currentIndexChanged", Debug);
     ui->lineEditCalcValue->setText(QString(ui->lineEditCalcValue->text()).append(" ").append(ui->comboBoxCalcConstants->model()->data(ui->comboBoxCalcConstants->model()->index(index, 2)).toString()).append(" "));
 }
 /************************************************
@@ -1833,7 +1833,7 @@ void MainWindow::on_pushButtonCalcHelp_clicked()
  ***********************************************/
 void MainWindow::onHelp()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onHelp"; }
+    setMessage("onHelp", Debug);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
@@ -1849,7 +1849,7 @@ void MainWindow::onHelp()
  ***********************************************/
 void MainWindow::onAbout()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onAbout"; }
+    setMessage("onAbout", Debug);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
@@ -1864,7 +1864,7 @@ void MainWindow::onAbout()
  ***********************************************/
 void MainWindow::onAuthor()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onAuthor"; }
+    setMessage("onAuthor", Debug);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
@@ -2011,7 +2011,7 @@ void MainWindow::on_pushButtonEnergyCalc_clicked()
  ***********************************************/
 QString MainWindow::doMath(const QString &thisEquation, int thisDecimalPlaces)
 {
-    if (isDebugMessage) qDebug() << "doMath";
+    setMessage("doMath", Debug);
     QString theEquation = thisEquation.trimmed();
 //    MPFR_RNDN=0,  /* round to nearest, with ties to even */ 29,970,089
 //    MPFR_RNDZ,    /* round toward zero */ 30,000,030
@@ -2029,7 +2029,7 @@ QString MainWindow::doMath(const QString &thisEquation, int thisDecimalPlaces)
 //    {
 //        QString thisResult = resultText.c_str();
 //        QString thisFloat = getNumberFloat(thisEquation);
-//        qDebug() << "thisResult: " << thisResult << " - thisDecimalPlaces: " << thisDecimalPlaces << "  - Length: " << thisFloat.length();
+//        setMessage("thisResult: " + thisResult + " - thisDecimalPlaces: " + thisDecimalPlaces + "  - Length: " + thisFloat.length(), Critical);
 //    }
     return resultText.c_str();
 }
@@ -2039,7 +2039,7 @@ QString MainWindow::doMath(const QString &thisEquation, int thisDecimalPlaces)
  ***********************************************/
 void MainWindow::calcPlanet(const QString &thisPlanetId)
 {
-    if (isDebugMessage) qDebug() << "calcPlanet";
+    setMessage("calcPlanet", Debug);
     QSqlQuery query; //!< SQL Query
 
     QString myGalaxySelectQuery = getPlanetSelectQuery(QString("%1").arg(thisPlanetId));
@@ -2048,7 +2048,7 @@ void MainWindow::calcPlanet(const QString &thisPlanetId)
     {
         if (query.first())
         {
-            if (isDebugMessage) qDebug() << "PlanetName: " << query.value("PlanetName").toString() << " - Diameter: " << query.value("Diameter").toString() << " - Sidereal: " << query.value("Sidereal").toString() << " - OrbitalDistance: " << query.value("OrbitalDistance").toString() << " - OrbitalPeriod: " << query.value("OrbitalPeriod").toString();
+            setMessage("PlanetName: " + query.value("PlanetName").toString() + " - Diameter: " + query.value("Diameter").toString() + " - Sidereal: " + query.value("Sidereal").toString() + " - OrbitalDistance: " + query.value("OrbitalDistance").toString() + " - OrbitalPeriod: " + query.value("OrbitalPeriod").toString(), Debug);
             ui->lineEditPlanetPlanetName->setText(query.value("PlanetName").toString());
             ui->lineEditPlanetSize->setText(query.value("Diameter").toString());
             ui->lineEditPlanetSidereal->setText(query.value("Sidereal").toString());
@@ -2057,7 +2057,7 @@ void MainWindow::calcPlanet(const QString &thisPlanetId)
         }
         else
         {
-            qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+            setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
         }
         QString tempResultA = doMath(QString("%1 * %2").arg(ui->lineEditPlanetSize->text(), myTrinaryMath->getPiLong()), 32);
         QString tempResultB = doMath(QString("%1 * %2").arg(ui->lineEditPlanetSidereal->text(), "24"), 32);
@@ -2075,7 +2075,7 @@ void MainWindow::calcPlanet(const QString &thisPlanetId)
     }
     else
     {
-        qDebug() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
+        setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
 }
 /************************************************
@@ -2084,7 +2084,7 @@ void MainWindow::calcPlanet(const QString &thisPlanetId)
  ***********************************************/
 void MainWindow::on_pushButtonSqlSave_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSqlSave_clicked"; }
+    setMessage("on_pushButtonSqlSave_clicked", Debug);
     writeStateChanges();
 }
 /************************************************
@@ -2093,7 +2093,7 @@ void MainWindow::on_pushButtonSqlSave_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSqlPasswordShow_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSqlPasswordShow_clicked"; }
+    setMessage("on_pushButtonSqlPasswordShow_clicked", Debug);
     mySqlModel->mySetting->showMessageBox(QObject::tr("Password Revieled").toLocal8Bit(), ui->lineEditSqlPassword->text().toLocal8Bit(), mySqlModel->mySetting->Information);
 }
 /************************************************
@@ -2102,7 +2102,7 @@ void MainWindow::on_pushButtonSqlPasswordShow_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSqlDatabaseNameBrowse_clicked"; }
+    setMessage("on_pushButtonSqlDatabaseNameBrowse_clicked", Debug);
     QFileDialog dialogSqlDbFolder;
     dialogSqlDbFolder.setFileMode(QFileDialog::Directory);
     dialogSqlDbFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -2134,7 +2134,7 @@ void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
  ***********************************************/
 void MainWindow::setSqlBrowseButton()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "settingsButtons"; }
+    setMessage("settingsButtons", Debug);
     ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
 }
 /************************************************
@@ -2144,7 +2144,7 @@ void MainWindow::setSqlBrowseButton()
 void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType)
 {
     if (!isMainLoaded) { return; }
-    if (isDebugMessage) { qDebug() << "on_comboBoxSqlDatabaseType_currentIndexChanged=" << thisSqlType; }
+    setMessage("on_comboBoxSqlDatabaseType_currentIndexChanged=" + thisSqlType, Debug);
     mySqlModel->setSqlDriver(thisSqlType);
     writeStateChanges();
     setSqlBrowseButton();
@@ -2156,8 +2156,32 @@ void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &t
 void MainWindow::on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage)
 {
     if (!isMainLoaded) { return; }
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_comboBoxSettingsLanguage_currentIndexChanged"; }
+    setMessage("on_comboBoxSettingsLanguage_currentIndexChanged", Debug);
     myLocalization->writeLanguage(myLocalization->languageNameToCode(thisLanguage));
     myLocalization->loadLanguage(myLocalization->getLanguageFile(myLocalization->languageNameToCode(thisLanguage), myLocalization->getTranslationSource(), myLocalization->getTransFilePrefix()));
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MainWindow::setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType)
+{
+    if (isDebugMessage && isMainLoaded) { return; }
+    switch (thisMessageType)
+    {
+        case Information:
+            mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlModel->mySetting->Information);
+            break;
+        case Warning:
+            mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlModel->mySetting->Warning);
+            break;
+        case Critical:
+            mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlModel->mySetting->Critical);
+            break;
+        case Debug:
+            qDebug() << thisMessage;
+            std::cout << thisMessage.toStdString() << std::endl;
+            break;
+    }
 }
 /*** ************************* End of File ***********************************/

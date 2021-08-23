@@ -179,4 +179,32 @@ QString TrinaryMath::formatNumber(const QString &thisNumber, int thisPlaces)
     }
     return theNumber;
 }
+/************************************************
+ * @brief set Debug Message.
+ * setDebugMessage
+ ***********************************************/
+void TrinaryMath::setDebugMessage(bool thisState)
+{
+    isDebugMessage = thisState;
+}
+/************************************************
+ * @brief get Debug Message.
+ * getDebugMessage
+ ***********************************************/
+bool TrinaryMath::getDebugMessage()
+{
+    return isDebugMessage;
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void TrinaryMath::setMessage(const QString &thisMessage)
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
+}
 /*** ************************* End of File ***********************************/

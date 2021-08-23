@@ -16,7 +16,7 @@ configuration: Release
 
 platform:
   - x64
-  #- x86
+  - x86
 
 image:
   - Visual Studio 2019
@@ -37,7 +37,7 @@ for:
     MY_QT_MINGW32: mingw81_32
     MY_QT_MINGW64: mingw81_64
     MY_QT_TOOLS_MINGW32: mingw810_32
-    MY_QT_TOOLS_MINGW64: mingw810_32 # mingw810_64?
+    MY_QT_TOOLS_MINGW64: mingw810_64
     MY_QT_IF_VERSION: '4.1.1'
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true

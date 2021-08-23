@@ -15,7 +15,7 @@ MyLocalization::MyLocalization(QObject *parent, MyOrgSettings *thisSetting ) : Q
  ***********************************************/
 QString MyLocalization::getLanguageFromFile(const QString &thisPrefix, const QString &thisQmLanguageFile)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getLanguageFromFile"; }
+    setMessage("getLanguageFromFile", Debug);
     return getLocalizerCode(thisPrefix, thisQmLanguageFile);
 }
 /************************************************
@@ -24,7 +24,7 @@ QString MyLocalization::getLanguageFromFile(const QString &thisPrefix, const QSt
  ***********************************************/
 QString MyLocalization::getTranslationSource()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getTranslationSource"; }
+    setMessage("getTranslationSource", Debug);
     return myTranslationSource;
 }
 /************************************************
@@ -33,7 +33,7 @@ QString MyLocalization::getTranslationSource()
  ***********************************************/
 void MyLocalization::setTranslationSource(const QString &thisTranslationSource)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setTranslationSource"; }
+    setMessage("setTranslationSource", Debug);
     myTranslationSource = thisTranslationSource;
 }
 /************************************************
@@ -42,7 +42,7 @@ void MyLocalization::setTranslationSource(const QString &thisTranslationSource)
  ***********************************************/
 QString MyLocalization::getHelpSource()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getHelpSource"; }
+    setMessage("getHelpSource", Debug);
     return myHelpSource;
 }
 /************************************************
@@ -51,7 +51,7 @@ QString MyLocalization::getHelpSource()
  ***********************************************/
 void MyLocalization::setHelpSource(const QString &thisHelpSource)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setHelpSource"; }
+    setMessage("setHelpSource", Debug);
     myHelpSource = thisHelpSource;
 }
 /************************************************
@@ -60,7 +60,7 @@ void MyLocalization::setHelpSource(const QString &thisHelpSource)
  ***********************************************/
 QString MyLocalization::getTransFilePrefix()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getTransFilePrefix"; }
+    setMessage("getTransFilePrefix", Debug);
     if (myTransFilePrefix.isEmpty()) { myTransFilePrefix = mySetting->myConstants->MY_TRANSLATION_PREFIX; }
     return myTransFilePrefix;
 }
@@ -70,7 +70,7 @@ QString MyLocalization::getTransFilePrefix()
  ***********************************************/
 void MyLocalization::setTransFilePrefix(const QString &thisTransFilePrefix)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setTransFilePrefix"; }
+    setMessage("setTransFilePrefix", Debug);
     myTransFilePrefix = thisTransFilePrefix;
 }
 /************************************************
@@ -79,7 +79,7 @@ void MyLocalization::setTransFilePrefix(const QString &thisTransFilePrefix)
  ***********************************************/
 void MyLocalization::loadLanguage(const QString &thisQmLanguageFile)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguage"; }
+    setMessage("loadLanguage", Debug);
 
     if (myTranslator->load(thisQmLanguageFile))
     {
@@ -98,7 +98,7 @@ void MyLocalization::loadLanguage(const QString &thisQmLanguageFile)
  ***********************************************/
 QString MyLocalization::getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getLanguageFile"; }
+    setMessage("getLanguageFile", Debug);
     const QStringList theQmFiles = findQmFiles(thisPath);
     for (int i = 0; i < theQmFiles.size(); ++i)
     {
@@ -114,6 +114,7 @@ QString MyLocalization::getLanguageFile(const QString &thisLanguage, const QStri
 void MyLocalization::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
+    setMessage("setDebugMessage", Debug);
 }
 /************************************************
  * @brief get Debug Message.
@@ -121,6 +122,7 @@ void MyLocalization::setDebugMessage(bool thisState)
  ***********************************************/
 bool MyLocalization::getDebugMessage()
 {
+    setMessage("getDebugMessage", Debug);
     return isDebugMessage;
 }
 /************************************************
@@ -129,7 +131,7 @@ bool MyLocalization::getDebugMessage()
  ***********************************************/
 QString MyLocalization::languageNameFromFile(const QString &thisTranslationFile)
 {
-    if (isDebugMessage) { qDebug() << "languageNameFromFile"; }
+    setMessage("languageNameFromFile", Debug);
     QTranslator translator;
     translator.load(thisTranslationFile);
     // FIXME
@@ -141,7 +143,7 @@ QString MyLocalization::languageNameFromFile(const QString &thisTranslationFile)
  ***********************************************/
 QString MyLocalization::getLocalizedCodeFromFile(const QString &thisPrefix, const QString &thisQmFile)
 {
-    if (isDebugMessage) { qDebug() << "getLocalizedCodeFromFile"; }
+    setMessage("getLocalizedCodeFromFile", Debug);
     QFileInfo theFileInfo(thisQmFile);
 
     QString theFileName = theFileInfo.baseName();
@@ -153,6 +155,7 @@ QString MyLocalization::getLocalizedCodeFromFile(const QString &thisPrefix, cons
  ***********************************************/
 void MyLocalization::removeArgs(const QString &thisString, const QString &thisTransFile)
 {
+    setMessage("removeArgs", Debug);
     myRemoveTransArgs.append(QString("%1 |%2| in file %3").arg(tr("Remove Arguments that use Percent Sign x"), thisString, thisTransFile));
 } // end removeArgs
 /************************************************
@@ -161,6 +164,7 @@ void MyLocalization::removeArgs(const QString &thisString, const QString &thisTr
  ***********************************************/
 void MyLocalization::fileRemoveArgs()
 {
+    setMessage("fileRemoveArgs", Debug);
     if (!myRemoveTransArgs.isEmpty())
     {
         QString theRemoveFileName = QString("%1").arg(mySetting->getAppDataLocation(), QDir::separator(), "RemoveArgFile.txt");
@@ -174,6 +178,7 @@ void MyLocalization::fileRemoveArgs()
  ***********************************************/
 void MyLocalization::fixTranslationFile(const QString &thisFile)
 {
+    setMessage("fixTranslationFile", Debug);
     if (!mySetting->isFileExists(thisFile)) { mySetting->showMessageBox(tr("File not found").toLocal8Bit(), QString("%1: %2").arg(tr("File not found"), thisFile).toLocal8Bit(), mySetting->Critical); return; }
     //
     QString theNewFileContent;
@@ -203,7 +208,7 @@ void MyLocalization::fixTranslationFile(const QString &thisFile)
  ***********************************************/
 bool MyLocalization::languageMatch(const QString &thisPrefix, const QString &thisLang, const QString &thisQmFile)
 {
-    if (isDebugMessage) { qDebug() << "languageMatch"; }
+    setMessage("languageMatch", Debug);
     // qmFile: ProjectName_xx.qm
     QString thisLocalizer = getLocalizedCodeFromFile(thisPrefix, thisQmFile);
     return thisLocalizer == thisLang;
@@ -214,6 +219,7 @@ bool MyLocalization::languageMatch(const QString &thisPrefix, const QString &thi
  ***********************************************/
 QStringList MyLocalization::findQmFiles(const QString &thisFolder)
 {
+    setMessage("findQmFiles", Debug);
     QDir dir(QString(":/%1").arg(thisFolder));
     QStringList fileNames = dir.entryList(QStringList("*.qm"), QDir::Files, QDir::Name);
     for (QString &fileName : fileNames)
@@ -221,19 +227,46 @@ QStringList MyLocalization::findQmFiles(const QString &thisFolder)
     return fileNames;
 }
 /************************************************
+ * @brief find Ts Files.
+ * findTsFiles
+ ***********************************************/
+QStringList MyLocalization::findTsFiles(const QString &thisFolder)
+{
+    setMessage("findTsFiles", Debug);
+    QDir dir(thisFolder);
+    QStringList fileNames = dir.entryList(QStringList("*.ts"), QDir::Files, QDir::Name);
+    for (QString &fileName : fileNames)
+        { fileName = dir.filePath(fileName); }
+    return fileNames;
+}/************************************************
  * @brief get Localizer Code.
  * getLocalizerCode
  ***********************************************/
 QString MyLocalization::getLocalizerCode(const QString &thisPrefix, const QString &thisQmFile)
 {
+    setMessage("getLocalizerCode", Debug);
     return languageCodeToName(getLocalizedCodeFromFile(thisPrefix, thisQmFile));
 }
 /************************************************
- * languageNameToCode
+ * @brief get Lang Code.
+ * getLangCode
+ ***********************************************/
+QString MyLocalization::getLangCode(const QString &thisString)
+{
+    setMessage("getLangCode", Debug);
+    QString theLangCode = thisString;
+    if (theLangCode.indexOf('_') < 0) { return ""; }
+    if (theLangCode.indexOf('.') > 0)
+        { theLangCode = theLangCode.mid(0, theLangCode.indexOf('.')); }
+    return theLangCode.mid(theLangCode.indexOf('_') + 1);
+}
+/************************************************
  * @brief Added by Light-Wizzard language Name to Code.
+ * languageNameToCode
  ***********************************************/
 QString MyLocalization::languageNameToCode(const QString &lang)
 {
+    setMessage("languageNameToCode", Debug);
     return s_genericLanguageNameToCode.value(lang);
 } // end languageNameToCode
 /************************************************
@@ -242,6 +275,7 @@ QString MyLocalization::languageNameToCode(const QString &lang)
  ***********************************************/
 QString MyLocalization::languageCodeToName(const QString &lang)
 {
+    setMessage("languageCodeToName", Debug);
     return s_genericLanguageCodeToName.value(lang);
 } // end languageCodeToName
 /************************************************
@@ -250,6 +284,7 @@ QString MyLocalization::languageCodeToName(const QString &lang)
  ***********************************************/
 QString MyLocalization::readLanguage()
 {
+    setMessage("readLanguage", Debug);
     QString theCode = language(QLocale());
     setLanguageCode(mySetting->readSettings(mySetting->myConstants->MY_LOCALE_LANG_CODE, theCode));
     return myLanguageCode;
@@ -260,6 +295,7 @@ QString MyLocalization::readLanguage()
  ***********************************************/
 void MyLocalization::writeLanguage(const QString &thisCurrentLanguageCode)
 {
+    setMessage("writeLanguage", Debug);
     setLanguageCode(thisCurrentLanguageCode);
     mySetting->writeSettings(mySetting->myConstants->MY_LOCALE_LANG_CODE, thisCurrentLanguageCode);
 }
@@ -269,6 +305,7 @@ void MyLocalization::writeLanguage(const QString &thisCurrentLanguageCode)
  ***********************************************/
 void MyLocalization::setLanguageCode(const QString &thisLanguageCode)
 {
+    setMessage("setLanguageCode", Debug);
     myLanguageCode = thisLanguageCode;
 }
 /************************************************
@@ -277,6 +314,7 @@ void MyLocalization::setLanguageCode(const QString &thisLanguageCode)
  ***********************************************/
 QString MyLocalization::getLanguageCode()
 {
+    setMessage("getLanguageCode", Debug);
     if (myLanguageCode.isEmpty())
     {
         QString theLangCode = language(QLocale());
@@ -290,6 +328,7 @@ QString MyLocalization::getLanguageCode()
  ***********************************************/
 void MyLocalization::setMainLoaded(bool thisMainLoaded)
 {
+    setMessage("setMainLoaded", Debug);
     isMainLoaded = thisMainLoaded;
 }
 /************************************************
@@ -298,17 +337,17 @@ void MyLocalization::setMainLoaded(bool thisMainLoaded)
  ***********************************************/
 bool MyLocalization::getMainLoaded()
 {
+    setMessage("getMainLoaded", Debug);
     return isMainLoaded;
 }
 /************************************************
  * @brief language.
  * language
- * const QMap<QString, QString> MyLocalization::s_genericLanguageNameToCode =
  * @param thisLocale QLocale given QLocale() returns Country Code
- * @example theLocale = language(QLocale());
  ***********************************************/
 QString MyLocalization::language(const QLocale &thisLocale)
 {
+    setMessage("language", Debug);
     switch (thisLocale.language())
     {
         case QLocale::Afrikaans:        return QStringLiteral("af");
@@ -707,4 +746,29 @@ const QMap<QString, QString> MyLocalization::s_genericLanguageCodeToName =
     { QStringLiteral("yua"),        QStringLiteral("YucatecMaya")           },
     { QStringLiteral("zu"),         QStringLiteral("Zulu")                  }
 }; // end s_genericLanguageCodeToName
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MyLocalization::setMessage(const QString &thisMessage, MyMessageTypes thisMessageType)
+{
+    if (isDebugMessage && isMainLoaded) { return; }
+    switch (thisMessageType)
+    {
+        case Information:
+            mySetting->showMessageBox(thisMessage, thisMessage, mySetting->Information);
+            break;
+        case Warning:
+            mySetting->showMessageBox(thisMessage, thisMessage, mySetting->Warning);
+            break;
+        case Critical:
+            mySetting->showMessageBox(thisMessage, thisMessage, mySetting->Critical);
+            break;
+        case Question:
+        case Debug:
+            qDebug() << thisMessage;
+            std::cout << thisMessage.toStdString() << std::endl;
+            break;
+    }
+}
 /******************************* End of File *********************************/

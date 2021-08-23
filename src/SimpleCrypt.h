@@ -38,9 +38,14 @@
 #include <QCryptographicHash>
 #include <QDataStream>
 #include <QRandomGenerator>
-
+// STD
+#include <iostream>
+#include <assert.h>
+#include <algorithm>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
 /************************************************
- * \class SimpleCrypt
  * @brief @short Simple encryption and decryption of strings and byte arrays
  *
  * This class provides a simple implementation of encryption and decryption of strings and byte arrays.
@@ -61,6 +66,7 @@
  *
  * SimpleCrypt is prepared for the case that the encryption and decryption algorithm is changed in a later version,
  * by prepending a version identifier to the cypertext.
+ * \class SimpleCrypt
  ***********************************************/
 class SimpleCrypt
 {
@@ -204,8 +210,9 @@ class SimpleCrypt
         };
         Q_DECLARE_FLAGS(CryptoFlags, CryptoFlag);
         // Is Debug Message
-        void setDebugMessage(bool thisState);       //!< set Debug Message
-        bool getDebugMessage();                     //!< get Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage); //!< set Message
 
     private:
 

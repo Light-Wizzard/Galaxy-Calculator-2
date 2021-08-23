@@ -91,11 +91,12 @@ class MySqlDbtModel : public QAbstractTableModel
         void setConnectionName(const QString &thisConnectionName);  //!< setConnectionName
         QString getConnectionName();                                //!< getConnectionName
 
-        void setComboBoxSqlValue(const QString &thisComboBoxSqlValue);
-        QString getComboBoxSqlValue();
+        void setComboBoxSqlValue(const QString &thisComboBoxSqlValue);      //!< set ComboBox Sql Value
+        QString getComboBoxSqlValue();                                      //!< get ComboBox Sql Value
 
-        void setDebugMessage(bool thisState);
-        bool getDebugMessage();
+        void setDebugMessage(bool thisState);                               //!< set Debug Message
+        bool getDebugMessage();                                             //!< get Debug Message
+        void setMessage(const QString &thisMessage) const;                        //!< set Message
 
         bool checkDatabase();                                               //!< checkDatabase
         bool runQuery(const QString &thisQuery);                            //!< runQuery
@@ -108,8 +109,8 @@ class MySqlDbtModel : public QAbstractTableModel
         void setProjectID(const QString &thisProjectID);                    //!< set Project ID
         QString getProjectID();                                             //!< get Project ID
         // Project Name
-        void setProjectName(const QString &thisProjectName);
-        QString getProjectName();
+        void setProjectName(const QString &thisProjectName);                //!< set Project Name
+        QString getProjectName();                                           //!< get Project Name
 
     public slots:
          void onInsertGalaxyRecord(const QString &thisCurrentTrackNumber, const QString &thistrackEngines, const QString &thisMaxSpeed, const QString &thisMinSpeed, const QString &thisLpFrequency, const QString &thisOrbitDist, const QString &thisNthTrack); //!< onInsertRecord

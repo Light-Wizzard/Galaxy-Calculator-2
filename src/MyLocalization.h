@@ -28,8 +28,8 @@
 #include "MyOrgSettings.h"
 // Local
 /************************************************
- * \class TranslationFiles
  * @brief Translation Files.
+ * \class TranslationFiles
  ***********************************************/
 class MyLocalization : public QObject
 {
@@ -42,26 +42,30 @@ class MyLocalization : public QObject
             Question    = 101, //!< \c Question     @brief Question
             Warning     = 102, //!< \c Warning      @brief Warning
             Critical    = 103, //!< \c Critical     @brief Critical
+            Debug       = 104, //!< \c Debug        @brief Debug
         }; // end enum MyFileinfo
         // Makes getting file Info easier
         Q_ENUM(MyMessageTypes)
-//
+        //
         // Public
-        MyOrgSettings  *mySetting;                       //!< \c mySetting @brief Domain Settings
+        MyOrgSettings  *mySetting;                   //!< \c mySetting @brief Domain Settings
         // Constants
-        const QString MY_LANG_CODE     = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
-        const QString MY_LANG_NAME     = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
+        const QString MY_LANG_CODE = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
+        const QString MY_LANG_NAME = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
         // Is Debug Message
-        void setDebugMessage(bool thisState);       //!< set Debug Message
-        bool getDebugMessage();                     //!< get Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage, MyLocalization::MyMessageTypes thisMessageType); //!< set Message
         // Localization
-        QStringList findQmFiles(const QString &thisFolder);                             //!< findQmFiles
+        QStringList findQmFiles(const QString &thisFolder);                                 //!< find Qm Files
+        QStringList findTsFiles(const QString &thisFolder);                                 //!< find Ts Files
         bool        languageMatch(const QString &thisPrefix, const QString &thisLang, const QString &thisQmFile); //!< language Match
         QString     languageNameFromFile(const QString &thisTranslationFile);               //!< language Name From File
         QString     getLocalizerCode(const QString &thisPrefix, const QString &thisQmFile); //!< get Localizer Code
-        void removeArgs(const QString &thisString, const QString &thisTransFile);       //!< remove Args file creation
-        void fileRemoveArgs();                                                          //!< file Remove Args
-        void fixTranslationFile(const QString &thisFile);                               //!< fix Translation File
+        QString     getLangCode(const QString &thisString);      //!< get Lang Code
+        void removeArgs(const QString &thisString, const QString &thisTransFile);           //!< remove Args file creation
+        void fileRemoveArgs();                                                              //!< file Remove Args
+        void fixTranslationFile(const QString &thisFile);                                   //!< fix Translation File
         QString getLocalizedCodeFromFile(const QString &thisPrefix, const QString &thisQmFile); //!< get Localized Code From File
         // Added by Light-Wizzard
         QString languageNameToCode(const QString &lang);                //!< language Name to Code Added by Light-Wizzard

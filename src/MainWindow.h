@@ -63,6 +63,19 @@ class MainWindow : public QMainWindow
         }; // end enum MyFileinfo
         // Makes getting file Info easier
         Q_ENUM(MyDocumentType)
+        /*!
+            \enum MyMessageTypes
+            @brief Message Types
+         */
+        enum MyMessageTypes
+        {
+            Information = 100, //!< \c Information  @brief Information
+            Warning     = 101, //!< \c Warning      @brief Warning
+            Critical    = 102, //!< \c Critical     @brief Critical
+            Debug       = 103, //!< \c Debug        @brief Debug
+        }; // end enum MyFileinfo
+        // Makes getting file Info easier
+        Q_ENUM(MyMessageTypes)
         //
         const QString MY_CALC_DECIMALS = "CalcDecimal";                     //!< \c myCalcDecimal @brief Sql Driver CalcDecimal
         //
@@ -97,6 +110,7 @@ class MainWindow : public QMainWindow
 
         void setDebugMessage(bool thisState);                               //!< set Debug Message
         bool getDebugMessage();                                             //!< get Debug Message
+        void setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType); //!< set Message
         void readSqlDatabaseInfo();                                         //!< read Sql Database Info
         void writeSqlDatabaseInfo();                                        //!< write Sql Database Info
         void writeStateChanges();                                           //!< write State Changes

@@ -2,12 +2,17 @@
 #define TRINARYMATH_H
 
 #include <QObject>
-#include <QtMath>
 #include <QMessageBox>
-
-//
-
+#include <QtMath>
 #include <QtDebug>
+//
+// STD
+#include <iostream>
+#include <assert.h>
+#include <algorithm>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
 /************************************************
  * @brief Trinary Math.
  * \class TrinaryMath
@@ -29,6 +34,10 @@ class TrinaryMath : public QObject
         QString getNumberBase(const QString &thisNumber);                    //!< getNumberBase
         QString getNumberFloat(const QString &thisNumber);                   //!< getNumberFloat
         bool testFunctions();                                                //!< testFunctions
+        // Is Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage); //!< set Message
 
     public slots:
 

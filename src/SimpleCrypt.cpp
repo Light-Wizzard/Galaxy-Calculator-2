@@ -49,22 +49,6 @@ SimpleCrypt::SimpleCrypt(quint64 key): myKey(key), myCompressionMode(Compression
     splitKey();
 }
 /************************************************
- * @brief set Debug Message.
- * setDebugMessage
- ***********************************************/
-void SimpleCrypt::setDebugMessage(bool thisState)
-{
-    isDebugMessage = thisState;
-}
-/************************************************
- * @brief get Debug Message.
- * getDebugMessage
- ***********************************************/
-bool SimpleCrypt::getDebugMessage()
-{
-    return isDebugMessage;
-}
-/************************************************
  * @brief set Key.
  * setKey
  ***********************************************/
@@ -312,5 +296,33 @@ QByteArray SimpleCrypt::decryptToByteArray(QByteArray cypher)
 
     myLastError = ErrorNoError;
     return ba;
+}
+/************************************************
+ * @brief set Debug Message.
+ * setDebugMessage
+ ***********************************************/
+void SimpleCrypt::setDebugMessage(bool thisState)
+{
+    isDebugMessage = thisState;
+}
+/************************************************
+ * @brief get Debug Message.
+ * getDebugMessage
+ ***********************************************/
+bool SimpleCrypt::getDebugMessage()
+{
+    return isDebugMessage;
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void SimpleCrypt::setMessage(const QString &thisMessage)
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
 }
 /******************************* End of File *********************************/
