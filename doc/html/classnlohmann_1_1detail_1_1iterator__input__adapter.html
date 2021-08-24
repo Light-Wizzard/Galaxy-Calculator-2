@@ -119,7 +119,7 @@ Friends</h2></td></tr>
 class nlohmann::detail::iterator_input_adapter&lt; IteratorType &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04846">4846</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04834">4834</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7cc60e68767005322ab4b692c9dff283"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cc60e68767005322ab4b692c9dff283">&#9670;&nbsp;</a></span>char_type</h2>
@@ -135,7 +135,7 @@ template&lt;typename IteratorType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04849">4849</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04837">4837</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -176,8 +176,8 @@ template&lt;typename IteratorType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04851">4851</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04852"></a><span class="lineno"> 4852</span>&#160;                    : current(std::move(first)), end(std::move(last)) {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04839">4839</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04840"></a><span class="lineno"> 4840</span>&#160;                    : current(std::move(first)), end(std::move(last)) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -207,20 +207,20 @@ template&lt;typename IteratorType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04854">4854</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04855"></a><span class="lineno"> 4855</span>&#160;                {</div>
-<div class="line"><a name="l04856"></a><span class="lineno"> 4856</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(current != end))</div>
-<div class="line"><a name="l04857"></a><span class="lineno"> 4857</span>&#160;                    {</div>
-<div class="line"><a name="l04858"></a><span class="lineno"> 4858</span>&#160;                        <span class="keyword">auto</span> result = std::char_traits&lt;char_type&gt;::to_int_type(*current);</div>
-<div class="line"><a name="l04859"></a><span class="lineno"> 4859</span>&#160;                        std::advance(current, 1);</div>
-<div class="line"><a name="l04860"></a><span class="lineno"> 4860</span>&#160;                        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l04861"></a><span class="lineno"> 4861</span>&#160;                    }</div>
-<div class="line"><a name="l04862"></a><span class="lineno"> 4862</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l04863"></a><span class="lineno"> 4863</span>&#160;                    {</div>
-<div class="line"><a name="l04864"></a><span class="lineno"> 4864</span>&#160;                        <span class="keywordflow">return</span> std::char_traits&lt;char_type&gt;::eof();</div>
-<div class="line"><a name="l04865"></a><span class="lineno"> 4865</span>&#160;                    }</div>
-<div class="line"><a name="l04866"></a><span class="lineno"> 4866</span>&#160;                }</div>
-<div class="ttc" id="ajson_8hpp_html_a355f2770653ff7bdd5c74b204b5a3ad0"><div class="ttname"><a href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_LIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01403">json.hpp:1403</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04842">4842</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04843"></a><span class="lineno"> 4843</span>&#160;                {</div>
+<div class="line"><a name="l04844"></a><span class="lineno"> 4844</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(current != end))</div>
+<div class="line"><a name="l04845"></a><span class="lineno"> 4845</span>&#160;                    {</div>
+<div class="line"><a name="l04846"></a><span class="lineno"> 4846</span>&#160;                        <span class="keyword">auto</span> result = std::char_traits&lt;char_type&gt;::to_int_type(*current);</div>
+<div class="line"><a name="l04847"></a><span class="lineno"> 4847</span>&#160;                        std::advance(current, 1);</div>
+<div class="line"><a name="l04848"></a><span class="lineno"> 4848</span>&#160;                        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l04849"></a><span class="lineno"> 4849</span>&#160;                    }</div>
+<div class="line"><a name="l04850"></a><span class="lineno"> 4850</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l04851"></a><span class="lineno"> 4851</span>&#160;                    {</div>
+<div class="line"><a name="l04852"></a><span class="lineno"> 4852</span>&#160;                        <span class="keywordflow">return</span> std::char_traits&lt;char_type&gt;::eof();</div>
+<div class="line"><a name="l04853"></a><span class="lineno"> 4853</span>&#160;                    }</div>
+<div class="line"><a name="l04854"></a><span class="lineno"> 4854</span>&#160;                }</div>
+<div class="ttc" id="ajson_8hpp_html_a355f2770653ff7bdd5c74b204b5a3ad0"><div class="ttname"><a href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_LIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01391">json.hpp:1391</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -249,7 +249,7 @@ template&lt;typename BaseInputAdapter , size_t T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04873">4873</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04861">4861</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>

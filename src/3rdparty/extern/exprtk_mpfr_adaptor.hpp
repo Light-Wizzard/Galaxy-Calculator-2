@@ -15,13 +15,11 @@
  **************************************************************
 */
 
-
 #ifndef EXPRTK_MPFRREAL_ADAPTOR_HPP
 #define EXPRTK_MPFRREAL_ADAPTOR_HPP
 
-
+#include "mpreal.h"
 #include <string>
-#include "src/3rdparty/extern/mpreal.h"
 
 /************************************************
  * @brief exprtk.

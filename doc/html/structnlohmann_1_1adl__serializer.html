@@ -115,7 +115,7 @@ struct nlohmann::adl_serializer&lt; typename, typename &gt;</h3>
 <p>default JSONSerializer template argument </p>
 <p>This serializer ignores the template arguments and uses ADL (<a href="https://en.cppreference.com/w/cpp/language/adl">argument-dependent lookup</a>) for serialization. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04373">4373</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04361">4361</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2c544585b8b1828a0f1eecd831d0496e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c544585b8b1828a0f1eecd831d0496e">&#9670;&nbsp;</a></span>from_json()</h2>
@@ -166,11 +166,11 @@ template&lt;typename BasicJsonType , typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04385">4385</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04388"></a><span class="lineno"> 4388</span>&#160;            {</div>
-<div class="line"><a name="l04389"></a><span class="lineno"> 4389</span>&#160;                <a class="code" href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de">::nlohmann::from_json</a>(std::forward&lt;BasicJsonType&gt;(j), val);</div>
-<div class="line"><a name="l04390"></a><span class="lineno"> 4390</span>&#160;            }</div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_aef5c8ea108f4d2b03fb4a635617510de"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de">nlohmann::detail::from_json</a></div><div class="ttdeci">void from_json(const BasicJsonType &amp;j, std::unordered_map&lt; Key, Value, Hash, KeyEqual, Allocator &gt; &amp;m)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03770">json.hpp:3770</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04373">4373</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04376"></a><span class="lineno"> 4376</span>&#160;            {</div>
+<div class="line"><a name="l04377"></a><span class="lineno"> 4377</span>&#160;                <a class="code" href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de">::nlohmann::from_json</a>(std::forward&lt;BasicJsonType&gt;(j), val);</div>
+<div class="line"><a name="l04378"></a><span class="lineno"> 4378</span>&#160;            }</div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_aef5c8ea108f4d2b03fb4a635617510de"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de">nlohmann::detail::from_json</a></div><div class="ttdeci">void from_json(const BasicJsonType &amp;j, std::unordered_map&lt; Key, Value, Hash, KeyEqual, Allocator &gt; &amp;m)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03758">json.hpp:3758</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -223,11 +223,11 @@ template&lt;typename BasicJsonType , typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04402">4402</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04405"></a><span class="lineno"> 4405</span>&#160;            {</div>
-<div class="line"><a name="l04406"></a><span class="lineno"> 4406</span>&#160;                <a class="code" href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec">::nlohmann::to_json</a>(j, std::forward&lt;ValueType&gt;(val));</div>
-<div class="line"><a name="l04407"></a><span class="lineno"> 4407</span>&#160;            }</div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_aaa77b0c9745130b77733a92a1a2e82ec"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec">nlohmann::detail::to_json</a></div><div class="ttdeci">void to_json(BasicJsonType &amp;j, const T &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l04333">json.hpp:4333</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04390">4390</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04393"></a><span class="lineno"> 4393</span>&#160;            {</div>
+<div class="line"><a name="l04394"></a><span class="lineno"> 4394</span>&#160;                <a class="code" href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec">::nlohmann::to_json</a>(j, std::forward&lt;ValueType&gt;(val));</div>
+<div class="line"><a name="l04395"></a><span class="lineno"> 4395</span>&#160;            }</div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_aaa77b0c9745130b77733a92a1a2e82ec"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec">nlohmann::detail::to_json</a></div><div class="ttdeci">void to_json(BasicJsonType &amp;j, const T &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l04321">json.hpp:4321</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

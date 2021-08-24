@@ -20,15 +20,13 @@
 #ifndef QCALC_EXPRTKMODULE_HPP
 #define QCALC_EXPRTKMODULE_HPP
 
-#include "src/3rdparty/cpython/pyutil.hpp"
-#include "src/3rdparty/cpython/pythoninclude.hpp"
-#include "src/3rdparty/cpython/symboltableconverter.hpp"
-#include "src/3rdparty/cpython/modules/modulecommon.hpp"
-#include "src/3rdparty/cpython/types/pympreal.hpp"
-
-#include "src/MainWindow.h"
-
-#include "src/3rdparty/math/expressionparser.hpp"
+#include "../pyutil.hpp"
+#include "../pythoninclude.hpp"
+#include "../symboltableconverter.hpp"
+#include "modulecommon.hpp"
+#include "../types/pympreal.hpp"
+#include "../../../MainWindow.h"
+#include "../../math/expressionparser.hpp"
 
 #define MODULE_NAME "qc_native_exprtk"
 

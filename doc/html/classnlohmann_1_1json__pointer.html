@@ -151,7 +151,7 @@ class nlohmann::json_pointer&lt; BasicJsonType &gt;</h3>
 <dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc6901">RFC 6901</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>version 2.0.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11561">11561</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11549">11549</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7f32d7c62841f0c4a6784cf741a6e4f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f32d7c62841f0c4a6784cf741a6e4f8">&#9670;&nbsp;</a></span>json_pointer()</h2>
@@ -179,9 +179,9 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11589">11589</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11590"></a><span class="lineno">11590</span>&#160;                : reference_tokens(split(s))</div>
-<div class="line"><a name="l11591"></a><span class="lineno">11591</span>&#160;            {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11577">11577</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11578"></a><span class="lineno">11578</span>&#160;                : reference_tokens(split(s))</div>
+<div class="line"><a name="l11579"></a><span class="lineno">11579</span>&#160;            {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,19 +211,19 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11813">11813</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11814"></a><span class="lineno">11814</span>&#160;            {</div>
-<div class="line"><a name="l11815"></a><span class="lineno">11815</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code" href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">empty</a>()))</div>
-<div class="line"><a name="l11816"></a><span class="lineno">11816</span>&#160;                {</div>
-<div class="line"><a name="l11817"></a><span class="lineno">11817</span>&#160;                    <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1out__of__range.html#a3f6d82a6f967c4728a1ec735a7867073">detail::out_of_range::create</a>(405, <span class="stringliteral">&quot;JSON pointer has no parent&quot;</span>));</div>
-<div class="line"><a name="l11818"></a><span class="lineno">11818</span>&#160;                }</div>
-<div class="line"><a name="l11819"></a><span class="lineno">11819</span>&#160; </div>
-<div class="line"><a name="l11820"></a><span class="lineno">11820</span>&#160;                <span class="keywordflow">return</span> reference_tokens.back();</div>
-<div class="line"><a name="l11821"></a><span class="lineno">11821</span>&#160;            }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1out__of__range_html_a3f6d82a6f967c4728a1ec735a7867073"><div class="ttname"><a href="classnlohmann_1_1detail_1_1out__of__range.html#a3f6d82a6f967c4728a1ec735a7867073">nlohmann::detail::out_of_range::create</a></div><div class="ttdeci">static out_of_range create(int id_, const std::string &amp;what_arg)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02617">json.hpp:2617</a></div></div>
-<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a649252bda4a2e75a0915b11a25d8bcc3"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">nlohmann::json_pointer::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11860">json.hpp:11860</a></div></div>
-<div class="ttc" id="ajson_8hpp_html_a6c274f6db2e65c1b66c7d41b06ad690f"><div class="ttname"><a href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a></div><div class="ttdeci">#define JSON_THROW(exception)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02074">json.hpp:2074</a></div></div>
-<div class="ttc" id="ajson_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01404">json.hpp:1404</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11801">11801</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11802"></a><span class="lineno">11802</span>&#160;            {</div>
+<div class="line"><a name="l11803"></a><span class="lineno">11803</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code" href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">empty</a>()))</div>
+<div class="line"><a name="l11804"></a><span class="lineno">11804</span>&#160;                {</div>
+<div class="line"><a name="l11805"></a><span class="lineno">11805</span>&#160;                    <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1out__of__range.html#a3f6d82a6f967c4728a1ec735a7867073">detail::out_of_range::create</a>(405, <span class="stringliteral">&quot;JSON pointer has no parent&quot;</span>));</div>
+<div class="line"><a name="l11806"></a><span class="lineno">11806</span>&#160;                }</div>
+<div class="line"><a name="l11807"></a><span class="lineno">11807</span>&#160; </div>
+<div class="line"><a name="l11808"></a><span class="lineno">11808</span>&#160;                <span class="keywordflow">return</span> reference_tokens.back();</div>
+<div class="line"><a name="l11809"></a><span class="lineno">11809</span>&#160;            }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1out__of__range_html_a3f6d82a6f967c4728a1ec735a7867073"><div class="ttname"><a href="classnlohmann_1_1detail_1_1out__of__range.html#a3f6d82a6f967c4728a1ec735a7867073">nlohmann::detail::out_of_range::create</a></div><div class="ttdeci">static out_of_range create(int id_, const std::string &amp;what_arg)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02605">json.hpp:2605</a></div></div>
+<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a649252bda4a2e75a0915b11a25d8bcc3"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">nlohmann::json_pointer::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11848">json.hpp:11848</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a6c274f6db2e65c1b66c7d41b06ad690f"><div class="ttname"><a href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a></div><div class="ttdeci">#define JSON_THROW(exception)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02062">json.hpp:2062</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01392">json.hpp:1392</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -252,10 +252,10 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11860">11860</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11861"></a><span class="lineno">11861</span>&#160;            {</div>
-<div class="line"><a name="l11862"></a><span class="lineno">11862</span>&#160;                <span class="keywordflow">return</span> reference_tokens.empty();</div>
-<div class="line"><a name="l11863"></a><span class="lineno">11863</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11848">11848</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11849"></a><span class="lineno">11849</span>&#160;            {</div>
+<div class="line"><a name="l11850"></a><span class="lineno">11850</span>&#160;                <span class="keywordflow">return</span> reference_tokens.empty();</div>
+<div class="line"><a name="l11851"></a><span class="lineno">11851</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,11 +286,11 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p></p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11618">11618</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11619"></a><span class="lineno">11619</span>&#160;            {</div>
-<div class="line"><a name="l11620"></a><span class="lineno">11620</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a3d4b15d32d096e3776c5d2c773b524f5">to_string</a>();</div>
-<div class="line"><a name="l11621"></a><span class="lineno">11621</span>&#160;            }</div>
-<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a3d4b15d32d096e3776c5d2c773b524f5"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a3d4b15d32d096e3776c5d2c773b524f5">nlohmann::json_pointer::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11607">json.hpp:11607</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11606">11606</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11607"></a><span class="lineno">11607</span>&#160;            {</div>
+<div class="line"><a name="l11608"></a><span class="lineno">11608</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a3d4b15d32d096e3776c5d2c773b524f5">to_string</a>();</div>
+<div class="line"><a name="l11609"></a><span class="lineno">11609</span>&#160;            }</div>
+<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a3d4b15d32d096e3776c5d2c773b524f5"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a3d4b15d32d096e3776c5d2c773b524f5">nlohmann::json_pointer::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11595">json.hpp:11595</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,13 +320,13 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11639">11639</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11640"></a><span class="lineno">11640</span>&#160;            {</div>
-<div class="line"><a name="l11641"></a><span class="lineno">11641</span>&#160;                reference_tokens.insert(reference_tokens.end(),</div>
-<div class="line"><a name="l11642"></a><span class="lineno">11642</span>&#160;                                        ptr.reference_tokens.begin(),</div>
-<div class="line"><a name="l11643"></a><span class="lineno">11643</span>&#160;                                        ptr.reference_tokens.end());</div>
-<div class="line"><a name="l11644"></a><span class="lineno">11644</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11645"></a><span class="lineno">11645</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11627">11627</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11628"></a><span class="lineno">11628</span>&#160;            {</div>
+<div class="line"><a name="l11629"></a><span class="lineno">11629</span>&#160;                reference_tokens.insert(reference_tokens.end(),</div>
+<div class="line"><a name="l11630"></a><span class="lineno">11630</span>&#160;                                        ptr.reference_tokens.begin(),</div>
+<div class="line"><a name="l11631"></a><span class="lineno">11631</span>&#160;                                        ptr.reference_tokens.end());</div>
+<div class="line"><a name="l11632"></a><span class="lineno">11632</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11633"></a><span class="lineno">11633</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,11 +356,11 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11685">11685</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11686"></a><span class="lineno">11686</span>&#160;            {</div>
-<div class="line"><a name="l11687"></a><span class="lineno">11687</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span> /= <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(array_idx);</div>
-<div class="line"><a name="l11688"></a><span class="lineno">11688</span>&#160;            }</div>
-<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l25179">json.hpp:25179</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11673">11673</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11674"></a><span class="lineno">11674</span>&#160;            {</div>
+<div class="line"><a name="l11675"></a><span class="lineno">11675</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span> /= <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(array_idx);</div>
+<div class="line"><a name="l11676"></a><span class="lineno">11676</span>&#160;            }</div>
+<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l25167">json.hpp:25167</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -390,12 +390,12 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11663">11663</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11664"></a><span class="lineno">11664</span>&#160;            {</div>
-<div class="line"><a name="l11665"></a><span class="lineno">11665</span>&#160;                <a class="code" href="classnlohmann_1_1json__pointer.html#a697d12b5bd6205f8866691b166b7c7dc">push_back</a>(std::move(token));</div>
-<div class="line"><a name="l11666"></a><span class="lineno">11666</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11667"></a><span class="lineno">11667</span>&#160;            }</div>
-<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a697d12b5bd6205f8866691b166b7c7dc"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a697d12b5bd6205f8866691b166b7c7dc">nlohmann::json_pointer::push_back</a></div><div class="ttdeci">void push_back(const std::string &amp;token)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11835">json.hpp:11835</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11651">11651</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11652"></a><span class="lineno">11652</span>&#160;            {</div>
+<div class="line"><a name="l11653"></a><span class="lineno">11653</span>&#160;                <a class="code" href="classnlohmann_1_1json__pointer.html#a697d12b5bd6205f8866691b166b7c7dc">push_back</a>(std::move(token));</div>
+<div class="line"><a name="l11654"></a><span class="lineno">11654</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11655"></a><span class="lineno">11655</span>&#160;            }</div>
+<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a697d12b5bd6205f8866691b166b7c7dc"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a697d12b5bd6205f8866691b166b7c7dc">nlohmann::json_pointer::push_back</a></div><div class="ttdeci">void push_back(const std::string &amp;token)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11823">json.hpp:11823</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -424,18 +424,18 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11764">11764</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11765"></a><span class="lineno">11765</span>&#160;            {</div>
-<div class="line"><a name="l11766"></a><span class="lineno">11766</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">empty</a>())</div>
-<div class="line"><a name="l11767"></a><span class="lineno">11767</span>&#160;                {</div>
-<div class="line"><a name="l11768"></a><span class="lineno">11768</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11769"></a><span class="lineno">11769</span>&#160;                }</div>
-<div class="line"><a name="l11770"></a><span class="lineno">11770</span>&#160; </div>
-<div class="line"><a name="l11771"></a><span class="lineno">11771</span>&#160;                <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a> res = *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11772"></a><span class="lineno">11772</span>&#160;                res.pop_back();</div>
-<div class="line"><a name="l11773"></a><span class="lineno">11773</span>&#160;                <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l11774"></a><span class="lineno">11774</span>&#160;            }</div>
-<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a7f32d7c62841f0c4a6784cf741a6e4f8"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">nlohmann::json_pointer::json_pointer</a></div><div class="ttdeci">json_pointer(const std::string &amp;s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11589">json.hpp:11589</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11752">11752</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11753"></a><span class="lineno">11753</span>&#160;            {</div>
+<div class="line"><a name="l11754"></a><span class="lineno">11754</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">empty</a>())</div>
+<div class="line"><a name="l11755"></a><span class="lineno">11755</span>&#160;                {</div>
+<div class="line"><a name="l11756"></a><span class="lineno">11756</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11757"></a><span class="lineno">11757</span>&#160;                }</div>
+<div class="line"><a name="l11758"></a><span class="lineno">11758</span>&#160; </div>
+<div class="line"><a name="l11759"></a><span class="lineno">11759</span>&#160;                <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a> res = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11760"></a><span class="lineno">11760</span>&#160;                res.pop_back();</div>
+<div class="line"><a name="l11761"></a><span class="lineno">11761</span>&#160;                <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l11762"></a><span class="lineno">11762</span>&#160;            }</div>
+<div class="ttc" id="aclassnlohmann_1_1json__pointer_html_a7f32d7c62841f0c4a6784cf741a6e4f8"><div class="ttname"><a href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">nlohmann::json_pointer::json_pointer</a></div><div class="ttdeci">json_pointer(const std::string &amp;s=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11577">json.hpp:11577</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -464,15 +464,15 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11789">11789</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11790"></a><span class="lineno">11790</span>&#160;            {</div>
-<div class="line"><a name="l11791"></a><span class="lineno">11791</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code" href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">empty</a>()))</div>
-<div class="line"><a name="l11792"></a><span class="lineno">11792</span>&#160;                {</div>
-<div class="line"><a name="l11793"></a><span class="lineno">11793</span>&#160;                    <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1out__of__range.html#a3f6d82a6f967c4728a1ec735a7867073">detail::out_of_range::create</a>(405, <span class="stringliteral">&quot;JSON pointer has no parent&quot;</span>));</div>
-<div class="line"><a name="l11794"></a><span class="lineno">11794</span>&#160;                }</div>
-<div class="line"><a name="l11795"></a><span class="lineno">11795</span>&#160; </div>
-<div class="line"><a name="l11796"></a><span class="lineno">11796</span>&#160;                reference_tokens.pop_back();</div>
-<div class="line"><a name="l11797"></a><span class="lineno">11797</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11777">11777</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11778"></a><span class="lineno">11778</span>&#160;            {</div>
+<div class="line"><a name="l11779"></a><span class="lineno">11779</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code" href="classnlohmann_1_1json__pointer.html#a649252bda4a2e75a0915b11a25d8bcc3">empty</a>()))</div>
+<div class="line"><a name="l11780"></a><span class="lineno">11780</span>&#160;                {</div>
+<div class="line"><a name="l11781"></a><span class="lineno">11781</span>&#160;                    <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1out__of__range.html#a3f6d82a6f967c4728a1ec735a7867073">detail::out_of_range::create</a>(405, <span class="stringliteral">&quot;JSON pointer has no parent&quot;</span>));</div>
+<div class="line"><a name="l11782"></a><span class="lineno">11782</span>&#160;                }</div>
+<div class="line"><a name="l11783"></a><span class="lineno">11783</span>&#160; </div>
+<div class="line"><a name="l11784"></a><span class="lineno">11784</span>&#160;                reference_tokens.pop_back();</div>
+<div class="line"><a name="l11785"></a><span class="lineno">11785</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -502,10 +502,10 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11835">11835</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11836"></a><span class="lineno">11836</span>&#160;            {</div>
-<div class="line"><a name="l11837"></a><span class="lineno">11837</span>&#160;                reference_tokens.push_back(token);</div>
-<div class="line"><a name="l11838"></a><span class="lineno">11838</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11823">11823</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11824"></a><span class="lineno">11824</span>&#160;            {</div>
+<div class="line"><a name="l11825"></a><span class="lineno">11825</span>&#160;                reference_tokens.push_back(token);</div>
+<div class="line"><a name="l11826"></a><span class="lineno">11826</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -537,10 +537,10 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p></p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11841">11841</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11842"></a><span class="lineno">11842</span>&#160;            {</div>
-<div class="line"><a name="l11843"></a><span class="lineno">11843</span>&#160;                reference_tokens.push_back(std::move(token));</div>
-<div class="line"><a name="l11844"></a><span class="lineno">11844</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11829">11829</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11830"></a><span class="lineno">11830</span>&#160;            {</div>
+<div class="line"><a name="l11831"></a><span class="lineno">11831</span>&#160;                reference_tokens.push_back(std::move(token));</div>
+<div class="line"><a name="l11832"></a><span class="lineno">11832</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -569,15 +569,15 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11607">11607</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11608"></a><span class="lineno">11608</span>&#160;            {</div>
-<div class="line"><a name="l11609"></a><span class="lineno">11609</span>&#160;                <span class="keywordflow">return</span> std::accumulate(reference_tokens.begin(), reference_tokens.end(),</div>
-<div class="line"><a name="l11610"></a><span class="lineno">11610</span>&#160;                                       std::string{},</div>
-<div class="line"><a name="l11611"></a><span class="lineno">11611</span>&#160;                                       [](<span class="keyword">const</span> std::string &amp; a, <span class="keyword">const</span> std::string &amp; b)</div>
-<div class="line"><a name="l11612"></a><span class="lineno">11612</span>&#160;                {</div>
-<div class="line"><a name="l11613"></a><span class="lineno">11613</span>&#160;                    return a + <span class="stringliteral">&quot;/&quot;</span> + escape(b);</div>
-<div class="line"><a name="l11614"></a><span class="lineno">11614</span>&#160;                });</div>
-<div class="line"><a name="l11615"></a><span class="lineno">11615</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11595">11595</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11596"></a><span class="lineno">11596</span>&#160;            {</div>
+<div class="line"><a name="l11597"></a><span class="lineno">11597</span>&#160;                <span class="keywordflow">return</span> std::accumulate(reference_tokens.begin(), reference_tokens.end(),</div>
+<div class="line"><a name="l11598"></a><span class="lineno">11598</span>&#160;                                       std::string{},</div>
+<div class="line"><a name="l11599"></a><span class="lineno">11599</span>&#160;                                       [](<span class="keyword">const</span> std::string &amp; a, <span class="keyword">const</span> std::string &amp; b)</div>
+<div class="line"><a name="l11600"></a><span class="lineno">11600</span>&#160;                {</div>
+<div class="line"><a name="l11601"></a><span class="lineno">11601</span>&#160;                    return a + <span class="stringliteral">&quot;/&quot;</span> + escape(b);</div>
+<div class="line"><a name="l11602"></a><span class="lineno">11602</span>&#160;                });</div>
+<div class="line"><a name="l11603"></a><span class="lineno">11603</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -604,7 +604,7 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11565">11565</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11553">11553</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -661,10 +661,10 @@ template&lt;typename BasicJsonType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l12509">12509</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l12511"></a><span class="lineno">12511</span>&#160;            {</div>
-<div class="line"><a name="l12512"></a><span class="lineno">12512</span>&#160;                <span class="keywordflow">return</span> !(lhs == rhs);</div>
-<div class="line"><a name="l12513"></a><span class="lineno">12513</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l12497">12497</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l12499"></a><span class="lineno">12499</span>&#160;            {</div>
+<div class="line"><a name="l12500"></a><span class="lineno">12500</span>&#160;                <span class="keywordflow">return</span> !(lhs == rhs);</div>
+<div class="line"><a name="l12501"></a><span class="lineno">12501</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -704,10 +704,10 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11705">11705</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11707"></a><span class="lineno">11707</span>&#160;            {</div>
-<div class="line"><a name="l11708"></a><span class="lineno">11708</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a>(lhs) /= rhs;</div>
-<div class="line"><a name="l11709"></a><span class="lineno">11709</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11693">11693</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11695"></a><span class="lineno">11695</span>&#160;            {</div>
+<div class="line"><a name="l11696"></a><span class="lineno">11696</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a>(lhs) /= rhs;</div>
+<div class="line"><a name="l11697"></a><span class="lineno">11697</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -747,10 +747,10 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11746">11746</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11747"></a><span class="lineno">11747</span>&#160;            {</div>
-<div class="line"><a name="l11748"></a><span class="lineno">11748</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a>(ptr) /= array_idx;</div>
-<div class="line"><a name="l11749"></a><span class="lineno">11749</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11734">11734</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11735"></a><span class="lineno">11735</span>&#160;            {</div>
+<div class="line"><a name="l11736"></a><span class="lineno">11736</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a>(ptr) /= array_idx;</div>
+<div class="line"><a name="l11737"></a><span class="lineno">11737</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -790,10 +790,10 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11726">11726</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11727"></a><span class="lineno">11727</span>&#160;            {</div>
-<div class="line"><a name="l11728"></a><span class="lineno">11728</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a>(ptr) /= std::move(token);</div>
-<div class="line"><a name="l11729"></a><span class="lineno">11729</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11714">11714</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11715"></a><span class="lineno">11715</span>&#160;            {</div>
+<div class="line"><a name="l11716"></a><span class="lineno">11716</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1json__pointer.html#a7f32d7c62841f0c4a6784cf741a6e4f8">json_pointer</a>(ptr) /= std::move(token);</div>
+<div class="line"><a name="l11717"></a><span class="lineno">11717</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -850,10 +850,10 @@ template&lt;typename BasicJsonType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l12492">12492</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l12494"></a><span class="lineno">12494</span>&#160;            {</div>
-<div class="line"><a name="l12495"></a><span class="lineno">12495</span>&#160;                <span class="keywordflow">return</span> lhs.reference_tokens == rhs.reference_tokens;</div>
-<div class="line"><a name="l12496"></a><span class="lineno">12496</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l12480">12480</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l12482"></a><span class="lineno">12482</span>&#160;            {</div>
+<div class="line"><a name="l12483"></a><span class="lineno">12483</span>&#160;                <span class="keywordflow">return</span> lhs.reference_tokens == rhs.reference_tokens;</div>
+<div class="line"><a name="l12484"></a><span class="lineno">12484</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>

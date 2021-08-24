@@ -20,11 +20,11 @@
 #ifndef QCALC_UIDGENERATOR_HPP
 #define QCALC_UIDGENERATOR_HPP
 
-#include "src/3rdparty/util/uid.hpp"
+#include <algorithm>
 #include <limits>
 #include <stdexcept>
-#include <algorithm>
 #include <vector>
+#include "../util/uid.hpp"
 
 /************************************************
  * @brief UIDGenerator.

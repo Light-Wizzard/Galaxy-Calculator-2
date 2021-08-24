@@ -195,7 +195,7 @@ class nlohmann::detail::lexer&lt; BasicJsonType, InputAdapterType &gt;</h3>
 <p>lexical analysis </p>
 <p>This class organizes the lexical analysis during JSON deserialization. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05985">5985</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05973">5973</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a986907dff5ceb4fa06aa8ff301822726"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a986907dff5ceb4fa06aa8ff301822726">&#9670;&nbsp;</a></span>token_type</h2>
@@ -211,7 +211,7 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05995">5995</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05983">5983</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -252,11 +252,11 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05997">5997</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l05998"></a><span class="lineno"> 5998</span>&#160;                    : ia(std::move(adapter))</div>
-<div class="line"><a name="l05999"></a><span class="lineno"> 5999</span>&#160;                    , ignore_comments(ignore_comments_)</div>
-<div class="line"><a name="l06000"></a><span class="lineno"> 6000</span>&#160;                    , decimal_point_char(<span class="keyword">static_cast&lt;</span>char_int_type<span class="keyword">&gt;</span>(get_decimal_point()))</div>
-<div class="line"><a name="l06001"></a><span class="lineno"> 6001</span>&#160;                {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05985">5985</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l05986"></a><span class="lineno"> 5986</span>&#160;                    : ia(std::move(adapter))</div>
+<div class="line"><a name="l05987"></a><span class="lineno"> 5987</span>&#160;                    , ignore_comments(ignore_comments_)</div>
+<div class="line"><a name="l05988"></a><span class="lineno"> 5988</span>&#160;                    , decimal_point_char(<span class="keyword">static_cast&lt;</span>char_int_type<span class="keyword">&gt;</span>(get_decimal_point()))</div>
+<div class="line"><a name="l05989"></a><span class="lineno"> 5989</span>&#160;                {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -371,10 +371,10 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>return syntax error message </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07351">7351</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07352"></a><span class="lineno"> 7352</span>&#160;                {</div>
-<div class="line"><a name="l07353"></a><span class="lineno"> 7353</span>&#160;                    <span class="keywordflow">return</span> error_message;</div>
-<div class="line"><a name="l07354"></a><span class="lineno"> 7354</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07339">7339</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07340"></a><span class="lineno"> 7340</span>&#160;                {</div>
+<div class="line"><a name="l07341"></a><span class="lineno"> 7341</span>&#160;                    <span class="keywordflow">return</span> error_message;</div>
+<div class="line"><a name="l07342"></a><span class="lineno"> 7342</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -405,10 +405,10 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>return floating-point value </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07298">7298</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07299"></a><span class="lineno"> 7299</span>&#160;                {</div>
-<div class="line"><a name="l07300"></a><span class="lineno"> 7300</span>&#160;                    <span class="keywordflow">return</span> value_float;</div>
-<div class="line"><a name="l07301"></a><span class="lineno"> 7301</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07286">7286</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07287"></a><span class="lineno"> 7287</span>&#160;                {</div>
+<div class="line"><a name="l07288"></a><span class="lineno"> 7288</span>&#160;                    <span class="keywordflow">return</span> value_float;</div>
+<div class="line"><a name="l07289"></a><span class="lineno"> 7289</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -439,10 +439,10 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>return integer value </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07286">7286</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07287"></a><span class="lineno"> 7287</span>&#160;                {</div>
-<div class="line"><a name="l07288"></a><span class="lineno"> 7288</span>&#160;                    <span class="keywordflow">return</span> value_integer;</div>
-<div class="line"><a name="l07289"></a><span class="lineno"> 7289</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07274">7274</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07275"></a><span class="lineno"> 7275</span>&#160;                {</div>
+<div class="line"><a name="l07276"></a><span class="lineno"> 7276</span>&#160;                    <span class="keywordflow">return</span> value_integer;</div>
+<div class="line"><a name="l07277"></a><span class="lineno"> 7277</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -473,10 +473,10 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>return unsigned integer value </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07292">7292</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07293"></a><span class="lineno"> 7293</span>&#160;                {</div>
-<div class="line"><a name="l07294"></a><span class="lineno"> 7294</span>&#160;                    <span class="keywordflow">return</span> value_unsigned;</div>
-<div class="line"><a name="l07295"></a><span class="lineno"> 7295</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07280">7280</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07281"></a><span class="lineno"> 7281</span>&#160;                {</div>
+<div class="line"><a name="l07282"></a><span class="lineno"> 7282</span>&#160;                    <span class="keywordflow">return</span> value_unsigned;</div>
+<div class="line"><a name="l07283"></a><span class="lineno"> 7283</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -507,10 +507,10 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>return position of last read token </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07314">7314</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07315"></a><span class="lineno"> 7315</span>&#160;                {</div>
-<div class="line"><a name="l07316"></a><span class="lineno"> 7316</span>&#160;                    <span class="keywordflow">return</span> position;</div>
-<div class="line"><a name="l07317"></a><span class="lineno"> 7317</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07302">7302</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07303"></a><span class="lineno"> 7303</span>&#160;                {</div>
+<div class="line"><a name="l07304"></a><span class="lineno"> 7304</span>&#160;                    <span class="keywordflow">return</span> position;</div>
+<div class="line"><a name="l07305"></a><span class="lineno"> 7305</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -541,10 +541,10 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>return current string value (implicitly resets the token; useful only once) </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07304">7304</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07305"></a><span class="lineno"> 7305</span>&#160;                {</div>
-<div class="line"><a name="l07306"></a><span class="lineno"> 7306</span>&#160;                    <span class="keywordflow">return</span> token_buffer;</div>
-<div class="line"><a name="l07307"></a><span class="lineno"> 7307</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07292">7292</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07293"></a><span class="lineno"> 7293</span>&#160;                {</div>
+<div class="line"><a name="l07294"></a><span class="lineno"> 7294</span>&#160;                    <span class="keywordflow">return</span> token_buffer;</div>
+<div class="line"><a name="l07295"></a><span class="lineno"> 7295</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -574,32 +574,32 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 </div><div class="memdoc">
 <p>return the last read token (for errors only). Will never contain EOF (an arbitrary value that is not a valid char value, often -1), because 255 may legitimately occur. May contain NUL, which should be escaped. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07322">7322</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07323"></a><span class="lineno"> 7323</span>&#160;                {</div>
-<div class="line"><a name="l07324"></a><span class="lineno"> 7324</span>&#160;                    <span class="comment">// escape control characters</span></div>
-<div class="line"><a name="l07325"></a><span class="lineno"> 7325</span>&#160;                    std::string result;</div>
-<div class="line"><a name="l07326"></a><span class="lineno"> 7326</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> c : token_string)</div>
-<div class="line"><a name="l07327"></a><span class="lineno"> 7327</span>&#160;                    {</div>
-<div class="line"><a name="l07328"></a><span class="lineno"> 7328</span>&#160;                        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c) &lt;= <span class="stringliteral">&#39;\x1F&#39;</span>)</div>
-<div class="line"><a name="l07329"></a><span class="lineno"> 7329</span>&#160;                        {</div>
-<div class="line"><a name="l07330"></a><span class="lineno"> 7330</span>&#160;                            <span class="comment">// escape control characters</span></div>
-<div class="line"><a name="l07331"></a><span class="lineno"> 7331</span>&#160;                            std::array&lt;char, 9&gt; cs{{}};</div>
-<div class="line"><a name="l07332"></a><span class="lineno"> 7332</span>&#160;<span class="preprocessor">                            #if (defined (_WIN32) || defined (_WIN64))</span></div>
-<div class="line"><a name="l07333"></a><span class="lineno"> 7333</span>&#160;                            (snprintf)(cs.data(), cs.size(), <span class="stringliteral">&quot;&lt;U+%.4X&gt;&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c));</div>
-<div class="line"><a name="l07334"></a><span class="lineno"> 7334</span>&#160;<span class="preprocessor">                            #else</span></div>
-<div class="line"><a name="l07335"></a><span class="lineno"> 7335</span>&#160;                            (std::snprintf)(cs.data(), cs.size(), <span class="stringliteral">&quot;&lt;U+%.4X&gt;&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c));</div>
-<div class="line"><a name="l07336"></a><span class="lineno"> 7336</span>&#160;<span class="preprocessor">                            #endif</span></div>
-<div class="line"><a name="l07337"></a><span class="lineno"> 7337</span>&#160;                            result += cs.data();</div>
-<div class="line"><a name="l07338"></a><span class="lineno"> 7338</span>&#160;                        }</div>
-<div class="line"><a name="l07339"></a><span class="lineno"> 7339</span>&#160;                        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l07340"></a><span class="lineno"> 7340</span>&#160;                        {</div>
-<div class="line"><a name="l07341"></a><span class="lineno"> 7341</span>&#160;                            <span class="comment">// add character as is</span></div>
-<div class="line"><a name="l07342"></a><span class="lineno"> 7342</span>&#160;                            result.push_back(<span class="keyword">static_cast&lt;</span>std::string::value_type<span class="keyword">&gt;</span>(c));</div>
-<div class="line"><a name="l07343"></a><span class="lineno"> 7343</span>&#160;                        }</div>
-<div class="line"><a name="l07344"></a><span class="lineno"> 7344</span>&#160;                    }</div>
-<div class="line"><a name="l07345"></a><span class="lineno"> 7345</span>&#160; </div>
-<div class="line"><a name="l07346"></a><span class="lineno"> 7346</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l07347"></a><span class="lineno"> 7347</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07310">7310</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07311"></a><span class="lineno"> 7311</span>&#160;                {</div>
+<div class="line"><a name="l07312"></a><span class="lineno"> 7312</span>&#160;                    <span class="comment">// escape control characters</span></div>
+<div class="line"><a name="l07313"></a><span class="lineno"> 7313</span>&#160;                    std::string result;</div>
+<div class="line"><a name="l07314"></a><span class="lineno"> 7314</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> c : token_string)</div>
+<div class="line"><a name="l07315"></a><span class="lineno"> 7315</span>&#160;                    {</div>
+<div class="line"><a name="l07316"></a><span class="lineno"> 7316</span>&#160;                        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c) &lt;= <span class="stringliteral">&#39;\x1F&#39;</span>)</div>
+<div class="line"><a name="l07317"></a><span class="lineno"> 7317</span>&#160;                        {</div>
+<div class="line"><a name="l07318"></a><span class="lineno"> 7318</span>&#160;                            <span class="comment">// escape control characters</span></div>
+<div class="line"><a name="l07319"></a><span class="lineno"> 7319</span>&#160;                            std::array&lt;char, 9&gt; cs{{}};</div>
+<div class="line"><a name="l07320"></a><span class="lineno"> 7320</span>&#160;<span class="preprocessor">                            #if (defined (_WIN32) || defined (_WIN64))</span></div>
+<div class="line"><a name="l07321"></a><span class="lineno"> 7321</span>&#160;                            (snprintf)(cs.data(), cs.size(), <span class="stringliteral">&quot;&lt;U+%.4X&gt;&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c));</div>
+<div class="line"><a name="l07322"></a><span class="lineno"> 7322</span>&#160;<span class="preprocessor">                            #else</span></div>
+<div class="line"><a name="l07323"></a><span class="lineno"> 7323</span>&#160;                            (std::snprintf)(cs.data(), cs.size(), <span class="stringliteral">&quot;&lt;U+%.4X&gt;&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c));</div>
+<div class="line"><a name="l07324"></a><span class="lineno"> 7324</span>&#160;<span class="preprocessor">                            #endif</span></div>
+<div class="line"><a name="l07325"></a><span class="lineno"> 7325</span>&#160;                            result += cs.data();</div>
+<div class="line"><a name="l07326"></a><span class="lineno"> 7326</span>&#160;                        }</div>
+<div class="line"><a name="l07327"></a><span class="lineno"> 7327</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l07328"></a><span class="lineno"> 7328</span>&#160;                        {</div>
+<div class="line"><a name="l07329"></a><span class="lineno"> 7329</span>&#160;                            <span class="comment">// add character as is</span></div>
+<div class="line"><a name="l07330"></a><span class="lineno"> 7330</span>&#160;                            result.push_back(<span class="keyword">static_cast&lt;</span>std::string::value_type<span class="keyword">&gt;</span>(c));</div>
+<div class="line"><a name="l07331"></a><span class="lineno"> 7331</span>&#160;                        }</div>
+<div class="line"><a name="l07332"></a><span class="lineno"> 7332</span>&#160;                    }</div>
+<div class="line"><a name="l07333"></a><span class="lineno"> 7333</span>&#160; </div>
+<div class="line"><a name="l07334"></a><span class="lineno"> 7334</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l07335"></a><span class="lineno"> 7335</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -684,97 +684,97 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07387">7387</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07388"></a><span class="lineno"> 7388</span>&#160;                {</div>
-<div class="line"><a name="l07389"></a><span class="lineno"> 7389</span>&#160;                    <span class="comment">// initially, skip the BOM</span></div>
-<div class="line"><a name="l07390"></a><span class="lineno"> 7390</span>&#160;                    <span class="keywordflow">if</span> (position.<a class="code" href="structnlohmann_1_1detail_1_1position__t.html#a94cf85cd91d478c20ae143eba906ea1a">chars_read_total</a> == 0 &amp;&amp; !<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a7cd7d55de2cd398660bc243c7229caf9">skip_bom</a>())</div>
-<div class="line"><a name="l07391"></a><span class="lineno"> 7391</span>&#160;                    {</div>
-<div class="line"><a name="l07392"></a><span class="lineno"> 7392</span>&#160;                        error_message = <span class="stringliteral">&quot;invalid BOM; must be 0xEF 0xBB 0xBF if given&quot;</span>;</div>
-<div class="line"><a name="l07393"></a><span class="lineno"> 7393</span>&#160;                        <span class="keywordflow">return</span> token_type::parse_error;</div>
-<div class="line"><a name="l07394"></a><span class="lineno"> 7394</span>&#160;                    }</div>
-<div class="line"><a name="l07395"></a><span class="lineno"> 7395</span>&#160; </div>
-<div class="line"><a name="l07396"></a><span class="lineno"> 7396</span>&#160;                    <span class="comment">// read next character and ignore whitespace</span></div>
-<div class="line"><a name="l07397"></a><span class="lineno"> 7397</span>&#160;                    <a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a449f3f3703dfbf8b757e12f002668604">skip_whitespace</a>();</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07375">7375</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07376"></a><span class="lineno"> 7376</span>&#160;                {</div>
+<div class="line"><a name="l07377"></a><span class="lineno"> 7377</span>&#160;                    <span class="comment">// initially, skip the BOM</span></div>
+<div class="line"><a name="l07378"></a><span class="lineno"> 7378</span>&#160;                    <span class="keywordflow">if</span> (position.<a class="code" href="structnlohmann_1_1detail_1_1position__t.html#a94cf85cd91d478c20ae143eba906ea1a">chars_read_total</a> == 0 &amp;&amp; !<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a7cd7d55de2cd398660bc243c7229caf9">skip_bom</a>())</div>
+<div class="line"><a name="l07379"></a><span class="lineno"> 7379</span>&#160;                    {</div>
+<div class="line"><a name="l07380"></a><span class="lineno"> 7380</span>&#160;                        error_message = <span class="stringliteral">&quot;invalid BOM; must be 0xEF 0xBB 0xBF if given&quot;</span>;</div>
+<div class="line"><a name="l07381"></a><span class="lineno"> 7381</span>&#160;                        <span class="keywordflow">return</span> token_type::parse_error;</div>
+<div class="line"><a name="l07382"></a><span class="lineno"> 7382</span>&#160;                    }</div>
+<div class="line"><a name="l07383"></a><span class="lineno"> 7383</span>&#160; </div>
+<div class="line"><a name="l07384"></a><span class="lineno"> 7384</span>&#160;                    <span class="comment">// read next character and ignore whitespace</span></div>
+<div class="line"><a name="l07385"></a><span class="lineno"> 7385</span>&#160;                    <a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a449f3f3703dfbf8b757e12f002668604">skip_whitespace</a>();</div>
+<div class="line"><a name="l07386"></a><span class="lineno"> 7386</span>&#160; </div>
+<div class="line"><a name="l07387"></a><span class="lineno"> 7387</span>&#160;                    <span class="comment">// ignore comments</span></div>
+<div class="line"><a name="l07388"></a><span class="lineno"> 7388</span>&#160;                    <span class="keywordflow">while</span> (ignore_comments &amp;&amp; current == <span class="charliteral">&#39;/&#39;</span>)</div>
+<div class="line"><a name="l07389"></a><span class="lineno"> 7389</span>&#160;                    {</div>
+<div class="line"><a name="l07390"></a><span class="lineno"> 7390</span>&#160;                        <span class="keywordflow">if</span> (!scan_comment())</div>
+<div class="line"><a name="l07391"></a><span class="lineno"> 7391</span>&#160;                        {</div>
+<div class="line"><a name="l07392"></a><span class="lineno"> 7392</span>&#160;                            <span class="keywordflow">return</span> token_type::parse_error;</div>
+<div class="line"><a name="l07393"></a><span class="lineno"> 7393</span>&#160;                        }</div>
+<div class="line"><a name="l07394"></a><span class="lineno"> 7394</span>&#160; </div>
+<div class="line"><a name="l07395"></a><span class="lineno"> 7395</span>&#160;                        <span class="comment">// skip following whitespace</span></div>
+<div class="line"><a name="l07396"></a><span class="lineno"> 7396</span>&#160;                        <a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a449f3f3703dfbf8b757e12f002668604">skip_whitespace</a>();</div>
+<div class="line"><a name="l07397"></a><span class="lineno"> 7397</span>&#160;                    }</div>
 <div class="line"><a name="l07398"></a><span class="lineno"> 7398</span>&#160; </div>
-<div class="line"><a name="l07399"></a><span class="lineno"> 7399</span>&#160;                    <span class="comment">// ignore comments</span></div>
-<div class="line"><a name="l07400"></a><span class="lineno"> 7400</span>&#160;                    <span class="keywordflow">while</span> (ignore_comments &amp;&amp; current == <span class="charliteral">&#39;/&#39;</span>)</div>
-<div class="line"><a name="l07401"></a><span class="lineno"> 7401</span>&#160;                    {</div>
-<div class="line"><a name="l07402"></a><span class="lineno"> 7402</span>&#160;                        <span class="keywordflow">if</span> (!scan_comment())</div>
-<div class="line"><a name="l07403"></a><span class="lineno"> 7403</span>&#160;                        {</div>
-<div class="line"><a name="l07404"></a><span class="lineno"> 7404</span>&#160;                            <span class="keywordflow">return</span> token_type::parse_error;</div>
-<div class="line"><a name="l07405"></a><span class="lineno"> 7405</span>&#160;                        }</div>
-<div class="line"><a name="l07406"></a><span class="lineno"> 7406</span>&#160; </div>
-<div class="line"><a name="l07407"></a><span class="lineno"> 7407</span>&#160;                        <span class="comment">// skip following whitespace</span></div>
-<div class="line"><a name="l07408"></a><span class="lineno"> 7408</span>&#160;                        <a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a449f3f3703dfbf8b757e12f002668604">skip_whitespace</a>();</div>
-<div class="line"><a name="l07409"></a><span class="lineno"> 7409</span>&#160;                    }</div>
-<div class="line"><a name="l07410"></a><span class="lineno"> 7410</span>&#160; </div>
-<div class="line"><a name="l07411"></a><span class="lineno"> 7411</span>&#160;                    <span class="keywordflow">switch</span> (current)</div>
-<div class="line"><a name="l07412"></a><span class="lineno"> 7412</span>&#160;                    {</div>
-<div class="line"><a name="l07413"></a><span class="lineno"> 7413</span>&#160;                        <span class="comment">// structural characters</span></div>
-<div class="line"><a name="l07414"></a><span class="lineno"> 7414</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;[&#39;</span>:</div>
-<div class="line"><a name="l07415"></a><span class="lineno"> 7415</span>&#160;                            <span class="keywordflow">return</span> token_type::begin_array;</div>
-<div class="line"><a name="l07416"></a><span class="lineno"> 7416</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;]&#39;</span>:</div>
-<div class="line"><a name="l07417"></a><span class="lineno"> 7417</span>&#160;                            <span class="keywordflow">return</span> token_type::end_array;</div>
-<div class="line"><a name="l07418"></a><span class="lineno"> 7418</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;{&#39;</span>:</div>
-<div class="line"><a name="l07419"></a><span class="lineno"> 7419</span>&#160;                            <span class="keywordflow">return</span> token_type::begin_object;</div>
-<div class="line"><a name="l07420"></a><span class="lineno"> 7420</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;}&#39;</span>:</div>
-<div class="line"><a name="l07421"></a><span class="lineno"> 7421</span>&#160;                            <span class="keywordflow">return</span> token_type::end_object;</div>
-<div class="line"><a name="l07422"></a><span class="lineno"> 7422</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;:&#39;</span>:</div>
-<div class="line"><a name="l07423"></a><span class="lineno"> 7423</span>&#160;                            <span class="keywordflow">return</span> token_type::name_separator;</div>
-<div class="line"><a name="l07424"></a><span class="lineno"> 7424</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span>:</div>
-<div class="line"><a name="l07425"></a><span class="lineno"> 7425</span>&#160;                            <span class="keywordflow">return</span> token_type::value_separator;</div>
-<div class="line"><a name="l07426"></a><span class="lineno"> 7426</span>&#160; </div>
-<div class="line"><a name="l07427"></a><span class="lineno"> 7427</span>&#160;                            <span class="comment">// literals</span></div>
-<div class="line"><a name="l07428"></a><span class="lineno"> 7428</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;t&#39;</span>:</div>
-<div class="line"><a name="l07429"></a><span class="lineno"> 7429</span>&#160;                        {</div>
-<div class="line"><a name="l07430"></a><span class="lineno"> 7430</span>&#160;                            std::array&lt;char_type, 4&gt; true_literal = {{<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;e&#39;</span>}};</div>
-<div class="line"><a name="l07431"></a><span class="lineno"> 7431</span>&#160;                            <span class="keywordflow">return</span> scan_literal(true_literal.data(), true_literal.size(), token_type::literal_true);</div>
-<div class="line"><a name="l07432"></a><span class="lineno"> 7432</span>&#160;                        }</div>
-<div class="line"><a name="l07433"></a><span class="lineno"> 7433</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;f&#39;</span>:</div>
-<div class="line"><a name="l07434"></a><span class="lineno"> 7434</span>&#160;                        {</div>
-<div class="line"><a name="l07435"></a><span class="lineno"> 7435</span>&#160;                            std::array&lt;char_type, 5&gt; false_literal = {{<span class="charliteral">&#39;f&#39;</span>, <span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;e&#39;</span>}};</div>
-<div class="line"><a name="l07436"></a><span class="lineno"> 7436</span>&#160;                            <span class="keywordflow">return</span> scan_literal(false_literal.data(), false_literal.size(), token_type::literal_false);</div>
-<div class="line"><a name="l07437"></a><span class="lineno"> 7437</span>&#160;                        }</div>
-<div class="line"><a name="l07438"></a><span class="lineno"> 7438</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l07439"></a><span class="lineno"> 7439</span>&#160;                        {</div>
-<div class="line"><a name="l07440"></a><span class="lineno"> 7440</span>&#160;                            std::array&lt;char_type, 4&gt; null_literal = {{<span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>}};</div>
-<div class="line"><a name="l07441"></a><span class="lineno"> 7441</span>&#160;                            <span class="keywordflow">return</span> scan_literal(null_literal.data(), null_literal.size(), token_type::literal_null);</div>
-<div class="line"><a name="l07442"></a><span class="lineno"> 7442</span>&#160;                        }</div>
-<div class="line"><a name="l07443"></a><span class="lineno"> 7443</span>&#160; </div>
-<div class="line"><a name="l07444"></a><span class="lineno"> 7444</span>&#160;                            <span class="comment">// string</span></div>
-<div class="line"><a name="l07445"></a><span class="lineno"> 7445</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;\&quot;&#39;</span>:</div>
-<div class="line"><a name="l07446"></a><span class="lineno"> 7446</span>&#160;                            <span class="keywordflow">return</span> scan_string();</div>
-<div class="line"><a name="l07447"></a><span class="lineno"> 7447</span>&#160; </div>
-<div class="line"><a name="l07448"></a><span class="lineno"> 7448</span>&#160;                            <span class="comment">// number</span></div>
-<div class="line"><a name="l07449"></a><span class="lineno"> 7449</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span>:</div>
-<div class="line"><a name="l07450"></a><span class="lineno"> 7450</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>:</div>
-<div class="line"><a name="l07451"></a><span class="lineno"> 7451</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
-<div class="line"><a name="l07452"></a><span class="lineno"> 7452</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
-<div class="line"><a name="l07453"></a><span class="lineno"> 7453</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line"><a name="l07454"></a><span class="lineno"> 7454</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
-<div class="line"><a name="l07455"></a><span class="lineno"> 7455</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>:</div>
-<div class="line"><a name="l07456"></a><span class="lineno"> 7456</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>:</div>
-<div class="line"><a name="l07457"></a><span class="lineno"> 7457</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>:</div>
-<div class="line"><a name="l07458"></a><span class="lineno"> 7458</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;8&#39;</span>:</div>
-<div class="line"><a name="l07459"></a><span class="lineno"> 7459</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;9&#39;</span>:</div>
-<div class="line"><a name="l07460"></a><span class="lineno"> 7460</span>&#160;                            <span class="keywordflow">return</span> scan_number();</div>
-<div class="line"><a name="l07461"></a><span class="lineno"> 7461</span>&#160; </div>
-<div class="line"><a name="l07462"></a><span class="lineno"> 7462</span>&#160;                            <span class="comment">// end of input (the null byte is needed when parsing from</span></div>
-<div class="line"><a name="l07463"></a><span class="lineno"> 7463</span>&#160;                            <span class="comment">// string literals)</span></div>
-<div class="line"><a name="l07464"></a><span class="lineno"> 7464</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;\0&#39;</span>:</div>
-<div class="line"><a name="l07465"></a><span class="lineno"> 7465</span>&#160;                        <span class="keywordflow">case</span> std::char_traits&lt;char_type&gt;::eof():</div>
-<div class="line"><a name="l07466"></a><span class="lineno"> 7466</span>&#160;                            return <a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a986907dff5ceb4fa06aa8ff301822726">token_type</a>::end_of_input;</div>
-<div class="line"><a name="l07467"></a><span class="lineno"> 7467</span>&#160; </div>
-<div class="line"><a name="l07468"></a><span class="lineno"> 7468</span>&#160;                            <span class="comment">// error</span></div>
-<div class="line"><a name="l07469"></a><span class="lineno"> 7469</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l07470"></a><span class="lineno"> 7470</span>&#160;                            error_message = <span class="stringliteral">&quot;invalid literal&quot;</span>;</div>
-<div class="line"><a name="l07471"></a><span class="lineno"> 7471</span>&#160;                            <span class="keywordflow">return</span> token_type::parse_error;</div>
-<div class="line"><a name="l07472"></a><span class="lineno"> 7472</span>&#160;                    }</div>
-<div class="line"><a name="l07473"></a><span class="lineno"> 7473</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a449f3f3703dfbf8b757e12f002668604"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a449f3f3703dfbf8b757e12f002668604">nlohmann::detail::lexer::skip_whitespace</a></div><div class="ttdeci">void skip_whitespace()</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07378">json.hpp:7378</a></div></div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a7cd7d55de2cd398660bc243c7229caf9"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a7cd7d55de2cd398660bc243c7229caf9">nlohmann::detail::lexer::skip_bom</a></div><div class="ttdeci">bool skip_bom()</div><div class="ttdoc">skip the UTF-8 byte order mark</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07364">json.hpp:7364</a></div></div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a986907dff5ceb4fa06aa8ff301822726"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a986907dff5ceb4fa06aa8ff301822726">nlohmann::detail::lexer::token_type</a></div><div class="ttdeci">typename lexer_base&lt; BasicJsonType &gt;::token_type token_type</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05995">json.hpp:5995</a></div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1position__t_html_a94cf85cd91d478c20ae143eba906ea1a"><div class="ttname"><a href="structnlohmann_1_1detail_1_1position__t.html#a94cf85cd91d478c20ae143eba906ea1a">nlohmann::detail::position_t::chars_read_total</a></div><div class="ttdeci">std::size_t chars_read_total</div><div class="ttdoc">the total number of characters read</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00092">json.hpp:92</a></div></div>
+<div class="line"><a name="l07399"></a><span class="lineno"> 7399</span>&#160;                    <span class="keywordflow">switch</span> (current)</div>
+<div class="line"><a name="l07400"></a><span class="lineno"> 7400</span>&#160;                    {</div>
+<div class="line"><a name="l07401"></a><span class="lineno"> 7401</span>&#160;                        <span class="comment">// structural characters</span></div>
+<div class="line"><a name="l07402"></a><span class="lineno"> 7402</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;[&#39;</span>:</div>
+<div class="line"><a name="l07403"></a><span class="lineno"> 7403</span>&#160;                            <span class="keywordflow">return</span> token_type::begin_array;</div>
+<div class="line"><a name="l07404"></a><span class="lineno"> 7404</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;]&#39;</span>:</div>
+<div class="line"><a name="l07405"></a><span class="lineno"> 7405</span>&#160;                            <span class="keywordflow">return</span> token_type::end_array;</div>
+<div class="line"><a name="l07406"></a><span class="lineno"> 7406</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;{&#39;</span>:</div>
+<div class="line"><a name="l07407"></a><span class="lineno"> 7407</span>&#160;                            <span class="keywordflow">return</span> token_type::begin_object;</div>
+<div class="line"><a name="l07408"></a><span class="lineno"> 7408</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;}&#39;</span>:</div>
+<div class="line"><a name="l07409"></a><span class="lineno"> 7409</span>&#160;                            <span class="keywordflow">return</span> token_type::end_object;</div>
+<div class="line"><a name="l07410"></a><span class="lineno"> 7410</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;:&#39;</span>:</div>
+<div class="line"><a name="l07411"></a><span class="lineno"> 7411</span>&#160;                            <span class="keywordflow">return</span> token_type::name_separator;</div>
+<div class="line"><a name="l07412"></a><span class="lineno"> 7412</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span>:</div>
+<div class="line"><a name="l07413"></a><span class="lineno"> 7413</span>&#160;                            <span class="keywordflow">return</span> token_type::value_separator;</div>
+<div class="line"><a name="l07414"></a><span class="lineno"> 7414</span>&#160; </div>
+<div class="line"><a name="l07415"></a><span class="lineno"> 7415</span>&#160;                            <span class="comment">// literals</span></div>
+<div class="line"><a name="l07416"></a><span class="lineno"> 7416</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;t&#39;</span>:</div>
+<div class="line"><a name="l07417"></a><span class="lineno"> 7417</span>&#160;                        {</div>
+<div class="line"><a name="l07418"></a><span class="lineno"> 7418</span>&#160;                            std::array&lt;char_type, 4&gt; true_literal = {{<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;e&#39;</span>}};</div>
+<div class="line"><a name="l07419"></a><span class="lineno"> 7419</span>&#160;                            <span class="keywordflow">return</span> scan_literal(true_literal.data(), true_literal.size(), token_type::literal_true);</div>
+<div class="line"><a name="l07420"></a><span class="lineno"> 7420</span>&#160;                        }</div>
+<div class="line"><a name="l07421"></a><span class="lineno"> 7421</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;f&#39;</span>:</div>
+<div class="line"><a name="l07422"></a><span class="lineno"> 7422</span>&#160;                        {</div>
+<div class="line"><a name="l07423"></a><span class="lineno"> 7423</span>&#160;                            std::array&lt;char_type, 5&gt; false_literal = {{<span class="charliteral">&#39;f&#39;</span>, <span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;e&#39;</span>}};</div>
+<div class="line"><a name="l07424"></a><span class="lineno"> 7424</span>&#160;                            <span class="keywordflow">return</span> scan_literal(false_literal.data(), false_literal.size(), token_type::literal_false);</div>
+<div class="line"><a name="l07425"></a><span class="lineno"> 7425</span>&#160;                        }</div>
+<div class="line"><a name="l07426"></a><span class="lineno"> 7426</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;n&#39;</span>:</div>
+<div class="line"><a name="l07427"></a><span class="lineno"> 7427</span>&#160;                        {</div>
+<div class="line"><a name="l07428"></a><span class="lineno"> 7428</span>&#160;                            std::array&lt;char_type, 4&gt; null_literal = {{<span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>}};</div>
+<div class="line"><a name="l07429"></a><span class="lineno"> 7429</span>&#160;                            <span class="keywordflow">return</span> scan_literal(null_literal.data(), null_literal.size(), token_type::literal_null);</div>
+<div class="line"><a name="l07430"></a><span class="lineno"> 7430</span>&#160;                        }</div>
+<div class="line"><a name="l07431"></a><span class="lineno"> 7431</span>&#160; </div>
+<div class="line"><a name="l07432"></a><span class="lineno"> 7432</span>&#160;                            <span class="comment">// string</span></div>
+<div class="line"><a name="l07433"></a><span class="lineno"> 7433</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;\&quot;&#39;</span>:</div>
+<div class="line"><a name="l07434"></a><span class="lineno"> 7434</span>&#160;                            <span class="keywordflow">return</span> scan_string();</div>
+<div class="line"><a name="l07435"></a><span class="lineno"> 7435</span>&#160; </div>
+<div class="line"><a name="l07436"></a><span class="lineno"> 7436</span>&#160;                            <span class="comment">// number</span></div>
+<div class="line"><a name="l07437"></a><span class="lineno"> 7437</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span>:</div>
+<div class="line"><a name="l07438"></a><span class="lineno"> 7438</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>:</div>
+<div class="line"><a name="l07439"></a><span class="lineno"> 7439</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
+<div class="line"><a name="l07440"></a><span class="lineno"> 7440</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
+<div class="line"><a name="l07441"></a><span class="lineno"> 7441</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
+<div class="line"><a name="l07442"></a><span class="lineno"> 7442</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>:</div>
+<div class="line"><a name="l07443"></a><span class="lineno"> 7443</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>:</div>
+<div class="line"><a name="l07444"></a><span class="lineno"> 7444</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>:</div>
+<div class="line"><a name="l07445"></a><span class="lineno"> 7445</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>:</div>
+<div class="line"><a name="l07446"></a><span class="lineno"> 7446</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;8&#39;</span>:</div>
+<div class="line"><a name="l07447"></a><span class="lineno"> 7447</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;9&#39;</span>:</div>
+<div class="line"><a name="l07448"></a><span class="lineno"> 7448</span>&#160;                            <span class="keywordflow">return</span> scan_number();</div>
+<div class="line"><a name="l07449"></a><span class="lineno"> 7449</span>&#160; </div>
+<div class="line"><a name="l07450"></a><span class="lineno"> 7450</span>&#160;                            <span class="comment">// end of input (the null byte is needed when parsing from</span></div>
+<div class="line"><a name="l07451"></a><span class="lineno"> 7451</span>&#160;                            <span class="comment">// string literals)</span></div>
+<div class="line"><a name="l07452"></a><span class="lineno"> 7452</span>&#160;                        <span class="keywordflow">case</span> <span class="charliteral">&#39;\0&#39;</span>:</div>
+<div class="line"><a name="l07453"></a><span class="lineno"> 7453</span>&#160;                        <span class="keywordflow">case</span> std::char_traits&lt;char_type&gt;::eof():</div>
+<div class="line"><a name="l07454"></a><span class="lineno"> 7454</span>&#160;                            return <a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a986907dff5ceb4fa06aa8ff301822726">token_type</a>::end_of_input;</div>
+<div class="line"><a name="l07455"></a><span class="lineno"> 7455</span>&#160; </div>
+<div class="line"><a name="l07456"></a><span class="lineno"> 7456</span>&#160;                            <span class="comment">// error</span></div>
+<div class="line"><a name="l07457"></a><span class="lineno"> 7457</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l07458"></a><span class="lineno"> 7458</span>&#160;                            error_message = <span class="stringliteral">&quot;invalid literal&quot;</span>;</div>
+<div class="line"><a name="l07459"></a><span class="lineno"> 7459</span>&#160;                            <span class="keywordflow">return</span> token_type::parse_error;</div>
+<div class="line"><a name="l07460"></a><span class="lineno"> 7460</span>&#160;                    }</div>
+<div class="line"><a name="l07461"></a><span class="lineno"> 7461</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a449f3f3703dfbf8b757e12f002668604"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a449f3f3703dfbf8b757e12f002668604">nlohmann::detail::lexer::skip_whitespace</a></div><div class="ttdeci">void skip_whitespace()</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07366">json.hpp:7366</a></div></div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a7cd7d55de2cd398660bc243c7229caf9"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a7cd7d55de2cd398660bc243c7229caf9">nlohmann::detail::lexer::skip_bom</a></div><div class="ttdeci">bool skip_bom()</div><div class="ttdoc">skip the UTF-8 byte order mark</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07352">json.hpp:7352</a></div></div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a986907dff5ceb4fa06aa8ff301822726"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a986907dff5ceb4fa06aa8ff301822726">nlohmann::detail::lexer::token_type</a></div><div class="ttdeci">typename lexer_base&lt; BasicJsonType &gt;::token_type token_type</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05983">json.hpp:5983</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1position__t_html_a94cf85cd91d478c20ae143eba906ea1a"><div class="ttname"><a href="structnlohmann_1_1detail_1_1position__t.html#a94cf85cd91d478c20ae143eba906ea1a">nlohmann::detail::position_t::chars_read_total</a></div><div class="ttdeci">std::size_t chars_read_total</div><div class="ttdoc">the total number of characters read</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00080">json.hpp:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -806,19 +806,19 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 <p>skip the UTF-8 byte order mark </p>
 <dl class="section return"><dt>Returns</dt><dd>true iff there is no BOM or the correct BOM has been skipped </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07364">7364</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07365"></a><span class="lineno"> 7365</span>&#160;                {</div>
-<div class="line"><a name="l07366"></a><span class="lineno"> 7366</span>&#160;                    <span class="keywordflow">if</span> (get() == 0xEF)</div>
-<div class="line"><a name="l07367"></a><span class="lineno"> 7367</span>&#160;                    {</div>
-<div class="line"><a name="l07368"></a><span class="lineno"> 7368</span>&#160;                        <span class="comment">// check if we completely parse the BOM</span></div>
-<div class="line"><a name="l07369"></a><span class="lineno"> 7369</span>&#160;                        <span class="keywordflow">return</span> get() == 0xBB &amp;&amp; get() == 0xBF;</div>
-<div class="line"><a name="l07370"></a><span class="lineno"> 7370</span>&#160;                    }</div>
-<div class="line"><a name="l07371"></a><span class="lineno"> 7371</span>&#160; </div>
-<div class="line"><a name="l07372"></a><span class="lineno"> 7372</span>&#160;                    <span class="comment">// the first character is not the beginning of the BOM; unget it to</span></div>
-<div class="line"><a name="l07373"></a><span class="lineno"> 7373</span>&#160;                    <span class="comment">// process is later</span></div>
-<div class="line"><a name="l07374"></a><span class="lineno"> 7374</span>&#160;                    unget();</div>
-<div class="line"><a name="l07375"></a><span class="lineno"> 7375</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l07376"></a><span class="lineno"> 7376</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07352">7352</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07353"></a><span class="lineno"> 7353</span>&#160;                {</div>
+<div class="line"><a name="l07354"></a><span class="lineno"> 7354</span>&#160;                    <span class="keywordflow">if</span> (get() == 0xEF)</div>
+<div class="line"><a name="l07355"></a><span class="lineno"> 7355</span>&#160;                    {</div>
+<div class="line"><a name="l07356"></a><span class="lineno"> 7356</span>&#160;                        <span class="comment">// check if we completely parse the BOM</span></div>
+<div class="line"><a name="l07357"></a><span class="lineno"> 7357</span>&#160;                        <span class="keywordflow">return</span> get() == 0xBB &amp;&amp; get() == 0xBF;</div>
+<div class="line"><a name="l07358"></a><span class="lineno"> 7358</span>&#160;                    }</div>
+<div class="line"><a name="l07359"></a><span class="lineno"> 7359</span>&#160; </div>
+<div class="line"><a name="l07360"></a><span class="lineno"> 7360</span>&#160;                    <span class="comment">// the first character is not the beginning of the BOM; unget it to</span></div>
+<div class="line"><a name="l07361"></a><span class="lineno"> 7361</span>&#160;                    <span class="comment">// process is later</span></div>
+<div class="line"><a name="l07362"></a><span class="lineno"> 7362</span>&#160;                    unget();</div>
+<div class="line"><a name="l07363"></a><span class="lineno"> 7363</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l07364"></a><span class="lineno"> 7364</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -847,14 +847,14 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07378">7378</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l07379"></a><span class="lineno"> 7379</span>&#160;                {</div>
-<div class="line"><a name="l07380"></a><span class="lineno"> 7380</span>&#160;                    <span class="keywordflow">do</span></div>
-<div class="line"><a name="l07381"></a><span class="lineno"> 7381</span>&#160;                    {</div>
-<div class="line"><a name="l07382"></a><span class="lineno"> 7382</span>&#160;                        get();</div>
-<div class="line"><a name="l07383"></a><span class="lineno"> 7383</span>&#160;                    }</div>
-<div class="line"><a name="l07384"></a><span class="lineno"> 7384</span>&#160;                    <span class="keywordflow">while</span> (current == <span class="charliteral">&#39; &#39;</span> || current == <span class="charliteral">&#39;\t&#39;</span> || current == <span class="charliteral">&#39;\n&#39;</span> || current == <span class="charliteral">&#39;\r&#39;</span>);</div>
-<div class="line"><a name="l07385"></a><span class="lineno"> 7385</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l07366">7366</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l07367"></a><span class="lineno"> 7367</span>&#160;                {</div>
+<div class="line"><a name="l07368"></a><span class="lineno"> 7368</span>&#160;                    <span class="keywordflow">do</span></div>
+<div class="line"><a name="l07369"></a><span class="lineno"> 7369</span>&#160;                    {</div>
+<div class="line"><a name="l07370"></a><span class="lineno"> 7370</span>&#160;                        get();</div>
+<div class="line"><a name="l07371"></a><span class="lineno"> 7371</span>&#160;                    }</div>
+<div class="line"><a name="l07372"></a><span class="lineno"> 7372</span>&#160;                    <span class="keywordflow">while</span> (current == <span class="charliteral">&#39; &#39;</span> || current == <span class="charliteral">&#39;\t&#39;</span> || current == <span class="charliteral">&#39;\n&#39;</span> || current == <span class="charliteral">&#39;\r&#39;</span>);</div>
+<div class="line"><a name="l07373"></a><span class="lineno"> 7373</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>

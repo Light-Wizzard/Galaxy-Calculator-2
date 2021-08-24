@@ -41,7 +41,6 @@ for:
     MY_QT_IF_VERSION: '4.1.1'
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: true
-    MY_RUN_DOXYFILE: false
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
   install:
@@ -72,7 +71,6 @@ for:
     MY_PYTHON_VER: 3.9
     MY_PYTHON_REQUIRED: true
     MY_UPGRADE_OS: false
-    MY_RUN_DOXYFILE: false
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
   install:

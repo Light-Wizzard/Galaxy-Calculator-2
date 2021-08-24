@@ -21,11 +21,9 @@
 //
 #include "ui_MainWindow.h"
 
-#include "TrinaryMath.h"
-
-#include "MySqlDbtModel.h"
 #include "MyLocalization.h"
-
+#include "MySqlDbtModel.h"
+#include "MyTrinaryMath.h"
 //
 #include "3rdparty/math/symboltable.hpp"
 #include "3rdparty/io/settings.hpp"
@@ -241,7 +239,7 @@ class MainWindow : public QMainWindow
     private:
         Ui::MainWindow           *ui = nullptr;                     //!< \c ui                      @brief Pointer to mainwindow.ui
         Settings                  mySetting;                        //!< \c mySetting               @brief settings
-        TrinaryMath              *myTrinaryMath;                    //!< \c myMySettings            @brief Trinary Math
+        MyTrinaryMath              *myTrinaryMath;                    //!< \c myMySettings            @brief Trinary Math
         MyLocalization           *myLocalization;                   //!< \c myLocalization          @brief Localization.
         MySqlDbtModel            *mySqlModel;                       //!< \c myGalaxyModel           @brief Pointer to DataTable GalaxyModel
         QSqlRelationalTableModel *myUniverseModel;                  //!< \c myUniverseModel         @brief Universe Model

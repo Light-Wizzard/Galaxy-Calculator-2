@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classexprtk_1_1details_1_1while__loop__bc__node.html#a62a9790c6fbda40f8c613a27cda55e7b":[2,0,0,0,38,3],
 "classexprtk_1_1details_1_1while__loop__bc__node.html#a833c5fdeae0fcc0273c88d9656da24ab":[2,0,0,0,38,0],
 "classexprtk_1_1details_1_1while__loop__bc__node.html#a9c6ee3ecc05bcdcaab2132a071c238e8":[2,0,0,0,38,1],
 "classexprtk_1_1details_1_1while__loop__bc__node.html#a9cfadbd0ccf74a2b9f28d10ed05efae7":[2,0,0,0,38,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classexprtk_1_1parser_1_1settings__store.html#a136fe7445ef47063c7c80e3b834d74d1":[2,0,0,11,1,60],
 "classexprtk_1_1parser_1_1settings__store.html#a17b13af7e85928b507505d89a6e22366":[2,0,0,11,1,15],
 "classexprtk_1_1parser_1_1settings__store.html#a1b188339404fa88755b0f416b252404f":[2,0,0,11,1,11],
-"classexprtk_1_1parser_1_1settings__store.html#a1f10c0f86b9168da1651dd345ce6f66e":[2,0,0,11,1,26],
-"classexprtk_1_1parser_1_1settings__store.html#a1f1cf02382c9c2b29e43a3f9610fa1d7":[2,0,0,11,1,58]
+"classexprtk_1_1parser_1_1settings__store.html#a1f10c0f86b9168da1651dd345ce6f66e":[2,0,0,11,1,26]
 };

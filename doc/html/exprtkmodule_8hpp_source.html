@@ -92,38 +92,30 @@ $(document).ready(function(){initNavTree('exprtkmodule_8hpp_source.html',''); in
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef QCALC_EXPRTKMODULE_HPP</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define QCALC_EXPRTKMODULE_HPP</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pyutil_8hpp.html">src/3rdparty/cpython/pyutil.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pythoninclude_8hpp.html">src/3rdparty/cpython/pythoninclude.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="symboltableconverter_8hpp.html">src/3rdparty/cpython/symboltableconverter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="modulecommon_8hpp.html">src/3rdparty/cpython/modules/modulecommon.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pympreal_8hpp.html">src/3rdparty/cpython/types/pympreal.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MainWindow_8h.html">src/MainWindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../pyutil.hpp&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../pythoninclude.hpp&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../symboltableconverter.hpp&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="modulecommon_8hpp.html">modulecommon.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../types/pympreal.hpp&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../../../MainWindow.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../../math/expressionparser.hpp&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expressionparser_8hpp.html">src/3rdparty/math/expressionparser.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="exprtkmodule_8hpp.html#a14ded244c47bbba850a8a4be6d16c7e3">   31</a></span>&#160;<span class="preprocessor">#define MODULE_NAME &quot;qc_native_exprtk&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="exprtkmodule_8hpp.html#a14ded244c47bbba850a8a4be6d16c7e3">   33</a></span>&#160;<span class="preprocessor">#define MODULE_NAME &quot;qc_native_exprtk&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="exprtkmodule_8hpp.html#ab6705fab832298411ae13ace059dd583">   36</a></span>&#160;<a class="code" href="classMainWindow.html">MainWindow</a> *<a class="code" href="exprtkmodule_8hpp.html#ab6705fab832298411ae13ace059dd583">mainWindow</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceExprtkModule.html">ExprtkModule</a></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceExprtkModule.html#aa40a7def143422002c1231e14cd16cc5">initialize</a>(<a class="code" href="classMainWindow.html">MainWindow</a> &amp;wnd);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//QCALC_EXPRTKMODULE_HPP</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="ttc" id="aMainWindow_8h_html"><div class="ttname"><a href="MainWindow_8h.html">MainWindow.h</a></div></div>
-<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">Main Window Constructor. /class MainWindow.</div><div class="ttdef"><b>Definition:</b> <a href="MainWindow_8h_source.html#l00050">MainWindow.h:51</a></div></div>
-<div class="ttc" id="aexpressionparser_8hpp_html"><div class="ttname"><a href="expressionparser_8hpp.html">expressionparser.hpp</a></div></div>
-<div class="ttc" id="aexprtkmodule_8hpp_html_ab6705fab832298411ae13ace059dd583"><div class="ttname"><a href="exprtkmodule_8hpp.html#ab6705fab832298411ae13ace059dd583">mainWindow</a></div><div class="ttdeci">MainWindow * mainWindow</div><div class="ttdef"><b>Definition:</b> <a href="exprtkmodule_8hpp_source.html#l00036">exprtkmodule.hpp:36</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="exprtkmodule_8hpp.html#ab6705fab832298411ae13ace059dd583">   34</a></span>&#160;<a class="code" href="classMainWindow.html">MainWindow</a> *<a class="code" href="exprtkmodule_8hpp.html#ab6705fab832298411ae13ace059dd583">mainWindow</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceExprtkModule.html">ExprtkModule</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceExprtkModule.html#aa40a7def143422002c1231e14cd16cc5">initialize</a>(<a class="code" href="classMainWindow.html">MainWindow</a> &amp;wnd);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//QCALC_EXPRTKMODULE_HPP</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">Main Window Constructor. /class MainWindow.</div><div class="ttdef"><b>Definition:</b> <a href="MainWindow_8h_source.html#l00048">MainWindow.h:49</a></div></div>
+<div class="ttc" id="aexprtkmodule_8hpp_html_ab6705fab832298411ae13ace059dd583"><div class="ttname"><a href="exprtkmodule_8hpp.html#ab6705fab832298411ae13ace059dd583">mainWindow</a></div><div class="ttdeci">MainWindow * mainWindow</div><div class="ttdef"><b>Definition:</b> <a href="exprtkmodule_8hpp_source.html#l00034">exprtkmodule.hpp:34</a></div></div>
 <div class="ttc" id="amodulecommon_8hpp_html"><div class="ttname"><a href="modulecommon_8hpp.html">modulecommon.hpp</a></div></div>
 <div class="ttc" id="anamespaceExprtkModule_html"><div class="ttname"><a href="namespaceExprtkModule.html">ExprtkModule</a></div><div class="ttdoc">ExprtkModule.</div></div>
 <div class="ttc" id="anamespaceExprtkModule_html_aa40a7def143422002c1231e14cd16cc5"><div class="ttname"><a href="namespaceExprtkModule.html#aa40a7def143422002c1231e14cd16cc5">ExprtkModule::initialize</a></div><div class="ttdeci">void initialize(MainWindow &amp;wnd)</div><div class="ttdoc">initialize. initialize</div><div class="ttdef"><b>Definition:</b> <a href="exprtkmodule_8cpp_source.html#l00132">exprtkmodule.cpp:132</a></div></div>
-<div class="ttc" id="apympreal_8hpp_html"><div class="ttname"><a href="pympreal_8hpp.html">pympreal.hpp</a></div></div>
-<div class="ttc" id="apythoninclude_8hpp_html"><div class="ttname"><a href="pythoninclude_8hpp.html">pythoninclude.hpp</a></div></div>
-<div class="ttc" id="apyutil_8hpp_html"><div class="ttname"><a href="pyutil_8hpp.html">pyutil.hpp</a></div></div>
-<div class="ttc" id="asymboltableconverter_8hpp_html"><div class="ttname"><a href="symboltableconverter_8hpp.html">symboltableconverter.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

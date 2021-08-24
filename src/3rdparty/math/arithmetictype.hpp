@@ -20,7 +20,7 @@
 #ifndef QCALC_ARITHMETICTYPE_HPP
 #define QCALC_ARITHMETICTYPE_HPP
 
-#include "src/3rdparty/extern/mpreal.h"
+#include "../extern/mpreal.h"
 /************************************************
  * @brief Arithmetic Type.
  * \typedef ArithmeticType

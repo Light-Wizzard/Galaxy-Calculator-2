@@ -17,7 +17,7 @@
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include "src/3rdparty/math/expressionparser.hpp"
+#include "expressionparser.hpp"
 
 /************************************************
  * @brief evaluate Constructor.

@@ -22,9 +22,8 @@
 
 #include <string>
 
-#include "src/3rdparty/extern/exprtk.hpp"
-
-#include "src/3rdparty/math/scripthandler.hpp"
+#include "../extern/exprtk.hpp"
+#include "../math/scripthandler.hpp"
 
 struct _object;
 typedef _object PyObject;

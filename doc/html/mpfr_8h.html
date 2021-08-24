@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('mpfr_8h.html',''); initResizable(); })
 <div class="title">mpfr.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="gmp_8h_source.html">gmp.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="gmp_8h_source.html">gmp.h</a>&quot;</code><br />
 </div>
 <p><a href="mpfr_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -169,9 +169,7 @@ Macros</h2></td></tr>
 <tr class="separator:a0df7ef18bbc308ee222e28dbcabaf590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da58b7a87db63a7c646864193a5594f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a1da58b7a87db63a7c646864193a5594f">MPFR_USE_C99_FEATURE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a1da58b7a87db63a7c646864193a5594f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a6df95c725af5804115b3439ba94ebc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a7a6df95c725af5804115b3439ba94ebc">__GMP_DECLSPEC</a></td></tr>
-<tr class="separator:a7a6df95c725af5804115b3439ba94ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83777e32a4510ba067af93eecd5fd0ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a>&#160;&#160;&#160;<a class="el" href="mpfr_8h.html#a7a6df95c725af5804115b3439ba94ebc">__GMP_DECLSPEC</a></td></tr>
+<tr class="memitem:a83777e32a4510ba067af93eecd5fd0ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a>&#160;&#160;&#160;<a class="el" href="gmp_8h.html#a7a6df95c725af5804115b3439ba94ebc">__GMP_DECLSPEC</a></td></tr>
 <tr class="separator:a83777e32a4510ba067af93eecd5fd0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19dcc1e1a6682fa1918bd13506f46223"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a19dcc1e1a6682fa1918bd13506f46223">MPFR_DEPRECATED</a></td></tr>
 <tr class="separator:a19dcc1e1a6682fa1918bd13506f46223"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,6 +283,20 @@ Macros</h2></td></tr>
 <tr class="separator:a1ea788e2fd4c0ba1975fcd7e11b61590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcfac0a4f1236474f5d7864438a06044"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#adcfac0a4f1236474f5d7864438a06044">mpfr_custom_get_mantissa</a>&#160;&#160;&#160;<a class="el" href="mpfr_8h.html#a57ca468eebe19dcc52be02559b225fa1">mpfr_custom_get_significand</a></td></tr>
 <tr class="separator:adcfac0a4f1236474f5d7864438a06044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3a9d9c54f0d29d4826dc9bca5e279d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a1a3a9d9c54f0d29d4826dc9bca5e279d">_MPFR_H_HAVE_INTMAX_T</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a1a3a9d9c54f0d29d4826dc9bca5e279d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f31104ba9901336a967f0963462aa8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a70f31104ba9901336a967f0963462aa8">mpfr_set_sj</a>&#160;&#160;&#160;__gmpfr_set_sj</td></tr>
+<tr class="separator:a70f31104ba9901336a967f0963462aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3146962512b05eba58fde84a0895a482"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a3146962512b05eba58fde84a0895a482">mpfr_set_sj_2exp</a>&#160;&#160;&#160;__gmpfr_set_sj_2exp</td></tr>
+<tr class="separator:a3146962512b05eba58fde84a0895a482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ea977949873055c34a37912e924398"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#ab4ea977949873055c34a37912e924398">mpfr_set_uj</a>&#160;&#160;&#160;__gmpfr_set_uj</td></tr>
+<tr class="separator:ab4ea977949873055c34a37912e924398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0725abc9d2b02f77030b96cc64784e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#acf0725abc9d2b02f77030b96cc64784e">mpfr_set_uj_2exp</a>&#160;&#160;&#160;__gmpfr_set_uj_2exp</td></tr>
+<tr class="separator:acf0725abc9d2b02f77030b96cc64784e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234f4101eeb8d759255f5377776b440a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a234f4101eeb8d759255f5377776b440a">mpfr_get_sj</a>&#160;&#160;&#160;__gmpfr_mpfr_get_sj</td></tr>
+<tr class="separator:a234f4101eeb8d759255f5377776b440a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5eed751306c60136c47c40f03ad2b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a3d5eed751306c60136c47c40f03ad2b1">mpfr_get_uj</a>&#160;&#160;&#160;__gmpfr_mpfr_get_uj</td></tr>
+<tr class="separator:a3d5eed751306c60136c47c40f03ad2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -944,24 +956,20 @@ Functions</h2></td></tr>
 <tr class="separator:a4ffc852325ede142ac603971d78f7d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8964149becbaeee733f652ab3bb19b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#ab8964149becbaeee733f652ab3bb19b7">mpfr_total_order_p</a> (<a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>, <a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>)</td></tr>
 <tr class="separator:ab8964149becbaeee733f652ab3bb19b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac810749ef0f223170c5fd1d749ed323c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#ac810749ef0f223170c5fd1d749ed323c">mpfr_set_sj</a> (<a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>, intmax_t, <a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>)</td></tr>
+<tr class="separator:ac810749ef0f223170c5fd1d749ed323c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6061c118de856df75e9a2e26f2a2aebb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a6061c118de856df75e9a2e26f2a2aebb">mpfr_set_sj_2exp</a> (<a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>, intmax_t, intmax_t, <a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>)</td></tr>
+<tr class="separator:a6061c118de856df75e9a2e26f2a2aebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf41c30b79c1c5c3188585efc2d4ce24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#acf41c30b79c1c5c3188585efc2d4ce24">mpfr_set_uj</a> (<a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>, uintmax_t, <a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>)</td></tr>
+<tr class="separator:acf41c30b79c1c5c3188585efc2d4ce24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9bf35acfe747440536160734488402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a7b9bf35acfe747440536160734488402">mpfr_set_uj_2exp</a> (<a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>, uintmax_t, intmax_t, <a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>)</td></tr>
+<tr class="separator:a7b9bf35acfe747440536160734488402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbcc68c5c642314cad6df12285baed9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> intmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a4bbcc68c5c642314cad6df12285baed9">mpfr_get_sj</a> (<a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>, <a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>)</td></tr>
+<tr class="separator:a4bbcc68c5c642314cad6df12285baed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25beca352c3125b28533f843a06fe9cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> uintmax_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpfr_8h.html#a25beca352c3125b28533f843a06fe9cb">mpfr_get_uj</a> (<a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>, <a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>)</td></tr>
+<tr class="separator:a25beca352c3125b28533f843a06fe9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a7a6df95c725af5804115b3439ba94ebc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a6df95c725af5804115b3439ba94ebc">&#9670;&nbsp;</a></span>__GMP_DECLSPEC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __GMP_DECLSPEC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l00321">321</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
-
-</div>
-</div>
 <a id="a7c21c10582ee3c2a65ef3f96706b5506"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c21c10582ee3c2a65ef3f96706b5506">&#9670;&nbsp;</a></span>__gmp_default_rounding_mode</h2>
 
@@ -985,7 +993,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __MPFR_DECLSPEC&#160;&#160;&#160;<a class="el" href="mpfr_8h.html#a7a6df95c725af5804115b3439ba94ebc">__GMP_DECLSPEC</a></td>
+          <td class="memname">#define __MPFR_DECLSPEC&#160;&#160;&#160;<a class="el" href="gmp_8h.html#a7a6df95c725af5804115b3439ba94ebc">__GMP_DECLSPEC</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1135,6 +1143,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l00144">144</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a3a9d9c54f0d29d4826dc9bca5e279d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3a9d9c54f0d29d4826dc9bca5e279d">&#9670;&nbsp;</a></span>_MPFR_H_HAVE_INTMAX_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _MPFR_H_HAVE_INTMAX_T&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01071">1071</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
 
 </div>
 </div>
@@ -2104,6 +2128,38 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a234f4101eeb8d759255f5377776b440a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a234f4101eeb8d759255f5377776b440a">&#9670;&nbsp;</a></span>mpfr_get_sj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mpfr_get_sj&#160;&#160;&#160;__gmpfr_mpfr_get_sj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01081">1081</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d5eed751306c60136c47c40f03ad2b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5eed751306c60136c47c40f03ad2b1">&#9670;&nbsp;</a></span>mpfr_get_uj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mpfr_get_uj&#160;&#160;&#160;__gmpfr_mpfr_get_uj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01082">1082</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
 <a id="a1ea788e2fd4c0ba1975fcd7e11b61590"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ea788e2fd4c0ba1975fcd7e11b61590">&#9670;&nbsp;</a></span>mpfr_get_z_exp</h2>
 
@@ -2697,6 +2753,70 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l00864">864</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
+<a id="a70f31104ba9901336a967f0963462aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f31104ba9901336a967f0963462aa8">&#9670;&nbsp;</a></span>mpfr_set_sj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mpfr_set_sj&#160;&#160;&#160;__gmpfr_set_sj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01077">1077</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
+<a id="a3146962512b05eba58fde84a0895a482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3146962512b05eba58fde84a0895a482">&#9670;&nbsp;</a></span>mpfr_set_sj_2exp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mpfr_set_sj_2exp&#160;&#160;&#160;__gmpfr_set_sj_2exp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01078">1078</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4ea977949873055c34a37912e924398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4ea977949873055c34a37912e924398">&#9670;&nbsp;</a></span>mpfr_set_uj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mpfr_set_uj&#160;&#160;&#160;__gmpfr_set_uj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01079">1079</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
+
+</div>
+</div>
+<a id="acf0725abc9d2b02f77030b96cc64784e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0725abc9d2b02f77030b96cc64784e">&#9670;&nbsp;</a></span>mpfr_set_uj_2exp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define mpfr_set_uj_2exp&#160;&#160;&#160;__gmpfr_set_uj_2exp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpfr_8h_source.html#l01080">1080</a> of file <a class="el" href="mpfr_8h_source.html">mpfr.h</a>.</p>
 
 </div>
 </div>
@@ -7709,6 +7829,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4bbcc68c5c642314cad6df12285baed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bbcc68c5c642314cad6df12285baed9">&#9670;&nbsp;</a></span>mpfr_get_sj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> intmax_t mpfr_get_sj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a01e383a83cdb3fbde2f6e96f455ee279"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01e383a83cdb3fbde2f6e96f455ee279">&#9670;&nbsp;</a></span>mpfr_get_str()</h2>
 
@@ -7797,6 +7945,34 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> unsigned long mpfr_get_ui </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25beca352c3125b28533f843a06fe9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25beca352c3125b28533f843a06fe9cb">&#9670;&nbsp;</a></span>mpfr_get_uj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> uintmax_t mpfr_get_uj </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="mpfr_8h.html#ad9ff15df598620d449fb7fafd4360f11">mpfr_srcptr</a>&#160;</td>
           <td class="paramname">, </td>
@@ -10907,6 +11083,80 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac810749ef0f223170c5fd1d749ed323c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac810749ef0f223170c5fd1d749ed323c">&#9670;&nbsp;</a></span>mpfr_set_sj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int mpfr_set_sj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6061c118de856df75e9a2e26f2a2aebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6061c118de856df75e9a2e26f2a2aebb">&#9670;&nbsp;</a></span>mpfr_set_sj_2exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int mpfr_set_sj_2exp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab958779b8ccc677fd596fc874a3a23fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab958779b8ccc677fd596fc874a3a23fb">&#9670;&nbsp;</a></span>mpfr_set_str()</h2>
 
@@ -11003,6 +11253,80 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="mpfr_8h.html#aec7cd5af85d85a337c83884870c2ea15">mpfr_exp_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf41c30b79c1c5c3188585efc2d4ce24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf41c30b79c1c5c3188585efc2d4ce24">&#9670;&nbsp;</a></span>mpfr_set_uj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int mpfr_set_uj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uintmax_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#ad0c1476c93e378ad2d31f30b6db817d4">mpfr_rnd_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b9bf35acfe747440536160734488402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9bf35acfe747440536160734488402">&#9670;&nbsp;</a></span>mpfr_set_uj_2exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mpfr_8h.html#a83777e32a4510ba067af93eecd5fd0ab">__MPFR_DECLSPEC</a> int mpfr_set_uj_2exp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mpfr_8h.html#a680bd29f5604314a7b83e64986ee0f29">mpfr_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uintmax_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intmax_t&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>

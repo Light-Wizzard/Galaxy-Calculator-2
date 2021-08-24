@@ -21,10 +21,10 @@
 #define QCALC_PYMPREAL_HPP
 
 #include <QtGlobal>
-#include "src/3rdparty/cpython/pythoninclude.hpp"
-#include "src/3rdparty/cpython/pyutil.hpp"
-#include "src/3rdparty/extern/mpreal.h"
-#include "src/3rdparty/math/numberformat.hpp"
+#include "../pythoninclude.hpp"
+#include "../pyutil.hpp"
+#include "../../extern/mpreal.h"
+#include "../../math/numberformat.hpp"
 
 /************************************************
  * @brief mpfr.

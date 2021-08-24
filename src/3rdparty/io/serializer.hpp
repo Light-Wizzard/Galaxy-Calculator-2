@@ -23,9 +23,9 @@
 #include <string>
 #include <set>
 
-#include "src/3rdparty/math/symboltable.hpp"
-
-#include "src/3rdparty/io/settings.hpp"
+#include "../math/symboltable.hpp"
+//#include "../extern/json.hpp"
+#include "settings.hpp"
 /************************************************
  * @brief Serializer.
  * \namespace Serializer

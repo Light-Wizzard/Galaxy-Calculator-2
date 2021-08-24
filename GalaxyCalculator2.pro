@@ -42,8 +42,8 @@ HEADERS     *= \
     src/MyLocalization.h \
     src/MyOrgSettings.h \
     src/MySqlDbtModel.h \
+    src/MyTrinaryMath.h \
     src/SimpleCrypt.h \
-    src/TrinaryMath.h \
     src/3rdparty/cpython/modules/exprtkmodule.hpp \
     src/3rdparty/cpython/modules/modulecommon.hpp \
     src/3rdparty/cpython/pythoninclude.hpp \
@@ -76,13 +76,13 @@ HEADERS     *= \
     
 # Source files
 SOURCES     *= \
+    src/main.cpp \
     src/MainWindow.cpp \
     src/MyLocalization.cpp \
     src/MyOrgSettings.cpp \
     src/MySqlDbtModel.cpp \
+    src/MyTrinaryMath.cpp \
     src/SimpleCrypt.cpp \
-    src/TrinaryMath.cpp \
-    src/main.cpp \
     src/3rdparty/cpython/modules/exprtkmodule.cpp \
     src/3rdparty/cpython/pyutil.cpp \
     src/3rdparty/cpython/symboltableconverter.cpp \
@@ -113,14 +113,20 @@ TRANSLATIONS += translations/GalaxyCalculator2_ar.ts \
                 translations/GalaxyCalculator2_ru.ts \
                 translations/GalaxyCalculator2_sv.ts \
                 translations/GalaxyCalculator2_zh_CN.ts
+
 #
 DISTFILES += \
     .appveyor.yml \
+    CODE_OF_CONDUCT.md \
+    README.md      \
     help/About-Author_en.md \
     help/About_en.md \
     help/Help_en.md \
     scripts/build_script.ps1 \
     scripts/install.ps1 \
+    scripts/build_script.sh \
+    scripts/install.sh \
+    scripts/upload.sh \
     src/3rdparty/gmp/README \
     src/3rdparty/gmp/gmp.COPYING \
     src/3rdparty/gmp/gmp.COPYING.LIB \
@@ -128,20 +134,16 @@ DISTFILES += \
     src/3rdparty/gmp/mpfr.COPYING \
     src/3rdparty/gmp/mpfr.COPYING.LESSER \
     src/3rdparty/gmp/mpfr.README \
-    CODE_OF_CONDUCT.md \
-    README.md      \
     config/config.xml \
     desktop/CMakeLists.txt \
     desktop/GalaxyCalculator2.desktop \
     packages/com.lightwizzard.galaxycalculator2/data/README.md \
     packages/com.lightwizzard.galaxycalculator2/meta/installscript.qs \
     packages/com.lightwizzard.galaxycalculator2/meta/package.xml \
-    scripts/build_script.sh \
-    scripts/install.sh \
-    scripts/upload.sh \
     usr/bin/README.md \
     usr/share/applications/GalaxyCalculator2.desktop \
     .github/workflows/main.yml \
+    CMakeLists.txt \
     Doxyfile
 
 # Ui Form(s)

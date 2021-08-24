@@ -260,7 +260,6 @@ var mpreal_8h =
     [ "pow", "mpreal_8h.html#ae9853c7799ab562b942a2430fd7618e8", null ],
     [ "pow", "mpreal_8h.html#aca54198a9a12b04172a34bfbf7bf1b55", null ],
     [ "random", "mpreal_8h.html#acf72e850a023ca647224439809e21d9d", null ],
-    [ "random2", "mpreal_8h.html#ae81e2c5cd5799296849ccb4892e40a0c", null ],
     [ "rec_sqrt", "mpreal_8h.html#a8ef1c95d880e09b3d7add5943c9df2ef", null ],
     [ "rem", "mpreal_8h.html#a34202039f44574fa594858f1d8faba37", null ],
     [ "remainder", "mpreal_8h.html#ab4c32b4cee0e259ccf879ae894c108b0", null ],

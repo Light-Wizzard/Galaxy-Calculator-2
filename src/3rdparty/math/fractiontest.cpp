@@ -17,7 +17,7 @@
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include "src/3rdparty/math/fractiontest.hpp"
+#include "fractiontest.hpp"
 /************************************************
  * @brief hasFraction.
  * hasFraction

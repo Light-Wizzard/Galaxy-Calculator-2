@@ -1,5 +1,5 @@
-#ifndef TRINARYMATH_H
-#define TRINARYMATH_H
+#ifndef MYTRINARYMATH_H
+#define MYTRINARYMATH_H
 
 #include <QObject>
 #include <QMessageBox>
@@ -17,13 +17,13 @@
  * @brief Trinary Math.
  * \class TrinaryMath
  ***********************************************/
-class TrinaryMath : public QObject
+class MyTrinaryMath : public QObject
 {
         Q_OBJECT
 
     public:
-        TrinaryMath(QObject *parent = nullptr); //!< TrinaryMath
-        ~TrinaryMath();                         //!< MainWindow Destructor
+        MyTrinaryMath(QObject *parent = nullptr); //!< TrinaryMath
+        ~MyTrinaryMath();                         //!< MainWindow Destructor
         //
         QString getPI();                                                     //!< getPI
         QString getPiLong();                                                 //!< getPiLong
@@ -46,5 +46,5 @@ class TrinaryMath : public QObject
         QString     myPiLong       = "3.141592653589793238462643383279502884"; //!< \c PI Long
         bool        isDebugMessage = true;                                     //!< \c isDebugMessage true of false
 };
-#endif // TRINARYMATH_H
+#endif // MYTRINARYMATH_H
 /*** ************************* End of File ***********************************/

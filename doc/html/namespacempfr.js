@@ -231,7 +231,6 @@ var namespacempfr =
     [ "pow", "namespacempfr.html#ae9853c7799ab562b942a2430fd7618e8", null ],
     [ "pow", "namespacempfr.html#aca54198a9a12b04172a34bfbf7bf1b55", null ],
     [ "random", "namespacempfr.html#acf72e850a023ca647224439809e21d9d", null ],
-    [ "random2", "namespacempfr.html#ae81e2c5cd5799296849ccb4892e40a0c", null ],
     [ "rec_sqrt", "namespacempfr.html#a8ef1c95d880e09b3d7add5943c9df2ef", null ],
     [ "rem", "namespacempfr.html#a34202039f44574fa594858f1d8faba37", null ],
     [ "remainder", "namespacempfr.html#ab4c32b4cee0e259ccf879ae894c108b0", null ],

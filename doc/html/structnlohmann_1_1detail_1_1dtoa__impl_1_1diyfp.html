@@ -131,7 +131,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14396">14396</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14384">14384</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad8798a8823a49c8412f0fada9892c918"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8798a8823a49c8412f0fada9892c918">&#9670;&nbsp;</a></span>diyfp()</h2>
@@ -167,10 +167,10 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14403">14403</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l14403"></a><span class="lineno">14403</span>&#160;: <a class="code" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aea90459e340a231ca31d46946803ef51">f</a>(f_), <a class="code" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#ae22e170815983961447c429f324c944d">e</a>(e_) {}</div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp_html_ae22e170815983961447c429f324c944d"><div class="ttname"><a href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#ae22e170815983961447c429f324c944d">nlohmann::detail::dtoa_impl::diyfp::e</a></div><div class="ttdeci">int e</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l14401">json.hpp:14401</a></div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp_html_aea90459e340a231ca31d46946803ef51"><div class="ttname"><a href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aea90459e340a231ca31d46946803ef51">nlohmann::detail::dtoa_impl::diyfp::f</a></div><div class="ttdeci">std::uint64_t f</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l14400">json.hpp:14400</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14391">14391</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l14391"></a><span class="lineno">14391</span>&#160;: <a class="code" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aea90459e340a231ca31d46946803ef51">f</a>(f_), <a class="code" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#ae22e170815983961447c429f324c944d">e</a>(e_) {}</div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp_html_ae22e170815983961447c429f324c944d"><div class="ttname"><a href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#ae22e170815983961447c429f324c944d">nlohmann::detail::dtoa_impl::diyfp::e</a></div><div class="ttdeci">int e</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l14389">json.hpp:14389</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp_html_aea90459e340a231ca31d46946803ef51"><div class="ttname"><a href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aea90459e340a231ca31d46946803ef51">nlohmann::detail::dtoa_impl::diyfp::f</a></div><div class="ttdeci">std::uint64_t f</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l14388">json.hpp:14388</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,68 +212,68 @@ Static Public Attributes</h2></td></tr>
 <p>returns x * y </p>
 <dl class="section note"><dt>Note</dt><dd>The result is rounded. (Only the upper q bits are returned.) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14421">14421</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l14422"></a><span class="lineno">14422</span>&#160;                    {</div>
-<div class="line"><a name="l14423"></a><span class="lineno">14423</span>&#160;                        static_assert(<a class="code" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a03682754b06ed4f30b263119eecc2d52">kPrecision</a> == 64, <span class="stringliteral">&quot;internal error&quot;</span>);</div>
-<div class="line"><a name="l14424"></a><span class="lineno">14424</span>&#160; </div>
-<div class="line"><a name="l14425"></a><span class="lineno">14425</span>&#160;                        <span class="comment">// Computes:</span></div>
-<div class="line"><a name="l14426"></a><span class="lineno">14426</span>&#160;                        <span class="comment">//  f = round((x.f * y.f) / 2^q)</span></div>
-<div class="line"><a name="l14427"></a><span class="lineno">14427</span>&#160;                        <span class="comment">//  e = x.e + y.e + q</span></div>
-<div class="line"><a name="l14428"></a><span class="lineno">14428</span>&#160; </div>
-<div class="line"><a name="l14429"></a><span class="lineno">14429</span>&#160;                        <span class="comment">// Emulate the 64-bit * 64-bit multiplication:</span></div>
-<div class="line"><a name="l14430"></a><span class="lineno">14430</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14431"></a><span class="lineno">14431</span>&#160;                        <span class="comment">// p = u * v</span></div>
-<div class="line"><a name="l14432"></a><span class="lineno">14432</span>&#160;                        <span class="comment">//   = (u_lo + 2^32 u_hi) (v_lo + 2^32 v_hi)</span></div>
-<div class="line"><a name="l14433"></a><span class="lineno">14433</span>&#160;                        <span class="comment">//   = (u_lo v_lo         ) + 2^32 ((u_lo v_hi         ) + (u_hi v_lo         )) + 2^64 (u_hi v_hi         )</span></div>
-<div class="line"><a name="l14434"></a><span class="lineno">14434</span>&#160;                        <span class="comment">//   = (p0                ) + 2^32 ((p1                ) + (p2                )) + 2^64 (p3                )</span></div>
-<div class="line"><a name="l14435"></a><span class="lineno">14435</span>&#160;                        <span class="comment">//   = (p0_lo + 2^32 p0_hi) + 2^32 ((p1_lo + 2^32 p1_hi) + (p2_lo + 2^32 p2_hi)) + 2^64 (p3                )</span></div>
-<div class="line"><a name="l14436"></a><span class="lineno">14436</span>&#160;                        <span class="comment">//   = (p0_lo             ) + 2^32 (p0_hi + p1_lo + p2_lo                      ) + 2^64 (p1_hi + p2_hi + p3)</span></div>
-<div class="line"><a name="l14437"></a><span class="lineno">14437</span>&#160;                        <span class="comment">//   = (p0_lo             ) + 2^32 (Q                                          ) + 2^64 (H                 )</span></div>
-<div class="line"><a name="l14438"></a><span class="lineno">14438</span>&#160;                        <span class="comment">//   = (p0_lo             ) + 2^32 (Q_lo + 2^32 Q_hi                           ) + 2^64 (H                 )</span></div>
-<div class="line"><a name="l14439"></a><span class="lineno">14439</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14440"></a><span class="lineno">14440</span>&#160;                        <span class="comment">// (Since Q might be larger than 2^32 - 1)</span></div>
-<div class="line"><a name="l14441"></a><span class="lineno">14441</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14442"></a><span class="lineno">14442</span>&#160;                        <span class="comment">//   = (p0_lo + 2^32 Q_lo) + 2^64 (Q_hi + H)</span></div>
-<div class="line"><a name="l14443"></a><span class="lineno">14443</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14444"></a><span class="lineno">14444</span>&#160;                        <span class="comment">// (Q_hi + H does not overflow a 64-bit int)</span></div>
-<div class="line"><a name="l14445"></a><span class="lineno">14445</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14446"></a><span class="lineno">14446</span>&#160;                        <span class="comment">//   = p_lo + 2^64 p_hi</span></div>
-<div class="line"><a name="l14447"></a><span class="lineno">14447</span>&#160; </div>
-<div class="line"><a name="l14448"></a><span class="lineno">14448</span>&#160;                        <span class="keyword">const</span> std::uint64_t u_lo = <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &amp; 0xFFFFFFFFu;</div>
-<div class="line"><a name="l14449"></a><span class="lineno">14449</span>&#160;                        <span class="keyword">const</span> std::uint64_t u_hi = <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &gt;&gt; 32u;</div>
-<div class="line"><a name="l14450"></a><span class="lineno">14450</span>&#160;                        <span class="keyword">const</span> std::uint64_t v_lo = y.f &amp; 0xFFFFFFFFu;</div>
-<div class="line"><a name="l14451"></a><span class="lineno">14451</span>&#160;                        <span class="keyword">const</span> std::uint64_t v_hi = y.f &gt;&gt; 32u;</div>
-<div class="line"><a name="l14452"></a><span class="lineno">14452</span>&#160; </div>
-<div class="line"><a name="l14453"></a><span class="lineno">14453</span>&#160;                        <span class="keyword">const</span> std::uint64_t p0 = u_lo * v_lo;</div>
-<div class="line"><a name="l14454"></a><span class="lineno">14454</span>&#160;                        <span class="keyword">const</span> std::uint64_t p1 = u_lo * v_hi;</div>
-<div class="line"><a name="l14455"></a><span class="lineno">14455</span>&#160;                        <span class="keyword">const</span> std::uint64_t p2 = u_hi * v_lo;</div>
-<div class="line"><a name="l14456"></a><span class="lineno">14456</span>&#160;                        <span class="keyword">const</span> std::uint64_t p3 = u_hi * v_hi;</div>
-<div class="line"><a name="l14457"></a><span class="lineno">14457</span>&#160; </div>
-<div class="line"><a name="l14458"></a><span class="lineno">14458</span>&#160;                        <span class="keyword">const</span> std::uint64_t p0_hi = p0 &gt;&gt; 32u;</div>
-<div class="line"><a name="l14459"></a><span class="lineno">14459</span>&#160;                        <span class="keyword">const</span> std::uint64_t p1_lo = p1 &amp; 0xFFFFFFFFu;</div>
-<div class="line"><a name="l14460"></a><span class="lineno">14460</span>&#160;                        <span class="keyword">const</span> std::uint64_t p1_hi = p1 &gt;&gt; 32u;</div>
-<div class="line"><a name="l14461"></a><span class="lineno">14461</span>&#160;                        <span class="keyword">const</span> std::uint64_t p2_lo = p2 &amp; 0xFFFFFFFFu;</div>
-<div class="line"><a name="l14462"></a><span class="lineno">14462</span>&#160;                        <span class="keyword">const</span> std::uint64_t p2_hi = p2 &gt;&gt; 32u;</div>
-<div class="line"><a name="l14463"></a><span class="lineno">14463</span>&#160; </div>
-<div class="line"><a name="l14464"></a><span class="lineno">14464</span>&#160;                        std::uint64_t Q = p0_hi + p1_lo + p2_lo;</div>
-<div class="line"><a name="l14465"></a><span class="lineno">14465</span>&#160; </div>
-<div class="line"><a name="l14466"></a><span class="lineno">14466</span>&#160;                        <span class="comment">// The full product might now be computed as</span></div>
-<div class="line"><a name="l14467"></a><span class="lineno">14467</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14468"></a><span class="lineno">14468</span>&#160;                        <span class="comment">// p_hi = p3 + p2_hi + p1_hi + (Q &gt;&gt; 32)</span></div>
-<div class="line"><a name="l14469"></a><span class="lineno">14469</span>&#160;                        <span class="comment">// p_lo = p0_lo + (Q &lt;&lt; 32)</span></div>
-<div class="line"><a name="l14470"></a><span class="lineno">14470</span>&#160;                        <span class="comment">//</span></div>
-<div class="line"><a name="l14471"></a><span class="lineno">14471</span>&#160;                        <span class="comment">// But in this particular case here, the full p_lo is not required.</span></div>
-<div class="line"><a name="l14472"></a><span class="lineno">14472</span>&#160;                        <span class="comment">// Effectively we only need to add the highest bit in p_lo to p_hi (and</span></div>
-<div class="line"><a name="l14473"></a><span class="lineno">14473</span>&#160;                        <span class="comment">// Q_hi + 1 does not overflow).</span></div>
-<div class="line"><a name="l14474"></a><span class="lineno">14474</span>&#160; </div>
-<div class="line"><a name="l14475"></a><span class="lineno">14475</span>&#160;                        Q += std::uint64_t{1} &lt;&lt; (64u - 32u - 1u); <span class="comment">// round, ties up</span></div>
-<div class="line"><a name="l14476"></a><span class="lineno">14476</span>&#160; </div>
-<div class="line"><a name="l14477"></a><span class="lineno">14477</span>&#160;                        <span class="keyword">const</span> std::uint64_t h = p3 + p2_hi + p1_hi + (Q &gt;&gt; 32u);</div>
-<div class="line"><a name="l14478"></a><span class="lineno">14478</span>&#160; </div>
-<div class="line"><a name="l14479"></a><span class="lineno">14479</span>&#160;                        <span class="keywordflow">return</span> {h, <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e + y.e + 64};</div>
-<div class="line"><a name="l14480"></a><span class="lineno">14480</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14409">14409</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l14410"></a><span class="lineno">14410</span>&#160;                    {</div>
+<div class="line"><a name="l14411"></a><span class="lineno">14411</span>&#160;                        static_assert(<a class="code" href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a03682754b06ed4f30b263119eecc2d52">kPrecision</a> == 64, <span class="stringliteral">&quot;internal error&quot;</span>);</div>
+<div class="line"><a name="l14412"></a><span class="lineno">14412</span>&#160; </div>
+<div class="line"><a name="l14413"></a><span class="lineno">14413</span>&#160;                        <span class="comment">// Computes:</span></div>
+<div class="line"><a name="l14414"></a><span class="lineno">14414</span>&#160;                        <span class="comment">//  f = round((x.f * y.f) / 2^q)</span></div>
+<div class="line"><a name="l14415"></a><span class="lineno">14415</span>&#160;                        <span class="comment">//  e = x.e + y.e + q</span></div>
+<div class="line"><a name="l14416"></a><span class="lineno">14416</span>&#160; </div>
+<div class="line"><a name="l14417"></a><span class="lineno">14417</span>&#160;                        <span class="comment">// Emulate the 64-bit * 64-bit multiplication:</span></div>
+<div class="line"><a name="l14418"></a><span class="lineno">14418</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14419"></a><span class="lineno">14419</span>&#160;                        <span class="comment">// p = u * v</span></div>
+<div class="line"><a name="l14420"></a><span class="lineno">14420</span>&#160;                        <span class="comment">//   = (u_lo + 2^32 u_hi) (v_lo + 2^32 v_hi)</span></div>
+<div class="line"><a name="l14421"></a><span class="lineno">14421</span>&#160;                        <span class="comment">//   = (u_lo v_lo         ) + 2^32 ((u_lo v_hi         ) + (u_hi v_lo         )) + 2^64 (u_hi v_hi         )</span></div>
+<div class="line"><a name="l14422"></a><span class="lineno">14422</span>&#160;                        <span class="comment">//   = (p0                ) + 2^32 ((p1                ) + (p2                )) + 2^64 (p3                )</span></div>
+<div class="line"><a name="l14423"></a><span class="lineno">14423</span>&#160;                        <span class="comment">//   = (p0_lo + 2^32 p0_hi) + 2^32 ((p1_lo + 2^32 p1_hi) + (p2_lo + 2^32 p2_hi)) + 2^64 (p3                )</span></div>
+<div class="line"><a name="l14424"></a><span class="lineno">14424</span>&#160;                        <span class="comment">//   = (p0_lo             ) + 2^32 (p0_hi + p1_lo + p2_lo                      ) + 2^64 (p1_hi + p2_hi + p3)</span></div>
+<div class="line"><a name="l14425"></a><span class="lineno">14425</span>&#160;                        <span class="comment">//   = (p0_lo             ) + 2^32 (Q                                          ) + 2^64 (H                 )</span></div>
+<div class="line"><a name="l14426"></a><span class="lineno">14426</span>&#160;                        <span class="comment">//   = (p0_lo             ) + 2^32 (Q_lo + 2^32 Q_hi                           ) + 2^64 (H                 )</span></div>
+<div class="line"><a name="l14427"></a><span class="lineno">14427</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14428"></a><span class="lineno">14428</span>&#160;                        <span class="comment">// (Since Q might be larger than 2^32 - 1)</span></div>
+<div class="line"><a name="l14429"></a><span class="lineno">14429</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14430"></a><span class="lineno">14430</span>&#160;                        <span class="comment">//   = (p0_lo + 2^32 Q_lo) + 2^64 (Q_hi + H)</span></div>
+<div class="line"><a name="l14431"></a><span class="lineno">14431</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14432"></a><span class="lineno">14432</span>&#160;                        <span class="comment">// (Q_hi + H does not overflow a 64-bit int)</span></div>
+<div class="line"><a name="l14433"></a><span class="lineno">14433</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14434"></a><span class="lineno">14434</span>&#160;                        <span class="comment">//   = p_lo + 2^64 p_hi</span></div>
+<div class="line"><a name="l14435"></a><span class="lineno">14435</span>&#160; </div>
+<div class="line"><a name="l14436"></a><span class="lineno">14436</span>&#160;                        <span class="keyword">const</span> std::uint64_t u_lo = <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &amp; 0xFFFFFFFFu;</div>
+<div class="line"><a name="l14437"></a><span class="lineno">14437</span>&#160;                        <span class="keyword">const</span> std::uint64_t u_hi = <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &gt;&gt; 32u;</div>
+<div class="line"><a name="l14438"></a><span class="lineno">14438</span>&#160;                        <span class="keyword">const</span> std::uint64_t v_lo = y.f &amp; 0xFFFFFFFFu;</div>
+<div class="line"><a name="l14439"></a><span class="lineno">14439</span>&#160;                        <span class="keyword">const</span> std::uint64_t v_hi = y.f &gt;&gt; 32u;</div>
+<div class="line"><a name="l14440"></a><span class="lineno">14440</span>&#160; </div>
+<div class="line"><a name="l14441"></a><span class="lineno">14441</span>&#160;                        <span class="keyword">const</span> std::uint64_t p0 = u_lo * v_lo;</div>
+<div class="line"><a name="l14442"></a><span class="lineno">14442</span>&#160;                        <span class="keyword">const</span> std::uint64_t p1 = u_lo * v_hi;</div>
+<div class="line"><a name="l14443"></a><span class="lineno">14443</span>&#160;                        <span class="keyword">const</span> std::uint64_t p2 = u_hi * v_lo;</div>
+<div class="line"><a name="l14444"></a><span class="lineno">14444</span>&#160;                        <span class="keyword">const</span> std::uint64_t p3 = u_hi * v_hi;</div>
+<div class="line"><a name="l14445"></a><span class="lineno">14445</span>&#160; </div>
+<div class="line"><a name="l14446"></a><span class="lineno">14446</span>&#160;                        <span class="keyword">const</span> std::uint64_t p0_hi = p0 &gt;&gt; 32u;</div>
+<div class="line"><a name="l14447"></a><span class="lineno">14447</span>&#160;                        <span class="keyword">const</span> std::uint64_t p1_lo = p1 &amp; 0xFFFFFFFFu;</div>
+<div class="line"><a name="l14448"></a><span class="lineno">14448</span>&#160;                        <span class="keyword">const</span> std::uint64_t p1_hi = p1 &gt;&gt; 32u;</div>
+<div class="line"><a name="l14449"></a><span class="lineno">14449</span>&#160;                        <span class="keyword">const</span> std::uint64_t p2_lo = p2 &amp; 0xFFFFFFFFu;</div>
+<div class="line"><a name="l14450"></a><span class="lineno">14450</span>&#160;                        <span class="keyword">const</span> std::uint64_t p2_hi = p2 &gt;&gt; 32u;</div>
+<div class="line"><a name="l14451"></a><span class="lineno">14451</span>&#160; </div>
+<div class="line"><a name="l14452"></a><span class="lineno">14452</span>&#160;                        std::uint64_t Q = p0_hi + p1_lo + p2_lo;</div>
+<div class="line"><a name="l14453"></a><span class="lineno">14453</span>&#160; </div>
+<div class="line"><a name="l14454"></a><span class="lineno">14454</span>&#160;                        <span class="comment">// The full product might now be computed as</span></div>
+<div class="line"><a name="l14455"></a><span class="lineno">14455</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14456"></a><span class="lineno">14456</span>&#160;                        <span class="comment">// p_hi = p3 + p2_hi + p1_hi + (Q &gt;&gt; 32)</span></div>
+<div class="line"><a name="l14457"></a><span class="lineno">14457</span>&#160;                        <span class="comment">// p_lo = p0_lo + (Q &lt;&lt; 32)</span></div>
+<div class="line"><a name="l14458"></a><span class="lineno">14458</span>&#160;                        <span class="comment">//</span></div>
+<div class="line"><a name="l14459"></a><span class="lineno">14459</span>&#160;                        <span class="comment">// But in this particular case here, the full p_lo is not required.</span></div>
+<div class="line"><a name="l14460"></a><span class="lineno">14460</span>&#160;                        <span class="comment">// Effectively we only need to add the highest bit in p_lo to p_hi (and</span></div>
+<div class="line"><a name="l14461"></a><span class="lineno">14461</span>&#160;                        <span class="comment">// Q_hi + 1 does not overflow).</span></div>
+<div class="line"><a name="l14462"></a><span class="lineno">14462</span>&#160; </div>
+<div class="line"><a name="l14463"></a><span class="lineno">14463</span>&#160;                        Q += std::uint64_t{1} &lt;&lt; (64u - 32u - 1u); <span class="comment">// round, ties up</span></div>
+<div class="line"><a name="l14464"></a><span class="lineno">14464</span>&#160; </div>
+<div class="line"><a name="l14465"></a><span class="lineno">14465</span>&#160;                        <span class="keyword">const</span> std::uint64_t h = p3 + p2_hi + p1_hi + (Q &gt;&gt; 32u);</div>
+<div class="line"><a name="l14466"></a><span class="lineno">14466</span>&#160; </div>
+<div class="line"><a name="l14467"></a><span class="lineno">14467</span>&#160;                        <span class="keywordflow">return</span> {h, <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e + y.e + 64};</div>
+<div class="line"><a name="l14468"></a><span class="lineno">14468</span>&#160;                    }</div>
 <div class="ttc" id="anamespaceexprtk_1_1details_html_aecf717cce5832ab27c2cefcf5dc76fe1"><div class="ttname"><a href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">exprtk::details::x</a></div><div class="ttdeci">x y t t *t x y t t t x y t t t x *y t *t t x *y t *t t x y t t t x y t t t x(y+z)</div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp_html_a03682754b06ed4f30b263119eecc2d52"><div class="ttname"><a href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a03682754b06ed4f30b263119eecc2d52">nlohmann::detail::dtoa_impl::diyfp::kPrecision</a></div><div class="ttdeci">static constexpr int kPrecision</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l14398">json.hpp:14398</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp_html_a03682754b06ed4f30b263119eecc2d52"><div class="ttname"><a href="structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#a03682754b06ed4f30b263119eecc2d52">nlohmann::detail::dtoa_impl::diyfp::kPrecision</a></div><div class="ttdeci">static constexpr int kPrecision</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l14386">json.hpp:14386</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,19 +304,19 @@ Static Public Attributes</h2></td></tr>
 <p>normalize x such that the significand is &gt;= 2^(q-1) </p>
 <dl class="section pre"><dt>Precondition</dt><dd>x.f != 0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14486">14486</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l14487"></a><span class="lineno">14487</span>&#160;                    {</div>
-<div class="line"><a name="l14488"></a><span class="lineno">14488</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f != 0);</div>
-<div class="line"><a name="l14489"></a><span class="lineno">14489</span>&#160; </div>
-<div class="line"><a name="l14490"></a><span class="lineno">14490</span>&#160;                        <span class="keywordflow">while</span> ((<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &gt;&gt; 63u) == 0)</div>
-<div class="line"><a name="l14491"></a><span class="lineno">14491</span>&#160;                        {</div>
-<div class="line"><a name="l14492"></a><span class="lineno">14492</span>&#160;                            <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &lt;&lt;= 1u;</div>
-<div class="line"><a name="l14493"></a><span class="lineno">14493</span>&#160;                            <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e--;</div>
-<div class="line"><a name="l14494"></a><span class="lineno">14494</span>&#160;                        }</div>
-<div class="line"><a name="l14495"></a><span class="lineno">14495</span>&#160; </div>
-<div class="line"><a name="l14496"></a><span class="lineno">14496</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>;</div>
-<div class="line"><a name="l14497"></a><span class="lineno">14497</span>&#160;                    }</div>
-<div class="ttc" id="ajson_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02103">json.hpp:2103</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14474">14474</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l14475"></a><span class="lineno">14475</span>&#160;                    {</div>
+<div class="line"><a name="l14476"></a><span class="lineno">14476</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f != 0);</div>
+<div class="line"><a name="l14477"></a><span class="lineno">14477</span>&#160; </div>
+<div class="line"><a name="l14478"></a><span class="lineno">14478</span>&#160;                        <span class="keywordflow">while</span> ((<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &gt;&gt; 63u) == 0)</div>
+<div class="line"><a name="l14479"></a><span class="lineno">14479</span>&#160;                        {</div>
+<div class="line"><a name="l14480"></a><span class="lineno">14480</span>&#160;                            <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &lt;&lt;= 1u;</div>
+<div class="line"><a name="l14481"></a><span class="lineno">14481</span>&#160;                            <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e--;</div>
+<div class="line"><a name="l14482"></a><span class="lineno">14482</span>&#160;                        }</div>
+<div class="line"><a name="l14483"></a><span class="lineno">14483</span>&#160; </div>
+<div class="line"><a name="l14484"></a><span class="lineno">14484</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>;</div>
+<div class="line"><a name="l14485"></a><span class="lineno">14485</span>&#160;                    }</div>
+<div class="ttc" id="ajson_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02091">json.hpp:2091</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -357,15 +357,15 @@ Static Public Attributes</h2></td></tr>
 <p>normalize x such that the result has the exponent E </p>
 <dl class="section pre"><dt>Precondition</dt><dd>e &gt;= x.e and the upper e - x.e bits of x.f must be zero. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14503">14503</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l14504"></a><span class="lineno">14504</span>&#160;                    {</div>
-<div class="line"><a name="l14505"></a><span class="lineno">14505</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> delta = <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e - target_exponent;</div>
-<div class="line"><a name="l14506"></a><span class="lineno">14506</span>&#160; </div>
-<div class="line"><a name="l14507"></a><span class="lineno">14507</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(delta &gt;= 0);</div>
-<div class="line"><a name="l14508"></a><span class="lineno">14508</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(((<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &lt;&lt; delta) &gt;&gt; delta) == <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f);</div>
-<div class="line"><a name="l14509"></a><span class="lineno">14509</span>&#160; </div>
-<div class="line"><a name="l14510"></a><span class="lineno">14510</span>&#160;                        <span class="keywordflow">return</span> {<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &lt;&lt; delta, target_exponent};</div>
-<div class="line"><a name="l14511"></a><span class="lineno">14511</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14491">14491</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l14492"></a><span class="lineno">14492</span>&#160;                    {</div>
+<div class="line"><a name="l14493"></a><span class="lineno">14493</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> delta = <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e - target_exponent;</div>
+<div class="line"><a name="l14494"></a><span class="lineno">14494</span>&#160; </div>
+<div class="line"><a name="l14495"></a><span class="lineno">14495</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(delta &gt;= 0);</div>
+<div class="line"><a name="l14496"></a><span class="lineno">14496</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(((<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &lt;&lt; delta) &gt;&gt; delta) == <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f);</div>
+<div class="line"><a name="l14497"></a><span class="lineno">14497</span>&#160; </div>
+<div class="line"><a name="l14498"></a><span class="lineno">14498</span>&#160;                        <span class="keywordflow">return</span> {<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &lt;&lt; delta, target_exponent};</div>
+<div class="line"><a name="l14499"></a><span class="lineno">14499</span>&#160;                    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -406,13 +406,13 @@ Static Public Attributes</h2></td></tr>
 <p>returns x - y </p>
 <dl class="section pre"><dt>Precondition</dt><dd>x.e == y.e and x.f &gt;= y.f </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14409">14409</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l14410"></a><span class="lineno">14410</span>&#160;                    {</div>
-<div class="line"><a name="l14411"></a><span class="lineno">14411</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e == y.e);</div>
-<div class="line"><a name="l14412"></a><span class="lineno">14412</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &gt;= y.f);</div>
-<div class="line"><a name="l14413"></a><span class="lineno">14413</span>&#160; </div>
-<div class="line"><a name="l14414"></a><span class="lineno">14414</span>&#160;                        <span class="keywordflow">return</span> {<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f - y.f, <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e};</div>
-<div class="line"><a name="l14415"></a><span class="lineno">14415</span>&#160;                    }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14397">14397</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l14398"></a><span class="lineno">14398</span>&#160;                    {</div>
+<div class="line"><a name="l14399"></a><span class="lineno">14399</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e == y.e);</div>
+<div class="line"><a name="l14400"></a><span class="lineno">14400</span>&#160;                        <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f &gt;= y.f);</div>
+<div class="line"><a name="l14401"></a><span class="lineno">14401</span>&#160; </div>
+<div class="line"><a name="l14402"></a><span class="lineno">14402</span>&#160;                        <span class="keywordflow">return</span> {<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.f - y.f, <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.e};</div>
+<div class="line"><a name="l14403"></a><span class="lineno">14403</span>&#160;                    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,7 +429,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14401">14401</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14389">14389</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -445,7 +445,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14400">14400</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14388">14388</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -469,7 +469,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14398">14398</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l14386">14386</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>

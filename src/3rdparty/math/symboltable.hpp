@@ -23,9 +23,9 @@
 #include <map>
 #include <string>
 
-#include "src/3rdparty/math/function.hpp"
-#include "src/3rdparty/math/script.hpp"
-#include "src/3rdparty/math/arithmetictype.hpp"
+#include "../math/function.hpp"
+#include "../math/script.hpp"
+#include "../math/arithmetictype.hpp"
 
 /************************************************
  * @brief SymbolTable.

@@ -23,10 +23,10 @@
 struct _object;
 typedef _object PyObject;
 
-#include "src/3rdparty/math/symboltable.hpp"
-#include "src/3rdparty/cpython/pythoninclude.hpp"
-#include "src/3rdparty/cpython/pyutil.hpp"
-#include "src/3rdparty/cpython/types/pympreal.hpp"
+#include "../math/symboltable.hpp"
+#include "pythoninclude.hpp"
+#include "pyutil.hpp"
+#include "types/pympreal.hpp"
 #include <abstract.h>
 /************************************************
  * @brief Some helper functions for working with symbol table type on the python side.

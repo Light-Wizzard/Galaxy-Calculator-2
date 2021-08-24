@@ -28,7 +28,8 @@
 #include <bitset>
 #include <iomanip>
 #include <QtGlobal>
-#include "src/3rdparty/math/arithmetictype.hpp"
+#include "../math/arithmetictype.hpp"
+#include "fractiontest.hpp"
 /************************************************
  * @brief Number Format.
  * \namespace NumberFormat

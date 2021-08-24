@@ -117,7 +117,7 @@ Public Member Functions</h2></td></tr>
 class nlohmann::detail::serializer&lt; BasicJsonType &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l15484">15484</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l15472">15472</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac010525281d97867ee842da37294fe83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac010525281d97867ee842da37294fe83">&#9670;&nbsp;</a></span>serializer() <span class="overload">[1/3]</span></h2>
@@ -169,15 +169,15 @@ template&lt;typename BasicJsonType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l15500">15500</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l15502"></a><span class="lineno">15502</span>&#160;                    : o(std::move(s))</div>
-<div class="line"><a name="l15503"></a><span class="lineno">15503</span>&#160;                    , loc(std::localeconv())</div>
-<div class="line"><a name="l15504"></a><span class="lineno">15504</span>&#160;                    , thousands_sep(loc-&gt;thousands_sep == <span class="keyword">nullptr</span> ? <span class="charliteral">&#39;\0&#39;</span> : std::char_traits&lt;char&gt;::to_char_type(* (loc-&gt;thousands_sep)))</div>
-<div class="line"><a name="l15505"></a><span class="lineno">15505</span>&#160;                    , decimal_point(loc-&gt;decimal_point == <span class="keyword">nullptr</span> ? <span class="charliteral">&#39;\0&#39;</span> : std::char_traits&lt;char&gt;::to_char_type(* (loc-&gt;decimal_point)))</div>
-<div class="line"><a name="l15506"></a><span class="lineno">15506</span>&#160;                    , indent_char(ichar)</div>
-<div class="line"><a name="l15507"></a><span class="lineno">15507</span>&#160;                    , indent_string(512, indent_char)</div>
-<div class="line"><a name="l15508"></a><span class="lineno">15508</span>&#160;                    , error_handler(error_handler_)</div>
-<div class="line"><a name="l15509"></a><span class="lineno">15509</span>&#160;                {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l15488">15488</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l15490"></a><span class="lineno">15490</span>&#160;                    : o(std::move(s))</div>
+<div class="line"><a name="l15491"></a><span class="lineno">15491</span>&#160;                    , loc(std::localeconv())</div>
+<div class="line"><a name="l15492"></a><span class="lineno">15492</span>&#160;                    , thousands_sep(loc-&gt;thousands_sep == <span class="keyword">nullptr</span> ? <span class="charliteral">&#39;\0&#39;</span> : std::char_traits&lt;char&gt;::to_char_type(* (loc-&gt;thousands_sep)))</div>
+<div class="line"><a name="l15493"></a><span class="lineno">15493</span>&#160;                    , decimal_point(loc-&gt;decimal_point == <span class="keyword">nullptr</span> ? <span class="charliteral">&#39;\0&#39;</span> : std::char_traits&lt;char&gt;::to_char_type(* (loc-&gt;decimal_point)))</div>
+<div class="line"><a name="l15494"></a><span class="lineno">15494</span>&#160;                    , indent_char(ichar)</div>
+<div class="line"><a name="l15495"></a><span class="lineno">15495</span>&#160;                    , indent_string(512, indent_char)</div>
+<div class="line"><a name="l15496"></a><span class="lineno">15496</span>&#160;                    , error_handler(error_handler_)</div>
+<div class="line"><a name="l15497"></a><span class="lineno">15497</span>&#160;                {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -338,273 +338,273 @@ template&lt;typename BasicJsonType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l15540">15540</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l15545"></a><span class="lineno">15545</span>&#160;                {</div>
-<div class="line"><a name="l15546"></a><span class="lineno">15546</span>&#160;                    <span class="keywordflow">switch</span> (val.m_type)</div>
-<div class="line"><a name="l15547"></a><span class="lineno">15547</span>&#160;                    {</div>
-<div class="line"><a name="l15548"></a><span class="lineno">15548</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l15549"></a><span class="lineno">15549</span>&#160;                        {</div>
-<div class="line"><a name="l15550"></a><span class="lineno">15550</span>&#160;                            <span class="keywordflow">if</span> (val.m_value.object-&gt;empty())</div>
-<div class="line"><a name="l15551"></a><span class="lineno">15551</span>&#160;                            {</div>
-<div class="line"><a name="l15552"></a><span class="lineno">15552</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{}&quot;</span>, 2);</div>
-<div class="line"><a name="l15553"></a><span class="lineno">15553</span>&#160;                                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15554"></a><span class="lineno">15554</span>&#160;                            }</div>
-<div class="line"><a name="l15555"></a><span class="lineno">15555</span>&#160; </div>
-<div class="line"><a name="l15556"></a><span class="lineno">15556</span>&#160;                            <span class="keywordflow">if</span> (pretty_print)</div>
-<div class="line"><a name="l15557"></a><span class="lineno">15557</span>&#160;                            {</div>
-<div class="line"><a name="l15558"></a><span class="lineno">15558</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{\n&quot;</span>, 2);</div>
-<div class="line"><a name="l15559"></a><span class="lineno">15559</span>&#160; </div>
-<div class="line"><a name="l15560"></a><span class="lineno">15560</span>&#160;                                <span class="comment">// variable to hold indentation for recursive calls</span></div>
-<div class="line"><a name="l15561"></a><span class="lineno">15561</span>&#160;                                <span class="keyword">const</span> <span class="keyword">auto</span> new_indent = current_indent + indent_step;</div>
-<div class="line"><a name="l15562"></a><span class="lineno">15562</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(indent_string.size() &lt; new_indent))</div>
-<div class="line"><a name="l15563"></a><span class="lineno">15563</span>&#160;                                {</div>
-<div class="line"><a name="l15564"></a><span class="lineno">15564</span>&#160;                                    indent_string.resize(indent_string.size() * 2, <span class="charliteral">&#39; &#39;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l15528">15528</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l15533"></a><span class="lineno">15533</span>&#160;                {</div>
+<div class="line"><a name="l15534"></a><span class="lineno">15534</span>&#160;                    <span class="keywordflow">switch</span> (val.m_type)</div>
+<div class="line"><a name="l15535"></a><span class="lineno">15535</span>&#160;                    {</div>
+<div class="line"><a name="l15536"></a><span class="lineno">15536</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l15537"></a><span class="lineno">15537</span>&#160;                        {</div>
+<div class="line"><a name="l15538"></a><span class="lineno">15538</span>&#160;                            <span class="keywordflow">if</span> (val.m_value.object-&gt;empty())</div>
+<div class="line"><a name="l15539"></a><span class="lineno">15539</span>&#160;                            {</div>
+<div class="line"><a name="l15540"></a><span class="lineno">15540</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{}&quot;</span>, 2);</div>
+<div class="line"><a name="l15541"></a><span class="lineno">15541</span>&#160;                                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15542"></a><span class="lineno">15542</span>&#160;                            }</div>
+<div class="line"><a name="l15543"></a><span class="lineno">15543</span>&#160; </div>
+<div class="line"><a name="l15544"></a><span class="lineno">15544</span>&#160;                            <span class="keywordflow">if</span> (pretty_print)</div>
+<div class="line"><a name="l15545"></a><span class="lineno">15545</span>&#160;                            {</div>
+<div class="line"><a name="l15546"></a><span class="lineno">15546</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{\n&quot;</span>, 2);</div>
+<div class="line"><a name="l15547"></a><span class="lineno">15547</span>&#160; </div>
+<div class="line"><a name="l15548"></a><span class="lineno">15548</span>&#160;                                <span class="comment">// variable to hold indentation for recursive calls</span></div>
+<div class="line"><a name="l15549"></a><span class="lineno">15549</span>&#160;                                <span class="keyword">const</span> <span class="keyword">auto</span> new_indent = current_indent + indent_step;</div>
+<div class="line"><a name="l15550"></a><span class="lineno">15550</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(indent_string.size() &lt; new_indent))</div>
+<div class="line"><a name="l15551"></a><span class="lineno">15551</span>&#160;                                {</div>
+<div class="line"><a name="l15552"></a><span class="lineno">15552</span>&#160;                                    indent_string.resize(indent_string.size() * 2, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l15553"></a><span class="lineno">15553</span>&#160;                                }</div>
+<div class="line"><a name="l15554"></a><span class="lineno">15554</span>&#160; </div>
+<div class="line"><a name="l15555"></a><span class="lineno">15555</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
+<div class="line"><a name="l15556"></a><span class="lineno">15556</span>&#160;                                <span class="keyword">auto</span> i = val.m_value.object-&gt;cbegin();</div>
+<div class="line"><a name="l15557"></a><span class="lineno">15557</span>&#160;                                <span class="keywordflow">for</span> (std::size_t cnt = 0; cnt &lt; val.m_value.object-&gt;size() - 1; ++cnt, ++i)</div>
+<div class="line"><a name="l15558"></a><span class="lineno">15558</span>&#160;                                {</div>
+<div class="line"><a name="l15559"></a><span class="lineno">15559</span>&#160;                                    o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
+<div class="line"><a name="l15560"></a><span class="lineno">15560</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l15561"></a><span class="lineno">15561</span>&#160;                                    dump_escaped(i-&gt;first, ensure_ascii);</div>
+<div class="line"><a name="l15562"></a><span class="lineno">15562</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;: &quot;</span>, 3);</div>
+<div class="line"><a name="l15563"></a><span class="lineno">15563</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
+<div class="line"><a name="l15564"></a><span class="lineno">15564</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;,\n&quot;</span>, 2);</div>
 <div class="line"><a name="l15565"></a><span class="lineno">15565</span>&#160;                                }</div>
 <div class="line"><a name="l15566"></a><span class="lineno">15566</span>&#160; </div>
-<div class="line"><a name="l15567"></a><span class="lineno">15567</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
-<div class="line"><a name="l15568"></a><span class="lineno">15568</span>&#160;                                <span class="keyword">auto</span> i = val.m_value.object-&gt;cbegin();</div>
-<div class="line"><a name="l15569"></a><span class="lineno">15569</span>&#160;                                <span class="keywordflow">for</span> (std::size_t cnt = 0; cnt &lt; val.m_value.object-&gt;size() - 1; ++cnt, ++i)</div>
-<div class="line"><a name="l15570"></a><span class="lineno">15570</span>&#160;                                {</div>
-<div class="line"><a name="l15571"></a><span class="lineno">15571</span>&#160;                                    o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
-<div class="line"><a name="l15572"></a><span class="lineno">15572</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
-<div class="line"><a name="l15573"></a><span class="lineno">15573</span>&#160;                                    dump_escaped(i-&gt;first, ensure_ascii);</div>
-<div class="line"><a name="l15574"></a><span class="lineno">15574</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;: &quot;</span>, 3);</div>
-<div class="line"><a name="l15575"></a><span class="lineno">15575</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
-<div class="line"><a name="l15576"></a><span class="lineno">15576</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;,\n&quot;</span>, 2);</div>
-<div class="line"><a name="l15577"></a><span class="lineno">15577</span>&#160;                                }</div>
-<div class="line"><a name="l15578"></a><span class="lineno">15578</span>&#160; </div>
-<div class="line"><a name="l15579"></a><span class="lineno">15579</span>&#160;                                <span class="comment">// last element</span></div>
-<div class="line"><a name="l15580"></a><span class="lineno">15580</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(i != val.m_value.object-&gt;cend());</div>
-<div class="line"><a name="l15581"></a><span class="lineno">15581</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(std::next(i) == val.m_value.object-&gt;cend());</div>
-<div class="line"><a name="l15582"></a><span class="lineno">15582</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
-<div class="line"><a name="l15583"></a><span class="lineno">15583</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
-<div class="line"><a name="l15584"></a><span class="lineno">15584</span>&#160;                                dump_escaped(i-&gt;first, ensure_ascii);</div>
-<div class="line"><a name="l15585"></a><span class="lineno">15585</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;: &quot;</span>, 3);</div>
-<div class="line"><a name="l15586"></a><span class="lineno">15586</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
-<div class="line"><a name="l15587"></a><span class="lineno">15587</span>&#160; </div>
-<div class="line"><a name="l15588"></a><span class="lineno">15588</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l15589"></a><span class="lineno">15589</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), current_indent);</div>
-<div class="line"><a name="l15590"></a><span class="lineno">15590</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
-<div class="line"><a name="l15591"></a><span class="lineno">15591</span>&#160;                            }</div>
-<div class="line"><a name="l15592"></a><span class="lineno">15592</span>&#160;                            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l15593"></a><span class="lineno">15593</span>&#160;                            {</div>
-<div class="line"><a name="l15594"></a><span class="lineno">15594</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;{&#39;</span>);</div>
-<div class="line"><a name="l15595"></a><span class="lineno">15595</span>&#160; </div>
-<div class="line"><a name="l15596"></a><span class="lineno">15596</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
-<div class="line"><a name="l15597"></a><span class="lineno">15597</span>&#160;                                <span class="keyword">auto</span> i = val.m_value.object-&gt;cbegin();</div>
-<div class="line"><a name="l15598"></a><span class="lineno">15598</span>&#160;                                <span class="keywordflow">for</span> (std::size_t cnt = 0; cnt &lt; val.m_value.object-&gt;size() - 1; ++cnt, ++i)</div>
-<div class="line"><a name="l15599"></a><span class="lineno">15599</span>&#160;                                {</div>
-<div class="line"><a name="l15600"></a><span class="lineno">15600</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
-<div class="line"><a name="l15601"></a><span class="lineno">15601</span>&#160;                                    dump_escaped(i-&gt;first, ensure_ascii);</div>
-<div class="line"><a name="l15602"></a><span class="lineno">15602</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;:&quot;</span>, 2);</div>
-<div class="line"><a name="l15603"></a><span class="lineno">15603</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
-<div class="line"><a name="l15604"></a><span class="lineno">15604</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l15605"></a><span class="lineno">15605</span>&#160;                                }</div>
-<div class="line"><a name="l15606"></a><span class="lineno">15606</span>&#160; </div>
-<div class="line"><a name="l15607"></a><span class="lineno">15607</span>&#160;                                <span class="comment">// last element</span></div>
-<div class="line"><a name="l15608"></a><span class="lineno">15608</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(i != val.m_value.object-&gt;cend());</div>
-<div class="line"><a name="l15609"></a><span class="lineno">15609</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(std::next(i) == val.m_value.object-&gt;cend());</div>
-<div class="line"><a name="l15610"></a><span class="lineno">15610</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
-<div class="line"><a name="l15611"></a><span class="lineno">15611</span>&#160;                                dump_escaped(i-&gt;first, ensure_ascii);</div>
-<div class="line"><a name="l15612"></a><span class="lineno">15612</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;:&quot;</span>, 2);</div>
-<div class="line"><a name="l15613"></a><span class="lineno">15613</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
-<div class="line"><a name="l15614"></a><span class="lineno">15614</span>&#160; </div>
-<div class="line"><a name="l15615"></a><span class="lineno">15615</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
-<div class="line"><a name="l15616"></a><span class="lineno">15616</span>&#160;                            }</div>
-<div class="line"><a name="l15617"></a><span class="lineno">15617</span>&#160; </div>
-<div class="line"><a name="l15618"></a><span class="lineno">15618</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15619"></a><span class="lineno">15619</span>&#160;                        }</div>
+<div class="line"><a name="l15567"></a><span class="lineno">15567</span>&#160;                                <span class="comment">// last element</span></div>
+<div class="line"><a name="l15568"></a><span class="lineno">15568</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(i != val.m_value.object-&gt;cend());</div>
+<div class="line"><a name="l15569"></a><span class="lineno">15569</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(std::next(i) == val.m_value.object-&gt;cend());</div>
+<div class="line"><a name="l15570"></a><span class="lineno">15570</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
+<div class="line"><a name="l15571"></a><span class="lineno">15571</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l15572"></a><span class="lineno">15572</span>&#160;                                dump_escaped(i-&gt;first, ensure_ascii);</div>
+<div class="line"><a name="l15573"></a><span class="lineno">15573</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;: &quot;</span>, 3);</div>
+<div class="line"><a name="l15574"></a><span class="lineno">15574</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
+<div class="line"><a name="l15575"></a><span class="lineno">15575</span>&#160; </div>
+<div class="line"><a name="l15576"></a><span class="lineno">15576</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l15577"></a><span class="lineno">15577</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), current_indent);</div>
+<div class="line"><a name="l15578"></a><span class="lineno">15578</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
+<div class="line"><a name="l15579"></a><span class="lineno">15579</span>&#160;                            }</div>
+<div class="line"><a name="l15580"></a><span class="lineno">15580</span>&#160;                            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15581"></a><span class="lineno">15581</span>&#160;                            {</div>
+<div class="line"><a name="l15582"></a><span class="lineno">15582</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;{&#39;</span>);</div>
+<div class="line"><a name="l15583"></a><span class="lineno">15583</span>&#160; </div>
+<div class="line"><a name="l15584"></a><span class="lineno">15584</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
+<div class="line"><a name="l15585"></a><span class="lineno">15585</span>&#160;                                <span class="keyword">auto</span> i = val.m_value.object-&gt;cbegin();</div>
+<div class="line"><a name="l15586"></a><span class="lineno">15586</span>&#160;                                <span class="keywordflow">for</span> (std::size_t cnt = 0; cnt &lt; val.m_value.object-&gt;size() - 1; ++cnt, ++i)</div>
+<div class="line"><a name="l15587"></a><span class="lineno">15587</span>&#160;                                {</div>
+<div class="line"><a name="l15588"></a><span class="lineno">15588</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l15589"></a><span class="lineno">15589</span>&#160;                                    dump_escaped(i-&gt;first, ensure_ascii);</div>
+<div class="line"><a name="l15590"></a><span class="lineno">15590</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;:&quot;</span>, 2);</div>
+<div class="line"><a name="l15591"></a><span class="lineno">15591</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
+<div class="line"><a name="l15592"></a><span class="lineno">15592</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l15593"></a><span class="lineno">15593</span>&#160;                                }</div>
+<div class="line"><a name="l15594"></a><span class="lineno">15594</span>&#160; </div>
+<div class="line"><a name="l15595"></a><span class="lineno">15595</span>&#160;                                <span class="comment">// last element</span></div>
+<div class="line"><a name="l15596"></a><span class="lineno">15596</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(i != val.m_value.object-&gt;cend());</div>
+<div class="line"><a name="l15597"></a><span class="lineno">15597</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(std::next(i) == val.m_value.object-&gt;cend());</div>
+<div class="line"><a name="l15598"></a><span class="lineno">15598</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l15599"></a><span class="lineno">15599</span>&#160;                                dump_escaped(i-&gt;first, ensure_ascii);</div>
+<div class="line"><a name="l15600"></a><span class="lineno">15600</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;:&quot;</span>, 2);</div>
+<div class="line"><a name="l15601"></a><span class="lineno">15601</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(i-&gt;second, <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
+<div class="line"><a name="l15602"></a><span class="lineno">15602</span>&#160; </div>
+<div class="line"><a name="l15603"></a><span class="lineno">15603</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
+<div class="line"><a name="l15604"></a><span class="lineno">15604</span>&#160;                            }</div>
+<div class="line"><a name="l15605"></a><span class="lineno">15605</span>&#160; </div>
+<div class="line"><a name="l15606"></a><span class="lineno">15606</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15607"></a><span class="lineno">15607</span>&#160;                        }</div>
+<div class="line"><a name="l15608"></a><span class="lineno">15608</span>&#160; </div>
+<div class="line"><a name="l15609"></a><span class="lineno">15609</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l15610"></a><span class="lineno">15610</span>&#160;                        {</div>
+<div class="line"><a name="l15611"></a><span class="lineno">15611</span>&#160;                            <span class="keywordflow">if</span> (val.m_value.array-&gt;empty())</div>
+<div class="line"><a name="l15612"></a><span class="lineno">15612</span>&#160;                            {</div>
+<div class="line"><a name="l15613"></a><span class="lineno">15613</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;[]&quot;</span>, 2);</div>
+<div class="line"><a name="l15614"></a><span class="lineno">15614</span>&#160;                                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15615"></a><span class="lineno">15615</span>&#160;                            }</div>
+<div class="line"><a name="l15616"></a><span class="lineno">15616</span>&#160; </div>
+<div class="line"><a name="l15617"></a><span class="lineno">15617</span>&#160;                            <span class="keywordflow">if</span> (pretty_print)</div>
+<div class="line"><a name="l15618"></a><span class="lineno">15618</span>&#160;                            {</div>
+<div class="line"><a name="l15619"></a><span class="lineno">15619</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;[\n&quot;</span>, 2);</div>
 <div class="line"><a name="l15620"></a><span class="lineno">15620</span>&#160; </div>
-<div class="line"><a name="l15621"></a><span class="lineno">15621</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l15622"></a><span class="lineno">15622</span>&#160;                        {</div>
-<div class="line"><a name="l15623"></a><span class="lineno">15623</span>&#160;                            <span class="keywordflow">if</span> (val.m_value.array-&gt;empty())</div>
-<div class="line"><a name="l15624"></a><span class="lineno">15624</span>&#160;                            {</div>
-<div class="line"><a name="l15625"></a><span class="lineno">15625</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;[]&quot;</span>, 2);</div>
-<div class="line"><a name="l15626"></a><span class="lineno">15626</span>&#160;                                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15627"></a><span class="lineno">15627</span>&#160;                            }</div>
-<div class="line"><a name="l15628"></a><span class="lineno">15628</span>&#160; </div>
-<div class="line"><a name="l15629"></a><span class="lineno">15629</span>&#160;                            <span class="keywordflow">if</span> (pretty_print)</div>
-<div class="line"><a name="l15630"></a><span class="lineno">15630</span>&#160;                            {</div>
-<div class="line"><a name="l15631"></a><span class="lineno">15631</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;[\n&quot;</span>, 2);</div>
-<div class="line"><a name="l15632"></a><span class="lineno">15632</span>&#160; </div>
-<div class="line"><a name="l15633"></a><span class="lineno">15633</span>&#160;                                <span class="comment">// variable to hold indentation for recursive calls</span></div>
-<div class="line"><a name="l15634"></a><span class="lineno">15634</span>&#160;                                <span class="keyword">const</span> <span class="keyword">auto</span> new_indent = current_indent + indent_step;</div>
-<div class="line"><a name="l15635"></a><span class="lineno">15635</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(indent_string.size() &lt; new_indent))</div>
-<div class="line"><a name="l15636"></a><span class="lineno">15636</span>&#160;                                {</div>
-<div class="line"><a name="l15637"></a><span class="lineno">15637</span>&#160;                                    indent_string.resize(indent_string.size() * 2, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l15638"></a><span class="lineno">15638</span>&#160;                                }</div>
-<div class="line"><a name="l15639"></a><span class="lineno">15639</span>&#160; </div>
-<div class="line"><a name="l15640"></a><span class="lineno">15640</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
-<div class="line"><a name="l15641"></a><span class="lineno">15641</span>&#160;                                <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.array-&gt;cbegin();</div>
-<div class="line"><a name="l15642"></a><span class="lineno">15642</span>&#160;                                     i != val.m_value.array-&gt;cend() - 1; ++i)</div>
-<div class="line"><a name="l15643"></a><span class="lineno">15643</span>&#160;                                {</div>
-<div class="line"><a name="l15644"></a><span class="lineno">15644</span>&#160;                                    o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
-<div class="line"><a name="l15645"></a><span class="lineno">15645</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(*i, <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
-<div class="line"><a name="l15646"></a><span class="lineno">15646</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;,\n&quot;</span>, 2);</div>
-<div class="line"><a name="l15647"></a><span class="lineno">15647</span>&#160;                                }</div>
-<div class="line"><a name="l15648"></a><span class="lineno">15648</span>&#160; </div>
-<div class="line"><a name="l15649"></a><span class="lineno">15649</span>&#160;                                <span class="comment">// last element</span></div>
-<div class="line"><a name="l15650"></a><span class="lineno">15650</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!val.m_value.array-&gt;empty());</div>
-<div class="line"><a name="l15651"></a><span class="lineno">15651</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
-<div class="line"><a name="l15652"></a><span class="lineno">15652</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(val.m_value.array-&gt;back(), <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
-<div class="line"><a name="l15653"></a><span class="lineno">15653</span>&#160; </div>
-<div class="line"><a name="l15654"></a><span class="lineno">15654</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l15655"></a><span class="lineno">15655</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), current_indent);</div>
-<div class="line"><a name="l15656"></a><span class="lineno">15656</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;]&#39;</span>);</div>
-<div class="line"><a name="l15657"></a><span class="lineno">15657</span>&#160;                            }</div>
-<div class="line"><a name="l15658"></a><span class="lineno">15658</span>&#160;                            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l15659"></a><span class="lineno">15659</span>&#160;                            {</div>
-<div class="line"><a name="l15660"></a><span class="lineno">15660</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><a name="l15621"></a><span class="lineno">15621</span>&#160;                                <span class="comment">// variable to hold indentation for recursive calls</span></div>
+<div class="line"><a name="l15622"></a><span class="lineno">15622</span>&#160;                                <span class="keyword">const</span> <span class="keyword">auto</span> new_indent = current_indent + indent_step;</div>
+<div class="line"><a name="l15623"></a><span class="lineno">15623</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(indent_string.size() &lt; new_indent))</div>
+<div class="line"><a name="l15624"></a><span class="lineno">15624</span>&#160;                                {</div>
+<div class="line"><a name="l15625"></a><span class="lineno">15625</span>&#160;                                    indent_string.resize(indent_string.size() * 2, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l15626"></a><span class="lineno">15626</span>&#160;                                }</div>
+<div class="line"><a name="l15627"></a><span class="lineno">15627</span>&#160; </div>
+<div class="line"><a name="l15628"></a><span class="lineno">15628</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
+<div class="line"><a name="l15629"></a><span class="lineno">15629</span>&#160;                                <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.array-&gt;cbegin();</div>
+<div class="line"><a name="l15630"></a><span class="lineno">15630</span>&#160;                                     i != val.m_value.array-&gt;cend() - 1; ++i)</div>
+<div class="line"><a name="l15631"></a><span class="lineno">15631</span>&#160;                                {</div>
+<div class="line"><a name="l15632"></a><span class="lineno">15632</span>&#160;                                    o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
+<div class="line"><a name="l15633"></a><span class="lineno">15633</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(*i, <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
+<div class="line"><a name="l15634"></a><span class="lineno">15634</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;,\n&quot;</span>, 2);</div>
+<div class="line"><a name="l15635"></a><span class="lineno">15635</span>&#160;                                }</div>
+<div class="line"><a name="l15636"></a><span class="lineno">15636</span>&#160; </div>
+<div class="line"><a name="l15637"></a><span class="lineno">15637</span>&#160;                                <span class="comment">// last element</span></div>
+<div class="line"><a name="l15638"></a><span class="lineno">15638</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!val.m_value.array-&gt;empty());</div>
+<div class="line"><a name="l15639"></a><span class="lineno">15639</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
+<div class="line"><a name="l15640"></a><span class="lineno">15640</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(val.m_value.array-&gt;back(), <span class="keyword">true</span>, ensure_ascii, indent_step, new_indent);</div>
+<div class="line"><a name="l15641"></a><span class="lineno">15641</span>&#160; </div>
+<div class="line"><a name="l15642"></a><span class="lineno">15642</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l15643"></a><span class="lineno">15643</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), current_indent);</div>
+<div class="line"><a name="l15644"></a><span class="lineno">15644</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;]&#39;</span>);</div>
+<div class="line"><a name="l15645"></a><span class="lineno">15645</span>&#160;                            }</div>
+<div class="line"><a name="l15646"></a><span class="lineno">15646</span>&#160;                            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15647"></a><span class="lineno">15647</span>&#160;                            {</div>
+<div class="line"><a name="l15648"></a><span class="lineno">15648</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><a name="l15649"></a><span class="lineno">15649</span>&#160; </div>
+<div class="line"><a name="l15650"></a><span class="lineno">15650</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
+<div class="line"><a name="l15651"></a><span class="lineno">15651</span>&#160;                                <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.array-&gt;cbegin();</div>
+<div class="line"><a name="l15652"></a><span class="lineno">15652</span>&#160;                                     i != val.m_value.array-&gt;cend() - 1; ++i)</div>
+<div class="line"><a name="l15653"></a><span class="lineno">15653</span>&#160;                                {</div>
+<div class="line"><a name="l15654"></a><span class="lineno">15654</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(*i, <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
+<div class="line"><a name="l15655"></a><span class="lineno">15655</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l15656"></a><span class="lineno">15656</span>&#160;                                }</div>
+<div class="line"><a name="l15657"></a><span class="lineno">15657</span>&#160; </div>
+<div class="line"><a name="l15658"></a><span class="lineno">15658</span>&#160;                                <span class="comment">// last element</span></div>
+<div class="line"><a name="l15659"></a><span class="lineno">15659</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!val.m_value.array-&gt;empty());</div>
+<div class="line"><a name="l15660"></a><span class="lineno">15660</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(val.m_value.array-&gt;back(), <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
 <div class="line"><a name="l15661"></a><span class="lineno">15661</span>&#160; </div>
-<div class="line"><a name="l15662"></a><span class="lineno">15662</span>&#160;                                <span class="comment">// first n-1 elements</span></div>
-<div class="line"><a name="l15663"></a><span class="lineno">15663</span>&#160;                                <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.array-&gt;cbegin();</div>
-<div class="line"><a name="l15664"></a><span class="lineno">15664</span>&#160;                                     i != val.m_value.array-&gt;cend() - 1; ++i)</div>
-<div class="line"><a name="l15665"></a><span class="lineno">15665</span>&#160;                                {</div>
-<div class="line"><a name="l15666"></a><span class="lineno">15666</span>&#160;                                    <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(*i, <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
-<div class="line"><a name="l15667"></a><span class="lineno">15667</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l15668"></a><span class="lineno">15668</span>&#160;                                }</div>
-<div class="line"><a name="l15669"></a><span class="lineno">15669</span>&#160; </div>
-<div class="line"><a name="l15670"></a><span class="lineno">15670</span>&#160;                                <span class="comment">// last element</span></div>
-<div class="line"><a name="l15671"></a><span class="lineno">15671</span>&#160;                                <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!val.m_value.array-&gt;empty());</div>
-<div class="line"><a name="l15672"></a><span class="lineno">15672</span>&#160;                                <a class="code" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">dump</a>(val.m_value.array-&gt;back(), <span class="keyword">false</span>, ensure_ascii, indent_step, current_indent);</div>
-<div class="line"><a name="l15673"></a><span class="lineno">15673</span>&#160; </div>
-<div class="line"><a name="l15674"></a><span class="lineno">15674</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;]&#39;</span>);</div>
-<div class="line"><a name="l15675"></a><span class="lineno">15675</span>&#160;                            }</div>
-<div class="line"><a name="l15676"></a><span class="lineno">15676</span>&#160; </div>
-<div class="line"><a name="l15677"></a><span class="lineno">15677</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15678"></a><span class="lineno">15678</span>&#160;                        }</div>
-<div class="line"><a name="l15679"></a><span class="lineno">15679</span>&#160; </div>
-<div class="line"><a name="l15680"></a><span class="lineno">15680</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21">value_t::string</a>:</div>
-<div class="line"><a name="l15681"></a><span class="lineno">15681</span>&#160;                        {</div>
-<div class="line"><a name="l15682"></a><span class="lineno">15682</span>&#160;                            o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
-<div class="line"><a name="l15683"></a><span class="lineno">15683</span>&#160;                            dump_escaped(*val.m_value.string, ensure_ascii);</div>
-<div class="line"><a name="l15684"></a><span class="lineno">15684</span>&#160;                            o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
-<div class="line"><a name="l15685"></a><span class="lineno">15685</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15686"></a><span class="lineno">15686</span>&#160;                        }</div>
-<div class="line"><a name="l15687"></a><span class="lineno">15687</span>&#160; </div>
-<div class="line"><a name="l15688"></a><span class="lineno">15688</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20">value_t::binary</a>:</div>
-<div class="line"><a name="l15689"></a><span class="lineno">15689</span>&#160;                        {</div>
-<div class="line"><a name="l15690"></a><span class="lineno">15690</span>&#160;                            <span class="keywordflow">if</span> (pretty_print)</div>
-<div class="line"><a name="l15691"></a><span class="lineno">15691</span>&#160;                            {</div>
-<div class="line"><a name="l15692"></a><span class="lineno">15692</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{\n&quot;</span>, 2);</div>
-<div class="line"><a name="l15693"></a><span class="lineno">15693</span>&#160; </div>
-<div class="line"><a name="l15694"></a><span class="lineno">15694</span>&#160;                                <span class="comment">// variable to hold indentation for recursive calls</span></div>
-<div class="line"><a name="l15695"></a><span class="lineno">15695</span>&#160;                                <span class="keyword">const</span> <span class="keyword">auto</span> new_indent = current_indent + indent_step;</div>
-<div class="line"><a name="l15696"></a><span class="lineno">15696</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(indent_string.size() &lt; new_indent))</div>
-<div class="line"><a name="l15697"></a><span class="lineno">15697</span>&#160;                                {</div>
-<div class="line"><a name="l15698"></a><span class="lineno">15698</span>&#160;                                    indent_string.resize(indent_string.size() * 2, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l15699"></a><span class="lineno">15699</span>&#160;                                }</div>
-<div class="line"><a name="l15700"></a><span class="lineno">15700</span>&#160; </div>
-<div class="line"><a name="l15701"></a><span class="lineno">15701</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
-<div class="line"><a name="l15702"></a><span class="lineno">15702</span>&#160; </div>
-<div class="line"><a name="l15703"></a><span class="lineno">15703</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;bytes\&quot;: [&quot;</span>, 10);</div>
-<div class="line"><a name="l15704"></a><span class="lineno">15704</span>&#160; </div>
-<div class="line"><a name="l15705"></a><span class="lineno">15705</span>&#160;                                <span class="keywordflow">if</span> (!val.m_value.binary-&gt;empty())</div>
-<div class="line"><a name="l15706"></a><span class="lineno">15706</span>&#160;                                {</div>
-<div class="line"><a name="l15707"></a><span class="lineno">15707</span>&#160;                                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.binary-&gt;cbegin();</div>
-<div class="line"><a name="l15708"></a><span class="lineno">15708</span>&#160;                                         i != val.m_value.binary-&gt;cend() - 1; ++i)</div>
-<div class="line"><a name="l15709"></a><span class="lineno">15709</span>&#160;                                    {</div>
-<div class="line"><a name="l15710"></a><span class="lineno">15710</span>&#160;                                        dump_integer(*i);</div>
-<div class="line"><a name="l15711"></a><span class="lineno">15711</span>&#160;                                        o-&gt;write_characters(<span class="stringliteral">&quot;, &quot;</span>, 2);</div>
-<div class="line"><a name="l15712"></a><span class="lineno">15712</span>&#160;                                    }</div>
-<div class="line"><a name="l15713"></a><span class="lineno">15713</span>&#160;                                    dump_integer(val.m_value.binary-&gt;back());</div>
-<div class="line"><a name="l15714"></a><span class="lineno">15714</span>&#160;                                }</div>
-<div class="line"><a name="l15715"></a><span class="lineno">15715</span>&#160; </div>
-<div class="line"><a name="l15716"></a><span class="lineno">15716</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;],\n&quot;</span>, 3);</div>
-<div class="line"><a name="l15717"></a><span class="lineno">15717</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
-<div class="line"><a name="l15718"></a><span class="lineno">15718</span>&#160; </div>
-<div class="line"><a name="l15719"></a><span class="lineno">15719</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;subtype\&quot;: &quot;</span>, 11);</div>
-<div class="line"><a name="l15720"></a><span class="lineno">15720</span>&#160;                                <span class="keywordflow">if</span> (val.m_value.binary-&gt;has_subtype())</div>
-<div class="line"><a name="l15721"></a><span class="lineno">15721</span>&#160;                                {</div>
-<div class="line"><a name="l15722"></a><span class="lineno">15722</span>&#160;                                    dump_integer(val.m_value.binary-&gt;subtype());</div>
-<div class="line"><a name="l15723"></a><span class="lineno">15723</span>&#160;                                }</div>
-<div class="line"><a name="l15724"></a><span class="lineno">15724</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15662"></a><span class="lineno">15662</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;]&#39;</span>);</div>
+<div class="line"><a name="l15663"></a><span class="lineno">15663</span>&#160;                            }</div>
+<div class="line"><a name="l15664"></a><span class="lineno">15664</span>&#160; </div>
+<div class="line"><a name="l15665"></a><span class="lineno">15665</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15666"></a><span class="lineno">15666</span>&#160;                        }</div>
+<div class="line"><a name="l15667"></a><span class="lineno">15667</span>&#160; </div>
+<div class="line"><a name="l15668"></a><span class="lineno">15668</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21">value_t::string</a>:</div>
+<div class="line"><a name="l15669"></a><span class="lineno">15669</span>&#160;                        {</div>
+<div class="line"><a name="l15670"></a><span class="lineno">15670</span>&#160;                            o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l15671"></a><span class="lineno">15671</span>&#160;                            dump_escaped(*val.m_value.string, ensure_ascii);</div>
+<div class="line"><a name="l15672"></a><span class="lineno">15672</span>&#160;                            o-&gt;write_character(<span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><a name="l15673"></a><span class="lineno">15673</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15674"></a><span class="lineno">15674</span>&#160;                        }</div>
+<div class="line"><a name="l15675"></a><span class="lineno">15675</span>&#160; </div>
+<div class="line"><a name="l15676"></a><span class="lineno">15676</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20">value_t::binary</a>:</div>
+<div class="line"><a name="l15677"></a><span class="lineno">15677</span>&#160;                        {</div>
+<div class="line"><a name="l15678"></a><span class="lineno">15678</span>&#160;                            <span class="keywordflow">if</span> (pretty_print)</div>
+<div class="line"><a name="l15679"></a><span class="lineno">15679</span>&#160;                            {</div>
+<div class="line"><a name="l15680"></a><span class="lineno">15680</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{\n&quot;</span>, 2);</div>
+<div class="line"><a name="l15681"></a><span class="lineno">15681</span>&#160; </div>
+<div class="line"><a name="l15682"></a><span class="lineno">15682</span>&#160;                                <span class="comment">// variable to hold indentation for recursive calls</span></div>
+<div class="line"><a name="l15683"></a><span class="lineno">15683</span>&#160;                                <span class="keyword">const</span> <span class="keyword">auto</span> new_indent = current_indent + indent_step;</div>
+<div class="line"><a name="l15684"></a><span class="lineno">15684</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(indent_string.size() &lt; new_indent))</div>
+<div class="line"><a name="l15685"></a><span class="lineno">15685</span>&#160;                                {</div>
+<div class="line"><a name="l15686"></a><span class="lineno">15686</span>&#160;                                    indent_string.resize(indent_string.size() * 2, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l15687"></a><span class="lineno">15687</span>&#160;                                }</div>
+<div class="line"><a name="l15688"></a><span class="lineno">15688</span>&#160; </div>
+<div class="line"><a name="l15689"></a><span class="lineno">15689</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
+<div class="line"><a name="l15690"></a><span class="lineno">15690</span>&#160; </div>
+<div class="line"><a name="l15691"></a><span class="lineno">15691</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;bytes\&quot;: [&quot;</span>, 10);</div>
+<div class="line"><a name="l15692"></a><span class="lineno">15692</span>&#160; </div>
+<div class="line"><a name="l15693"></a><span class="lineno">15693</span>&#160;                                <span class="keywordflow">if</span> (!val.m_value.binary-&gt;empty())</div>
+<div class="line"><a name="l15694"></a><span class="lineno">15694</span>&#160;                                {</div>
+<div class="line"><a name="l15695"></a><span class="lineno">15695</span>&#160;                                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.binary-&gt;cbegin();</div>
+<div class="line"><a name="l15696"></a><span class="lineno">15696</span>&#160;                                         i != val.m_value.binary-&gt;cend() - 1; ++i)</div>
+<div class="line"><a name="l15697"></a><span class="lineno">15697</span>&#160;                                    {</div>
+<div class="line"><a name="l15698"></a><span class="lineno">15698</span>&#160;                                        dump_integer(*i);</div>
+<div class="line"><a name="l15699"></a><span class="lineno">15699</span>&#160;                                        o-&gt;write_characters(<span class="stringliteral">&quot;, &quot;</span>, 2);</div>
+<div class="line"><a name="l15700"></a><span class="lineno">15700</span>&#160;                                    }</div>
+<div class="line"><a name="l15701"></a><span class="lineno">15701</span>&#160;                                    dump_integer(val.m_value.binary-&gt;back());</div>
+<div class="line"><a name="l15702"></a><span class="lineno">15702</span>&#160;                                }</div>
+<div class="line"><a name="l15703"></a><span class="lineno">15703</span>&#160; </div>
+<div class="line"><a name="l15704"></a><span class="lineno">15704</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;],\n&quot;</span>, 3);</div>
+<div class="line"><a name="l15705"></a><span class="lineno">15705</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), new_indent);</div>
+<div class="line"><a name="l15706"></a><span class="lineno">15706</span>&#160; </div>
+<div class="line"><a name="l15707"></a><span class="lineno">15707</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;\&quot;subtype\&quot;: &quot;</span>, 11);</div>
+<div class="line"><a name="l15708"></a><span class="lineno">15708</span>&#160;                                <span class="keywordflow">if</span> (val.m_value.binary-&gt;has_subtype())</div>
+<div class="line"><a name="l15709"></a><span class="lineno">15709</span>&#160;                                {</div>
+<div class="line"><a name="l15710"></a><span class="lineno">15710</span>&#160;                                    dump_integer(val.m_value.binary-&gt;subtype());</div>
+<div class="line"><a name="l15711"></a><span class="lineno">15711</span>&#160;                                }</div>
+<div class="line"><a name="l15712"></a><span class="lineno">15712</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15713"></a><span class="lineno">15713</span>&#160;                                {</div>
+<div class="line"><a name="l15714"></a><span class="lineno">15714</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;null&quot;</span>, 4);</div>
+<div class="line"><a name="l15715"></a><span class="lineno">15715</span>&#160;                                }</div>
+<div class="line"><a name="l15716"></a><span class="lineno">15716</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l15717"></a><span class="lineno">15717</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), current_indent);</div>
+<div class="line"><a name="l15718"></a><span class="lineno">15718</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
+<div class="line"><a name="l15719"></a><span class="lineno">15719</span>&#160;                            }</div>
+<div class="line"><a name="l15720"></a><span class="lineno">15720</span>&#160;                            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15721"></a><span class="lineno">15721</span>&#160;                            {</div>
+<div class="line"><a name="l15722"></a><span class="lineno">15722</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{\&quot;bytes\&quot;:[&quot;</span>, 10);</div>
+<div class="line"><a name="l15723"></a><span class="lineno">15723</span>&#160; </div>
+<div class="line"><a name="l15724"></a><span class="lineno">15724</span>&#160;                                <span class="keywordflow">if</span> (!val.m_value.binary-&gt;empty())</div>
 <div class="line"><a name="l15725"></a><span class="lineno">15725</span>&#160;                                {</div>
-<div class="line"><a name="l15726"></a><span class="lineno">15726</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;null&quot;</span>, 4);</div>
-<div class="line"><a name="l15727"></a><span class="lineno">15727</span>&#160;                                }</div>
-<div class="line"><a name="l15728"></a><span class="lineno">15728</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l15729"></a><span class="lineno">15729</span>&#160;                                o-&gt;write_characters(indent_string.c_str(), current_indent);</div>
-<div class="line"><a name="l15730"></a><span class="lineno">15730</span>&#160;                                o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
-<div class="line"><a name="l15731"></a><span class="lineno">15731</span>&#160;                            }</div>
-<div class="line"><a name="l15732"></a><span class="lineno">15732</span>&#160;                            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l15733"></a><span class="lineno">15733</span>&#160;                            {</div>
-<div class="line"><a name="l15734"></a><span class="lineno">15734</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;{\&quot;bytes\&quot;:[&quot;</span>, 10);</div>
-<div class="line"><a name="l15735"></a><span class="lineno">15735</span>&#160; </div>
-<div class="line"><a name="l15736"></a><span class="lineno">15736</span>&#160;                                <span class="keywordflow">if</span> (!val.m_value.binary-&gt;empty())</div>
+<div class="line"><a name="l15726"></a><span class="lineno">15726</span>&#160;                                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.binary-&gt;cbegin();</div>
+<div class="line"><a name="l15727"></a><span class="lineno">15727</span>&#160;                                         i != val.m_value.binary-&gt;cend() - 1; ++i)</div>
+<div class="line"><a name="l15728"></a><span class="lineno">15728</span>&#160;                                    {</div>
+<div class="line"><a name="l15729"></a><span class="lineno">15729</span>&#160;                                        dump_integer(*i);</div>
+<div class="line"><a name="l15730"></a><span class="lineno">15730</span>&#160;                                        o-&gt;write_character(<span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l15731"></a><span class="lineno">15731</span>&#160;                                    }</div>
+<div class="line"><a name="l15732"></a><span class="lineno">15732</span>&#160;                                    dump_integer(val.m_value.binary-&gt;back());</div>
+<div class="line"><a name="l15733"></a><span class="lineno">15733</span>&#160;                                }</div>
+<div class="line"><a name="l15734"></a><span class="lineno">15734</span>&#160; </div>
+<div class="line"><a name="l15735"></a><span class="lineno">15735</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;],\&quot;subtype\&quot;:&quot;</span>, 12);</div>
+<div class="line"><a name="l15736"></a><span class="lineno">15736</span>&#160;                                <span class="keywordflow">if</span> (val.m_value.binary-&gt;has_subtype())</div>
 <div class="line"><a name="l15737"></a><span class="lineno">15737</span>&#160;                                {</div>
-<div class="line"><a name="l15738"></a><span class="lineno">15738</span>&#160;                                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = val.m_value.binary-&gt;cbegin();</div>
-<div class="line"><a name="l15739"></a><span class="lineno">15739</span>&#160;                                         i != val.m_value.binary-&gt;cend() - 1; ++i)</div>
-<div class="line"><a name="l15740"></a><span class="lineno">15740</span>&#160;                                    {</div>
-<div class="line"><a name="l15741"></a><span class="lineno">15741</span>&#160;                                        dump_integer(*i);</div>
-<div class="line"><a name="l15742"></a><span class="lineno">15742</span>&#160;                                        o-&gt;write_character(<span class="charliteral">&#39;,&#39;</span>);</div>
-<div class="line"><a name="l15743"></a><span class="lineno">15743</span>&#160;                                    }</div>
-<div class="line"><a name="l15744"></a><span class="lineno">15744</span>&#160;                                    dump_integer(val.m_value.binary-&gt;back());</div>
-<div class="line"><a name="l15745"></a><span class="lineno">15745</span>&#160;                                }</div>
-<div class="line"><a name="l15746"></a><span class="lineno">15746</span>&#160; </div>
-<div class="line"><a name="l15747"></a><span class="lineno">15747</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;],\&quot;subtype\&quot;:&quot;</span>, 12);</div>
-<div class="line"><a name="l15748"></a><span class="lineno">15748</span>&#160;                                <span class="keywordflow">if</span> (val.m_value.binary-&gt;has_subtype())</div>
-<div class="line"><a name="l15749"></a><span class="lineno">15749</span>&#160;                                {</div>
-<div class="line"><a name="l15750"></a><span class="lineno">15750</span>&#160;                                    dump_integer(val.m_value.binary-&gt;subtype());</div>
-<div class="line"><a name="l15751"></a><span class="lineno">15751</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
-<div class="line"><a name="l15752"></a><span class="lineno">15752</span>&#160;                                }</div>
-<div class="line"><a name="l15753"></a><span class="lineno">15753</span>&#160;                                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l15754"></a><span class="lineno">15754</span>&#160;                                {</div>
-<div class="line"><a name="l15755"></a><span class="lineno">15755</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;null}&quot;</span>, 5);</div>
-<div class="line"><a name="l15756"></a><span class="lineno">15756</span>&#160;                                }</div>
-<div class="line"><a name="l15757"></a><span class="lineno">15757</span>&#160;                            }</div>
-<div class="line"><a name="l15758"></a><span class="lineno">15758</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15759"></a><span class="lineno">15759</span>&#160;                        }</div>
-<div class="line"><a name="l15760"></a><span class="lineno">15760</span>&#160; </div>
-<div class="line"><a name="l15761"></a><span class="lineno">15761</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27">value_t::boolean</a>:</div>
-<div class="line"><a name="l15762"></a><span class="lineno">15762</span>&#160;                        {</div>
-<div class="line"><a name="l15763"></a><span class="lineno">15763</span>&#160;                            <span class="keywordflow">if</span> (val.m_value.boolean)</div>
-<div class="line"><a name="l15764"></a><span class="lineno">15764</span>&#160;                            {</div>
-<div class="line"><a name="l15765"></a><span class="lineno">15765</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;true&quot;</span>, 4);</div>
-<div class="line"><a name="l15766"></a><span class="lineno">15766</span>&#160;                            }</div>
-<div class="line"><a name="l15767"></a><span class="lineno">15767</span>&#160;                            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l15768"></a><span class="lineno">15768</span>&#160;                            {</div>
-<div class="line"><a name="l15769"></a><span class="lineno">15769</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;false&quot;</span>, 5);</div>
-<div class="line"><a name="l15770"></a><span class="lineno">15770</span>&#160;                            }</div>
+<div class="line"><a name="l15738"></a><span class="lineno">15738</span>&#160;                                    dump_integer(val.m_value.binary-&gt;subtype());</div>
+<div class="line"><a name="l15739"></a><span class="lineno">15739</span>&#160;                                    o-&gt;write_character(<span class="charliteral">&#39;}&#39;</span>);</div>
+<div class="line"><a name="l15740"></a><span class="lineno">15740</span>&#160;                                }</div>
+<div class="line"><a name="l15741"></a><span class="lineno">15741</span>&#160;                                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15742"></a><span class="lineno">15742</span>&#160;                                {</div>
+<div class="line"><a name="l15743"></a><span class="lineno">15743</span>&#160;                                    o-&gt;write_characters(<span class="stringliteral">&quot;null}&quot;</span>, 5);</div>
+<div class="line"><a name="l15744"></a><span class="lineno">15744</span>&#160;                                }</div>
+<div class="line"><a name="l15745"></a><span class="lineno">15745</span>&#160;                            }</div>
+<div class="line"><a name="l15746"></a><span class="lineno">15746</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15747"></a><span class="lineno">15747</span>&#160;                        }</div>
+<div class="line"><a name="l15748"></a><span class="lineno">15748</span>&#160; </div>
+<div class="line"><a name="l15749"></a><span class="lineno">15749</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27">value_t::boolean</a>:</div>
+<div class="line"><a name="l15750"></a><span class="lineno">15750</span>&#160;                        {</div>
+<div class="line"><a name="l15751"></a><span class="lineno">15751</span>&#160;                            <span class="keywordflow">if</span> (val.m_value.boolean)</div>
+<div class="line"><a name="l15752"></a><span class="lineno">15752</span>&#160;                            {</div>
+<div class="line"><a name="l15753"></a><span class="lineno">15753</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;true&quot;</span>, 4);</div>
+<div class="line"><a name="l15754"></a><span class="lineno">15754</span>&#160;                            }</div>
+<div class="line"><a name="l15755"></a><span class="lineno">15755</span>&#160;                            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l15756"></a><span class="lineno">15756</span>&#160;                            {</div>
+<div class="line"><a name="l15757"></a><span class="lineno">15757</span>&#160;                                o-&gt;write_characters(<span class="stringliteral">&quot;false&quot;</span>, 5);</div>
+<div class="line"><a name="l15758"></a><span class="lineno">15758</span>&#160;                            }</div>
+<div class="line"><a name="l15759"></a><span class="lineno">15759</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15760"></a><span class="lineno">15760</span>&#160;                        }</div>
+<div class="line"><a name="l15761"></a><span class="lineno">15761</span>&#160; </div>
+<div class="line"><a name="l15762"></a><span class="lineno">15762</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc">value_t::number_integer</a>:</div>
+<div class="line"><a name="l15763"></a><span class="lineno">15763</span>&#160;                        {</div>
+<div class="line"><a name="l15764"></a><span class="lineno">15764</span>&#160;                            dump_integer(val.m_value.number_integer);</div>
+<div class="line"><a name="l15765"></a><span class="lineno">15765</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l15766"></a><span class="lineno">15766</span>&#160;                        }</div>
+<div class="line"><a name="l15767"></a><span class="lineno">15767</span>&#160; </div>
+<div class="line"><a name="l15768"></a><span class="lineno">15768</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e">value_t::number_unsigned</a>:</div>
+<div class="line"><a name="l15769"></a><span class="lineno">15769</span>&#160;                        {</div>
+<div class="line"><a name="l15770"></a><span class="lineno">15770</span>&#160;                            dump_integer(val.m_value.number_unsigned);</div>
 <div class="line"><a name="l15771"></a><span class="lineno">15771</span>&#160;                            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l15772"></a><span class="lineno">15772</span>&#160;                        }</div>
 <div class="line"><a name="l15773"></a><span class="lineno">15773</span>&#160; </div>
-<div class="line"><a name="l15774"></a><span class="lineno">15774</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc">value_t::number_integer</a>:</div>
+<div class="line"><a name="l15774"></a><span class="lineno">15774</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef">value_t::number_float</a>:</div>
 <div class="line"><a name="l15775"></a><span class="lineno">15775</span>&#160;                        {</div>
-<div class="line"><a name="l15776"></a><span class="lineno">15776</span>&#160;                            dump_integer(val.m_value.number_integer);</div>
+<div class="line"><a name="l15776"></a><span class="lineno">15776</span>&#160;                            dump_float(val.m_value.number_float);</div>
 <div class="line"><a name="l15777"></a><span class="lineno">15777</span>&#160;                            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l15778"></a><span class="lineno">15778</span>&#160;                        }</div>
 <div class="line"><a name="l15779"></a><span class="lineno">15779</span>&#160; </div>
-<div class="line"><a name="l15780"></a><span class="lineno">15780</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e">value_t::number_unsigned</a>:</div>
+<div class="line"><a name="l15780"></a><span class="lineno">15780</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>:</div>
 <div class="line"><a name="l15781"></a><span class="lineno">15781</span>&#160;                        {</div>
-<div class="line"><a name="l15782"></a><span class="lineno">15782</span>&#160;                            dump_integer(val.m_value.number_unsigned);</div>
+<div class="line"><a name="l15782"></a><span class="lineno">15782</span>&#160;                            o-&gt;write_characters(<span class="stringliteral">&quot;&lt;discarded&gt;&quot;</span>, 11);</div>
 <div class="line"><a name="l15783"></a><span class="lineno">15783</span>&#160;                            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l15784"></a><span class="lineno">15784</span>&#160;                        }</div>
 <div class="line"><a name="l15785"></a><span class="lineno">15785</span>&#160; </div>
-<div class="line"><a name="l15786"></a><span class="lineno">15786</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef">value_t::number_float</a>:</div>
+<div class="line"><a name="l15786"></a><span class="lineno">15786</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">value_t::null</a>:</div>
 <div class="line"><a name="l15787"></a><span class="lineno">15787</span>&#160;                        {</div>
-<div class="line"><a name="l15788"></a><span class="lineno">15788</span>&#160;                            dump_float(val.m_value.number_float);</div>
+<div class="line"><a name="l15788"></a><span class="lineno">15788</span>&#160;                            o-&gt;write_characters(<span class="stringliteral">&quot;null&quot;</span>, 4);</div>
 <div class="line"><a name="l15789"></a><span class="lineno">15789</span>&#160;                            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l15790"></a><span class="lineno">15790</span>&#160;                        }</div>
 <div class="line"><a name="l15791"></a><span class="lineno">15791</span>&#160; </div>
-<div class="line"><a name="l15792"></a><span class="lineno">15792</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>:</div>
-<div class="line"><a name="l15793"></a><span class="lineno">15793</span>&#160;                        {</div>
-<div class="line"><a name="l15794"></a><span class="lineno">15794</span>&#160;                            o-&gt;write_characters(<span class="stringliteral">&quot;&lt;discarded&gt;&quot;</span>, 11);</div>
-<div class="line"><a name="l15795"></a><span class="lineno">15795</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15796"></a><span class="lineno">15796</span>&#160;                        }</div>
-<div class="line"><a name="l15797"></a><span class="lineno">15797</span>&#160; </div>
-<div class="line"><a name="l15798"></a><span class="lineno">15798</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">value_t::null</a>:</div>
-<div class="line"><a name="l15799"></a><span class="lineno">15799</span>&#160;                        {</div>
-<div class="line"><a name="l15800"></a><span class="lineno">15800</span>&#160;                            o-&gt;write_characters(<span class="stringliteral">&quot;null&quot;</span>, 4);</div>
-<div class="line"><a name="l15801"></a><span class="lineno">15801</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l15802"></a><span class="lineno">15802</span>&#160;                        }</div>
-<div class="line"><a name="l15803"></a><span class="lineno">15803</span>&#160; </div>
-<div class="line"><a name="l15804"></a><span class="lineno">15804</span>&#160;                        <span class="keywordflow">default</span>:            <span class="comment">// LCOV_EXCL_LINE</span></div>
-<div class="line"><a name="l15805"></a><span class="lineno">15805</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<span class="keyword">false</span>);  <span class="comment">// LCOV_EXCL_LINE</span></div>
-<div class="line"><a name="l15806"></a><span class="lineno">15806</span>&#160;                    }</div>
-<div class="line"><a name="l15807"></a><span class="lineno">15807</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1serializer_html_a95460ebd1a535a543e5a0ec52e00f48b"><div class="ttname"><a href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">nlohmann::detail::serializer::dump</a></div><div class="ttdeci">void dump(const BasicJsonType &amp;val, const bool pretty_print, const bool ensure_ascii, const unsigned int indent_step, const unsigned int current_indent=0)</div><div class="ttdoc">internal implementation of the serialization function</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l15540">json.hpp:15540</a></div></div>
-<div class="ttc" id="ajson_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02103">json.hpp:2103</a></div></div>
-<div class="ttc" id="ajson_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01404">json.hpp:1404</a></div></div>
+<div class="line"><a name="l15792"></a><span class="lineno">15792</span>&#160;                        <span class="keywordflow">default</span>:            <span class="comment">// LCOV_EXCL_LINE</span></div>
+<div class="line"><a name="l15793"></a><span class="lineno">15793</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<span class="keyword">false</span>);  <span class="comment">// LCOV_EXCL_LINE</span></div>
+<div class="line"><a name="l15794"></a><span class="lineno">15794</span>&#160;                    }</div>
+<div class="line"><a name="l15795"></a><span class="lineno">15795</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1serializer_html_a95460ebd1a535a543e5a0ec52e00f48b"><div class="ttname"><a href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b">nlohmann::detail::serializer::dump</a></div><div class="ttdeci">void dump(const BasicJsonType &amp;val, const bool pretty_print, const bool ensure_ascii, const unsigned int indent_step, const unsigned int current_indent=0)</div><div class="ttdoc">internal implementation of the serialization function</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l15528">json.hpp:15528</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02091">json.hpp:2091</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01392">json.hpp:1392</a></div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">nlohmann::detail::value_t::null</a></div><div class="ttdeci">@ null</div><div class="ttdoc">null value</div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc">nlohmann::detail::value_t::number_integer</a></div><div class="ttdeci">@ number_integer</div><div class="ttdoc">number value (signed integer)</div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27">nlohmann::detail::value_t::boolean</a></div><div class="ttdeci">@ boolean</div><div class="ttdoc">boolean value</div></div>

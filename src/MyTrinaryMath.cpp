@@ -1,22 +1,22 @@
-#include "TrinaryMath.h"
+#include "MyTrinaryMath.h"
 /************************************************
  * @brief Trinary Math Constructor.
  ***********************************************/
-TrinaryMath::TrinaryMath(QObject *parent) : QObject(parent)
+MyTrinaryMath::MyTrinaryMath(QObject *parent) : QObject(parent)
 {
     testFunctions();
 }
 /************************************************
  * @brief Trinary Math Deconstructor.
  ***********************************************/
-TrinaryMath::~TrinaryMath()
+MyTrinaryMath::~MyTrinaryMath()
 {
 
 }
 /************************************************
  * @brief test Functions.
  ***********************************************/
-bool TrinaryMath::testFunctions()
+bool MyTrinaryMath::testFunctions()
 {
     bool testPassed = true;
     QString thisValue = getPI();
@@ -87,28 +87,28 @@ bool TrinaryMath::testFunctions()
  * this uses 11 bits which is what Newton used, the above uses 15
  * Constant Precession Rate: Constant in Newtons work.
  ***********************************************/
-QString TrinaryMath::getPI()
+QString MyTrinaryMath::getPI()
 {
     return myPI;
 }
 /************************************************
  * @brief getPiLong.
  ***********************************************/
-QString TrinaryMath::getPiLong()
+QString MyTrinaryMath::getPiLong()
 {
     return myPiLong;
 }
 /************************************************
  * @brief get Pi Decimal Place 100 places max.
  ***********************************************/
-QString TrinaryMath::getPiDecimalPlace(int thisPiDecimalPlace)
+QString MyTrinaryMath::getPiDecimalPlace(int thisPiDecimalPlace)
 {
     return QString("3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679").mid(0, thisPiDecimalPlace + 2);
 }
 /************************************************
  * @brief absValue.
  ***********************************************/
-QString TrinaryMath::absValue(const QString &thisNumber)
+QString MyTrinaryMath::absValue(const QString &thisNumber)
 {
     QString thisReturn = thisNumber;
     if (thisReturn.indexOf('-') != -1) { thisReturn = thisReturn.remove("-"); }
@@ -117,7 +117,7 @@ QString TrinaryMath::absValue(const QString &thisNumber)
 /************************************************
  * @brief humanize.
  ***********************************************/
-QString TrinaryMath::humanize(const QString &thisNumber)
+QString MyTrinaryMath::humanize(const QString &thisNumber)
 {
     QString theNumber = thisNumber;
     int thisNewNumber = theNumber.length();
@@ -132,21 +132,21 @@ QString TrinaryMath::humanize(const QString &thisNumber)
 /************************************************
  * @brief get Number Base.
  ***********************************************/
-QString TrinaryMath::getNumberBase(const QString &thisNumber)
+QString MyTrinaryMath::getNumberBase(const QString &thisNumber)
 {
     return thisNumber.mid(0, thisNumber.indexOf('.'));
 }
 /************************************************
  * @brief get Number Float.
  ***********************************************/
-QString TrinaryMath::getNumberFloat(const QString &thisNumber)
+QString MyTrinaryMath::getNumberFloat(const QString &thisNumber)
 {
     return thisNumber.mid(thisNumber.indexOf('.') + 1);
 }
 /************************************************
  * @brief format Number.
  ***********************************************/
-QString TrinaryMath::formatNumber(const QString &thisNumber, int thisPlaces)
+QString MyTrinaryMath::formatNumber(const QString &thisNumber, int thisPlaces)
 {
     QString theNumber = thisNumber;
     int isFloat = theNumber.indexOf('.');
@@ -183,7 +183,7 @@ QString TrinaryMath::formatNumber(const QString &thisNumber, int thisPlaces)
  * @brief set Debug Message.
  * setDebugMessage
  ***********************************************/
-void TrinaryMath::setDebugMessage(bool thisState)
+void MyTrinaryMath::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
 }
@@ -191,7 +191,7 @@ void TrinaryMath::setDebugMessage(bool thisState)
  * @brief get Debug Message.
  * getDebugMessage
  ***********************************************/
-bool TrinaryMath::getDebugMessage()
+bool MyTrinaryMath::getDebugMessage()
 {
     return isDebugMessage;
 }
@@ -199,7 +199,7 @@ bool TrinaryMath::getDebugMessage()
  * @brief set Message.
  * setMessage
  ***********************************************/
-void TrinaryMath::setMessage(const QString &thisMessage)
+void MyTrinaryMath::setMessage(const QString &thisMessage)
 {
     if (isDebugMessage)
     {

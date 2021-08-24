@@ -137,7 +137,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02427">2427</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02415">2415</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a137ea4d27de45d8a844fd13451d40f3d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a137ea4d27de45d8a844fd13451d40f3d">&#9670;&nbsp;</a></span>create() <span class="overload">[1/2]</span></h2>
@@ -190,13 +190,13 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnlohmann_1_1detail_1_1parse__error.html">parse_error</a> object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02439">2439</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;                {</div>
-<div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;                    std::string w = <a class="code" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278">exception::name</a>(<span class="stringliteral">&quot;parse_error&quot;</span>, id_) + <span class="stringliteral">&quot;parse error&quot;</span> +</div>
-<div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160;                            position_string(pos) + <span class="stringliteral">&quot;: &quot;</span> + what_arg;</div>
-<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;                    <span class="keywordflow">return</span> parse_error(id_, pos.chars_read_total, w.c_str());</div>
-<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1exception_html_abf41a7e9178356314082284e6cfea278"><div class="ttname"><a href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278">nlohmann::detail::exception::name</a></div><div class="ttdeci">static std::string name(const std::string &amp;ename, int id_)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02372">json.hpp:2372</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02427">2427</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l02428"></a><span class="lineno"> 2428</span>&#160;                {</div>
+<div class="line"><a name="l02429"></a><span class="lineno"> 2429</span>&#160;                    std::string w = <a class="code" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278">exception::name</a>(<span class="stringliteral">&quot;parse_error&quot;</span>, id_) + <span class="stringliteral">&quot;parse error&quot;</span> +</div>
+<div class="line"><a name="l02430"></a><span class="lineno"> 2430</span>&#160;                            position_string(pos) + <span class="stringliteral">&quot;: &quot;</span> + what_arg;</div>
+<div class="line"><a name="l02431"></a><span class="lineno"> 2431</span>&#160;                    <span class="keywordflow">return</span> parse_error(id_, pos.chars_read_total, w.c_str());</div>
+<div class="line"><a name="l02432"></a><span class="lineno"> 2432</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1exception_html_abf41a7e9178356314082284e6cfea278"><div class="ttname"><a href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278">nlohmann::detail::exception::name</a></div><div class="ttdeci">static std::string name(const std::string &amp;ename, int id_)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02360">json.hpp:2360</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -240,14 +240,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02446">2446</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;                {</div>
-<div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;                    std::string w = <a class="code" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278">exception::name</a>(<span class="stringliteral">&quot;parse_error&quot;</span>, id_) + <span class="stringliteral">&quot;parse error&quot;</span> +</div>
-<div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;                            (byte_ != 0 ? (<span class="stringliteral">&quot; at byte &quot;</span> + <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(byte_)) : <span class="stringliteral">&quot;&quot;</span>) +</div>
-<div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;                            <span class="stringliteral">&quot;: &quot;</span> + what_arg;</div>
-<div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;                    <span class="keywordflow">return</span> parse_error(id_, byte_, w.c_str());</div>
-<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;                }</div>
-<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l25179">json.hpp:25179</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02434">2434</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l02435"></a><span class="lineno"> 2435</span>&#160;                {</div>
+<div class="line"><a name="l02436"></a><span class="lineno"> 2436</span>&#160;                    std::string w = <a class="code" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278">exception::name</a>(<span class="stringliteral">&quot;parse_error&quot;</span>, id_) + <span class="stringliteral">&quot;parse error&quot;</span> +</div>
+<div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160;                            (byte_ != 0 ? (<span class="stringliteral">&quot; at byte &quot;</span> + <a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(byte_)) : <span class="stringliteral">&quot;&quot;</span>) +</div>
+<div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;                            <span class="stringliteral">&quot;: &quot;</span> + what_arg;</div>
+<div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160;                    <span class="keywordflow">return</span> parse_error(id_, byte_, w.c_str());</div>
+<div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;                }</div>
+<div class="ttc" id="anamespacenlohmann_html_a6ce645a0b8717757e096a5b5773b7a16"><div class="ttname"><a href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">nlohmann::to_string</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION std::string to_string(const NLOHMANN_BASIC_JSON_TPL &amp;j)</div><div class="ttdoc">user-defined to_string function for JSON values</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l25167">json.hpp:25167</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -268,7 +268,7 @@ Additional Inherited Members</h2></td></tr>
 <p>The byte index of the last read character in the input file.</p>
 <dl class="section note"><dt>Note</dt><dd>For an input with n bytes, 1 is the index of the first character and n+1 is the index of the terminating null byte or the end of file. This also holds true when reading a byte vector (CBOR or MessagePack). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02463">2463</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02451">2451</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>

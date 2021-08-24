@@ -115,7 +115,7 @@ class nlohmann::detail::iteration_proxy&lt; IteratorType &gt;</h3>
 
 <p>proxy class for the items() function </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03932">3932</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03920">3920</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afe257e972e3b4658ef2e355f7389d4a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe257e972e3b4658ef2e355f7389d4a5">&#9670;&nbsp;</a></span>iteration_proxy()</h2>
@@ -145,8 +145,8 @@ template&lt;typename IteratorType &gt; </div>
 
 <p>construct iteration proxy from a container </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03940">3940</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l03941"></a><span class="lineno"> 3941</span>&#160;                    : container(cont) {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03928">3928</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l03929"></a><span class="lineno"> 3929</span>&#160;                    : container(cont) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,10 +178,10 @@ template&lt;typename IteratorType &gt; </div>
 
 <p>return iterator begin (needed for range-based for) </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03944">3944</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l03945"></a><span class="lineno"> 3945</span>&#160;                {</div>
-<div class="line"><a name="l03946"></a><span class="lineno"> 3946</span>&#160;                    <span class="keywordflow">return</span> iteration_proxy_value&lt;IteratorType&gt;(container.begin());</div>
-<div class="line"><a name="l03947"></a><span class="lineno"> 3947</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03932">3932</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l03933"></a><span class="lineno"> 3933</span>&#160;                {</div>
+<div class="line"><a name="l03934"></a><span class="lineno"> 3934</span>&#160;                    <span class="keywordflow">return</span> iteration_proxy_value&lt;IteratorType&gt;(container.begin());</div>
+<div class="line"><a name="l03935"></a><span class="lineno"> 3935</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,10 +212,10 @@ template&lt;typename IteratorType &gt; </div>
 
 <p>return iterator end (needed for range-based for) </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03950">3950</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l03951"></a><span class="lineno"> 3951</span>&#160;                {</div>
-<div class="line"><a name="l03952"></a><span class="lineno"> 3952</span>&#160;                    <span class="keywordflow">return</span> iteration_proxy_value&lt;IteratorType&gt;(container.end());</div>
-<div class="line"><a name="l03953"></a><span class="lineno"> 3953</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03938">3938</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l03939"></a><span class="lineno"> 3939</span>&#160;                {</div>
+<div class="line"><a name="l03940"></a><span class="lineno"> 3940</span>&#160;                    <span class="keywordflow">return</span> iteration_proxy_value&lt;IteratorType&gt;(container.end());</div>
+<div class="line"><a name="l03941"></a><span class="lineno"> 3941</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>

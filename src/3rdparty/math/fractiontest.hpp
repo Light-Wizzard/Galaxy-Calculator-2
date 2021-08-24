@@ -22,7 +22,7 @@
 
 #include <cmath>
 
-#include "src/3rdparty/extern/mpreal.h"
+#include "../extern/mpreal.h"
 /************************************************
  * @brief Fraction Test.
  * \namespace FractionTest

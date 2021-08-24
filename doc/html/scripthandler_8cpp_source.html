@@ -89,70 +89,68 @@ $(document).ready(function(){initNavTree('scripthandler_8cpp_source.html',''); i
 </div><!--header-->
 <div class="contents">
 <a href="scripthandler_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scripthandler_8hpp.html">src/3rdparty/math/scripthandler.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pythoninclude_8hpp.html">src/3rdparty/cpython/pythoninclude.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pyutil_8hpp.html">src/3rdparty/cpython/pyutil.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pympreal_8hpp.html">src/3rdparty/cpython/types/pympreal.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scripthandler_8hpp.html">scripthandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Do not move these into hpp or it will error expected unqualified-id before ; token</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../cpython/pythoninclude.hpp&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../cpython/pyutil.hpp&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../cpython/types/pympreal.hpp&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">   29</a></span>&#160;<a class="code" href="classmpfr_1_1mpreal.html">ArithmeticType</a> <a class="code" href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">ScriptHandler::run</a>(<a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *c, <span class="keyword">const</span> std::vector&lt;ArithmeticType&gt; &amp;a)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (c == <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Null callback in script handler&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *args = PyTuple_New(a.size());</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; a.size(); i++)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">auto</span> &amp;v = a.at(i);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *f = <a class="code" href="pympreal_8cpp.html#a5858a6307b50a1c5ed08fb5491faa378">PyMpReal_FromMpReal</a>(v);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        PyTuple_SetItem(args, i, f);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *pyRet = PyObject_Call(c, args, <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Py_DECREF(args);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (pyRet == <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<a class="code" href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">PyUtil::getError</a>());</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classmpfr_1_1mpreal.html">mpfr::mpreal</a> ret;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="pympreal_8cpp.html#a124e77ae3bfabd80fe1ba6c861573e19">PyMpReal_Check</a>(pyRet))</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        ret = <a class="code" href="pympreal_8cpp.html#a8921c17cea92248b7b07cc5565723d9a">PyMpReal_AsMpReal</a>(pyRet);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyFloat_Check(pyRet))</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        ret = PyFloat_AsDouble(pyRet);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyLong_Check(pyRet))</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ret = PyLong_AsDouble(pyRet);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (PyErr_Occurred() != <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<a class="code" href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">PyUtil::getError</a>());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Py_DECREF(pyRet);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="ttc" id="aclassScriptHandler_html_af840a31b0c007240c72d40b103f1a732"><div class="ttname"><a href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">ScriptHandler::run</a></div><div class="ttdeci">static ArithmeticType run(PyObject *callback, const std::vector&lt; ArithmeticType &gt; &amp;args)</div><div class="ttdoc">run. run</div><div class="ttdef"><b>Definition:</b> <a href="scripthandler_8cpp_source.html#l00029">scripthandler.cpp:29</a></div></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">   30</a></span>&#160;<a class="code" href="classmpfr_1_1mpreal.html">ArithmeticType</a> <a class="code" href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">ScriptHandler::run</a>(<a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *c, <span class="keyword">const</span> std::vector&lt;ArithmeticType&gt; &amp;a)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (c == <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Null callback in script handler&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *args = PyTuple_New(a.size());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; a.size(); i++)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">auto</span> &amp;v = a.at(i);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *f = <a class="code" href="pympreal_8cpp.html#a5858a6307b50a1c5ed08fb5491faa378">PyMpReal_FromMpReal</a>(v);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        PyTuple_SetItem(args, i, f);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a> *pyRet = PyObject_Call(c, args, <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Py_DECREF(args);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (pyRet == <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<a class="code" href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">PyUtil::getError</a>());</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classmpfr_1_1mpreal.html">mpfr::mpreal</a> ret;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="pympreal_8cpp.html#a124e77ae3bfabd80fe1ba6c861573e19">PyMpReal_Check</a>(pyRet))</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ret = <a class="code" href="pympreal_8cpp.html#a8921c17cea92248b7b07cc5565723d9a">PyMpReal_AsMpReal</a>(pyRet);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyFloat_Check(pyRet))</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        ret = PyFloat_AsDouble(pyRet);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (PyLong_Check(pyRet))</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        ret = PyLong_AsDouble(pyRet);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (PyErr_Occurred() != <a class="code" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<a class="code" href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">PyUtil::getError</a>());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Py_DECREF(pyRet);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="ttc" id="aclassScriptHandler_html_af840a31b0c007240c72d40b103f1a732"><div class="ttname"><a href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">ScriptHandler::run</a></div><div class="ttdeci">static ArithmeticType run(PyObject *callback, const std::vector&lt; ArithmeticType &gt; &amp;args)</div><div class="ttdoc">run. run</div><div class="ttdef"><b>Definition:</b> <a href="scripthandler_8cpp_source.html#l00030">scripthandler.cpp:30</a></div></div>
 <div class="ttc" id="aclassmpfr_1_1mpreal_html"><div class="ttname"><a href="classmpfr_1_1mpreal.html">mpfr::mpreal</a></div><div class="ttdoc">mpreal.</div><div class="ttdef"><b>Definition:</b> <a href="mpreal_8h_source.html#l00153">mpreal.h:154</a></div></div>
 <div class="ttc" id="anamespacePyUtil_html_a024838471c0722866e9607acd2d49b79"><div class="ttname"><a href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">PyUtil::getError</a></div><div class="ttdeci">std::string getError()</div><div class="ttdoc">get Error. getError</div><div class="ttdef"><b>Definition:</b> <a href="pyutil_8cpp_source.html#l00081">pyutil.cpp:81</a></div></div>
-<div class="ttc" id="apympreal_8cpp_html_a124e77ae3bfabd80fe1ba6c861573e19"><div class="ttname"><a href="pympreal_8cpp.html#a124e77ae3bfabd80fe1ba6c861573e19">PyMpReal_Check</a></div><div class="ttdeci">bool PyMpReal_Check(PyObject *op)</div><div class="ttdoc">PyMpReal Check. PyMpReal_Check.</div><div class="ttdef"><b>Definition:</b> <a href="pympreal_8cpp_source.html#l00243">pympreal.cpp:243</a></div></div>
-<div class="ttc" id="apympreal_8cpp_html_a5858a6307b50a1c5ed08fb5491faa378"><div class="ttname"><a href="pympreal_8cpp.html#a5858a6307b50a1c5ed08fb5491faa378">PyMpReal_FromMpReal</a></div><div class="ttdeci">PyObject * PyMpReal_FromMpReal(const mpfr::mpreal &amp;val)</div><div class="ttdoc">PyMpReal From Mp Real. PyMpReal_FromMpReal.</div><div class="ttdef"><b>Definition:</b> <a href="pympreal_8cpp_source.html#l00206">pympreal.cpp:206</a></div></div>
-<div class="ttc" id="apympreal_8cpp_html_a8921c17cea92248b7b07cc5565723d9a"><div class="ttname"><a href="pympreal_8cpp.html#a8921c17cea92248b7b07cc5565723d9a">PyMpReal_AsMpReal</a></div><div class="ttdeci">mpfr::mpreal PyMpReal_AsMpReal(PyObject *op)</div><div class="ttdoc">PyMpReal As Mp Real. PyMpReal_AsMpReal.</div><div class="ttdef"><b>Definition:</b> <a href="pympreal_8cpp_source.html#l00221">pympreal.cpp:221</a></div></div>
-<div class="ttc" id="apympreal_8hpp_html"><div class="ttname"><a href="pympreal_8hpp.html">pympreal.hpp</a></div></div>
-<div class="ttc" id="apythoninclude_8hpp_html"><div class="ttname"><a href="pythoninclude_8hpp.html">pythoninclude.hpp</a></div></div>
-<div class="ttc" id="apyutil_8hpp_html"><div class="ttname"><a href="pyutil_8hpp.html">pyutil.hpp</a></div></div>
-<div class="ttc" id="apyutil_8hpp_html_aa1749f72a7b7a2fe2b45eb276ed9ba4d"><div class="ttname"><a href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a></div><div class="ttdeci">#define PyNull</div><div class="ttdef"><b>Definition:</b> <a href="pyutil_8hpp_source.html#l00029">pyutil.hpp:29</a></div></div>
+<div class="ttc" id="apympreal_8cpp_html_a124e77ae3bfabd80fe1ba6c861573e19"><div class="ttname"><a href="pympreal_8cpp.html#a124e77ae3bfabd80fe1ba6c861573e19">PyMpReal_Check</a></div><div class="ttdeci">bool PyMpReal_Check(PyObject *op)</div><div class="ttdoc">PyMpReal Check. PyMpReal_Check.</div><div class="ttdef"><b>Definition:</b> <a href="pympreal_8cpp_source.html#l00242">pympreal.cpp:242</a></div></div>
+<div class="ttc" id="apympreal_8cpp_html_a5858a6307b50a1c5ed08fb5491faa378"><div class="ttname"><a href="pympreal_8cpp.html#a5858a6307b50a1c5ed08fb5491faa378">PyMpReal_FromMpReal</a></div><div class="ttdeci">PyObject * PyMpReal_FromMpReal(const mpfr::mpreal &amp;val)</div><div class="ttdoc">PyMpReal From Mp Real. PyMpReal_FromMpReal.</div><div class="ttdef"><b>Definition:</b> <a href="pympreal_8cpp_source.html#l00205">pympreal.cpp:205</a></div></div>
+<div class="ttc" id="apympreal_8cpp_html_a8921c17cea92248b7b07cc5565723d9a"><div class="ttname"><a href="pympreal_8cpp.html#a8921c17cea92248b7b07cc5565723d9a">PyMpReal_AsMpReal</a></div><div class="ttdeci">mpfr::mpreal PyMpReal_AsMpReal(PyObject *op)</div><div class="ttdoc">PyMpReal As Mp Real. PyMpReal_AsMpReal.</div><div class="ttdef"><b>Definition:</b> <a href="pympreal_8cpp_source.html#l00220">pympreal.cpp:220</a></div></div>
+<div class="ttc" id="apyutil_8hpp_html_aa1749f72a7b7a2fe2b45eb276ed9ba4d"><div class="ttname"><a href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">PyNull</a></div><div class="ttdeci">#define PyNull</div><div class="ttdef"><b>Definition:</b> <a href="pyutil_8hpp_source.html#l00030">pyutil.hpp:30</a></div></div>
 <div class="ttc" id="ascripthandler_8hpp_html"><div class="ttname"><a href="scripthandler_8hpp.html">scripthandler.hpp</a></div></div>
 <div class="ttc" id="asymboltableconverter_8hpp_html_ae19630c1f4ca6d5236b30719d9140013"><div class="ttname"><a href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a></div><div class="ttdeci">_object PyObject</div><div class="ttdef"><b>Definition:</b> <a href="symboltableconverter_8hpp_source.html#l00024">symboltableconverter.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

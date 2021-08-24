@@ -107,7 +107,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05150">5150</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05138">5138</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3a328a45b2c2c87145106ce4b2d02365"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a328a45b2c2c87145106ce4b2d02365">&#9670;&nbsp;</a></span>span_input_adapter() <span class="overload">[1/2]</span></h2>
@@ -145,8 +145,8 @@ template&lt;typename CharT , typename std::enable_if&lt; std::is_pointer&lt; Cha
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05159">5159</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l05160"></a><span class="lineno"> 5160</span>&#160;                    : ia(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(b), <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(b) + l) {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05147">5147</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l05148"></a><span class="lineno"> 5148</span>&#160;                    : ia(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(b), <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(b) + l) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -186,9 +186,9 @@ template&lt;class IteratorType , typename std::enable_if&lt; std::is_same&lt; ty
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05166">5166</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l05167"></a><span class="lineno"> 5167</span>&#160;                    : ia(<a class="code" href="namespacenlohmann_1_1detail.html#ad11a087dbe66eade5af4056aef9600bf">input_adapter</a>(first, last)) {}</div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_ad11a087dbe66eade5af4056aef9600bf"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#ad11a087dbe66eade5af4056aef9600bf">nlohmann::detail::input_adapter</a></div><div class="ttdeci">iterator_input_adapter_factory&lt; IteratorType &gt;::adapter_type input_adapter(IteratorType first, IteratorType last)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05091">json.hpp:5091</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05154">5154</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l05155"></a><span class="lineno"> 5155</span>&#160;                    : ia(<a class="code" href="namespacenlohmann_1_1detail.html#ad11a087dbe66eade5af4056aef9600bf">input_adapter</a>(first, last)) {}</div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_ad11a087dbe66eade5af4056aef9600bf"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#ad11a087dbe66eade5af4056aef9600bf">nlohmann::detail::input_adapter</a></div><div class="ttdeci">iterator_input_adapter_factory&lt; IteratorType &gt;::adapter_type input_adapter(IteratorType first, IteratorType last)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05079">json.hpp:5079</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,10 +216,10 @@ template&lt;class IteratorType , typename std::enable_if&lt; std::is_same&lt; ty
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05169">5169</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l05170"></a><span class="lineno"> 5170</span>&#160;                {</div>
-<div class="line"><a name="l05171"></a><span class="lineno"> 5171</span>&#160;                    <span class="keywordflow">return</span> std::move(ia);</div>
-<div class="line"><a name="l05172"></a><span class="lineno"> 5172</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l05157">5157</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l05158"></a><span class="lineno"> 5158</span>&#160;                {</div>
+<div class="line"><a name="l05159"></a><span class="lineno"> 5159</span>&#160;                    <span class="keywordflow">return</span> std::move(ia);</div>
+<div class="line"><a name="l05160"></a><span class="lineno"> 5160</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>

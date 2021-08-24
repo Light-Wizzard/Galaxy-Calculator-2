@@ -618,8 +618,6 @@ Friends</h2></td></tr>
 <tr class="separator:a1202bca3385ba82b0dde615a544c08c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e5b1ebdd384d6d4e8804daca7c64cb5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmpfr_1_1mpreal.html">mpreal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpfr_1_1mpreal.html#a5e5b1ebdd384d6d4e8804daca7c64cb5">urandomb</a> (<a class="el" href="gmp_8h.html#ae5deae6a0e00480dddf21b7edd2206a7">gmp_randstate_t</a> &amp;state)</td></tr>
 <tr class="separator:a5e5b1ebdd384d6d4e8804daca7c64cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7d51c2394ee29d49701d21d18807f63"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmpfr_1_1mpreal.html">mpreal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpfr_1_1mpreal.html#af7d51c2394ee29d49701d21d18807f63">random2</a> (<a class="el" href="gmp_8h.html#ae74ebb5c6bbf82904ef3e2a276bfbdd1">mp_size_t</a> size, <a class="el" href="gmp_8h.html#a5736689cd6c2cd3bbe71dd303186c1e3">mp_exp_t</a> <a class="el" href="classmpfr_1_1mpreal.html#abf9dc90b44b12c1b6aa0fe57bd088e8b">exp</a>)</td></tr>
-<tr class="separator:af7d51c2394ee29d49701d21d18807f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d2d2344e713da183bb466243a332ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpfr_1_1mpreal.html#ab8d2d2344e713da183bb466243a332ff">isnan</a> (const <a class="el" href="classmpfr_1_1mpreal.html">mpreal</a> &amp;v)</td></tr>
 <tr class="separator:ab8d2d2344e713da183bb466243a332ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89dfb827b04e4e6583a90576841ca08a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpfr_1_1mpreal.html#a89dfb827b04e4e6583a90576841ca08a">isinf</a> (const <a class="el" href="classmpfr_1_1mpreal.html">mpreal</a> &amp;v)</td></tr>
@@ -1016,10 +1014,11 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l00685">685</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    {</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        <a class="code" href="mpfr_8h.html#a7949e3ae8d38aff7811665681d392e04">mpfr_init2</a> (<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), prec);</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        mpfr_set_uj(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), u, mode);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <a class="code" href="mpfr_8h.html#acf41c30b79c1c5c3188585efc2d4ce24">mpfr_set_uj</a>(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), u, mode);</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <a class="code" href="mpreal_8h.html#ae2b5bb0c9ae9f6b9347ccda496c7e852">MPREAL_MSVC_DEBUGVIEW_CODE</a>;</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    }</div>
+<div class="ttc" id="ampfr_8h_html_acf41c30b79c1c5c3188585efc2d4ce24"><div class="ttname"><a href="mpfr_8h.html#acf41c30b79c1c5c3188585efc2d4ce24">mpfr_set_uj</a></div><div class="ttdeci">__MPFR_DECLSPEC int mpfr_set_uj(mpfr_t, uintmax_t, mpfr_rnd_t)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1066,10 +1065,11 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l00693">693</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    {</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        <a class="code" href="mpfr_8h.html#a7949e3ae8d38aff7811665681d392e04">mpfr_init2</a> (<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), prec);</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        mpfr_set_sj(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), u, mode);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <a class="code" href="mpfr_8h.html#ac810749ef0f223170c5fd1d749ed323c">mpfr_set_sj</a>(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), u, mode);</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <a class="code" href="mpreal_8h.html#ae2b5bb0c9ae9f6b9347ccda496c7e852">MPREAL_MSVC_DEBUGVIEW_CODE</a>;</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    }</div>
+<div class="ttc" id="ampfr_8h_html_ac810749ef0f223170c5fd1d749ed323c"><div class="ttname"><a href="mpfr_8h.html#ac810749ef0f223170c5fd1d749ed323c">mpfr_set_sj</a></div><div class="ttdeci">__MPFR_DECLSPEC int mpfr_set_sj(mpfr_t, intmax_t, mpfr_rnd_t)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4026,7 +4026,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l01022">1022</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;    {</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;        mpfr_set_sj(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), v, <a class="code" href="classmpfr_1_1mpreal.html#ae0bdf9ca1838bd5851ac1c7c6b360553">mpreal::get_default_rnd</a>());</div>
+<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;        <a class="code" href="mpfr_8h.html#ac810749ef0f223170c5fd1d749ed323c">mpfr_set_sj</a>(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), v, <a class="code" href="classmpfr_1_1mpreal.html#ae0bdf9ca1838bd5851ac1c7c6b360553">mpreal::get_default_rnd</a>());</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160; </div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;        <a class="code" href="mpreal_8h.html#ae2b5bb0c9ae9f6b9347ccda496c7e852">MPREAL_MSVC_DEBUGVIEW_CODE</a>;</div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
@@ -4358,7 +4358,7 @@ template&lt;typename real_t &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l01014">1014</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;    {</div>
-<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;        mpfr_set_uj(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), v, <a class="code" href="classmpfr_1_1mpreal.html#ae0bdf9ca1838bd5851ac1c7c6b360553">mpreal::get_default_rnd</a>());</div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;        <a class="code" href="mpfr_8h.html#acf41c30b79c1c5c3188585efc2d4ce24">mpfr_set_uj</a>(<a class="code" href="classmpfr_1_1mpreal.html#af4e3b56888463376c675cac70b6ceca3">mpfr_ptr</a>(), v, <a class="code" href="classmpfr_1_1mpreal.html#ae0bdf9ca1838bd5851ac1c7c6b360553">mpreal::get_default_rnd</a>());</div>
 <div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160; </div>
 <div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;        <a class="code" href="mpreal_8h.html#ae2b5bb0c9ae9f6b9347ccda496c7e852">MPREAL_MSVC_DEBUGVIEW_CODE</a>;</div>
 <div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
@@ -5144,7 +5144,8 @@ template&lt;typename real_t &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l01742">1742</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;{    <span class="keywordflow">return</span>  mpfr_get_sj (<a class="code" href="classmpfr_1_1mpreal.html#a566f64ca066c54923d19c11d6c3d15cd">mpfr_srcptr</a>(), mode);    }</div>
+<div class="fragment"><div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;{    <span class="keywordflow">return</span>  <a class="code" href="mpfr_8h.html#a4bbcc68c5c642314cad6df12285baed9">mpfr_get_sj</a> (<a class="code" href="classmpfr_1_1mpreal.html#a566f64ca066c54923d19c11d6c3d15cd">mpfr_srcptr</a>(), mode);    }</div>
+<div class="ttc" id="ampfr_8h_html_a4bbcc68c5c642314cad6df12285baed9"><div class="ttname"><a href="mpfr_8h.html#a4bbcc68c5c642314cad6df12285baed9">mpfr_get_sj</a></div><div class="ttdeci">__MPFR_DECLSPEC intmax_t mpfr_get_sj(mpfr_srcptr, mpfr_rnd_t)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -5412,7 +5413,8 @@ template&lt;typename real_t &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l01743">1743</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;{    <span class="keywordflow">return</span>  mpfr_get_uj (<a class="code" href="classmpfr_1_1mpreal.html#a566f64ca066c54923d19c11d6c3d15cd">mpfr_srcptr</a>(), mode);    }</div>
+<div class="fragment"><div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;{    <span class="keywordflow">return</span>  <a class="code" href="mpfr_8h.html#a25beca352c3125b28533f843a06fe9cb">mpfr_get_uj</a> (<a class="code" href="classmpfr_1_1mpreal.html#a566f64ca066c54923d19c11d6c3d15cd">mpfr_srcptr</a>(), mode);    }</div>
+<div class="ttc" id="ampfr_8h_html_a25beca352c3125b28533f843a06fe9cb"><div class="ttname"><a href="mpfr_8h.html#a25beca352c3125b28533f843a06fe9cb">mpfr_get_uj</a></div><div class="ttdeci">__MPFR_DECLSPEC uintmax_t mpfr_get_uj(mpfr_srcptr, mpfr_rnd_t)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -9937,49 +9939,6 @@ template&lt;typename real_t &gt; </div>
 <div class="line"><a name="l02753"></a><span class="lineno"> 2753</span>&#160;    }</div>
 <div class="ttc" id="aclassmpfr_1_1mpreal_html"><div class="ttname"><a href="classmpfr_1_1mpreal.html">mpfr::mpreal</a></div><div class="ttdoc">mpreal.</div><div class="ttdef"><b>Definition:</b> <a href="mpreal_8h_source.html#l00153">mpreal.h:154</a></div></div>
 <div class="ttc" id="anamespacempfr_html_a335951da3e36f93915a300c884ae3483"><div class="ttname"><a href="namespacempfr.html#a335951da3e36f93915a300c884ae3483">mpfr::urandom</a></div><div class="ttdeci">const mpreal urandom(gmp_randstate_t &amp;state, mp_rnd_t rnd_mode=mpreal::get_default_rnd())</div><div class="ttdef"><b>Definition:</b> <a href="mpreal_8h_source.html#l02712">mpreal.h:2712</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af7d51c2394ee29d49701d21d18807f63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7d51c2394ee29d49701d21d18807f63">&#9670;&nbsp;</a></span>random2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classmpfr_1_1mpreal.html">mpreal</a> random2 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="gmp_8h.html#ae74ebb5c6bbf82904ef3e2a276bfbdd1">mp_size_t</a>&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gmp_8h.html#a5736689cd6c2cd3bbe71dd303186c1e3">mp_exp_t</a>&#160;</td>
-          <td class="paramname"><em>exp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mpreal_8h_source.html#l02721">2721</a> of file <a class="el" href="mpreal_8h_source.html">mpreal.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l02722"></a><span class="lineno"> 2722</span>&#160;    {</div>
-<div class="line"><a name="l02723"></a><span class="lineno"> 2723</span>&#160;        <a class="code" href="classmpfr_1_1mpreal.html#a9c370c68865b32775c1c1cb5123cea90">mpreal</a> <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>;</div>
-<div class="line"><a name="l02724"></a><span class="lineno"> 2724</span>&#160;        mpfr_random2(<a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>.mpfr_ptr(),size,<a class="code" href="classmpfr_1_1mpreal.html#abf9dc90b44b12c1b6aa0fe57bd088e8b">exp</a>);</div>
-<div class="line"><a name="l02725"></a><span class="lineno"> 2725</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceexprtk_1_1details.html#aecf717cce5832ab27c2cefcf5dc76fe1">x</a>;</div>
-<div class="line"><a name="l02726"></a><span class="lineno"> 2726</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

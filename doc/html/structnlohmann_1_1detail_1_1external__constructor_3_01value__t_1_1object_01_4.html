@@ -108,7 +108,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04179">4179</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04167">4167</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a91f89abe0ec4dec59099b691682ff927"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91f89abe0ec4dec59099b691682ff927">&#9670;&nbsp;</a></span>construct() <span class="overload">[1/3]</span></h2>
@@ -146,15 +146,15 @@ template&lt;typename BasicJsonType , typename CompatibleObjectType , enable_if_t
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04199">4199</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04200"></a><span class="lineno"> 4200</span>&#160;                {</div>
-<div class="line"><a name="l04201"></a><span class="lineno"> 4201</span>&#160;                    <span class="keyword">using</span> std::begin;</div>
-<div class="line"><a name="l04202"></a><span class="lineno"> 4202</span>&#160;                    <span class="keyword">using</span> std::end;</div>
-<div class="line"><a name="l04203"></a><span class="lineno"> 4203</span>&#160; </div>
-<div class="line"><a name="l04204"></a><span class="lineno"> 4204</span>&#160;                    j.m_type = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>;</div>
-<div class="line"><a name="l04205"></a><span class="lineno"> 4205</span>&#160;                    j.m_value.object = j.template create&lt;typename BasicJsonType::object_t&gt;(begin(obj), end(obj));</div>
-<div class="line"><a name="l04206"></a><span class="lineno"> 4206</span>&#160;                    j.assert_invariant();</div>
-<div class="line"><a name="l04207"></a><span class="lineno"> 4207</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04187">4187</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04188"></a><span class="lineno"> 4188</span>&#160;                {</div>
+<div class="line"><a name="l04189"></a><span class="lineno"> 4189</span>&#160;                    <span class="keyword">using</span> std::begin;</div>
+<div class="line"><a name="l04190"></a><span class="lineno"> 4190</span>&#160;                    <span class="keyword">using</span> std::end;</div>
+<div class="line"><a name="l04191"></a><span class="lineno"> 4191</span>&#160; </div>
+<div class="line"><a name="l04192"></a><span class="lineno"> 4192</span>&#160;                    j.m_type = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>;</div>
+<div class="line"><a name="l04193"></a><span class="lineno"> 4193</span>&#160;                    j.m_value.object = j.template create&lt;typename BasicJsonType::object_t&gt;(begin(obj), end(obj));</div>
+<div class="line"><a name="l04194"></a><span class="lineno"> 4194</span>&#160;                    j.assert_invariant();</div>
+<div class="line"><a name="l04195"></a><span class="lineno"> 4195</span>&#160;                }</div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">nlohmann::detail::value_t::object</a></div><div class="ttdeci">@ object</div><div class="ttdoc">object (unordered set of name/value pairs)</div></div>
 </div><!-- fragment -->
 </div>
@@ -195,12 +195,12 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04182">4182</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04183"></a><span class="lineno"> 4183</span>&#160;                {</div>
-<div class="line"><a name="l04184"></a><span class="lineno"> 4184</span>&#160;                    j.m_type = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>;</div>
-<div class="line"><a name="l04185"></a><span class="lineno"> 4185</span>&#160;                    j.m_value = obj;</div>
-<div class="line"><a name="l04186"></a><span class="lineno"> 4186</span>&#160;                    j.assert_invariant();</div>
-<div class="line"><a name="l04187"></a><span class="lineno"> 4187</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04170">4170</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04171"></a><span class="lineno"> 4171</span>&#160;                {</div>
+<div class="line"><a name="l04172"></a><span class="lineno"> 4172</span>&#160;                    j.m_type = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>;</div>
+<div class="line"><a name="l04173"></a><span class="lineno"> 4173</span>&#160;                    j.m_value = obj;</div>
+<div class="line"><a name="l04174"></a><span class="lineno"> 4174</span>&#160;                    j.assert_invariant();</div>
+<div class="line"><a name="l04175"></a><span class="lineno"> 4175</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -240,12 +240,12 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04190">4190</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04191"></a><span class="lineno"> 4191</span>&#160;                {</div>
-<div class="line"><a name="l04192"></a><span class="lineno"> 4192</span>&#160;                    j.m_type = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>;</div>
-<div class="line"><a name="l04193"></a><span class="lineno"> 4193</span>&#160;                    j.m_value = std::move(obj);</div>
-<div class="line"><a name="l04194"></a><span class="lineno"> 4194</span>&#160;                    j.assert_invariant();</div>
-<div class="line"><a name="l04195"></a><span class="lineno"> 4195</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l04178">4178</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l04179"></a><span class="lineno"> 4179</span>&#160;                {</div>
+<div class="line"><a name="l04180"></a><span class="lineno"> 4180</span>&#160;                    j.m_type = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>;</div>
+<div class="line"><a name="l04181"></a><span class="lineno"> 4181</span>&#160;                    j.m_value = std::move(obj);</div>
+<div class="line"><a name="l04182"></a><span class="lineno"> 4182</span>&#160;                    j.assert_invariant();</div>
+<div class="line"><a name="l04183"></a><span class="lineno"> 4183</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -21,14 +21,13 @@
 #define QCALC_EXPRESSIONPARSER_HPP
 
 #include <string>
-#include "src/3rdparty/extern/exprtk_mpfr_adaptor.hpp"
-#include "src/3rdparty/extern/exprtk.hpp"
+#include "../extern/exprtk_mpfr_adaptor.hpp"
+#include "../extern/exprtk.hpp"
+#include "../math/scriptfunction.hpp"
+#include "../math/scriptvarargfunction.hpp"
+#include "../math/symboltable.hpp"
+#include "../math/arithmetictype.hpp"
 
-#include "src/3rdparty/math/scriptfunction.hpp"
-#include "src/3rdparty/math/scriptvarargfunction.hpp"
-
-#include "src/3rdparty/math/symboltable.hpp"
-#include "src/3rdparty/math/arithmetictype.hpp"
 /************************************************
  * @brief Expression Parser.
  * The expression parser evaluates expressions in string form using an optionally supplied symbol table.

@@ -17,7 +17,7 @@
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include "src/3rdparty/cpython/pyutil.hpp"
+#include "pyutil.hpp"
 
 /************************************************
  * @brief initialize Python.

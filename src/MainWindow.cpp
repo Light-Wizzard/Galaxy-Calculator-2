@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     //
     ui->setupUi(this);
     // TrinaryMath
-    myTrinaryMath  = new TrinaryMath(this);
+    myTrinaryMath  = new MyTrinaryMath(this);
     // Create table model:
     mySqlModel     = new MySqlDbtModel(this);
     myLocalization = new MyLocalization(this, mySqlModel->mySetting);

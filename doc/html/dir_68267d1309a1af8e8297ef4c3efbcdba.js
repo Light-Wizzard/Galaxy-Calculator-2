@@ -18,12 +18,12 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "GalaxyClass", "classGalaxyClass.html", "classGalaxyClass" ],
       [ "MySqlDbtModel", "classMySqlDbtModel.html", "classMySqlDbtModel" ]
     ] ],
+    [ "MyTrinaryMath.cpp", "MyTrinaryMath_8cpp.html", null ],
+    [ "MyTrinaryMath.h", "MyTrinaryMath_8h.html", [
+      [ "MyTrinaryMath", "classMyTrinaryMath.html", "classMyTrinaryMath" ]
+    ] ],
     [ "SimpleCrypt.cpp", "SimpleCrypt_8cpp.html", null ],
     [ "SimpleCrypt.h", "SimpleCrypt_8h.html", [
       [ "SimpleCrypt", "classSimpleCrypt.html", "classSimpleCrypt" ]
-    ] ],
-    [ "TrinaryMath.cpp", "TrinaryMath_8cpp.html", null ],
-    [ "TrinaryMath.h", "TrinaryMath_8h.html", [
-      [ "TrinaryMath", "classTrinaryMath.html", "classTrinaryMath" ]
     ] ]
 ];

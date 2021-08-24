@@ -20,11 +20,11 @@
 #ifndef QCALC_SCRIPTHANDLER_HPP
 #define QCALC_SCRIPTHANDLER_HPP
 
+#include "../math/arithmetictype.hpp"
+
 #include <string>
 #include <stdexcept>
 #include <vector>
-
-#include "src/3rdparty/math/arithmetictype.hpp"
 
 struct _object;
 typedef _object PyObject;

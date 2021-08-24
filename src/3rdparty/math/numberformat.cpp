@@ -17,9 +17,7 @@
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include "src/3rdparty/math/numberformat.hpp"
-
-#include "src/3rdparty/math/fractiontest.hpp"
+#include "numberformat.hpp"
 
 using namespace FractionTest;
 /************************************************

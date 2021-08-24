@@ -93,33 +93,26 @@ $(document).ready(function(){initNavTree('expressionparser_8hpp_source.html','')
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define QCALC_EXPRESSIONPARSER_HPP</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exprtk__mpfr__adaptor_8hpp.html">src/3rdparty/extern/exprtk_mpfr_adaptor.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="exprtk_8hpp.html">src/3rdparty/extern/exprtk.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scriptfunction_8hpp.html">src/3rdparty/math/scriptfunction.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="scriptvarargfunction_8hpp.html">src/3rdparty/math/scriptvarargfunction.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="symboltable_8hpp.html">src/3rdparty/math/symboltable.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="arithmetictype_8hpp.html">src/3rdparty/math/arithmetictype.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceExpressionParser.html">ExpressionParser</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classmpfr_1_1mpreal.html">ArithmeticType</a> <a class="code" href="namespaceExpressionParser.html#aa3c4f5f675beef79308ea5fd908514f4">evaluate</a>(<span class="keyword">const</span> std::string &amp;expr, <a class="code" href="classSymbolTable.html">SymbolTable</a> &amp;symbolTable);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classmpfr_1_1mpreal.html">ArithmeticType</a> <a class="code" href="namespaceExpressionParser.html#aa3c4f5f675beef79308ea5fd908514f4">evaluate</a>(<span class="keyword">const</span> std::string &amp;expr);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// QCALC_EXPRESSIONPARSER_HPP</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="ttc" id="aarithmetictype_8hpp_html"><div class="ttname"><a href="arithmetictype_8hpp.html">arithmetictype.hpp</a></div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../extern/exprtk_mpfr_adaptor.hpp&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../extern/exprtk.hpp&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;../math/scriptfunction.hpp&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../math/scriptvarargfunction.hpp&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../math/symboltable.hpp&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../math/arithmetictype.hpp&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceExpressionParser.html">ExpressionParser</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classmpfr_1_1mpreal.html">ArithmeticType</a> <a class="code" href="namespaceExpressionParser.html#aa3c4f5f675beef79308ea5fd908514f4">evaluate</a>(<span class="keyword">const</span> std::string &amp;expr, <a class="code" href="classSymbolTable.html">SymbolTable</a> &amp;symbolTable);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classmpfr_1_1mpreal.html">ArithmeticType</a> <a class="code" href="namespaceExpressionParser.html#aa3c4f5f675beef79308ea5fd908514f4">evaluate</a>(<span class="keyword">const</span> std::string &amp;expr);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// QCALC_EXPRESSIONPARSER_HPP</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="ttc" id="aclassSymbolTable_html"><div class="ttname"><a href="classSymbolTable.html">SymbolTable</a></div><div class="ttdoc">SymbolTable. The symbol table is responsible for managing 4 map objects. Each symbol(Variable,...</div><div class="ttdef"><b>Definition:</b> <a href="symboltable_8hpp_source.html#l00041">symboltable.hpp:42</a></div></div>
 <div class="ttc" id="aclassmpfr_1_1mpreal_html"><div class="ttname"><a href="classmpfr_1_1mpreal.html">mpfr::mpreal</a></div><div class="ttdoc">mpreal.</div><div class="ttdef"><b>Definition:</b> <a href="mpreal_8h_source.html#l00153">mpreal.h:154</a></div></div>
-<div class="ttc" id="aexprtk_8hpp_html"><div class="ttname"><a href="exprtk_8hpp.html">exprtk.hpp</a></div></div>
-<div class="ttc" id="aexprtk__mpfr__adaptor_8hpp_html"><div class="ttname"><a href="exprtk__mpfr__adaptor_8hpp.html">exprtk_mpfr_adaptor.hpp</a></div></div>
 <div class="ttc" id="anamespaceExpressionParser_html"><div class="ttname"><a href="namespaceExpressionParser.html">ExpressionParser</a></div><div class="ttdoc">Expression Parser. The expression parser evaluates expressions in string form using an optionally sup...</div></div>
 <div class="ttc" id="anamespaceExpressionParser_html_aa3c4f5f675beef79308ea5fd908514f4"><div class="ttname"><a href="namespaceExpressionParser.html#aa3c4f5f675beef79308ea5fd908514f4">ExpressionParser::evaluate</a></div><div class="ttdeci">ArithmeticType evaluate(const std::string &amp;expr, SymbolTable &amp;symbolTable)</div><div class="ttdoc">evaluate Constructor. evaluate</div><div class="ttdef"><b>Definition:</b> <a href="expressionparser_8cpp_source.html#l00026">expressionparser.cpp:26</a></div></div>
-<div class="ttc" id="ascriptfunction_8hpp_html"><div class="ttname"><a href="scriptfunction_8hpp.html">scriptfunction.hpp</a></div></div>
-<div class="ttc" id="ascriptvarargfunction_8hpp_html"><div class="ttname"><a href="scriptvarargfunction_8hpp.html">scriptvarargfunction.hpp</a></div></div>
-<div class="ttc" id="asymboltable_8hpp_html"><div class="ttname"><a href="symboltable_8hpp.html">symboltable.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

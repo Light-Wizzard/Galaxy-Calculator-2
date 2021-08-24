@@ -17,11 +17,12 @@
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include "src/3rdparty/math/scripthandler.hpp"
+#include "scripthandler.hpp"
+// Do not move these into hpp or it will error expected unqualified-id before ; token
+#include "../cpython/pythoninclude.hpp"
+#include "../cpython/pyutil.hpp"
+#include "../cpython/types/pympreal.hpp"
 
-#include "src/3rdparty/cpython/pythoninclude.hpp"
-#include "src/3rdparty/cpython/pyutil.hpp"
-#include "src/3rdparty/cpython/types/pympreal.hpp"
 /************************************************
  * @brief run.
  * run

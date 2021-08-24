@@ -23,7 +23,7 @@
 #include <string>
 #include <vector>
 
-#include "src/3rdparty/extern/json.hpp"
+#include "../extern/json.hpp"
 /************************************************
  * @brief Function.
  * \struct Function

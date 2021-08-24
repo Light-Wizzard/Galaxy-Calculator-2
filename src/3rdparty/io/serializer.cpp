@@ -17,9 +17,9 @@
  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include "src/3rdparty/io/serializer.hpp"
+#include "serializer.hpp"
 
-#include "src/3rdparty/extern/json.hpp"
+
 /************************************************
  * @brief serialize Table.
  * serializeTable

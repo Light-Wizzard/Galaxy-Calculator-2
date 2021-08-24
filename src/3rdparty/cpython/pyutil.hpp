@@ -24,7 +24,8 @@
 #include <vector>
 #include <QtGlobal>
 #include <stdexcept>
-#include "src/3rdparty/cpython/pythoninclude.hpp"
+
+#include "pythoninclude.hpp"
 
 #define PyNull NULL
 /************************************************

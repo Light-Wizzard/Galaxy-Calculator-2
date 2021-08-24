@@ -215,7 +215,7 @@ class nlohmann::detail::iter_impl&lt; BasicJsonType &gt;</h3>
 </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>version 1.0.0, simplified in version 2.0.9, change to bidirectional iterators in version 3.0.0 (see <a href="https://github.com/nlohmann/json/issues/593">https://github.com/nlohmann/json/issues/593</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10815">10815</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10803">10803</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2f7ea9f7022850809c60fc3263775840"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f7ea9f7022850809c60fc3263775840">&#9670;&nbsp;</a></span>difference_type</h2>
@@ -233,7 +233,7 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p>a type to represent differences between iterators </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10841">10841</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10829">10829</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -252,7 +252,7 @@ template&lt;typename BasicJsonType &gt; </div>
 </div><div class="memdoc">
 <p>The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17. The C++ Standard has never required user-defined iterators to derive from std::iterator. A user-defined iterator should provide publicly accessible typedefs named iterator_category, value_type, difference_type, pointer, and reference. Note that value_type is required to be non-const, even for constant iterators. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10836">10836</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10824">10824</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -272,7 +272,7 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p>defines a pointer to the type iterated over (value_type) </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10843">10843</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10831">10831</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +292,7 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p>defines a reference to the type iterated over (value_type) </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10847">10847</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10835">10835</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -312,7 +312,7 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p>the type of the values when the iterator is dereferenced </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10839">10839</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10827">10827</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +345,7 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>default constructor </p>
 <p>allow <a class="el" href="classnlohmann_1_1basic__json.html" title="a class to store JSON values">basic_json</a> to access private members </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10818">10818</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10806">10806</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -385,38 +385,38 @@ template&lt;typename BasicJsonType &gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>object != nullptr </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10861">10861</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10861"></a><span class="lineno">10861</span>&#160;                                                            : m_object(<span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l10862"></a><span class="lineno">10862</span>&#160;                {</div>
-<div class="line"><a name="l10863"></a><span class="lineno">10863</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l10864"></a><span class="lineno">10864</span>&#160; </div>
-<div class="line"><a name="l10865"></a><span class="lineno">10865</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l10866"></a><span class="lineno">10866</span>&#160;                    {</div>
-<div class="line"><a name="l10867"></a><span class="lineno">10867</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10849">10849</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10849"></a><span class="lineno">10849</span>&#160;                                                            : m_object(<span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l10850"></a><span class="lineno">10850</span>&#160;                {</div>
+<div class="line"><a name="l10851"></a><span class="lineno">10851</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l10852"></a><span class="lineno">10852</span>&#160; </div>
+<div class="line"><a name="l10853"></a><span class="lineno">10853</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l10854"></a><span class="lineno">10854</span>&#160;                    {</div>
+<div class="line"><a name="l10855"></a><span class="lineno">10855</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l10856"></a><span class="lineno">10856</span>&#160;                        {</div>
+<div class="line"><a name="l10857"></a><span class="lineno">10857</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> = <span class="keyword">typename</span> object_t::iterator();</div>
+<div class="line"><a name="l10858"></a><span class="lineno">10858</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l10859"></a><span class="lineno">10859</span>&#160;                        }</div>
+<div class="line"><a name="l10860"></a><span class="lineno">10860</span>&#160; </div>
+<div class="line"><a name="l10861"></a><span class="lineno">10861</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l10862"></a><span class="lineno">10862</span>&#160;                        {</div>
+<div class="line"><a name="l10863"></a><span class="lineno">10863</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> = <span class="keyword">typename</span> array_t::iterator();</div>
+<div class="line"><a name="l10864"></a><span class="lineno">10864</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l10865"></a><span class="lineno">10865</span>&#160;                        }</div>
+<div class="line"><a name="l10866"></a><span class="lineno">10866</span>&#160; </div>
+<div class="line"><a name="l10867"></a><span class="lineno">10867</span>&#160;                        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l10868"></a><span class="lineno">10868</span>&#160;                        {</div>
-<div class="line"><a name="l10869"></a><span class="lineno">10869</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> = <span class="keyword">typename</span> object_t::iterator();</div>
+<div class="line"><a name="l10869"></a><span class="lineno">10869</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> = primitive_iterator_t();</div>
 <div class="line"><a name="l10870"></a><span class="lineno">10870</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l10871"></a><span class="lineno">10871</span>&#160;                        }</div>
-<div class="line"><a name="l10872"></a><span class="lineno">10872</span>&#160; </div>
-<div class="line"><a name="l10873"></a><span class="lineno">10873</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l10874"></a><span class="lineno">10874</span>&#160;                        {</div>
-<div class="line"><a name="l10875"></a><span class="lineno">10875</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> = <span class="keyword">typename</span> array_t::iterator();</div>
-<div class="line"><a name="l10876"></a><span class="lineno">10876</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l10877"></a><span class="lineno">10877</span>&#160;                        }</div>
-<div class="line"><a name="l10878"></a><span class="lineno">10878</span>&#160; </div>
-<div class="line"><a name="l10879"></a><span class="lineno">10879</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l10880"></a><span class="lineno">10880</span>&#160;                        {</div>
-<div class="line"><a name="l10881"></a><span class="lineno">10881</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> = primitive_iterator_t();</div>
-<div class="line"><a name="l10882"></a><span class="lineno">10882</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l10883"></a><span class="lineno">10883</span>&#160;                        }</div>
-<div class="line"><a name="l10884"></a><span class="lineno">10884</span>&#160;                    }</div>
-<div class="line"><a name="l10885"></a><span class="lineno">10885</span>&#160;                }</div>
-<div class="ttc" id="ajson_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02103">json.hpp:2103</a></div></div>
+<div class="line"><a name="l10872"></a><span class="lineno">10872</span>&#160;                    }</div>
+<div class="line"><a name="l10873"></a><span class="lineno">10873</span>&#160;                }</div>
+<div class="ttc" id="ajson_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02091">json.hpp:2091</a></div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">nlohmann::detail::value_t::object</a></div><div class="ttdeci">@ object</div><div class="ttdoc">object (unordered set of name/value pairs)</div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">nlohmann::detail::value_t::array</a></div><div class="ttdeci">@ array</div><div class="ttdoc">array (ordered collection of values)</div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1internal__iterator_html_a2b3bb45f968210e42c282017eeeb63a8"><div class="ttname"><a href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">nlohmann::detail::internal_iterator::primitive_iterator</a></div><div class="ttdeci">primitive_iterator_t primitive_iterator</div><div class="ttdoc">generic iterator for all other types</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10764">json.hpp:10764</a></div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1internal__iterator_html_a8294a6e6f01b58e1cce8fbae66a50b5d"><div class="ttname"><a href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">nlohmann::detail::internal_iterator::array_iterator</a></div><div class="ttdeci">BasicJsonType::array_t::iterator array_iterator</div><div class="ttdoc">iterator for JSON arrays</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10762">json.hpp:10762</a></div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1internal__iterator_html_a8cb0af3498061426c1d0a65ad6220408"><div class="ttname"><a href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">nlohmann::detail::internal_iterator::object_iterator</a></div><div class="ttdeci">BasicJsonType::object_t::iterator object_iterator</div><div class="ttdoc">iterator for JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10760">json.hpp:10760</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1internal__iterator_html_a2b3bb45f968210e42c282017eeeb63a8"><div class="ttname"><a href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">nlohmann::detail::internal_iterator::primitive_iterator</a></div><div class="ttdeci">primitive_iterator_t primitive_iterator</div><div class="ttdoc">generic iterator for all other types</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10752">json.hpp:10752</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1internal__iterator_html_a8294a6e6f01b58e1cce8fbae66a50b5d"><div class="ttname"><a href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">nlohmann::detail::internal_iterator::array_iterator</a></div><div class="ttdeci">BasicJsonType::array_t::iterator array_iterator</div><div class="ttdoc">iterator for JSON arrays</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10750">json.hpp:10750</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1internal__iterator_html_a8cb0af3498061426c1d0a65ad6220408"><div class="ttname"><a href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">nlohmann::detail::internal_iterator::object_iterator</a></div><div class="ttdeci">BasicJsonType::object_t::iterator object_iterator</div><div class="ttdoc">iterator for JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10748">json.hpp:10748</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -456,9 +456,9 @@ template&lt;typename BasicJsonType &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This copy constructor had to be defined explicitly to circumvent a bug occurring on msvc v19.0 compiler (VS 2015) debug build. For more information refer to: <a href="https://github.com/nlohmann/json/issues/1608">https://github.com/nlohmann/json/issues/1608</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10903">10903</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10904"></a><span class="lineno">10904</span>&#160;                    : m_object(other.m_object), m_it(other.m_it)</div>
-<div class="line"><a name="l10905"></a><span class="lineno">10905</span>&#160;                {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10891">10891</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10892"></a><span class="lineno">10892</span>&#160;                    : m_object(other.m_object), m_it(other.m_it)</div>
+<div class="line"><a name="l10893"></a><span class="lineno">10893</span>&#160;                {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -497,9 +497,9 @@ template&lt;typename BasicJsonType &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>It is not checked whether <em>other</em> is initialized. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10925">10925</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10926"></a><span class="lineno">10926</span>&#160;                    : m_object(other.m_object), m_it(other.m_it)</div>
-<div class="line"><a name="l10927"></a><span class="lineno">10927</span>&#160;                {}</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10913">10913</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10914"></a><span class="lineno">10914</span>&#160;                    : m_object(other.m_object), m_it(other.m_it)</div>
+<div class="line"><a name="l10915"></a><span class="lineno">10915</span>&#160;                {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,20 +532,20 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>return the key of an object iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11385">11385</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11386"></a><span class="lineno">11386</span>&#160;                {</div>
-<div class="line"><a name="l11387"></a><span class="lineno">11387</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11388"></a><span class="lineno">11388</span>&#160; </div>
-<div class="line"><a name="l11389"></a><span class="lineno">11389</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_object-&gt;is_object()))</div>
-<div class="line"><a name="l11390"></a><span class="lineno">11390</span>&#160;                    {</div>
-<div class="line"><a name="l11391"></a><span class="lineno">11391</span>&#160;                        <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>-&gt;first;</div>
-<div class="line"><a name="l11392"></a><span class="lineno">11392</span>&#160;                    }</div>
-<div class="line"><a name="l11393"></a><span class="lineno">11393</span>&#160; </div>
-<div class="line"><a name="l11394"></a><span class="lineno">11394</span>&#160;                    <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(207, <span class="stringliteral">&quot;cannot use key() for non-object iterators&quot;</span>));</div>
-<div class="line"><a name="l11395"></a><span class="lineno">11395</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1invalid__iterator_html_a4e849260a3caa1b288c7e619130c6c09"><div class="ttname"><a href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">nlohmann::detail::invalid_iterator::create</a></div><div class="ttdeci">static invalid_iterator create(int id_, const std::string &amp;what_arg)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02516">json.hpp:2516</a></div></div>
-<div class="ttc" id="ajson_8hpp_html_a355f2770653ff7bdd5c74b204b5a3ad0"><div class="ttname"><a href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_LIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01403">json.hpp:1403</a></div></div>
-<div class="ttc" id="ajson_8hpp_html_a6c274f6db2e65c1b66c7d41b06ad690f"><div class="ttname"><a href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a></div><div class="ttdeci">#define JSON_THROW(exception)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02074">json.hpp:2074</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11373">11373</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11374"></a><span class="lineno">11374</span>&#160;                {</div>
+<div class="line"><a name="l11375"></a><span class="lineno">11375</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11376"></a><span class="lineno">11376</span>&#160; </div>
+<div class="line"><a name="l11377"></a><span class="lineno">11377</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_object-&gt;is_object()))</div>
+<div class="line"><a name="l11378"></a><span class="lineno">11378</span>&#160;                    {</div>
+<div class="line"><a name="l11379"></a><span class="lineno">11379</span>&#160;                        <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>-&gt;first;</div>
+<div class="line"><a name="l11380"></a><span class="lineno">11380</span>&#160;                    }</div>
+<div class="line"><a name="l11381"></a><span class="lineno">11381</span>&#160; </div>
+<div class="line"><a name="l11382"></a><span class="lineno">11382</span>&#160;                    <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(207, <span class="stringliteral">&quot;cannot use key() for non-object iterators&quot;</span>));</div>
+<div class="line"><a name="l11383"></a><span class="lineno">11383</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1invalid__iterator_html_a4e849260a3caa1b288c7e619130c6c09"><div class="ttname"><a href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">nlohmann::detail::invalid_iterator::create</a></div><div class="ttdeci">static invalid_iterator create(int id_, const std::string &amp;what_arg)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02504">json.hpp:2504</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a355f2770653ff7bdd5c74b204b5a3ad0"><div class="ttname"><a href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_LIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01391">json.hpp:1391</a></div></div>
+<div class="ttc" id="ajson_8hpp_html_a6c274f6db2e65c1b66c7d41b06ad690f"><div class="ttname"><a href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a></div><div class="ttdeci">#define JSON_THROW(exception)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02062">json.hpp:2062</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -578,11 +578,11 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>comparison: not equal </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11199">11199</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11200"></a><span class="lineno">11200</span>&#160;                {</div>
-<div class="line"><a name="l11201"></a><span class="lineno">11201</span>&#160;                    <span class="keywordflow">return</span> !<a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a2b592605b63ae7f5401996ffa3b14393">operator==</a>(other);</div>
-<div class="line"><a name="l11202"></a><span class="lineno">11202</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a2b592605b63ae7f5401996ffa3b14393"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a2b592605b63ae7f5401996ffa3b14393">nlohmann::detail::iter_impl::operator==</a></div><div class="ttdeci">bool operator==(const iter_impl &amp;other) const</div><div class="ttdoc">comparison: equal</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11172">json.hpp:11172</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11187">11187</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11188"></a><span class="lineno">11188</span>&#160;                {</div>
+<div class="line"><a name="l11189"></a><span class="lineno">11189</span>&#160;                    <span class="keywordflow">return</span> !<a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a2b592605b63ae7f5401996ffa3b14393">operator==</a>(other);</div>
+<div class="line"><a name="l11190"></a><span class="lineno">11190</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a2b592605b63ae7f5401996ffa3b14393"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a2b592605b63ae7f5401996ffa3b14393">nlohmann::detail::iter_impl::operator==</a></div><div class="ttdeci">bool operator==(const iter_impl &amp;other) const</div><div class="ttdoc">comparison: equal</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11160">json.hpp:11160</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -614,39 +614,39 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>return a reference to the value pointed to by the iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11015">11015</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11016"></a><span class="lineno">11016</span>&#160;                {</div>
-<div class="line"><a name="l11017"></a><span class="lineno">11017</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11018"></a><span class="lineno">11018</span>&#160; </div>
-<div class="line"><a name="l11019"></a><span class="lineno">11019</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11020"></a><span class="lineno">11020</span>&#160;                    {</div>
-<div class="line"><a name="l11021"></a><span class="lineno">11021</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l11022"></a><span class="lineno">11022</span>&#160;                        {</div>
-<div class="line"><a name="l11023"></a><span class="lineno">11023</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> != m_object-&gt;m_value.object-&gt;end());</div>
-<div class="line"><a name="l11024"></a><span class="lineno">11024</span>&#160;                            <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>-&gt;second;</div>
-<div class="line"><a name="l11025"></a><span class="lineno">11025</span>&#160;                        }</div>
-<div class="line"><a name="l11026"></a><span class="lineno">11026</span>&#160; </div>
-<div class="line"><a name="l11027"></a><span class="lineno">11027</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11028"></a><span class="lineno">11028</span>&#160;                        {</div>
-<div class="line"><a name="l11029"></a><span class="lineno">11029</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> != m_object-&gt;m_value.array-&gt;end());</div>
-<div class="line"><a name="l11030"></a><span class="lineno">11030</span>&#160;                            <span class="keywordflow">return</span> *m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>;</div>
-<div class="line"><a name="l11031"></a><span class="lineno">11031</span>&#160;                        }</div>
-<div class="line"><a name="l11032"></a><span class="lineno">11032</span>&#160; </div>
-<div class="line"><a name="l11033"></a><span class="lineno">11033</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">value_t::null</a>:</div>
-<div class="line"><a name="l11034"></a><span class="lineno">11034</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
-<div class="line"><a name="l11035"></a><span class="lineno">11035</span>&#160; </div>
-<div class="line"><a name="l11036"></a><span class="lineno">11036</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11037"></a><span class="lineno">11037</span>&#160;                        {</div>
-<div class="line"><a name="l11038"></a><span class="lineno">11038</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>.<a class="code" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a8d1a7d46b3fcd06edd034f04ededb5e4">is_begin</a>()))</div>
-<div class="line"><a name="l11039"></a><span class="lineno">11039</span>&#160;                            {</div>
-<div class="line"><a name="l11040"></a><span class="lineno">11040</span>&#160;                                <span class="keywordflow">return</span> *m_object;</div>
-<div class="line"><a name="l11041"></a><span class="lineno">11041</span>&#160;                            }</div>
-<div class="line"><a name="l11042"></a><span class="lineno">11042</span>&#160; </div>
-<div class="line"><a name="l11043"></a><span class="lineno">11043</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
-<div class="line"><a name="l11044"></a><span class="lineno">11044</span>&#160;                        }</div>
-<div class="line"><a name="l11045"></a><span class="lineno">11045</span>&#160;                    }</div>
-<div class="line"><a name="l11046"></a><span class="lineno">11046</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1primitive__iterator__t_html_a8d1a7d46b3fcd06edd034f04ededb5e4"><div class="ttname"><a href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a8d1a7d46b3fcd06edd034f04ededb5e4">nlohmann::detail::primitive_iterator_t::is_begin</a></div><div class="ttdeci">constexpr bool is_begin() const noexcept</div><div class="ttdoc">return whether the iterator can be dereferenced</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10672">json.hpp:10672</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11003">11003</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11004"></a><span class="lineno">11004</span>&#160;                {</div>
+<div class="line"><a name="l11005"></a><span class="lineno">11005</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11006"></a><span class="lineno">11006</span>&#160; </div>
+<div class="line"><a name="l11007"></a><span class="lineno">11007</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11008"></a><span class="lineno">11008</span>&#160;                    {</div>
+<div class="line"><a name="l11009"></a><span class="lineno">11009</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11010"></a><span class="lineno">11010</span>&#160;                        {</div>
+<div class="line"><a name="l11011"></a><span class="lineno">11011</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> != m_object-&gt;m_value.object-&gt;end());</div>
+<div class="line"><a name="l11012"></a><span class="lineno">11012</span>&#160;                            <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>-&gt;second;</div>
+<div class="line"><a name="l11013"></a><span class="lineno">11013</span>&#160;                        }</div>
+<div class="line"><a name="l11014"></a><span class="lineno">11014</span>&#160; </div>
+<div class="line"><a name="l11015"></a><span class="lineno">11015</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11016"></a><span class="lineno">11016</span>&#160;                        {</div>
+<div class="line"><a name="l11017"></a><span class="lineno">11017</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> != m_object-&gt;m_value.array-&gt;end());</div>
+<div class="line"><a name="l11018"></a><span class="lineno">11018</span>&#160;                            <span class="keywordflow">return</span> *m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>;</div>
+<div class="line"><a name="l11019"></a><span class="lineno">11019</span>&#160;                        }</div>
+<div class="line"><a name="l11020"></a><span class="lineno">11020</span>&#160; </div>
+<div class="line"><a name="l11021"></a><span class="lineno">11021</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">value_t::null</a>:</div>
+<div class="line"><a name="l11022"></a><span class="lineno">11022</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
+<div class="line"><a name="l11023"></a><span class="lineno">11023</span>&#160; </div>
+<div class="line"><a name="l11024"></a><span class="lineno">11024</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l11025"></a><span class="lineno">11025</span>&#160;                        {</div>
+<div class="line"><a name="l11026"></a><span class="lineno">11026</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>.<a class="code" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a8d1a7d46b3fcd06edd034f04ededb5e4">is_begin</a>()))</div>
+<div class="line"><a name="l11027"></a><span class="lineno">11027</span>&#160;                            {</div>
+<div class="line"><a name="l11028"></a><span class="lineno">11028</span>&#160;                                <span class="keywordflow">return</span> *m_object;</div>
+<div class="line"><a name="l11029"></a><span class="lineno">11029</span>&#160;                            }</div>
+<div class="line"><a name="l11030"></a><span class="lineno">11030</span>&#160; </div>
+<div class="line"><a name="l11031"></a><span class="lineno">11031</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
+<div class="line"><a name="l11032"></a><span class="lineno">11032</span>&#160;                        }</div>
+<div class="line"><a name="l11033"></a><span class="lineno">11033</span>&#160;                    }</div>
+<div class="line"><a name="l11034"></a><span class="lineno">11034</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1primitive__iterator__t_html_a8d1a7d46b3fcd06edd034f04ededb5e4"><div class="ttname"><a href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a8d1a7d46b3fcd06edd034f04ededb5e4">nlohmann::detail::primitive_iterator_t::is_begin</a></div><div class="ttdeci">constexpr bool is_begin() const noexcept</div><div class="ttdoc">return whether the iterator can be dereferenced</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10660">json.hpp:10660</a></div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">nlohmann::detail::value_t::null</a></div><div class="ttdeci">@ null</div><div class="ttdoc">null value</div></div>
 </div><!-- fragment -->
 </div>
@@ -680,12 +680,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>add to iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11300">11300</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11301"></a><span class="lineno">11301</span>&#160;                {</div>
-<div class="line"><a name="l11302"></a><span class="lineno">11302</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11303"></a><span class="lineno">11303</span>&#160;                    result += i;</div>
-<div class="line"><a name="l11304"></a><span class="lineno">11304</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l11305"></a><span class="lineno">11305</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11288">11288</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11289"></a><span class="lineno">11289</span>&#160;                {</div>
+<div class="line"><a name="l11290"></a><span class="lineno">11290</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11291"></a><span class="lineno">11291</span>&#160;                    result += i;</div>
+<div class="line"><a name="l11292"></a><span class="lineno">11292</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l11293"></a><span class="lineno">11293</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -717,33 +717,33 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>pre-increment (++it) </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11097">11097</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11098"></a><span class="lineno">11098</span>&#160;                {</div>
-<div class="line"><a name="l11099"></a><span class="lineno">11099</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11100"></a><span class="lineno">11100</span>&#160; </div>
-<div class="line"><a name="l11101"></a><span class="lineno">11101</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11102"></a><span class="lineno">11102</span>&#160;                    {</div>
-<div class="line"><a name="l11103"></a><span class="lineno">11103</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11085">11085</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11086"></a><span class="lineno">11086</span>&#160;                {</div>
+<div class="line"><a name="l11087"></a><span class="lineno">11087</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11088"></a><span class="lineno">11088</span>&#160; </div>
+<div class="line"><a name="l11089"></a><span class="lineno">11089</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11090"></a><span class="lineno">11090</span>&#160;                    {</div>
+<div class="line"><a name="l11091"></a><span class="lineno">11091</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11092"></a><span class="lineno">11092</span>&#160;                        {</div>
+<div class="line"><a name="l11093"></a><span class="lineno">11093</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>, 1);</div>
+<div class="line"><a name="l11094"></a><span class="lineno">11094</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l11095"></a><span class="lineno">11095</span>&#160;                        }</div>
+<div class="line"><a name="l11096"></a><span class="lineno">11096</span>&#160; </div>
+<div class="line"><a name="l11097"></a><span class="lineno">11097</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11098"></a><span class="lineno">11098</span>&#160;                        {</div>
+<div class="line"><a name="l11099"></a><span class="lineno">11099</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, 1);</div>
+<div class="line"><a name="l11100"></a><span class="lineno">11100</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l11101"></a><span class="lineno">11101</span>&#160;                        }</div>
+<div class="line"><a name="l11102"></a><span class="lineno">11102</span>&#160; </div>
+<div class="line"><a name="l11103"></a><span class="lineno">11103</span>&#160;                        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l11104"></a><span class="lineno">11104</span>&#160;                        {</div>
-<div class="line"><a name="l11105"></a><span class="lineno">11105</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>, 1);</div>
+<div class="line"><a name="l11105"></a><span class="lineno">11105</span>&#160;                            ++m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>;</div>
 <div class="line"><a name="l11106"></a><span class="lineno">11106</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l11107"></a><span class="lineno">11107</span>&#160;                        }</div>
-<div class="line"><a name="l11108"></a><span class="lineno">11108</span>&#160; </div>
-<div class="line"><a name="l11109"></a><span class="lineno">11109</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11110"></a><span class="lineno">11110</span>&#160;                        {</div>
-<div class="line"><a name="l11111"></a><span class="lineno">11111</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, 1);</div>
-<div class="line"><a name="l11112"></a><span class="lineno">11112</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l11113"></a><span class="lineno">11113</span>&#160;                        }</div>
-<div class="line"><a name="l11114"></a><span class="lineno">11114</span>&#160; </div>
-<div class="line"><a name="l11115"></a><span class="lineno">11115</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11116"></a><span class="lineno">11116</span>&#160;                        {</div>
-<div class="line"><a name="l11117"></a><span class="lineno">11117</span>&#160;                            ++m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>;</div>
-<div class="line"><a name="l11118"></a><span class="lineno">11118</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l11119"></a><span class="lineno">11119</span>&#160;                        }</div>
-<div class="line"><a name="l11120"></a><span class="lineno">11120</span>&#160;                    }</div>
-<div class="line"><a name="l11121"></a><span class="lineno">11121</span>&#160; </div>
-<div class="line"><a name="l11122"></a><span class="lineno">11122</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11123"></a><span class="lineno">11123</span>&#160;                }</div>
+<div class="line"><a name="l11108"></a><span class="lineno">11108</span>&#160;                    }</div>
+<div class="line"><a name="l11109"></a><span class="lineno">11109</span>&#160; </div>
+<div class="line"><a name="l11110"></a><span class="lineno">11110</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11111"></a><span class="lineno">11111</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -776,12 +776,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>post-increment (it++) </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11086">11086</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11087"></a><span class="lineno">11087</span>&#160;                {</div>
-<div class="line"><a name="l11088"></a><span class="lineno">11088</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11089"></a><span class="lineno">11089</span>&#160;                    ++(*this);</div>
-<div class="line"><a name="l11090"></a><span class="lineno">11090</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l11091"></a><span class="lineno">11091</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11074">11074</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11075"></a><span class="lineno">11075</span>&#160;                {</div>
+<div class="line"><a name="l11076"></a><span class="lineno">11076</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11077"></a><span class="lineno">11077</span>&#160;                    ++(*this);</div>
+<div class="line"><a name="l11078"></a><span class="lineno">11078</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l11079"></a><span class="lineno">11079</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -814,30 +814,30 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>add to iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11262">11262</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11263"></a><span class="lineno">11263</span>&#160;                {</div>
-<div class="line"><a name="l11264"></a><span class="lineno">11264</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11265"></a><span class="lineno">11265</span>&#160; </div>
-<div class="line"><a name="l11266"></a><span class="lineno">11266</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11267"></a><span class="lineno">11267</span>&#160;                    {</div>
-<div class="line"><a name="l11268"></a><span class="lineno">11268</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l11269"></a><span class="lineno">11269</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(209, <span class="stringliteral">&quot;cannot use offsets with object iterators&quot;</span>));</div>
-<div class="line"><a name="l11270"></a><span class="lineno">11270</span>&#160; </div>
-<div class="line"><a name="l11271"></a><span class="lineno">11271</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11272"></a><span class="lineno">11272</span>&#160;                        {</div>
-<div class="line"><a name="l11273"></a><span class="lineno">11273</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, i);</div>
-<div class="line"><a name="l11274"></a><span class="lineno">11274</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l11275"></a><span class="lineno">11275</span>&#160;                        }</div>
-<div class="line"><a name="l11276"></a><span class="lineno">11276</span>&#160; </div>
-<div class="line"><a name="l11277"></a><span class="lineno">11277</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11278"></a><span class="lineno">11278</span>&#160;                        {</div>
-<div class="line"><a name="l11279"></a><span class="lineno">11279</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> += i;</div>
-<div class="line"><a name="l11280"></a><span class="lineno">11280</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l11281"></a><span class="lineno">11281</span>&#160;                        }</div>
-<div class="line"><a name="l11282"></a><span class="lineno">11282</span>&#160;                    }</div>
-<div class="line"><a name="l11283"></a><span class="lineno">11283</span>&#160; </div>
-<div class="line"><a name="l11284"></a><span class="lineno">11284</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11285"></a><span class="lineno">11285</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11250">11250</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11251"></a><span class="lineno">11251</span>&#160;                {</div>
+<div class="line"><a name="l11252"></a><span class="lineno">11252</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11253"></a><span class="lineno">11253</span>&#160; </div>
+<div class="line"><a name="l11254"></a><span class="lineno">11254</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11255"></a><span class="lineno">11255</span>&#160;                    {</div>
+<div class="line"><a name="l11256"></a><span class="lineno">11256</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11257"></a><span class="lineno">11257</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(209, <span class="stringliteral">&quot;cannot use offsets with object iterators&quot;</span>));</div>
+<div class="line"><a name="l11258"></a><span class="lineno">11258</span>&#160; </div>
+<div class="line"><a name="l11259"></a><span class="lineno">11259</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11260"></a><span class="lineno">11260</span>&#160;                        {</div>
+<div class="line"><a name="l11261"></a><span class="lineno">11261</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, i);</div>
+<div class="line"><a name="l11262"></a><span class="lineno">11262</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l11263"></a><span class="lineno">11263</span>&#160;                        }</div>
+<div class="line"><a name="l11264"></a><span class="lineno">11264</span>&#160; </div>
+<div class="line"><a name="l11265"></a><span class="lineno">11265</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l11266"></a><span class="lineno">11266</span>&#160;                        {</div>
+<div class="line"><a name="l11267"></a><span class="lineno">11267</span>&#160;                            m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> += i;</div>
+<div class="line"><a name="l11268"></a><span class="lineno">11268</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l11269"></a><span class="lineno">11269</span>&#160;                        }</div>
+<div class="line"><a name="l11270"></a><span class="lineno">11270</span>&#160;                    }</div>
+<div class="line"><a name="l11271"></a><span class="lineno">11271</span>&#160; </div>
+<div class="line"><a name="l11272"></a><span class="lineno">11272</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11273"></a><span class="lineno">11273</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -870,22 +870,22 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>return difference </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11333">11333</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11334"></a><span class="lineno">11334</span>&#160;                {</div>
-<div class="line"><a name="l11335"></a><span class="lineno">11335</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11336"></a><span class="lineno">11336</span>&#160; </div>
-<div class="line"><a name="l11337"></a><span class="lineno">11337</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11338"></a><span class="lineno">11338</span>&#160;                    {</div>
-<div class="line"><a name="l11339"></a><span class="lineno">11339</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l11340"></a><span class="lineno">11340</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(209, <span class="stringliteral">&quot;cannot use offsets with object iterators&quot;</span>));</div>
-<div class="line"><a name="l11341"></a><span class="lineno">11341</span>&#160; </div>
-<div class="line"><a name="l11342"></a><span class="lineno">11342</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11343"></a><span class="lineno">11343</span>&#160;                            <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> - other.m_it.array_iterator;</div>
-<div class="line"><a name="l11344"></a><span class="lineno">11344</span>&#160; </div>
-<div class="line"><a name="l11345"></a><span class="lineno">11345</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11346"></a><span class="lineno">11346</span>&#160;                            <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> - other.m_it.primitive_iterator;</div>
-<div class="line"><a name="l11347"></a><span class="lineno">11347</span>&#160;                    }</div>
-<div class="line"><a name="l11348"></a><span class="lineno">11348</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11321">11321</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11322"></a><span class="lineno">11322</span>&#160;                {</div>
+<div class="line"><a name="l11323"></a><span class="lineno">11323</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11324"></a><span class="lineno">11324</span>&#160; </div>
+<div class="line"><a name="l11325"></a><span class="lineno">11325</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11326"></a><span class="lineno">11326</span>&#160;                    {</div>
+<div class="line"><a name="l11327"></a><span class="lineno">11327</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11328"></a><span class="lineno">11328</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(209, <span class="stringliteral">&quot;cannot use offsets with object iterators&quot;</span>));</div>
+<div class="line"><a name="l11329"></a><span class="lineno">11329</span>&#160; </div>
+<div class="line"><a name="l11330"></a><span class="lineno">11330</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11331"></a><span class="lineno">11331</span>&#160;                            <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> - other.m_it.array_iterator;</div>
+<div class="line"><a name="l11332"></a><span class="lineno">11332</span>&#160; </div>
+<div class="line"><a name="l11333"></a><span class="lineno">11333</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l11334"></a><span class="lineno">11334</span>&#160;                            <span class="keywordflow">return</span> m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> - other.m_it.primitive_iterator;</div>
+<div class="line"><a name="l11335"></a><span class="lineno">11335</span>&#160;                    }</div>
+<div class="line"><a name="l11336"></a><span class="lineno">11336</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -918,12 +918,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>subtract from iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11322">11322</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11323"></a><span class="lineno">11323</span>&#160;                {</div>
-<div class="line"><a name="l11324"></a><span class="lineno">11324</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11325"></a><span class="lineno">11325</span>&#160;                    result -= i;</div>
-<div class="line"><a name="l11326"></a><span class="lineno">11326</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l11327"></a><span class="lineno">11327</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11310">11310</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11311"></a><span class="lineno">11311</span>&#160;                {</div>
+<div class="line"><a name="l11312"></a><span class="lineno">11312</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11313"></a><span class="lineno">11313</span>&#160;                    result -= i;</div>
+<div class="line"><a name="l11314"></a><span class="lineno">11314</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l11315"></a><span class="lineno">11315</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -955,33 +955,33 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>pre-decrement (&ndash;it) </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11140">11140</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11141"></a><span class="lineno">11141</span>&#160;                {</div>
-<div class="line"><a name="l11142"></a><span class="lineno">11142</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11143"></a><span class="lineno">11143</span>&#160; </div>
-<div class="line"><a name="l11144"></a><span class="lineno">11144</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11145"></a><span class="lineno">11145</span>&#160;                    {</div>
-<div class="line"><a name="l11146"></a><span class="lineno">11146</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11128">11128</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11129"></a><span class="lineno">11129</span>&#160;                {</div>
+<div class="line"><a name="l11130"></a><span class="lineno">11130</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11131"></a><span class="lineno">11131</span>&#160; </div>
+<div class="line"><a name="l11132"></a><span class="lineno">11132</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11133"></a><span class="lineno">11133</span>&#160;                    {</div>
+<div class="line"><a name="l11134"></a><span class="lineno">11134</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11135"></a><span class="lineno">11135</span>&#160;                        {</div>
+<div class="line"><a name="l11136"></a><span class="lineno">11136</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>, -1);</div>
+<div class="line"><a name="l11137"></a><span class="lineno">11137</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l11138"></a><span class="lineno">11138</span>&#160;                        }</div>
+<div class="line"><a name="l11139"></a><span class="lineno">11139</span>&#160; </div>
+<div class="line"><a name="l11140"></a><span class="lineno">11140</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11141"></a><span class="lineno">11141</span>&#160;                        {</div>
+<div class="line"><a name="l11142"></a><span class="lineno">11142</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, -1);</div>
+<div class="line"><a name="l11143"></a><span class="lineno">11143</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l11144"></a><span class="lineno">11144</span>&#160;                        }</div>
+<div class="line"><a name="l11145"></a><span class="lineno">11145</span>&#160; </div>
+<div class="line"><a name="l11146"></a><span class="lineno">11146</span>&#160;                        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l11147"></a><span class="lineno">11147</span>&#160;                        {</div>
-<div class="line"><a name="l11148"></a><span class="lineno">11148</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>, -1);</div>
+<div class="line"><a name="l11148"></a><span class="lineno">11148</span>&#160;                            --m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>;</div>
 <div class="line"><a name="l11149"></a><span class="lineno">11149</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l11150"></a><span class="lineno">11150</span>&#160;                        }</div>
-<div class="line"><a name="l11151"></a><span class="lineno">11151</span>&#160; </div>
-<div class="line"><a name="l11152"></a><span class="lineno">11152</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11153"></a><span class="lineno">11153</span>&#160;                        {</div>
-<div class="line"><a name="l11154"></a><span class="lineno">11154</span>&#160;                            std::advance(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, -1);</div>
-<div class="line"><a name="l11155"></a><span class="lineno">11155</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l11156"></a><span class="lineno">11156</span>&#160;                        }</div>
-<div class="line"><a name="l11157"></a><span class="lineno">11157</span>&#160; </div>
-<div class="line"><a name="l11158"></a><span class="lineno">11158</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11159"></a><span class="lineno">11159</span>&#160;                        {</div>
-<div class="line"><a name="l11160"></a><span class="lineno">11160</span>&#160;                            --m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>;</div>
-<div class="line"><a name="l11161"></a><span class="lineno">11161</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l11162"></a><span class="lineno">11162</span>&#160;                        }</div>
-<div class="line"><a name="l11163"></a><span class="lineno">11163</span>&#160;                    }</div>
-<div class="line"><a name="l11164"></a><span class="lineno">11164</span>&#160; </div>
-<div class="line"><a name="l11165"></a><span class="lineno">11165</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11166"></a><span class="lineno">11166</span>&#160;                }</div>
+<div class="line"><a name="l11151"></a><span class="lineno">11151</span>&#160;                    }</div>
+<div class="line"><a name="l11152"></a><span class="lineno">11152</span>&#160; </div>
+<div class="line"><a name="l11153"></a><span class="lineno">11153</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11154"></a><span class="lineno">11154</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1014,12 +1014,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>post-decrement (it&ndash;) </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11129">11129</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11130"></a><span class="lineno">11130</span>&#160;                {</div>
-<div class="line"><a name="l11131"></a><span class="lineno">11131</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l11132"></a><span class="lineno">11132</span>&#160;                    --(*this);</div>
-<div class="line"><a name="l11133"></a><span class="lineno">11133</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l11134"></a><span class="lineno">11134</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11117">11117</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11118"></a><span class="lineno">11118</span>&#160;                {</div>
+<div class="line"><a name="l11119"></a><span class="lineno">11119</span>&#160;                    <span class="keyword">auto</span> result = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l11120"></a><span class="lineno">11120</span>&#160;                    --(*this);</div>
+<div class="line"><a name="l11121"></a><span class="lineno">11121</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l11122"></a><span class="lineno">11122</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1052,11 +1052,11 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>subtract from iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11291">11291</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11292"></a><span class="lineno">11292</span>&#160;                {</div>
-<div class="line"><a name="l11293"></a><span class="lineno">11293</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a3eef94f9d167046e7f773aeb6b78090c">operator+=</a>(-i);</div>
-<div class="line"><a name="l11294"></a><span class="lineno">11294</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a3eef94f9d167046e7f773aeb6b78090c"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a3eef94f9d167046e7f773aeb6b78090c">nlohmann::detail::iter_impl::operator+=</a></div><div class="ttdeci">iter_impl &amp; operator+=(difference_type i)</div><div class="ttdoc">add to iterator</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11262">json.hpp:11262</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11279">11279</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11280"></a><span class="lineno">11280</span>&#160;                {</div>
+<div class="line"><a name="l11281"></a><span class="lineno">11281</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a3eef94f9d167046e7f773aeb6b78090c">operator+=</a>(-i);</div>
+<div class="line"><a name="l11282"></a><span class="lineno">11282</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a3eef94f9d167046e7f773aeb6b78090c"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a3eef94f9d167046e7f773aeb6b78090c">nlohmann::detail::iter_impl::operator+=</a></div><div class="ttdeci">iter_impl &amp; operator+=(difference_type i)</div><div class="ttdoc">add to iterator</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11250">json.hpp:11250</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1088,35 +1088,35 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>dereference the iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11052">11052</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11053"></a><span class="lineno">11053</span>&#160;                {</div>
-<div class="line"><a name="l11054"></a><span class="lineno">11054</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11055"></a><span class="lineno">11055</span>&#160; </div>
-<div class="line"><a name="l11056"></a><span class="lineno">11056</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11057"></a><span class="lineno">11057</span>&#160;                    {</div>
-<div class="line"><a name="l11058"></a><span class="lineno">11058</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11040">11040</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11041"></a><span class="lineno">11041</span>&#160;                {</div>
+<div class="line"><a name="l11042"></a><span class="lineno">11042</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11043"></a><span class="lineno">11043</span>&#160; </div>
+<div class="line"><a name="l11044"></a><span class="lineno">11044</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11045"></a><span class="lineno">11045</span>&#160;                    {</div>
+<div class="line"><a name="l11046"></a><span class="lineno">11046</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11047"></a><span class="lineno">11047</span>&#160;                        {</div>
+<div class="line"><a name="l11048"></a><span class="lineno">11048</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> != m_object-&gt;m_value.object-&gt;end());</div>
+<div class="line"><a name="l11049"></a><span class="lineno">11049</span>&#160;                            <span class="keywordflow">return</span> &amp;(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>-&gt;second);</div>
+<div class="line"><a name="l11050"></a><span class="lineno">11050</span>&#160;                        }</div>
+<div class="line"><a name="l11051"></a><span class="lineno">11051</span>&#160; </div>
+<div class="line"><a name="l11052"></a><span class="lineno">11052</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11053"></a><span class="lineno">11053</span>&#160;                        {</div>
+<div class="line"><a name="l11054"></a><span class="lineno">11054</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> != m_object-&gt;m_value.array-&gt;end());</div>
+<div class="line"><a name="l11055"></a><span class="lineno">11055</span>&#160;                            <span class="keywordflow">return</span> &amp;*m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>;</div>
+<div class="line"><a name="l11056"></a><span class="lineno">11056</span>&#160;                        }</div>
+<div class="line"><a name="l11057"></a><span class="lineno">11057</span>&#160; </div>
+<div class="line"><a name="l11058"></a><span class="lineno">11058</span>&#160;                        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l11059"></a><span class="lineno">11059</span>&#160;                        {</div>
-<div class="line"><a name="l11060"></a><span class="lineno">11060</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> != m_object-&gt;m_value.object-&gt;end());</div>
-<div class="line"><a name="l11061"></a><span class="lineno">11061</span>&#160;                            <span class="keywordflow">return</span> &amp;(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a>-&gt;second);</div>
-<div class="line"><a name="l11062"></a><span class="lineno">11062</span>&#160;                        }</div>
-<div class="line"><a name="l11063"></a><span class="lineno">11063</span>&#160; </div>
-<div class="line"><a name="l11064"></a><span class="lineno">11064</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11065"></a><span class="lineno">11065</span>&#160;                        {</div>
-<div class="line"><a name="l11066"></a><span class="lineno">11066</span>&#160;                            <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> != m_object-&gt;m_value.array-&gt;end());</div>
-<div class="line"><a name="l11067"></a><span class="lineno">11067</span>&#160;                            <span class="keywordflow">return</span> &amp;*m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>;</div>
-<div class="line"><a name="l11068"></a><span class="lineno">11068</span>&#160;                        }</div>
-<div class="line"><a name="l11069"></a><span class="lineno">11069</span>&#160; </div>
-<div class="line"><a name="l11070"></a><span class="lineno">11070</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11071"></a><span class="lineno">11071</span>&#160;                        {</div>
-<div class="line"><a name="l11072"></a><span class="lineno">11072</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>.<a class="code" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a8d1a7d46b3fcd06edd034f04ededb5e4">is_begin</a>()))</div>
-<div class="line"><a name="l11073"></a><span class="lineno">11073</span>&#160;                            {</div>
-<div class="line"><a name="l11074"></a><span class="lineno">11074</span>&#160;                                <span class="keywordflow">return</span> m_object;</div>
-<div class="line"><a name="l11075"></a><span class="lineno">11075</span>&#160;                            }</div>
-<div class="line"><a name="l11076"></a><span class="lineno">11076</span>&#160; </div>
-<div class="line"><a name="l11077"></a><span class="lineno">11077</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
-<div class="line"><a name="l11078"></a><span class="lineno">11078</span>&#160;                        }</div>
-<div class="line"><a name="l11079"></a><span class="lineno">11079</span>&#160;                    }</div>
-<div class="line"><a name="l11080"></a><span class="lineno">11080</span>&#160;                }</div>
+<div class="line"><a name="l11060"></a><span class="lineno">11060</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>.<a class="code" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a8d1a7d46b3fcd06edd034f04ededb5e4">is_begin</a>()))</div>
+<div class="line"><a name="l11061"></a><span class="lineno">11061</span>&#160;                            {</div>
+<div class="line"><a name="l11062"></a><span class="lineno">11062</span>&#160;                                <span class="keywordflow">return</span> m_object;</div>
+<div class="line"><a name="l11063"></a><span class="lineno">11063</span>&#160;                            }</div>
+<div class="line"><a name="l11064"></a><span class="lineno">11064</span>&#160; </div>
+<div class="line"><a name="l11065"></a><span class="lineno">11065</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
+<div class="line"><a name="l11066"></a><span class="lineno">11066</span>&#160;                        }</div>
+<div class="line"><a name="l11067"></a><span class="lineno">11067</span>&#160;                    }</div>
+<div class="line"><a name="l11068"></a><span class="lineno">11068</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1149,29 +1149,29 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>comparison: smaller </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11208">11208</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11209"></a><span class="lineno">11209</span>&#160;                {</div>
-<div class="line"><a name="l11210"></a><span class="lineno">11210</span>&#160;                    <span class="comment">// if objects are not the same, the comparison is undefined</span></div>
-<div class="line"><a name="l11211"></a><span class="lineno">11211</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(m_object != other.m_object))</div>
-<div class="line"><a name="l11212"></a><span class="lineno">11212</span>&#160;                    {</div>
-<div class="line"><a name="l11213"></a><span class="lineno">11213</span>&#160;                        <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(212, <span class="stringliteral">&quot;cannot compare iterators of different containers&quot;</span>));</div>
-<div class="line"><a name="l11214"></a><span class="lineno">11214</span>&#160;                    }</div>
-<div class="line"><a name="l11215"></a><span class="lineno">11215</span>&#160; </div>
-<div class="line"><a name="l11216"></a><span class="lineno">11216</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11217"></a><span class="lineno">11217</span>&#160; </div>
-<div class="line"><a name="l11218"></a><span class="lineno">11218</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11219"></a><span class="lineno">11219</span>&#160;                    {</div>
-<div class="line"><a name="l11220"></a><span class="lineno">11220</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l11221"></a><span class="lineno">11221</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(213, <span class="stringliteral">&quot;cannot compare order of object iterators&quot;</span>));</div>
-<div class="line"><a name="l11222"></a><span class="lineno">11222</span>&#160; </div>
-<div class="line"><a name="l11223"></a><span class="lineno">11223</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11224"></a><span class="lineno">11224</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> &lt; other.m_it.array_iterator);</div>
-<div class="line"><a name="l11225"></a><span class="lineno">11225</span>&#160; </div>
-<div class="line"><a name="l11226"></a><span class="lineno">11226</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11227"></a><span class="lineno">11227</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> &lt; other.m_it.primitive_iterator);</div>
-<div class="line"><a name="l11228"></a><span class="lineno">11228</span>&#160;                    }</div>
-<div class="line"><a name="l11229"></a><span class="lineno">11229</span>&#160;                }</div>
-<div class="ttc" id="ajson_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01404">json.hpp:1404</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11196">11196</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11197"></a><span class="lineno">11197</span>&#160;                {</div>
+<div class="line"><a name="l11198"></a><span class="lineno">11198</span>&#160;                    <span class="comment">// if objects are not the same, the comparison is undefined</span></div>
+<div class="line"><a name="l11199"></a><span class="lineno">11199</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(m_object != other.m_object))</div>
+<div class="line"><a name="l11200"></a><span class="lineno">11200</span>&#160;                    {</div>
+<div class="line"><a name="l11201"></a><span class="lineno">11201</span>&#160;                        <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(212, <span class="stringliteral">&quot;cannot compare iterators of different containers&quot;</span>));</div>
+<div class="line"><a name="l11202"></a><span class="lineno">11202</span>&#160;                    }</div>
+<div class="line"><a name="l11203"></a><span class="lineno">11203</span>&#160; </div>
+<div class="line"><a name="l11204"></a><span class="lineno">11204</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11205"></a><span class="lineno">11205</span>&#160; </div>
+<div class="line"><a name="l11206"></a><span class="lineno">11206</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11207"></a><span class="lineno">11207</span>&#160;                    {</div>
+<div class="line"><a name="l11208"></a><span class="lineno">11208</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11209"></a><span class="lineno">11209</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(213, <span class="stringliteral">&quot;cannot compare order of object iterators&quot;</span>));</div>
+<div class="line"><a name="l11210"></a><span class="lineno">11210</span>&#160; </div>
+<div class="line"><a name="l11211"></a><span class="lineno">11211</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11212"></a><span class="lineno">11212</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> &lt; other.m_it.array_iterator);</div>
+<div class="line"><a name="l11213"></a><span class="lineno">11213</span>&#160; </div>
+<div class="line"><a name="l11214"></a><span class="lineno">11214</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l11215"></a><span class="lineno">11215</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> &lt; other.m_it.primitive_iterator);</div>
+<div class="line"><a name="l11216"></a><span class="lineno">11216</span>&#160;                    }</div>
+<div class="line"><a name="l11217"></a><span class="lineno">11217</span>&#160;                }</div>
+<div class="ttc" id="ajson_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01392">json.hpp:1392</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1204,10 +1204,10 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>comparison: less than or equal </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11235">11235</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11236"></a><span class="lineno">11236</span>&#160;                {</div>
-<div class="line"><a name="l11237"></a><span class="lineno">11237</span>&#160;                    <span class="keywordflow">return</span> !other.operator &lt; (*this);</div>
-<div class="line"><a name="l11238"></a><span class="lineno">11238</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11223">11223</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11224"></a><span class="lineno">11224</span>&#160;                {</div>
+<div class="line"><a name="l11225"></a><span class="lineno">11225</span>&#160;                    <span class="keywordflow">return</span> !other.operator &lt; (*this);</div>
+<div class="line"><a name="l11226"></a><span class="lineno">11226</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1247,12 +1247,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>const/non-const iterator </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>It is not checked whether <em>other</em> is initialized. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10913">10913</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10914"></a><span class="lineno">10914</span>&#160;                {</div>
-<div class="line"><a name="l10915"></a><span class="lineno">10915</span>&#160;                    m_object = other.m_object;</div>
-<div class="line"><a name="l10916"></a><span class="lineno">10916</span>&#160;                    m_it = other.m_it;</div>
-<div class="line"><a name="l10917"></a><span class="lineno">10917</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l10918"></a><span class="lineno">10918</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10901">10901</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10902"></a><span class="lineno">10902</span>&#160;                {</div>
+<div class="line"><a name="l10903"></a><span class="lineno">10903</span>&#160;                    m_object = other.m_object;</div>
+<div class="line"><a name="l10904"></a><span class="lineno">10904</span>&#160;                    m_it = other.m_it;</div>
+<div class="line"><a name="l10905"></a><span class="lineno">10905</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l10906"></a><span class="lineno">10906</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1292,12 +1292,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>const/non-const iterator </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>It is not checked whether <em>other</em> is initialized. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10935">10935</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10936"></a><span class="lineno">10936</span>&#160;                {</div>
-<div class="line"><a name="l10937"></a><span class="lineno">10937</span>&#160;                    m_object = other.m_object;</div>
-<div class="line"><a name="l10938"></a><span class="lineno">10938</span>&#160;                    m_it = other.m_it;</div>
-<div class="line"><a name="l10939"></a><span class="lineno">10939</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l10940"></a><span class="lineno">10940</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10923">10923</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10924"></a><span class="lineno">10924</span>&#160;                {</div>
+<div class="line"><a name="l10925"></a><span class="lineno">10925</span>&#160;                    m_object = other.m_object;</div>
+<div class="line"><a name="l10926"></a><span class="lineno">10926</span>&#160;                    m_it = other.m_it;</div>
+<div class="line"><a name="l10927"></a><span class="lineno">10927</span>&#160;                    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l10928"></a><span class="lineno">10928</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1330,28 +1330,28 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>comparison: equal </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11172">11172</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11173"></a><span class="lineno">11173</span>&#160;                {</div>
-<div class="line"><a name="l11174"></a><span class="lineno">11174</span>&#160;                    <span class="comment">// if objects are not the same, the comparison is undefined</span></div>
-<div class="line"><a name="l11175"></a><span class="lineno">11175</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(m_object != other.m_object))</div>
-<div class="line"><a name="l11176"></a><span class="lineno">11176</span>&#160;                    {</div>
-<div class="line"><a name="l11177"></a><span class="lineno">11177</span>&#160;                        <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(212, <span class="stringliteral">&quot;cannot compare iterators of different containers&quot;</span>));</div>
-<div class="line"><a name="l11178"></a><span class="lineno">11178</span>&#160;                    }</div>
-<div class="line"><a name="l11179"></a><span class="lineno">11179</span>&#160; </div>
-<div class="line"><a name="l11180"></a><span class="lineno">11180</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11181"></a><span class="lineno">11181</span>&#160; </div>
-<div class="line"><a name="l11182"></a><span class="lineno">11182</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11183"></a><span class="lineno">11183</span>&#160;                    {</div>
-<div class="line"><a name="l11184"></a><span class="lineno">11184</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l11185"></a><span class="lineno">11185</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> == other.m_it.object_iterator);</div>
-<div class="line"><a name="l11186"></a><span class="lineno">11186</span>&#160; </div>
-<div class="line"><a name="l11187"></a><span class="lineno">11187</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11188"></a><span class="lineno">11188</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> == other.m_it.array_iterator);</div>
-<div class="line"><a name="l11189"></a><span class="lineno">11189</span>&#160; </div>
-<div class="line"><a name="l11190"></a><span class="lineno">11190</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11191"></a><span class="lineno">11191</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> == other.m_it.primitive_iterator);</div>
-<div class="line"><a name="l11192"></a><span class="lineno">11192</span>&#160;                    }</div>
-<div class="line"><a name="l11193"></a><span class="lineno">11193</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11160">11160</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11161"></a><span class="lineno">11161</span>&#160;                {</div>
+<div class="line"><a name="l11162"></a><span class="lineno">11162</span>&#160;                    <span class="comment">// if objects are not the same, the comparison is undefined</span></div>
+<div class="line"><a name="l11163"></a><span class="lineno">11163</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(m_object != other.m_object))</div>
+<div class="line"><a name="l11164"></a><span class="lineno">11164</span>&#160;                    {</div>
+<div class="line"><a name="l11165"></a><span class="lineno">11165</span>&#160;                        <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(212, <span class="stringliteral">&quot;cannot compare iterators of different containers&quot;</span>));</div>
+<div class="line"><a name="l11166"></a><span class="lineno">11166</span>&#160;                    }</div>
+<div class="line"><a name="l11167"></a><span class="lineno">11167</span>&#160; </div>
+<div class="line"><a name="l11168"></a><span class="lineno">11168</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11169"></a><span class="lineno">11169</span>&#160; </div>
+<div class="line"><a name="l11170"></a><span class="lineno">11170</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11171"></a><span class="lineno">11171</span>&#160;                    {</div>
+<div class="line"><a name="l11172"></a><span class="lineno">11172</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11173"></a><span class="lineno">11173</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8cb0af3498061426c1d0a65ad6220408">object_iterator</a> == other.m_it.object_iterator);</div>
+<div class="line"><a name="l11174"></a><span class="lineno">11174</span>&#160; </div>
+<div class="line"><a name="l11175"></a><span class="lineno">11175</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11176"></a><span class="lineno">11176</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a> == other.m_it.array_iterator);</div>
+<div class="line"><a name="l11177"></a><span class="lineno">11177</span>&#160; </div>
+<div class="line"><a name="l11178"></a><span class="lineno">11178</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l11179"></a><span class="lineno">11179</span>&#160;                            <span class="keywordflow">return</span> (m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a> == other.m_it.primitive_iterator);</div>
+<div class="line"><a name="l11180"></a><span class="lineno">11180</span>&#160;                    }</div>
+<div class="line"><a name="l11181"></a><span class="lineno">11181</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1384,11 +1384,11 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>comparison: greater than </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11244">11244</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11245"></a><span class="lineno">11245</span>&#160;                {</div>
-<div class="line"><a name="l11246"></a><span class="lineno">11246</span>&#160;                    <span class="keywordflow">return</span> !<a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#ac6f71b36d7c87e427d1fee83f2600fad">operator&lt;=</a>(other);</div>
-<div class="line"><a name="l11247"></a><span class="lineno">11247</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_ac6f71b36d7c87e427d1fee83f2600fad"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#ac6f71b36d7c87e427d1fee83f2600fad">nlohmann::detail::iter_impl::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const iter_impl &amp;other) const</div><div class="ttdoc">comparison: less than or equal</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11235">json.hpp:11235</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11232">11232</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11233"></a><span class="lineno">11233</span>&#160;                {</div>
+<div class="line"><a name="l11234"></a><span class="lineno">11234</span>&#160;                    <span class="keywordflow">return</span> !<a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#ac6f71b36d7c87e427d1fee83f2600fad">operator&lt;=</a>(other);</div>
+<div class="line"><a name="l11235"></a><span class="lineno">11235</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_ac6f71b36d7c87e427d1fee83f2600fad"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#ac6f71b36d7c87e427d1fee83f2600fad">nlohmann::detail::iter_impl::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const iter_impl &amp;other) const</div><div class="ttdoc">comparison: less than or equal</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11223">json.hpp:11223</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1421,11 +1421,11 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>comparison: greater than or equal </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11253">11253</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11254"></a><span class="lineno">11254</span>&#160;                {</div>
-<div class="line"><a name="l11255"></a><span class="lineno">11255</span>&#160;                    <span class="keywordflow">return</span> !<a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a0d14cd76203e00bdcef6a64a5d055cc7">operator&lt;</a>(other);</div>
-<div class="line"><a name="l11256"></a><span class="lineno">11256</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a0d14cd76203e00bdcef6a64a5d055cc7"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a0d14cd76203e00bdcef6a64a5d055cc7">nlohmann::detail::iter_impl::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const iter_impl &amp;other) const</div><div class="ttdoc">comparison: smaller</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11208">json.hpp:11208</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11241">11241</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11242"></a><span class="lineno">11242</span>&#160;                {</div>
+<div class="line"><a name="l11243"></a><span class="lineno">11243</span>&#160;                    <span class="keywordflow">return</span> !<a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a0d14cd76203e00bdcef6a64a5d055cc7">operator&lt;</a>(other);</div>
+<div class="line"><a name="l11244"></a><span class="lineno">11244</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a0d14cd76203e00bdcef6a64a5d055cc7"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a0d14cd76203e00bdcef6a64a5d055cc7">nlohmann::detail::iter_impl::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const iter_impl &amp;other) const</div><div class="ttdoc">comparison: smaller</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11196">json.hpp:11196</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1458,33 +1458,33 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>access to successor </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11354">11354</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11355"></a><span class="lineno">11355</span>&#160;                {</div>
-<div class="line"><a name="l11356"></a><span class="lineno">11356</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l11357"></a><span class="lineno">11357</span>&#160; </div>
-<div class="line"><a name="l11358"></a><span class="lineno">11358</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
-<div class="line"><a name="l11359"></a><span class="lineno">11359</span>&#160;                    {</div>
-<div class="line"><a name="l11360"></a><span class="lineno">11360</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
-<div class="line"><a name="l11361"></a><span class="lineno">11361</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(208, <span class="stringliteral">&quot;cannot use operator[] for object iterators&quot;</span>));</div>
-<div class="line"><a name="l11362"></a><span class="lineno">11362</span>&#160; </div>
-<div class="line"><a name="l11363"></a><span class="lineno">11363</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
-<div class="line"><a name="l11364"></a><span class="lineno">11364</span>&#160;                            <span class="keywordflow">return</span> *std::next(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, n);</div>
-<div class="line"><a name="l11365"></a><span class="lineno">11365</span>&#160; </div>
-<div class="line"><a name="l11366"></a><span class="lineno">11366</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">value_t::null</a>:</div>
-<div class="line"><a name="l11367"></a><span class="lineno">11367</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
-<div class="line"><a name="l11368"></a><span class="lineno">11368</span>&#160; </div>
-<div class="line"><a name="l11369"></a><span class="lineno">11369</span>&#160;                        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l11370"></a><span class="lineno">11370</span>&#160;                        {</div>
-<div class="line"><a name="l11371"></a><span class="lineno">11371</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>.<a class="code" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#ae952990886ca1756229f916661a8af81">get_value</a>() == -n))</div>
-<div class="line"><a name="l11372"></a><span class="lineno">11372</span>&#160;                            {</div>
-<div class="line"><a name="l11373"></a><span class="lineno">11373</span>&#160;                                <span class="keywordflow">return</span> *m_object;</div>
-<div class="line"><a name="l11374"></a><span class="lineno">11374</span>&#160;                            }</div>
-<div class="line"><a name="l11375"></a><span class="lineno">11375</span>&#160; </div>
-<div class="line"><a name="l11376"></a><span class="lineno">11376</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
-<div class="line"><a name="l11377"></a><span class="lineno">11377</span>&#160;                        }</div>
-<div class="line"><a name="l11378"></a><span class="lineno">11378</span>&#160;                    }</div>
-<div class="line"><a name="l11379"></a><span class="lineno">11379</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1primitive__iterator__t_html_ae952990886ca1756229f916661a8af81"><div class="ttname"><a href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#ae952990886ca1756229f916661a8af81">nlohmann::detail::primitive_iterator_t::get_value</a></div><div class="ttdeci">constexpr difference_type get_value() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10654">json.hpp:10654</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11342">11342</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11343"></a><span class="lineno">11343</span>&#160;                {</div>
+<div class="line"><a name="l11344"></a><span class="lineno">11344</span>&#160;                    <a class="code" href="json_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_object != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l11345"></a><span class="lineno">11345</span>&#160; </div>
+<div class="line"><a name="l11346"></a><span class="lineno">11346</span>&#160;                    <span class="keywordflow">switch</span> (m_object-&gt;m_type)</div>
+<div class="line"><a name="l11347"></a><span class="lineno">11347</span>&#160;                    {</div>
+<div class="line"><a name="l11348"></a><span class="lineno">11348</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666">value_t::object</a>:</div>
+<div class="line"><a name="l11349"></a><span class="lineno">11349</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(208, <span class="stringliteral">&quot;cannot use operator[] for object iterators&quot;</span>));</div>
+<div class="line"><a name="l11350"></a><span class="lineno">11350</span>&#160; </div>
+<div class="line"><a name="l11351"></a><span class="lineno">11351</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">value_t::array</a>:</div>
+<div class="line"><a name="l11352"></a><span class="lineno">11352</span>&#160;                            <span class="keywordflow">return</span> *std::next(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d">array_iterator</a>, n);</div>
+<div class="line"><a name="l11353"></a><span class="lineno">11353</span>&#160; </div>
+<div class="line"><a name="l11354"></a><span class="lineno">11354</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd">value_t::null</a>:</div>
+<div class="line"><a name="l11355"></a><span class="lineno">11355</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
+<div class="line"><a name="l11356"></a><span class="lineno">11356</span>&#160; </div>
+<div class="line"><a name="l11357"></a><span class="lineno">11357</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l11358"></a><span class="lineno">11358</span>&#160;                        {</div>
+<div class="line"><a name="l11359"></a><span class="lineno">11359</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="json_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(m_it.<a class="code" href="structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8">primitive_iterator</a>.<a class="code" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#ae952990886ca1756229f916661a8af81">get_value</a>() == -n))</div>
+<div class="line"><a name="l11360"></a><span class="lineno">11360</span>&#160;                            {</div>
+<div class="line"><a name="l11361"></a><span class="lineno">11361</span>&#160;                                <span class="keywordflow">return</span> *m_object;</div>
+<div class="line"><a name="l11362"></a><span class="lineno">11362</span>&#160;                            }</div>
+<div class="line"><a name="l11363"></a><span class="lineno">11363</span>&#160; </div>
+<div class="line"><a name="l11364"></a><span class="lineno">11364</span>&#160;                            <a class="code" href="json_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code" href="classnlohmann_1_1detail_1_1invalid__iterator.html#a4e849260a3caa1b288c7e619130c6c09">invalid_iterator::create</a>(214, <span class="stringliteral">&quot;cannot get value&quot;</span>));</div>
+<div class="line"><a name="l11365"></a><span class="lineno">11365</span>&#160;                        }</div>
+<div class="line"><a name="l11366"></a><span class="lineno">11366</span>&#160;                    }</div>
+<div class="line"><a name="l11367"></a><span class="lineno">11367</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1primitive__iterator__t_html_ae952990886ca1756229f916661a8af81"><div class="ttname"><a href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#ae952990886ca1756229f916661a8af81">nlohmann::detail::primitive_iterator_t::get_value</a></div><div class="ttdeci">constexpr difference_type get_value() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10642">json.hpp:10642</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1516,11 +1516,11 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>return the value of an iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11401">11401</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11402"></a><span class="lineno">11402</span>&#160;                {</div>
-<div class="line"><a name="l11403"></a><span class="lineno">11403</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a5ca57856d9bba54a5fc51cee891de827">operator*</a>();</div>
-<div class="line"><a name="l11404"></a><span class="lineno">11404</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a5ca57856d9bba54a5fc51cee891de827"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a5ca57856d9bba54a5fc51cee891de827">nlohmann::detail::iter_impl::operator*</a></div><div class="ttdeci">reference operator*() const</div><div class="ttdoc">return a reference to the value pointed to by the iterator</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11015">json.hpp:11015</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11389">11389</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11390"></a><span class="lineno">11390</span>&#160;                {</div>
+<div class="line"><a name="l11391"></a><span class="lineno">11391</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1detail_1_1iter__impl.html#a5ca57856d9bba54a5fc51cee891de827">operator*</a>();</div>
+<div class="line"><a name="l11392"></a><span class="lineno">11392</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1iter__impl_html_a5ca57856d9bba54a5fc51cee891de827"><div class="ttname"><a href="classnlohmann_1_1detail_1_1iter__impl.html#a5ca57856d9bba54a5fc51cee891de827">nlohmann::detail::iter_impl::operator*</a></div><div class="ttdeci">reference operator*() const</div><div class="ttdoc">return a reference to the value pointed to by the iterator</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l11003">json.hpp:11003</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1564,12 +1564,12 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>addition of distance and iterator </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The iterator is initialized; i.e. <code>m_object != nullptr</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11311">11311</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l11312"></a><span class="lineno">11312</span>&#160;                {</div>
-<div class="line"><a name="l11313"></a><span class="lineno">11313</span>&#160;                    <span class="keyword">auto</span> result = it;</div>
-<div class="line"><a name="l11314"></a><span class="lineno">11314</span>&#160;                    result += i;</div>
-<div class="line"><a name="l11315"></a><span class="lineno">11315</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l11316"></a><span class="lineno">11316</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l11299">11299</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l11300"></a><span class="lineno">11300</span>&#160;                {</div>
+<div class="line"><a name="l11301"></a><span class="lineno">11301</span>&#160;                    <span class="keyword">auto</span> result = it;</div>
+<div class="line"><a name="l11302"></a><span class="lineno">11302</span>&#160;                    result += i;</div>
+<div class="line"><a name="l11303"></a><span class="lineno">11303</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l11304"></a><span class="lineno">11304</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>

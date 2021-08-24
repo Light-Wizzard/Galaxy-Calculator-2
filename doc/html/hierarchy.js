@@ -532,7 +532,7 @@ var hierarchy =
     [ "QObject", null, [
       [ "MyLocalization", "classMyLocalization.html", null ],
       [ "MyOrgSettings", "classMyOrgSettings.html", null ],
-      [ "TrinaryMath", "classTrinaryMath.html", null ]
+      [ "MyTrinaryMath", "classMyTrinaryMath.html", null ]
     ] ],
     [ "exprtk::details::range_data_type< T >", "structexprtk_1_1details_1_1range__data__type.html", null ],
     [ "exprtk::details::range_interface< T >", "classexprtk_1_1details_1_1range__interface.html", [
@@ -618,6 +618,7 @@ var hierarchy =
     [ "nlohmann::detail::to_json_fn", "structnlohmann_1_1detail_1_1to__json__fn.html", null ],
     [ "exprtk::lexer::token", "structexprtk_1_1lexer_1_1token.html", null ],
     [ "TranslationFiles", "classTranslationFiles.html", null ],
+    [ "TrinaryMath", "classTrinaryMath.html", null ],
     [ "std::true_type", null, [
       [ "nlohmann::detail::conjunction< std::is_constructible< T1, Args >... >", "structnlohmann_1_1detail_1_1conjunction.html", [
         [ "nlohmann::detail::is_constructible_tuple< T1, std::tuple< Args... > >", "structnlohmann_1_1detail_1_1is__constructible__tuple_3_01T1_00_01std_1_1tuple_3_01Args_8_8_8_01_4_01_4.html", null ]

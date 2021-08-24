@@ -96,26 +96,27 @@ $(document).ready(function(){initNavTree('pyutil_8hpp_source.html',''); initResi
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;QtGlobal&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pythoninclude_8hpp.html">src/3rdparty/cpython/pythoninclude.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">   29</a></span>&#160;<span class="preprocessor">#define PyNull NULL</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePyUtil.html">PyUtil</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#a112672a93f7350aa999e11be3fb59e0b">initializePython</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#a8f10b4f8d4ee3960f6c92ead6eeda9b1">finalizePython</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="namespacePyUtil.html#ab67574354f01c64f9e79d32b117745e1">getModuleDirectories</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#ae6b995cb9d28ff6a9d559ff18e57286b">setModuleDirectories</a>(std::vector&lt;std::string&gt; dirs);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#aa1fe4a3d83d5ef1fd1e6c149491b94f7">addModuleDirectory</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::string <a class="code" href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">getError</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//QCALC_PYUTIL_HPP</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pythoninclude_8hpp.html">pythoninclude.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="pyutil_8hpp.html#aa1749f72a7b7a2fe2b45eb276ed9ba4d">   30</a></span>&#160;<span class="preprocessor">#define PyNull NULL</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePyUtil.html">PyUtil</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#a112672a93f7350aa999e11be3fb59e0b">initializePython</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#a8f10b4f8d4ee3960f6c92ead6eeda9b1">finalizePython</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="namespacePyUtil.html#ab67574354f01c64f9e79d32b117745e1">getModuleDirectories</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#ae6b995cb9d28ff6a9d559ff18e57286b">setModuleDirectories</a>(std::vector&lt;std::string&gt; dirs);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacePyUtil.html#aa1fe4a3d83d5ef1fd1e6c149491b94f7">addModuleDirectory</a>(<span class="keyword">const</span> std::string &amp;directory);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::string <a class="code" href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">getError</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//QCALC_PYUTIL_HPP</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="ttc" id="anamespacePyUtil_html"><div class="ttname"><a href="namespacePyUtil.html">PyUtil</a></div><div class="ttdoc">PyUtil.</div></div>
 <div class="ttc" id="anamespacePyUtil_html_a024838471c0722866e9607acd2d49b79"><div class="ttname"><a href="namespacePyUtil.html#a024838471c0722866e9607acd2d49b79">PyUtil::getError</a></div><div class="ttdeci">std::string getError()</div><div class="ttdoc">get Error. getError</div><div class="ttdef"><b>Definition:</b> <a href="pyutil_8cpp_source.html#l00081">pyutil.cpp:81</a></div></div>
 <div class="ttc" id="anamespacePyUtil_html_a112672a93f7350aa999e11be3fb59e0b"><div class="ttname"><a href="namespacePyUtil.html#a112672a93f7350aa999e11be3fb59e0b">PyUtil::initializePython</a></div><div class="ttdeci">void initializePython()</div><div class="ttdoc">initialize Python. initializePython</div><div class="ttdef"><b>Definition:</b> <a href="pyutil_8cpp_source.html#l00026">pyutil.cpp:26</a></div></div>

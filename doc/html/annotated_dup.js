@@ -489,6 +489,7 @@ var annotated_dup =
     [ "MyLocalization", "classMyLocalization.html", "classMyLocalization" ],
     [ "MyOrgSettings", "classMyOrgSettings.html", "classMyOrgSettings" ],
     [ "MySqlDbtModel", "classMySqlDbtModel.html", "classMySqlDbtModel" ],
+    [ "MyTrinaryMath", "classMyTrinaryMath.html", "classMyTrinaryMath" ],
     [ "Observable", "classObservable.html", "classObservable" ],
     [ "PyMpRealObject", "structPyMpRealObject.html", "structPyMpRealObject" ],
     [ "Script", "structScript.html", "structScript" ],
@@ -499,6 +500,6 @@ var annotated_dup =
     [ "SimpleCrypt", "classSimpleCrypt.html", "classSimpleCrypt" ],
     [ "SymbolTable", "classSymbolTable.html", "classSymbolTable" ],
     [ "TranslationFiles", "classTranslationFiles.html", null ],
-    [ "TrinaryMath", "classTrinaryMath.html", "classTrinaryMath" ],
+    [ "TrinaryMath", "classTrinaryMath.html", null ],
     [ "UIDGenerator", "classUIDGenerator.html", "classUIDGenerator" ]
 ];

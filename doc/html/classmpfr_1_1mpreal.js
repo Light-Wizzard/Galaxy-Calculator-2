@@ -223,7 +223,6 @@ var classmpfr_1_1mpreal =
     [ "pow", "classmpfr_1_1mpreal.html#ab307ff53337bdf1ba9ad90f3cbc7034c", null ],
     [ "pow", "classmpfr_1_1mpreal.html#adbe2050d3b632bbbbc2fedecea82e038", null ],
     [ "random", "classmpfr_1_1mpreal.html#a77253617c63bff689788ea87fb7bc12f", null ],
-    [ "random2", "classmpfr_1_1mpreal.html#af7d51c2394ee29d49701d21d18807f63", null ],
     [ "rec_sqrt", "classmpfr_1_1mpreal.html#a8396cfa2553c7288137831e3237fcda5", null ],
     [ "rem", "classmpfr_1_1mpreal.html#a2461f52f3253c1e1e808f781f392164b", null ],
     [ "remainder", "classmpfr_1_1mpreal.html#aca7d313d777a289692f4d0f73ae09018", null ],

@@ -92,11 +92,11 @@ $(document).ready(function(){initNavTree('scripthandler_8hpp_source.html',''); i
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef QCALC_SCRIPTHANDLER_HPP</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define QCALC_SCRIPTHANDLER_HPP</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="arithmetictype_8hpp.html">src/3rdparty/math/arithmetictype.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../math/arithmetictype.hpp&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">struct </span>_object;</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="scripthandler_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">   30</a></span>&#160;<span class="keyword">typedef</span> _object <a class="code" href="scripthandler_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a>;</div>
@@ -108,9 +108,8 @@ $(document).ready(function(){initNavTree('scripthandler_8hpp_source.html',''); i
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//QCALC_SCRIPTHANDLER_HPP</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="ttc" id="aarithmetictype_8hpp_html"><div class="ttname"><a href="arithmetictype_8hpp.html">arithmetictype.hpp</a></div></div>
 <div class="ttc" id="aclassScriptHandler_html"><div class="ttname"><a href="classScriptHandler.html">ScriptHandler</a></div><div class="ttdoc">Script Handler.</div><div class="ttdef"><b>Definition:</b> <a href="scripthandler_8hpp_source.html#l00035">scripthandler.hpp:36</a></div></div>
-<div class="ttc" id="aclassScriptHandler_html_af840a31b0c007240c72d40b103f1a732"><div class="ttname"><a href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">ScriptHandler::run</a></div><div class="ttdeci">static ArithmeticType run(PyObject *callback, const std::vector&lt; ArithmeticType &gt; &amp;args)</div><div class="ttdoc">run. run</div><div class="ttdef"><b>Definition:</b> <a href="scripthandler_8cpp_source.html#l00029">scripthandler.cpp:29</a></div></div>
+<div class="ttc" id="aclassScriptHandler_html_af840a31b0c007240c72d40b103f1a732"><div class="ttname"><a href="classScriptHandler.html#af840a31b0c007240c72d40b103f1a732">ScriptHandler::run</a></div><div class="ttdeci">static ArithmeticType run(PyObject *callback, const std::vector&lt; ArithmeticType &gt; &amp;args)</div><div class="ttdoc">run. run</div><div class="ttdef"><b>Definition:</b> <a href="scripthandler_8cpp_source.html#l00030">scripthandler.cpp:30</a></div></div>
 <div class="ttc" id="aclassmpfr_1_1mpreal_html"><div class="ttname"><a href="classmpfr_1_1mpreal.html">mpfr::mpreal</a></div><div class="ttdoc">mpreal.</div><div class="ttdef"><b>Definition:</b> <a href="mpreal_8h_source.html#l00153">mpreal.h:154</a></div></div>
 <div class="ttc" id="ascripthandler_8hpp_html_ae19630c1f4ca6d5236b30719d9140013"><div class="ttname"><a href="scripthandler_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a></div><div class="ttdeci">_object PyObject</div><div class="ttdef"><b>Definition:</b> <a href="scripthandler_8hpp_source.html#l00030">scripthandler.hpp:29</a></div></div>
 <div class="ttc" id="asymboltableconverter_8hpp_html_ae19630c1f4ca6d5236b30719d9140013"><div class="ttname"><a href="symboltableconverter_8hpp.html#ae19630c1f4ca6d5236b30719d9140013">PyObject</a></div><div class="ttdeci">_object PyObject</div><div class="ttdef"><b>Definition:</b> <a href="symboltableconverter_8hpp_source.html#l00024">symboltableconverter.hpp:23</a></div></div>

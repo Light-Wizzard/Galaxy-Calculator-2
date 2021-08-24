@@ -119,7 +119,7 @@ class nlohmann::detail::parser&lt; BasicJsonType, InputAdapterType &gt;</h3>
 <p>syntax analysis </p>
 <p>This class implements a recursive descent parser. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10170">10170</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10158">10158</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a33b852bf63cba58310d9c0d1242cfb12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33b852bf63cba58310d9c0d1242cfb12">&#9670;&nbsp;</a></span>parser()</h2>
@@ -171,14 +171,14 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 
 <p>a parser reading from an input adapter </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10181">10181</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10185"></a><span class="lineno">10185</span>&#160;                    : callback(cb)</div>
-<div class="line"><a name="l10186"></a><span class="lineno">10186</span>&#160;                    , m_lexer(std::move(adapter), skip_comments)</div>
-<div class="line"><a name="l10187"></a><span class="lineno">10187</span>&#160;                    , allow_exceptions(allow_exceptions_)</div>
-<div class="line"><a name="l10188"></a><span class="lineno">10188</span>&#160;                {</div>
-<div class="line"><a name="l10189"></a><span class="lineno">10189</span>&#160;                    <span class="comment">// read first token</span></div>
-<div class="line"><a name="l10190"></a><span class="lineno">10190</span>&#160;                    get_token();</div>
-<div class="line"><a name="l10191"></a><span class="lineno">10191</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10169">10169</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10173"></a><span class="lineno">10173</span>&#160;                    : callback(cb)</div>
+<div class="line"><a name="l10174"></a><span class="lineno">10174</span>&#160;                    , m_lexer(std::move(adapter), skip_comments)</div>
+<div class="line"><a name="l10175"></a><span class="lineno">10175</span>&#160;                    , allow_exceptions(allow_exceptions_)</div>
+<div class="line"><a name="l10176"></a><span class="lineno">10176</span>&#160;                {</div>
+<div class="line"><a name="l10177"></a><span class="lineno">10177</span>&#160;                    <span class="comment">// read first token</span></div>
+<div class="line"><a name="l10178"></a><span class="lineno">10178</span>&#160;                    get_token();</div>
+<div class="line"><a name="l10179"></a><span class="lineno">10179</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -218,12 +218,12 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>whether the input is a proper JSON text </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10264">10264</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10265"></a><span class="lineno">10265</span>&#160;                {</div>
-<div class="line"><a name="l10266"></a><span class="lineno">10266</span>&#160;                    json_sax_acceptor&lt;BasicJsonType&gt; sax_acceptor;</div>
-<div class="line"><a name="l10267"></a><span class="lineno">10267</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1detail_1_1parser.html#a073b8313a5194aac3a7d5da0d935788c">sax_parse</a>(&amp;sax_acceptor, strict);</div>
-<div class="line"><a name="l10268"></a><span class="lineno">10268</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1parser_html_a073b8313a5194aac3a7d5da0d935788c"><div class="ttname"><a href="classnlohmann_1_1detail_1_1parser.html#a073b8313a5194aac3a7d5da0d935788c">nlohmann::detail::parser::sax_parse</a></div><div class="ttdeci">bool sax_parse(SAX *sax, const bool strict=true)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10272">json.hpp:10272</a></div></div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10252">10252</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10253"></a><span class="lineno">10253</span>&#160;                {</div>
+<div class="line"><a name="l10254"></a><span class="lineno">10254</span>&#160;                    json_sax_acceptor&lt;BasicJsonType&gt; sax_acceptor;</div>
+<div class="line"><a name="l10255"></a><span class="lineno">10255</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="classnlohmann_1_1detail_1_1parser.html#a073b8313a5194aac3a7d5da0d935788c">sax_parse</a>(&amp;sax_acceptor, strict);</div>
+<div class="line"><a name="l10256"></a><span class="lineno">10256</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1parser_html_a073b8313a5194aac3a7d5da0d935788c"><div class="ttname"><a href="classnlohmann_1_1detail_1_1parser.html#a073b8313a5194aac3a7d5da0d935788c">nlohmann::detail::parser::sax_parse</a></div><div class="ttdeci">bool sax_parse(SAX *sax, const bool strict=true)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l10260">json.hpp:10260</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -280,63 +280,63 @@ template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10203">10203</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10204"></a><span class="lineno">10204</span>&#160;                {</div>
-<div class="line"><a name="l10205"></a><span class="lineno">10205</span>&#160;                    <span class="keywordflow">if</span> (callback)</div>
-<div class="line"><a name="l10206"></a><span class="lineno">10206</span>&#160;                    {</div>
-<div class="line"><a name="l10207"></a><span class="lineno">10207</span>&#160;                        json_sax_dom_callback_parser&lt;BasicJsonType&gt; sdp(result, callback, allow_exceptions);</div>
-<div class="line"><a name="l10208"></a><span class="lineno">10208</span>&#160;                        sax_parse_internal(&amp;sdp);</div>
-<div class="line"><a name="l10209"></a><span class="lineno">10209</span>&#160;                        result.assert_invariant();</div>
-<div class="line"><a name="l10210"></a><span class="lineno">10210</span>&#160; </div>
-<div class="line"><a name="l10211"></a><span class="lineno">10211</span>&#160;                        <span class="comment">// in strict mode, input must be completely read</span></div>
-<div class="line"><a name="l10212"></a><span class="lineno">10212</span>&#160;                        <span class="keywordflow">if</span> (strict &amp;&amp; (get_token() != token_type::end_of_input))</div>
-<div class="line"><a name="l10213"></a><span class="lineno">10213</span>&#160;                        {</div>
-<div class="line"><a name="l10214"></a><span class="lineno">10214</span>&#160;                            sdp.parse_error(m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
-<div class="line"><a name="l10215"></a><span class="lineno">10215</span>&#160;                                            m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">get_token_string</a>(),</div>
-<div class="line"><a name="l10216"></a><span class="lineno">10216</span>&#160;                                            <a class="code" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">parse_error::create</a>(101, m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
-<div class="line"><a name="l10217"></a><span class="lineno">10217</span>&#160;                                                                exception_message(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>)));</div>
-<div class="line"><a name="l10218"></a><span class="lineno">10218</span>&#160;                        }</div>
-<div class="line"><a name="l10219"></a><span class="lineno">10219</span>&#160; </div>
-<div class="line"><a name="l10220"></a><span class="lineno">10220</span>&#160;                        <span class="comment">// in case of an error, return discarded value</span></div>
-<div class="line"><a name="l10221"></a><span class="lineno">10221</span>&#160;                        <span class="keywordflow">if</span> (sdp.is_errored())</div>
-<div class="line"><a name="l10222"></a><span class="lineno">10222</span>&#160;                        {</div>
-<div class="line"><a name="l10223"></a><span class="lineno">10223</span>&#160;                            result = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>;</div>
-<div class="line"><a name="l10224"></a><span class="lineno">10224</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l10225"></a><span class="lineno">10225</span>&#160;                        }</div>
-<div class="line"><a name="l10226"></a><span class="lineno">10226</span>&#160; </div>
-<div class="line"><a name="l10227"></a><span class="lineno">10227</span>&#160;                        <span class="comment">// set top-level value to null if it was discarded by the callback</span></div>
-<div class="line"><a name="l10228"></a><span class="lineno">10228</span>&#160;                        <span class="comment">// function</span></div>
-<div class="line"><a name="l10229"></a><span class="lineno">10229</span>&#160;                        <span class="keywordflow">if</span> (result.is_discarded())</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10191">10191</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10192"></a><span class="lineno">10192</span>&#160;                {</div>
+<div class="line"><a name="l10193"></a><span class="lineno">10193</span>&#160;                    <span class="keywordflow">if</span> (callback)</div>
+<div class="line"><a name="l10194"></a><span class="lineno">10194</span>&#160;                    {</div>
+<div class="line"><a name="l10195"></a><span class="lineno">10195</span>&#160;                        json_sax_dom_callback_parser&lt;BasicJsonType&gt; sdp(result, callback, allow_exceptions);</div>
+<div class="line"><a name="l10196"></a><span class="lineno">10196</span>&#160;                        sax_parse_internal(&amp;sdp);</div>
+<div class="line"><a name="l10197"></a><span class="lineno">10197</span>&#160;                        result.assert_invariant();</div>
+<div class="line"><a name="l10198"></a><span class="lineno">10198</span>&#160; </div>
+<div class="line"><a name="l10199"></a><span class="lineno">10199</span>&#160;                        <span class="comment">// in strict mode, input must be completely read</span></div>
+<div class="line"><a name="l10200"></a><span class="lineno">10200</span>&#160;                        <span class="keywordflow">if</span> (strict &amp;&amp; (get_token() != token_type::end_of_input))</div>
+<div class="line"><a name="l10201"></a><span class="lineno">10201</span>&#160;                        {</div>
+<div class="line"><a name="l10202"></a><span class="lineno">10202</span>&#160;                            sdp.parse_error(m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
+<div class="line"><a name="l10203"></a><span class="lineno">10203</span>&#160;                                            m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">get_token_string</a>(),</div>
+<div class="line"><a name="l10204"></a><span class="lineno">10204</span>&#160;                                            <a class="code" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">parse_error::create</a>(101, m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
+<div class="line"><a name="l10205"></a><span class="lineno">10205</span>&#160;                                                                exception_message(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>)));</div>
+<div class="line"><a name="l10206"></a><span class="lineno">10206</span>&#160;                        }</div>
+<div class="line"><a name="l10207"></a><span class="lineno">10207</span>&#160; </div>
+<div class="line"><a name="l10208"></a><span class="lineno">10208</span>&#160;                        <span class="comment">// in case of an error, return discarded value</span></div>
+<div class="line"><a name="l10209"></a><span class="lineno">10209</span>&#160;                        <span class="keywordflow">if</span> (sdp.is_errored())</div>
+<div class="line"><a name="l10210"></a><span class="lineno">10210</span>&#160;                        {</div>
+<div class="line"><a name="l10211"></a><span class="lineno">10211</span>&#160;                            result = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>;</div>
+<div class="line"><a name="l10212"></a><span class="lineno">10212</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l10213"></a><span class="lineno">10213</span>&#160;                        }</div>
+<div class="line"><a name="l10214"></a><span class="lineno">10214</span>&#160; </div>
+<div class="line"><a name="l10215"></a><span class="lineno">10215</span>&#160;                        <span class="comment">// set top-level value to null if it was discarded by the callback</span></div>
+<div class="line"><a name="l10216"></a><span class="lineno">10216</span>&#160;                        <span class="comment">// function</span></div>
+<div class="line"><a name="l10217"></a><span class="lineno">10217</span>&#160;                        <span class="keywordflow">if</span> (result.is_discarded())</div>
+<div class="line"><a name="l10218"></a><span class="lineno">10218</span>&#160;                        {</div>
+<div class="line"><a name="l10219"></a><span class="lineno">10219</span>&#160;                            result = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l10220"></a><span class="lineno">10220</span>&#160;                        }</div>
+<div class="line"><a name="l10221"></a><span class="lineno">10221</span>&#160;                    }</div>
+<div class="line"><a name="l10222"></a><span class="lineno">10222</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l10223"></a><span class="lineno">10223</span>&#160;                    {</div>
+<div class="line"><a name="l10224"></a><span class="lineno">10224</span>&#160;                        json_sax_dom_parser&lt;BasicJsonType&gt; sdp(result, allow_exceptions);</div>
+<div class="line"><a name="l10225"></a><span class="lineno">10225</span>&#160;                        sax_parse_internal(&amp;sdp);</div>
+<div class="line"><a name="l10226"></a><span class="lineno">10226</span>&#160;                        result.assert_invariant();</div>
+<div class="line"><a name="l10227"></a><span class="lineno">10227</span>&#160; </div>
+<div class="line"><a name="l10228"></a><span class="lineno">10228</span>&#160;                        <span class="comment">// in strict mode, input must be completely read</span></div>
+<div class="line"><a name="l10229"></a><span class="lineno">10229</span>&#160;                        <span class="keywordflow">if</span> (strict &amp;&amp; (get_token() != token_type::end_of_input))</div>
 <div class="line"><a name="l10230"></a><span class="lineno">10230</span>&#160;                        {</div>
-<div class="line"><a name="l10231"></a><span class="lineno">10231</span>&#160;                            result = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l10232"></a><span class="lineno">10232</span>&#160;                        }</div>
-<div class="line"><a name="l10233"></a><span class="lineno">10233</span>&#160;                    }</div>
-<div class="line"><a name="l10234"></a><span class="lineno">10234</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l10235"></a><span class="lineno">10235</span>&#160;                    {</div>
-<div class="line"><a name="l10236"></a><span class="lineno">10236</span>&#160;                        json_sax_dom_parser&lt;BasicJsonType&gt; sdp(result, allow_exceptions);</div>
-<div class="line"><a name="l10237"></a><span class="lineno">10237</span>&#160;                        sax_parse_internal(&amp;sdp);</div>
-<div class="line"><a name="l10238"></a><span class="lineno">10238</span>&#160;                        result.assert_invariant();</div>
-<div class="line"><a name="l10239"></a><span class="lineno">10239</span>&#160; </div>
-<div class="line"><a name="l10240"></a><span class="lineno">10240</span>&#160;                        <span class="comment">// in strict mode, input must be completely read</span></div>
-<div class="line"><a name="l10241"></a><span class="lineno">10241</span>&#160;                        <span class="keywordflow">if</span> (strict &amp;&amp; (get_token() != token_type::end_of_input))</div>
-<div class="line"><a name="l10242"></a><span class="lineno">10242</span>&#160;                        {</div>
-<div class="line"><a name="l10243"></a><span class="lineno">10243</span>&#160;                            sdp.parse_error(m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
-<div class="line"><a name="l10244"></a><span class="lineno">10244</span>&#160;                                            m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">get_token_string</a>(),</div>
-<div class="line"><a name="l10245"></a><span class="lineno">10245</span>&#160;                                            <a class="code" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">parse_error::create</a>(101, m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
-<div class="line"><a name="l10246"></a><span class="lineno">10246</span>&#160;                                                                exception_message(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>)));</div>
-<div class="line"><a name="l10247"></a><span class="lineno">10247</span>&#160;                        }</div>
-<div class="line"><a name="l10248"></a><span class="lineno">10248</span>&#160; </div>
-<div class="line"><a name="l10249"></a><span class="lineno">10249</span>&#160;                        <span class="comment">// in case of an error, return discarded value</span></div>
-<div class="line"><a name="l10250"></a><span class="lineno">10250</span>&#160;                        <span class="keywordflow">if</span> (sdp.is_errored())</div>
-<div class="line"><a name="l10251"></a><span class="lineno">10251</span>&#160;                        {</div>
-<div class="line"><a name="l10252"></a><span class="lineno">10252</span>&#160;                            result = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>;</div>
-<div class="line"><a name="l10253"></a><span class="lineno">10253</span>&#160;                            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l10254"></a><span class="lineno">10254</span>&#160;                        }</div>
-<div class="line"><a name="l10255"></a><span class="lineno">10255</span>&#160;                    }</div>
-<div class="line"><a name="l10256"></a><span class="lineno">10256</span>&#160;                }</div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a948c80b8bd8a3095b544e4655e1ca37e"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">nlohmann::detail::lexer::get_position</a></div><div class="ttdeci">constexpr position_t get_position() const noexcept</div><div class="ttdoc">return position of last read token</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07314">json.hpp:7314</a></div></div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_ae000b7571480e528dee4b281f63d5b15"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">nlohmann::detail::lexer::get_token_string</a></div><div class="ttdeci">std::string get_token_string() const</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07322">json.hpp:7322</a></div></div>
-<div class="ttc" id="aclassnlohmann_1_1detail_1_1parse__error_html_a137ea4d27de45d8a844fd13451d40f3d"><div class="ttname"><a href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">nlohmann::detail::parse_error::create</a></div><div class="ttdeci">static parse_error create(int id_, const position_t &amp;pos, const std::string &amp;what_arg)</div><div class="ttdoc">create a parse error exception</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02439">json.hpp:2439</a></div></div>
+<div class="line"><a name="l10231"></a><span class="lineno">10231</span>&#160;                            sdp.parse_error(m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
+<div class="line"><a name="l10232"></a><span class="lineno">10232</span>&#160;                                            m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">get_token_string</a>(),</div>
+<div class="line"><a name="l10233"></a><span class="lineno">10233</span>&#160;                                            <a class="code" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">parse_error::create</a>(101, m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
+<div class="line"><a name="l10234"></a><span class="lineno">10234</span>&#160;                                                                exception_message(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>)));</div>
+<div class="line"><a name="l10235"></a><span class="lineno">10235</span>&#160;                        }</div>
+<div class="line"><a name="l10236"></a><span class="lineno">10236</span>&#160; </div>
+<div class="line"><a name="l10237"></a><span class="lineno">10237</span>&#160;                        <span class="comment">// in case of an error, return discarded value</span></div>
+<div class="line"><a name="l10238"></a><span class="lineno">10238</span>&#160;                        <span class="keywordflow">if</span> (sdp.is_errored())</div>
+<div class="line"><a name="l10239"></a><span class="lineno">10239</span>&#160;                        {</div>
+<div class="line"><a name="l10240"></a><span class="lineno">10240</span>&#160;                            result = <a class="code" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>;</div>
+<div class="line"><a name="l10241"></a><span class="lineno">10241</span>&#160;                            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l10242"></a><span class="lineno">10242</span>&#160;                        }</div>
+<div class="line"><a name="l10243"></a><span class="lineno">10243</span>&#160;                    }</div>
+<div class="line"><a name="l10244"></a><span class="lineno">10244</span>&#160;                }</div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_a948c80b8bd8a3095b544e4655e1ca37e"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">nlohmann::detail::lexer::get_position</a></div><div class="ttdeci">constexpr position_t get_position() const noexcept</div><div class="ttdoc">return position of last read token</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07302">json.hpp:7302</a></div></div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1lexer_html_ae000b7571480e528dee4b281f63d5b15"><div class="ttname"><a href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">nlohmann::detail::lexer::get_token_string</a></div><div class="ttdeci">std::string get_token_string() const</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l07310">json.hpp:7310</a></div></div>
+<div class="ttc" id="aclassnlohmann_1_1detail_1_1parse__error_html_a137ea4d27de45d8a844fd13451d40f3d"><div class="ttname"><a href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">nlohmann::detail::parse_error::create</a></div><div class="ttdeci">static parse_error create(int id_, const position_t &amp;pos, const std::string &amp;what_arg)</div><div class="ttdoc">create a parse error exception</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02427">json.hpp:2427</a></div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46">nlohmann::detail::value_t::discarded</a></div><div class="ttdeci">@ discarded</div><div class="ttdoc">discarded by the parser callback function</div></div>
 </div><!-- fragment -->
 </div>
@@ -379,22 +379,22 @@ template&lt;typename SAX &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10272">10272</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l10273"></a><span class="lineno">10273</span>&#160;                {</div>
-<div class="line"><a name="l10274"></a><span class="lineno">10274</span>&#160;                    (void)detail::is_sax_static_asserts&lt;SAX, BasicJsonType&gt; {};</div>
-<div class="line"><a name="l10275"></a><span class="lineno">10275</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">bool</span> result = sax_parse_internal(sax);</div>
-<div class="line"><a name="l10276"></a><span class="lineno">10276</span>&#160; </div>
-<div class="line"><a name="l10277"></a><span class="lineno">10277</span>&#160;                    <span class="comment">// strict mode: next byte must be EOF</span></div>
-<div class="line"><a name="l10278"></a><span class="lineno">10278</span>&#160;                    <span class="keywordflow">if</span> (result &amp;&amp; strict &amp;&amp; (get_token() != token_type::end_of_input))</div>
-<div class="line"><a name="l10279"></a><span class="lineno">10279</span>&#160;                    {</div>
-<div class="line"><a name="l10280"></a><span class="lineno">10280</span>&#160;                        <span class="keywordflow">return</span> sax-&gt;parse_error(m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
-<div class="line"><a name="l10281"></a><span class="lineno">10281</span>&#160;                                                m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">get_token_string</a>(),</div>
-<div class="line"><a name="l10282"></a><span class="lineno">10282</span>&#160;                                                <a class="code" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">parse_error::create</a>(101, m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
-<div class="line"><a name="l10283"></a><span class="lineno">10283</span>&#160;                                                                    exception_message(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>)));</div>
-<div class="line"><a name="l10284"></a><span class="lineno">10284</span>&#160;                    }</div>
-<div class="line"><a name="l10285"></a><span class="lineno">10285</span>&#160; </div>
-<div class="line"><a name="l10286"></a><span class="lineno">10286</span>&#160;                    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l10287"></a><span class="lineno">10287</span>&#160;                }</div>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l10260">10260</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l10261"></a><span class="lineno">10261</span>&#160;                {</div>
+<div class="line"><a name="l10262"></a><span class="lineno">10262</span>&#160;                    (void)detail::is_sax_static_asserts&lt;SAX, BasicJsonType&gt; {};</div>
+<div class="line"><a name="l10263"></a><span class="lineno">10263</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">bool</span> result = sax_parse_internal(sax);</div>
+<div class="line"><a name="l10264"></a><span class="lineno">10264</span>&#160; </div>
+<div class="line"><a name="l10265"></a><span class="lineno">10265</span>&#160;                    <span class="comment">// strict mode: next byte must be EOF</span></div>
+<div class="line"><a name="l10266"></a><span class="lineno">10266</span>&#160;                    <span class="keywordflow">if</span> (result &amp;&amp; strict &amp;&amp; (get_token() != token_type::end_of_input))</div>
+<div class="line"><a name="l10267"></a><span class="lineno">10267</span>&#160;                    {</div>
+<div class="line"><a name="l10268"></a><span class="lineno">10268</span>&#160;                        <span class="keywordflow">return</span> sax-&gt;parse_error(m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
+<div class="line"><a name="l10269"></a><span class="lineno">10269</span>&#160;                                                m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#ae000b7571480e528dee4b281f63d5b15">get_token_string</a>(),</div>
+<div class="line"><a name="l10270"></a><span class="lineno">10270</span>&#160;                                                <a class="code" href="classnlohmann_1_1detail_1_1parse__error.html#a137ea4d27de45d8a844fd13451d40f3d">parse_error::create</a>(101, m_lexer.<a class="code" href="classnlohmann_1_1detail_1_1lexer.html#a948c80b8bd8a3095b544e4655e1ca37e">get_position</a>(),</div>
+<div class="line"><a name="l10271"></a><span class="lineno">10271</span>&#160;                                                                    exception_message(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>)));</div>
+<div class="line"><a name="l10272"></a><span class="lineno">10272</span>&#160;                    }</div>
+<div class="line"><a name="l10273"></a><span class="lineno">10273</span>&#160; </div>
+<div class="line"><a name="l10274"></a><span class="lineno">10274</span>&#160;                    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l10275"></a><span class="lineno">10275</span>&#160;                }</div>
 </div><!-- fragment -->
 </div>
 </div>
