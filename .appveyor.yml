@@ -8,7 +8,7 @@ branches:
   only:
     - master
 
-stack: python 3.8, python 3.9
+stack: python python 3.9, 3.8
 
 build: off
 
