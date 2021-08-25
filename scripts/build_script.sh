@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Last Update: 20 Auguest 2021
+# Last Update: 24 Auguest 2021
 #
 # I use shell check, delete the ? to run it, but leave that in this files so it does not fail when it sees it.
 # shell?check -x scripts/build_script.sh
@@ -15,6 +15,7 @@ echo "build_script Unix";
 # Debug Information, not always a good idea when not debugging, and thanks to the TheAssassin, this is now working.
 # These are the setting you might want to change
 declare -ix DEBUGGING;         DEBUGGING=0;          # Set 1=True and 0=False
+declare -ix SHOW_PATH;         SHOW_PATH=1;          # Set 1=True and 0=False
 declare -ix EXIT_ON_UNDEFINED; EXIT_ON_UNDEFINED=0;  # Set 1=True and 0=False
 # Below should be agnostic
 # I use a Variable so I can turn it off on exit
@@ -38,13 +39,6 @@ fi
 export ARTIFACT_APPIMAGE="${MY_BIN_PRO_RES_NAME}-x86_64.AppImage";
 #export ARTIFACT_ZSYNC="${MY_BIN_PRO_RES_NAME}-x86_64.AppImage.zsync";
 export ARTIFACT_QIF="${MY_BIN_PRO_RES_NAME}-Linux-Installer";
-# Doxygen requires Doxyfile
-if [ "$MY_RUN_DOXYFILE" == "true" ]; then
-    if [ -f Doxyfile ]; then
-        doxygen Doxyfile;
-        # FIXME make Artifact or upload
-    fi
-fi
 # use RAM disk if possible (as in: not building on CI system like Appveyor, and RAM disk is available)
 declare TEMP_BASE;
 if [ "$CI" == "" ] && [ -d "/dev/shm" ]; then TEMP_BASE="/dev/shm"; else TEMP_BASE="/tmp"; fi
@@ -69,9 +63,15 @@ OLD_CWD="$(readlink -f .)";
 #
 # switch to build dir
 pushd "$BUILD_DIR";
-# x86 gcc_32? FIXME how to dox86
+# Make AppDir folder at the BUILD_DIR level, I should not need to do this normally, but I am not able to get cmake to work
+if [ -d "AppDir" ]; then rm -r AppDir; fi
+mkdir -p AppDir;
+# x86
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x86" ]]; then
+    # Matrix does not show a gcc_32 or 86
+    # https://www.appveyor.com/docs/linux-images-software/
     export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/include:$PATH";
+    export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
     if [ ! -d "${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin" ]; then
         echo "Qt x86 not found: ${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin";
         ls "${HOME}/Qt/${MY_QT_VERSION}/";
@@ -88,6 +88,7 @@ fi
 # x64
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x64" ]]; then
     export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/include:$PATH";
+    export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
     # Check Qt
     if [ ! -d "${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin" ]; then echo "Qt x64 not found: ${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin"; fi
     if [ ! -f "${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin/qmake" ]; then echo "Qt x64 qmake not found: ${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin/qmake"; fi
@@ -102,24 +103,23 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x64"
 fi
 #
 if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
-    echo "PATH=$PATH";
+    if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
     #
-    # configure build files with qmake
-    qmake "${REPO_ROOT}";
+    echo "cmake build";
+    DESTDIR=AppDir;
+    # tired this without -DCMAKE_BUILD_TYPE=${CONFIGURATION} -DBUILD_SHARED_LIBS=OFF
+    cmake "${REPO_ROOT}" -G "Unix Makefiles" -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE="${CONFIGURATION}" -DCMAKE_INSTALL_PREFIX="/usr";
     #
     # build project and install files into AppDir
     make -j"$(nproc)";
-    make install INSTALL_ROOT=AppDir;
-    # bin ls AppDir/usr
-    # does not exist ls AppDir/usr/lib
-    #
+    make install DESTDIR=AppDir
     # now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
     # download linuxdeploy and its Qt plugin
     wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage;
     wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage;
     # make them executable
     chmod +x linuxdeploy*.AppImage;
-    export LD_LIBRARY_PATH="${REPO_ROOT}/build/AppDir/usr/lib/";
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:AppDir";
     # make sure Qt plugin finds QML sources so it can deploy the imported files
     if [ -d "${REPO_ROOT}/qml" ]; then
         export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
