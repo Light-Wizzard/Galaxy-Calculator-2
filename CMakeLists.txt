@@ -31,7 +31,7 @@ endif()
 #
 if(WIN32)
     set(Python_ADDITIONAL_VERSIONS 3.8)
-    #set(PYTHON_INCLUDE_DIR C:/Python38/include)
+    set(PYTHON_INCLUDE_DIR C:/Python38/include)
     # src/3rdparty/gmp/lib
     #set(GMP_LIBRARIES /src/3rdparty/gmp/lib/libmpfr-4.dll src/3rdparty/gmp/lib/libgmp-10.dll)
     # Set path to our custom CMAKE scripts
@@ -40,12 +40,13 @@ if(WIN32)
     #include(windeployqt)
 endif()
 
-#if (UNIX)
-#    #set(Python_ADDITIONAL_VERSIONS 3.9)
-#    #set(PYTHON_INCLUDE_DIR /usr/include/python3.9)
-#    # src/3rdparty/gmp/lib
-#    #set(GMP_LIBRARIES -L src/3rdparty/gmp/lib/ -lmpfr -lgmp)
-#endif (UNIX)
+if(UNIX)
+    set(Python_ADDITIONAL_VERSIONS 3.9)
+    set(PYTHON_INCLUDE_DIR /usr/include/python3.9)
+    # src/3rdparty/gmp/lib
+    #set(GMP_LIBRARIES -L src/3rdparty/gmp/lib/ -lmpfr -lgmp)
+endif()
+#
 find_package(Python3 COMPONENTS Interpreter Development)
 find_package(PythonLibs REQUIRED)
 #
