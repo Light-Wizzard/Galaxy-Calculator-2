@@ -39,7 +39,7 @@ if(WIN32)
     # Include Qt deployment helper function
     #include(windeployqt)
 endif()
-
+#
 if(UNIX)
     set(Python_ADDITIONAL_VERSIONS 3.9)
     set(PYTHON_INCLUDE_DIR /usr/include/python3.9)
@@ -47,7 +47,6 @@ if(UNIX)
     #set(GMP_LIBRARIES -L src/3rdparty/gmp/lib/ -lmpfr -lgmp)
 endif()
 #
-find_package(Python3 COMPONENTS Interpreter Development)
 find_package(PythonLibs REQUIRED)
 #
 set(GMP_INCLUDE_DIR src/3rdparty/gmp/include)
