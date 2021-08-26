@@ -35,12 +35,13 @@ in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 ## Table of Content
 
 1. [Status](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Status)
-2. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
-3. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
-4. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
-5. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
-6. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
-7. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
+2. [Books](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Books)
+3. [Development-Progress](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Development-Progress)
+4. [Background](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Background)
+5. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#Screen-Shots)
+6. [Screen-Shots](https://github.com/Light-Wizzard/Galaxy-Calculator-2#3rd-Party-Code)
+7. [Wiki](https://github.com/Light-Wizzard/Galaxy-Calculator-2/wiki)
+8. [Doxygen Documention](https://light-wizzard.github.io/Galaxy-Calculator-2)
 
 # Status
 
@@ -48,14 +49,16 @@ in work, I have an installer for Windows 10 below, not sure about 8, but not 7.
 
 ## :package: **Downloads:**
 
- - :penguin: [Linux](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage)
- - :penguin: :inbox_tray: [Linux ZSync](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-x86_64.AppImage.zsync)
- - :penguin: :outbox_tray: [Linux Installer in work](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2-Linux-Installer)
- - :office: [Windows zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows.zip)
- - :office: :outbox_tray: [Windows Installer exe](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2.exe)
- - :apple: [Apple](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/Galaxy-Calculator-2.dmg)
+ - :penguin: [Linux x64 zip  ](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Ubuntu-Release-x64.zip) [Linux x86 zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Ubuntu-Release-x86.zip)
+ - :office:  [Windows x64 zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows-Release-x64.zip) [Windows x86 zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-Windows-Release-x86.zip)
+ - :apple:   [Apple x64 zip  ](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-MacOs-Release-x64.zip) [Apple x86 zip](https://github.com/Light-Wizzard/Galaxy-Calculator-2/releases/download/continuous/GalaxyCalculator2-MacOs-Release-x86.zip)
 
-Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, and run the file Galaxy-Calculator-2.exe inside of the deploy folder.
+Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, 
+and run the file GalaxyCalculator2.exe inside of the deploy AppDir folder.
+
+Apple not test since I do not have one.
+
+# Books
 
 All my books are free online at http://LightWizzard.com, but it cost money to print them or push ePubs to your device.
 
