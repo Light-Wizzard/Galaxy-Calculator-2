@@ -11,8 +11,9 @@ brew cleanup;
 brew config;
 brew doctor || true;
 brew install --cask cmake;
-brew install curl autoconf automake libtool pkg-config;
-brew install qt5 binutils create-dmg openssl@1.1;
+# installed updated warning: pkg-config openssl@1.1
+brew install curl autoconf automake libtool;
+brew install qt5 binutils create-dmg;
 brew link qt5 --force;
 export PATH="$(brew --prefix qt5)/bin:$PATH";
 export CMAKE_PREFIX_PATH="$(brew --prefix qt5)";

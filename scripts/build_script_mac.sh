@@ -54,10 +54,10 @@ declare -x DESTDIR;
 DESTDIR=AppDir;
 export PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/opt/qt5/bin:$PATH";
 export PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
+export PATH="/usr/local/opt/libtool/libexec/gnubin:/usr/local/opt/curl/bin:$PATH";
 export PATH="~/venv${MY_PYTHON_VER}:~/venv${MY_PYTHON_VER}/bin:~/venv${MY_PYTHON_VER}/include:~/venv${MY_PYTHON_VER}/lib:$PATH";
 export PATH="$HOME/Qt/${MY_QT_VERSION}:~/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
 export PATH="$(brew --prefix qt5)/bin:$PATH";
-export PATH="/usr/local/opt/curl/bin:$PATH";
 #
 export CMAKE_PREFIX_PATH+="$(brew --prefix qt5)";
 #
