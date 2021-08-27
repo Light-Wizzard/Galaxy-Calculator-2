@@ -53,6 +53,7 @@ echo "cmake build";
 declare -x DESTDIR;
 DESTDIR=AppDir;
 # Set Path
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH";
 PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/opt/qt5/bin:$PATH";
 PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
 PATH="/usr/local/opt/libtool/libexec/gnubin:/usr/local/opt/curl/bin:$PATH";
@@ -79,6 +80,11 @@ PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:$PKG_CONFIG_PATH";
 PKG_CONFIG_PATH="/usr/local/opt/qt@5/lib/pkgconfig:$PKG_CONFIG_PATH";
 PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:$PKG_CONFIG_PATH";
 export PKG_CONFIG_PATH;
+
+echo "which python";
+ls -l "$(which python)";
+echo "which python3";
+ls -l "$(which python3)";
 #
 if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
 # PATH="$(brew --prefix qt5)/bin:$PATH"
