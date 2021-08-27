@@ -16,10 +16,10 @@ configuration: Release
 
 platform:
   - x64
-  - x86
+  #- x86
 
 image:
-  - macos
+  - macos-mojave
   - Ubuntu
   - Visual Studio 2019
 
@@ -27,11 +27,11 @@ for:
 -
   matrix:
     only:
-      - image: macos
+      - image: macos-mojave
   environment:
     MY_BIN_PRO_RES_NAME: GalaxyCalculator2
     MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    MY_OS: MacOs
+    MY_OS: MacOsMojave
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2
     MY_VS_VERSION: 2019

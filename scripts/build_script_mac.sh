@@ -53,8 +53,8 @@ echo "cmake build";
 declare -x DESTDIR;
 DESTDIR=AppDir;
 export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:$PATH";
-export PATH="${HOME}/venv${MY_PYTHON_VER}:${HOME}/venv${MY_PYTHON_VER}/bin:${HOME}/venv${MY_PYTHON_VER}/include:${HOME}/venv${MY_PYTHON_VER}/lib:$PATH";
-export PATH="$HOME/Qt/${MY_QT_VERSION}:${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
+export PATH="~/venv${MY_PYTHON_VER}:~/venv${MY_PYTHON_VER}/bin:~/venv${MY_PYTHON_VER}/include:~/venv${MY_PYTHON_VER}/lib:$PATH";
+export PATH="$HOME/Qt/${MY_QT_VERSION}:~/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
 export PATH="$(brew --prefix qt5)/bin:$PATH";
 export CMAKE_PREFIX_PATH="$(brew --prefix qt5)";
 #
