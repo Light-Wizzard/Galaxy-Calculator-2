@@ -51,7 +51,7 @@ mkdir AppDir;
 #
 echo "cmake build";
 DESTDIR=AppDir;
-export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:$PATH";
+export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:~/venv${MY_PYTHON_VER}:$PATH";
 export PATH="$(brew --prefix qt5)/bin:$PATH";
 export CMAKE_PREFIX_PATH="$(brew --prefix qt5)";
 #
