@@ -9,8 +9,7 @@ branches:
     - master
 
 # blacklist
-except:
-    - gh-pages
+#except: - gh-pages
     
 #stack: python 3.8
 
