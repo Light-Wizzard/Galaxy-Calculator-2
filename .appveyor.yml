@@ -6,7 +6,7 @@
 version: '{branch}-{build}'
 branches:
   only:
-    - master
+    - main
 
 # blacklist
 #except: - gh-pages
