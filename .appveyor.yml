@@ -39,12 +39,12 @@ environment:
       MY_QT_VERSION: 5.15.2
       MY_VS_VERSION: 2019
       MY_QT_IF_VERSION: '4.1.1'
-      MY_PYTHON_VER: 3.9
+      MY_PYTHON_PATH: "~/venv3.9"
+      MY_PYTHON_VER: "3.9"
       MY_PYTHON_REQUIRED: true
       MY_UPGRADE_OS: false # apt-get upgrade: true or false only
       RUNTIME_LINKAGE: static
-      COVERITY_BUILD_CANDIDATE: True      MY_PYTHON_PATH: "~/venv3.9"
-      MY_PYTHON_VER: "3.9"
+      COVERITY_BUILD_CANDIDATE: True      
     # Linux
     - APPVEYOR_BUILD_WORKER_IMAGE: "Ubuntu"
       MY_BIN_PRO_RES_NAME: GalaxyCalculator2
@@ -54,12 +54,12 @@ environment:
       MY_QT_VERSION: 5.15.2
       MY_VS_VERSION: 2019
       MY_QT_IF_VERSION: '4.1.1'
-      MY_PYTHON_VER: 3.9
+      MY_PYTHON_VER: "3.9"
+      MY_PYTHON_PATH: "$HOME/venv3.9"
       MY_PYTHON_REQUIRED: true
       MY_UPGRADE_OS: false
       RUNTIME_LINKAGE: static
-      COVERITY_BUILD_CANDIDATE: True      MY_PYTHON_VER: "3.9"
-      MY_PYTHON_PATH: "$HOME/venv3.9"
+      COVERITY_BUILD_CANDIDATE: True      
     # Windows
     - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2019"
       MY_BIN_PRO_RES_NAME: GalaxyCalculator2
@@ -73,11 +73,11 @@ environment:
       MY_QT_TOOLS_MINGW32: mingw810_32
       MY_QT_TOOLS_MINGW64: mingw810_64
       MY_QT_IF_VERSION: '4.1.1'
+      MY_PYTHON_PATH: "C:/Python38-x64"
       MY_PYTHON_VER: 3.8 # Last version Windows 7 can run is 3.8
       MY_PYTHON_REQUIRED: true
       RUNTIME_LINKAGE: static
-      COVERITY_BUILD_CANDIDATE: True      MY_PYTHON_PATH: "C:/Python38-x64"
-      MY_PYTHON_VER: "3.8"
+      COVERITY_BUILD_CANDIDATE: True      
 
 
 stack: python %MY_PYTHON_VER%
