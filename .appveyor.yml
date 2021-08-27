@@ -37,7 +37,7 @@ for:
     MY_VS_VERSION: 2019
     MY_QT_IF_VERSION: '4.1.1'
     MY_PYTHON_VER: 3.7
-    MY_PYTHON_REQUIRED: false
+    MY_PYTHON_REQUIRED: true
     MY_UPGRADE_OS: false # apt-get upgrade: true or false only
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
@@ -98,7 +98,7 @@ for:
     MY_QT_TOOLS_MINGW32: mingw810_32
     MY_QT_TOOLS_MINGW64: mingw810_64
     MY_QT_IF_VERSION: '4.1.1'
-    MY_PYTHON_VER: 3.7 # Last version Windows 7 can run
+    MY_PYTHON_VER: 3.7 # Last version Windows 7 can run is 3.8
     MY_PYTHON_REQUIRED: true
     RUNTIME_LINKAGE: static
     COVERITY_BUILD_CANDIDATE: True
