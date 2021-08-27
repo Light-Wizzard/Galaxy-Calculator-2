@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Last Update: 26 Auguest 2021
+# Last Update: 27 Auguest 2021
 #
 # I use shell check, delete the ? to run it, but leave that in this files so it does not fail when it sees it.
-# shell?check -x scripts/build_script.sh
+# shell?check -x scripts/build_script_mac.sh
 #
 # Original Code is from: https://github.com/linuxdeploy/QtQuickApp TheAssassin
 #
@@ -52,14 +52,18 @@ mkdir AppDir;
 echo "cmake build";
 declare -x DESTDIR;
 DESTDIR=AppDir;
-export PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/opt/qt5/bin:$PATH";
-export PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
-export PATH="/usr/local/opt/libtool/libexec/gnubin:/usr/local/opt/curl/bin:$PATH";
-export PATH="~/venv${MY_PYTHON_VER}:~/venv${MY_PYTHON_VER}/bin:~/venv${MY_PYTHON_VER}/include:~/venv${MY_PYTHON_VER}/lib:$PATH";
-export PATH="$HOME/Qt/${MY_QT_VERSION}:~/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
-export PATH="$(brew --prefix qt5)/bin:$PATH";
-#
-export CMAKE_PREFIX_PATH+="$(brew --prefix qt5)";
+# Set Path
+PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/opt/qt5/bin:$PATH";
+PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
+PATH="/usr/local/opt/libtool/libexec/gnubin:/usr/local/opt/curl/bin:$PATH";
+PATH=~"/venv${MY_PYTHON_VER}:$PATH";
+PATH=~"/venv${MY_PYTHON_VER}/bin:$PATH";
+PATH=~"/venv${MY_PYTHON_VER}/include:$PATH";
+PATH=~"/venv${MY_PYTHON_VER}/lib:$HOME/Qt/${MY_QT_VERSION}:$PATH";
+PATH=~"/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
+declare TheQtPrefix; TheQtPrefix="$(brew --prefix qt5)";
+export PATH="$TheQtPrefix:$PATH";
+export CMAKE_PREFIX_PATH="$TheQtPrefix";
 #
 export LDFLAGS="-L/usr/local/opt/qt@5/lib:$LDFLAGS";
 export LDFLAGS="-L/usr/local/opt/binutils/lib:$LDFLAGS";
