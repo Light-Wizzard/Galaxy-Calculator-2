@@ -50,7 +50,7 @@ if [ -d "AppDir" ]; then rm -r AppDir; fi
 mkdir AppDir;
 #
 echo "cmake build";
-declare -gx DESTDIR;
+declare -x DESTDIR;
 DESTDIR=AppDir;
 export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:${HOME}/venv${MY_PYTHON_VER}:$PATH";
 export PATH="$HOME/Qt/${MY_QT_VERSION}:${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
