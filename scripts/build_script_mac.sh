@@ -52,11 +52,27 @@ mkdir AppDir;
 echo "cmake build";
 declare -x DESTDIR;
 DESTDIR=AppDir;
-export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:$PATH";
+export PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/opt/qt5/bin:$PATH";
+export PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
 export PATH="~/venv${MY_PYTHON_VER}:~/venv${MY_PYTHON_VER}/bin:~/venv${MY_PYTHON_VER}/include:~/venv${MY_PYTHON_VER}/lib:$PATH";
 export PATH="$HOME/Qt/${MY_QT_VERSION}:~/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
 export PATH="$(brew --prefix qt5)/bin:$PATH";
-export CMAKE_PREFIX_PATH="$(brew --prefix qt5)";
+export PATH="/usr/local/opt/curl/bin:$PATH";
+#
+export CMAKE_PREFIX_PATH+="$(brew --prefix qt5)";
+#
+export LDFLAGS+="-L/usr/local/opt/qt@5/lib";
+export LDFLAGS+="-L/usr/local/opt/binutils/lib"
+export CPPFLAGS+="-I/usr/local/opt/qt@5/include";
+export CPPFLAGS+="-I/usr/local/opt/binutils/include";
+export LDFLAGS+="-L/usr/local/opt/openssl@1.1/lib";
+export CPPFLAGS+="-I/usr/local/opt/openssl@1.1/include"
+export LDFLAGS+="-L/usr/local/opt/curl/lib";
+export CPPFLAGS+="-I/usr/local/opt/curl/include";
+
+export PKG_CONFIG_PATH+="/usr/local/opt/curl/lib/pkgconfig";
+export PKG_CONFIG_PATH+="/usr/local/opt/qt@5/lib/pkgconfig";
+export PKG_CONFIG_PATH+="/usr/local/opt/openssl@1.1/lib/pkgconfig";
 #
 if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
 # PATH="$(brew --prefix qt5)/bin:$PATH"
