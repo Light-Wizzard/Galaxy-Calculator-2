@@ -85,7 +85,8 @@ for:
 -
   matrix:
     only:
-      - image: macos-mojave
+      - APPVEYOR_BUILD_WORKER_IMAGE: "macos-mojave"    
+      #- image: macos-mojave
 #  environment:
 #    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
 #    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
@@ -114,7 +115,8 @@ for:
 -
   matrix:
     only:
-      - image: Ubuntu
+      - APPVEYOR_BUILD_WORKER_IMAGE: "Ubuntu"
+      #- image: Ubuntu
 #  environment:
 #    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
 #    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
@@ -143,7 +145,8 @@ for:
 -
   matrix:
     only:
-      - image: Visual Studio 2019
+      - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2019"
+      #- image: Visual Studio 2019
 #  environment:
 #    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
 #    MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
