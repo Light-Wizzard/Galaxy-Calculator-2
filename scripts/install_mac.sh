@@ -17,10 +17,10 @@ brew install qt5 binutils create-dmg;
 brew link qt5 --force;
 export PATH="$(brew --prefix qt5)/bin:$PATH";
 export CMAKE_PREFIX_PATH="$(brew --prefix qt5)";
-if ! softwareupdate --all --install --force; then
-    sudo rm -rf /Library/Developer/CommandLineTools;
-    sudo xcode-select --install;
-fi
+#if ! softwareupdate --all --install --force; then
+#    sudo rm -rf /Library/Developer/CommandLineTools;
+#    sudo xcode-select --install;
+#fi
 xcode-select --install;
 #    curl -fsS -o scripts/QtInstallerFramework-macOS.dmg "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-macOS-x86_64-$MY_QT_IF_VERSION.dmg";
 #    # make it executable
