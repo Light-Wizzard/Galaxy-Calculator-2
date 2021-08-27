@@ -50,14 +50,16 @@ if [ -d "AppDir" ]; then rm -r AppDir; fi
 mkdir AppDir;
 #
 echo "cmake build";
+declare -gx DESTDIR;
 DESTDIR=AppDir;
-export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:~/venv${MY_PYTHON_VER}:$PATH";
+export PATH="/usr/local/sbin:/usr/local/opt/qt5/bin:${HOME}/venv${MY_PYTHON_VER}:$PATH";
+export PATH="$HOME/Qt/${MY_QT_VERSION}:${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
 export PATH="$(brew --prefix qt5)/bin:$PATH";
 export CMAKE_PREFIX_PATH="$(brew --prefix qt5)";
 #
 if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
-#
-PATH="$(brew --prefix qt5)/bin:$PATH" cmake .. -G "Unix Makefiles" -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE="${CONFIGURATION}" -DCMAKE_INSTALL_PREFIX="/usr";
+# PATH="$(brew --prefix qt5)/bin:$PATH"
+cmake .. -G "Unix Makefiles" -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE="${CONFIGURATION}" -DCMAKE_INSTALL_PREFIX="/usr";
 #
 # build project and install files into AppDir
 make -j"$(nproc)";
