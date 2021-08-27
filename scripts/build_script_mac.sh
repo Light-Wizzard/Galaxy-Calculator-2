@@ -56,27 +56,29 @@ DESTDIR=AppDir;
 PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/opt/qt5/bin:$PATH";
 PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
 PATH="/usr/local/opt/libtool/libexec/gnubin:/usr/local/opt/curl/bin:$PATH";
-PATH=~"/venv${MY_PYTHON_VER}:$PATH";
-PATH=~"/venv${MY_PYTHON_VER}/bin:$PATH";
-PATH=~"/venv${MY_PYTHON_VER}/include:$PATH";
-PATH=~"/venv${MY_PYTHON_VER}/lib:$HOME/Qt/${MY_QT_VERSION}:$PATH";
-PATH=~"/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
+PATH="${HOME}/venv${MY_PYTHON_VER}:${HOME}/venv${MY_PYTHON_VER}/bin:$PATH";
+PATH="${HOME}/venv${MY_PYTHON_VER}/include:$PATH";
+PATH="${HOME}/venv${MY_PYTHON_VER}/lib:$HOME/Qt/${MY_QT_VERSION}:$PATH";
+PATH="${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
 declare TheQtPrefix; TheQtPrefix="$(brew --prefix qt5)";
 export PATH="$TheQtPrefix:$PATH";
 export CMAKE_PREFIX_PATH="$TheQtPrefix";
 #
-export LDFLAGS="-L/usr/local/opt/qt@5/lib:$LDFLAGS";
-export LDFLAGS="-L/usr/local/opt/binutils/lib:$LDFLAGS";
-export CPPFLAGS="-I/usr/local/opt/qt@5/include:$CPPFLAGS";
-export CPPFLAGS="-I/usr/local/opt/binutils/include:$CPPFLAGS";
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib:$LDFLAGS";
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include:$CPPFLAGS";
-export LDFLAGS="-L/usr/local/opt/curl/lib:$LDFLAGS";
-export CPPFLAGS="-I/usr/local/opt/curl/include:$CPPFLAGS";
-
-export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:$PKG_CONFIG_PATH";
-export PKG_CONFIG_PATH="/usr/local/opt/qt@5/lib/pkgconfig:$PKG_CONFIG_PATH";
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:$PKG_CONFIG_PATH";
+LDFLAGS="-L/usr/local/opt/qt@5/lib:$LDFLAGS";
+LDFLAGS="-L/usr/local/opt/binutils/lib:$LDFLAGS";
+CPPFLAGS="-I/usr/local/opt/qt@5/include:$CPPFLAGS";
+CPPFLAGS="-I/usr/local/opt/binutils/include:$CPPFLAGS";
+LDFLAGS="-L/usr/local/opt/openssl@1.1/lib:$LDFLAGS";
+CPPFLAGS="-I/usr/local/opt/openssl@1.1/include:$CPPFLAGS";
+LDFLAGS="-L/usr/local/opt/curl/lib:$LDFLAGS";
+CPPFLAGS="-I/usr/local/opt/curl/include:$CPPFLAGS";
+export LDFLAGS;
+export CPPFLAGS;
+#
+PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig:$PKG_CONFIG_PATH";
+PKG_CONFIG_PATH="/usr/local/opt/qt@5/lib/pkgconfig:$PKG_CONFIG_PATH";
+PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig:$PKG_CONFIG_PATH";
+export PKG_CONFIG_PATH;
 #
 if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
 # PATH="$(brew --prefix qt5)/bin:$PATH"
@@ -85,13 +87,15 @@ cmake .. -G "Unix Makefiles" -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE="${C
 # build project and install files into AppDir
 make -j"$(nproc)";
 make install DESTDIR=AppDir
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/opt/qt5/bin:AppDir";
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/opt/qt5/bin:AppDir";
+export LD_LIBRARY_PATH;
 # make sure Qt plugin finds QML sources so it can deploy the imported files
 if [ -d "../qml" ]; then
-    export QML_SOURCES_PATHS="../qml";
+    QML_SOURCES_PATHS="../qml"; export QML_SOURCES_PATHS;
 fi
 #
 DYLD_LIBRARY_PATH="/usr/local/opt/qt5/lib:$DYLD_LIBRARY_PATH";
+export DYLD_LIBRARY_PATH;
 #
 macdeployqt "${MY_BIN_PRO_RES_NAME}.app" -dmg -verbose=2;
 chmod +x "${MY_BIN_PRO_RES_NAME}"*.dmg*;
