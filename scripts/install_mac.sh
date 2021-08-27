@@ -6,6 +6,17 @@
 #
 echo "install MacOS"
 #
+# Set Path
+PATH="/usr/local/sbin:/usr/local/opt/qt@5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH";
+PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/opt/binutils/bin:$PATH";
+PATH="/usr/local/opt/libtool/libexec/gnubin:/usr/local/opt/curl/bin:$PATH";
+PATH="${HOME}/venv${MY_PYTHON_VER}:${HOME}/venv${MY_PYTHON_VER}/bin:$PATH";
+PATH="${HOME}/venv${MY_PYTHON_VER}/include:$PATH";
+PATH="${HOME}/venv${MY_PYTHON_VER}/lib:$HOME/Qt/${MY_QT_VERSION}:$PATH";
+PATH="/usr/local/opt/qt5/bin:$PATH";
+PATH="${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
+export PATH;
+#
 brew cleanup;
 brew config;
 brew doctor || true;
