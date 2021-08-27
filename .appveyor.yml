@@ -12,9 +12,13 @@ branches:
 
 build: off
 
-configuration: Release
+configuration: 
+    Release
+    # Debug
 
-platform: - x64
+platform:  
+    - x64
+    #- x86
 
 image:
   - macos-mojave
