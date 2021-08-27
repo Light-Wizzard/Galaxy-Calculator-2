@@ -8,6 +8,10 @@ branches:
   only:
     - master
 
+# blacklist
+except:
+    - gh-pages
+    
 #stack: python 3.8
 
 build: off
@@ -20,29 +24,82 @@ platform:
     - x64
     #- x86
 
-image:
-  - macos-mojave
-  - Ubuntu
-  - Visual Studio 2019
+#image:
+#  - macos-mojave
+#  - Ubuntu
+#  - Visual Studio 2019
+environment:
+  matrix:
+    # MacOS
+    - APPVEYOR_BUILD_WORKER_IMAGE: "macos-mojave"
+      MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+      MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+      MY_OS: MacOsMojave
+      MY_COMPILER: "Qt"
+      MY_QT_VERSION: 5.15.2
+      MY_VS_VERSION: 2019
+      MY_QT_IF_VERSION: '4.1.1'
+      MY_PYTHON_VER: 3.9
+      MY_PYTHON_REQUIRED: true
+      MY_UPGRADE_OS: false # apt-get upgrade: true or false only
+      RUNTIME_LINKAGE: static
+      COVERITY_BUILD_CANDIDATE: True      MY_PYTHON_PATH: "~/venv3.9"
+      MY_PYTHON_VER: "3.9"
+    # Linux
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Ubuntu"
+      MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+      MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+      MY_OS: Ubuntu
+      MY_COMPILER: "Qt"
+      MY_QT_VERSION: 5.15.2
+      MY_VS_VERSION: 2019
+      MY_QT_IF_VERSION: '4.1.1'
+      MY_PYTHON_VER: 3.9
+      MY_PYTHON_REQUIRED: true
+      MY_UPGRADE_OS: false
+      RUNTIME_LINKAGE: static
+      COVERITY_BUILD_CANDIDATE: True      MY_PYTHON_VER: "3.9"
+      MY_PYTHON_PATH: "$HOME/venv3.9"
+    # Windows
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2019"
+      MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+      MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+      MY_OS: Windows # No Spaces
+      MY_COMPILER: "Qt"
+      MY_QT_VERSION: 5.15.2
+      MY_VS_VERSION: 2019
+      MY_QT_MINGW32: mingw81_32
+      MY_QT_MINGW64: mingw81_64
+      MY_QT_TOOLS_MINGW32: mingw810_32
+      MY_QT_TOOLS_MINGW64: mingw810_64
+      MY_QT_IF_VERSION: '4.1.1'
+      MY_PYTHON_VER: 3.8 # Last version Windows 7 can run is 3.8
+      MY_PYTHON_REQUIRED: true
+      RUNTIME_LINKAGE: static
+      COVERITY_BUILD_CANDIDATE: True      MY_PYTHON_PATH: "C:/Python38-x64"
+      MY_PYTHON_VER: "3.8"
+
+
+stack: python %MY_PYTHON_VER%
 
 for:
 -
   matrix:
     only:
       - image: macos-mojave
-  environment:
-    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
-    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    MY_OS: MacOsMojave
-    MY_COMPILER: "Qt"
-    MY_QT_VERSION: 5.15.2
-    MY_VS_VERSION: 2019
-    MY_QT_IF_VERSION: '4.1.1'
-    MY_PYTHON_VER: 3.9
-    MY_PYTHON_REQUIRED: true
-    MY_UPGRADE_OS: false # apt-get upgrade: true or false only
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
+#  environment:
+#    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+#    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+#    MY_OS: MacOsMojave
+#    MY_COMPILER: "Qt"
+#    MY_QT_VERSION: 5.15.2
+#    MY_VS_VERSION: 2019
+#    MY_QT_IF_VERSION: '4.1.1'
+#    MY_PYTHON_VER: 3.9
+#    MY_PYTHON_REQUIRED: true
+#    MY_UPGRADE_OS: false # apt-get upgrade: true or false only
+#    RUNTIME_LINKAGE: static
+#    COVERITY_BUILD_CANDIDATE: True
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
@@ -59,19 +116,19 @@ for:
   matrix:
     only:
       - image: Ubuntu
-  environment:
-    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
-    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
-    MY_OS: Ubuntu
-    MY_COMPILER: "Qt"
-    MY_QT_VERSION: 5.15.2
-    MY_VS_VERSION: 2019
-    MY_QT_IF_VERSION: '4.1.1'
-    MY_PYTHON_VER: 3.9
-    MY_PYTHON_REQUIRED: true
-    MY_UPGRADE_OS: false
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
+#  environment:
+#    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+#    MY_QIF_PACKAGE_URI: 'packages/com.lightwizzard.galaxycalculator2/data'
+#    MY_OS: Ubuntu
+#    MY_COMPILER: "Qt"
+#    MY_QT_VERSION: 5.15.2
+#    MY_VS_VERSION: 2019
+#    MY_QT_IF_VERSION: '4.1.1'
+#    MY_PYTHON_VER: 3.9
+#    MY_PYTHON_REQUIRED: true
+#    MY_UPGRADE_OS: false
+#    RUNTIME_LINKAGE: static
+#    COVERITY_BUILD_CANDIDATE: True
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
@@ -88,22 +145,22 @@ for:
   matrix:
     only:
       - image: Visual Studio 2019
-  environment:
-    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
-    MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
-    MY_OS: Windows # No Spaces
-    MY_COMPILER: "Qt"
-    MY_QT_VERSION: 5.15.2
-    MY_VS_VERSION: 2019
-    MY_QT_MINGW32: mingw81_32
-    MY_QT_MINGW64: mingw81_64
-    MY_QT_TOOLS_MINGW32: mingw810_32
-    MY_QT_TOOLS_MINGW64: mingw810_64
-    MY_QT_IF_VERSION: '4.1.1'
-    MY_PYTHON_VER: 3.8 # Last version Windows 7 can run is 3.8
-    MY_PYTHON_REQUIRED: true
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
+#  environment:
+#    MY_BIN_PRO_RES_NAME: GalaxyCalculator2
+#    MY_QIF_PACKAGE_URI: 'packages\com.lightwizzard.galaxycalculator2\data'
+#    MY_OS: Windows # No Spaces
+#    MY_COMPILER: "Qt"
+#    MY_QT_VERSION: 5.15.2
+#    MY_VS_VERSION: 2019
+#    MY_QT_MINGW32: mingw81_32
+#    MY_QT_MINGW64: mingw81_64
+#    MY_QT_TOOLS_MINGW32: mingw810_32
+#    MY_QT_TOOLS_MINGW64: mingw810_64
+#    MY_QT_IF_VERSION: '4.1.1'
+#    MY_PYTHON_VER: 3.8 # Last version Windows 7 can run is 3.8
+#    MY_PYTHON_REQUIRED: true
+#    RUNTIME_LINKAGE: static
+#    COVERITY_BUILD_CANDIDATE: True
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
