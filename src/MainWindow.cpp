@@ -62,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Make table header visible and display table:
     ui->tableViewGalaxy->horizontalHeader()->setVisible(true);
     ui->tableViewGalaxy->show();
+    #ifdef USE_SQL_FLAG
     // SQL Database Types
     ui->comboBoxSqlDatabaseType->addItem(":memory:");
     ui->comboBoxSqlDatabaseType->addItem("QSQLITE");
@@ -73,6 +74,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBoxSqlDatabaseType->addItem("QOCI");
     ui->comboBoxSqlDatabaseType->addItem("QPSQL");
     ui->comboBoxSqlDatabaseType->addItem("QTDS");
+    #else
+    ui->comboBoxSqlDatabaseType->setHidden(true);
+    ui->comboBoxSettingsGalaxy->setHidden(true);
+    ui->pushButtonSettingsAdd->setHidden(true);
+    ui->pushButtonSettingsDelete->setHidden(true);
+    ui->pushButtonSettingsSave->setHidden(true);
+    ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabSQL")));
+    ui->labelSettingsOptions->setHidden(true);
+    ui->labelPlanetOptions->setHidden(true);
+    ui->pushButtonPlanetAdd->setHidden(true);
+    ui->pushButtonPlanetSave->setHidden(true);
+    ui->pushButtonPlanetDelete->setHidden(true);
+    #endif
     // Set Window Title to Application Name
     setWindowTitle(QApplication::applicationName());
     // Connections and Triggers
@@ -93,9 +107,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // hide progress bar
     ui->progressBarGalaxy->hide();
     //
+    #ifdef USE_SQL_FLAG
     myUniverseModel = new QSqlRelationalTableModel(this);
     myUniverseModel->setTable(mySqlModel->getSqlTableName());
     myUniverseModel->select();
+    #endif
     //
     ui->comboBoxSettingsGalaxy->setModelColumn(1);
     connect(ui->comboBoxSettingsGalaxy, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::onGalaxyChange);
@@ -978,6 +994,7 @@ void MainWindow::on_pushButtonCalcEnter_clicked()
  ***********************************************/
 void MainWindow::setCalcConstantCombo()
 {
+#ifdef USE_SQL_FLAG
     QSqlQueryModel *theModalGalaxy = new QSqlQueryModel; //!< SQL Query Model
     ui->comboBoxCalcConstants->clear();
     //
@@ -1009,6 +1026,48 @@ void MainWindow::setCalcConstantCombo()
     ui->comboBoxCalcConstants->setCurrentIndex(0);
     // Set comboBox
     ui->comboBoxCalcConstants->setMinimumWidth(200);
+#else
+    ui->comboBoxCalcConstants->addItem("e");
+    ui->comboBoxCalcConstants->addItem("Pythagoras");
+    ui->comboBoxCalcConstants->addItem("Theodorus");
+    ui->comboBoxCalcConstants->addItem("SqrRoot5");
+    ui->comboBoxCalcConstants->addItem("Euler–Mascheroni");
+    ui->comboBoxCalcConstants->addItem("Golden-Ratio");
+    ui->comboBoxCalcConstants->addItem("Meissel–Mertens");
+    ui->comboBoxCalcConstants->addItem("Bernstein");
+    ui->comboBoxCalcConstants->addItem("Gauss–Kuzmin–Wirsing");
+    ui->comboBoxCalcConstants->addItem("Hafner–Sarnak–McCurley");
+    ui->comboBoxCalcConstants->addItem("Landau");
+    ui->comboBoxCalcConstants->addItem("Omega");
+    ui->comboBoxCalcConstants->addItem("Golomb–Dickman");
+    ui->comboBoxCalcConstants->addItem("Cahen");
+    ui->comboBoxCalcConstants->addItem("Twin-Prime");
+    ui->comboBoxCalcConstants->addItem("Laplace");
+    ui->comboBoxCalcConstants->addItem("Embree–Trefethen");
+    ui->comboBoxCalcConstants->addItem("Landau–Ramanujan");
+    ui->comboBoxCalcConstants->addItem("Brun-Prime-Quadruplets");
+    ui->comboBoxCalcConstants->addItem("Catalan");
+    ui->comboBoxCalcConstants->addItem("Viswanath");
+    ui->comboBoxCalcConstants->addItem("Apery");
+    ui->comboBoxCalcConstants->addItem("Conway");
+    ui->comboBoxCalcConstants->addItem("Mills");
+    ui->comboBoxCalcConstants->addItem("Plastic");
+    ui->comboBoxCalcConstants->addItem("Ramanujan-Soldner");
+    ui->comboBoxCalcConstants->addItem("Backhouse");
+    ui->comboBoxCalcConstants->addItem("Porter");
+    ui->comboBoxCalcConstants->addItem("Lieb-Square-Ice");
+    ui->comboBoxCalcConstants->addItem("Erdos–Borwein");
+    ui->comboBoxCalcConstants->addItem("Niven");
+    ui->comboBoxCalcConstants->addItem("Brun-Twin-Primes");
+    ui->comboBoxCalcConstants->addItem("Universal-Parabolic");
+    ui->comboBoxCalcConstants->addItem("Feigenbaum");
+    ui->comboBoxCalcConstants->addItem("Sierpinski");
+    ui->comboBoxCalcConstants->addItem("Khinchin");
+    ui->comboBoxCalcConstants->addItem("Fransen–Robinson");
+    ui->comboBoxCalcConstants->addItem("Levy");
+    ui->comboBoxCalcConstants->addItem("Reciprocal-Fibonacci");
+    ui->comboBoxCalcConstants->addItem("Feigenbaum");
+#endif
 }
 /************************************************
  * @brief set Planet Combo.
@@ -1016,6 +1075,7 @@ void MainWindow::setCalcConstantCombo()
  ***********************************************/
 void MainWindow::setPlanetCombo()
 {
+#ifdef USE_SQL_FLAG
     QSqlQueryModel *theModalGalaxy = new QSqlQueryModel; //!< SQL Query Model
     ui->comboBoxPlanet->clear();
     //
@@ -1044,6 +1104,18 @@ void MainWindow::setPlanetCombo()
     ui->comboBoxPlanet->setCurrentIndex(0);
     // Set comboBox
     ui->comboBoxPlanet->setMinimumWidth(200);
+#else
+    ui->comboBoxPlanet->addItem(tr("Sun"));
+    ui->comboBoxPlanet->addItem(tr("Mercury"));
+    ui->comboBoxPlanet->addItem(tr("Venus"));
+    ui->comboBoxPlanet->addItem(tr("Earth"));
+    ui->comboBoxPlanet->addItem(tr("Moon"));
+    ui->comboBoxPlanet->addItem(tr("Mars"));
+    ui->comboBoxPlanet->addItem(tr("Jupiter"));
+    ui->comboBoxPlanet->addItem(tr("Saturn"));
+    ui->comboBoxPlanet->addItem(tr("Uranus"));
+    ui->comboBoxPlanet->addItem(tr("Neptune"));
+#endif
 }
 /************************************************
  * @brief set Settings Combo.
@@ -1051,6 +1123,7 @@ void MainWindow::setPlanetCombo()
  ***********************************************/
 void MainWindow::setSettingsCombo()
 {
+#ifdef USE_SQL_FLAG
     QSqlQueryModel *theModalGalaxy = new QSqlQueryModel; //!< SQL Query Model
     ui->comboBoxSettingsGalaxy->clear();
     //
@@ -1079,6 +1152,7 @@ void MainWindow::setSettingsCombo()
     ui->comboBoxSettingsGalaxy->setCurrentIndex(0);
     // Set comboBox
     ui->comboBoxSettingsGalaxy->setMinimumWidth(200);
+#endif
 }
 /************************************************
  * @brief get Galaxy Id Select Query.
@@ -1123,7 +1197,85 @@ QString MainWindow::getPlanetNameSelectQuery(const QString &thisWhereName)
 void MainWindow::on_comboBoxPlanet_currentIndexChanged(int index)
 {
     setMessage("on_comboBoxPlanet_currentIndexChanged", Debug);
-    if (isMainLoaded) { calcPlanet(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(index, 0)).toString()); }
+    int theIndex = index;
+    #ifdef USE_SQL_FLAG
+    theIndex = ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(index, 0)).toInt();
+    #else
+    switch (theIndex)
+    {
+    case 0:
+        ui->lineEditPlanetPlanetName->setText("Sun");
+        ui->lineEditPlanetSize->setText("864575.9");
+        ui->lineEditPlanetSidereal->setText("25.379995");
+        ui->lineEditPlanetOrbitalDistance->setText("1011954093357316200");
+        ui->lineEditPlanetOrbitalPeriod->setText("242000000");
+        break;
+    case 1:
+        ui->lineEditPlanetPlanetName->setText("Mercury");
+        ui->lineEditPlanetSize->setText("3031.9186");
+        ui->lineEditPlanetSidereal->setText("58.646225");
+        ui->lineEditPlanetOrbitalDistance->setText("223700000");
+        ui->lineEditPlanetOrbitalPeriod->setText("87.97");
+        break;
+    case 2:
+        ui->lineEditPlanetPlanetName->setText("Venus");
+        ui->lineEditPlanetSize->setText("7521.0769");
+        ui->lineEditPlanetSidereal->setText("243.0187");
+        ui->lineEditPlanetOrbitalDistance->setText("422500000");
+        ui->lineEditPlanetOrbitalPeriod->setText("224.7");
+        break;
+    case 3:
+        ui->lineEditPlanetPlanetName->setText("Earth");
+        ui->lineEditPlanetSize->setText("7926.2109");
+        ui->lineEditPlanetSidereal->setText("0.99726968");
+        ui->lineEditPlanetOrbitalDistance->setText("584000000");
+        ui->lineEditPlanetOrbitalPeriod->setText("365");
+        break;
+    case 4:
+        ui->lineEditPlanetPlanetName->setText("Moon");
+        ui->lineEditPlanetSize->setText("2159");
+        ui->lineEditPlanetSidereal->setText("27.321661");
+        ui->lineEditPlanetOrbitalDistance->setText("1499070");
+        ui->lineEditPlanetOrbitalPeriod->setText("27.323");
+        break;
+    case 5:
+        ui->lineEditPlanetPlanetName->setText("Mars");
+        ui->lineEditPlanetSize->setText("4217.246");
+        ui->lineEditPlanetSidereal->setText("1.02595675");
+        ui->lineEditPlanetOrbitalDistance->setText("888000000");
+        ui->lineEditPlanetOrbitalPeriod->setText("686.98");
+        break;
+    case 6:
+        ui->lineEditPlanetPlanetName->setText("Jupiter");
+        ui->lineEditPlanetSize->setText("88731.8063");
+        ui->lineEditPlanetSidereal->setText("0.41007");
+        ui->lineEditPlanetOrbitalDistance->setText("3037000000");
+        ui->lineEditPlanetOrbitalPeriod->setText("4330.6");
+        break;
+    case 7:
+        ui->lineEditPlanetPlanetName->setText("Saturn");
+        ui->lineEditPlanetSize->setText("74974.6481");
+        ui->lineEditPlanetSidereal->setText("0.426");
+        ui->lineEditPlanetOrbitalDistance->setText("5565900000");
+        ui->lineEditPlanetOrbitalPeriod->setText("10755.7");
+        break;
+    case 8:
+        ui->lineEditPlanetPlanetName->setText("Uranus");
+        ui->lineEditPlanetSize->setText("31763.253");
+        ui->lineEditPlanetSidereal->setText("0.71833");
+        ui->lineEditPlanetOrbitalDistance->setText("11201300000");
+        ui->lineEditPlanetOrbitalPeriod->setText("30685");
+        break;
+    case 9:
+        ui->lineEditPlanetPlanetName->setText("Neptune");
+        ui->lineEditPlanetSize->setText("30775.272");
+        ui->lineEditPlanetSidereal->setText("0.67125");
+        ui->lineEditPlanetOrbitalDistance->setText("17562300000");
+        ui->lineEditPlanetOrbitalPeriod->setText("60190");
+        break;
+    }
+    #endif
+    if (isMainLoaded) { calcPlanet(QString::number(theIndex)); }
 }
 /************************************************
  * @brief on pushButton Planet Calculate clicked.
@@ -1141,6 +1293,7 @@ void MainWindow::on_pushButtonPlanetCalculate_clicked()
 void MainWindow::onGalaxyChange()
 {
     setMessage("onGalaxyChange", Debug);
+    #ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     QString myGalaxySelectQuery = getGalaxyIdSelectQuery(ui->comboBoxSettingsGalaxy->model()->data(ui->comboBoxSettingsGalaxy->model()->index(ui->comboBoxSettingsGalaxy->currentIndex(), 0)).toString());
     if (query.exec(myGalaxySelectQuery))
@@ -1164,6 +1317,9 @@ void MainWindow::onGalaxyChange()
         setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     isSaveSettings = false;
+    #else
+    on_pushButtonSettingsDefalut_clicked();
+    #endif
 }
 /************************************************
  * @brief on pushButton Settings Save clicked.
@@ -1172,6 +1328,7 @@ void MainWindow::onGalaxyChange()
 void MainWindow::on_pushButtonSettingsSave_clicked()
 {
     setMessage("on_pushButtonSettingsSave_clicked", Debug);
+#ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("UPDATE galaxy set GalaxyName = '").append(ui->lineEditSettingsGalaxyName->text()).append("', SunSize = '").append(ui->lineEditSettingsSunSize->text()).append("', PlanetSize = '").append(ui->lineEditSettingsPlanetSize->text()).append("', TrinaryEngines = '").append(ui->lineEditSettingsTrinaryEngines->text()).append("', GalaxyRadius = '").append(ui->lineEditSettingsGalaxyRadius->text()).append("', Nthtrack = '").append(ui->lineEditSettingsNthTrack->text()).append("' WHERE id = ").append(ui->comboBoxSettingsGalaxy->model()->data(ui->comboBoxSettingsGalaxy->model()->index(ui->comboBoxSettingsGalaxy->currentIndex(), 0)).toString());
     setMessage("thisQuery: " + thisQuery, Debug);
@@ -1182,6 +1339,7 @@ void MainWindow::on_pushButtonSettingsSave_clicked()
     ui->pushButtonSettingsSave->setEnabled(false);
     isSaveSettings = false;
     setSettingsCombo();
+#endif
 }
 /************************************************
  * @brief on pushButton Settings Delete clicked.
@@ -1190,6 +1348,7 @@ void MainWindow::on_pushButtonSettingsSave_clicked()
 void MainWindow::on_pushButtonSettingsDelete_clicked()
 {
     setMessage("on_pushButtonSettingsDelete_clicked", Debug);
+#ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("DELETE FROM galaxy WHERE id = ").append(ui->comboBoxSettingsGalaxy->model()->data(ui->comboBoxSettingsGalaxy->model()->index(ui->comboBoxSettingsGalaxy->currentIndex(), 0)).toString());
     setMessage("thisQuery: " + thisQuery, Debug);
@@ -1198,6 +1357,7 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
         setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setSettingsCombo();
+#endif
 }
 /************************************************
  * @brief on pushButton Settings Add clicked.
@@ -1206,6 +1366,7 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
 void MainWindow::on_pushButtonSettingsAdd_clicked()
 {
     setMessage("on_pushButtonSettingsAdd_clicked", Debug);
+#ifdef USE_SQL_FLAG
     QString newName = ui->lineEditSettingsGalaxyName->text();
     QSqlQuery query; //!< SQL Query
     QString myGalaxySelectQuery = getGalaxyNameSelectQuery(newName);
@@ -1238,6 +1399,7 @@ void MainWindow::on_pushButtonSettingsAdd_clicked()
         setMessage("SqLite error on_pushButtonSettingsAdd_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setSettingsCombo();
+#endif
 }
 /************************************************
  * @brief on pushButton Settings Clear clicked.
@@ -1292,6 +1454,7 @@ void MainWindow::on_pushButtonPlanetClear_clicked()
 void MainWindow::on_pushButtonPlanetAdd_clicked()
 {
     setMessage("on_pushButtonPlanetAdd_clicked", Debug);
+#ifdef USE_SQL_FLAG
     QString newName = ui->lineEditPlanetPlanetName->text();
     QSqlQuery query; //!< SQL Query
     QString myPlanetSelectQuery = getPlanetNameSelectQuery(newName);
@@ -1325,6 +1488,7 @@ void MainWindow::on_pushButtonPlanetAdd_clicked()
         setMessage("SqLite error on_pushButtonPlanetAdd_clicked:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setPlanetCombo();
+#endif
 }
 /************************************************
  * @brief on pushButton Planet Save clicked.
@@ -1333,6 +1497,7 @@ void MainWindow::on_pushButtonPlanetAdd_clicked()
 void MainWindow::on_pushButtonPlanetSave_clicked()
 {
     setMessage("on_pushButtonSettingsSave_clicked", Debug);
+#ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("UPDATE planets set PlanetName = '").append(ui->lineEditPlanetPlanetName->text()).append("', Diameter = '").append(ui->lineEditPlanetSize->text()).append("', Sidereal = '").append(ui->lineEditPlanetSidereal->text()).append("', OrbitalDistance = '").append(ui->lineEditPlanetOrbitalDistance->text()).append("', OrbitalPeriod = '").append(ui->lineEditPlanetOrbitalPeriod->text()).append("' WHERE id = ").append(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(ui->comboBoxPlanet->currentIndex(), 0)).toString());
     setMessage("thisQuery: " + thisQuery, Debug);
@@ -1343,6 +1508,7 @@ void MainWindow::on_pushButtonPlanetSave_clicked()
     ui->pushButtonSettingsSave->setEnabled(false);
     isSaveSettings = false;
     setPlanetCombo();
+#endif
 }
 /************************************************
  * @brief on pushButton Planet Delete clicked.
@@ -1351,6 +1517,7 @@ void MainWindow::on_pushButtonPlanetSave_clicked()
 void MainWindow::on_pushButtonPlanetDelete_clicked()
 {
     setMessage("on_pushButtonSettingsDelete_clicked", Debug);
+#ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     QString thisQuery = QString("DELETE FROM planets WHERE id = ").append(ui->comboBoxPlanet->model()->data(ui->comboBoxPlanet->model()->index(ui->comboBoxPlanet->currentIndex(), 0)).toString());
     setMessage("thisQuery: " + thisQuery, Debug);
@@ -1359,6 +1526,7 @@ void MainWindow::on_pushButtonPlanetDelete_clicked()
         setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
     setPlanetCombo();
+#endif
 }
 /************************************************
  * @brief on Set ComboBox Planet.
@@ -1798,7 +1966,140 @@ void MainWindow::on_pushButtonCalcMinus_clicked()
 void MainWindow::on_comboBoxCalcConstants_currentIndexChanged(int index)
 {
     setMessage("on_comboBoxCalcConstants_currentIndexChanged", Debug);
+}
+/************************************************
+ * @brief on pushButton Calculator Constant clicked.
+ * on_pushButtonCalculatorConstant_clicked
+ ***********************************************/
+void MainWindow::on_pushButtonCalculatorConstant_clicked()
+{
+    #ifdef USE_SQL_FLAG
     ui->lineEditCalcValue->setText(QString(ui->lineEditCalcValue->text()).append(" ").append(ui->comboBoxCalcConstants->model()->data(ui->comboBoxCalcConstants->model()->index(index, 2)).toString()).append(" "));
+    #else
+    switch (ui->comboBoxCalcConstants->currentIndex())
+    {
+    case 0:
+        ui->lineEditCalcValue->setText("2.71828182845904523536028747135266249"); // e
+        break;
+    case 1:
+        ui->lineEditCalcValue->setText("1.41421356237309504880168872420969807"); // Pythagoras
+        break;
+    case 2:
+        ui->lineEditCalcValue->setText("1.73205080756887729352744634150587236"); // Theodorus
+        break;
+    case 3:
+        ui->lineEditCalcValue->setText("2.23606797749978969640917366873127623"); // SqrRoot5
+        break;
+    case 4:
+        ui->lineEditCalcValue->setText("0.57721566490153286060651209008240243"); // Euler–Mascheroni
+        break;
+    case 5:
+        ui->lineEditCalcValue->setText("1.61803398874989484820458683436563811"); // Golden-Ratio
+        break;
+    case 6:
+        ui->lineEditCalcValue->setText("0.26149721284764278375542683860869585"); // Meissel–Mertens
+        break;
+    case 7:
+        ui->lineEditCalcValue->setText("0.28016949902386913303"); // Bernstein
+        break;
+    case 8:
+        ui->lineEditCalcValue->setText("0.30366300289873265859744812190155623"); // Gauss–Kuzmin–Wirsing
+        break;
+    case 9:
+        ui->lineEditCalcValue->setText("0.35323637185499598454351655043268201"); // Hafner–Sarnak–McCurley
+        break;
+    case 10:
+        ui->lineEditCalcValue->setText("0.5"); // Landau
+        break;
+    case 11:
+        ui->lineEditCalcValue->setText("0.56714329040978387299996866221035554"); // Omega
+        break;
+    case 12:
+        ui->lineEditCalcValue->setText("0.62432998854355087099293638310083724"); // Golomb–Dickman
+        break;
+    case 13:
+        ui->lineEditCalcValue->setText("0.6434105462"); // Cahen
+        break;
+    case 14:
+        ui->lineEditCalcValue->setText("0.66016181584686957392781211001455577"); // Twin-Prime
+        break;
+    case 15:
+        ui->lineEditCalcValue->setText("0.66274341934918158097474209710925290"); // Laplace
+        break;
+    case 16:
+        ui->lineEditCalcValue->setText("0.70258"); // Embree–Trefethen
+        break;
+    case 17:
+        ui->lineEditCalcValue->setText("0.76422365358922066299069873125009232"); // Landau–Ramanujan
+        break;
+    case 18:
+        ui->lineEditCalcValue->setText("0.87058838"); // Brun-Prime-Quadruplets
+        break;
+    case 19:
+        ui->lineEditCalcValue->setText("0.91596559417721901505460351493238411"); // Catalan
+        break;
+    case 20:
+        ui->lineEditCalcValue->setText("1.13198824"); // Viswanath
+        break;
+    case 21:
+        ui->lineEditCalcValue->setText("1.20205690315959428539973816151144999"); // Apery
+        break;
+    case 22:
+        ui->lineEditCalcValue->setText("1.30357726903429639125709911215255189"); // Conway
+        break;
+    case 23:
+        ui->lineEditCalcValue->setText("1.30637788386308069046861449260260571"); // Mills
+        break;
+    case 24:
+        ui->lineEditCalcValue->setText("1.32471795724474602596090885447809734"); // Plastic
+        break;
+    case 25:
+        ui->lineEditCalcValue->setText("1.45136923488338105028396848589202744"); // Ramanujan-Soldner
+        break;
+    case 26:
+        ui->lineEditCalcValue->setText("1.45607494858268967139959535111654356"); // Backhouse
+        break;
+    case 27:
+        ui->lineEditCalcValue->setText("1.4670780794"); // Porter
+        break;
+    case 28:
+        ui->lineEditCalcValue->setText("1.5396007178"); // Lieb-Square-Ice
+        break;
+    case 29:
+        ui->lineEditCalcValue->setText("1.60669515241529176378330152319092458"); // Erdos–Borwein
+        break;
+    case 30:
+        ui->lineEditCalcValue->setText("1.70521114010536776428855145343450816"); // Niven
+        break;
+    case 31:
+        ui->lineEditCalcValue->setText("1.902160583104"); // Brun-Twin-Primes
+        break;
+    case 32:
+        ui->lineEditCalcValue->setText("2.29558714939263807403429804918949039"); // Universal-Parabolic
+        break;
+    case 33:
+        ui->lineEditCalcValue->setText("2.50290787509589282228390287321821578"); // Feigenbaum
+        break;
+    case 34:
+        ui->lineEditCalcValue->setText("2.58498175957925321706589358738317116"); // Sierpinski
+        break;
+    case 35:
+        ui->lineEditCalcValue->setText("2.68545200106530644530971483548179569"); // Khinchin
+        break;
+    case 36:
+        ui->lineEditCalcValue->setText("2.80777024202851936522150118655777293"); // Fransen–Robinson
+        break;
+    case 37:
+        ui->lineEditCalcValue->setText("3.27582291872181115978768188245384386"); // Levy
+        break;
+    case 38:
+        ui->lineEditCalcValue->setText("3.35988566624317755317201130291892717"); // Reciprocal-Fibonacci
+        break;
+    case 39:
+        ui->lineEditCalcValue->setText("4.66920160910299067185320382046620161"); // Feigenbaum
+        break;
+    }
+    #endif
 }
 /************************************************
  * @brief doGalaxyTableViewPrint.
@@ -2040,6 +2341,7 @@ QString MainWindow::doMath(const QString &thisEquation, int thisDecimalPlaces)
 void MainWindow::calcPlanet(const QString &thisPlanetId)
 {
     setMessage("calcPlanet", Debug);
+    #ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
 
     QString myGalaxySelectQuery = getPlanetSelectQuery(QString("%1").arg(thisPlanetId));
@@ -2059,24 +2361,20 @@ void MainWindow::calcPlanet(const QString &thisPlanetId)
         {
             setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
         }
-        QString tempResultA = doMath(QString("%1 * %2").arg(ui->lineEditPlanetSize->text(), myTrinaryMath->getPiLong()), 32);
-        QString tempResultB = doMath(QString("%1 * %2").arg(ui->lineEditPlanetSidereal->text(), "24"), 32);
-        QString rotation_result = doMath(QString("%1 / %2").arg(tempResultA, tempResultB), 32);
-
-
-        QString tempResultC = doMath(QString("%1 * %2").arg(ui->lineEditPlanetOrbitalPeriod->text(), "24"), 32);
-
-        QString thisDistance = doMath( QString("%1 / %2").arg(ui->lineEditPlanetOrbitalDistance->text(), tempResultC), 32);
-
-        ui->lineEditPlanetAOS->setText(myTrinaryMath->formatNumber(thisDistance, 3));
-
-        ui->lineEditPlanetRotational->setText(myTrinaryMath->formatNumber(rotation_result, 3));
         // query.value("PlanetName").toString()
     }
     else
     {
         setMessage("SqLite error:" + query.lastError().text() + ", SqLite error code:" + query.lastError().text(), Critical);
     }
+    #endif
+    QString tempResultA = doMath(QString("%1 * %2").arg(ui->lineEditPlanetSize->text(), myTrinaryMath->getPiLong()), 32);
+    QString tempResultB = doMath(QString("%1 * %2").arg(ui->lineEditPlanetSidereal->text(), "24"), 32);
+    QString rotation_result = doMath(QString("%1 / %2").arg(tempResultA, tempResultB), 32);
+    QString tempResultC = doMath(QString("%1 * %2").arg(ui->lineEditPlanetOrbitalPeriod->text(), "24"), 32);
+    QString thisDistance = doMath( QString("%1 / %2").arg(ui->lineEditPlanetOrbitalDistance->text(), tempResultC), 32);
+    ui->lineEditPlanetAOS->setText(myTrinaryMath->formatNumber(thisDistance, 3));
+    ui->lineEditPlanetRotational->setText(myTrinaryMath->formatNumber(rotation_result, 3));
 }
 /************************************************
  * on_pushButtonSqlSave_clicked

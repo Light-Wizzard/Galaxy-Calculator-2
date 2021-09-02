@@ -14,7 +14,9 @@ MySqlDbtModel::MySqlDbtModel(QObject *parent) : QAbstractTableModel(parent)
  ***********************************************/
 MySqlDbtModel::~MySqlDbtModel()
 {
+    #ifdef USE_SQL_FLAG
     if (myDb.isOpen()) { myDb.close(); }
+    #endif
 }
 /************************************************
  * @brief set Debug Message.
@@ -122,6 +124,7 @@ void MySqlDbtModel::clearRecords()
     }
     myGalaxy.clear();
 }
+#ifdef USE_SQL_FLAG
 /************************************************
  * @brief is Db Table.
  * isDbTable
@@ -151,6 +154,7 @@ QSqlDatabase MySqlDbtModel::getSqlDatabase()
     setMessage("getSqlDatabase");
     return myDb;
 }
+#endif
 /************************************************
  * @brief set Connection Name.
  * setConnectionName
@@ -348,6 +352,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 bool MySqlDbtModel::createDataBaseConnection()
 {
     setMessage("createDataBaseConnection");
+#ifdef USE_SQL_FLAG
     // Make sure Drive is set
     if (mySqlDriver == "NOTSET") { setSqlDriver(mySetting->myConstants->MY_SQL_DEFAULT); }
     QString theDb = getSqlDatabaseName();
@@ -452,6 +457,7 @@ bool MySqlDbtModel::createDataBaseConnection()
     // Set Settings
     mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_NAME, theDb);
     mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_TYPE, "QSQLITE");
+#endif
     return true;
 } // end createDataBaseConnection
 /************************************************
@@ -461,6 +467,7 @@ bool MySqlDbtModel::createDataBaseConnection()
 bool MySqlDbtModel::checkDatabase()
 {
     setMessage("checkDatabase");
+#ifdef USE_SQL_FLAG
     // Database
     setSqlDriver(myComboBoxSqlValue);
     if (createDataBaseConnection())
@@ -617,7 +624,7 @@ bool MySqlDbtModel::checkDatabase()
             setMessage(getSqlDriver() +  "  INSERT math error:");
         }
         // Cahen's constant
-        if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Cahen', '0.66016181584686957392781211001455577'))")))
+        if (!runQuery(QLatin1String(R"(INSERT INTO math (Name, Constant) values('Cahen', '0.6434105462'))")))
         {
             setMessage(getSqlDriver() +  "  INSERT math error:");
         }
@@ -752,6 +759,7 @@ bool MySqlDbtModel::checkDatabase()
             setMessage(getSqlDriver() +  "  INSERT math error:");
         }
     } // end if (!myGalaxyModel->isDbTable("math", &myDb))
+    #endif
     //
     return true;
 }
@@ -762,12 +770,14 @@ bool MySqlDbtModel::checkDatabase()
 bool MySqlDbtModel::runQuery(const QString &thisQuery)
 {
     setMessage("runQuery");
+    #ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     if (!query.exec(thisQuery))
     {
         setMessage("Error running Query: " + thisQuery + query.lastError().text() + ", SqLite error code:" + query.lastError().text());
         return false;
     }
+    #endif
     return true;
 }
 /************************************************
@@ -815,7 +825,7 @@ void MySqlDbtModel::onInsertGalaxyRecord(const QString &thisCurrentTrackNumber,c
 bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSourcePath, const QString &thisDestinationFolder)
 {
     setMessage("moveDb");
-
+    #ifdef USE_SQL_FLAG
     QFile file(QString("%1%2%3").arg(thisSourcePath, QDir::separator(), thisSourceFile));
     //
     QString theNewDatabaseName = QString("%1%2%3").arg(thisDestinationFolder, QDir::separator(), thisSourceFile);
@@ -835,6 +845,9 @@ bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSour
         return createDataBaseConnection();
     }
     else { return true; }
+    #else
+    return true;
+    #endif
 }
 /************************************************
  * @brief run Procces given exe path, argument, and if you want to wait and how long,

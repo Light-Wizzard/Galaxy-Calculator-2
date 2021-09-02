@@ -11,7 +11,9 @@
 #include <QTextStream>
 #include <QtDebug>
 #include <QProgressDialog>
-#include <QtSql>
+#ifdef USE_SQL_FLAG
+    #include <QtSql>
+#endif
 #include <QCloseEvent>
 #include <QPrinter>
 #include <QPrintDialog>
@@ -37,7 +39,9 @@ namespace Ui { class MainWindow; }
 class QComboBox;
 class QFile;
 class QLabel;
+#ifdef USE_SQL_FLAG
 class QSqlRelationalTableModel;
+#endif
 class QTableView;
 QT_END_NAMESPACE
 /************************************************
@@ -97,9 +101,10 @@ class MainWindow : public QMainWindow
         void setCalcConstantCombo();                                        //!< setCalcConstantCombo
         void getCalcSlider();                                               //!< getCalcSlider
         QString getPlanetNameSelectQuery(const QString &thisWhereName);     //!< getPlanetNameSelectQuery
-
+        #ifdef USE_SQL_FLAG
         QSqlDatabase getSqlDatabase();                                      //!< get Sql Database
         void setSqlDatabase(const QSqlDatabase &thisDatabase);              //!< set Sql Database
+        #endif
 
         void retranslate();                                                 //!< retranslate
         void loadLanguageComboBox();                                        //!< load Language ComboBox
@@ -121,25 +126,24 @@ class MainWindow : public QMainWindow
         void onAuthor();                                                    //!< on About
         void onHelp();                                                      //!< on Help
         void onGalaxyChange();                                              //!< ui->comboBoxGalaxy
-        void enableSaveButton();                                            //!< enableSaveButton
-        void onCalculateGalaxy();                                           //!< onCalculateGalaxy
-        void onRunOnStartup();                                              //!< onRunOnStartup
-        void onSetComboBoxSettings();                                       //!< onSetComboBoxSettings
-        void onSetComboBoxPlanet();                                         //!< onSetComboBoxPlanet
+        void enableSaveButton();                                            //!< enable Save Button
+        void onCalculateGalaxy();                                           //!< on Calculate Galaxy
+        void onRunOnStartup();                                              //!< on Run On Startup
+        void onSetComboBoxSettings();                                       //!< on Set ComboBox Settings
+        void onSetComboBoxPlanet();                                         //!< on Set ComboBox Planet
+        void onPrintGalaxyTableView();                                      //!< print Table
+        void onExportPdf();                                                 //!< on Export Pdf
+        void onExportHtml();                                                //!< on Export Html
         // Part of Math
         const SymbolTable &getSymbolTable();                                //!< getSymbolTable
         void onSymbolTableChanged(const SymbolTable &symbolTable);          //!< onSymbolTableChanged
-        void on_checkBoxSettignsMessaging_stateChanged(int thisCheckState); //!< on checkBox Settigns Messaging state Changed
-        void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage); //!< on comboBox Settings Language current Index Changed
 
     private slots:
-        void onPrintGalaxyTableView();                                              //!< printTable
-        void onExportPdf();                                                         //!< onExportPdf
-        void onExportHtml();                                                        //!< onExportHtml
         // ComboBox
         void on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &arg1);   //!< on comboBox Sql Database Type current Index Changed
         void on_comboBoxPlanet_currentIndexChanged(int index);                      //!< on_comboBoxPlanet_currentIndexChanged
         void on_comboBoxCalcConstants_currentIndexChanged(int index);               //!< on_comboBoxCalcConstants_currentIndexChanged
+        void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage); //!< on comboBox Settings Language current Index Changed
         // PushButton
         void on_pushButtonSettingsSave_clicked();                                   //!< Save
         void on_pushButtonSettingsDelete_clicked();                                 //!< Delete
@@ -219,13 +223,17 @@ class MainWindow : public QMainWindow
         void on_radioButtonMadnessDeityGod_clicked();                               //!< on_radioButtonMadnessDeityGod_clicked
         void on_radioButtonMadnessLight_clicked();                                  //!< on_radioButtonMadnessLight_clicked
         void on_radioButtonMadnessNoGod_clicked();                                  //!< on_radioButtonMadnessNoGod_clicked
+        // checkBox
+        void on_checkBoxSettignsMessaging_stateChanged(int thisCheckState); //!< on checkBox Settigns Messaging state Changed
         // horizontalSlider
         void on_horizontalSliderEnergyEnergy_valueChanged(int value);               //!< on_horizontalSliderEnergyEnergy_valueChanged
         void on_horizontalSliderEnergyCurrent_valueChanged(int value);              //!< on_horizontalSliderEnergyCurrent_valueChanged
         // spinBox
         void on_spinBoxCalcDecimals_textChanged(const QString &arg1);               //!< on_spinBoxCalcDecimals_textChanged
 
-    protected:
+        void on_pushButtonCalculatorConstant_clicked();
+
+        protected:
         void closeEvent(QCloseEvent *event) override;           //!< close Event
 
     protected slots:
@@ -239,10 +247,9 @@ class MainWindow : public QMainWindow
     private:
         Ui::MainWindow           *ui = nullptr;                     //!< \c ui                      @brief Pointer to mainwindow.ui
         Settings                  mySetting;                        //!< \c mySetting               @brief settings
-        MyTrinaryMath              *myTrinaryMath;                    //!< \c myMySettings            @brief Trinary Math
+        MyTrinaryMath            *myTrinaryMath;                    //!< \c myMySettings            @brief Trinary Math
         MyLocalization           *myLocalization;                   //!< \c myLocalization          @brief Localization.
         MySqlDbtModel            *mySqlModel;                       //!< \c myGalaxyModel           @brief Pointer to DataTable GalaxyModel
-        QSqlRelationalTableModel *myUniverseModel;                  //!< \c myUniverseModel         @brief Universe Model
         // Part of Math
         SymbolTable               mySymbolTable;                    //!< \c mySymbolTable           @brief Symbol Table
         QString                   myComboBoxSqlValue;               //!< \c myComboBoxSqlValue      @brief ComboBox Sql Value
@@ -262,6 +269,9 @@ class MainWindow : public QMainWindow
         int                       myEnergyEnergy         = 100;     //!< \c myEnergyEnergy          @brief Energy
         int                       myEnergyCurrent        = 66;      //!< \c myEnergyCurrent         @brief Energy Current
         int                       myLanguageCombBoxIndex = -1;      //!< \c myLanguageCombBoxIndex  @brief Language CombBox Index.
+        #ifdef USE_SQL_FLAG
+        QSqlRelationalTableModel *myUniverseModel;                  //!< \c myUniverseModel         @brief Universe Model
+        #endif
 };
 #endif // MAINWINDOW_H
 /*** ************************* End of File ***********************************/

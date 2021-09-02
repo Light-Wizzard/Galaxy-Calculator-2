@@ -4,7 +4,9 @@
 #include <QObject>
 #include <QAbstractTableModel>
 #include <QtDebug>
-#include <QtSql>
+#ifdef USE_SQL_FLAG
+    #include <QtSql>
+#endif
 #include <QtWidgets>
 
 #include "MyOrgSettings.h"
@@ -66,7 +68,6 @@ class MySqlDbtModel : public QAbstractTableModel
         void clearRecords();                                        //!< clearRecords
 
         bool createDataBaseConnection();                            //!< createDataBaseConnection
-        bool isDbTable(const QString &thisTable, QSqlDatabase *db); //!< isDbTable
         void setSqlDriver(const QString &thisDriver);               //!< setSqlDriver
         QString getSqlDriver();                                     //!< getSqlDriver
 
@@ -84,9 +85,11 @@ class MySqlDbtModel : public QAbstractTableModel
 
         void setSqlDatabaseName(const QString &thisPassword);       //!< setSqlDatabaseName
         QString getSqlDatabaseName();                               //!< getSqlDatabaseName
-
+#ifdef USE_SQL_FLAG
         void setSqlDatabase(const QSqlDatabase &thisDatabase);      //!< set Sql Database
         QSqlDatabase getSqlDatabase();                              //!< get Sql Database
+        bool isDbTable(const QString &thisTable, QSqlDatabase *db); //!< isDbTable
+#endif
 
         void setConnectionName(const QString &thisConnectionName);  //!< setConnectionName
         QString getConnectionName();                                //!< getConnectionName
@@ -120,7 +123,6 @@ class MySqlDbtModel : public QAbstractTableModel
 
     private:
         QList<GalaxyClass>  myGalaxy;                                   //!< \c myGalaxy           @brief Galaxy
-        QSqlDatabase        myDb;                                       //!< \c myDb               @brief Database
         QString             myDatabaseName     = "GalaxyCalculator";    //!< \c myDatabaseName     @brief Sql Driver DatabaseName with extention
         QString             myTableName        = "Galaxy";;             //!< \c myTableName        @brief TableName
         QString             mySqlDriver        = "NOTSET";              //!< \c mySqlDriver        @brief Sql Driver NOTSET
@@ -134,7 +136,9 @@ class MySqlDbtModel : public QAbstractTableModel
         int                 myRunReturnCode    = 1;                     //!< \c myRunReturnCode    @brief Run Return Code
         QString             myProjectID        = "-1";                  //!< \c myProjectID        @brief Project ID
         QString             myProjectName      = "";                    //!< \c myProjectName      @brief Project Name
-
+        #ifdef USE_SQL_FLAG
+        QSqlDatabase        myDb;                                       //!< \c myDb               @brief Database
+        #endif
 };
 #endif // MYSQLDBTMODEL_H
 /*** ************************* End of File ***********************************/
