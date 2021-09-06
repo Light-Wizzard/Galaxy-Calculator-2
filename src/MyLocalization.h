@@ -96,7 +96,9 @@ class MyLocalization : public QObject
     void setMainLoaded(bool thisMainLoaded);                            //!< set Main Loaded
     bool getMainLoaded();                                               //!< get Main Loaded
 
-    private:
+    QString languageName(const QLocale &locale);                        //!< language Name
+
+  private:
     static const QMap<QString, QString>  s_genericLanguageNameToCode; //!< \c s_genericLanguageNameToCode @brief generic Language Name to Code
     static const QMap<QString, QString>  s_genericLanguageCodeToName; //!< \c s_genericLanguageCodeToName @brief generic Language Code to Name
     bool            isDebugMessage       = true;    //!< \c isDebugMessage       @brief is Debug Message

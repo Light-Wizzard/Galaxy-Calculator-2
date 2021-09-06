@@ -8,6 +8,6 @@ var classexprtk_1_1details_1_1str__sogens__node =
     [ "str_base_ptr", "classexprtk_1_1details_1_1str__sogens__node.html#a16cf09aa4567d58ddf413f226e4b443c", null ],
     [ "str_sogens_node", "classexprtk_1_1details_1_1str__sogens__node.html#a628e2ab6bf58d6c1ab4ad67e44d8ccc1", null ],
     [ "operation", "classexprtk_1_1details_1_1str__sogens__node.html#ad035f9d23b8f170ffefd965ece0735ee", null ],
-    [ "type", "classexprtk_1_1details_1_1str__sogens__node.html#af28ecd8107777734d5deadc2550ea69b", null ],
+    [ "type", "classexprtk_1_1details_1_1str__sogens__node.html#adc5a5f0759e66b2965be9371b3b89292", null ],
     [ "value", "classexprtk_1_1details_1_1str__sogens__node.html#a95c5c3095d7b11c6540599be5f08062b", null ]
 ];

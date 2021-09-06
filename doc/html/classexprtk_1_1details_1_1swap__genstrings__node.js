@@ -7,6 +7,6 @@ var classexprtk_1_1details_1_1swap__genstrings__node =
     [ "range_t", "classexprtk_1_1details_1_1swap__genstrings__node.html#af3ed883ebe8ef63ebb1faa34c3932938", null ],
     [ "str_base_ptr", "classexprtk_1_1details_1_1swap__genstrings__node.html#abe44e2c453074d6af88ffef313dbd315", null ],
     [ "swap_genstrings_node", "classexprtk_1_1details_1_1swap__genstrings__node.html#adb8c72fb19060ab7a71b13221430c61c", null ],
-    [ "type", "classexprtk_1_1details_1_1swap__genstrings__node.html#a23a535959e852a6ba4290cd1826c78d7", null ],
+    [ "type", "classexprtk_1_1details_1_1swap__genstrings__node.html#a419773c6ff84e607ffbaecad578fec00", null ],
     [ "value", "classexprtk_1_1details_1_1swap__genstrings__node.html#a7a79859a04ee5d833ad64ce1af4bd261", null ]
 ];

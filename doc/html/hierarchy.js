@@ -60,13 +60,13 @@ var hierarchy =
     [ "exprtk::expression< T >", "classexprtk_1_1expression.html", null ],
     [ "exprtk::expression_helper< T >", "classexprtk_1_1expression__helper.html", null ],
     [ "exprtk::details::expression_node< T >", "classexprtk_1_1details_1_1expression__node.html", [
+      [ "exprtk::details::generic_function_node< T, null_igenfunc< T > >", "classexprtk_1_1details_1_1generic__function__node.html", [
+        [ "exprtk::details::return_node< T >", "classexprtk_1_1details_1_1return__node.html", null ]
+      ] ],
       [ "exprtk::details::generic_function_node< T, StringFunction >", "classexprtk_1_1details_1_1generic__function__node.html", [
         [ "exprtk::details::string_function_node< T, StringFunction >", "classexprtk_1_1details_1_1string__function__node.html", [
           [ "exprtk::details::multimode_strfunction_node< T, StringFunction >", "classexprtk_1_1details_1_1multimode__strfunction__node.html", null ]
         ] ]
-      ] ],
-      [ "exprtk::details::generic_function_node< T, null_igenfunc< T > >", "classexprtk_1_1details_1_1generic__function__node.html", [
-        [ "exprtk::details::return_node< T >", "classexprtk_1_1details_1_1return__node.html", null ]
       ] ],
       [ "exprtk::details::T0oT1< T, T0, T1 >", "classexprtk_1_1details_1_1T0oT1.html", null ],
       [ "exprtk::details::T0oT1oT2_base_node< T >", "classexprtk_1_1details_1_1T0oT1oT2__base__node.html", [
@@ -364,7 +364,6 @@ var hierarchy =
       [ "std::tuple_size<::nlohmann::detail::iteration_proxy_value< IteratorType > >", "classstd_1_1tuple__size_3_1_1nlohmann_1_1detail_1_1iteration__proxy__value_3_01IteratorType_01_4_01_4.html", null ]
     ] ],
     [ "nlohmann::detail::internal_iterator< BasicJsonType >", "structnlohmann_1_1detail_1_1internal__iterator.html", null ],
-    [ "nlohmann::detail::internal_iterator< typename std::remove_const< BasicJsonType >::type >", "structnlohmann_1_1detail_1_1internal__iterator.html", null ],
     [ "exprtk::details::function_N_node< T, IFunction, N >::invoke< T_, ParamCount >", "structexprtk_1_1details_1_1function__N__node_1_1invoke.html", null ],
     [ "exprtk::details::function_N_node< T, IFunction, N >::invoke< T_, 1 >", "structexprtk_1_1details_1_1function__N__node_1_1invoke_3_01T___00_011_01_4.html", null ],
     [ "exprtk::details::function_N_node< T, IFunction, N >::invoke< T_, 10 >", "structexprtk_1_1details_1_1function__N__node_1_1invoke_3_01T___00_0110_01_4.html", null ],
@@ -636,12 +635,6 @@ var hierarchy =
     ] ],
     [ "exprtk::symbol_table< T >::type_store< Type, RawType >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
     [ "exprtk::type_store< T >", "structexprtk_1_1type__store.html", null ],
-    [ "exprtk::symbol_table< T >::type_store< exprtk::ifunction< T >, exprtk::ifunction< T > >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
-    [ "exprtk::symbol_table< T >::type_store< exprtk::igeneric_function< T >, exprtk::igeneric_function< T > >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
-    [ "exprtk::symbol_table< T >::type_store< exprtk::ivararg_function< T >, exprtk::ivararg_function< T > >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
-    [ "exprtk::symbol_table< T >::type_store< typename exprtk::details::stringvar_node< T >, std::string >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
-    [ "exprtk::symbol_table< T >::type_store< typename exprtk::details::variable_node< T >, T >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
-    [ "exprtk::symbol_table< T >::type_store< vector_holder< T >, vector_holder< T > >", "structexprtk_1_1symbol__table_1_1type__store.html", null ],
     [ "exprtk::type_store< T >::type_view< ViewType >", "structexprtk_1_1type__store_1_1type__view.html", null ],
     [ "UIDGenerator", "classUIDGenerator.html", null ],
     [ "exprtk::parser< T >::unknown_symbol_resolver", "structexprtk_1_1parser_1_1unknown__symbol__resolver.html", [
@@ -654,7 +647,7 @@ var hierarchy =
     [ "exprtk::details::vec_max_op< T >", "structexprtk_1_1details_1_1vec__max__op.html", null ],
     [ "exprtk::details::vec_min_op< T >", "structexprtk_1_1details_1_1vec__min__op.html", null ],
     [ "exprtk::details::vec_mul_op< T >", "structexprtk_1_1details_1_1vec__mul__op.html", null ],
-    [ "std::vector< std::pair< const Key, T >, std::allocator< std::pair< const Key, T >> >", null, [
+    [ "std::vector< std::pair< const Key, T >, std::allocator< std::pair< const Key, T > > >", null, [
       [ "nlohmann::ordered_map< Key, T, IgnoredLess, Allocator >", "structnlohmann_1_1ordered__map.html", null ]
     ] ],
     [ "exprtk::details::vector_holder< Type >", "classexprtk_1_1details_1_1vector__holder.html", null ],

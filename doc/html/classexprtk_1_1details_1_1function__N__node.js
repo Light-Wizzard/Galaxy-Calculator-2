@@ -34,6 +34,6 @@ var classexprtk_1_1details_1_1function__N__node =
     [ "~function_N_node", "classexprtk_1_1details_1_1function__N__node.html#a8aaa08fb4c16e6392149379761d97f24", null ],
     [ "init_branches", "classexprtk_1_1details_1_1function__N__node.html#a481ea690a7b90acd92fe9915e49373d6", null ],
     [ "operator<", "classexprtk_1_1details_1_1function__N__node.html#ad91ae9fcafc8075a2b75e2b63f5729ef", null ],
-    [ "type", "classexprtk_1_1details_1_1function__N__node.html#a00818cc967c76a4d90b400ea7b32fed1", null ],
+    [ "type", "classexprtk_1_1details_1_1function__N__node.html#a69c78a464384c1fc6f019933f14a5d59", null ],
     [ "value", "classexprtk_1_1details_1_1function__N__node.html#a26f4ac4a6b1d9a4488fbc8f1b3caccb9", null ]
 ];

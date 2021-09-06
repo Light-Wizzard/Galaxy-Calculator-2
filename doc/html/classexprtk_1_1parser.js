@@ -25,7 +25,7 @@ var classexprtk_1_1parser =
     [ "~parser", "classexprtk_1_1parser.html#a8939fd8cd3febd93f37be7e0992a3e27", null ],
     [ "compile", "classexprtk_1_1parser.html#a1d44f3682429df87cea0572774b7a0f5", null ],
     [ "compile", "classexprtk_1_1parser.html#a1c4d899093437bb5777c6a42a7426002", null ],
-    [ "dec", "classexprtk_1_1parser.html#a6e8c3e6eaba9143b55299e8d37f2e8e2", null ],
+    [ "dec", "classexprtk_1_1parser.html#a8619b59f22337d40b7b44c62376d62e5", null ],
     [ "disable_unknown_symbol_resolver", "classexprtk_1_1parser.html#ae21b47cf75f227ea4eaf47f1e4a186a9", null ],
     [ "enable_unknown_symbol_resolver", "classexprtk_1_1parser.html#a0679f742769dbaa4d4c2e3949b899d7b", null ],
     [ "enable_unknown_symbol_resolver", "classexprtk_1_1parser.html#a76d7e85abf7261b30f5de3576b526f7b", null ],
@@ -37,6 +37,6 @@ var classexprtk_1_1parser =
     [ "remove_replace_symbol", "classexprtk_1_1parser.html#a8740b4c974c14407a74c9e0915609247", null ],
     [ "replace_symbol", "classexprtk_1_1parser.html#ace301d91fc285d51e8508c0851012343", null ],
     [ "run_assemblies", "classexprtk_1_1parser.html#aa5d8b3e39b7a0894da61249c1bd9d566", null ],
-    [ "settings", "classexprtk_1_1parser.html#a7c15d01c1deb4d88eea0da7fc6fd1e4c", null ],
+    [ "settings", "classexprtk_1_1parser.html#ae7a94a2e18ee8a14ff4bb89579a58fcb", null ],
     [ "details::disable_type_checking", "classexprtk_1_1parser.html#ad5210b2081009cf2c5f24bf933236d8e", null ]
 ];

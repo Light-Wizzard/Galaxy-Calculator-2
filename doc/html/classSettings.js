@@ -9,7 +9,7 @@ var classSettings =
     ] ],
     [ "Settings", "classSettings.html#ab7169a6eefce79566dd07db3b1e5e967", null ],
     [ "Settings", "classSettings.html#a0c9bc63c8a33dc9020b660ccc99f78c7", null ],
-    [ "entries", "classSettings.html#a7b0718a4b3c9df5b8a490fe199c22120", null ],
+    [ "entries", "classSettings.html#a7b444ecef8ec88a03054546268abe291", null ],
     [ "setValue", "classSettings.html#ad9deddadc396b677ccbde387ab030b78", null ],
     [ "value", "classSettings.html#a489021de19ddb2b3ac36937528600066", null ]
 ];

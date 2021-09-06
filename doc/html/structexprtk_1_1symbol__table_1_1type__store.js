@@ -36,7 +36,7 @@ var structexprtk_1_1symbol__table_1_1type__store =
     [ "is_constant", "structexprtk_1_1symbol__table_1_1type__store.html#a9411fe5370c357b7185b3a2c6a41b8c7", null ],
     [ "remove", "structexprtk_1_1symbol__table_1_1type__store.html#a196d2fd25cc59acbce85d2699efd904b", null ],
     [ "symbol_exists", "structexprtk_1_1symbol__table_1_1type__store.html#a95ab865e28adc62256f43c10325e7d17", null ],
-    [ "type_ref", "structexprtk_1_1symbol__table_1_1type__store.html#a86377594368e42dedc003f5256c17d27", null ],
+    [ "type_ref", "structexprtk_1_1symbol__table_1_1type__store.html#adb0c20366d5d318a1419a800535ac505", null ],
     [ "map", "structexprtk_1_1symbol__table_1_1type__store.html#a6dea5ca597486a978b82f2dafbceff81", null ],
     [ "size", "structexprtk_1_1symbol__table_1_1type__store.html#a132f685cc048adf3d12f40785fd53c58", null ]
 ];

@@ -5,6 +5,6 @@ var classexprtk_1_1details_1_1bipow__node =
     [ "operation_t", "classexprtk_1_1details_1_1bipow__node.html#a0133965b3fa907c346bad38c15fc5436", null ],
     [ "bipow_node", "classexprtk_1_1details_1_1bipow__node.html#a579f758cdd0cb02581abed66f399c177", null ],
     [ "~bipow_node", "classexprtk_1_1details_1_1bipow__node.html#a0ccb19e8d4c3f92e8cd280b9c72e1602", null ],
-    [ "type", "classexprtk_1_1details_1_1bipow__node.html#a60b02d3f5b95c25bf4f8c0800ecc0391", null ],
+    [ "type", "classexprtk_1_1details_1_1bipow__node.html#a12a96761215b52c6695a0d3d81ae1ee7", null ],
     [ "value", "classexprtk_1_1details_1_1bipow__node.html#a209ee4b9bde62c3496f55b7033fca141", null ]
 ];

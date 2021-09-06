@@ -104,7 +104,7 @@ var classexprtk_1_1symbol__table =
     [ "is_variable", "classexprtk_1_1symbol__table.html#afe34df4835e01f3772334d73f73fd638", null ],
     [ "is_vector", "classexprtk_1_1symbol__table.html#a54975d0ad039d699669590b7e0b8901b", null ],
     [ "load_from", "classexprtk_1_1symbol__table.html#a75cebe63381cb4ef57b450047c89b78d", null ],
-    [ "operator=", "classexprtk_1_1symbol__table.html#a5307893b9f3b69c274a585145f7c785e", null ],
+    [ "operator=", "classexprtk_1_1symbol__table.html#ac669d6af9b5f718eac4d9c42ac0aff01", null ],
     [ "operator==", "classexprtk_1_1symbol__table.html#aa7319b3365d2f7e2c0f87145ff9ed51a", null ],
     [ "remove_function", "classexprtk_1_1symbol__table.html#af471ce1ca14d58fbaf4f9194899bda88", null ],
     [ "remove_stringvar", "classexprtk_1_1symbol__table.html#a88601d8f39c61ba3415868171c65f90e", null ],
@@ -112,11 +112,11 @@ var classexprtk_1_1symbol__table =
     [ "remove_variable", "classexprtk_1_1symbol__table.html#a2a4473049c5f8f49bd3449bc40451f36", null ],
     [ "remove_vector", "classexprtk_1_1symbol__table.html#a4c9abfebe4e9f1c454b3daad98a902fc", null ],
     [ "stringvar_count", "classexprtk_1_1symbol__table.html#aea0c6214df985d10e709d026b03e9bd3", null ],
-    [ "stringvar_ref", "classexprtk_1_1symbol__table.html#a983d873602ecd3cbe14a52a9b5d94d19", null ],
+    [ "stringvar_ref", "classexprtk_1_1symbol__table.html#a337f911af5ea27e4d79d27372fc4b81e", null ],
     [ "symbol_exists", "classexprtk_1_1symbol__table.html#acc4bdd7c083fc2b89fa1555d11695f1b", null ],
     [ "valid", "classexprtk_1_1symbol__table.html#ab9f6e1c7f4ba397097b0e1b096decd9c", null ],
     [ "variable_count", "classexprtk_1_1symbol__table.html#a857928d8605ce6481acd6efc99aa954e", null ],
-    [ "variable_ref", "classexprtk_1_1symbol__table.html#a6afcca5e04129856dc874b3836a6da1e", null ],
+    [ "variable_ref", "classexprtk_1_1symbol__table.html#ad88797c265d48cb93bd257d8ead1bb9f", null ],
     [ "vector_count", "classexprtk_1_1symbol__table.html#aa7220ab19d87b53a71cd96b8152f3916", null ],
     [ "parser< T >", "classexprtk_1_1symbol__table.html#a136fe7445ef47063c7c80e3b834d74d1", null ]
 ];

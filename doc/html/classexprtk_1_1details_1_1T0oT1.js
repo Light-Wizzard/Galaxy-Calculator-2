@@ -9,6 +9,6 @@ var classexprtk_1_1details_1_1T0oT1 =
     [ "operation", "classexprtk_1_1details_1_1T0oT1.html#a815de1a1640f338f16caa5a9833ea570", null ],
     [ "t0", "classexprtk_1_1details_1_1T0oT1.html#a4ad59ccf1ba6ffc92f930a395ba9dcb2", null ],
     [ "t1", "classexprtk_1_1details_1_1T0oT1.html#aaf6c7cb71b573f7ba582fe115dfcd72b", null ],
-    [ "type", "classexprtk_1_1details_1_1T0oT1.html#a5c045e85c23963bbc6f69e5468082a79", null ],
+    [ "type", "classexprtk_1_1details_1_1T0oT1.html#a0e94700d06a2b168fc94dd3953e2edab", null ],
     [ "value", "classexprtk_1_1details_1_1T0oT1.html#aba02475deedf8f7091805fda1fd08e18", null ]
 ];

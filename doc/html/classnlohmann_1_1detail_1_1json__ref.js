@@ -9,8 +9,8 @@ var classnlohmann_1_1detail_1_1json__ref =
     [ "json_ref", "classnlohmann_1_1detail_1_1json__ref.html#a4c68db46934e03588bbd73b00147c0dd", null ],
     [ "~json_ref", "classnlohmann_1_1detail_1_1json__ref.html#a8bcd4cfcafe952ce5140f8cb35ebe2f6", null ],
     [ "moved_or_copied", "classnlohmann_1_1detail_1_1json__ref.html#ae39e523218bf05cac3fb5b5b1cd5efb6", null ],
-    [ "operator*", "classnlohmann_1_1detail_1_1json__ref.html#aa3100e41472dba02ab78ccc1607e44ab", null ],
-    [ "operator->", "classnlohmann_1_1detail_1_1json__ref.html#adb652774a67829876449dc0b30637456", null ],
-    [ "operator=", "classnlohmann_1_1detail_1_1json__ref.html#a98956ba676b1ae16b62346f9c4fb752e", null ],
-    [ "operator=", "classnlohmann_1_1detail_1_1json__ref.html#a9a73363d9be6b300ddd30745786c50a6", null ]
+    [ "operator*", "classnlohmann_1_1detail_1_1json__ref.html#a660e373deab1b74e03952dce889cb33d", null ],
+    [ "operator->", "classnlohmann_1_1detail_1_1json__ref.html#ab4991f0e0f33cb906267b8dccbf2406b", null ],
+    [ "operator=", "classnlohmann_1_1detail_1_1json__ref.html#a1b22795281e9894e68b927801a69f1ab", null ],
+    [ "operator=", "classnlohmann_1_1detail_1_1json__ref.html#ab6fb80bb6a10e626ff58bdd98af7dc52", null ]
 ];

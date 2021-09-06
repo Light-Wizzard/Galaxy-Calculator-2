@@ -150,7 +150,7 @@ var classexprtk_1_1details_1_1expression__node =
       [ "e_swap", "classexprtk_1_1details_1_1expression__node.html#a728c18d32fa7d7b19267bcf4c72a2c7faa7925e58c9f25d90fee87c2ad7550fbf", null ]
     ] ],
     [ "~expression_node", "classexprtk_1_1details_1_1expression__node.html#afe428c578b003300049cfc87bb7eb5b7", null ],
-    [ "branch", "classexprtk_1_1details_1_1expression__node.html#aebc567c16935d8c52330afc2d95568cd", null ],
+    [ "branch", "classexprtk_1_1details_1_1expression__node.html#a0d694844c60f33000e35d49b6c79a638", null ],
     [ "type", "classexprtk_1_1details_1_1expression__node.html#a105bfb3187351f863fdba3cb305ef734", null ],
     [ "value", "classexprtk_1_1details_1_1expression__node.html#a0569d2aa1a68cbf06e69ff5564a92392", null ]
 ];

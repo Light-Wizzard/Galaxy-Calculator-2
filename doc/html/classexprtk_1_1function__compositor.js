@@ -11,5 +11,5 @@ var classexprtk_1_1function__compositor =
     [ "add", "classexprtk_1_1function__compositor.html#a72cdc6f71ff218ce769c5a04069658d7", null ],
     [ "add_auxiliary_symtab", "classexprtk_1_1function__compositor.html#a60751253b744cf51e12541de61a0dc10", null ],
     [ "clear", "classexprtk_1_1function__compositor.html#ab70ab390ef7525d9d344199d40f2bedc", null ],
-    [ "symbol_table", "classexprtk_1_1function__compositor.html#afac15b7da138f081635bc4d4a1166ed5", null ]
+    [ "symbol_table", "classexprtk_1_1function__compositor.html#a01437c7836a7801f622e62f35f1db5e9", null ]
 ];

@@ -30,7 +30,7 @@ var pympreal_8cpp =
     [ "mpreal_to_string", "pympreal_8cpp.html#aa1f7fdc38d6472458a6bd6bc9ba80448", null ],
     [ "PyMpReal_AsMpReal", "pympreal_8cpp.html#a8921c17cea92248b7b07cc5565723d9a", null ],
     [ "PyMpReal_Check", "pympreal_8cpp.html#a124e77ae3bfabd80fe1ba6c861573e19", null ],
-    [ "PyMpReal_FromMpReal", "pympreal_8cpp.html#a5858a6307b50a1c5ed08fb5491faa378", null ],
+    [ "PyMpReal_FromMpReal", "pympreal_8cpp.html#a5b0083c86c79881156d8cc14becd3dae", null ],
     [ "PyMpReal_Initialize", "pympreal_8cpp.html#aed590b1f8103bd2ac63f949bdde5fbd7", null ],
     [ "PyMpReal_Type", "pympreal_8cpp.html#a3ec7075d381ffcb0929284db61a3cae2", null ]
 ];

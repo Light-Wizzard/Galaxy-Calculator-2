@@ -7,6 +7,6 @@ var namespaceexprtk_1_1rtl_1_1io_1_1file_1_1details =
       [ "e_write", "namespaceexprtk_1_1rtl_1_1io_1_1file_1_1details.html#aca7b3fbe4dcd996edd55a2027b827b8ca174f23498c62fdb5f8a62592cd5845ce", null ],
       [ "e_rdwrt", "namespaceexprtk_1_1rtl_1_1io_1_1file_1_1details.html#aca7b3fbe4dcd996edd55a2027b827b8ca7d1e8330b639a4627f18a66fb169a05c", null ]
     ] ],
-    [ "make_handle", "namespaceexprtk_1_1rtl_1_1io_1_1file_1_1details.html#aaa38521243b8f425b61609d5ca9917e1", null ],
+    [ "make_handle", "namespaceexprtk_1_1rtl_1_1io_1_1file_1_1details.html#af857776192d88a620373288f110d9a85", null ],
     [ "perform_check", "namespaceexprtk_1_1rtl_1_1io_1_1file_1_1details.html#af7eff4baa272d3f2d192a33428cfe306", null ]
 ];

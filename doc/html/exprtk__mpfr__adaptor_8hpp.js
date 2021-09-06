@@ -1,8 +1,8 @@
 var exprtk__mpfr__adaptor_8hpp =
 [
-    [ "mpfrreal_type_tag", "structexprtk_1_1details_1_1numeric_1_1details_1_1mpfrreal__type__tag.html", null ],
-    [ "number_type< mpfr::mpreal >", "structexprtk_1_1details_1_1numeric_1_1details_1_1number__type_3_01mpfr_1_1mpreal_01_4.html", "structexprtk_1_1details_1_1numeric_1_1details_1_1number__type_3_01mpfr_1_1mpreal_01_4" ],
-    [ "epsilon_type< mpfrreal_type_tag >", "structexprtk_1_1details_1_1numeric_1_1details_1_1epsilon__type_3_01mpfrreal__type__tag_01_4.html", null ],
+    [ "exprtk::details::numeric::details::mpfrreal_type_tag", "structexprtk_1_1details_1_1numeric_1_1details_1_1mpfrreal__type__tag.html", null ],
+    [ "exprtk::details::numeric::details::number_type< mpfr::mpreal >", "structexprtk_1_1details_1_1numeric_1_1details_1_1number__type_3_01mpfr_1_1mpreal_01_4.html", "structexprtk_1_1details_1_1numeric_1_1details_1_1number__type_3_01mpfr_1_1mpreal_01_4" ],
+    [ "exprtk::details::numeric::details::epsilon_type< mpfrreal_type_tag >", "structexprtk_1_1details_1_1numeric_1_1details_1_1epsilon__type_3_01mpfrreal__type__tag_01_4.html", null ],
     [ "abs_impl", "exprtk__mpfr__adaptor_8hpp.html#a2cb59cc3122b70dd91e8dfd6beffeef2", null ],
     [ "acos_impl", "exprtk__mpfr__adaptor_8hpp.html#a3e7e1989544ce333514d2938c5f65eb4", null ],
     [ "acosh_impl", "exprtk__mpfr__adaptor_8hpp.html#a7b00c879d3d808092bf148a600b121ba", null ],

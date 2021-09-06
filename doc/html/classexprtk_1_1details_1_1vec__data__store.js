@@ -10,8 +10,8 @@ var classexprtk_1_1details_1_1vec__data__store =
     [ "data", "classexprtk_1_1details_1_1vec__data__store.html#a51a1a279de2acfcde35d3a905e8e7301", null ],
     [ "data", "classexprtk_1_1details_1_1vec__data__store.html#afc24bb414b1c9d4ac2fcbd961f2fd5cb", null ],
     [ "dump", "classexprtk_1_1details_1_1vec__data__store.html#a763c9b1024d6e2ad30d3f8c2071811a3", null ],
-    [ "operator=", "classexprtk_1_1details_1_1vec__data__store.html#acd95d6970a967452e32fce424aaea061", null ],
-    [ "ref", "classexprtk_1_1details_1_1vec__data__store.html#a124a01f88c7a0a95e545e8f2f6382d66", null ],
+    [ "operator=", "classexprtk_1_1details_1_1vec__data__store.html#a1e30a06030aff35900ae2d79e04aed20", null ],
+    [ "ref", "classexprtk_1_1details_1_1vec__data__store.html#a55fa0a1759e63dac16e7d4d5300b661a", null ],
     [ "size", "classexprtk_1_1details_1_1vec__data__store.html#a21e07db56b35a65aad087426786c7d9b", null ],
     [ "size", "classexprtk_1_1details_1_1vec__data__store.html#adbdae0c5aef6a2c22f000ca8da4e75ef", null ]
 ];
